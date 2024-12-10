@@ -14,14 +14,13 @@ Even though a standard SIM might last over a decade, its anticipated lifespan is
 
 For more detailed information about our SIM cards, see the comparative table below:
 
-| Feature     | Standard SIM |  Industrial SIM  |
-| ----------- | ----------- |  ----------- |
-| Target Segment     |  Connected consumer electronics      |   Industrial and Mobile Applications such as security, smart metering, transport, etc.      |
-| Operation Conditions      |   Primarily indoor     |   Varied from stationary machines to mobile goods & vehicle telematics equipment      |
-| Usage Profile     |   Moderate (e.g., 1-2 SIM events/hour)     |  High (e.g., 1 event/minute)       |
-| Expected Lifetime    |   2-5 years     |   5-10 years      |
-| ETSI 102 671 EPI Specifications     |   Various technical specifications     |  Advanced technical specifications including temperature range, humidity support, etc.       |
-
+| Feature                         | Standard SIM                         | Industrial SIM                                                                        |
+| ------------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------- |
+| Target Segment                  | Connected consumer electronics       | Industrial and Mobile Applications such as security, smart metering, transport, etc.  |
+| Operation Conditions            | Primarily indoor                     | Varied from stationary machines to mobile goods & vehicle telematics equipment        |
+| Usage Profile                   | Moderate (e.g., 1-2 SIM events/hour) | High (e.g., 1 event/minute)                                                           |
+| Expected Lifetime               | 2-5 years                            | 5-10 years                                                                            |
+| ETSI 102 671 EPI Specifications | Various technical specifications     | Advanced technical specifications including temperature range, humidity support, etc. |
 
 ## eSIM
 
@@ -41,8 +40,7 @@ IoT devices, unlike smartwatches or smartphones, usually lack a user interface, 
 
 1. **eUICC:** A secure element housing one or multiple subscription profiles, making it functionally similar to a removable SIM.
 2. **SM-DP (Subscription Manager – Data Preparation):** Manages the preparation, storage, and protection of operator profiles.
-3. **SM-SR (Subscription Manager – Secure Routing):** Handles the management of profiles on eUICC.
-An effective connectivity management platform equipped with eUICC technology fosters global IoT deployments, streamlining manufacturing, logistics, and deployment processes, and ensuring a cost-effective, secure, and scalable global reach for IoT.
+3. **SM-SR (Subscription Manager – Secure Routing):** Handles the management of profiles on eUICC. An effective connectivity management platform equipped with eUICC technology fosters global IoT deployments, streamlining manufacturing, logistics, and deployment processes, and ensuring a cost-effective, secure, and scalable global reach for IoT.
 
 ## nuSIM
 
@@ -50,4 +48,4 @@ With nuSIM, the SIM function is integrated into the modem chip, eliminating the 
 
 SIM Card Formats
 
-![Simple](sims.png)
+![](<../../Dashboard/Cellular IoT/sims.png>)

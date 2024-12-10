@@ -1,8 +1,4 @@
----
-sidebar_position: 1
----
-
-# Adding gateways to Chirp Network
+# Adding Gateways to Chirp Network
 
 Adding a LoRaWAN Gateway to Chirp Network
 
