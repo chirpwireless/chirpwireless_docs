@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Intro to Chirp Wireless
 
 Chirp Wireless is a leading global wireless network provider that offers reliable and extensive IoT connectivity solutions, both outdoors and indoors. Leveraging Semtech's SX1303 chip and Time Difference of Arrival (TDOA) technology, Chirp enables long-range outdoor IoT connectivity and geo-positioning without the need for GPS. Additionally, Chirp provides businesses and Mobile Virtual Network Operators (MVNOs) the opportunity to integrate with our global Radio Access Network (RAN), offering white-label solutions and software that handle IoT and connectivity, allowing businesses to focus on sales and automation.
