@@ -5,5 +5,5 @@ root: ./
   summary: SUMMARY.md​
 
 redirects:
-  intro: 
+  intro: .
   Terms%20of%20Use: legal/terms-of-use.md
