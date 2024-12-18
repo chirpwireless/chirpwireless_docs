@@ -1,0 +1,9 @@
+root: ./
+
+​structure:
+  readme: README.md
+  summary: SUMMARY.md​
+
+redirects:
+  intro: 
+  Terms%20of%20Use: legal/terms-of-use.md
