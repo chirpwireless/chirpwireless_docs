@@ -7,3 +7,4 @@ root: ./
 redirects:
   intro: README.md
   Terms%20of%20Use: legal/terms-of-use.md
+  Privacy%20Policy: legal/privacy-policy.md  
