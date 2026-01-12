@@ -21,8 +21,3 @@
   * [RAK 7268 V2](iot-platform/adding-gateways-to-chirp-network/rak7268v2.md)
 * [Cellular IoT](iot-platform/cellular-iot/README.md)
   * [SIM Cards Types](iot-platform/cellular-iot/simcardtypes.md)
-
-## Legal
-
-* [Privacy Policy](legal/privacy-policy.md)
-* [Terms of Use](legal/terms-of-use.md)
