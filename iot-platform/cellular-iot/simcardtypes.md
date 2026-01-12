@@ -48,4 +48,4 @@ With nuSIM, the SIM function is integrated into the modem chip, eliminating the 
 
 SIM Card Formats
 
-![](<../../Dashboard/Cellular IoT/sims.png>)
+![](../../.gitbook/assets/sims.png)

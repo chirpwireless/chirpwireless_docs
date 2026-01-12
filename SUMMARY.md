@@ -24,6 +24,5 @@
 
 ## Legal
 
-* [Security](legal/security.md)
 * [Privacy Policy](legal/privacy-policy.md)
 * [Terms of Use](legal/terms-of-use.md)
