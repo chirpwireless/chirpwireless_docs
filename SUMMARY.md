@@ -54,8 +54,6 @@
   * [Rooms and Locations](settings/locations.md)
   * [API Keys](settings/api-keys.md)
   * [Data Credits](settings/data-credits.md)
-  * [Device Sharing](settings/device-sharing.md)
-  * [New Device Request](settings/new-device-request.md)
 * [Help](help/get-help.md)
 * [Account](account/README.md)
   * [Subscription](account/subscription.md)

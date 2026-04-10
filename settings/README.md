@@ -8,8 +8,6 @@ Your personal profile, sensor locations, and platform preferences are all manage
 - [Rooms and Locations](locations.md) — Organize your sensors by room and area
 - [API Keys](api-keys.md) — For tinkerers who want to connect Chirp to scripts or other tools
 - [Data Credits](data-credits.md) — Your credit balance and top-up options
-- [Device Sharing](device-sharing.md) — See which sensors you have shared and with whom
-- [New Device Request](new-device-request.md) — Ask the team to add support for a sensor Chirp does not recognize yet
 
 ## What is NOT here
 
