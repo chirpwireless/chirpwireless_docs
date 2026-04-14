@@ -51,9 +51,9 @@ When you add someone new, the dialog starts with Edit on most sections. **Manage
 
 The members list shows labels like "Admin," "Editor," or "Viewer" next to each person. These are not assigned roles — they are computed automatically. Chirp compares each person's actual permission set against three known patterns:
 
-- **Admin** — Edit on all sections, including Subscription and Manage Users
-- **Editor** — Edit on most sections, but no access to Subscription or Manage Users
-- **Viewer** — View on most sections, with the same exclusions as Editor
+- **Admin** — Edit on all sections, including Subscription and Manage Users. Activity Log is always View. API Keys is always Edit.
+- **Editor** — Edit on most sections, but no access to Subscription or Manage Users. Activity Log is View. API Keys is Edit.
+- **Viewer** — View on most sections, with the same exclusions as Editor. Activity Log is View. API Keys is Edit (self-service exception).
 
 If a person's permissions match one of these patterns, the matching label is shown. If their permissions are customized and do not match any pattern, the individual section names are displayed instead. The owner always shows "Owner."
 

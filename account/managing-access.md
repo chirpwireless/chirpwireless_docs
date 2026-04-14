@@ -17,7 +17,7 @@ Use the **"Search users..."** bar at the top to find a specific person by name o
 
 The update replaces all existing permissions with the new set. Changes take effect the next time that person loads Chirp.
 
-The Activity Log (under **Reports** > **Audit Trail**) records a **"Permissions changed"** event with the before-and-after details.
+The Activity Log (under **Reports** > **Audit Trail**) records a **"Permissions changed"** event for the affected user.
 
 ## Revoking a Pending Invitation
 

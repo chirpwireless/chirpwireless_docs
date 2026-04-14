@@ -40,4 +40,4 @@ Ownership transfer invitations are valid for **24 hours** — a shorter window b
 
 ## Activity Log
 
-Both membership acceptance and ownership transfer acceptance are recorded in the Activity Log (under **Reports** > **Audit Trail**), capturing who accepted and when.
+Membership acceptance is recorded in the Activity Log (under **Reports** > **Audit Trail**), capturing who accepted and when.
