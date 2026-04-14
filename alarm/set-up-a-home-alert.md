@@ -40,7 +40,8 @@ This section is covered in detail on the [Escalation Chains](escalation-chains.m
 
 - The first step is always **Immediate** and cannot be removed.
 - Click **Add step** to add escalation tiers with configurable delays.
-- Each step has: **Notify** (recipients), **Via** (channels — email is always available; SMS and push when enabled).
+- Each step has: **Notify** (recipients), **Via** (channels — Email and SMS are selectable; Push when enabled).
+- Unresolved alarms continue through the configured chain until someone marks the event as resolved in the [Inbox](check-and-clear-alerts.md).
 
 ## Schedule
 

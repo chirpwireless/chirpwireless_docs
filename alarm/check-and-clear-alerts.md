@@ -30,7 +30,7 @@ On desktop, each alarm appears as a row with these columns:
 | **Severity** | The severity level, color-coded. |
 | **First trigger** | When the alarm first fired. |
 | **Last update** | The most recent activity on this alarm. |
-| **Actions** | Resolve button and a link to the originating rule. |
+| **Actions** | **Mark as resolved** button and a link to the originating rule. |
 
 On mobile, alarms appear as compact cards with the same information in a condensed layout.
 
@@ -40,7 +40,7 @@ If no alarms have fired yet, the Inbox shows: *"No alarms yet — To see alarms,
 
 ## Resolving an alarm
 
-Click the **Resolve** button on an active alarm to mark it as resolved. This does two things:
+Click **Mark as resolved** on an active alarm to mark it as resolved. This does two things:
 
 1. The alarm status changes from **Active** to **Resolved** — the indicator switches from a warning triangle to a checkmark.
 2. Any remaining [escalation steps](escalation-chains.md) for this event are cancelled. No further notifications are sent.
