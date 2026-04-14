@@ -182,3 +182,5 @@ This way, you are covered whether the second sensor is working or not. Your auto
 - **Place enrichment early in the flow.** Fetch additional data before you need it — do not place an Enrichment node inside a branch that might not execute.
 - **Always add error handling to enrichment nodes.** Sensors go offline. Batteries die. A brief fallback path takes two minutes to set up and saves you from silent failures.
 - **Keep Script Task expressions focused.** One transformation per Script Task is easier to understand and debug than cramming everything into a single expression.
+
+For a complete list of CEL operators, functions, and patterns, see the [CEL for Home Automations](../reference/cel-for-home-automations.md) reference. For details on how each node type behaves, see the [Automation Node Guide](../reference/automation-node-guide.md).

@@ -65,7 +65,7 @@ The Artifacts tab shows:
 | **Stopped** | Orange | The artifact was stopped by you or another household member |
 | **Force Stopped** | Red | The system automatically stopped the artifact due to sustained errors during execution |
 
-Each artifact also has an **Artifact Source** link that opens a **read-only** view of the automation — you can inspect every node and expression exactly as they were when the artifact was built, but you cannot make changes. This is useful for comparing what is running against your current working version.
+Each artifact also has an **Artifact Source** link that opens the rule in a **read-only** editor view. This is useful for reviewing the automation's logic without accidentally changing anything. Note that if the rule has been edited since the artifact was built, the editor shows the latest saved version — not the version that was compiled into the artifact.
 
 Comments are **inline editable** — click any comment in the Artifacts table to update it without rebuilding. This makes it easy to add notes after the fact, like "caused false alarms, replaced by v3."
 
@@ -114,3 +114,5 @@ The old artifact is replaced by the new one. There is no need to stop the old ar
 - **Use comments to note why you built.** Future-you will appreciate knowing "Raised threshold from 60% to 70% after false alarms" when reviewing builds weeks later.
 - **Stop before troubleshooting.** If an automation is misbehaving, stop it first, then investigate. You can always redeploy once you have fixed the issue.
 - **Check the Artifacts tab regularly.** It gives you a clear picture of what is running across all your automations — a quick way to confirm everything is as expected.
+
+If a build fails or an automation gets force-stopped, see [Fixing Builds and Runtime Stops](../reference/fixing-builds-and-runtime-stops.md) for a full troubleshooting guide.

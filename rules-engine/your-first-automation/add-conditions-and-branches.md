@@ -88,4 +88,6 @@ Start Event (Basement Sensor)
 
 The "High humidity" path does not lead anywhere useful yet — it needs an alarm action. That is exactly what you will add next.
 
+For the full details on how gateways evaluate conditions, see the [Automation Node Guide](../reference/automation-node-guide.md). For expression syntax, see [CEL for Home Automations](../reference/cel-for-home-automations.md).
+
 **Next:** [Trigger Alarms and Actions](trigger-alarms-and-actions.md)

@@ -57,4 +57,6 @@ While you are in edit mode, the automation is locked to you — nobody else in y
 
 Your automation is saved and ready for logic. Right now it has a Start Event bound to your sensor — but it does not do anything with the data yet. In the next step, you will add a decision point that checks whether the reading is above your threshold.
 
+For a full tour of the canvas, palette, and properties sidebar, see the [Visual Editor](../reference/visual-editor.md) reference.
+
 **Next:** [Add Conditions and Branches](add-conditions-and-branches.md)

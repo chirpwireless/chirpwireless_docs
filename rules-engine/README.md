@@ -42,3 +42,7 @@ This section walks you through everything from your very first automation to adv
 ## Finding the Automation Page
 
 In the Chirp sidebar, click **Rules engine**. This opens the automation page at `/rules`, where all your automations live. From here you can create new automations, manage existing ones, check what is running, and browse the trash for anything you have deleted.
+
+## Looking something up?
+
+If you need to check how a specific node works, what a CEL expression does, or what a build error means, head to the [Reference](reference/README.md) section.
