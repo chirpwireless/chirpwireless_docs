@@ -1,36 +1,43 @@
-# Stay Informed When Something Needs Attention
+# Alarm
 
-Your sensors are keeping an eye on your home around the clock — but you are not always watching the dashboard. Alerts bridge that gap. When a reading crosses a line you care about, Chirp tells you right away so you can act before a small problem turns into a bigger one.
+Your sensors watch your home around the clock, but you are not always looking at the dashboard. The Alarm section bridges that gap — when a reading crosses a threshold you care about, Chirp notifies you through the channels you choose so you can act before a small problem becomes a bigger one.
 
-A water leak sensor in the basement that spikes to 90% humidity at midnight, a front door that opens while you are away, a garden bed drying out in a heatwave — these are the moments where a timely notification makes a real difference.
+> **How triggers and response work together:** The [Rules Engine](../rules-engine/README.md) decides _when_ an alarm is raised — it evaluates sensor data and fires an alarm when conditions are met. The Alarm section defines _what happens after_ the alarm fires: who gets notified, through which channels, how often, how escalation proceeds if nobody responds, and when notifications are suppressed.
 
-## How Alerts Work in Chirp
+## What you will find here
 
-You set up **alert rules** that tell Chirp what to watch for. Each rule picks a sensor, defines the condition that matters ("humidity above 80%"), and decides who gets notified and how. When the condition is met, Chirp fires an alert and sends you a notification.
+The Alarm page has three tabs:
 
-All your alerts — past and present — live in the **Notifications** section of the sidebar at `/notifications`. Think of it as your home's notification inbox: you can see what happened, when it happened, and whether it still needs your attention.
+- **Inbox** — Every alarm event that has fired, with its current status. Filter by severity or status, search by title, resolve alarms, or jump to the originating rule.
+- **Alarm definitions** — Your alarm configurations. Each definition sets the severity, escalation chain, notification schedule, suppression window, and message for a specific type of alert. Click **Add alarm rule** to create a new one.
+- **Settings** — Your contact methods. Add or verify email addresses, and manage SMS and push notification contacts when those channels are enabled for your account.
 
-## Checking Notifications Quickly
+A **Notification Severity** button in the page header (visible on all tabs) opens a separate modal for controlling how often each severity level repeats.
 
-You do not always need to open the full Notifications page. Chirp shows an unread notification indicator so you can glance at what is new from anywhere:
+## Severity levels
 
-- **On desktop**, click the notification icon next to your avatar in the sidebar. A drawer slides open with your latest unread alerts. Click any alert to mark it as read, or click **Mark all as read** to clear them all.
-- **On mobile**, tap the bell icon in the top header. The same drawer opens. When you close it, all alerts are automatically marked as read.
+Chirp uses five severity levels to prioritize alarms:
 
-For reviewing, resolving, or managing alerts in detail, open the full Notifications page from the sidebar.
+| Level | When to use it |
+|---|---|
+| **Critical** | Emergencies requiring immediate action — water leaks, fire alarms, security breaches |
+| **High** | Urgent situations that need prompt attention — freezer temperature spikes, failing sensors |
+| **Medium** | Important but not time-critical — humidity drifting out of range, unusual energy use |
+| **Low** | Routine awareness — minor fluctuations, scheduled check-ins |
+| **Info** | Background monitoring — status confirmations, periodic health reports |
 
-## What You Will Find in Notifications
+Each level has its own notification repeat policy that you can configure in [Notification Severity](notification-severity.md).
 
-The Notifications page has three tabs:
+## Escalation
 
-- **Inbox** — every alert that has fired, with its current status. Search for specific alerts, mark alerts as resolved, jump to the originating rule, or delete old ones. On mobile, you can also open a full detail page for each alert.
-- **Rules** — your alert rules. This is where you create new rules, turn existing ones on or off, edit what they watch for, or remove rules you no longer need.
-- **Settings** — your contact methods. Add or remove email addresses, verify them, and control which channels are active for receiving notifications.
+When an alarm fires and nobody resolves it, Chirp can escalate — notifying additional people through additional channels after a configurable delay. This means your home is never left unattended just because one person missed a notification.
 
-There is also a **Notification types settings** button that opens a separate popup for controlling how often each alert type repeats — we cover this as part of the alert setup guide.
+For full details, see [Escalation Chains](escalation-chains.md).
 
-## Where to Go Next
+## Where to go next
 
-- **[Set Up a Home Alert](set-up-a-home-alert.md)** — walk through creating your first alert rule from start to finish, including how to fine-tune repeat timing.
-- **[Check and Clear Alerts](check-and-clear-alerts.md)** — learn how to review what has happened, resolve alerts, and keep your inbox manageable.
-- **[Manage Contact Methods](manage-contact-methods.md)** — add email addresses, verify them, and control how Chirp reaches you.
+- [Set Up a Home Alert](set-up-a-home-alert.md) — Walk through creating an alarm definition: name, severity, escalation chain, schedule, message.
+- [Escalation Chains](escalation-chains.md) — How multi-step escalation works for unresolved alarms.
+- [Notification Severity](notification-severity.md) — Configure how often each severity level repeats.
+- [Check and Clear Alerts](check-and-clear-alerts.md) — Review what has happened, resolve alarms, and keep your inbox manageable.
+- [Manage Contact Methods](manage-contact-methods.md) — Add email addresses, verify them, and manage notification channels.

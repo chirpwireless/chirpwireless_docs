@@ -1,138 +1,87 @@
 # Set Up a Home Alert
 
-An alert rule tells Chirp exactly what to watch for on a sensor and who to notify when it happens. Once you have created a rule, it runs continuously — checking your sensor data and reaching out to you the moment something crosses the line you set.
+An alarm definition tells Chirp what to do when an automation in the [Rules Engine](../rules-engine/README.md) fires an alarm — who to notify, how urgently, through which channels, and what happens if nobody responds.
 
-This guide walks you through creating an alert from start to finish, managing the rules you have already created, and fine-tuning how often alerts repeat.
+To create one, open the **Alarm** page from the sidebar, switch to the **Alarm definitions** tab, and click **Add alarm rule**.
 
-## Before You Start
+## Alarm name
 
-You will need:
+Give your alarm a clear name that describes what it watches for. This name appears in the Inbox when the alarm fires, so make it specific enough to act on at a glance.
 
-- **A sensor that is connected and sending data.** If you have not added one yet, follow [Connect Your First Sensor](../first-steps/connect-your-first-sensor.md).
-- **At least one verified email address** in your notification contacts. Check the **Settings** tab in Notifications at `/notifications/settings`. If nothing is there, see [Manage Contact Methods](manage-contact-methods.md) to add one.
+| Field | Detail |
+|---|---|
+| **Alarm name** | Text field. Placeholder: *Enter name*. Required. |
 
-## Creating an Alert Rule
+## Severity
 
-Open **Notifications** from the sidebar and switch to the **Rules** tab. Click **Add Rule** to start the guided setup.
+Choose how urgent this alarm is. The severity level controls how often notifications repeat (based on your [Notification Severity](notification-severity.md) settings) and how the alarm appears in the Inbox.
 
-### Pick Your Sensor
+| Field | Detail |
+|---|---|
+| **Choose severity** | Dropdown. Options: Critical, High, Medium, Low, Info. Required. |
 
-The first screen is titled **"1 / Choose a device"**. You will see your connected sensors listed. Tap the one you want this rule to watch — maybe the basement humidity sensor, or the front door contact sensor.
+After you select a severity, a note appears below the dropdown showing the current repeat policy for that level — for example, how frequently notifications re-send if the alarm stays active. You can override this with a custom interval (see below).
 
-Click **Choose** to continue.
+## Custom notification interval
 
-### Tell Chirp What to Watch For
+By default, the alarm uses the repeat policy from your [Notification Severity](notification-severity.md) settings. Turn this on to override that policy for this specific alarm.
 
-The screen moves to **"2 / Add conditions to the device"** with the hint *"Select the conditions under which the trigger should occur."*
+| Field | Detail |
+|---|---|
+| **Custom Notification interval** | Toggle (Off by default). When On, shows interval and one-time controls. |
+| **Interval** | Number + unit (Hours or Days). |
+| **One-time notification** | Toggle. When On, the alarm sends one notification and does not repeat. |
 
-This is where you define the condition that matters. For example:
+## Escalation chain
 
-- Humidity **above 80%** (basement flood risk)
-- Temperature **above 5°C** (fridge too warm)
-- Door status **equals "open"** (unexpected entry)
+The escalation chain determines who gets notified and when. The first step fires immediately. If the alarm is not resolved, additional steps fire after configurable delays.
 
-Set your condition and click **Continue**.
+This section is covered in detail on the [Escalation Chains](escalation-chains.md) page. In brief:
 
-### Write the Alert Message
+- The first step is always **Immediate** and cannot be removed.
+- Click **Add step** to add escalation tiers with configurable delays.
+- Each step has: **Notify** (recipients), **Via** (channels — email is always available; SMS and push when enabled).
 
-The screen shows **"3 / Set up alerting message"**. This is what you will see in your email when the alert fires. Make it clear enough that you will know exactly what is happening without opening the app.
+## Schedule
 
-Fill in:
+Control when this alarm is active. By default, alarms are active 24/7.
 
-- **Subject** — a short headline, e.g., *"Basement humidity is too high"*
-- **Message** — a sentence or two with context, e.g., *"The humidity sensor in the basement is reading above 80%. Check for water leaks near the washing machine or sump pump."*
-- **Notification type** — choose how urgent this alert is:
+| Field | Detail |
+|---|---|
+| **Schedule** | Shows the current schedule or "24/7 by default". |
+| **Change schedule** | Button that opens a popover with day-of-week toggles and a time range (From / To). |
 
-| Type | What it means | How often it repeats by default |
-|---|---|---|
-| **Critical** | Something that needs your immediate attention | Every hour |
-| **Important** | Something you should know about soon | Every 4 hours |
-| **Information** | Good to know, but not urgent | Once a day |
+Use scheduling for alarms that only matter during certain hours — for example, a "front door opened" alarm that you only want between 11 PM and 6 AM.
 
-For a water leak sensor, **Critical** makes sense — you want to know right away and be reminded until you deal with it. For a garden moisture alert, **Information** is enough — a once-daily nudge is plenty.
+## Suppress duplicates
 
-Click **Continue**.
+Prevent the same alarm from firing repeatedly within a short window. This is useful for sensors that report frequently — without suppression, a sensor reading every 30 seconds could generate dozens of identical alarms.
 
-### Choose Who Gets Notified
+| Field | Detail |
+|---|---|
+| **Suppress duplicates within this window (in minutes)** | Slider. Range: 1–60 minutes. |
 
-The screen shows **"Select notification recipients"**. If you have one email contact, it is shown as your default recipient without a checkbox.
+## Message
 
-To choose from multiple contacts — for example, to also notify your partner — click **"Add email"**. This switches to multi-select mode where all your email contacts appear with checkboxes. Your first contact is automatically selected. Once in multi-select mode, click **"Add recipients"** if you need to enter a brand-new email address right here.
+The message appears in every notification sent by this alarm. Write it so the recipient immediately understands what happened and what to do.
 
-Verified contacts have active checkboxes. Unverified contacts appear with a disabled checkbox — they need to be verified first (see [Manage Contact Methods](manage-contact-methods.md)).
+| Field | Detail |
+|---|---|
+| **Theme** | The notification subject line. Placeholder: *Fire alarm in the kitchen*. Required. |
+| **Message body** | The notification body text (multiline, 3 rows). Placeholder: *Your text here*. Required. |
 
-Click **Continue**.
+## Saving and managing
 
-### Name Your Alert
+Click **Add new alarm rule** to create the definition (or **Save** if editing an existing one). Click **Cancel** to discard changes.
 
-The final screen shows **"4 / Set up rule name and description"**. Give it a name you will recognize later in the list — something like *"Basement leak warning"* or *"Front door opened late at night."*
+Once created, your alarm definition appears in the **Alarm definitions** tab:
 
-The description is optional, but handy if you have several similar alerts and want to remember why each one exists.
+- **Toggle** the switch to enable or disable the alarm without deleting it.
+- **Edit** to reopen the definition and change any field.
+- **Delete alarm** (available inside the edit form) permanently removes the definition.
 
-Click **Create rule**. You are taken back to the Rules list, where your new alert appears with its toggle switched on. It is now watching your sensor.
+## Home examples
 
----
-
-## Managing Your Alert Rules
-
-Once you have created alert rules, you can manage them from the **Rules** tab at `/notifications/rules`. This section covers turning rules on and off, editing them, and deleting rules you no longer need.
-
-Each rule in the list shows its name, description, connected sensor, alert type, and an on/off toggle.
-
-### Turning an Alert On or Off
-
-Flip the **status toggle** next to any rule to temporarily disable it without losing the configuration. Flip it back to resume. Useful if a sensor is being moved or serviced and you do not want false alerts.
-
-### Editing a Rule
-
-Click the actions menu on a rule and choose **Edit**. A dialog titled **"Edit rule details"** appears asking *"Select the section you want to edit."* Pick what you want to change:
-
-- **Conditions** — change what the rule watches for
-- **Notification details** — update the message, subject, or alert type
-- **Notification recipients** — change who gets notified
-- **Name and description** — rename or re-describe the rule
-
-The editor opens directly at the section you chose. Make your changes and click **Save changes**.
-
-### Deleting a Rule
-
-Click the actions menu and choose **Delete**. Chirp asks: *"Are you sure you want to delete the rule?"* and notes that *"Once deleted, all connected devices will no longer follow this rule."* Click **Yes, delete** to confirm.
-
-### When the List Is Empty
-
-If you have not created any rules yet, you will see *"There is no rule yet"* with a friendly prompt to add your first one.
-
----
-
-## Fine-Tune How Often Alerts Repeat
-
-After setting up your rules, you may want to adjust how frequently Chirp reminds you about active alerts. The default repeat intervals (hourly for Critical, every 4 hours for Important, daily for Information) work well for most homes. But if you want to adjust them — maybe you want Important alerts every 2 hours instead of 4, or Information alerts every other day — you can change the global timing.
-
-### How to Open the Timing Settings
-
-In the Notification Center, look for the **"Notification types settings"** button. On desktop, it is in the page header and visible from the Inbox, Rules, and Settings tabs. On smaller screens, it is available at the bottom of the Inbox and Rules tabs.
-
-Clicking it opens a popup with three sections:
-
-- **Critical Notification interval**
-- **Important Notification interval**
-- **Information Notification interval**
-
-### Changing the Repeat Interval
-
-For each type, you can set:
-
-- **How often** — a number plus a unit (**Hours** or **Days**). For example, "2 Hours" means Chirp re-sends the notification every 2 hours while the alert is still active.
-- **One-time notification** — a toggle that tells Chirp to send just one notification and not repeat at all. Good for informational alerts where a single heads-up is enough.
-
-### Overriding for a Specific Rule
-
-You can also set a custom repeat interval on an individual rule. During rule creation or editing (in the alert message step), toggle **Custom Notification interval** to set an interval that applies only to that rule. This overrides whatever you have set in the global timing settings.
-
-For example, you might keep Critical alerts at 1-hour globally but set your basement leak rule to repeat every 2 hours because that particular sensor is less urgent than a true emergency.
-
-## Tips for Home Alerts
-
-- **Start with one or two alerts and see how they feel.** It is easy to set up alerts for everything, but if your phone buzzes constantly, you will start ignoring them. Begin with the alerts that matter most — water leaks, security sensors, temperature extremes — and add more as needed.
-- **Use Information type for nice-to-know alerts.** Garden moisture low? Good to know once a day. Front door opened at 2 AM? That deserves Critical.
-- **Name alerts clearly.** When an alert fires while you are in the middle of something, the name in your email is all you see. *"Basement leak warning"* tells you what to do. *"Rule 3"* does not.
+- **Basement flood alarm:** Severity Critical, immediate notification to homeowner via email and push, escalation to partner via SMS if unresolved. Schedule: 24/7. Suppression: 5 minutes.
+- **Freezer temperature spike:** Severity High, notify homeowner. Theme: "Freezer temperature rising." Message: "The kitchen freezer sensor has reported an unusual reading."
+- **Front door after bedtime:** Severity Medium, schedule active 11 PM – 6 AM only. Notify both household members immediately.

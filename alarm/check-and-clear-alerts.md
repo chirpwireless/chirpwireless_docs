@@ -1,92 +1,58 @@
 # Check and Clear Alerts
 
-When an alert rule fires, Chirp keeps a record of it in your Notifications inbox. This is where you go to see what happened, when it happened, and whether it still needs your attention. Once you have dealt with the issue, you can mark the alert as resolved or delete it if you no longer need the record.
+When an alarm fires, Chirp records it in your Inbox. This is where you see what happened, when it happened, and whether it still needs your attention. Resolving an alarm stops its [escalation chain](escalation-chains.md) — no further steps fire once the event is marked as resolved.
 
-## Quick Check: The Notifications Drawer
+The Inbox is the default tab when you open the **Alarm** page from the sidebar.
 
-You do not always need to open the full Notifications page. Chirp shows an unread notification indicator so you can peek at what is new from wherever you are:
+## Filtering
 
-- **On desktop**, click the notification icon next to your avatar in the sidebar. A drawer slides in from the right showing your latest unread alerts. Click any alert to mark it as read. Click **Mark all as read** at the top to clear them all at once.
-- **On mobile**, tap the bell icon in the top header. The same drawer opens. When you close it, all alerts are automatically marked as read.
+Two dropdown filters sit above the alarm list:
 
-A badge with a count appears on the icon whenever you have unread notifications. If there is no badge, you are all caught up.
-
-The drawer is a quick glance — it tells you whether something needs your attention. For reviewing details, resolving alerts, or searching through past alerts, open the full Notifications page from the sidebar.
-
-## The Full Alerts Inbox
-
-Open **Notifications** from the sidebar. The page opens at `/notifications` on the **Inbox** tab — this is your complete alert history.
-
-### What You See
-
-Each alert in the list shows:
-
-| Column | What it tells you |
+| Filter | Options |
 |---|---|
-| **Subject** | The headline you wrote when creating the rule — e.g., *"Basement humidity is too high."* |
-| **Status** | Either **Alarm** (still active, still repeating) or **Resolved** (handled, no more repeats). |
-| **Type** | Critical, Important, or Information — so you can prioritize at a glance. |
-| **Message** | The description you wrote in the alert rule. |
-| **Date & Time** | When the alert fired. |
+| **Severity** | All severity, Critical, High, Medium, Low, Info |
+| **Status** | All status, Active, Resolved |
 
-Use the **search bar** at the top to find specific alerts by subject or message — helpful if you are looking for all alerts related to a particular sensor or event.
+Use these to focus on what matters right now — for example, show only **Critical** + **Active** to see emergencies that still need attention.
 
-### If Nothing Is Here Yet
+## Searching
 
-If no alert rules have fired, the inbox shows: *"No notifications yet"* with a note: *"To see notifications, create a rule and let it generate activity."* Head to [Set Up a Home Alert](set-up-a-home-alert.md) to create your first rule.
+A search input lets you filter by alarm title. Start typing and the list narrows to matching results. If nothing matches, Chirp shows: *"We can't find your alarm."*
 
-## Understanding Alert Statuses
+## Alarm list
 
-### Alarm
+On desktop, each alarm appears as a row with these columns:
 
-The alert rule fired and the condition was met on your sensor. While an alert has this status, Chirp keeps sending repeat notifications at the interval you configured (hourly for Critical, every 4 hours for Important, daily for Information).
+| Column | What it shows |
+|---|---|
+| **Alarm** | The alarm title (or definition name), with a status indicator — a warning triangle for active alarms, a checkmark for resolved ones. |
+| **Message** | The notification message body. |
+| **Severity** | The severity level, color-coded. |
+| **First trigger** | When the alarm first fired. |
+| **Last update** | The most recent activity on this alarm. |
+| **Actions** | Resolve button and a link to the originating rule. |
 
-In other words: if you see **Alarm**, Chirp is still actively telling you about this issue.
+On mobile, alarms appear as compact cards with the same information in a condensed layout.
 
-### Resolved
+### Empty state
 
-Someone marked the alert as resolved, or the sensor reading returned to normal. Chirp stops sending repeat notifications for this alert. The record stays in the inbox so you can look back at what happened and when.
+If no alarms have fired yet, the Inbox shows: *"No alarms yet — To see alarms, create a rule and let it generate activity."*
 
-## Resolving an Alert
+## Resolving an alarm
 
-### One at a Time
+Click the **Resolve** button on an active alarm to mark it as resolved. This does two things:
 
-Find the alert in the list and click the **Mark as resolved** button on its row. The status changes from **Alarm** to **Resolved** immediately. The button label then changes to **Resolved** and becomes inactive — it stays visible so you can see the alert has been handled.
+1. The alarm status changes from **Active** to **Resolved** — the indicator switches from a warning triangle to a checkmark.
+2. Any remaining [escalation steps](escalation-chains.md) for this event are cancelled. No further notifications are sent.
 
-### Several at Once
+Resolved alarms stay in the Inbox for your records. They do not disappear.
 
-If a situation triggered multiple alerts — maybe a power outage set off temperature alarms on every sensor in the house — you can resolve them all together:
+## Going to the originating rule
 
-1. Use the **checkbox** on each alert you want to resolve, or click the **select-all checkbox** in the header to select all active alerts. (Only alerts with **Alarm** status are selectable.)
-2. A button appears showing **"(N) Mark as resolved"** with the count of selected alerts.
-3. Click it. All selected alerts move to **Resolved**.
+Each alarm has a link that navigates to the automation in the Rules Engine that triggered it (at `/rules/:ruleId/view`). This is useful when you need to understand why the alarm fired — what conditions were met, what sensor data triggered it, and whether the rule logic needs adjusting.
 
-## Opening Alert Details
+## Tips
 
-On mobile, each alert row has a chevron that opens the full detail page at `/notifications/:alarmId`. On desktop, alert detail pages are not directly accessible — the table does not support row-click navigation. Instead, use the per-row actions: **Mark as resolved** button, and the actions menu which offers **Go to rule page** and **Delete**.
-
-On the detail page you see:
-
-- The full **subject** and **message**
-- The **type** (Critical, Important, or Information)
-- The current **status** with a hover tooltip explaining what it means
-
-From the detail page you can:
-
-- **Go to rule page** — opens the alert rule that created this alarm, so you can review or adjust the conditions. Useful if an alert keeps firing and you want to tweak the threshold.
-- **Mark as resolved** — same as from the list, but here you are looking at the full context first.
-- **Delete** — permanently removes the alert. A dialog asks *"Are you sure you want to delete the alarm?"* Click **Yes, delete** to confirm, or **Cancel** to keep it.
-
-## Deleting Alerts
-
-Deleting removes an alert permanently — it will not appear in searches or in the inbox anymore. This is different from resolving: a resolved alert stays in the inbox as a historical record, while a deleted alert is gone.
-
-Delete alerts when the record itself is not useful anymore. For alerts you want to keep for reference (e.g., to check when the last water leak happened), resolve them instead.
-
-You can delete from the alert detail page or from the actions menu on each row in the inbox list.
-
-## Daily Use Tips
-
-- **Check the drawer first.** The notification icon gives you a fast answer to "has anything happened?" without navigating away from whatever you are doing. If the badge shows a count, glance at the drawer. If something looks serious, open the full inbox.
-- **Resolve alerts when you have actually handled them.** Marking an alert as resolved tells Chirp to stop repeating the notification. If you resolve it but the underlying issue is not fixed, the rule will fire again and create a new alarm.
-- **Use search for recurring patterns.** If you suspect a sensor is triggering too often, search for its name in the inbox to see the history. That might be a signal to adjust the threshold in the alert rule rather than keep resolving alerts.
+- **Resolve alarms when the issue is handled.** An unresolved alarm continues to escalate and re-send notifications. Resolving it is how you tell Chirp "I've seen this and it's under control."
+- **Use severity filters during busy periods.** If you have many alarms, filter to Critical and High first to prioritize what needs immediate action.
+- **Check the originating rule if an alarm seems wrong.** If an alarm fires unexpectedly, the Rules Engine rule might have a condition that is too sensitive or a sensor that is reporting unexpected data.

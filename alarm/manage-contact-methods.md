@@ -1,67 +1,33 @@
 # Manage Contact Methods
 
-When Chirp detects something that needs your attention, it sends a notification to the contact methods you have set up. Right now, that means email — and you can add addresses for everyone in your household who should be in the loop.
+When Chirp fires an alarm, notifications go to the contact methods you have set up. The **Settings** tab on the Alarm page is where you manage these contacts — add new ones, verify them, and remove ones you no longer need.
 
-This page covers adding, verifying, and removing email contacts, as well as enabling or disabling delivery.
+## Email
 
-## Where to Find Contact Settings
+Email is the baseline notification channel — it is always available.
 
-Open **Notifications** from the sidebar and switch to the **Settings** tab at `/notifications/settings`.
+### Adding a contact
 
-## Email — Your Primary Contact Method
+Click the add button to enter a new email address. Chirp sends a verification email immediately. The contact appears in your list with an unverified indicator until the recipient clicks the verification link.
 
-The **EMAIL NOTIFICATIONS** section manages your email contacts and controls whether email delivery is active.
+### Verification
 
-### How Contacts Are Organized
+Each email address must be verified before it receives alarm notifications. Unverified contacts show a warning indicator. If a verification email was not received, you can resend it.
 
-Your first email address is your **primary contact**. It appears as the default destination — shown as *"Send e-mail to [address]"* — and does not have the same edit and remove controls as additional contacts.
+### Removing a contact
 
-Additional contacts (up to **4 total**) appear below the primary and each has its own edit and remove actions.
+Click the remove button next to a contact to delete it. A confirmation dialog appears before the contact is removed. Your primary email contact (the first one in the list) cannot be removed.
 
-### Adding an Email Address
+Contacts cannot be edited after creation. To change an email address, remove the old one and add the new one.
 
-Click **Add e-mail address** (or **Add one more e-mail address** if you already have contacts) to add a new address.
+## SMS
 
-After adding an address, Chirp shows an **"E-mail verification required"** warning explaining that a verification link was sent. The person who owns the address needs to click the link in that email to confirm.
+SMS notifications are available when enabled for your account. When available, the SMS section appears in the Settings tab with the same add, verify, and remove workflow as email.
 
-If the verification email does not arrive, click the **Resend link** action in the warning to send it again.
+## Push notifications
 
-**Common situation:** You add your partner's email while setting up an alert. The address appears in your contacts immediately, but it will not actually receive notifications until your partner clicks the verification link. A quick text message reminding them to check their inbox can save some confusion.
+Push notifications are available when enabled for your account. When available, a push notification section appears at the top of the Settings tab with setup instructions.
 
-### Removing an Email Address
+## How contacts connect to alarms
 
-Click the remove action next to a secondary contact. Chirp asks to confirm:
-
-> *"Remove e-mail address"*
-> *"Are you sure you want to remove [address]? This e-mail address will no longer receive notifications."*
-
-Click **Yes, remove** to confirm, or **No, cancel** to keep it.
-
-The primary contact does not have a remove button — only additional contacts can be removed.
-
-### Turning Email On or Off
-
-The email section has an **On/Off toggle** at the top. When you turn email off, a confirmation asks:
-
-> *"Are you sure you want to turn off e-mail?"*
-> *"You will not receive any e-mail."*
-
-Click **Yes, turn off** to confirm, or **No, cancel** to keep it active.
-
-Turning off email stops **all** email notifications from **all** alert rules — not just one rule. This is a global switch. If you want to stop notifications from a specific rule, it is better to disable that individual rule from the Rules tab.
-
-## SMS — Coming Soon
-
-{% hint style="info" %}
-**Text message alerts are not available yet.** The SMS section shows a **"Coming soon..."** badge. When this feature becomes available, you will be able to add phone numbers and receive text alerts alongside email.
-{% endhint %}
-
-## Selecting Contacts When Creating Alert Rules
-
-The contacts you manage here become available when creating or editing alert rules. For the full recipient selection flow, see [Set Up a Home Alert](set-up-a-home-alert.md).
-
-## Tips
-
-- **Complete verification promptly.** An unverified address shows a warning in the Settings tab with a **Resend link** action. If a family member's address is not verified, notifications will not reach them as expected.
-- **Use separate addresses for different household members.** Rather than sending every alert to one shared family email, give each person their own contact. Then you can choose who gets notified for what — maybe water leak alerts go to everyone, but garden moisture alerts only go to the person who tends the plants.
-- **Review contacts when household members change.** If a roommate moves out or a family member changes their email, update the contacts here so alerts keep reaching the right people.
+The contacts you set up here are the people available in the **Choose recipients** dropdown when you configure [escalation steps](escalation-chains.md) in an alarm definition. Each escalation step can select different recipients and different channels, so you can route Critical alarms to one set of contacts and Low-priority alarms to another.

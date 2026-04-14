@@ -26,6 +26,8 @@
   * [Compatible Gateways](gateways/compatible-gateways.md)
 * [Alarm](alarm/README.md)
   * [Set Up a Home Alert](alarm/set-up-a-home-alert.md)
+  * [Escalation Chains](alarm/escalation-chains.md)
+  * [Notification Severity](alarm/notification-severity.md)
   * [Check and Clear Alerts](alarm/check-and-clear-alerts.md)
   * [Manage Contact Methods](alarm/manage-contact-methods.md)
 * [Rules engine](rules-engine/README.md)
