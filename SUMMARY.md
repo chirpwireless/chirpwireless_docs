@@ -66,5 +66,8 @@
 * [Account](account/README.md)
   * [Subscription](account/subscription.md)
   * [Household Members](account/users-and-permissions.md)
+  * [Inviting Members](account/inviting-members.md)
+  * [Accepting Invitations](account/accepting-invitations.md)
+  * [Managing Access](account/managing-access.md)
   * [Home Settings](account/organization-settings.md)
   * [Switching Homes](account/switching-organizations.md)

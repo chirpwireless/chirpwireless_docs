@@ -19,6 +19,6 @@ Click any home in the list. Chirp instantly loads that home's context -- all das
 
 ## Joining Another Home
 
-You become a member of a new home by accepting an invitation from that home's owner. Once accepted, the home appears in your **My organizations** list and you can switch to it at any time.
+You become a member of a new home by accepting an invitation from someone in that home. Once accepted, the home appears in your **My organizations** list and you can switch to it at any time.
 
 If you only belong to one home, the list shows a single entry.

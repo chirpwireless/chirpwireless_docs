@@ -12,6 +12,9 @@ Click your name at the bottom-left to open the menu. From there you can:
 ## In this section
 
 - [Subscription](subscription.md) — Plans, billing, and payment management
-- [Household Members](users-and-permissions.md) — Invite people and control access
-- [Home Settings](organization-settings.md) — Rename and ownership transfer
+- [Household Members](users-and-permissions.md) — How access works in your home
+- [Inviting Members](inviting-members.md) — Add someone to your home
+- [Accepting Invitations](accepting-invitations.md) — What happens when you click the invite link
+- [Managing Access](managing-access.md) — Change permissions or remove someone
+- [Home Settings](organization-settings.md) — Rename your home or hand off ownership
 - [Switching Homes](switching-organizations.md) — Move between multiple homes
