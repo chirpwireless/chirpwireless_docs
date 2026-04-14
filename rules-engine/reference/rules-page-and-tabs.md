@@ -70,4 +70,4 @@ Automations you delete from the Rules tab appear here. Each row shows:
 | **Description** | The automation description |
 | **Deleted time** | The date and time it was deleted |
 
-The only action available is **Restore rule**, which moves the automation back to the Rules tab. Restored automations come back unlocked and undeployed — you need to rebuild and redeploy after restoring.
+The only action available is **Restore rule**, which moves the automation back to the Rules tab. Restored automations come back unlocked.

@@ -8,13 +8,13 @@ When you click **Build**, Chirp validates your entire automation before creating
 
 Build errors appear after you click Build. Each error describes the problem the validator found. Fix the issues and build again.
 
-### Missing or incomplete Start Event
+### Missing Start Event
 
 **What it looks like:** `expected exactly 1 message startEvent, got 0`
 
-**What it means:** Every automation needs exactly one Start Event with a device and sensor selected. The build found either no Start Event or a Start Event without a sensor configured.
+**What it means:** The build did not find a valid Start Event in the automation. Every automation needs exactly one Start Event on the canvas.
 
-**How to fix:** Click the Start Event on your canvas. In the properties sidebar, select a **Device** and then a **Sensor** under Event filter. Save the node and build again.
+**How to fix:** Make sure a Start Event is present on the canvas. If you accidentally deleted it, drag a new one from the palette.
 
 ### No End Event
 
@@ -23,14 +23,6 @@ Build errors appear after you click Build. Each error describes the problem the 
 **What it means:** Your automation has no End Event. Every path must eventually reach an End Event so the automation knows when a run is finished.
 
 **How to fix:** Drag an End Event from the palette onto the canvas. Connect the last node in each path to an End Event.
-
-### Dead-end node
-
-**What it looks like:** `node "Task_1" has 0 outgoing flows` or a build error pointing to a node with no connections leading away from it.
-
-**What it means:** A node other than an End Event has no outgoing connection. The automation would get stuck at this point.
-
-**How to fix:** Draw a connection from the dead-end node to the next step in your automation — another task, a gateway, or an End Event.
 
 ### Gateway flow without a condition
 
@@ -128,6 +120,7 @@ This is a safety measure — it protects your home from an automation that might
 - **Removed sensor** — The Start Event references a sensor that has been deleted from your device.
 - **Enrichment sensor offline** — An Enrichment node tries to fetch data from a sensor that is no longer reporting, and no Boundary Error Event is attached to handle the failure.
 - **CEL runtime error** — An expression fails at runtime due to unexpected data shapes (e.g., trying to access a field that does not exist without a `has()` check).
+- **Dead-end node** — A node other than an End Event has no outgoing connection. The automation reaches that point at runtime and has nowhere to go, causing a repeated error.
 
 ### Recovery steps
 
