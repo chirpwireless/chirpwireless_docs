@@ -17,7 +17,7 @@ LoRaWAN sensors use unlicensed radio frequencies that vary by country. When you 
 | Asia (varies by country) | AS923 | 920–928 MHz |
 | South Korea | KR920 | 920–923 MHz |
 | India | IN865 | 865–867 MHz |
-| Russia | RU864 | 864–870 MHz |
+| Russia | RU864 / EU868 | 864–870 MHz |
 | China | CN470 | 470–510 MHz |
 | Global (2.4 GHz) | ISM2400 | 2.4 GHz |
 
