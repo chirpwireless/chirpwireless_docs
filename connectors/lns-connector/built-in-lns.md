@@ -19,7 +19,7 @@ All of this happens in the background, every time any of your sensors sends data
 
 - **No extra software to install** — the network server is part of Chirp, not a separate system
 - **No configuration** — adding the LNS connector activates the network server for your home automatically
-- **No maintenance** — updates, scaling, and reliability are all handled for you
+- **No maintenance** — the network server is managed as part of Chirp — there's nothing for you to maintain
 - **Instant data flow** — once a sensor connects to your gateway, its readings appear in Chirp within moments
 
 You can focus on choosing sensors, placing them around your home, and building the dashboards and automations you care about — without worrying about network infrastructure.
