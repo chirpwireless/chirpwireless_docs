@@ -1,5 +1,7 @@
 # LoRaWAN Frequencies
 
+> **Reference only.** This page is a general guide. The frequency data may not be 100% accurate or up to date. Always check with your local regulations before deploying devices. Use at your own risk.
+
 LoRaWAN sensors use unlicensed radio frequencies that vary by country. When you set up a sensor in Chirp, you select the correct frequency band for your region. This page helps you find out which band to use.
 
 ## The Short Version
@@ -102,7 +104,7 @@ This frequency information is provided for reference. While we aim for accuracy,
 | Cuba (CU) | EU433 AS923-3 |
 | Curacao (CW) | EU433 AS923-1 |
 | Cyprus (CY) | EU433 EU863-870 |
-| Czechia (CZ) | EU433 |
+| Czechia (CZ) | EU433 EU863-870 |
 
 ### D
 
@@ -181,7 +183,7 @@ This frequency information is provided for reference. While we aim for accuracy,
 | Iraq (IQ) | |
 | Ireland (IE) | EU433 EU863-870 AS923-3 |
 | Isle of Man (IM) | EU433 EU863-870 AS923-3 |
-| Israel (IL) | |
+| Israel (IL) | AS923-4 |
 | Italy (IT) | EU433 EU863-870 |
 
 ### J
@@ -256,7 +258,7 @@ This frequency information is provided for reference. While we aim for accuracy,
 | Nepal (NP) | |
 | Netherlands (NL) | EU433 EU863-870 |
 | New Caledonia (NC) | EU433 EU863-870 |
-| New Zealand (NZ) | EU433 EU865-867 AU915-928 AS923-1 |
+| New Zealand (NZ) | AU915-928 AS923-1 |
 | Nicaragua (NI) | EU433 EU863-870 |
 | Niger (NE) | IN865-867 |
 | Nigeria (NG) | EU433 EU863-870 |
