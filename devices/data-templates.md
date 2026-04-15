@@ -51,15 +51,15 @@ Metrics (also called sensor templates) combine a normalized key, a unit, a value
 1. A new row appears at the top of the table.
 2. **Normalized key** — Select an existing key or create a new one right from the dropdown.
 3. **Unit of measurement** — Pick from your units list (e.g., °C, %, lux).
-4. **Type** — Choose the value format:
-   - **Integer** — Whole numbers (e.g., battery percentage: 85)
-   - **Float** — Decimal numbers (e.g., temperature: 22.5)
-   - **String** — Text values (e.g., status: "open")
-   - **Boolean** — True/false (e.g., motion detected: true)
-5. **Data type** — Choose what kind of data this is:
-   - **Telemetry** — Regular sensor readings (temperature, humidity, etc.)
-   - **Device Metadata** — Information the sensor reports about itself
-   - **User Metadata** — Notes or tags you add manually
+4. **Type** — This tells Chirp what kind of number or value to expect. Pick the one that matches your sensor's output:
+   - **Integer** — Whole numbers with no decimal point. Use for readings that are always whole numbers. Examples: battery percentage (85), signal strength (-120), count of events (42).
+   - **Float** — Numbers with a decimal point. Use for readings that need fractional precision. Examples: temperature (22.5), humidity (67.3), voltage (3.28). **This is the most common choice for sensor readings.**
+   - **String** — Text. Use for readings reported as words or codes. Examples: door status ("open" / "closed"), firmware version ("1.2.3"), device mode ("standby").
+   - **Boolean** — True or false. Use for simple yes/no or on/off states. Examples: motion detected (true/false), alarm active (true/false), window open (true/false).
+5. **Data type** — This tells Chirp how to treat the measurement:
+   - **Telemetry** — Regular sensor readings that change over time. This is the most common type — temperature, humidity, battery level, soil moisture, air quality, and similar readings all use Telemetry.
+   - **Device Metadata** — Information the sensor reports about itself that doesn't change often. Examples: firmware version, hardware revision, signal strength. You won't need this for most home sensors.
+   - **User Metadata** — Properties you add yourself, not sent by the sensor. Examples: "Installed: March 2025", "Battery type: CR2032", "Location: back garden". Useful for keeping notes attached to a sensor.
 6. Click save on the row.
 
 **Filtering:** Use the dropdown filters above the table to narrow the list by type or data type.

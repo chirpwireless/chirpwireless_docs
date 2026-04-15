@@ -28,8 +28,8 @@ This tab shows how the sensor connects to Chirp and lets you adjust its profile.
 - **Connector type** — Shows which connection this sensor uses (LNS). You can switch to a different connection if needed.
 - **Device EUI** — The unique identifier that links this profile to the physical sensor. This field is locked once set. If you need to change it (for example, if you're replacing a broken sensor with a new one), click the **detach** button (X icon) to unbind the physical sensor first. The profile and all its history are preserved.
 - **Device profile** — Switch between template-based and manual configuration. If you originally set up the sensor manually, you can switch to a template later (or vice versa).
-- **Data sending interval** — Set how often you expect the sensor to report. Chirp uses this to determine whether the sensor is online or offline in your sensor lists.
-- **Code functions** — An advanced field for custom decoding logic. If your sensor uses a standard profile template, you can safely ignore this. It's there for cases where a sensor needs custom code to translate its raw data.
+- **Data sending interval** — Set how often you expect the sensor to report. If no message arrives within this interval, the sensor shows as offline. Pick a number and a unit (minute, hour, day, week, or month).
+- **Code functions** — The sensor's payload codec: the logic that decodes raw data into the named fields you see in the Metrics tab. When a device profile template is selected, this field is pre-filled with the template's codec. If your readings look wrong — missing fields, incorrect values — you can edit the code directly. For the full explanation, see [Adding Sensors](adding-sensors.md).
 
 **For tracker devices:**
 

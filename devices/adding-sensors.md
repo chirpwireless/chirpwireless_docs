@@ -35,10 +35,36 @@ Click the **Connection** tab to link your sensor to a physical device.
 **For LoRaWAN sensors (LNS connection):**
 
 1. Select your **LNS** connection from the **Connector type** dropdown (if you only have one, it may be pre-selected).
-2. Enter the **Device EUI** — the unique identifier from your sensor's label. Once entered and saved, this field locks to prevent accidental changes.
+2. Enter the **Device EUI** — the unique identifier from your sensor's label (a string of hexadecimal characters, usually printed on the sensor or its packaging). Once entered and saved, this field locks to prevent accidental changes.
 3. Choose how to set up the sensor profile:
-   - **Use device profile templates** — Check this box to select from a library of pre-configured sensor profiles. Pick the **Brand**, **Model**, and **Profile** (frequency band) from the dropdowns. This is the easiest approach if your sensor brand is in the library.
-   - **Manual setup** — Leave the checkbox unchecked to enter details yourself: **Class** (A for battery sensors, C for mains-powered), **Brand**, **Model**, **Band** (frequency), and **AppKey** (the encryption key from your sensor's documentation).
+
+   **Option A: Use device profile templates** — Check the **Use device profile templates** box to select from a library of known sensors. This is the easiest approach if your sensor brand is in the library.
+
+   - Pick the **Brand**, **Model**, and **Profile** from the dropdowns. These selections identify which template to load.
+   - Once all three are selected, Chirp fetches the matching template and fills in the sensor's settings automatically — including the LoRaWAN class, frequency band, and a **codec** (the decoding logic that translates the sensor's raw data into readable fields).
+
+   Templates are provided as convenience helpers. If a template's codec doesn't produce the correct readings for your sensor — for example, if values look wrong or fields are missing — you can edit the **Code functions** field directly (see below).
+
+   **Option B: Manual setup** — Leave the checkbox unchecked to enter details yourself:
+
+   - **Class** — Choose the LoRaWAN device class:
+     - **Class A** — The sensor sleeps between transmissions and only briefly wakes to listen for responses. This is extremely power-efficient — most battery-powered home sensors use Class A and can run for years on a single battery.
+     - **Class C** — The sensor keeps its receiver on continuously, so it can receive commands from Chirp at any time. Because the radio is always listening, Class C sensors use significantly more power and are typically plugged into mains power. Choose Class C for devices that need to respond to commands instantly, such as smart switches or displays.
+   - **Brand** and **Model** — Type the sensor manufacturer and model name.
+   - **Band** — Select the LoRaWAN frequency band for your region. Sensors purchased from a local supplier are almost always on the correct band already. Available options: EU868 (Europe), US915 (USA), AU915 (Australia), AS923 (Asia), KR920 (South Korea), IN865 (India), RU864 (Russia), CN470 (China), CN779 (China), EU433 (Europe 433 MHz), ISM2400 (2.4 GHz global). For a complete list by country, see [LoRaWAN Frequencies](../connectors/lns-connector/lorawan-frequencies.md).
+   - **AppKey** — The encryption key for your sensor, typically found on the sensor's packaging or in its documentation.
+
+#### Code functions (codec)
+
+The **Code functions** field contains the logic that decodes your sensor's raw data into readable fields. Think of it as a translator — your sensor sends its readings as compact binary data, and the codec turns that into named values like `temperature`, `humidity`, or `battery`.
+
+When you pick a device profile template, this field is filled in automatically. If you set up manually, it starts empty — you may need to paste a codec from your sensor's manufacturer documentation.
+
+If the readings in the Metrics tab don't look right after connecting your sensor — values seem wrong, some fields are missing, or names don't match what you expected — you can open this field and edit the code. The field is a text editor with a code-friendly monospace font.
+
+#### Data sending interval
+
+Set how often you expect your sensor to report. Chirp uses this to decide whether a sensor is online or offline — if no message arrives within the interval, the sensor shows as offline in your sensor list. Pick a number and a unit: **minute**, **hour**, **day**, **week**, or **month**.
 
 **For vehicle trackers (Tracker connection):**
 
@@ -57,11 +83,15 @@ Once your sensor is connected and transmitting, the Metrics tab shows a live vie
 
 #### Map raw fields to your data templates
 
-To turn raw data into something useful:
+This is where cryptic sensor output becomes something you can actually read. When you map a raw field like `t` to a data template called "Temperature" with the unit °C, Chirp starts displaying that reading as "Temperature (°C)" everywhere — in dashboards, automations, alerts, and history charts. You're giving each raw field a proper name, unit, and format.
 
-1. **Add a metric** — Tap **Add metric** and pick a data template from your library (e.g., "Temperature", °C, Float). If you need a template that doesn't exist yet, create one in [Data Templates](data-templates.md).
-2. **Choose the matching field** — In the dropdown next to that metric, pick the raw field name that carries this measurement (e.g., pick `t` if your sensor sends temperature as `t`).
+To set up a mapping:
+
+1. **Add a metric** — Click **Add key** and pick a data template from the dropdown (e.g., "Temperature", °C, Float). The Unit, Type, and Data type columns fill in automatically from the template. If you need a template that doesn't exist yet, create one in [Data Templates](data-templates.md).
+2. **Choose the matching field** — In the **Connector key** dropdown, pick the raw field name that carries this measurement (e.g., pick `t` if your sensor sends temperature as `t`).
 3. **Save** — The data starts flowing immediately through your dashboards, automations, alerts, and history.
+
+If the Connector key is not filled in, the data for that metric will be ignored.
 
 Add as many metrics as your sensor reports — you can map them all in one go.
 

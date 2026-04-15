@@ -11,7 +11,7 @@ This is the most common connection for a smart home — it links Chirp's built-i
 3. In the dialog, select **LNS** from the **Connector type** dropdown.
 4. Click **Add**.
 
-That's it. The connection is created instantly. Chirp's built-in LoRaWAN network handles all the technical setup behind the scenes.
+That's it. The connection is created instantly. Chirp's built-in LoRaWAN network handles all the technical setup behind the scenes. To learn more about LoRaWAN, frequency bands, and the built-in network server, see the [LNS Connector](lns-connector/README.md) reference section.
 
 ### Inside the LNS connection
 

@@ -30,3 +30,5 @@ Once you have connections, the page shows a table with:
 ## What's next
 
 Ready to set up your first connection? Head to [Setting Up a Connection](setting-up-a-connection.md) for a step-by-step walkthrough.
+
+Want to learn more about LoRaWAN — the wireless technology behind your sensors? See the [LNS Connector](lns-connector/README.md) section for an introduction to the protocol, frequency bands by country, and how Chirp's built-in network server works.
