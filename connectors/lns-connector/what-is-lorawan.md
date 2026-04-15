@@ -6,13 +6,17 @@ Think of LoRaWAN as a wireless network built for sensors, not for streaming vide
 
 ## Why LoRaWAN Works Well for Smart Homes
 
-### Long Range
+### Reaches Every Corner of Your Property
 
-A single LoRaWAN gateway can cover your entire property — house, garden, garage, shed — and often well beyond. In open areas, the signal can travel several kilometers. In a typical home environment, you can expect reliable coverage throughout a house and its surrounding grounds without needing multiple gateways.
+LoRaWAN uses sub-gigahertz radio frequencies that penetrate walls, floors, and concrete far better than Wi-Fi or Bluetooth. A sensor in the basement behind thick concrete walls, in the attic above insulation, or buried in a utility closet can still reach your gateway reliably. This is what makes LoRaWAN uniquely practical for homes — it reaches the places where Wi-Fi drops out.
+
+A single gateway covers your entire property and often well beyond. In open areas the signal can travel several kilometers, so a shed at the back of the garden, a detached garage, or a greenhouse across the yard are all within easy reach. You don't need electricity or Wi-Fi in those spaces — just place a battery-powered LoRaWAN sensor and it connects on its own. Most home sensors are peel-and-stick — no wiring, no installation tools.
+
+For the best coverage, place your gateway near a window or on the roof if possible. A window-mounted or roof-mounted gateway has a clear line to the surrounding property, giving you the largest radius of reliable reception around your home.
 
 ### Years of Battery Life
 
-LoRaWAN sensors are designed to run for years on a single battery. A temperature sensor in your garden or a leak detector under the sink can operate for two to five years without attention. You don't need to wire them into mains power or change batteries every few months.
+LoRaWAN sensors are designed to run for years on a single battery. A temperature sensor in your garden or a leak detector under the sink can operate for two to five years without attention. You don't need to wire them into mains power or change batteries every few months. This is why LoRaWAN is perfect for places with no power outlet — the sensor is the only thing you need.
 
 ### Secure Communication
 
