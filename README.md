@@ -32,7 +32,7 @@ And here's something you won't find in most smart home systems: every change you
 
 Chirp delivers alerts through the channels that work for you — email, text messages, or push notifications through the **Chirp Alerts** mobile app ([iPhone](https://apps.apple.com/us/app/chirp-alerts/id6756504956) / [Android](https://play.google.com/store/apps/details?id=io.chirpwireless.alarm)).
 
-The mobile app takes alerting further: critical alerts trigger a full-screen alarm with looping sound and vibration, designed to get your attention even when your phone is locked or in silent mode. The alarm keeps going until you silence or acknowledge it. Informational alerts, on the other hand, arrive quietly — a notification in the drop-down shade that you check when convenient. For full details, see the [Chirp Alerts App](alarm/chirp-alerts-app/) section.
+The mobile app takes alerting further: critical alerts trigger a full-screen alarm with looping sound and vibration, designed to get your attention even when your phone is locked or in silent mode. The alarm keeps going until you silence or acknowledge it. Informational alerts, on the other hand, arrive quietly — you see them when you check your notifications. For full details, see the [Chirp Alerts App](alarm/chirp-alerts-app/) section.
 
 Set up quiet hours so non-critical notifications don't disturb you at night. Configure escalation chains so that if one person doesn't respond, the alert goes to the next. And if a notification fails to deliver for any reason, the system automatically retries.
 

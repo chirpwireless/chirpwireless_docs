@@ -14,7 +14,7 @@ Give your alarm a clear name that describes what it watches for. This name appea
 
 ## Severity
 
-Choose how urgent this alarm is. The severity level controls how often notifications repeat (based on your [Notification Severity](notification-severity.md) settings), how the alarm appears in the Inbox, and how push notifications behave on the [Chirp Alerts app](chirp-alerts-app/alert-behavior.md) — critical alerts trigger a full-screen alarm with sound, while informational alerts arrive quietly.
+Choose how urgent this alarm is. The severity level controls how often notifications repeat (based on your [Notification Severity](notification-severity.md) settings), how the alarm appears in the Inbox, and how push notifications behave on the [Chirp Alerts app](chirp-alerts-app/alert-behavior.md).
 
 | Field | Detail |
 |---|---|

@@ -10,7 +10,7 @@ The Alarm page has three tabs:
 
 - **Inbox** — Every alarm event that has fired, with its current status. Filter by severity or status, search by title, resolve alarms, or jump to the originating rule.
 - **Alarm definitions** — Your alarm configurations. Each definition sets the severity, escalation chain, notification schedule, suppression window, and message for a specific type of alert. Click **Add alarm rule** to create a new one.
-- **Settings** — Your contact methods. Add or verify email and SMS contacts, enable or disable delivery per channel, and manage push notification setup when enabled for your account.
+- **Settings** — Your contact methods. Add or verify email and SMS contacts, enable or disable delivery per channel, and manage push notification delivery through the [Chirp Alerts app](chirp-alerts-app/).
 
 A **Notification Severity** button in the page header (visible on all tabs) opens a separate modal for controlling how often each severity level repeats.
 

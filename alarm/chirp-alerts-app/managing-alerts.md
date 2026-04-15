@@ -25,7 +25,7 @@ Swipe left on any alert to delete it. A confirmation dialog appears before the a
 
 ## Rules
 
-The Rules tab shows your notification rules — these are the alarm definitions you created on the Chirp web platform that have push as a delivery channel.
+The Rules tab shows notification rules from the Chirp web platform.
 
 Each rule shows its name and a **toggle** to enable or disable it. If a rule is generating too many notifications, you can turn it off directly from your phone without opening the web platform.
 

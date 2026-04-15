@@ -2,7 +2,7 @@
 
 The Chirp Alerts app turns your phone into a dedicated alarm receiver for your home. When a sensor triggers an alert, the app delivers it directly to your phone — and for critical alerts, it keeps ringing with an alarm sound and vibration until you silence or acknowledge it.
 
-This goes beyond what email or text messages can do. A critical alert from the Chirp Alerts app behaves like a phone alarm — it demands your attention. An informational alert, on the other hand, arrives quietly without interrupting what you're doing.
+The app adds alarm-style mobile delivery on top of email and SMS. A critical alert behaves like a phone alarm — it demands your attention. A quiet alert, on the other hand, arrives without interrupting what you're doing.
 
 ## Download
 
@@ -13,11 +13,7 @@ The app uses the same Chirp account and home membership as the web platform. If 
 
 ## How It Works
 
-The severity you assign to an alarm definition on the web platform determines how the alert appears on your phone:
-
-- **Critical alerts** trigger a full-screen alarm with looping sound and vibration — designed to get your attention even when your phone is locked or in silent mode
-- **Important alerts** show as a prominent notification on your phone — visible but without the alarm loop
-- **Information alerts** arrive quietly, without sound or vibration — they show up when you check your notifications
+The severity you assign to an alarm definition on the web platform determines how the alert appears on your phone. The app delivers alerts at three intensity levels — see [Alert Behavior](alert-behavior.md) for the full details on what each level does.
 
 ### Recommended Setup Examples
 

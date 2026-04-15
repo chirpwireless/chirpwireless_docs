@@ -38,7 +38,7 @@ Push notifications are delivered through the **Chirp Alerts** mobile app, availa
 
 1. Install the Chirp Alerts app on your phone and sign in with your Chirp credentials.
 2. In the Chirp web platform, go to **Alarm** → **Settings** tab. The **Push** section shows download links and an **On/Off** toggle.
-3. Once the app detects your device, the toggle becomes usable. Turn it **On** to enable push delivery.
+3. Once the web platform detects your device, the toggle becomes usable. Turn it **On** to enable push delivery.
 
 ### Enabling and disabling
 
