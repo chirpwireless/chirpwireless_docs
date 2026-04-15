@@ -4,11 +4,13 @@ Chirp is a home automation platform that connects sensors from different manufac
 
 Whether you're monitoring temperature in a baby's room, watching for water leaks in the basement, tracking soil moisture in the garden, or making sure the garage door closed after you left — Chirp brings it all together. Sensors from different brands, using different protocols, reporting data in different formats, all working as one.
 
+And Chirp doesn't stop at your front door. Connect a GPS or OBD-II tracker to your car or motorcycle and get engine diagnostics, error codes, real-time location, and theft recovery — all in the same platform, the same dashboards, the same alerts. Pick up a compatible tracker (for example, from [Kilo Electronics — Teltonika trackers](https://kiloelectronics.com/en/product-brand/teltonika/)), plug it in, and your vehicle shows up alongside your home sensors within minutes.
+
 ## Why Chirp
 
 ### Connect any manufacturer, one platform
 
-Most smart home systems lock you into a single brand. Chirp doesn't. You can connect LoRaWAN sensors and vehicle trackers from any manufacturer, with MQTT device connectivity coming soon — opening the door to Zigbee devices bridged through MQTT and a virtually unlimited range of smart home hardware.
+Chirp doesn't lock you into a single brand. You can connect LoRaWAN sensors and vehicle trackers from any manufacturer, with MQTT device connectivity coming soon — opening the door to Zigbee devices bridged through MQTT and a virtually unlimited range of smart home hardware. The vehicle tracker library alone covers over 2,000 preconfigured models — OBD-II dongles that read engine codes, fuel level, and battery voltage, as well as standalone GPS trackers for location and route history.
 
 Different manufacturers report data in completely different formats — one says `temp`, another says `temperature_celsius`, a third just sends a number with no label. Chirp normalizes all of it. Every sensor in your home speaks the same language, so your dashboards, automation rules, and alerts work the same way regardless of which brand made the hardware.
 
@@ -20,7 +22,7 @@ When you connect a sensor, it doesn't just show you a number. Every device becom
 
 ### Automate with confidence
 
-Set rules that make your home respond to what's happening. If the basement humidity goes above 70% for more than an hour, get a notification. If the front door opens after midnight, send a text to everyone in the household. If the garden soil gets too dry, know about it before your plants do.
+Set rules that make your home — and your vehicles — respond to what's happening. If the basement humidity goes above 70% for more than an hour, get a notification. If the front door opens after midnight, send a text to everyone in the household. If the garden soil gets too dry, know about it before your plants do. If your car's engine throws a warning code, get an alert on your phone immediately. If your motorcycle moves outside a geofence at 3 AM, trigger a critical alarm.
 
 Rules are built visually — you pick a sensor, set a condition, choose what should happen. Behind the scenes, Chirp uses [CEL (Common Expression Language)](https://cel.dev) for conditions, giving you precise control when you want it. You can combine readings from multiple sensors — regardless of manufacturer — in a single rule, schedule rules to run only on certain days, and set conditions that need to persist for a minimum time before triggering.
 
@@ -38,7 +40,7 @@ Set up quiet hours so non-critical notifications don't disturb you at night. Con
 
 ### See your home at a glance
 
-Build dashboards for any room, any purpose. A "Kitchen" dashboard showing temperature and air quality. A "Security" dashboard with every door and window sensor. A "Garden" view tracking soil moisture and rainfall. Sensors from different manufacturers show up side by side — because Chirp normalizes their data into a shared model.
+Build dashboards for any room, any purpose — or any vehicle. A "Kitchen" dashboard showing temperature and air quality. A "Security" dashboard with every door and window sensor. A "Garden" view tracking soil moisture and rainfall. A "My Car" dashboard with live location, engine status, and trip history. Sensors and trackers from different manufacturers show up side by side — because Chirp normalizes their data into a shared model.
 
 Each dashboard is made of widgets you customize. Pick the display type — charts for trends, numbers for current readings, on/off indicators for states. Then fine-tune: set value boundaries so you can see at a glance when a reading is in or out of range, choose your preferred units, and toggle graph visibility. Each widget adapts to the way you want to see your data.
 
