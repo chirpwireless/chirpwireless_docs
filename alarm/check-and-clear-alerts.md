@@ -56,3 +56,4 @@ Each alarm has a link that navigates to the automation in the Rules Engine that 
 - **Resolve alarms when the issue is handled.** An unresolved alarm continues to escalate and re-send notifications. Resolving it is how you tell Chirp "I've seen this and it's under control."
 - **Use severity filters during busy periods.** If you have many alarms, filter to Critical and High first to prioritize what needs immediate action.
 - **Check the originating rule if an alarm seems wrong.** If an alarm fires unexpectedly, the Rules Engine rule might have a condition that is too sensitive or a sensor that is reporting unexpected data.
+- **Resolve alerts from your phone.** If you have the [Chirp Alerts app](chirp-alerts-app/managing-alerts.md) installed, you can resolve and manage alerts directly from your phone without opening the web platform.

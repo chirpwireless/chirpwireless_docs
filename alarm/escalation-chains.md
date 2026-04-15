@@ -21,7 +21,7 @@ The first step is always present and cannot be removed. Its delay is set to **Im
 For each step, you configure:
 
 - **Notify** — Select one or more household members from the **Choose recipients** dropdown.
-- **Via** — Select the delivery channels. Email and SMS are selectable in every step. Push notifications appear when enabled for your account (see [Manage Contact Methods](manage-contact-methods.md)).
+- **Via** — Select the delivery channels. Email and SMS are selectable in every step. Push notifications are delivered through the [Chirp Alerts app](chirp-alerts-app/) and appear when enabled for your account (see [Manage Contact Methods](manage-contact-methods.md)).
 
 ### Adding more steps
 

@@ -30,9 +30,25 @@ SMS is present in the Alarm settings and selectable as a delivery channel in [es
 
 Turning SMS **Off** stops all alarm notifications via SMS. The same confirmation dialog appears before disabling.
 
-## Push notifications
+## Push Notifications
 
-Push notifications are available when enabled for your account. When available, a push notification section appears at the top of the Settings tab with setup instructions.
+Push notifications are delivered through the **Chirp Alerts** mobile app, available for [iPhone](https://apps.apple.com/us/app/chirp-alerts/id6756504956) and [Android](https://play.google.com/store/apps/details?id=io.chirpwireless.alarm).
+
+### Setup
+
+1. Install the Chirp Alerts app on your phone and sign in with your Chirp credentials.
+2. In the Chirp web platform, go to **Alarm** → **Settings** tab. The **Push** section shows download links and an **On/Off** toggle.
+3. Once the app detects your device, the toggle becomes usable. Turn it **On** to enable push delivery.
+
+### Enabling and disabling
+
+The **On/Off** toggle in the Push section controls whether push notifications are delivered. Turning it **Off** stops ALL alarm notifications via push. Turning it back **On** resumes delivery. This works the same way as the Email and SMS toggles.
+
+### Using push in escalation steps
+
+Once push is enabled, it appears as a selectable delivery channel when configuring [escalation steps](escalation-chains.md). You can route critical alarms through push alongside email and SMS, or use push as a standalone channel.
+
+For the full mobile experience — how alerts appear on your phone, the alarm screen, inbox, and rule management — see the [Chirp Alerts App](chirp-alerts-app/) section.
 
 ## How contacts and channels connect to alarms
 

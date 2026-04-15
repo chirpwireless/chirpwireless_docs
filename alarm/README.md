@@ -41,3 +41,4 @@ For full details, see [Escalation Chains](escalation-chains.md).
 - [Notification Severity](notification-severity.md) — Configure how often each severity level repeats.
 - [Check and Clear Alerts](check-and-clear-alerts.md) — Review what has happened, resolve alarms, and keep your inbox manageable.
 - [Manage Contact Methods](manage-contact-methods.md) — Add email addresses, verify them, and manage notification channels.
+- [Chirp Alerts App](chirp-alerts-app/) — Install the mobile app for push notifications. Critical alerts ring with an alarm sound and vibration until silenced or acknowledged.

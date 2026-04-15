@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Chirp — Smart Home, Simplified](README.md)
+* [Chirp — Home Automation Platform](README.md)
 * [First Steps](first-steps/README.md)
   * [Finding Your Way Around](first-steps/finding-your-way-around.md)
   * [Connect Your First Sensor](first-steps/connect-your-first-sensor.md)
@@ -34,6 +34,10 @@
   * [Notification Severity](alarm/notification-severity.md)
   * [Check and Clear Alerts](alarm/check-and-clear-alerts.md)
   * [Manage Contact Methods](alarm/manage-contact-methods.md)
+  * [Chirp Alerts App](alarm/chirp-alerts-app/README.md)
+    * [Getting Started](alarm/chirp-alerts-app/getting-started.md)
+    * [Alert Behavior](alarm/chirp-alerts-app/alert-behavior.md)
+    * [Managing Alerts](alarm/chirp-alerts-app/managing-alerts.md)
 * [Rules engine](rules-engine/README.md)
   * [Your First Automation](rules-engine/your-first-automation/README.md)
     * [Create an Automation](rules-engine/your-first-automation/create-an-automation.md)

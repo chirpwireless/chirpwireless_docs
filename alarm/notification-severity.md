@@ -34,3 +34,4 @@ When an alarm has a custom interval, it uses that setting instead of the global 
 - **Start with one-time for Info and Low.** These are awareness-level notifications — repeated reminders for background information can become noise.
 - **Use recurring intervals for Critical and High.** You want persistent reminders for emergencies and urgent issues until someone resolves them.
 - **Revisit your settings after the first week.** Once you see how your alarms behave in practice, adjust the intervals to match your household's response patterns.
+- **Severity also controls push behavior.** If you use the [Chirp Alerts app](chirp-alerts-app/alert-behavior.md), the severity you assign here determines whether an alert triggers a full-screen alarm on your phone (critical), a prominent notification (important), or a quiet notification (information).
