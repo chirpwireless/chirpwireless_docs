@@ -62,6 +62,10 @@ The interface is available in English, German, French, and Spanish. Switch betwe
 
 Chirp offers several plan tiers to fit every home — from a free tier to get started, up to plans with more devices, unlimited automation rules, and advanced features. You can view and manage your plan from the **Subscription** section in the user menu.
 
+## Access the Platform
+
+Open Chirp at [app.chirpwireless.io](https://app.chirpwireless.io).
+
 ## Let's get started
 
 Ready to connect your first sensor? Head to [First Steps](first-steps/) — we'll walk you through the interface and the standard LoRaWAN path to your first alert, while pointing out where other connection types follow a different setup order.
