@@ -12,7 +12,7 @@ You can tuck the menu away when you do not need it — hover over the Chirp logo
 
 - **Overview** — Your home screen. A snapshot of your sensors, gateways, favorite devices, and recent alarms. Think of it as the front page of your smart home.
 - **Dashboards** — Custom views you build for any room or purpose. Create a "Kitchen" dashboard, a "Garden" view, or a "Security" overview. Organize them in folders and fill them with the sensor data that matters to you.
-- **Connectors** — Define which protocols Chirp listens on. Current connector types: **LNS** (for LoRaWAN sensors) and **Tracker** (for vehicle trackers — OBD2, CAN bus, standalone GPS). MQTT is in preview and not yet available for setup. Click an LNS connection to see **LoRaWAN Gateways** and **Connected Devices** tabs. A Tracker connection shows the sensor list directly. Sensors are registered separately through the sensor dialog.
+- **Connectors** — Define which protocols Chirp listens on. Connector types: **LNS** (for LoRaWAN sensors), **Tracker** (for vehicle trackers — OBD2, CAN bus, standalone GPS), and **MQTT** (for Zigbee sensors via Zigbee2MQTT, DIY hardware, and other MQTT-capable devices). Click an LNS connection to see **LoRaWAN Gateways** and **Connected Devices** tabs. A Tracker connection shows the sensor list directly. Sensors are registered separately through the sensor dialog.
 - **Devices** — See all your registered sensors in one place. Browse and search. Click any sensor to view or edit its details.
 - **Gateways** — Your LoRaWAN gateways (must support Basics Station protocol for secure connectivity). See which ones are online, check their signal stats, add a new gateway, or update firmware.
 - **Alarm** — Your alert headquarters, with three tabs:

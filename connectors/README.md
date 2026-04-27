@@ -10,9 +10,9 @@ Most homes need just one connection: an **LNS connection** for LoRaWAN sensors. 
 |------|--------------|--------|
 | **LNS** | LoRaWAN sensors — temperature, humidity, door/window, motion, soil moisture, and thousands more | Available |
 | **Tracker** | Vehicle trackers — OBD2, CAN bus, and standalone GPS vehicle tracking devices (2,000+ preconfigured models) | Available |
-| **MQTT** | Direct MQTT sensor connections | Preview — not yet available for setup |
+| **MQTT** | Direct MQTT sensor connections — including Zigbee devices via Zigbee2MQTT, DIY sensors, and other MQTT-capable hardware | Available |
 
-Your home can have **one LNS connection** and **one Tracker connection**. Once both are set up, you're covered for the most common sensor types.
+Your home can have **one LNS connection**, **one Tracker connection**, and **one MQTT connection**. Each covers a different way sensors communicate.
 
 ## Where to find connections
 
@@ -32,3 +32,5 @@ Once you have connections, the page shows a table with:
 Ready to set up your first connection? Head to [Setting Up a Connection](setting-up-a-connection.md) for a step-by-step walkthrough.
 
 Want to learn more about LoRaWAN — the wireless technology behind your sensors? See the [LNS Connector](lns-connector/README.md) section for an introduction to the protocol, frequency bands by country, and how Chirp's built-in network server works.
+
+Want to connect Zigbee sensors, an ESP32 sensor, or any MQTT-capable device? See [MQTT Connector](mqtt-connector.md) for a complete setup guide.

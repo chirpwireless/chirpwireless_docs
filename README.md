@@ -10,7 +10,7 @@ And Chirp doesn't stop at your front door. Connect a GPS or OBD-II tracker to yo
 
 ### Connect any manufacturer, one platform
 
-Chirp doesn't lock you into a single brand. You can connect LoRaWAN sensors and vehicle trackers from any manufacturer, with MQTT device connectivity coming soon — opening the door to Zigbee devices bridged through MQTT and a virtually unlimited range of smart home hardware. The vehicle tracker library alone covers over 2,000 preconfigured models — OBD-II dongles that read engine codes, fuel level, and battery voltage, as well as standalone GPS trackers for location and route history.
+Chirp doesn't lock you into a single brand. You can connect LoRaWAN sensors, vehicle trackers, and MQTT-capable devices from any manufacturer — including thousands of Zigbee devices through the MQTT connector. The vehicle tracker library alone covers over 2,000 preconfigured models — OBD-II dongles that read engine codes, fuel level, and battery voltage, as well as standalone GPS trackers for location and route history.
 
 Different manufacturers report data in completely different formats — one says `temp`, another says `temperature_celsius`, a third just sends a number with no label. Chirp normalizes all of it. Every sensor in your home speaks the same language, so your dashboards, automation rules, and alerts work the same way regardless of which brand made the hardware.
 

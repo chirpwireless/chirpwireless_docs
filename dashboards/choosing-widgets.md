@@ -93,6 +93,53 @@ Tap the **plus button** (or the **Add widget** button if your dashboard is empty
   - Add multiple devices per layer — each pinned to the image.
   - Tap **"Add metric"** to include additional sensor readings from the same device.
 
+### Map *(plan-dependent)*
+
+**What it shows:** Your GPS tracker device's location on an interactive map, together with a selected reading from that tracker — like speed, battery level, or any other value it transmits.
+
+**When to use it:** When you want to see where a tracker is and check on it at a glance from your home dashboard, without going to the device page. Useful for a family GPS tracker, a pet collar, or a vehicle with a tracker.
+
+The Map widget is specifically for tracker-type devices. If you want to see where a stationary sensor is placed on a map, that's handled through the sensor's detail page — see [Maps and Device Placement](maps-and-device-placement.md).
+
+**Setting up the data source:**
+
+1. Select **Map** from the widget picker.
+2. The Datasource tab opens with the title **"Map configuration"** and subtitle **"Configure last data and data sources."**
+3. Choose a tracker device from the device selector. Only devices with latitude and longitude readings show up here — these are detected automatically when sensor names match expected location field names.
+4. Once a device is selected, pick an **additional metric** to display on the map marker. This can be speed, battery level, or any other field your tracker transmits.
+
+**What you can customize:**
+- **Widget name** *(required)* — Give it a clear label so you recognize it on the dashboard.
+- **Description** — An optional subtitle under the widget name.
+- **Theme** — Choose **Light** or **Dark** for the map tile appearance.
+- **Display data legend** — Toggle on to show a legend identifying the displayed metric.
+
+**Using the map after it's on your dashboard:**
+
+The Map widget has a few controls once placed on a dashboard:
+
+- **History** — Tap this to switch to a date range view and browse past location data.
+- **Date range button** — When active, shows the selected period as **DD.MM.YYYY - DD.MM.YYYY**.
+- **Clear data range** — Resets the view back to the current position.
+
+When a date range is selected, the widget draws your tracker's recorded route as a dashed line connecting all the positions it logged during that period (up to 500 points).
+
+**What to expect:**
+
+After you add the Map widget, the marker shows the tracker's last known location with the value you selected visible on it. The marker color reflects any conditions you've set for that metric — green if everything is normal, red if it crosses a threshold. As the tracker reports new positions, the map updates automatically.
+
+**Troubleshooting:**
+
+- *No device shows up in the device list* — Your tracker may not be transmitting latitude and longitude fields. Check the device detail page to confirm it's reporting location data.
+- *Route is empty for a date range* — The tracker wasn't active or didn't report location during that period. Try a wider date range or check that the tracker was powered on.
+- *Metric not showing on the marker* — Confirm the tracker is transmitting that specific field. Open the device page to see recent readings.
+
+**Home examples:**
+
+- **Family GPS tracker** — Add a Map widget to your home dashboard so you can see where your partner is on the way home from work, with their speed showing on the marker.
+- **Pet GPS collar** — Keep a Map widget on your phone dashboard. When your dog is in the garden, tap History to see where they roamed during the afternoon.
+- **Garden sensor on wheels** — If you have a mobile outdoor sensor, the Map widget shows its current position alongside battery level.
+
 ## Conditions
 
 Conditions are per-metric color rules that make readings meaningful at a glance. They work the same way across **Last data** and **Image map** widgets. Chart widgets use a simpler per-metric color picker and appearance-level thresholds instead of the full conditions system.

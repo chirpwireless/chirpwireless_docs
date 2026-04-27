@@ -1,43 +1,108 @@
 # API Keys
 
-If you like to tinker -- connecting Chirp to a home automation script, pulling sensor data into a spreadsheet, or building a custom integration -- API keys give you secure, programmatic access to your home's data.
+API keys let you connect Chirp to your own scripts, home automation setups, and integrations — securely and without sharing your account password. You might use one to pull temperature history into a spreadsheet, connect another smart home platform to your sensor data, or give a developer trusted read access to your home readings.
 
-## Getting There
+Each key has exactly the permissions you choose. If you need to cut off access to one tool, you revoke or rotate just that key — everything else keeps working.
 
-Go to **Settings** > **API Keys** in the sidebar.
+## Getting there
 
-## Creating a Key
+Navigate to **Settings → API Keys** in the sidebar.
+
+---
+
+## Creating a key
 
 1. Click **Create API Key**.
-2. Give the key a **Name** that reminds you what it is for (for example, "Garden Dashboard Script" or "Home Assistant Bridge").
-3. Set an **Expiry date**. Keys expire automatically after this date. Choose a reasonable window -- you can always create a new one.
-4. Choose **Scopes** to control what the key can access. Only grant the permissions the integration actually needs.
-5. Click **Create**.
+2. Fill in a **Name** for the key. This is required. Use something that reminds you what the key is for — for example, "Temperature Export Script" or "Home Platform Bridge". You'll see this name in the table later.
+3. Optionally pick an **Expires** date. The calendar won't let you choose a date in the past. If you leave this blank, the key stays active until you revoke it. For experiments or short-term setups, setting an expiry date means the key cleans itself up automatically.
+4. Choose **Scopes** — you must select at least one. Scopes control what the key is allowed to do. See [What the scopes mean](#what-the-scopes-mean) below.
+5. Confirm to create the key.
 
-The key is displayed exactly once. Copy it immediately and store it somewhere safe -- Chirp will not show the full key again. If you lose it, you will need to create a new one.
+### Save the key right away
 
-## Managing Your Keys
+The moment the key is created, it appears once with a copy button and the message:
 
-The API Keys page shows a table of all keys you have created. Each row includes:
+> **"Copy this key now. You will not be able to see it again."**
 
-- **Name** -- The label you gave it.
-- **Key prefix** -- The first few characters of the key, enough to identify it.
-- **Scopes** -- Which permissions the key has (shown as chips).
-- **Status** -- Active (green), Rotated (yellow), or Revoked (red).
-- **Created** -- When the key was created.
-- **Expires** -- The expiry date, or "Never" if no expiry was set.
-- **Last Used** -- When the key was last used to make an API call, or "-" if it has never been used.
+Copy it and keep it somewhere safe — in a password manager, a secure notes app, or wherever you store credentials. Once you close the dialog, the full key is gone. Only a short prefix remains visible in the table. If you lose it, you'll need to create a new one.
 
-### Rotating a Key
+---
 
-If a key has been in use for a while or you suspect it may have been exposed, click the **Rotate** button on that key's row. A confirmation dialog explains: "This will generate a new key and mark the current key as rotated. The old key will stop working." The new key is shown once — copy it immediately. The old key's status changes to Rotated.
+## What the scopes mean
 
-### Revoking a Key
+Scopes are the permissions you assign to a key. Pick only what the integration actually needs.
 
-If you no longer need a key or want to cut off access immediately, click the **Revoke** button. A confirmation dialog warns: "This will permanently revoke the API key. This action cannot be undone." Revoked keys remain in the table for reference but stop working instantly.
+| Scope | Read lets the key... | Write lets the key... |
+|-------|---------------------|----------------------|
+| **Connections** | View your connection setup | Change connection settings |
+| **Dashboards** | View dashboards and widget data | Create and edit dashboards and widgets |
+| **Devices** | View your sensors and their readings | Register sensors, change sensor settings |
+| **Events** | Read sensor event history | — |
+| **Logs** | View activity logs | Export logs |
+| **Organizations** | View your home organization details | Change organization settings |
+| **Rules** | View automation rules | Create, edit, and manage automations |
+| **Sensors** | View sensor templates and metrics | Create and edit sensor templates |
+| **Users** | View household member accounts | Invite and manage household members |
 
-## Tips
+A script that just exports your temperature readings only needs **Devices: Read** and **Events: Read** — there's no reason to grant write access or anything related to rules or users. Start with the minimum and add scopes only if the integration actually needs them.
 
-- Give each integration its own key. If you need to revoke access for one tool, the others keep working.
-- Set short expiry windows for experiments and longer ones for stable integrations.
-- Never paste a key into a message, email, or public repository.
+---
+
+## Your keys table
+
+The API Keys page shows all the keys you've created. Each row tells you:
+
+| Column | What it shows |
+|--------|--------------|
+| **Name** | The label you gave the key |
+| **Key Prefix** | A short snippet of the key — enough to recognize it, not enough to use it |
+| **Scopes** | The permissions this key carries, shown as labels |
+| **Status** | **Active** (green), **Rotated** (yellow), or **Revoked** (red) |
+| **Created** | When you first created this key |
+| **Expires** | The expiry date you set, or "Never" |
+| **Last Used** | When this key last made a successful API call |
+
+Keys are sorted newest first. The **Rotate** and **Revoke** buttons only appear on Active keys.
+
+---
+
+## Rotating a key
+
+Rotation swaps the key for a fresh one. The old key stops working the moment you confirm. Use this if a key has been accidentally shared, exposed, or you just want to refresh credentials periodically.
+
+1. Click **Rotate** on the key row.
+2. A dialog asks you to confirm:
+   > **"Rotate API Key — This will generate a new key and mark the current key '[name]' as rotated. The old key will stop working."**
+3. Confirm.
+4. The new key is shown once — copy it immediately.
+5. Update any scripts or integrations using the old key before they try to connect again.
+
+The old key stays in the table with **Rotated** status so you have a record of it.
+
+---
+
+## Revoking a key
+
+Revoking cuts off access permanently. You'd do this when you no longer need the key at all — for example, when a project is finished or you're removing a tool from your setup.
+
+1. Click **Revoke** on the key row.
+2. A dialog confirms what's about to happen:
+   > **"Revoke API Key — This will permanently revoke the API key '[name]'. This action cannot be undone."**
+3. Confirm.
+
+The key shows as **Revoked** in the table. It stays visible for your records, but it will never work again.
+
+---
+
+## If you lose a key
+
+There's no way to recover a key once the dialog is closed. The only option is to rotate it — click **Rotate**, copy the new key, and update your scripts with the new value.
+
+---
+
+## A few good habits
+
+- **One key per integration.** If one tool needs to be disconnected, you revoke just that key. Other integrations keep working without any changes.
+- **Set expiry dates for experiments.** If you're testing something or sharing temporary access, put an end date on the key. You won't need to remember to clean it up later.
+- **Never paste a key into a chat, email, or code commit.** Store credentials in a password manager or secure notes, and inject them into scripts at runtime rather than hardcoding them.
+- **Rotate regularly for stable integrations.** Even for long-running scripts, a fresh key every few months is good practice.

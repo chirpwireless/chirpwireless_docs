@@ -18,6 +18,7 @@
     * [What is LoRaWAN?](connectors/lns-connector/what-is-lorawan.md)
     * [LoRaWAN Frequencies](connectors/lns-connector/lorawan-frequencies.md)
     * [Built-in Network Server](connectors/lns-connector/built-in-lns.md)
+  * [MQTT Connector](connectors/mqtt-connector.md)
 * [Devices](devices/README.md)
   * [Adding Sensors](devices/adding-sensors.md)
   * [Data Templates](devices/data-templates.md)
