@@ -14,7 +14,7 @@ Navigate to **Settings → API Keys** in the sidebar.
 
 1. Click **Create API Key**.
 2. Fill in a **Name** for the key. This is required. Use something that reminds you what the key is for — for example, "Temperature Export Script" or "Home Platform Bridge". You'll see this name in the table later.
-3. Optionally pick an **Expires** date. The calendar won't let you choose a date in the past. If you leave this blank, the key stays active until you revoke it. For experiments or short-term setups, setting an expiry date means the key cleans itself up automatically.
+3. Optionally pick an **Expires** date. The calendar won't let you choose a date in the past. If you leave this blank, the key stays active until you revoke it. For experiments or short-term setups, setting an expiry date is a good reminder to clean up access you no longer need — check the **Status** column to confirm a key's current state.
 4. Choose **Scopes** — you must select at least one. Scopes control what the key is allowed to do. See [What the scopes mean](#what-the-scopes-mean) below.
 5. Confirm to create the key.
 
@@ -62,7 +62,7 @@ The API Keys page shows all the keys you've created. Each row tells you:
 | **Expires** | The expiry date you set, or "Never" |
 | **Last Used** | When this key last made a successful API call |
 
-Keys are sorted newest first. The **Rotate** and **Revoke** buttons only appear on Active keys.
+Keys are sorted newest first. A rotation icon and a trash icon appear only on Active keys — use the rotation icon to rotate a key and the trash icon to revoke it.
 
 ---
 
@@ -70,7 +70,7 @@ Keys are sorted newest first. The **Rotate** and **Revoke** buttons only appear 
 
 Rotation swaps the key for a fresh one. The old key stops working the moment you confirm. Use this if a key has been accidentally shared, exposed, or you just want to refresh credentials periodically.
 
-1. Click **Rotate** on the key row.
+1. Click the rotation icon on the key row.
 2. A dialog asks you to confirm:
    > **"Rotate API Key — This will generate a new key and mark the current key '[name]' as rotated. The old key will stop working."**
 3. Confirm.
@@ -85,7 +85,7 @@ The old key stays in the table with **Rotated** status so you have a record of i
 
 Revoking cuts off access permanently. You'd do this when you no longer need the key at all — for example, when a project is finished or you're removing a tool from your setup.
 
-1. Click **Revoke** on the key row.
+1. Click the trash icon on the key row.
 2. A dialog confirms what's about to happen:
    > **"Revoke API Key — This will permanently revoke the API key '[name]'. This action cannot be undone."**
 3. Confirm.
@@ -96,7 +96,7 @@ The key shows as **Revoked** in the table. It stays visible for your records, bu
 
 ## If you lose a key
 
-There's no way to recover a key once the dialog is closed. The only option is to rotate it — click **Rotate**, copy the new key, and update your scripts with the new value.
+There's no way to recover a key once the dialog is closed. The only option is to rotate it — use the rotation icon on the key row, copy the new key, and update your scripts with the new value.
 
 ---
 

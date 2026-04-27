@@ -12,7 +12,7 @@ Your gateway's detail page shows an overview card at the top and several health 
 
 ### Overview card
 
-The overview card shows your gateway's photo (if you've added one), its name, and its current status. You can also star your gateway from here to add it to your [Favorites](../devices/favorite-devices.md) on the Overview page.
+The overview card shows your gateway's photo (if you've added one), its name, and its current status. You can also star your gateway from here to add it to your [Favorites](../devices/favorite-devices.md).
 
 ### Availability
 

@@ -10,7 +10,7 @@ You can tuck the menu away when you do not need it — hover over the Chirp logo
 
 ### Your main sections
 
-- **Overview** — Your home screen. A snapshot of your sensors, gateways, favorite devices, and recent alarms. Think of it as the front page of your smart home.
+- **Overview** — Your home screen. Summary cards showing your sensor and gateway counts, and recent alarms. Think of it as the front page of your smart home.
 - **Dashboards** — Custom views you build for any room or purpose. Create a "Kitchen" dashboard, a "Garden" view, or a "Security" overview. Organize them in folders and fill them with the sensor data that matters to you.
 - **Connectors** — Define which protocols Chirp listens on. Connector types: **LNS** (for LoRaWAN sensors), **Tracker** (for vehicle trackers — OBD2, CAN bus, standalone GPS), and **MQTT** (for Zigbee sensors via Zigbee2MQTT, DIY hardware, and other MQTT-capable devices). Click an LNS connection to see **LoRaWAN Gateways** and **Connected Devices** tabs. A Tracker connection shows the sensor list directly. Sensors are registered separately through the sensor dialog.
 - **Devices** — See all your registered sensors in one place. Browse and search. Click any sensor to view or edit its details.
@@ -73,10 +73,9 @@ Two cards show how your home is doing:
 - **Devices** — How many sensors you have. Warnings appear if any aren't communicating.
 - **Gateways** — How many are online. If one drops off, you'll see it immediately.
 
-### Below: favorites and alarms
+### Below: recent alarms
 
-- **Favorite devices** (left panel) — Gateways you've starred from their detail page, plus any previously favorited items. Shows each name and when it last reported.
-- **Recent alarms** (right panel) — Latest triggered alarms. What happened, which device, when. Mark all as read, or click one for the full story.
+- **Recent alarms** — Latest triggered alarms. What happened, which device, when. Mark all as read, or click one for the full story.
 
 Everything updates automatically — new readings and alarms appear without refreshing.
 

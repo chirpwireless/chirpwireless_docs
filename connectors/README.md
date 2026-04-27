@@ -10,9 +10,9 @@ Most homes need just one connection: an **LNS connection** for LoRaWAN sensors. 
 |------|--------------|--------|
 | **LNS** | LoRaWAN sensors — temperature, humidity, door/window, motion, soil moisture, and thousands more | Available |
 | **Tracker** | Vehicle trackers — OBD2, CAN bus, and standalone GPS vehicle tracking devices (2,000+ preconfigured models) | Available |
-| **MQTT** | Direct MQTT sensor connections — including Zigbee devices via Zigbee2MQTT, DIY sensors, and other MQTT-capable hardware | Available |
+| **MQTT** | Direct MQTT sensor connections — including Zigbee devices via Zigbee2MQTT, DIY sensors, and other MQTT-capable hardware. Two options: **External MQTT** (your own broker, up to 10 per home) and **Cloud MQTT** (Chirp-hosted broker, unlimited) | Available |
 
-Your home can have **one LNS connection**, **one Tracker connection**, and **one MQTT connection**. Each covers a different way sensors communicate.
+Your home can have **one LNS connection** and **one Tracker connection**. MQTT connections can be External (up to 10 per home) or Cloud MQTT (unlimited — each gets its own hosted broker credentials).
 
 ## Where to find connections
 

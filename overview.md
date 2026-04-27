@@ -30,15 +30,9 @@ Cards you'll see include:
 
 These cards work as both a status check and a shortcut. If you see a warning number, you know something needs your attention before you even open the details.
 
-### Favorites and notifications
+### Notifications
 
-Below the cards, two panels show your pinned devices and recent activity:
-
-- **Favorite devices** — Any devices you've starred as favorites show up here for quick access. If you haven't pinned anything yet, this area stays empty. You can pin devices from the [sensor details](devices/sensor-details.md) page.
-
-- **Notifications** — Recent notifications and alerts appear here, so you can see at a glance if anything happened while you were away — a door opened, a temperature crossed a threshold, or a sensor went offline.
-
-On your phone, these panels stack vertically. On a larger screen, they sit side by side.
+Below the cards, a **Notifications** panel shows recent alerts and events — what happened, which device triggered it, and when. If a door opened while you were out or a temperature crossed a threshold overnight, you see it here without opening the full alarm inbox.
 
 ### Add a sensor
 
@@ -49,15 +43,13 @@ At the bottom of the page, a dedicated **Add Device** section makes it easy to r
 If you've just created your Chirp account and haven't connected anything yet:
 
 - The **Devices** and **Gateways** cards show **0** with no warnings.
-- The **Favorite devices** section is empty.
 - The **Notifications** section has nothing to display.
 - The **Add Device** section at the bottom invites you to get started.
 
-As soon as you connect your first sensor and gateway, the cards light up. Readings flow in, favorites become useful, and notifications start tracking what matters.
+As soon as you connect your first sensor and gateway, the cards light up. Readings flow in and notifications start tracking what matters.
 
 ## Making the most of your overview
 
-- **Pin the devices you check daily.** Your bedroom temperature sensor, the front door contact, the garden moisture probe — whatever you look at first thing in the morning, pin it as a favorite so it's right here when you open Chirp.
 - **Use notifications as a morning briefing.** Scroll through recent notifications to see what happened overnight without opening each sensor individually.
 - **Tap the Live Data button after adding a sensor.** When you've just registered a new sensor, tapping Live Data confirms that Chirp is receiving its readings right away.
 

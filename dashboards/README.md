@@ -6,7 +6,7 @@ Once your sensors are connected and reporting, Chirp gives you several ways to s
 
 Chirp's visibility layer is built around a few key surfaces that work together:
 
-1. **Home overview** — If your plan includes the Overview feature, this is the first screen you see when you log in. It shows summary cards for your devices and gateways, quick links to your favorites, and recent notifications. A clickable Live Data button lets you refresh your data on demand.
+1. **Home overview** — If your plan includes the Overview feature, this is the first screen you see when you log in. It shows summary cards for your devices and gateways, and recent notifications. A clickable Live Data button lets you refresh your data on demand.
 
 2. **Custom dashboards** — Views you build yourself, organized the way you think about your home. A "Kitchen" dashboard might show temperature and humidity. A "Security" dashboard might focus on door and window sensors. You decide what goes where. Dashboards are available on plans that include the Dashboard feature.
 

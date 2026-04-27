@@ -93,7 +93,7 @@ Tap the **plus button** (or the **Add widget** button if your dashboard is empty
   - Add multiple devices per layer — each pinned to the image.
   - Tap **"Add metric"** to include additional sensor readings from the same device.
 
-### Map *(plan-dependent)*
+### Map
 
 **What it shows:** Your GPS tracker device's location on an interactive map, together with a selected reading from that tracker — any metric it transmits, whatever the device sends.
 
@@ -105,8 +105,8 @@ The Map widget is specifically for tracker-type devices. If you want to see wher
 
 1. Select **Map** from the widget picker.
 2. The Datasource tab opens with the title **"Map configuration"** and subtitle **"Configure last data and data sources."**
-3. Choose a tracker device from the device selector. Only devices with latitude and longitude readings show up here — these are detected automatically when sensor names match expected location field names.
-4. Once a device is selected, pick an **additional metric** to display on the map marker. This is any field your tracker transmits — whatever the device sends and has been mapped as a sensor.
+3. Choose a tracker device from the device selector. The selector does not pre-filter by location data — you can pick any device. After selecting one, the widget looks for sensors whose names match `lat`/`latitude` and `lon`/`longitude`/`lng`. If none are found, no marker is shown.
+4. Once a device is selected, pick **one additional metric** to display on the map marker. This can be any field your tracker transmits that has been mapped as a sensor. Once you've picked one, the Add metric option disappears — the Map widget supports exactly one additional metric.
 
 **What you can customize:**
 - **Widget name** *(required)* — Give it a clear label so you recognize it on the dashboard.
@@ -130,7 +130,7 @@ After you add the Map widget, the marker shows the tracker's last known location
 
 **Troubleshooting:**
 
-- *No device shows up in the device list* — Your tracker may not be transmitting latitude and longitude fields. Check the device detail page to confirm it's reporting location data.
+- *No marker appears after selecting a device* — The widget looks for sensors named `lat`/`latitude` and `lon`/`longitude`/`lng`. If your tracker uses different field names, the widget won't find the location data — check the device detail page and align the sensor names to the expected patterns.
 - *Route is empty for a date range* — The tracker wasn't active or didn't report location during that period. Try a wider date range or check that the tracker was powered on.
 - *Metric not showing on the marker* — Confirm the tracker is transmitting that specific field. Open the device page to see recent readings.
 

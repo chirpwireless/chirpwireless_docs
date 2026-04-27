@@ -107,7 +107,7 @@ The sensor appears in the Connected Devices list. It needs a moment to join the 
 
 Once your sensor has reported in, you can view its data in two ways:
 
-- Click a **sensor row** in the Connected Devices list — the sensor dialog opens. Click the **Metrics** tab to see readings.
+- Click a **sensor row** in the Connected Devices list — the sensor's detail page opens. Click the **Metrics** tab to see readings.
 - Or check **Devices** in the sidebar to see all your sensors and their status.
 
 The best way to keep an eye on your data is through a dashboard — which we'll set up next.
