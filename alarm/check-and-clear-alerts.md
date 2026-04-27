@@ -29,7 +29,7 @@ On desktop, each alarm appears as a row with these columns:
 | **Message** | The notification message body. |
 | **Severity** | The severity level, color-coded. |
 | **First trigger** | When the alarm first fired. |
-| **Last update** | The most recent activity on this alarm. |
+| **Last trigger** | When the alarm most recently fired. |
 | **Actions** | **Mark as resolved** button and a link to the originating rule. |
 
 On mobile, alarms appear as compact cards with the same information in a condensed layout.

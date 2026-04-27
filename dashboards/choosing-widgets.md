@@ -95,7 +95,7 @@ Tap the **plus button** (or the **Add widget** button if your dashboard is empty
 
 ### Map *(plan-dependent)*
 
-**What it shows:** Your GPS tracker device's location on an interactive map, together with a selected reading from that tracker — like speed, battery level, or any other value it transmits.
+**What it shows:** Your GPS tracker device's location on an interactive map, together with a selected reading from that tracker — any metric it transmits, whatever the device sends.
 
 **When to use it:** When you want to see where a tracker is and check on it at a glance from your home dashboard, without going to the device page. Useful for a family GPS tracker, a pet collar, or a vehicle with a tracker.
 
@@ -106,7 +106,7 @@ The Map widget is specifically for tracker-type devices. If you want to see wher
 1. Select **Map** from the widget picker.
 2. The Datasource tab opens with the title **"Map configuration"** and subtitle **"Configure last data and data sources."**
 3. Choose a tracker device from the device selector. Only devices with latitude and longitude readings show up here — these are detected automatically when sensor names match expected location field names.
-4. Once a device is selected, pick an **additional metric** to display on the map marker. This can be speed, battery level, or any other field your tracker transmits.
+4. Once a device is selected, pick an **additional metric** to display on the map marker. This is any field your tracker transmits — whatever the device sends and has been mapped as a sensor.
 
 **What you can customize:**
 - **Widget name** *(required)* — Give it a clear label so you recognize it on the dashboard.

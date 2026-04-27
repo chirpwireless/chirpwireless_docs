@@ -30,7 +30,7 @@ By default, the alarm uses the repeat policy from your [Notification Severity](n
 |---|---|
 | **Custom Notification interval** | Toggle (Off by default). When On, shows interval and one-time controls. |
 | **Interval** | Number + unit (Hours or Days). |
-| **One-time notification** | Toggle. When On, the alarm sends one notification and does not repeat. |
+| **One-time notification** | Toggle. When On, the alarm sends one notification and does not repeat. A message appears confirming: *"[Severity] notifications are sent once. You can change it below."* — where [Severity] matches the severity you selected. |
 
 ## Escalation chain
 
@@ -40,7 +40,7 @@ This section is covered in detail on the [Escalation Chains](escalation-chains.m
 
 - The first step is always **Immediate** and cannot be removed.
 - Click **Add step** to add escalation tiers with configurable delays.
-- Each step has: **Notify** (recipients), **Via** (channels — Email and SMS are selectable; Push when enabled).
+- Each step has: **Notify** (recipients — **required**, you must select at least one person), **Via** (channels — Email and SMS are selectable; Push when enabled).
 - Unresolved alarms continue through the configured chain until someone marks the event as resolved in the [Inbox](check-and-clear-alerts.md).
 
 ## Schedule
