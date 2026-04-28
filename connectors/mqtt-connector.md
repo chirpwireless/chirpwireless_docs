@@ -41,7 +41,7 @@ When you add an MQTT connector, you choose one of two options:
 
 **Chirp Cloud MQTT** — Chirp provides the MQTT broker. You get a ready-to-use endpoint, username, password, and topic prefix. Paste them into Zigbee2MQTT or your device settings and you're done. Nothing to install or maintain. This is the simpler choice for most home setups — especially if you don't already run a local broker.
 
-**External MQTT** — You use an MQTT broker you already operate — running on a Raspberry Pi, home server, or a cloud account. Chirp connects to it using the broker URL and credentials you supply. Use this when you already have Zigbee2MQTT talking to a local Mosquitto broker and want Chirp to join that same broker.
+**External MQTT** — You use an MQTT broker you already operate. Chirp connects to it using the broker URL and credentials you supply. Use External MQTT if your broker is reachable from the internet — for example, a broker you host on a VPS or in a cloud account. For local home setups where Zigbee2MQTT runs on a Raspberry Pi or home server, Cloud MQTT is usually the simpler choice: configure Zigbee2MQTT to publish outward to the Chirp-hosted endpoint rather than the other way around.
 
 You can create multiple connectors of either type — External MQTT up to 10 per home, Cloud MQTT as many as you need.
 
@@ -64,7 +64,13 @@ Chirp provisions a broker endpoint and displays the credentials:
 | **Username** | Assigned automatically. Copy it. |
 | **Password** | Shown once. **Copy it immediately** and save it somewhere safe. If you lose it, you'll need to rotate the credentials. |
 
-Paste these into your Zigbee2MQTT configuration or device settings. That's all the broker setup you need — Chirp manages the rest.
+#### Connecting Zigbee2MQTT or your device
+
+Copy the credentials above into your Zigbee2MQTT configuration or device MQTT settings. A few things to know before you connect:
+
+- **The Broker URL is the complete endpoint** — copy it exactly as shown. It uses TLS on port 1884 (not the standard 1883). In Zigbee2MQTT, set `server` to this value and enable TLS.
+- **Every topic must start with the Topic prefix.** The full topic you publish to is: `{Topic prefix}/{device topic}`. For example, if your prefix is `iot/abc123/xyz789` and your Zigbee2MQTT device ID is `living-room-sensor`, messages arrive at `iot/abc123/xyz789/living-room-sensor`. Zigbee2MQTT handles this automatically when you set the `base_topic` to your Topic prefix.
+- **Device routing templates don't include the prefix.** When you configure the Device ID Topic in the Topic tab (Step 2), enter only the device-level portion — for example `zigbee2mqtt/{{deviceId}}`. Chirp strips the prefix automatically before matching.
 
 ---
 
@@ -78,7 +84,7 @@ Paste these into your Zigbee2MQTT configuration or device settings. That's all t
    | Field | What to enter |
    |-------|--------------|
    | **Name** | A label for this connector (required) |
-   | **Broker URL** | The full address including scheme and port. Examples: `mqtt://192.168.1.100:1883` (local), `mqtts://mqtt.yourdomain.com:8883` (TLS). Accepted schemes: `mqtt://`, `mqtts://`, `tcp://`, `ssl://` |
+   | **Broker URL** | The full address including scheme and port. The broker must be reachable from the internet — a private home network address will not work. Examples: `mqtts://mqtt.yourdomain.com:8883` (TLS), `mqtt://mqtt.yourdomain.com:1883` (plain). Accepted schemes: `mqtt://`, `mqtts://`, `tcp://`, `ssl://` |
 
 5. Choose an **authentication method**:
    - **Anonymous** — no credentials
@@ -123,7 +129,7 @@ Leave **Telemetry topics** empty. Zigbee2MQTT sends a flat JSON payload like:
 {"temperature": 21.4, "humidity": 58, "battery": 92, "linkquality": 115}
 ```
 
-Chirp reads all keys from this payload automatically. No additional topic configuration needed — temperature, humidity, battery, and link quality all appear as separate metrics once data arrives.
+Chirp reads all keys from this payload automatically — no Telemetry topics configuration needed. However, the Mapping tab is still required: each key you want as a sensor metric needs a row in the Mapping tab with the Connector Key set to match the payload key name. Without a Mapping row for a key, that data is silently ignored.
 
 This is the default path for most Zigbee sensors, ESP32 projects publishing flat JSON, and Tasmota devices.
 
@@ -151,7 +157,7 @@ This is the default path for most Zigbee sensors, ESP32 projects publishing flat
 | Placeholder | What it does |
 |-------------|-------------|
 | `{{deviceId}}` | Marks the topic segment that contains the device identifier |
-| `{{value}}` | Marks a topic segment that carries a measurement value directly; requires a Connector Key |
+| `{{value}}` | Marks a topic segment whose content is the measurement value itself — for example, `sensors/dev01/22.5` where `22.5` is the reading. Do not use `{{value}}` for topic segments that name the metric (like `temperature`) — if the segment is a label rather than a value, use the payload-style approach instead |
 
 ---
 
@@ -222,6 +228,9 @@ This is a Zigbee2MQTT or coordinator issue, not a Chirp issue. Check the [Zigbee
 
 **Cloud MQTT password lost:**
 Go to the MQTT connector settings and rotate the credentials. Update Zigbee2MQTT or your device with the new password and topic prefix.
+
+**Device fails to save on a Cloud MQTT connector:**
+If saving a device on a Cloud MQTT connector fails, contact support for help completing the setup.
 
 ---
 
