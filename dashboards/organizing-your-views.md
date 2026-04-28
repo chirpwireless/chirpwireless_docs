@@ -83,4 +83,4 @@ Start simple. You can always reorganize later by dragging dashboards between fol
 ## What's next
 
 - [Building a Dashboard](building-a-dashboard.md) — Create dashboards to fill your folders.
-- [Choosing Widgets](choosing-widgets.md) — Add sensor data to each dashboard.
+- [Adding Widgets](adding-widgets/README.md) — Add sensor data to each dashboard.

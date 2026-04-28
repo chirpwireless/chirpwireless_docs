@@ -33,7 +33,7 @@ For any mounted or dedicated screen, collapse the sidebar to give the dashboard 
 
 - [Home Overview](../overview.md) — Your default landing page: sensor status, favorites, and notifications.
 - [Building a Dashboard](building-a-dashboard.md) — Create a personalized dashboard with a name, icon, and folder.
-- [Choosing Widgets](choosing-widgets.md) — Pick widget types, connect them to your sensors, and customize how readings are displayed.
+- [Adding Widgets](adding-widgets/README.md) — Pick widget types, connect them to your sensors, and customize how readings are displayed.
 - [Organizing Your Views](organizing-your-views.md) — Group dashboards into folders and arrange them to match how you use your home.
 - [Maps and Device Placement](maps-and-device-placement.md) — See where your sensors are on a map.
 - [Tracking What Matters](tracking-what-matters.md) — View location history for GPS tracker devices.

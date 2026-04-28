@@ -31,7 +31,7 @@ Tap **Add dashboard** in the sidebar. A dialog opens with the title **"Add dashb
 
 ### Saving
 
-Tap **Save** to create the dashboard. It opens right away, ready for you to [choose and add widgets](choosing-widgets.md). Tap **Cancel** to close without creating anything.
+Tap **Save** to create the dashboard. It opens right away, ready for you to [choose and add widgets](adding-widgets/README.md). Tap **Cancel** to close without creating anything.
 
 ## What you see on a dashboard
 
@@ -41,7 +41,7 @@ Once your dashboard is created and you open it from the sidebar, you'll see:
 - A **Live Data** label with a small icon on the right side of the header. This is a status indicator (not a button) that tells you the dashboard receives fresh sensor readings automatically.
 - An **actions menu** (three dots) on the far right.
 
-If you haven't added any widgets yet, the center of the dashboard shows the message **"You have no widgets here"** alongside **"Add your first widget to build your dashboard"** and an **Add widget** button. This is your prompt to head to [Choosing Widgets](choosing-widgets.md).
+If you haven't added any widgets yet, the center of the dashboard shows the message **"You have no widgets here"** alongside **"Add your first widget to build your dashboard"** and an **Add widget** button. This is your prompt to head to [Choosing Widgets](adding-widgets/README.md).
 
 ## Changing a dashboard's name or icon
 
@@ -68,6 +68,6 @@ This permanently removes the dashboard and everything on it.
 
 ## What's next
 
-- [Choosing Widgets](choosing-widgets.md) — Add sensor data, charts, and floor plans to your new dashboard.
+- [Choosing Widgets](adding-widgets/README.md) — Add sensor data, charts, and floor plans to your new dashboard.
 - [Organizing Your Views](organizing-your-views.md) — Group dashboards into folders like "Upstairs" and "Garden".
 - [Home Overview](../overview.md) — The default view that's always there, even before you create dashboards.

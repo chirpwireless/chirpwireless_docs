@@ -61,5 +61,5 @@ Both surfaces receive real-time data automatically. The difference is that the o
 ## What's next
 
 - [Home Overview](../overview.md) — The page where the clickable Live Data button lives.
-- [Choosing Widgets](choosing-widgets.md) — Add widgets that display live sensor readings.
+- [Adding Widgets](adding-widgets/README.md) — Add widgets that display live sensor readings.
 - [Checking Gateway Health](../gateways/checking-gateway-health.md) — Make sure your gateway is delivering data.
