@@ -69,7 +69,7 @@ Chirp provisions a broker endpoint and displays the credentials:
 Copy the credentials above into your Zigbee2MQTT configuration or device MQTT settings. A few things to know before you connect:
 
 - **The Broker URL is the complete endpoint** — copy it exactly as shown. It uses TLS on port 1884 (not the standard 1883). In Zigbee2MQTT, set `server` to this value and enable TLS.
-- **Every topic must start with the Topic prefix.** The full topic you publish to is: `{Topic prefix}/{device topic}`. For example, if your prefix is `iot/abc123/xyz789` and your Zigbee2MQTT device ID is `living-room-sensor`, messages arrive at `iot/abc123/xyz789/living-room-sensor`. Zigbee2MQTT handles this automatically when you set the `base_topic` to your Topic prefix.
+- **Every topic must start with the Topic prefix.** The full topic you publish to is: `{Topic prefix}/{device topic}`. For Zigbee2MQTT, set `base_topic` in its configuration to `{Topic prefix}/zigbee2mqtt` — for example `iot/abc123/xyz789/zigbee2mqtt`. Zigbee2MQTT then publishes each device under that path automatically.
 - **Device routing templates don't include the prefix.** When you configure the Device ID Topic in the Topic tab (Step 2), enter only the device-level portion — for example `zigbee2mqtt/{{deviceId}}`. Chirp strips the prefix automatically before matching.
 
 ---
@@ -204,7 +204,7 @@ For Zigbee2MQTT sensors, data typically appears within a few seconds of the sens
 Publishes to `home/sensors/esp-kitchen/data` with a flat JSON payload. Device ID Topic: `home/sensors/{{deviceId}}/data`. Leave telemetry topics empty — the payload is parsed automatically. Mapping tab maps `temperature` and `humidity` keys to the corresponding normalized metrics.
 
 **Tasmota smart plug:**
-Tasmota publishes to `tele/plug-01/SENSOR`. Device ID Topic: `tele/{{deviceId}}/SENSOR`. The payload is flat JSON with energy readings (Power, Voltage, Current, Today). Chirp maps them all automatically with no telemetry topic rows needed.
+Tasmota publishes to `tele/plug-01/SENSOR`. Device ID Topic: `tele/{{deviceId}}/SENSOR`. The payload is flat JSON with energy readings (Power, Voltage, Current, Today). Leave telemetry topics empty; then add Mapping tab rows for the Tasmota keys you want to track.
 
 **Garden soil sensor — single metric on a dedicated topic:**
 A custom sensor publishes soil moisture to `garden/{{deviceId}}/moisture` with a plain number payload. Add a telemetry topic row: topic `garden/{{deviceId}}/moisture`, Connector Key `soil_moisture`. Then in the Mapping tab, link `soil_moisture` to the normalized soil moisture metric.
