@@ -80,3 +80,4 @@
   * [Managing Access](account/managing-access.md)
   * [Home Settings](account/organization-settings.md)
   * [Switching Homes](account/switching-organizations.md)
+* [Changelog](faq/changelog.md)
