@@ -6,13 +6,13 @@
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.1.0.png" alt=""><figcaption></figcaption></figure>
 
-Chirp 3.1.0 is the platform's largest connectivity expansion to date. MQTT support means any MQTT-capable sensor, hub, or home hardware can now send data directly into Chirp — without LoRaWAN, without special gateways, without hardware constraints. Combined with Zigbee2MQTT compatibility, that unlocks thousands of devices across hundreds of manufacturers and opens the platform to a much wider range of homes and users than was possible before. This release also introduces live tracker maps with route history, scoped API keys for home automation integrations, a refreshed subscription structure, and sharper alert controls. [chirpwireless.io](https://chirpwireless.io)
+Chirp 3.1.0 is the platform's largest connectivity expansion to date. MQTT support means a much wider range of MQTT-capable sensors, bridges, and home hardware can now connect to Chirp directly — opening access to thousands of device models across hundreds of manufacturers. This release also introduces live tracker maps with route history, scoped API keys for home automation integrations, a refreshed subscription structure, and sharper alert controls. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **MQTT Connector** — Cloud MQTT and External MQTT open Chirp to a much wider range of MQTT-capable devices: thousands of supported models across hundreds of manufacturers, reachable without a LoRaWAN gateway
+* **MQTT Connector** — Cloud MQTT and External MQTT open Chirp to a much wider range of MQTT-capable devices: thousands of supported models across hundreds of manufacturers
 * **Map Widget** — Live tracker position on a dashboard map, plus one selected transmitted metric and historical route playback
 * **API Keys** — Scoped access keys for home automation scripts, local tools, and trusted integrations — with create, rotate, and revoke lifecycle
 * **Subscription Plans** — Refreshed tiers — Free, Light, Pro, Max — with a Business path for larger deployments
@@ -22,9 +22,11 @@ Chirp 3.1.0 is the platform's largest connectivity expansion to date. MQTT suppo
 
 **MQTT Connector**
 
-MQTT is the language most home sensors, hubs, and DIY hardware already speak. Until now, connecting a device to Chirp meant LoRaWAN — a specific radio technology with specific hardware requirements. With MQTT support, that changes. Any MQTT-capable device on a standard home network can now publish data directly into Chirp, without gateways or radio hardware. Combined with bridges like Zigbee2MQTT — which supports thousands of Zigbee devices from hundreds of manufacturers — this release brings a much wider range of homes and hardware into reach.
+<figure><img src="../.gitbook/assets/mqtt-connector-type-selector.jpg" alt="Add connector dialog showing External MQTT and Cloud MQTT options"><figcaption></figcaption></figure>
 
-The Chirp-compatible device ecosystem grew significantly with 3.1.0. If it speaks MQTT, it can connect.
+MQTT is one of the most widely used protocols in the world of home sensors, hubs, and connected hardware. With Cloud MQTT and External MQTT now available in Chirp, the platform can connect to a much wider range of devices than before — from ESP32 DIY projects to Tasmota devices to popular automation bridges. For Zigbee devices, Zigbee2MQTT can act as the bridge that publishes their readings into Chirp — opening access to thousands of supported Zigbee device models from hundreds of manufacturers.
+
+The Chirp-compatible device ecosystem grew significantly with 3.1.0.
 
 **Two ways to connect**
 
@@ -48,11 +50,13 @@ Per-device topic routing and payload mapping work the same way for every device 
 
 **Map Widget**
 
-The Map widget brings your tracker data onto the dashboard. Select a tracker device, choose one metric it transmits alongside location, and get a live map showing the current position with that reading displayed — plus full historical route playback so you can see everywhere the tracker has been.
+<figure><img src="../.gitbook/assets/map-widget-configuration.jpg" alt="Map widget configuration showing device and metric selection"><figcaption></figcaption></figure>
 
-Home uses that make sense with this: a GPS pet tracker showing your pet's current location and activity level. A family tracker for a teenager's bike or scooter. A car tracker with location and battery. Any tracker device registered in Chirp can appear on a map widget.
+<figure><img src="../.gitbook/assets/map-widget-route-history.jpg" alt="Map widget showing historical route playback on the dashboard"><figcaption></figcaption></figure>
 
-The widget fits into the same dashboard layout as everything else — resize it, organize it in folders, share it with household members.
+Did you know that Chirp goes beyond your house walls? Connect a car tracker, motorcycle tracker, or any GPS device and the Map widget shows you exactly where it is — live on your dashboard. Choose one metric the tracker is transmitting, like vehicle speed, and that reading appears right alongside the map marker. Want to see where the car went today? Historical route playback lets you replay the full route.
+
+Any tracker device registered in Chirp can appear on the map. The widget fits into the same dashboard layout as everything else — resize it, organize it in folders, share it with your household.
 
 [→ Choosing Widgets](../dashboards/choosing-widgets.md)
 
