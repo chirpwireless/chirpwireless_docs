@@ -17,7 +17,7 @@ That's it. The connection is created instantly. Chirp's built-in LoRaWAN network
 
 Click the LNS connection row in the table to open it. You'll see two tabs:
 
-- **LoRaWAN Gateways** — Your gateway list. See [Setting Up Your Gateway](../gateways/setting-up-your-gateway.md).
+- **LoRaWAN Gateways** — Your gateway list. See [Setting Up Your Gateway](../gateways/lorawan-gateways/setting-up-a-lorawan-gateway.md).
 - **Connected Devices** — Your sensor list. See [Adding Sensors](../devices/adding-sensors.md) and [Sensor Details](../devices/sensor-details.md).
 
 ## Adding a Tracker connection

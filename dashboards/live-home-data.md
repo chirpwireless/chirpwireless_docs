@@ -42,7 +42,7 @@ Sometimes a widget or dashboard shows the message **"Waiting for live data"**. T
 If your overview or dashboard isn't showing fresh data:
 
 1. **Is the sensor online?** Open the sensor's detail page and check the last-seen time. If it's been a while, the sensor may have lost power or connectivity.
-2. **Is the gateway running?** *(LoRaWAN sensors)* Your gateway needs to be powered on and connected to your home internet. Check [Checking Gateway Health](../gateways/checking-gateway-health.md).
+2. **Is the gateway running?** *(LoRaWAN sensors)* Your gateway needs to be powered on and connected to your home internet. Check [Checking Gateway Health](../gateways/lorawan-gateways/checking-lorawan-gateway-health.md).
 3. **Is the sensor within range?** If the sensor is too far from the gateway, readings may not arrive. Try moving the sensor closer or repositioning the gateway.
 4. **Try the Live Data button** on the overview page. Tapping it forces a fresh data pull.
 5. **Refresh the page.** In rare cases, the live connection between your browser and Chirp may need to reconnect. A simple page refresh usually fixes this.
@@ -62,4 +62,4 @@ Both surfaces receive real-time data automatically. The difference is that the o
 
 - [Home Overview](../overview.md) — The page where the clickable Live Data button lives.
 - [Adding Widgets](adding-widgets/README.md) — Add widgets that display live sensor readings.
-- [Checking Gateway Health](../gateways/checking-gateway-health.md) — Make sure your gateway is delivering data.
+- [Checking Gateway Health](../gateways/lorawan-gateways/checking-lorawan-gateway-health.md) — Make sure your gateway is delivering data.

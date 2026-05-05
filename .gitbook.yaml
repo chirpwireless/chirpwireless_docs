@@ -6,3 +6,6 @@ structure:
 
 redirects:
   dashboards/choosing-widgets: dashboards/adding-widgets/README.md
+  gateways/setting-up-your-gateway: gateways/lorawan-gateways/setting-up-a-lorawan-gateway.md
+  gateways/checking-gateway-health: gateways/lorawan-gateways/checking-lorawan-gateway-health.md
+  gateways/compatible-gateways: gateways/lorawan-gateways/compatible-lorawan-gateways.md

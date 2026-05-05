@@ -1,23 +1,40 @@
-# Your Home Gateway
+# Gateways
 
-Your gateway is the heart of your Chirp smart home. It's a small box — usually about the size of a paperback book — that sits in your home and listens for radio signals from your LoRaWAN and LR-FHSS sensors. When a sensor sends a reading (like a temperature update or a door-open event), the gateway picks it up and passes it along to Chirp through your home internet connection.
+Gateways are the connectivity hardware that brings sensors and end devices into Chirp. Different protocols use different kinds of gateways, but they share the same role: they sit in your home, listen for the radios your sensors use, and forward what they hear to Chirp.
 
-Think of it like a Wi-Fi router, but for sensors. Your phone connects to your router to reach the internet; your sensors connect to your gateway to reach Chirp.
-
-## Why you need one
-
-Without a gateway, Chirp has no way to hear from your sensors. LoRaWAN sensors don't connect directly to Wi-Fi — they use their own low-power radio protocol that can reach across your entire home (and beyond) on a single battery charge that lasts for years.
-
-One gateway is usually enough for a typical home, apartment, or small property. LoRaWAN signals pass through walls, floors, and ceilings well, so a gateway placed centrally can often cover every room in your house plus the garden.
-
-## Secure by design
-
-Chirp requires gateways that use a modern, secure connection protocol. When you set up your gateway, you'll download a certificate file that keeps the connection between your gateway and Chirp encrypted and authenticated. This means only your gateway can send data to your account — nobody can eavesdrop on your sensor readings or inject fake data.
-
-This section covers the current way to set up a gateway with Chirp. If you see options in the app that aren't related to smart home setup, those can be safely skipped.
+Chirp supports two categories of gateway today, organized in this section by the protocol they handle:
 
 ## In this section
 
-- [Setting Up Your Gateway](setting-up-your-gateway.md) — Register your gateway with Chirp and get it connected in minutes.
-- [Checking Gateway Health](checking-gateway-health.md) — See if your gateway is online, how long it's been running, and how much data it's handling.
-- [Compatible Gateways](compatible-gateways.md) — What to look for when choosing a gateway for your home.
+### [LoRaWAN gateways](lorawan-gateways/README.md)
+
+The original Chirp gateway category. A small box — usually about the size of a paperback book — that listens for LoRaWAN radio signals from sensors anywhere in your home. One gateway is typically enough for a house or apartment; LoRaWAN signals reach far on tiny amounts of power, and a battery-powered sensor can last years on one charge.
+
+- [Setting up a LoRaWAN gateway](lorawan-gateways/setting-up-a-lorawan-gateway.md)
+- [Checking LoRaWAN gateway health](lorawan-gateways/checking-lorawan-gateway-health.md)
+- [Compatible LoRaWAN gateways](lorawan-gateways/compatible-lorawan-gateways.md)
+
+### [Zigbee2MQTT hubs](zigbee2mqtt-hubs/README.md)
+
+A different kind of "gateway" for Zigbee devices: a small computer (a Raspberry Pi, a home server, an old laptop) running Zigbee2MQTT software, with a USB or network-attached Zigbee coordinator. Together, the host machine plus the coordinator plus Z2M form what we call a "Zigbee2MQTT hub" — it joins your Zigbee devices into a mesh and publishes their data to MQTT, which Chirp then ingests through the [MQTT connector](../connectors/mqtt-connector.md).
+
+- [Sonoff ZBDongle-E coordinator](zigbee2mqtt-hubs/sonoff-zbdongle-e-coordinator.md) — the specific coordinator we tested with. Other Zigbee2MQTT-supported coordinators follow the same pattern.
+
+## Which kind do I need?
+
+It depends on the sensors and devices you want to connect:
+
+- **LoRaWAN sensors** — long-battery-life devices designed for whole-home or whole-property coverage. A LoRaWAN gateway is the right kind.
+- **Zigbee devices** — typically smart bulbs, smart plugs, and battery sensors from brands like Aqara, IKEA, Sonoff, Philips Hue, Paulmann. A Zigbee2MQTT hub is the right kind.
+- **Both** — many homes run both. A LoRaWAN gateway and a Zigbee2MQTT hub coexist without conflict; they listen on different radios.
+
+If you're not sure what your sensor uses, check the manufacturer's listing or the product packaging — it's almost always stated clearly.
+
+## Secure by design
+
+Both kinds of gateway connect to Chirp over encrypted channels:
+
+- LoRaWAN gateways download a certificate file during setup that keeps the connection encrypted and authenticated. Only your registered gateway can send data to your account.
+- Zigbee2MQTT hubs use TLS-protected MQTT (`mqtts://` on port 1884) to publish to Chirp's managed broker, with credentials unique to your connector.
+
+In both cases, nobody on the public internet can eavesdrop on your sensor readings or inject fake data — the channel is encrypted and the credentials are yours alone.

@@ -101,6 +101,15 @@ This is not limited to sensors in Chirp's device library. If you're testing a pr
 
 For details on data templates, see [Data Templates](data-templates.md).
 
+#### A note for MQTT sensors
+
+Two things behave differently for sensors connected through the [MQTT connector](../connectors/mqtt-connector.md), worth knowing before you start mapping:
+
+- **The Connector key dropdown is empty until your sensor has published at least once.** The dropdown lists keys actually received from your device. For a brand-new MQTT device, that means a two-pass save: add a row per metric and pick a normalized template, leave the Connector key blank, save, ensure your device is publishing, reopen the device — the dropdown now lists the payload keys, match each row, save again.
+- **The Mapping tab Value column and the Logs tab show different things.** The Value column is a live snapshot of the most recent payload. The Logs tab is per-sensor history, populated only by publishes that arrive *after* you save the Connector keys. Older publishes don't fill in retroactively — generate a fresh publish (toggle the device, send a `/get` poll) after saving Connector keys to populate the Logs tab.
+
+For full details, see [Topics and device routing](../connectors/mqtt/topics-and-device-routing.md).
+
 ### Logs
 
 The Logs tab is empty until your sensor starts sending data. Once it does, raw readings appear here grouped by timestamp.
