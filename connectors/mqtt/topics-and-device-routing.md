@@ -103,6 +103,19 @@ The setup flow is therefore two-pass:
 
 After the second save, future incoming readings for those mapped keys will populate the Logs tab and be available for dashboards, alarms, and the AI assistant.
 
+### Mapping is iterative — return after data arrives
+
+Even after a clean two-pass save, MQTT mapping often isn't done. Devices can publish keys you didn't anticipate during the first pass, and you may notice useful fields only once you see the live payload. Treat the Mapping tab as something you come back to:
+
+- After the device has been publishing for a while, reopen the device record in Chirp.
+- Look at the **Connector key** dropdown and the **Value** column — they tell you exactly what's arriving.
+- Add a row for any extra field you'd like to track.
+- Pick the right **Normalized key** and **Data type** for each new row.
+- Save.
+- Generate one more publish (drag a slider in the Z2M web UI, send a `/get` poll, or wait for the device's next scheduled report) so the Logs tab starts collecting history for the new mappings.
+
+This second-look pattern is normal, not a sign that the original setup was wrong. The most common reason to revisit is discovering that a device exposes a useful field you didn't know about until you saw real data.
+
 ## Reported State vs Telemetry vs Device Metadata
 
 The **Data type** column is where you tell Chirp what kind of value is coming in:

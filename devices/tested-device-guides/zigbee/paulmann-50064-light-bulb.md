@@ -29,10 +29,10 @@ Behavioral quirk to know up front: **physical wall-switch toggles do not generat
 The Paulmann 50064 uses a 5-cycle reset pattern.
 
 1. **Open Permit join in Z2M first.** In the Z2M web UI at `http://localhost:8080`, click the green shield icon at the top labeled **Permit join (All)**. The Zigbee network is now open for 180 seconds.
-2. **Power-cycle the bulb 5 times.** Use the wall switch:
-   - on → off → on → off → on → off → on → off → on → off
-   - About 2 seconds in each state. Don't rush — too fast and the bulb may not register the cycle.
-3. **On the 5th on-cycle, the bulb blinks rapidly.** This is the factory-reset confirmation. Pairing mode is now active.
+2. **Power-cycle the bulb through 5 on-cycles.** Use the wall switch:
+   - on → off → on → off → on → off → on → off → on
+   - That's 5 on-states with an off-state between each. Hold each state for ~2 seconds. Don't rush — too fast and the bulb may not register the cycle.
+3. **On the 5th on-cycle, the bulb blinks rapidly.** This is the factory-reset confirmation. Pairing mode is now active and the bulb is on.
 4. **Stop. Leave the bulb on. Don't touch the switch.** This is the most common mistake — people see the blink and immediately do another off/on cycle, which restarts the reset sequence and aborts the join attempt.
 5. **Wait 10–30 seconds.** The bulb joins the Zigbee network and appears in Z2M's Devices tab, identified by its IEEE address (`0x...`).
 6. Z2M auto-identifies the model. The Devices tab shows `Paulmann SmartHome led spot (50064)` next to the device.
@@ -68,7 +68,7 @@ When the Paulmann 50064 sends a state update, the payload looks like this:
 
 ```json
 {
-  "brightness": 255,
+  "brightness": 254,
   "color_mode": "color_temp",
   "color_temp": 392,
   "color_temp_startup": 65535,
@@ -84,7 +84,7 @@ Full field reference:
 | `state` | string | `"ON"`, `"OFF"`, `"TOGGLE"` | **String, not boolean.** Map to a String-typed metric in Chirp. |
 | `brightness` | integer | 0–254 | 0 turns the bulb off on some firmware versions. Note: 0–254, not 0–255 or 0–100. |
 | `color_temp` | integer | 150–500 mired | See the Mirek-scale table below. |
-| `color_temp_startup` | integer | 150–500, or 65535 | Color temperature applied on cold power-on. `65535` = "restore previous." |
+| `color_temp_startup` | integer or null | 150–500, `65535`, or `null` | "Start Up Color" — what color temperature the bulb turns on as when power is restored. `null` = not configured; the bulb uses its firmware default on cold power-on. `65535` = sentinel for "restore previous color temperature." Any number in 150–500 = a fixed mired value to apply on every power-on. Set via a `/set` command with an explicit numeric value to configure. |
 | `power_on_behavior` | enum | `off`, `on`, `toggle`, `previous` | Behavior after a power loss. Send via `/set` to configure. |
 | `effect` | enum | `blink`, `breathe`, `okay`, `channel_change`, `finish_effect`, `stop_effect` | One-shot effects. Send via `/set` to trigger. |
 | `linkquality` | integer | 0–255 | Zigbee link quality. Diagnostic only — not user-facing. |
@@ -130,9 +130,11 @@ Once Z2M is publishing to a topic Chirp can see (verify via the connector's **La
 
    If a normalized key you want doesn't exist, use **+ Add new metric** and create one. The modal handles both the normalized name and the underlying sensor template.
 
+   > **Color Mode must be a String, not an Integer.** It's tempting to default to a numeric type for what looks like a small enumerated value, but the actual payload value is a string (`"color_temp"`). A Number-typed metric will report null. The same is true for `state` (`"ON"`/`"OFF"`).
+
 7. Click **Save**.
 8. **Generate a publish.** Open the bulb in the Z2M web UI and drag the brightness slider, or use the on/off toggle. Z2M sends a `/set` command, the bulb confirms the new state, and Z2M publishes the confirmed payload — that's the publish Chirp needs.
-9. **Mapping sub-tab — Pass 2:** reopen the device record. The **Connector key** dropdowns now list the keys received from the bulb (`state`, `brightness`, `color_temp`, `color_mode`, `linkquality`). Match each row:
+9. **Mapping sub-tab — Pass 2:** reopen the device record. The **Connector key** dropdowns now list the keys received from the bulb. Match each row:
 
    | Mapping row | Connector key |
    |------------|--------------|
@@ -144,13 +146,32 @@ Once Z2M is publishing to a topic Chirp can see (verify via the connector's **La
 
 10. Click **Save** again.
 
-After step 10, the **Value** column on the Mapping tab populates with the bulb's current state. Generate one more publish (drag the Z2M slider) to confirm a record arrives in the **Logs** tab — that's your end-to-end verification.
+### Pass 3 — add Start Up Color after the first publishes arrive
+
+Once the bulb has been publishing for a little while, the Connector key dropdown shows one more useful field: **`color_temp_startup`**. The bulb only emits this in some payloads — typically after a `/get` poll or after explicitly setting it — so it often isn't visible during Pass 2. Treat it as a third pass:
+
+11. Reopen the device record. Confirm the Connector key dropdown now lists `color_temp_startup` as an option (if not, force a publish that includes it: send a `/get` request, or send a `/set` with a `color_temp_startup` value).
+12. Click **Add key** in the Mapping sub-tab.
+13. Pick or create a **Start Up Color** normalized key (Number type, Reported State data type).
+14. Set the Connector key to `color_temp_startup`.
+15. Click **Save**.
+
+| Mapping row | Connector key | Type | Data type |
+|------------|--------------|------|-----------|
+| Start Up Color | `color_temp_startup` | Number | Reported State |
+
+**What "Start Up Color" means:** the color temperature the bulb turns on as when power is restored. A specific number (150–500 mired) means "always cold-start at this color." `65535` means "remember the previous setting and restore it on power-on." `null` means it isn't configured — the bulb uses its firmware default. Useful in homes where you want the lamp to always come on warm regardless of how it was last left.
+
+This three-pass progression — register the obvious fields first, fill in Connector keys after the first publish, then add the late-discovered field — is normal for MQTT mapping. Most devices have at least one field you'll only see once data is flowing.
+
+After the three passes, the **Value** column on the Mapping tab populates with the bulb's current state across all six metrics. Generate one more publish (drag the Z2M slider) to confirm records arrive in the **Logs** tab — that's your end-to-end verification.
 
 ## Things that look like problems but aren't
 
 - **Mapping tab Value column updates but Logs tab is empty.** Normal after Pass 2 if you saved Connector keys after the most recent publish. Generate a fresh publish from the Z2M web UI.
 - **`color_mode` always shows `"color_temp"`.** This bulb has no RGB capability. The field is always `color_temp` for CCT bulbs.
-- **`color_temp_startup` shows `65535`.** That's the "restore previous color temperature on power-on" sentinel value. Set a specific number via `/set` if you want a fixed color on cold power-on.
+- **`color_temp_startup` shows `65535` or `null`.** `65535` is the sentinel for "restore previous color temperature on power-on." `null` means it hasn't been configured and the bulb uses its firmware default. Set a specific number (150–500 mired) via `/set` if you want a fixed color on every cold power-on.
+- **`color_temp_startup` doesn't appear in early payloads.** The bulb only emits this field in certain payloads — typically after a `/get` poll or after the field has been explicitly set. If your Connector key dropdown doesn't show it during Pass 2, that's normal — see Pass 3 above.
 - **Multiple publishes from one `/get` request.** Z2M polls Zigbee attribute clusters separately, so one `/get` produces 2–4 publishes back as the cluster responses arrive. Normal — not an error.
 - **Wall-switch toggle produces no Logs entry.** As covered above — this bulb doesn't publish on physical power-cycle. Use the Z2M web UI to generate publishes for setup-time verification.
 

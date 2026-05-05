@@ -28,7 +28,7 @@ Zigbee bulbs, sensors  →  [Zigbee mesh]
                           MQTT  →  Chirp
 ```
 
-The coordinator alone doesn't reach Chirp — it has no IP stack, no Wi-Fi, no Ethernet, no MQTT. It speaks Zigbee. Z2M is what turns the Zigbee mesh into MQTT publishes. They are always two separate things working together.
+The coordinator alone doesn't reach Chirp. USB coordinators (ZBDongle-E, ZBDongle-P, ConBee II, SkyConnect) have no IP stack, no Wi-Fi, no Ethernet — they're pure Zigbee radios speaking serial over USB. Network-attached coordinators (SMLIGHT SLZB-06 and similar) do have an IP interface, but only as transport between the radio and Z2M; they don't run MQTT either. In both cases, the coordinator is the Zigbee radio bridge and Z2M is what turns the Zigbee mesh into MQTT publishes. They are always two separate things working together.
 
 ## Why "hub" and not "gateway"?
 

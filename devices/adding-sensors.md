@@ -5,8 +5,9 @@ Every sensor you add to Chirp gets its own profile — a record that remembers t
 ## Before you start
 
 You'll need:
-- **A connection** set up — an LNS connection for LoRaWAN sensors, or a Tracker connection for vehicle trackers. See [Setting Up a Connection](../connectors/setting-up-a-connection.md).
-- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer.
+- **A connection** set up — an LNS connection for LoRaWAN sensors, a Tracker connection for vehicle trackers, or an MQTT connector (Cloud or External) for Zigbee2MQTT and other MQTT-publishing hardware. See [Setting Up a Connection](../connectors/setting-up-a-connection.md) and the [MQTT Connector](../connectors/mqtt-connector.md) docs.
+- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it byte-for-byte (no whitespace).
+- **For MQTT sensors only — the device must be publishing before you can finish mapping.** The Connector key dropdown in the Mapping tab is populated from payload keys actually received from the device. See the [MQTT-specific note](#a-note-for-mqtt-sensors) further down for the two-pass save flow.
 
 ## Where to add a sensor
 
@@ -107,6 +108,7 @@ Two things behave differently for sensors connected through the [MQTT connector]
 
 - **The Connector key dropdown is empty until your sensor has published at least once.** The dropdown lists keys actually received from your device. For a brand-new MQTT device, that means a two-pass save: add a row per metric and pick a normalized template, leave the Connector key blank, save, ensure your device is publishing, reopen the device — the dropdown now lists the payload keys, match each row, save again.
 - **The Mapping tab Value column and the Logs tab show different things.** The Value column is a live snapshot of the most recent payload. The Logs tab is per-sensor history, populated only by publishes that arrive *after* you save the Connector keys. Older publishes don't fill in retroactively — generate a fresh publish (toggle the device, send a `/get` poll) after saving Connector keys to populate the Logs tab.
+- **Mapping is iterative.** The first publish may reveal payload keys you didn't anticipate. Return to the device's Mapping tab whenever you want to add more fields — review the Connector key dropdown and Value column, add rows for the keys you missed, set the right Data type, save, and generate another publish so the Logs tab starts collecting history for the new mappings.
 
 For full details, see [Topics and device routing](../connectors/mqtt/topics-and-device-routing.md).
 

@@ -129,9 +129,9 @@ Zigbee2MQTT publishes each device's data to a topic named after the device:
 ```
 zigbee2mqtt/0x00158d0001234567
 ```
-or with a friendly name:
+or with a friendly name (no spaces — see the byte-for-byte note above):
 ```
-zigbee2mqtt/Living Room Sensor
+zigbee2mqtt/LivingRoomSensor
 ```
 
 For **Device ID Topic**, enter:
@@ -224,6 +224,10 @@ The setup flow is two-pass:
 The Mapping tab's **Value** column updates from the most recent payload. It's a live snapshot — you'll see values as soon as the topic match works, even before you've finished filling in Connector keys.
 
 The **Logs** tab is different: it's per-sensor history, and it only fills with publishes that arrive *after* you've saved Connector keys. If you fill in Connector keys, save, and then the lamp's wall switch is toggled but no MQTT publish is generated, the Logs tab will stay empty even though the Mapping tab shows the right value. To populate Logs, you need a fresh publish — drag a control in the Z2M web UI, send a `/get` poll, or wait for the device's next scheduled report. See [Troubleshooting](mqtt/troubleshooting.md) for the full list.
+
+#### Mapping is iterative
+
+MQTT mapping is rarely a one-shot operation. The first publish often reveals payload keys you didn't know to map during initial registration. After data starts arriving, return to the device's Mapping tab, look at the **Connector key** dropdown and **Value** column to see what the device is actually publishing, add rows for any useful fields you missed, set the right Data type for each, and save again. Generate another publish afterwards if you want the Logs tab to populate the new mappings.
 
 #### Z2M feature type → Chirp data type
 

@@ -6,9 +6,12 @@ This page is the generic Zigbee2MQTT setup. We worked through it with a Sonoff Z
 
 ## What runs where
 
-A small mental-model warning, because this confuses a lot of people first time around: **the dongle is hardware only**. A Sonoff ZBDongle-E, a SkyConnect, a SLZB-06 — they all have a Zigbee radio chip and firmware, and they speak a binary serial protocol over USB (or Ethernet, for network-attached coordinators). They do not run MQTT. They do not connect to your home network on their own. They have no operating system.
+A small mental-model warning, because this confuses a lot of people first time around: **the coordinator is the radio bridge, not the brain.**
 
-**Zigbee2MQTT is software** that runs on the host machine where the coordinator is plugged in. It opens the coordinator's serial port, sends Zigbee commands, receives Zigbee messages, translates them to JSON, and publishes them to MQTT. All the intelligence lives in Z2M.
+- **USB coordinators** (Sonoff ZBDongle-E, ZBDongle-P, SkyConnect, ConBee II, etc.) — radio chip plus firmware, communicating with your machine over USB serial using a binary protocol like EZSP or Z-Stack. They have no IP stack, no Wi-Fi, no Ethernet, no operating system.
+- **Network-attached coordinators** (SMLIGHT SLZB-06 and similar) — the same radio role, but with a small embedded Linux that exposes the coordinator over Ethernet or Wi-Fi. They have an IP interface for transport, but they don't run MQTT — Z2M still does that.
+
+In both cases, the coordinator handles the Zigbee radio plus protocol-to-transport bridge; **Zigbee2MQTT is the software** that opens the coordinator's transport (serial port for USB, TCP for network-attached), sends Zigbee commands, receives Zigbee messages, translates them to JSON, and publishes them to MQTT. All the device-management intelligence lives in Z2M.
 
 ```
 Zigbee device → [Zigbee radio]
@@ -123,7 +126,7 @@ Three settings deserve attention:
 
 - **`adapter: ezsp` vs `adapter: zstack`** — this tells Z2M what kind of radio chip your coordinator has. **Sonoff ZBDongle-E (EFR32MG21/MG24)** uses `ezsp`. **Sonoff ZBDongle-P (CC2652P)** uses `zstack`. They look almost identical externally and have the same USB ID, but the protocol is different. Picking the wrong one logs `Error: Failed to find adapter` and Z2M exits. For other adapters, see the [Z2M adapter guide](https://www.zigbee2mqtt.io/guide/adapters/).
 - **`log_level: debug`** — leave this on while you're setting things up. At `info` level, Z2M doesn't log MQTT publish lines, which makes it impossible to tell whether the broker connection is working. Switch back to `info` once everything is verified.
-- **`channel: 11`** — Zigbee shares the 2.4 GHz band with Wi-Fi. Channels 11, 15, 20, and 25 are the four Zigbee channels that don't overlap with the most common Wi-Fi channels (1, 6, 11). Pick one of those four. **You can't change the channel without re-pairing every device**, so pick once and don't change later.
+- **`channel: 11`** — Zigbee shares the 2.4 GHz band with Wi-Fi. Channels 11, 15, 20, and 25 are commonly chosen because they reduce overlap with the most-used Wi-Fi channels (1, 6, 11). They are not perfectly non-overlapping, but they're the safer starting points if your Wi-Fi uses default channels. **You can't change the Zigbee channel later without re-pairing every device**, so pick once and don't change it.
 
 For External MQTT, the `mqtt:` section is simpler — see [External MQTT](external-mqtt.md) for the configuration. The rest of `configuration.yaml` is identical.
 
@@ -156,6 +159,15 @@ If you don't see those log lines, the most common causes are:
 - `Error: Failed to connect to MQTT broker` → wrong server URL, credentials, or port. Re-copy the four credentials from Chirp; check for trailing whitespace.
 - `SSL handshake failed` → TLS issue. Add `ssl: true` under `mqtt:` and restart.
 - `Authentication failed` → wrong username or password. Rotate the connector's credentials in Chirp and update `configuration.yaml`.
+
+### What to expect on first start
+
+Z2M does two things the first time it boots that can look like errors but aren't:
+
+- **It rewrites your `configuration.yaml`.** Z2M reformats the YAML and adds a `version: 5` line at the bottom. Your values are preserved exactly — only formatting changes. Long single-line strings may be wrapped using YAML block-scalar notation (`>-`), which is functionally identical to the original.
+- **It creates migration log files** in `~/zigbee2mqtt/data/` named `migration-1-to-2.log` through `migration-4-to-5.log`. These are Z2M's internal config-schema migrations between its own versions. Normal — no action needed.
+
+If you see your `configuration.yaml` looking different after first boot, that's why. The migration logs can be safely ignored.
 
 ## Step 6 — open the Z2M web UI
 
