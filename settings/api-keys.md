@@ -34,13 +34,13 @@ Copy it and keep it somewhere safe — in a password manager, a secure notes app
 
 Scopes are the permissions you assign to a key. Pick only what the integration actually needs.
 
-Available scopes may depend on your home's plan. For API calls, check the [API reference](../api/README.md) for the scope each call requires.
+Available scopes may depend on your home's plan. Pulling **history** or **latest readings** uses a separate telemetry scope, not *Devices: Read* — check the [API reference](../api/README.md) for the scope each call needs.
 
 | Scope | Read lets the key... | Write lets the key... |
 |-------|---------------------|----------------------|
 | **Connections** | View your connection setup | Change connection settings |
 | **Dashboards** | View dashboards and widget data | Create and edit dashboards and widgets |
-| **Devices** | View your sensors and their readings | Register sensors, change sensor settings |
+| **Devices** | View your sensors and their setup | Register sensors, change sensor settings |
 | **Events** | Read sensor event history | — |
 | **Logs** | View activity logs | Export logs |
 | **Organizations** | View your home organization details | Change organization settings |

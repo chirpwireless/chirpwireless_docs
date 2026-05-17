@@ -26,10 +26,6 @@ For typed service-to-service or on-premise setups, see [gRPC API](grpc-api.md).
 
 There's a copy-paste starter in [Examples](examples.md).
 
-## Current limits
-
-There's currently no remote-control or downlink call in the public API.
-
 ## See also
 
 - [gRPC API](grpc-api.md) — only if you specifically need typed clients.
