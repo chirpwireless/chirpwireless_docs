@@ -28,3 +28,7 @@ Sign up → Plug in your gateway → Create a connector → Register your sensor
 Not every Chirp setup starts with a gateway. This flow is specifically for LoRaWAN sensors. Other connection types begin with the connection itself instead.
 
 Most people have their first LoRaWAN sensor reporting data within 15 minutes. The [Connect Your First Sensor](connect-your-first-sensor.md) guide walks you through every step.
+
+## After your first sensor
+
+Want to connect scripts or trusted tools to Chirp? Create an API key and use the [API](../api/README.md) — REST over plain HTTPS is all most home setups need.

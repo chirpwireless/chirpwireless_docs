@@ -4,6 +4,8 @@ API keys let you connect Chirp to your own scripts, home automation setups, and 
 
 Each key has exactly the permissions you choose. If you need to cut off access to one tool, you revoke or rotate just that key — everything else keeps working.
 
+> **Want to know how to actually call the API?** The [API](../api/README.md) section covers the protocols, signing requests, and examples. This page is just about making and managing the keys.
+
 ## Getting there
 
 Navigate to **Settings → API Keys** in the sidebar.

@@ -52,6 +52,10 @@ Invite family members, roommates, or property managers to your organization. Giv
 
 Every organization has an activity log, so you can see who changed what and when. From the user menu, go to **Users** to manage members and **Organization settings** to configure your setup.
 
+### Connect your own tools
+
+Prefer to wire Chirp into your own scripts or another home-automation platform? A scoped API key lets trusted tools read your sensors and history — pull readings into a spreadsheet, bridge data into another system, or build a small automation of your own. REST over plain HTTPS is all most setups need. See the [API](api/README.md) section to get started, and [API Keys](settings/api-keys.md) to create a key.
+
 ### Ask your home a question
 
 The built-in AI helper understands your home's data. Ask in plain English: *"What was the bedroom temperature overnight?"* or *"Were there any motion events in the hallway after 11 PM?"* It checks your actual sensor history and gives you a real answer — not a canned FAQ response.
