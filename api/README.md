@@ -2,15 +2,13 @@
 
 Chirp gives you programmatic access to your home's data and controls — for personal scripts, local dashboards, spreadsheets, and trusted integrations with other home-automation tools.
 
-The full, interactive API reference is at **[api.chirpwireless.io](https://api.chirpwireless.io/)**. That portal lists exactly what you can call; this section explains what the API is, how requests are signed, and where to get a key. It does not copy the reference.
+Use the **[API reference](https://api.chirpwireless.io/)** for the complete list of calls, request fields, responses, and required scopes. This section covers what the API is for, how requests are signed, and where to get a key.
 
 ## REST is the way in
 
 For home scripts and integrations, the **REST API** is the practical starting point: plain HTTPS and JSON that works from any language, tool, or no-code automation. Almost anything you'd want at home — read a sensor's latest value, pull history into a spreadsheet, bridge readings into another smart-home platform — is a REST call. See [REST API](public-rest-api.md).
 
 A **gRPC API** also exists — the advanced / on-premise path. It is not the normal homeowner path: for home scripts and tools use REST, and reach for gRPC only if you specifically need it for an on-premise or typed service-to-service integration. See [gRPC API](grpc-api.md).
-
-The reference portal is the source of truth for which operations exist, and under which protocol — don't assume something offered over REST is also offered over gRPC.
 
 ## Signing requests
 
