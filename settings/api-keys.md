@@ -34,7 +34,7 @@ Copy it and keep it somewhere safe — in a password manager, a secure notes app
 
 Scopes are the permissions you assign to a key. Pick only what the integration actually needs.
 
-The scopes shown when you create a key depend on your home's plan, and the public API is the authoritative contract for which scope each call needs — some calls (like pulling history, or alarms and notifications) use scopes that aren't in this list. Check the [API](../api/README.md) section and the reference it links to for the scope a given call needs.
+The scopes shown when you create a key depend on your home's plan, and the public API is the authoritative contract for which scope each call needs — some calls (for example pulling **history**, which uses a `telemetry:read` scope) need a scope that isn't in this list. Check the [API](../api/README.md) section and the reference it links to for the scope a given call needs.
 
 | Scope | Read lets the key... | Write lets the key... |
 |-------|---------------------|----------------------|
@@ -48,7 +48,7 @@ The scopes shown when you create a key depend on your home's plan, and the publi
 | **Sensors** | View sensor templates and metrics | Create and edit sensor templates |
 | **Users** | View household member accounts | Invite and manage household members |
 
-A script that just exports your temperature readings only needs **Devices: Read** and **Events: Read** — there's no reason to grant write access or anything related to rules or users. Start with the minimum and add scopes only if the integration actually needs them.
+Grant only what the tool uses — a script that just reads your sensor list needs only **Devices: Read**, with no write access or anything to do with rules or users. The exact scope a given call needs (for example pulling history needs `telemetry:read`) is listed in the [API reference](../api/README.md) — check there rather than guessing. Start minimal and add scopes only if the integration actually needs them.
 
 ---
 

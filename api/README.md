@@ -8,13 +8,13 @@ The full, interactive API reference is at **[api.chirpwireless.io](https://api.c
 
 For home scripts and integrations, the **REST API** is the practical starting point: plain HTTPS and JSON that works from any language, tool, or no-code automation. Almost anything you'd want at home — read a sensor's latest value, pull history into a spreadsheet, bridge readings into another smart-home platform — is a REST call. See [REST API](public-rest-api.md).
 
-A **gRPC API** also exists, for advanced setups that use generated, strongly typed clients or wire services together directly. It is not the normal homeowner path — if you're writing a script or connecting a tool, use REST. See [gRPC API](grpc-api.md) only if you specifically need it.
+A **gRPC API** also exists — the advanced / on-premise path. It is not the normal homeowner path: for home scripts and tools use REST, and reach for gRPC only if you specifically need it for an on-premise or typed service-to-service integration. See [gRPC API](grpc-api.md).
 
 The reference portal is the source of truth for which operations exist, and under which protocol — don't assume something offered over REST is also offered over gRPC.
 
 ## Signing requests
 
-Each request carries a scoped API key in the `X-API-Key` header and your home's context in `X-Organization-Id`. You create and manage keys in **Settings → API Keys**; the essentials are in [Authentication & API keys](authentication-and-api-keys.md), and the full walkthrough is in [API Keys](../settings/api-keys.md).
+Each request carries a scoped API key in the `X-API-Key` header (format `chirp_<key>`) and your home's context in `X-Organization-Id`. You create and manage keys in **Settings → API Keys**; the essentials are in [Authentication & API keys](authentication-and-api-keys.md), and the full walkthrough is in [API Keys](../settings/api-keys.md).
 
 ## In this section
 

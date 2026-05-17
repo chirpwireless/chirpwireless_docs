@@ -4,7 +4,7 @@ Every API request — REST or gRPC — is signed with a **scoped API key**. This
 
 ## What a request carries
 
-- **`X-API-Key`** — your key, on every request.
+- **`X-API-Key`** — your key (format `chirp_<key>`), on every request.
 - **`X-Organization-Id`** — your home; it has to match the home the key was made in. Some calls also accept it as an `organizationId` query value (the [reference](https://api.chirpwireless.io/) shows which).
 
 Requests always go over a secure connection.

@@ -7,16 +7,16 @@ This shows how to sign a request. It doesn't list the calls themselves — pick 
 Swap in your own key and home ID:
 
 ```bash
-curl -sS https://api.chirpwireless.io/api/v2/devs \
+curl -sS https://api.chirpwireless.io/api/v2/devices \
   -H "X-API-Key: $CHIRP_API_KEY" \
   -H "X-Organization-Id: $CHIRP_HOME_ID"
 ```
 
-`GET /api/v2/devs` lists the sensors the key can see (it needs a Devices **Read** scope). For anything else — a latest reading, history for a chart, changing a setting — look up the exact call in the [reference](https://api.chirpwireless.io/) and send it with the same two headers. Don't guess a path; the reference lists exactly what's available, and which calls are REST and which are gRPC.
+`GET /api/v2/devices` lists the sensors the key can see (it needs a Devices **Read** scope). For anything else — a latest reading, history for a chart, changing a setting — look up the exact call and the scope it needs in the [reference](https://api.chirpwireless.io/) and send it with the same two headers. Don't guess a path; the reference lists exactly what's available, and which calls are REST and which are gRPC.
 
 ## gRPC
 
-Only relevant for advanced typed-client setups. It uses the same key and home headers. The [reference](https://api.chirpwireless.io/) lists the available gRPC services and methods so you know what to call; the client and protocol definitions aren't downloadable from there — get them from your integration package or support.
+Only relevant for advanced or on-premise typed-client setups. It uses the same key and home headers. The [reference](https://api.chirpwireless.io/) lists the available gRPC services and methods and offers an OpenAPI download as the public reference; if you need native gRPC client definitions, use your on-premise / integration package or contact support.
 
 ## Keep it safe
 
