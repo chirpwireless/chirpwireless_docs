@@ -16,7 +16,7 @@ curl -sS https://api.chirpwireless.io/api/v2/devs \
 
 ## gRPC
 
-Only relevant for advanced typed-client setups. It uses the same key and home headers; generate a client from the service definitions in the [reference](https://api.chirpwireless.io/) and call the method you need.
+Only relevant for advanced typed-client setups. It uses the same key and home headers. The [reference](https://api.chirpwireless.io/) lists the available gRPC services and methods so you know what to call; the client and protocol definitions aren't downloadable from there — get them from your integration package or support.
 
 ## Keep it safe
 

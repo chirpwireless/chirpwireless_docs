@@ -34,6 +34,8 @@ Copy it and keep it somewhere safe — in a password manager, a secure notes app
 
 Scopes are the permissions you assign to a key. Pick only what the integration actually needs.
 
+The scopes shown when you create a key depend on your home's plan, and the public API is the authoritative contract for which scope each call needs — some calls (like pulling history, or alarms and notifications) use scopes that aren't in this list. Check the [API](../api/README.md) section and the reference it links to for the scope a given call needs.
+
 | Scope | Read lets the key... | Write lets the key... |
 |-------|---------------------|----------------------|
 | **Connections** | View your connection setup | Change connection settings |

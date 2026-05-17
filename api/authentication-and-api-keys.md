@@ -11,7 +11,7 @@ Requests always go over a secure connection.
 
 ## Scopes keep keys narrow
 
-A key only does what you let it. Each scope has a **Read** side and a **Write** side, and you choose them when you create the key. Give a key the least it needs — a spreadsheet export only needs Read. The full list and what each scope means is with the key-creation steps in [API Keys](../settings/api-keys.md).
+A key only does what you let it. Scopes usually have a **Read** side and a **Write** side, and you choose them when you create the key. Give a key the least it needs — a spreadsheet export only needs Read. You pick scopes in [Settings → API Keys](../settings/api-keys.md); the [reference](https://api.chirpwireless.io/) is the source of truth for which scope a given call needs, and the scopes offered when you create a key depend on your home's plan — so check the reference for the call you want.
 
 ## Keeping keys safe
 

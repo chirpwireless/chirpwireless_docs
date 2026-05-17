@@ -11,16 +11,18 @@ This page is the plain-English overview. The exact calls live in the interactive
 
 Everything goes over a secure (TLS) connection. Look after the key like a password — see [Authentication & API keys](authentication-and-api-keys.md).
 
-## What you can do
+## What the API can do
 
-Depending on the scopes you give the key, a script can, for example:
+The API has two protocols — REST and gRPC — and they don't cover the same calls. Depending on the scopes you give the key, the API as a whole can, for example:
 
-- read your sensors and their latest readings;
-- pull history (handy for spreadsheets and charts);
-- read dashboards, automations, and activity logs;
+- read your account and list your sensors;
+- read sensor history and latest readings;
+- read dashboards, automations, alarms, and notifications;
 - change settings or create things where you've granted a Write scope.
 
-Which exact call does each of these — and whether it's REST or gRPC — is in the reference. Don't assume a call exists in both protocols.
+Today the **REST** side is focused on your account, listing sensors, and automations; the rest of that list is gRPC (see [gRPC API](grpc-api.md)). There's no remote-command or downlink call in the public API.
+
+Always check the [reference](https://api.chirpwireless.io/) for the exact call and whether it's REST or gRPC — don't assume a call is in both.
 
 ## Getting started
 
