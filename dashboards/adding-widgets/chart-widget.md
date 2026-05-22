@@ -1,94 +1,71 @@
 # Chart Widget
 
-Last Data tells you where a reading is now. Chart tells you where it has been — and whether the trend should concern you.
+<figure><img src="../../.gitbook/assets/chart-widget.jpg" alt="Chart widget — the Appearance settings beside a live preview of the graph"><figcaption></figcaption></figure>
 
-Your bedroom temperature is 23°C right now. But was it always 23°C? Yesterday evening it was 19°C. Chart shows you that journey: the **large current reading** at the top tells you what it is now, and the **historical graph** below shows how it got there — the trace over the last hour, day, week, or month. You see the value right now and the pattern over time — rising, falling, stable, or spiking — without switching between views.
+The Chart widget draws a reading's history as a graph — a line or bars stretching back over the last hour, day, week, or month — so you can follow how it has moved, not just where it is right now.
 
-Threshold bands sit on the graph itself. Color the normal range green, the warning range yellow, and the danger range red. The bands make context visible at a glance — and the large reading at the top changes color automatically when the current value falls inside a threshold range.
+One Chart widget puts four things together: the **current value** as a big number at the top, the **graph** of its history as a line or bars, an optional **average line** for the period, and optional **color bands** that mark which ranges are fine and which are not. You see today's reading and the pattern that led to it on a single tile.
 
-## Setting up a Chart widget
+Those color bands also tint the **big number** at the top: when the current reading sits inside a band, that number takes the band's color — the line or bars themselves keep the color you gave the metric. So the tile tells you how things are going before you even look at the graph.
 
-### Step 1 — Choose Chart from the widget picker
+A Chart widget follows one reading. If you want to watch several, add a separate Chart widget for each.
 
-Open dashboard edit mode and tap **Chart** in the widget picker. (See [Adding Widgets](README.md) for how to open edit mode.) The settings panel opens with two tabs: **Datasource** and **Appearance**.
+## Configure a Chart widget
 
-### Step 2 — Datasource tab: connect one sensor
+Let's build a real one — a chart that tracks the living-room humidity through the week, so you can see whether the room stayed comfortable or kept drifting damp. A humidity sensor reports the room as a percentage. This is just an example: a Chart works for any reading whose history you care about — only the sensor and the numbers change.
 
-The Datasource tab is titled **"Chart configuration"** with the subtitle **"Configure chart and data sources."**
+1. Open your dashboard in edit mode and tap **Chart** in the widget picker. The settings panel opens on the **Datasource** tab, with nothing added yet.
+2. Tap **Add datasource**. A **Datasource 1** block appears.
+3. In the block, tap **Choose device** and pick the room's humidity sensor.
+4. Tap **Add metric**. A metric row appears.
+5. In the row, leave **Data type** on **Telemetry**, choose the humidity reading under **Device metric**, and pick a **Color** — this is the color of the line (or bars) on the graph, and the starting color of the big number at the top.
 
-**The Chart widget tracks one sensor at a time.** Tap **Add datasource** to open the device selector and choose a device. Once a data source is added, the Add datasource button disappears entirely — it doesn't gray out, it leaves the panel. To switch to a different sensor, change the metric on the existing row.
+   > **Don't see your sensor reading?** The **Device metric** list only shows number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Data Templates** (the **Metrics Templates** button on your connection's Connected Devices list), find the metric on the **Metrics** tab, and switch its **Type** to Integer or Float — as long as the sensor really does send a number. See [Data Templates](../../devices/data-templates.md).
 
-The metric row shows:
-- **Data type** — set to Telemetry
-- **Device metric** — choose which sensor reading to graph (numeric sensors only: INTEGER and FLOAT types)
-- **Color** — a color picker that sets both the line or bar color on the graph and the base color for the large current reading at the top
-- **Delete** — remove this data source
+   A Chart widget follows just **one reading** — once that metric is in place, there is no second row to fill in. For another reading, build another Chart widget.
+6. Tap **Next** to open the **Appearance** tab.
+7. Type a **Widget name** — "Living room humidity" — and a **Description** if you want a subtitle.
+8. Under **Widget type**, choose **line** or **bar**. The **line** type draws a flowing curve, which suits a reading that drifts up and down gently like humidity; **bar** draws one bar per reading, handy when you would rather see each report on its own. Pick **line** here.
+9. Choose the **Timeframe** — how much history the graph shows: **Last hour**, **Last day**, **Last week**, or **Last month**. For a week's view, pick **Last week**.
+10. Under **Set value range**, fill in **From** and **To** — the bottom and top of the up-and-down axis. Choose a window that comfortably holds the readings you expect: **From** 20, **To** 80. (A fresh widget starts at 0–100; change it to fit your reading.)
+11. Under **Thresholds**, tap **Add threshold** for each band of meaning. A threshold's **From** and **To** are the lower and upper edge of a color band on that same 20–80 scale; give it a **Label** and a **Color**. For room humidity, add three:
+    - "Too dry" — **From** 20, **To** 40 — amber
+    - "Comfortable" — **From** 40, **To** 60 — green
+    - "Too damp" — **From** 60, **To** 80 — red
 
-Chart metrics do not have an Icon picker or a Conditions button. Color is set directly on the metric row.
+    Each threshold has two switches that do different jobs. **Show fill** colors in the whole band as a soft background; **Show line** draws a line along the band's edges. Turn **Show fill** on for "Comfortable" so the happy zone shows as a green stripe behind the graph; turn **Show line** on for "Too damp" so its lower edge at 60% is a clear red line you can watch the trace climb toward.
+12. Turn on **Show average value** to add a dashed line at the week's average humidity, marked "Average" in the legend.
+13. **Show vertical axis lines** and **Show horizontal axis lines** add a faint grid behind the graph — switch them on if a grid makes it easier to read.
+14. Turn on **Display data legend** to list your band labels and the average next to the graph.
+15. Tap **Save** to drop the widget onto your dashboard.
 
-### Step 3 — Appearance tab: configure the chart
+Now the tile shows the room's humidity right now as a big number, with the whole week traced behind it — and the green band makes it plain whether the room sat comfortable or kept sliding into the dry or damp zones. The same steps fit any reading with a history worth following; just change the sensor, the value range, and the bands.
 
-**Widget name** *(required)* — Shown as the widget header.
+## How the big number changes color
 
-**Description** — Optional subtitle.
+The large reading at the top starts in the color you gave the metric. When the current reading falls inside one of your threshold bands, the number switches to that band's color, and goes back to the metric color once the reading leaves every band.
 
-**Widget type:**
-- **Line** — A smooth continuous curve. Best for readings that change gradually over time, like temperature or humidity.
-- **Bar** — Discrete vertical bars for each interval. Useful for readings where you want to see each report as a distinct event.
+So a humidity chart shows a calm green number while the room is comfortable and turns red the moment the air gets too damp — with no extra setup. The chart makes the problem easy to spot; to get a notification on your phone, pair it with an [alarm](../../alarm/README.md).
 
-**Timeframe** — The period shown in the graph:
-- Last hour
-- Last day
-- Last week
-- Last month
+## Bands here, conditions elsewhere
 
-**Value range** — Set the Y-axis scale:
-- **From** *(required)* — The bottom of the axis
-- **To** *(required)* — The top of the axis
-
-**Thresholds** — Colored bands drawn across the graph to mark meaningful ranges. Tap **Add threshold** to create one. Each threshold has:
-- **From** — Lower bound of the band
-- **To** — Upper bound of the band
-- **Label** — A name for the band (shown in the legend)
-- **Color** — The color of the band
-- **Show fill** — Toggle to display a colored fill across the band
-- **Show line** — Toggle to display a boundary line at each edge
-- **Delete** — Remove this threshold
-
-Threshold bands render on the graph in **both Line and Bar modes**. Add as many thresholds as you need to describe the full range of meaning.
-
-**Toggles:**
-- **Show average value** — Adds a dashed horizontal line showing the average for the selected timeframe, with "Average" in the legend
-- **Show vertical axis lines** — Grid lines along the time axis
-- **Show horizontal axis lines** — Grid lines along the value axis
-- **Display data legend** — Shows threshold labels and the average label in a scrollable legend below the chart
-
-### Step 4 — Save
-
-Tap **Save** to add the widget to the dashboard.
-
-## How the current reading color works
-
-The large value shown at the top of the widget defaults to the metric color you set in the Datasource tab. If the current value falls within one of your threshold ranges, the reading color switches to that threshold's color instead. This means the number at the top turns red, yellow, or green automatically — you don't have to set up separate conditions for the current reading separately.
-
-For example: if you define a threshold from 5–10°C colored red, and your sensor reads 7°C, the large reading at the top displays in red. When the temperature drops back below 5°C and falls outside the threshold, the reading returns to the metric's base color.
-
-## Thresholds vs conditions
-
-Chart uses threshold bands — colored regions drawn on the graph — to add context to the time-series data. Last data and Image map widgets use the conditions system instead: named rules with priority order and per-metric color defaults. See [Conditions](conditions.md) for details on what the conditions system supports and the current metric-type caveat.
+The Chart widget uses **threshold bands** — color ranges painted across the graph. The Last Data and Image Map widgets use the conditions system instead — named color rules with their own priority order. See [Conditions](conditions.md).
 
 ## Home examples
 
-**Bedroom temperature — then and now:**
-Your bedroom temperature is 23°C right now. Yesterday evening it was 19°C. Line chart, Last week — you can see the gradual warming trend and spot exactly when temperatures started climbing. Use Last Data if you only need to know the current value; use Chart when you want to understand the direction it is moving.
+**Is the fridge holding its cold?**
+Not just "is it 4°C now" — but "did it stay cold all week?" A fridge temperature sensor, **line** chart, **Last week**, value range 0 to 10. A green band 0–5°C and a red band 5–10°C show at a glance whether the fridge held steady or spiked one afternoon when the door was left open.
 
-**Fridge staying cold this week?**
-Not just "is it 4°C now" (use Last Data for that) — but "was it always 4°C this week?" Line chart, Last week, value range 0 to 10. Threshold: green 0–5°C "Normal", red 5–10°C "Check fridge". The graph shows whether the fridge held temperature consistently or had a spike yesterday afternoon when the door was left open.
+**Energy use across the week**
+A smart meter on a **line** chart, **Last week**. Set the value range to cover your home's draw — for example 0–6 kW — then add a green band over your usual range (say 0–3 kW) and a red band above it (say 4.5–6 kW). The right numbers depend on your home, so set **From** and **To** to what your meter actually reads; an unusually high overnight figure or a weekend peak then stands out the moment the line climbs above the green.
 
-**Energy use over the week:**
-A smart meter. Line chart, Last week. Threshold bands mark the normal consumption range. Deviations — higher-than-usual overnight consumption, weekend peaks — are immediately visible as the line moves outside the green band.
+**Bedroom temperature overnight**
+A bedroom temperature sensor, **line** chart, **Last day**, value range 10–30 °C. A green band 17–21 °C marks a comfortable sleeping temperature, with a cooler color below it. A glance in the morning tells you whether the room held that comfortable band through the night or dipped in the small hours.
+
+Any reading with a history worth watching fits the Chart widget — soil moisture, a water tank's level, air quality — so treat these as a place to start.
 
 ## See also
 
-- [Conditions](conditions.md) — Color rules for Last Data and Image Map widgets
+- [Last Data Widget](last-data-widget.md) — The current reading on its own, when you do not need the history
+- [Conditions](conditions.md) — Color rules for the Last Data and Image Map widgets
 - [Adding Widgets](README.md) — How to open edit mode and use the widget picker
