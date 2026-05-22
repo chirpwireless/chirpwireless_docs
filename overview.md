@@ -24,7 +24,7 @@ Below the header, a row of summary cards gives you an at-a-glance view of your s
 
 Cards you'll see include:
 
-- **Devices** — Shows how many devices are registered in your home. If any devices have stopped reporting or haven't been verified yet, small warning indicators appear on the card. Tapping the card takes you to the full device list. A small add button in the corner lets you start registering a new device right from here.
+- **Devices** — Shows how many devices are registered in your home. A small warning indicator appears on the card when Chirp can't confirm a device is reporting — either it has never sent anything, or it has gone quiet for longer than its **Data sending interval** — the field where you tell Chirp how often the device is configured to send (see [Adding Sensors](devices/adding-sensors.md)). Tapping the card takes you to the full device list. A small add button in the corner lets you start registering a new device right from here.
 
 - **Gateways** — Shows how many gateways you have connected. Warning indicators appear if a gateway has gone offline or become inactive. Tapping takes you to the gateways page, and the add button starts the gateway setup flow.
 

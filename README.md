@@ -46,6 +46,14 @@ Each dashboard is made of widgets you customize. Pick the display type — chart
 
 Your data appears on screen the moment your sensor reports it — no polling, no refresh button, no "data updated 5 minutes ago." The platform streams data through specialized channels built for real-time delivery. And when you pull up a chart of last month's humidity readings, it loads quickly even with thousands of data points.
 
+### See your home in 3D
+
+Build a 3D model of your home and watch your sensors come to life inside it. The Digital Building Twin lets you draw your rooms — walls, doors, windows, every floor — or import a floor plan, then furnish it from a library of more than 60 ready-made 3D objects: sofas, beds, the fridge, a parking spot in the driveway. Connect each one to a sensor and choose what its colors mean.
+
+Then the model lights up. The nursery glows warm when the temperature climbs. The garage shows at a glance whether the door was left open. The basement turns blue the moment the leak sensor gets wet. The driveway shows whether the car is home. Your house stops being a list of readings and becomes a picture you can read in a second — and what it shows is up to you, room by room, however your home is laid out.
+
+You can even place your home on the real-world map, anchored to its actual location. See [Digital Building Twin](dashboards/adding-widgets/digital-building-twin/README.md) for the full guide.
+
 ### Share with the people who live there
 
 Invite family members, roommates, or property managers to your organization. Give everyone full access, or limit some members to view-only — kids can check the temperature but can't modify rules. If you're a landlord, give tenants view access to shared utility sensors without exposing your own devices or settings.

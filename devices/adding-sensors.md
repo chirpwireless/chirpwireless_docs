@@ -65,7 +65,13 @@ If the readings in the Metrics tab don't look right after connecting your sensor
 
 #### Data sending interval
 
-Set how often you expect your sensor to report. Chirp uses this to decide whether a sensor is online or offline — if no message arrives within the interval, the sensor shows as offline in your sensor list. Pick a number and a unit: **minute**, **hour**, **day**, **week**, or **month**.
+Every sensor sends on its own schedule — some every few minutes, some once a day, some once a month. That schedule is set **on the sensor itself**, and it differs from brand to brand: some sensors arrive with it already set by the manufacturer, others you set yourself when you install the sensor. The **Data sending interval** field is simply where you tell Chirp what that schedule is.
+
+Set it to match how the sensor is actually configured to send. A sensor that reports once a day → **1 day**; once a month → **1 month**. The field starts at **1 hour** by default, but that's only a placeholder — Chirp has no way to know your sensor's real schedule, so replace it with the right value.
+
+If nothing arrives within the interval, the sensor shows as offline in your sensor list and the Devices card on your home overview flags it. Getting this right is what stops a perfectly healthy sensor from looking offline just because it's quiet between its scheduled reports.
+
+Pick a number and a unit: **minute**, **hour**, **day**, **week**, or **month**.
 
 **For vehicle trackers (Tracker connection):**
 

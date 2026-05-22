@@ -32,6 +32,7 @@ After configuring a widget, tap **Save** in the widget settings to add it to the
 | [Chart](chart-widget.md) | You need to see how a value changed over time | A historical graph plus the live current reading |
 | [Image Map](image-map-widget.md) | You want to see sensor data pinned to a floor plan, room photo, or diagram | Your own uploaded image with live numeric readings pinned to their locations |
 | [Map](map-widget.md) | You want to see where a GPS-reporting device is right now | Current position on a real outdoor interactive map, plus one sensor reading on the marker |
+| [Digital Building Twin](digital-building-twin/README.md) | You want a 3D model of your home with sensors mapped to real rooms and objects | A 3D editor that turns your home into a live picture, colored by what your sensors say |
 
 ## What comes next
 
@@ -39,5 +40,6 @@ After configuring a widget, tap **Save** in the widget settings to add it to the
 - [Chart Widget](chart-widget.md) — Time-series graphs with live current reading and threshold bands
 - [Image Map Widget](image-map-widget.md) — Floor plans with draggable live-data pins
 - [Map Widget](map-widget.md) — GPS tracker location with route history
+- [Digital Building Twin](digital-building-twin/README.md) — A 3D model of your home that lights up with live sensor readings
 - [Conditions](conditions.md) — Color rules that turn readings into meaning
 - [Organizing Your Views](../organizing-your-views.md) — Group dashboards into folders

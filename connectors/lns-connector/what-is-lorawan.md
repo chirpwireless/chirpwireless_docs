@@ -16,7 +16,7 @@ For the best coverage, place your gateway near a window or on the roof if possib
 
 ### Years of Battery Life
 
-LoRaWAN sensors are designed to run for years on a single battery. A temperature sensor in your garden or a leak detector under the sink can operate for two to five years without attention. You don't need to wire them into mains power or change batteries every few months. This is why LoRaWAN is perfect for places with no power outlet — the sensor is the only thing you need.
+LoRaWAN sensors are designed to run for years on a single battery. A temperature sensor in your garden or a leak detector under the sink can operate for two to five years without attention. You don't need to wire them into mains power or change batteries every few months. That independence from mains power is what makes LoRaWAN so flexible: you can place a sensor wherever a reading would be useful — the garden, a shed, the basement, an outbuilding, the mailbox, a utility room — without planning around a power outlet or a wiring run.
 
 ### Secure Communication
 

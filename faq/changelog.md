@@ -2,6 +2,183 @@
 
 <details>
 
+<summary>Flight Log. Release 3.4.0</summary>
+
+Chirp 3.4.0 introduces the **Digital Building Twin** — a built-in 3D editor that lets you draw your home, populate it with furniture and fixtures, and bind any of them to a sensor so the model lights up with live readings. Sketch in 2D or 3D, drop in a sofa, a fridge, the bathtub, the garage door, the parking spot out front — and wire each one to the sensor that watches it. Your home can also be placed on the real-world map and anchored to GPS coordinates. The release also brings a step-through debug mode to the rules engine and two new single-value displays for the Last Data widget — Tube and Gauge. [app.chirpwireless.io](https://app.chirpwireless.io)
+
+***
+
+#### What's in This Release
+
+* **Digital Building Twin** — A full 3D home editor inside Chirp: draw in 2D and 3D, navigate room by room across multiple floors, place more than 60 ready-to-use 3D objects (furniture, kitchen, bathroom, appliances, outdoor), import an architect's DXF plan or trace your home outline from the real-world map, bind any placed object to any sensor and the model recolors live as readings come in
+* **Step-Through Rule Debugging** — Run an automation in debug mode, pause at any step, watch every variable change, and choose what to do when an action would normally fire for real
+* **Tube Widget** — A new Last Data widget look that shows a single reading as a filled vertical tube — a level you can read at a glance, for anything that rises and falls
+* **Gauge Widget** — A horizontal track gauge for any single reading — temperature, humidity, battery, signal strength — with color bands you set yourself
+
+***
+
+**Digital Building Twin**
+
+The Digital Building Twin is a complete 3D editor for your home, built right into Chirp. No separate app to install, no CAD program to buy. Open a dashboard, add the Digital Building Twin widget, switch to edit mode, and you are drawing a 3D replica of your house, apartment, garden, garage, or any other space you want to monitor.
+
+**Build your home three different ways**
+
+There are three ways to start a Digital Building Twin, and they work together:
+
+* **Draw it yourself in 2D or 3D** — Place walls, doors, windows, and fences from scratch. The editor shows a flat 2D top-down view AND a 3D walk-through of the same model — start by sketching the floor plan from above, then jump into 3D to check it from a person's eye level. Undo and redo work the way you'd expect.
+* **Import a CAD floor plan** — If you have a DXF file from a builder, architect, or estate agent, drop it in. Chirp parses the line work, previews what the walls will look like, and converts it into a real 3D model.
+* **Trace it from a map** — Open the map-trace dialog and draw the outline of your home directly onto an aerial photograph. Chirp builds the walls automatically and anchors your house to its real GPS coordinates.
+
+A model can carry **multiple floors** — ground floor, first floor, basement, attic — switched via the floor selector. One model covers the whole house.
+
+**Place from the 3D object library**
+
+Chirp ships with a built-in library of more than 60 ready-to-place 3D objects across five categories:
+
+* **Furniture** — sofas, armchairs, dining and office chairs, coffee tables, dining tables, office desks, beds (single, double, bunk), bookshelves, dressers, closets, wall shelves, plants, carpets, trash bins
+* **Kitchen** — stove, fridge, counter, microwave
+* **Bathroom** — toilet, bathtub, sinks, faucets
+* **Appliance** — ceiling, floor, and table lamps, TVs, computers, washing machines, AC units, smoke detectors, water boilers, water heaters, pumps and softeners
+* **Outdoor** — trees, bushes, patio umbrellas, **parking spots**, cars, outdoor AC units, gates, barriers, trash and recycling bins
+
+Each one is a properly-scaled 3D model. Many snap to walls or ceilings automatically. Drag from the strip at the bottom, drop into your floor plan, and adjust.
+
+**Wire any object to any sensor**
+
+This is what makes the Digital Building Twin more than a 3D model. Anything you place — the couch, the parking spot in the driveway, the kitchen smoke detector, the front door, the garden — can be wired to a sensor in your Chirp setup. Open the Sensors panel, pick the device, pick the metric, then click the object the sensor watches. That's it.
+
+You can bind more than one sensor to one object (the kitchen counter could carry a temperature reading AND a motion sensor's occupancy state), and the same sensor can light up several objects at once (a hallway PIR sensor could color both the hallway floor AND a "downstairs" label).
+
+**Color rules driven by live readings**
+
+Every binding gets a set of **color rules** — the same rules you already use on charts and number widgets:
+
+* **Number ranges** — color when the reading falls in a range (e.g. 18–22°C green for "comfortable", 22–26°C amber for "warm", 26°C+ red)
+* **Match a word** — color when the value equals a specific text (e.g. `occupied` red, `vacant` green for a parking sensor)
+* **True / false** — color for boolean readings (e.g. door open red, door closed green)
+
+Rules run in order; the first match wins. Set a default color for when nothing matches. The model recolors as readings stream in — at one glance you can see which rooms are too warm, where a door's open, whether the parking spot is taken, whether the basement is still dry.
+
+**Drop pins with live values**
+
+Sensors can also be **pinned** to a specific point in the scene — a drop pin that shows the current reading right next to where the sensor sits in real life. Toggle pins off for a clean view of the model; toggle them on when you want the numbers.
+
+**Anchor your home to the real world**
+
+Your home can be placed on the real-world map and anchored to GPS coordinates — trace its outline on an aerial map and the model carries that real-world position. Individual points inside the model can also be tagged with their own lat/lng manually. Together, these anchors give your home a real-world spatial base that Chirp can build location-aware features on later.
+
+**Where to find it**
+
+Add a Digital Building Twin to any dashboard from the standard Add Widget menu, then open the widget's editor to draw, populate, and wire. Like every other Chirp widget, it lives in your folder hierarchy, can be shared with the household, and resizes on the grid.
+
+[→ Digital Building Twin](../dashboards/adding-widgets/digital-building-twin/README.md)
+
+***
+
+**Step-Through Rule Debugging**
+
+Building an automation that doesn't behave the way you expected? You can now run the rule in debug mode and watch it execute one step at a time. Set a test payload, hit **Run**, and the editor walks through every node — pausing wherever you've placed a breakpoint and showing you exactly what each variable looks like at that moment.
+
+You get the controls you'd expect from a real debugger:
+
+* **Run, Step over (F9), Step into (F8)** — Walk through the rule the way you'd walk through code.
+* **Run ignore breakpoints (F11)** — Skip the breakpoints and just watch the rule run end to end.
+* **Breakpoints** — Click a node to add one. Need a conditional breakpoint? Add an expression so the pause only happens when your condition is true — for example, only when `device.temperature > 25`.
+* **Variables panel** — See every variable in the current run. A **Changes** section highlights what just changed, so you don't have to hunt for it.
+* **Watch expressions** — Add expressions you want to keep an eye on — Chirp re-evaluates them at every step.
+* **Errors with one click to the problem** — If a node fails, the editor pops a red modal with the node name and the error, and **Go to…** focuses the canvas on the failing node.
+
+When a step has a side effect, Chirp asks you whether to **Execute** (run the real action), **Skip** (leave variables unchanged), or **Mock** (use a stand-in response) — so you can probe alternative branches without committing to every real call.
+
+[→ Debugging Automations](../rules-engine/reference/debugging-automations.md)
+
+***
+
+**Tube Widget**
+
+A new way to display a single reading on your dashboard: a vertical filled tube. Set a range, pick colors for each section, and watch the level rise and fall as the reading changes.
+
+Things this is great for at home:
+
+* Rainwater tank level
+* Heating oil or propane tank
+* Pool or hot tub water level
+* Pet water dispenser
+* Aquarium or fish-tank water level
+* Any DIY sensor that reports a 0–100 value
+
+The Tube is a new look for the Last Data widget you already know — same setup, same conditional colors, same legend options.
+
+[→ Last Data Widget](../dashboards/adding-widgets/last-data-widget.md)
+
+***
+
+**Gauge Widget**
+
+A clean, easy-to-read gauge for any reading you want at a glance — a horizontal track with a marker that slides to the live value. Set the min and max, color the bands the way you want, and the marker moves with the sensor.
+
+Things this is great for at home:
+
+* Living-room temperature with a comfortable green zone
+* Outdoor humidity with a warning band when it climbs too high
+* Battery level on a tracker or pet collar
+* Wi-Fi signal strength of a remote sensor
+* Energy plug wattage with a "wasteful" red zone
+* Solar panel current output
+
+Like the Tube, the Gauge is a new look for the Last Data widget — pick it from the same place you'd pick a number, doughnut, or pie chart.
+
+[→ Last Data Widget](../dashboards/adding-widgets/last-data-widget.md)
+
+</details>
+
+<details>
+
+<summary>Flight Log. Maintenance — Releases 3.2.0 and 3.3.0</summary>
+
+A pair of small releases focused on tightening home access controls and making the Overview page more useful for spotting active alerts.
+
+***
+
+#### What's in This Release
+
+* **Connectors menu access fix** — Household members who don't have access to Connectors no longer see the entry in the menu
+* **Overview shows what's going on right now** — The Overview page now surfaces active alerts and links straight to the Alarm app
+* **Quieter, more reliable data path** — Background reliability work on how Chirp ingests sensor data; the platform now recovers cleanly when our infrastructure rolls a restart
+
+***
+
+**Connectors Menu Access Fix**
+
+If you've shared your home with a family member or roommate who doesn't have access to Connectors, the **Connectors** menu item used to still show up in their sidebar — even though they couldn't actually do anything with it. That's now fixed: the menu entry only appears for household members who have permission to use it.
+
+[→ Household Members](../account/users-and-permissions.md)
+
+***
+
+**Overview Shows What's Going On Right Now**
+
+The Overview page is your front door into Chirp. With this update, it now also tells you whether your home has any active alerts — at a glance, without leaving the page. Active alerts appear in a dedicated panel, and one click takes you straight into the Alarm app to deal with them.
+
+If your dashboard reports a critical issue while you're on Overview, you'll see it immediately instead of having to navigate to find out.
+
+[→ Check and Clear Alerts](../alarm/check-and-clear-alerts.md)
+
+***
+
+**Quieter, More Reliable Data Path**
+
+A bit of behind-the-scenes work that most homes will never directly notice, but which makes the platform more resilient:
+
+* **Cleaner startup behaviour** — If a key part of Chirp's data pipeline isn't ready when the platform boots, it now flags the problem clearly instead of carrying on in a half-broken state. The result: fewer mysterious "your sensor is not reporting" moments while everything spins up.
+* **Smoother rolling restarts** — When Chirp's hosting infrastructure rolls a restart of its messaging layer (something we do regularly to ship updates), the data path reconnects cleanly without leaving any stale sessions behind. Your sensors keep flowing into the dashboard without extra hiccups.
+
+You don't have to do anything — these improvements are already live.
+
+</details>
+
+<details>
+
 <summary>Flight Log. Release 3.1.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.1.0.png" alt=""><figcaption></figcaption></figure>
