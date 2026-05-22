@@ -25,7 +25,7 @@ Let's build a real one — a ring that shows the living-room temperature and whe
 5. In the row, leave **Data type** on **Telemetry**, choose the temperature reading under **Device metric**, and pick an **Icon**.
 
    > **Don't see your sensor reading?** The **Device metric** list only shows number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Data Templates** (the **Metrics Templates** button on your connection's Connected Devices list), find the metric on the **Metrics** tab, and switch its **Type** to Integer or Float — as long as the sensor really does send a number. See [Data Templates](../../../devices/data-templates.md).
-6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — a **Condition name**, **Data type** set to **Number** (the condition's own Data type, not the metric's), the band's **From** and **To** — a living room realistically sits between -5 °C and 40 °C, so those run from **-5** to **40** — and a **Color**. Then you set the colour levels — for example:
+6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — a **Condition name**, **Data type** set to **Number** (the condition's own Data type, not the metric's), the band's **From** and **To** — a living room realistically sits between -5 °C and 40 °C, so those run from **-5** to **40** — and a **Color**. Then you set the color levels — for example:
 
    Starting at the coldest:
    - "Too cold" — **From** -5, **To** 15 — blue
@@ -49,7 +49,7 @@ The ring shows the temperature as a spot in the range and goes green only while 
 Your fridge uses the very same kind of temperature sensor as the living room above — but a comfortable fridge and a comfortable room are nothing alike. A fridge stays cold, so its safe range is only about 0–5 °C — set the scale a little wider than that band so a fridge that fails and warms up still shows on the ring: **Min value** **-5**, **Max value** **15**. Then build three conditions: "Too cold" — From -5, To 0 — blue; "Safe" — From 0, To 5 — green; "Too warm" — From 5, To 15 — red. Same sensor, same steps — only the numbers move, because you decide what "good" means for each spot in your home. That's the whole idea behind conditions.
 
 **How full is the water tank?**
-A Doughnut is a natural fit for a tank. A level sensor in a 500-litre tank reports the contents in litres, so 0 is empty and 500 is full — **Min value** 0, **Max value** 500 — with conditions green From 300 To 500, yellow From 100 To 300, red From 0 To 100. The ring empties before your eyes as the tank is used.
+A Doughnut is a natural fit for a tank. A level sensor in a 500-liter tank reports the contents in liters, so 0 is empty and 500 is full — **Min value** 0, **Max value** 500 — with conditions green From 300 To 500, yellow From 100 To 300, red From 0 To 100. The ring empties before your eyes as the tank is used.
 
 ## See also
 

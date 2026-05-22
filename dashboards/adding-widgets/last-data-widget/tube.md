@@ -16,7 +16,7 @@ If your instinct is to imagine a reading as a column going up and down, the Tube
 
 ## Configure a Tube display
 
-Let's build a real one — a tube that watches the salt level in a water softener so you never let it run dry. The softener's salt tank is about 100 cm deep, and a level sensor reports how full it is in centimetres — so the reading is 0 when the tank is empty and 100 when it's filled right up. Those two numbers, 0 and 100, are the scale the whole widget works from, and every color band is just a slice of that 100 cm. This is only an example, though: the very same steps work for a rainwater butt, a heating-oil tank, a feed bin — anything with a level. Only the sensor and the numbers change.
+Let's build a real one — a tube that watches the salt level in a water softener so you never let it run dry. The softener's salt tank is about 100 cm deep, and a level sensor reports how full it is in centimeters — so the reading is 0 when the tank is empty and 100 when it's filled right up. Those two numbers, 0 and 100, are the scale the whole widget works from, and every color band is just a slice of that 100 cm. This is only an example, though: the very same steps work for a rainwater butt, a heating-oil tank, a feed bin — anything with a level. Only the sensor and the numbers change.
 
 1. Open your dashboard in edit mode and tap **Last data** in the widget picker. The **Datasource** tab opens with nothing added yet.
 2. Tap **Add datasource**. A **Datasource 1** block appears.
@@ -25,7 +25,7 @@ Let's build a real one — a tube that watches the salt level in a water softene
 5. In the row, leave **Data type** on **Telemetry**, choose the level reading under **Device metric**, and pick an **Icon**.
 
    > **Don't see your sensor reading?** The **Device metric** list only shows number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Data Templates** (the **Metrics Templates** button on your connection's Connected Devices list), find the metric on the **Metrics** tab, and switch its **Type** to Integer or Float — as long as the sensor really does send a number. See [Data Templates](../../../devices/data-templates.md).
-6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — type a **Condition name**, set **Data type** to **Number** (this is the condition's own Data type, not the metric's), because the salt tank is 100 cm tall, enter **From** 0 cm (the empty bottom) and **To** 100 cm (the full top), and pick a **Color**. Then you set the colour levels — for example:
+6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — type a **Condition name**, set **Data type** to **Number** (this is the condition's own Data type, not the metric's), because the salt tank is 100 cm tall, enter **From** 0 cm (the empty bottom) and **To** 100 cm (the full top), and pick a **Color**. Then you set the color levels — for example:
 
    Starting at the bottom:
    - "Critical" — **From** 0, **To** 10 — burgundy (a deep red, darker than the next band)
@@ -48,7 +48,7 @@ Now the tube stands tall and green while there's plenty of salt, slips through y
 A sump pump sits in a pit in the basement and keeps the water low so the floor stays dry. Drop a level sensor into the pit and show it on a Tube. The pit is about 100 cm deep, so 0 is a dry floor and 100 is water right at the overflow — set **Min value** 0 and **Max value** 100, then add three conditions: "Normal" — From 0, To 30 — green; "Water rising" — From 30, To 60 — yellow; "Pump may have failed" — From 60, To 100 — red. Day to day the column is short and green; if the pump quits, the water climbs and the tube fills into the red. A quick note on the sensor: a level sensor reads higher as the water rises, but a sensor fixed above the water (measuring the gap down to it) reads lower — so put the red condition on whichever value means "high water" for the one you have. The Tube makes the danger easy to spot on the dashboard; to get a phone alert as well, pair it with an [alarm](../../../alarm/README.md).
 
 **A rain barrel in the garden**
-The same idea for collected rainwater — a level sensor in a 200-litre barrel — **Min value** 0 for an empty barrel and **Max value** 200 because that is how much it holds. The tube rises with every shower and drops as you water the garden, so you always know how much you've saved up.
+The same idea for collected rainwater — a level sensor in a 200-liter barrel — **Min value** 0 for an empty barrel and **Max value** 200 because that is how much it holds. The tube rises with every shower and drops as you water the garden, so you always know how much you've saved up.
 
 ## See also
 

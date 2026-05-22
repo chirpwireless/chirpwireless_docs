@@ -14,7 +14,7 @@ A Gauge has no built-in good or bad end — the bands you choose decide that. Wh
 
 ## Configure a Gauge display
 
-Let's build a real one — a gauge that warns you if a basement sump pump fails before the floor floods. The pump's job is to keep the water in its pit low; the pit is about 100 cm deep, and a level sensor reports the water level in centimetres — so the reading runs from 0 (a dry pit floor) up to 100 (water at the overflow). That 0–100 is the gauge's track, and each color band is one stretch of it. This is just an example — a Gauge works for any reading you measure against limits, so only the sensor and the band numbers change.
+Let's build a real one — a gauge that warns you if a basement sump pump fails before the floor floods. The pump's job is to keep the water in its pit low; the pit is about 100 cm deep, and a level sensor reports the water level in centimeters — so the reading runs from 0 (a dry pit floor) up to 100 (water at the overflow). That 0–100 is the gauge's track, and each color band is one stretch of it. This is just an example — a Gauge works for any reading you measure against limits, so only the sensor and the band numbers change.
 
 1. Open your dashboard in edit mode and tap **Last data** in the widget picker. The **Datasource** tab opens with nothing added yet.
 2. Tap **Add datasource**. A **Datasource 1** block appears.
@@ -23,7 +23,7 @@ Let's build a real one — a gauge that warns you if a basement sump pump fails 
 5. In the row, leave **Data type** on **Telemetry**, choose the water-level reading under **Device metric**, and add an **Icon**.
 
    > **Don't see your sensor reading?** The **Device metric** list only shows number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Data Templates** (the **Metrics Templates** button on your connection's Connected Devices list), find the metric on the **Metrics** tab, and switch its **Type** to Integer or Float — as long as the sensor really does send a number. See [Data Templates](../../../devices/data-templates.md).
-6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — a **Condition name**, **Data type** set to **Number** (the condition's own Data type, not the metric's), the band's **From** and **To** — because the pit is 100 cm deep, those run from **0** (the dry floor) to **100** (the overflow) — and a **Color**. Then you set the colour levels — for example:
+6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — a **Condition name**, **Data type** set to **Number** (the condition's own Data type, not the metric's), the band's **From** and **To** — because the pit is 100 cm deep, those run from **0** (the dry floor) to **100** (the overflow) — and a **Color**. Then you set the color levels — for example:
 
    Starting at the dry floor:
    - "Normal" — **From** 0, **To** 30 — green
