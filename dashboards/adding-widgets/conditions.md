@@ -6,11 +6,11 @@ A temperature sensor in the living room should be green at 18–24°C. The same 
 
 ## Which widgets use conditions
 
-Conditions are available for **Last Data** and **Image Map** widgets. Each metric in these widgets has its own set of conditions, configured independently.
+Conditions are available for **Last Data** and **Image** widgets. Each metric in these widgets has its own set of conditions, configured independently.
 
 The **Chart** widget uses a different approach — per-metric color picker and threshold bands on the graph. See [Chart Widget](chart-widget.md) if you're working with a Chart.
 
-**Note on metric types:** Both Image Map and Last Data metric selectors surface numeric sensors only (INTEGER and FLOAT types). Number conditions are the verified practical path for both widgets. The conditions modal also exposes String and Boolean data type options — these are described below — but they require a widget that can select a sensor of those types, which is not currently the case for Last Data or Image Map.
+**Note on metric types:** Both the Image and Last Data metric selectors surface numeric sensors only (INTEGER and FLOAT types). Number conditions are the practical path for both widgets. The conditions modal also exposes String and Boolean data type options — these are described below — but they require a widget that can select a sensor of those types, which is not currently the case for Last Data or the Image widget.
 
 ## How to open the Conditions modal
 
@@ -86,11 +86,11 @@ The same Number condition type handles all of these. The difference is only in t
 
 ### String
 
-A single **Value** text field. Matches the reading exactly, case-sensitive. Available in the conditions modal but requires a widget that surfaces a String-type sensor — Last Data and Image Map selectors do not surface String sensors.
+A single **Value** text field. Matches the reading exactly, case-sensitive. Available in the conditions modal but requires a widget that surfaces a String-type sensor — Last Data and Image widget selectors do not surface String sensors.
 
 ### Boolean
 
-A **True / False** dropdown. Matches the reading exactly. Available in the conditions modal but requires a widget that surfaces a Boolean-type sensor — Last Data and Image Map selectors do not surface Boolean sensors.
+A **True / False** dropdown. Matches the reading exactly. Available in the conditions modal but requires a widget that surfaces a Boolean-type sensor — Last Data and Image widget selectors do not surface Boolean sensors.
 
 ## Color fallback hierarchy
 
@@ -161,4 +161,4 @@ Any binary sensor works the same way: pick a color for each state and a label th
 ## See also
 
 - [Last Data Widget](last-data-widget.md) — Use conditions to color sensor readings and gauges
-- [Image Map Widget](image-map-widget.md) — Use conditions to color pins on your floor plan
+- [Image Widget](image-widget.md) — Use conditions to color the pins on your image

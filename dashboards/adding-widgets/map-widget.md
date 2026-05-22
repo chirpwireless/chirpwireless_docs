@@ -4,7 +4,7 @@ The Map widget shows where a GPS-reporting device is on a real outdoor interacti
 
 Any device that reports GPS coordinates works — a family GPS tracker, a pet collar, a vehicle connected via the Tracker connector, or a LoRaWAN GPS tag. The widget looks for sensor fields named `lat`/`latitude` and `lon`/`longitude`/`lng`. If those fields exist on the device, it appears on the map automatically.
 
-This is different from the [Image Map widget](image-map-widget.md), which lets you upload your own static image and pin sensors onto it. The Map widget is for devices that move in the real world.
+This is different from the [Image Widget](image-widget.md), which lets you upload your own static image and pin sensors onto it. The Map widget is for devices that move in the real world.
 
 Tap a button to switch to a date range view and see the route the device took over any period.
 

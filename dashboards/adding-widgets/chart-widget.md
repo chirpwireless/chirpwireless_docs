@@ -49,7 +49,7 @@ So a humidity chart shows a calm green number while the room is comfortable and 
 
 ## Bands here, conditions elsewhere
 
-The Chart widget uses **threshold bands** — color ranges painted across the graph. The Last Data and Image Map widgets use the conditions system instead — named color rules with their own priority order. See [Conditions](conditions.md).
+The Chart widget uses **threshold bands** — color ranges painted across the graph. The Last Data and Image widgets use the conditions system instead — named color rules with their own priority order. See [Conditions](conditions.md).
 
 ## Home examples
 
@@ -67,5 +67,5 @@ Any reading with a history worth watching fits the Chart widget — soil moistur
 ## See also
 
 - [Last Data Widget](last-data-widget.md) — The current reading on its own, when you do not need the history
-- [Conditions](conditions.md) — Color rules for the Last Data and Image Map widgets
+- [Conditions](conditions.md) — Color rules for the Last Data and Image widgets
 - [Adding Widgets](README.md) — How to open edit mode and use the widget picker

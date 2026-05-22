@@ -311,7 +311,7 @@ CHIRP 3.0.0 is a fundamental platform rework. We rebuilt the entire connectivity
 * **Digital Twin Device Management** — New device model with visual data normalization, sensor templates, and device photos
 * **Visual Rules Engine** — BPMN-based automation with CEL expressions, version control, and one-click deployment
 * **Alarm Management System** — Five severity levels, escalation policies, and mobile push notifications for Android and iOS
-* **Fully Configurable Dashboards** — Context-aware widgets with conditional formatting, plus a new Image Map widget
+* **Fully Configurable Dashboards** — Context-aware widgets with conditional formatting, plus a new Image Widget
 * **Organizations and Access Control** — Multi-tenant isolation with ABAC permissions and audit trail
 * **Sui Blockchain Migration** — All services migrated from JSON-RPC to gRPC and GraphQL
 
@@ -459,11 +459,11 @@ Widgets are no longer predefined. You configure every widget to show the data yo
 
 You define conditional colors per sensor on each widget — number ranges, exact string values, or boolean states. Conditions are priority-ordered: the first matching condition determines the color. Custom units, icons, and labels complete the picture.
 
-**Image Map Widget (New)**
+**Image Widget (New)**
 
 Upload a floor plan image, then place sensor pins at exact positions on the map. See live data from every sensor overlaid directly on your facility layout. Color-coded pins change in real time based on your conditional formatting rules — walk into the monitoring room and instantly see which zones are normal and which need attention.
 
-The Image Map supports multiple floors or layers — switch between building levels to monitor your entire facility from a single widget.
+The Image Widget supports multiple floors or layers — switch between building levels to monitor your entire facility from a single widget.
 
 **Last Data Widget**
 

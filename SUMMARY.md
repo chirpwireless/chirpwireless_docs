@@ -15,7 +15,7 @@
       * [Tube Display](dashboards/adding-widgets/last-data-widget/tube.md)
       * [Gauge Display](dashboards/adding-widgets/last-data-widget/gauge.md)
     * [Chart Widget](dashboards/adding-widgets/chart-widget.md)
-    * [Image Map Widget](dashboards/adding-widgets/image-map-widget.md)
+    * [Image Widget](dashboards/adding-widgets/image-widget.md)
     * [Map Widget](dashboards/adding-widgets/map-widget.md)
     * [Digital Building Twin](dashboards/adding-widgets/digital-building-twin/README.md)
       * [Editor Tour](dashboards/adding-widgets/digital-building-twin/editor-tour.md)
