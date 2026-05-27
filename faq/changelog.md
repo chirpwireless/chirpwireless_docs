@@ -2,19 +2,22 @@
 
 <details>
 
-<summary>Flight Log. Release 3.4.0</summary>
+<summary>Flight Log. Releases 3.2.0, 3.3.0, 3.4.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.4.0.jpg" alt=""><figcaption></figcaption></figure>
 
-Chirp 3.4.0 is the release we couldn't wait to ship. The **Digital Building Twin** lands at its center: a live IoT digital twin of your home and property, built right inside Chirp. Wire any sensor in your Chirp setup to any object on a 3D model of your place — the front door, the driveway gate or boom barrier, the garage, the parking spot out front, a smart trash bin on collection day, the kitchen smoke detector, the bathtub, a water tank in the cellar — and the scene lights up live as readings come in. House, garden, garage, driveway, and multiple floors all sit in one model. Draw it from scratch in 2D and 3D, import a DXF floor plan from a builder or architect, or trace its outline onto an aerial map and anchor it to its real GPS spot. The release also brings two new single-value displays for the Last Data widget — Tube and Gauge. [app.chirpwireless.io](https://app.chirpwireless.io)
+Chirp 3.4.0 is the release we couldn't wait to ship. The **Digital Building Twin** lands at its center: a live IoT digital twin of your home and property, built right inside Chirp. Wire any sensor in your Chirp setup to any object on a 3D model of your place — the front door, the driveway gate or boom barrier, the garage, the parking spot out front, a smart trash bin on collection day, the kitchen smoke detector, the bathtub, a water tank in the cellar — and the scene lights up live as readings come in. House, garden, garage, driveway, and multiple floors all sit in one model. Draw it from scratch in 2D and 3D, or trace its outline onto an aerial map and anchor it to its real GPS spot. The release also brings two new single-value displays for the Last Data widget — Tube and Gauge. 3.2.0 and 3.3.0 shipped along the way as quick maintenance updates; their notes are bundled in here too. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **Digital Building Twin** — Wire any sensor in your Chirp setup to any object on a live 3D model of your home and property — the front door, the driveway gate or boom barrier, the garage door, the parking spot, a smart trash bin, the kitchen smoke detector, the bathtub, a basement leak sensor — and the model recolors live as readings come in. House, garden, garage, driveway, and multiple floors in one model. Draw in 2D and 3D, import a DXF floor plan, or trace from an aerial map and anchor to GPS; 60+ ready-to-place 3D objects, indoors and out.
+* **Digital Building Twin** — Wire any sensor in your Chirp setup to any object on a live 3D model of your home and property — the front door, the driveway gate or boom barrier, the garage door, the parking spot, a smart trash bin, the kitchen smoke detector, the bathtub, a basement leak sensor — and the model recolors live as readings come in. House, garden, garage, driveway, and multiple floors in one model. Draw in 2D and 3D, or trace from an aerial map and anchor to GPS; 60+ ready-to-place 3D objects, indoors and out.
 * **Tube Widget** — A new Last Data widget look that shows a single reading as a filled vertical tube — a level you can read at a glance, for anything that rises and falls
 * **Gauge Widget** — A horizontal track gauge for any single reading — temperature, humidity, battery, signal strength — with color bands you set yourself
+* **Connectors menu access fix** — Household members who don't have access to Connectors no longer see the entry in the menu
+* **Overview shows what's going on right now** — The Overview page now surfaces active alerts and links straight to the Alarm app
+* **Quieter, more reliable data path** — Background reliability work on how Chirp ingests sensor data; the platform now recovers cleanly when our infrastructure rolls a restart
 
 ***
 
@@ -44,12 +47,11 @@ Rules run in order; the first match wins. Set a default color for when nothing m
 
 Sensors can also be **pinned** to a specific point in the scene — a drop pin that shows the current reading right next to where the sensor sits in real life. Toggle pins off for a clean view of the model; toggle them on when you want the numbers.
 
-**Build your home three different ways**
+**Build your home two ways**
 
-Three ways to start a Digital Building Twin, and they work together:
+Two ways to start a Digital Building Twin, and they work together:
 
 * **Draw it yourself in 2D or 3D** — Place walls, doors, windows, and fences from scratch. The editor shows a flat 2D top-down view AND a 3D walk-through of the same model — start by sketching the floor plan from above, then jump into 3D to check it from a person's eye level. Undo and redo work the way you'd expect.
-* **Import a CAD floor plan** — If you have a DXF file from a builder, architect, or estate agent, drop it in. Chirp parses the line work, previews what the walls will look like, and converts it into a real 3D model.
 * **Trace it from a map** — Open the map-trace dialog and draw the outline of your home directly onto an aerial photograph. Chirp builds the walls automatically and anchors your house to its real GPS coordinates.
 
 A model can carry **multiple floors** — ground floor, first floor, basement, attic — switched via the floor selector. One model covers the whole property, indoors and out.
@@ -128,22 +130,6 @@ Things this is great for at home:
 Like the Tube, the Gauge is a new look for the Last Data widget — pick it from the same place you'd pick a number, doughnut, or pie chart.
 
 [→ Last Data Widget](../dashboards/adding-widgets/last-data-widget.md)
-
-</details>
-
-<details>
-
-<summary>Flight Log. Maintenance — Releases 3.2.0 and 3.3.0</summary>
-
-A pair of small releases focused on tightening home access controls and making the Overview page more useful for spotting active alerts.
-
-***
-
-#### What's in This Release
-
-* **Connectors menu access fix** — Household members who don't have access to Connectors no longer see the entry in the menu
-* **Overview shows what's going on right now** — The Overview page now surfaces active alerts and links straight to the Alarm app
-* **Quieter, more reliable data path** — Background reliability work on how Chirp ingests sensor data; the platform now recovers cleanly when our infrastructure rolls a restart
 
 ***
 
