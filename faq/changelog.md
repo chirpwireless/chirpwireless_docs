@@ -4,14 +4,15 @@
 
 <summary>Flight Log. Release 3.4.0</summary>
 
-Chirp 3.4.0 introduces the **Digital Building Twin** — a built-in 3D editor that lets you draw your home, populate it with furniture and fixtures, and bind any of them to a sensor so the model lights up with live readings. Sketch in 2D or 3D, drop in a sofa, a fridge, the bathtub, the garage door, the parking spot out front — and wire each one to the sensor that watches it. Your home can also be placed on the real-world map and anchored to GPS coordinates. The release also brings a step-through debug mode to the rules engine and two new single-value displays for the Last Data widget — Tube and Gauge. [app.chirpwireless.io](https://app.chirpwireless.io)
+<figure><img src="../.gitbook/assets/Flight_Release_3.4.0.jpg" alt=""><figcaption></figcaption></figure>
+
+Chirp 3.4.0 is the release we couldn't wait to ship. The **Digital Building Twin** lands at its center: a live IoT digital twin of your home and property, built right inside Chirp. Wire any sensor in your Chirp setup to any object on a 3D model of your place — the front door, the driveway gate or boom barrier, the garage, the parking spot out front, a smart trash bin on collection day, the kitchen smoke detector, the bathtub, a water tank in the cellar — and the scene lights up live as readings come in. House, garden, garage, driveway, and multiple floors all sit in one model. Draw it from scratch in 2D and 3D, import a DXF floor plan from a builder or architect, or trace its outline onto an aerial map and anchor it to its real GPS spot. The release also brings two new single-value displays for the Last Data widget — Tube and Gauge. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **Digital Building Twin** — A full 3D home editor inside Chirp: draw in 2D and 3D, navigate room by room across multiple floors, place more than 60 ready-to-use 3D objects (furniture, kitchen, bathroom, appliances, outdoor), import an architect's DXF plan or trace your home outline from the real-world map, bind any placed object to any sensor and the model recolors live as readings come in
-* **Step-Through Rule Debugging** — Run an automation in debug mode, pause at any step, watch every variable change, and choose what to do when an action would normally fire for real
+* **Digital Building Twin** — Wire any sensor in your Chirp setup to any object on a live 3D model of your home and property — the front door, the driveway gate or boom barrier, the garage door, the parking spot, a smart trash bin, the kitchen smoke detector, the bathtub, a basement leak sensor — and the model recolors live as readings come in. House, garden, garage, driveway, and multiple floors in one model. Draw in 2D and 3D, import a DXF floor plan, or trace from an aerial map and anchor to GPS; 60+ ready-to-place 3D objects, indoors and out.
 * **Tube Widget** — A new Last Data widget look that shows a single reading as a filled vertical tube — a level you can read at a glance, for anything that rises and falls
 * **Gauge Widget** — A horizontal track gauge for any single reading — temperature, humidity, battery, signal strength — with color bands you set yourself
 
@@ -19,21 +20,45 @@ Chirp 3.4.0 introduces the **Digital Building Twin** — a built-in 3D editor th
 
 **Digital Building Twin**
 
-The Digital Building Twin is a complete 3D editor for your home, built right into Chirp. No separate app to install, no CAD program to buy. Open a dashboard, add the Digital Building Twin widget, switch to edit mode, and you are drawing a 3D replica of your house, apartment, garden, garage, or any other space you want to monitor.
+<figure><img src="../.gitbook/assets/3d_Scene_Screen.png" alt="Chirp Digital Building Twin recoloring in real time — parking bay A123 red (occupied), A124 green (vacant), dumpsters in color-coded fill states, and sensor markers across the property"><figcaption></figcaption></figure>
+
+With the Digital Building Twin, your home and the property around it become a live, sensor-aware 3D model right inside Chirp. Wire any sensor in your Chirp setup to any object on the scene — house, apartment, garage, garden, driveway, parking spot, even the boom-barrier gate at a shared driveway — and the model lights up as readings come in. Open a dashboard, add the Digital Building Twin widget, switch to edit mode, and you're drawing — no separate app, no CAD program needed.
+
+**Wire any sensor to any object**
+
+This is what makes the Digital Building Twin more than a 3D model viewer. Anything you place on the scene — the couch, the front door, the driveway gate, a boom barrier at the entrance to a shared parking court, the garage door, the parking spot, a smart trash bin out by the curb, the kitchen smoke detector, the bathtub, a basement leak sensor, a water tank in the cellar — can be wired to a sensor in your Chirp setup. Open the Sensors panel, pick the device, pick the metric, then click the object the sensor watches. That's it.
+
+You can bind more than one sensor to one object (the kitchen counter could carry a temperature reading AND a motion sensor's occupancy state), and the same sensor can light up several objects at once (a hallway PIR sensor could color both the hallway floor AND a "downstairs" label).
+
+**Color rules driven by live readings**
+
+Every binding gets a set of **color rules** — the same kind you already use on charts and number widgets:
+
+* **Number ranges** — color when the reading falls in a range (e.g. 18–22°C green for "comfortable", 22–26°C amber for "warm", 26°C+ red; or 0–60% green, 60–85% amber, 85+% red on a trash-bin fill sensor)
+* **Match a word** — color when the value equals a specific text (e.g. `occupied` red, `vacant` green for a parking sensor; `up` green, `down` red on a driveway boom barrier)
+* **True / false** — color for boolean readings (e.g. front door open red, closed green)
+
+Rules run in order; the first match wins. Set a default color for when nothing matches. The model recolors as readings stream in — at one glance you can see which rooms are too warm, where a door's open, whether the parking spot is taken, whether the trash bin needs to go out, whether the basement is still dry.
+
+**Drop pins with live values**
+
+Sensors can also be **pinned** to a specific point in the scene — a drop pin that shows the current reading right next to where the sensor sits in real life. Toggle pins off for a clean view of the model; toggle them on when you want the numbers.
 
 **Build your home three different ways**
 
-There are three ways to start a Digital Building Twin, and they work together:
+Three ways to start a Digital Building Twin, and they work together:
 
 * **Draw it yourself in 2D or 3D** — Place walls, doors, windows, and fences from scratch. The editor shows a flat 2D top-down view AND a 3D walk-through of the same model — start by sketching the floor plan from above, then jump into 3D to check it from a person's eye level. Undo and redo work the way you'd expect.
 * **Import a CAD floor plan** — If you have a DXF file from a builder, architect, or estate agent, drop it in. Chirp parses the line work, previews what the walls will look like, and converts it into a real 3D model.
 * **Trace it from a map** — Open the map-trace dialog and draw the outline of your home directly onto an aerial photograph. Chirp builds the walls automatically and anchors your house to its real GPS coordinates.
 
-A model can carry **multiple floors** — ground floor, first floor, basement, attic — switched via the floor selector. One model covers the whole house.
+A model can carry **multiple floors** — ground floor, first floor, basement, attic — switched via the floor selector. One model covers the whole property, indoors and out.
 
-**Place from the 3D object library**
+**60+ ready-to-place objects, indoors and out**
 
-Chirp ships with a built-in library of more than 60 ready-to-place 3D objects across five categories:
+Chirp ships with a built-in library of more than 60 3D objects. The outdoor and perimeter pieces are the ones a homeowner reaches for first — parking spots, gates and barriers (handy if you've got a boom-barrier driveway or a swing gate), trash and recycling bins, outdoor AC units, cars — and the interior catalog makes per-room bindings expressive: smoke detectors, AC units, water heaters, water pumps, ceiling lamps, beds, sofas, kitchen and bathroom fixtures, plants.
+
+Full catalog at a glance:
 
 * **Furniture** — sofas, armchairs, dining and office chairs, coffee tables, dining tables, office desks, beds (single, double, bunk), bookshelves, dressers, closets, wall shelves, plants, carpets, trash bins
 * **Kitchen** — stove, fridge, counter, microwave
@@ -43,54 +68,28 @@ Chirp ships with a built-in library of more than 60 ready-to-place 3D objects ac
 
 Each one is a properly-scaled 3D model. Many snap to walls or ceilings automatically. Drag from the strip at the bottom, drop into your floor plan, and adjust.
 
-**Wire any object to any sensor**
-
-This is what makes the Digital Building Twin more than a 3D model. Anything you place — the couch, the parking spot in the driveway, the kitchen smoke detector, the front door, the garden — can be wired to a sensor in your Chirp setup. Open the Sensors panel, pick the device, pick the metric, then click the object the sensor watches. That's it.
-
-You can bind more than one sensor to one object (the kitchen counter could carry a temperature reading AND a motion sensor's occupancy state), and the same sensor can light up several objects at once (a hallway PIR sensor could color both the hallway floor AND a "downstairs" label).
-
-**Color rules driven by live readings**
-
-Every binding gets a set of **color rules** — the same rules you already use on charts and number widgets:
-
-* **Number ranges** — color when the reading falls in a range (e.g. 18–22°C green for "comfortable", 22–26°C amber for "warm", 26°C+ red)
-* **Match a word** — color when the value equals a specific text (e.g. `occupied` red, `vacant` green for a parking sensor)
-* **True / false** — color for boolean readings (e.g. door open red, door closed green)
-
-Rules run in order; the first match wins. Set a default color for when nothing matches. The model recolors as readings stream in — at one glance you can see which rooms are too warm, where a door's open, whether the parking spot is taken, whether the basement is still dry.
-
-**Drop pins with live values**
-
-Sensors can also be **pinned** to a specific point in the scene — a drop pin that shows the current reading right next to where the sensor sits in real life. Toggle pins off for a clean view of the model; toggle them on when you want the numbers.
-
 **Anchor your home to the real world**
 
 Your home can be placed on the real-world map and anchored to GPS coordinates — trace its outline on an aerial map and the model carries that real-world position. Individual points inside the model can also be tagged with their own lat/lng manually. Together, these anchors give your home a real-world spatial base that Chirp can build location-aware features on later.
+
+**What this is great for at home**
+
+A few of the everyday checks a Digital Building Twin makes feel obvious:
+
+* **Did anyone leave the front door open?** A door-state sensor wired to the front-door model — red if it's open, green if it's closed.
+* **Is the driveway clear?** Parking-spot occupancy sensor wired to the parking-spot model; boom-barrier or gate state wired to the barrier model so you can see both at once.
+* **Does the trash bin need to go out?** Fill-level sensor wired to the bin — amber when it's filling, red when it's collection-day ready.
+* **Are all the smoke detectors quiet?** Smoke-detector sensors wired to the detector models so the whole house lights up the instant one trips.
+* **Is the basement still dry?** Leak sensor wired to the basement floor — red if there's water.
+* **How warm is the bedroom right now?** Temperature sensor wired to the room — the room reads green when it's comfortable.
+
+The model shows you what's happening; the rules engine handles automations that should fire from the same sensor data.
 
 **Where to find it**
 
 Add a Digital Building Twin to any dashboard from the standard Add Widget menu, then open the widget's editor to draw, populate, and wire. Like every other Chirp widget, it lives in your folder hierarchy, can be shared with the household, and resizes on the grid.
 
 [→ Digital Building Twin](../dashboards/adding-widgets/digital-building-twin/README.md)
-
-***
-
-**Step-Through Rule Debugging**
-
-Building an automation that doesn't behave the way you expected? You can now run the rule in debug mode and watch it execute one step at a time. Set a test payload, hit **Run**, and the editor walks through every node — pausing wherever you've placed a breakpoint and showing you exactly what each variable looks like at that moment.
-
-You get the controls you'd expect from a real debugger:
-
-* **Run, Step over (F9), Step into (F8)** — Walk through the rule the way you'd walk through code.
-* **Run ignore breakpoints (F11)** — Skip the breakpoints and just watch the rule run end to end.
-* **Breakpoints** — Click a node to add one. Need a conditional breakpoint? Add an expression so the pause only happens when your condition is true — for example, only when `device.temperature > 25`.
-* **Variables panel** — See every variable in the current run. A **Changes** section highlights what just changed, so you don't have to hunt for it.
-* **Watch expressions** — Add expressions you want to keep an eye on — Chirp re-evaluates them at every step.
-* **Errors with one click to the problem** — If a node fails, the editor pops a red modal with the node name and the error, and **Go to…** focuses the canvas on the failing node.
-
-When a step has a side effect, Chirp asks you whether to **Execute** (run the real action), **Skip** (leave variables unchanged), or **Mock** (use a stand-in response) — so you can probe alternative branches without committing to every real call.
-
-[→ Debugging Automations](../rules-engine/reference/debugging-automations.md)
 
 ***
 
