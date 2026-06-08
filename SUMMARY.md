@@ -9,7 +9,7 @@
   * [Building a Dashboard](dashboards/building-a-dashboard.md)
   * [Adding Widgets](dashboards/adding-widgets/README.md)
     * [Last Data Widget](dashboards/adding-widgets/last-data-widget.md)
-      * [Number Display](dashboards/adding-widgets/last-data-widget/number.md)
+      * [Value Display](dashboards/adding-widgets/last-data-widget/number.md)
       * [Doughnut Display](dashboards/adding-widgets/last-data-widget/doughnut.md)
       * [Pie Display](dashboards/adding-widgets/last-data-widget/pie.md)
       * [Tube Display](dashboards/adding-widgets/last-data-widget/tube.md)

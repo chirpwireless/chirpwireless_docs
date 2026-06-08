@@ -48,4 +48,4 @@ It starts like any [Last Data widget](../last-data-widget.md) — add a device, 
 * [Last Data Widget](../last-data-widget.md) — the full setup and the other display types
 * [Gauge Display](gauge.md) — the flat version
 * [Conditions](../conditions.md) — set what the colors mean
-* More displays: [Number](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Tube](tube.md)
+* More displays: [Value](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Tube](tube.md)

@@ -24,7 +24,7 @@ Let's build a real one — a bold tile showing how much water is in the garden r
 4. Tap **Add metric**. A metric row appears.
 5. In the row, leave **Data type** on **Telemetry**, choose the volume reading under **Device metric**, and choose an **Icon**.
 
-   > **Don't see your sensor reading?** The **Device metric** list only shows number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Data Templates** (the **Metrics Templates** button on your connection's Connected Devices list), find the metric on the **Metrics** tab, and switch its **Type** to Integer or Float — as long as the sensor really does send a number. See [Data Templates](../../../devices/data-templates.md).
+   > **This display needs a number.** The **Device metric** list shows every reading, but a gauge fills against a scale — pick a numeric one here; a text reading shows as 0. (To show text or an on/off value as-is, use the [Value display](number.md).) To change a reading's type, use the **Metrics Templates** button on your connection's Connected Devices list — see [Data Templates](../../../devices/data-templates.md).
 6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — a **Condition name**, **Data type** set to **Number** (the condition's own Data type, not the metric's), the band's **From** and **To** — the barrel holds 200 liters, so those run from **0** (empty) to **200** (full) — and a **Color**. Then you set the color levels — for example:
 
    Starting from empty:
@@ -53,4 +53,4 @@ On a dashboard you keep on a wall tablet or a TV, a solid Pie reads more clearly
 
 - [Last Data Widget](../last-data-widget.md) — The full widget setup and the other display types
 - [Conditions](../conditions.md) — Setting the From/To color rules
-- Other display types: [Number](number.md) · [Doughnut](doughnut.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)
+- Other display types: [Value](number.md) · [Doughnut](doughnut.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)
