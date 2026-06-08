@@ -4,7 +4,7 @@ description: Reach the Chirp support team — fill out the built-in contact form
 
 # Get Help
 
-Have a question, spotted a bug, or just need a hand? The Chirp support team is ready to help. A quick contact form is built right into the interface and sends your message straight to **support@chirpwireless.io**.
+Have a question, spotted a bug, or just need a hand? The Chirp support team is ready to help. A quick contact form is built right into the interface and sends your message straight to **support [at] chirpwireless.io**.
 
 ## Filling Out the Form
 
