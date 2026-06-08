@@ -4,6 +4,8 @@ If you have a GPS tracker device — for your car, a pet collar, a bike, or anyt
 
 GPS tracking is only available for tracker-type devices. It's not a feature for every sensor — your living room temperature sensor stays put and doesn't need tracking. For seeing where stationary sensors are placed, see [Maps and Device Placement](maps-and-device-placement.md).
 
+Location history works for any device that reports GPS coordinates. A cellular vehicle tracker (OBD2, CAN, or standalone GPS) connects through the [Tracker Connector](../connectors/tracker-connector.md); a LoRaWAN GPS tag connects through the [LNS Connector](../connectors/lns-connector/README.md). Either way, once a device reports its location, its history shows up here.
+
 ## Where to find tracking
 
 1. Tap **Devices** in the sidebar.

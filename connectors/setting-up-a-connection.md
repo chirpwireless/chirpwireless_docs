@@ -29,7 +29,7 @@ If you want to track a vehicle, add a Tracker connection alongside your LNS conn
 3. Select **Tracker** from the **Connector type** dropdown.
 4. Click **Add**.
 
-The Tracker connection is created instantly. Click its row to see the shared sensor list. For registration and management, see [Adding Sensors](../devices/adding-sensors.md) and [Sensor Details](../devices/sensor-details.md).
+The Tracker connection is created instantly. Click its row to see the shared sensor list. For registration and management, see [Adding Sensors](../devices/adding-sensors.md) and [Sensor Details](../devices/sensor-details.md). For what this connector is (and isn't) for — cellular/GSM vehicle trackers, not LoRaWAN ones — see the [Tracker Connector](tracker-connector.md) page.
 
 ## One of each
 

@@ -2,7 +2,7 @@
 
 The Map widget shows where a GPS-reporting device is on a real outdoor interactive map — the same kind of map you use for navigation. The device's current location appears as a marker, and the marker shows one selected sensor reading at a time: current speed, battery level, engine on/off status, or any other value the device transmits.
 
-Any device that reports GPS coordinates works — a family GPS tracker, a pet collar, a vehicle connected via the Tracker connector, or a LoRaWAN GPS tag. The widget looks for sensor fields named `lat`/`latitude` and `lon`/`longitude`/`lng`. If those fields exist on the device, it appears on the map automatically.
+Any device that reports GPS coordinates works — a family GPS tracker, a pet collar, a cellular vehicle tracker connected via the [Tracker Connector](../../connectors/tracker-connector.md), or a LoRaWAN GPS tag connected via the [LNS Connector](../../connectors/lns-connector/README.md). The widget looks for sensor fields named `lat`/`latitude` and `lon`/`longitude`/`lng`. If those fields exist on the device, it appears on the map automatically.
 
 This is different from the [Image Widget](image-widget.md), which lets you upload your own static image and pin sensors onto it. The Map widget is for devices that move in the real world.
 

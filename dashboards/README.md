@@ -14,7 +14,7 @@ Chirp's visibility layer is built around a few key surfaces that work together:
 
 4. **Maps and device placement** — See where your sensors are placed on an interactive map, so you always know which device is where.
 
-5. **Tracking** — If you have a GPS tracker (for a vehicle, pet, or bike), see where it's been with location history and route details.
+5. **Tracking** — If you have a GPS tracker (for a vehicle, pet, or bike), see where it's been with location history and route details. Location history works for any device that reports GPS coordinates; a cellular vehicle tracker connects through the [Tracker Connector](../connectors/tracker-connector.md), while a LoRaWAN GPS tag connects through the [LNS Connector](../connectors/lns-connector/README.md).
 
 6. **Live data** — Understand what the Live Data indicator means, and what to check if data isn't appearing as expected.
 
@@ -31,7 +31,7 @@ For any mounted or dedicated screen, collapse the sidebar to give the dashboard 
 
 ## What's ahead
 
-- [Home Overview](../overview.md) — Your default landing page: sensor status, favorites, and notifications.
+- [Home Overview](../overview.md) — Your default landing page: sensor status and notifications.
 - [Building a Dashboard](building-a-dashboard.md) — Create a personalized dashboard with a name, icon, and folder.
 - [Adding Widgets](adding-widgets/README.md) — Pick widget types, connect them to your sensors, and customize how readings are displayed.
 - [Organizing Your Views](organizing-your-views.md) — Group dashboards into folders and arrange them to match how you use your home.

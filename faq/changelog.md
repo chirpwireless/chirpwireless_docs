@@ -418,7 +418,7 @@ The normalization system works in layers: Normalized Keys define the semantic co
 * Physical device binding and unbinding — swap hardware without losing device history or configuration
 * Device photos via a dedicated media service — upload images for identification and documentation
 * User metadata — add custom properties to devices for your own categorization and filtering
-* Favorite devices — mark frequently accessed devices for quick navigation
+* Favorite devices — star the devices you check most often
 
 ***
 

@@ -33,4 +33,6 @@ Ready to set up your first connection? Head to [Setting Up a Connection](setting
 
 Want to learn more about LoRaWAN — the wireless technology behind your sensors? See the [LNS Connector](lns-connector/README.md) section for an introduction to the protocol, frequency bands by country, and how Chirp's built-in network server works.
 
+Tracking a vehicle? See the [Tracker Connector](tracker-connector.md) for connecting a cellular GPS tracker — OBD2, CAN bus, or standalone GPS.
+
 Want to connect Zigbee sensors, an ESP32 sensor, or any MQTT-capable device? See [MQTT Connector](mqtt-connector.md) for a complete setup guide.

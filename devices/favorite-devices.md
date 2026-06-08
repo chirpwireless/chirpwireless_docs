@@ -1,29 +1,21 @@
 # Favorite Devices
 
-The favorites feature lets you star a gateway from its detail page for quick access. Each favorite shows the gateway name and when it was last seen.
+Favorites let you mark the devices and gateways you care about most by starring them. It's a quick way to flag the ones you check often.
 
-## How to favorite a gateway
+## How to favorite something
 
-Open a gateway's detail page by clicking its name in the **Gateways** list. On the gateway card, click the **star icon** to add it to your favorites.
+Both **devices** and **gateways** can be favorited. Look for the **star icon** on a device card, a gateway card, or a gateway's detail page:
 
-- **Star filled** = favorited. Tooltip: "Remove from favorites."
-- **Star outline** = not favorited. Tooltip: "Add to favorites."
+- **Star outline** = not favorited. Tooltip: **"Add to favorites."**
+- **Star filled** = favorited. Tooltip: **"Remove from favorites."**
 
-Click the star again to unfavorite.
+Click the star to favorite it; click it again to remove. Your choice is saved, and the filled or outlined star shows the current state wherever that device or gateway appears.
 
-## Where favorites appear
+## Good to know
 
-Favorited gateways are accessible from the sidebar and through direct navigation to the Gateways page. The current Overview page shows summary count cards for devices and gateways — it does not display a dedicated Favorites panel.
-
-## Sensor favoriting
-
-The favorites feature is evolving as Chirp transitions to the new sensor management interface. Sensor favoriting from sensor lists is not currently available in the new interface. To view and manage your sensors, use **Devices** in the sidebar or open a connection's sensor list.
-
-## If you don't have any favorites yet
-
-Star a gateway from its detail page to get started. Until you do, no gateways are marked as favorites.
+There isn't a separate "Favorites" page that lists everything you've starred — the star marks the item in place. On the Home Overview you'll see summary cards for devices and gateways rather than a dedicated favorites panel.
 
 ## Tips
 
-- **Star the gateways you rely on.** Quick access to the ones you check most often saves navigation time.
-- **Keep it focused.** A short favorites list is more useful than a long one.
+- **Star the things you rely on.** A filled star makes the devices and gateways you watch most stand out at a glance.
+- **Keep it focused.** Starring a handful of key items is more useful than starring everything.
