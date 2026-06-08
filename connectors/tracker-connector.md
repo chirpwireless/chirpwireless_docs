@@ -37,7 +37,7 @@ When you register a tracker through this connector, its **Connection** details i
 - **Device model** — pick your tracker from the model list
 - **Url for GPS tracker** — the endpoint Chirp gives you; configure your tracker (in its own app or SMS settings) to send data to this URL
 
-Once the tracker is reporting, point its data at that URL and it starts appearing in Chirp. For the full registration walkthrough, see [Adding Sensors](../devices/adding-sensors.md).
+Configure the tracker to send its data to that URL; once it starts reporting, it appears in Chirp. For the full registration walkthrough, see [Adding Sensors](../devices/adding-sensors.md).
 
 ## Seeing where it's been
 

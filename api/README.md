@@ -1,8 +1,10 @@
 # API
 
-Chirp gives you programmatic access to your home's data and controls — for personal scripts, local dashboards, spreadsheets, and trusted integrations with other home-automation tools.
+Chirp gives you programmatic access to your home's data — for personal scripts, local dashboards, spreadsheets, and trusted integrations with other home-automation tools.
 
 Use the **[API reference](https://api.chirpwireless.io/)** for the complete list of calls, request fields, responses, and required scopes. This section covers what the API is for, how requests are signed, and where to get a key.
+
+> To control a device — turn it on or off, dim a light, change its settings — use [Device Commands](../devices/commands/) in the app. The API is for reading your data and wiring up integrations.
 
 ## REST is the way in
 

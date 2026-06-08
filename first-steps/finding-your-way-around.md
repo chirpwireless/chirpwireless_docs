@@ -31,7 +31,7 @@ Click **Settings** to see more options:
 - **Locations** — Set up your rooms and zones. Once defined, you can filter devices by location and organize dashboards by room.
 - **Device sharing** — See which devices you've shared with family members and manage who has access to what.
 - **API Keys** — For power users and tinkerers. Create secure keys to connect Chirp with your own scripts, home automation setups, or other services. Each key has specific permissions and can be set to expire automatically.
-- **New device request** — Need help with a specific sensor model? Send a request to the team.
+- **New device request** — Can't find your sensor's model when adding it? Choose **New device request** to ask the team to add support. Tell them the **Brand**, **Model**, and **Band**, and add a **Documentation link** or **Codec link or code** if you have one, then tap **Send request** — you'll see a confirmation once it's on its way.
 - **Changelog** — See what's new in the latest platform updates.
 
 ### At the bottom

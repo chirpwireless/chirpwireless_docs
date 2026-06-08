@@ -12,7 +12,7 @@ Your gateway's detail page shows an overview card at the top and several health 
 
 ### Overview card
 
-The overview card shows your gateway's photo (if you've added one), its name, and its current status. You can also star your gateway from here to mark it as a favorite — see [Favorite Devices](../devices/favorite-devices.md).
+The overview card shows your gateway's photo (if you've added one), its name, and its current status. You can also star your gateway from here to mark it as a favorite — see [Favorite Devices](../../devices/favorite-devices.md).
 
 ### Availability
 
@@ -38,7 +38,7 @@ The Pings card shows the history of connectivity checks between your gateway and
 - Availability drops significantly over several days
 - No traffic at all even though you have active sensors
 
-If your gateway stays offline, try the troubleshooting steps in [Setting Up Your Gateway](setting-up-your-gateway.md) — the most common fix is verifying the LNS address and certificates.
+If your gateway stays offline, try the troubleshooting steps in [Setting Up a LoRaWAN Gateway](setting-up-a-lorawan-gateway.md) — the most common fix is verifying the LNS address and certificates.
 
 ## Gateway settings
 

@@ -1,3 +1,7 @@
+---
+description: Star the devices and gateways you check most in Chirp — Add to favorites / Remove from favorites, saved and shown right on their cards.
+---
+
 # Favorite Devices
 
 Favorites let you mark the devices and gateways you care about most by starring them. It's a quick way to flag the ones you check often.

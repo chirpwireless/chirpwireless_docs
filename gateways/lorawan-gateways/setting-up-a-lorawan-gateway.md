@@ -59,7 +59,7 @@ Within a few minutes, your gateway should appear as online in the **Gateways** l
 - Confirm your gateway is connected to the internet
 - Try restarting the gateway
 
-Once it's online, your gateway is ready to start receiving sensor data. Head to [Connections](../connectors/) to set up the link between your gateway and Chirp's sensor management.
+Once it's online, your gateway is ready to start receiving sensor data. Head to [Connections](../../connectors/) to set up the link between your gateway and Chirp's sensor management.
 
 These steps are the current gateway setup path. Other options you might see in the app that aren't related to smart home setup can be safely skipped.
 
