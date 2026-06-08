@@ -1,3 +1,7 @@
+---
+description: Link a sensor reading to objects in your 3D home and set color rules so the door, room, or basement reacts live.
+---
+
 # Connecting Sensors and Colors
 
 This is the step that makes the whole thing worthwhile. Up to now your model is a nice 3D drawing of your home. Connecting sensors brings it to life: a sensor says "open" and the garage door turns red; a sensor reads 26 °C and the nursery shifts from green to amber.

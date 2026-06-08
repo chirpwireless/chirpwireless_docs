@@ -1,3 +1,7 @@
+---
+description: Hands-on walkthroughs for specific sensors and bulbs we paired end-to-end with Chirp at home.
+---
+
 # Tested device guides
 
 These walkthroughs cover end devices we have tested end-to-end on Chirp. They are not the supported device list — Chirp's MQTT and LoRaWAN connectors work with thousands of devices across many brands, and you don't need to find your specific hardware in this section before adding it. The point of these pages is simply that **if you happen to have one of these exact devices**, the pairing procedure, configuration values, and quirks are documented here so you don't have to figure them out yourself.

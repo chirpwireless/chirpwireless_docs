@@ -1,3 +1,7 @@
+---
+description: Show a reading as a filling ring with the number in the middle — perfect for a tank, battery, or humidity level.
+---
+
 # Doughnut Display
 
 <figure><img src="../../../.gitbook/assets/last-data-doughnut.jpg" alt="Last Data widget using the Doughnut display type"><figcaption></figcaption></figure>

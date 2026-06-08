@@ -1,3 +1,7 @@
+---
+description: Take an automation live — build it, deploy the artifact, stop it when needed, and read the Artifacts tab.
+---
+
 # Publish and Run an Automation
 
 Saving an automation keeps your design safe — but it does not make it live. For your automation to start reacting to sensor data, you need to **build** it and then **deploy** it. This two-step process is deliberate: it lets you work on your automations freely, knowing nothing will run until you are ready.

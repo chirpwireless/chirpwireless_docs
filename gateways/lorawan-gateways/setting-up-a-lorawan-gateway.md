@@ -1,3 +1,7 @@
+---
+description: Register your home gateway in Chirp, download its security certificate, and get it online in minutes.
+---
+
 # Setting Up Your Gateway
 
 Getting your gateway connected to Chirp takes just a few minutes. You'll register it in the app, download a security certificate, and then configure the gateway hardware to talk to Chirp.

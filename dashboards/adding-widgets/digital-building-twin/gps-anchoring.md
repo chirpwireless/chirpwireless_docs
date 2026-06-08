@@ -1,3 +1,7 @@
+---
+description: Tie your 3D home model to real latitude and longitude, automatically from a map trace or by hand.
+---
+
 # GPS Anchoring
 
 Your Digital Building Twin is a model of a real place — and a real place sits somewhere on the map. GPS anchoring records that: it ties your home, and points inside it, to actual latitude and longitude. It gives your model a real-world location to sit at.

@@ -1,3 +1,7 @@
+---
+description: Draw walls, doors, windows, and fences for your 3D home model in a flat 2D or full 3D view.
+---
+
 # Drawing Your Home
 
 The walls, doors, and windows you draw are what make the model recognizably *your* place — not a generic box, but your home, with the kitchen where the kitchen is and the back door where the back door is. A few minutes of drawing is all it takes. This page shows you how.

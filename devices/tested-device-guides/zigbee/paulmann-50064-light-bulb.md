@@ -1,3 +1,7 @@
+---
+description: Pair, register, and map the Paulmann 50064 tunable-white Zigbee bulb in Chirp, with all the quirks.
+---
+
 # Paulmann 50064 light bulb
 
 This is a hardware-specific walkthrough for the **Paulmann SmartHome LED spot, model 50064** — a Zigbee 3.0 CCT (tunable-white) bulb we tested end-to-end with Zigbee2MQTT and Chirp's MQTT connector. If you have this exact bulb, follow these steps to pair it, register it in Chirp, and map its readings.

@@ -1,3 +1,7 @@
+---
+description: A quick walk around the 3D home editor — the toolbar, Scene panel, settings, floor buttons, and saving.
+---
+
 # Editor Tour
 
 The Digital Building Twin editor is a full-screen workspace where everything happens — drawing rooms, adding furniture, connecting sensors, setting up the view. This page is a quick walk around it so the rest of the section makes sense. Think of it as the welcome tour; the other pages are the detailed how-tos.

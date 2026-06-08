@@ -1,3 +1,7 @@
+---
+description: Data templates tell Chirp what your sensors measure, so readings show up labeled with the right units.
+---
+
 # Data Templates
 
 Data templates tell Chirp what your sensors are measuring and how to display it. They're the reason a temperature reading shows up as "22.5 °C" instead of a mysterious number — and why a humidity sensor from one manufacturer shows the same kind of data as a humidity sensor from a completely different brand.

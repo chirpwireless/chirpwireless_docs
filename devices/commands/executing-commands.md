@@ -1,5 +1,5 @@
 ---
-description: Send a command to a smart home device from the States tab in Chirp, fill in any values, and see whether it worked in your activity history.
+description: Send a command from the States tab in Chirp, fill in any values, and see whether it worked in your activity history.
 ---
 
 # Sending a command

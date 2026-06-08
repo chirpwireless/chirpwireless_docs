@@ -1,3 +1,7 @@
+---
+description: Point Chirp at a broker you already run at home — set up Mosquitto, expose it safely, and verify it.
+---
+
 # External MQTT
 
 External MQTT is the second way to connect MQTT data into Chirp: instead of using a broker Chirp provides, you point Chirp at one you already run. Chirp connects out to your broker, subscribes to its messages, and brings them into the same device-routing pipeline as everything else.

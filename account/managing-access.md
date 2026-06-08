@@ -1,3 +1,7 @@
+---
+description: Update what each household member can see and do, or remove someone from your Chirp home.
+---
+
 # Managing Access
 
 As your household changes, you can update what each person sees and does — or remove someone entirely. You need **Manage Users** permission with Edit access to make changes.

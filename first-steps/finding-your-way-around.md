@@ -1,3 +1,7 @@
+---
+description: Tour the Chirp interface — left menu, profile options, notification bell, home screen — find where everything lives.
+---
+
 # Finding Your Way Around
 
 Here's a quick tour of the Chirp interface so you know where everything lives.

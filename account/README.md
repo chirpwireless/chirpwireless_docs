@@ -1,3 +1,7 @@
+---
+description: Manage household members, your subscription, and home settings from the user menu in Chirp.
+---
+
 # Account
 
 Manage your household members, subscription, and home settings. These options are found in the **user menu** at the bottom-left corner of the screen — separate from Settings in the sidebar.

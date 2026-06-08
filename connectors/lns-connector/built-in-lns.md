@@ -1,3 +1,7 @@
+---
+description: Chirp's built-in LoRaWAN network server handles sensor authentication and delivery for you automatically.
+---
+
 # Built-in Network Server
 
 Behind every LoRaWAN setup, there's a network server — the system that receives data from your gateway, authenticates your sensors, and routes readings to the right place. In traditional LoRaWAN deployments, this is a separate piece of software that you'd need to install, configure, and maintain on your own. That's a lot of work just to get a temperature reading into a dashboard.

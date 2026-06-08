@@ -1,3 +1,7 @@
+---
+description: The simplest MQTT path — Chirp hosts the broker, you paste the credentials into Zigbee2MQTT and go.
+---
+
 # Cloud MQTT
 
 Cloud MQTT is the simpler of the two MQTT paths into Chirp. You don't run a broker yourself — Chirp provisions a managed MQTT broker for the connector, gives you the endpoint and credentials, and you point your devices (or Zigbee2MQTT) at it. That's the whole architecture.

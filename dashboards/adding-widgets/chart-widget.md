@@ -1,3 +1,7 @@
+---
+description: Graph a reading's history over the hour, day, week, or month with color bands and a live current value.
+---
+
 # Chart Widget
 
 <figure><img src="../../.gitbook/assets/chart-widget.jpg" alt="Chart widget — the Appearance settings beside a live preview of the graph"><figcaption></figcaption></figure>

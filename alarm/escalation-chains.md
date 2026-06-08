@@ -1,3 +1,7 @@
+---
+description: Build a step-by-step chain so an unresolved home alert reaches more people until someone responds.
+---
+
 # Escalation Chains
 
 When an alarm fires and nobody resolves it, you do not want it to disappear into a missed notification. Escalation chains make sure the right people find out — starting with the first person who should know, and reaching out to others if the alarm stays unresolved.

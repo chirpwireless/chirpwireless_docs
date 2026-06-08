@@ -1,3 +1,7 @@
+---
+description: A friendly intro to MQTT brokers, topics, and JSON payloads — the messaging behind the smart home.
+---
+
 # What MQTT is
 
 MQTT is the messaging protocol that ties most of the modern smart home together. If you've ever watched a Zigbee sensor's reading appear on a dashboard, or asked your home automation to turn off the kitchen lights, MQTT was almost certainly carrying the message under the hood. It was designed in the late 1990s for satellite oil pipeline monitoring — devices with tiny radios, intermittent connectivity, and no patience for protocol overhead — and that pedigree is exactly why it works so well for battery-powered home sensors today.

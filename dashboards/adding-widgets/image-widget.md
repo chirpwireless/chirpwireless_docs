@@ -1,3 +1,7 @@
+---
+description: Pin live sensor readings onto your own photo or floor plan, each colored by its conditions, with multi-layer views.
+---
+
 # Image Widget
 
 <figure><img src="../../.gitbook/assets/image-widget.jpg" alt="The Image Widget being set up — a photo with sensor pins on it, shown next to a live preview"><figcaption></figcaption></figure>

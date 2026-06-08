@@ -1,3 +1,7 @@
+---
+description: Browse every saved version of an automation, name your milestones, and roll back to a known-good version anytime.
+---
+
 # History, Restore, and Recovery
 
 Every time your automation is saved — whether you click Save yourself, Chirp autosaves in the background, or the system saves during a session event — a new version is recorded. This gives you a complete timeline of how your automation has changed, and the ability to go back to any earlier version if something goes wrong.

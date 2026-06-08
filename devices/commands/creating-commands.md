@@ -1,5 +1,5 @@
 ---
-description: Set up a command for a smart home device in Chirp — name it, point it at your device, add inputs like brightness, and test the message before you save.
+description: Set up a device command in Chirp — name it, pick the device, add inputs like brightness, and test before you save.
 ---
 
 # Setting up a command

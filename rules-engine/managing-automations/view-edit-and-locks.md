@@ -1,3 +1,7 @@
+---
+description: See how view and edit modes work, how locks stop household members clashing, and how autosave protects you.
+---
+
 # View, Edit, and Locks
 
 Your automations are shared resources — especially if more than one person in your household uses Chirp. The platform handles this with two distinct modes and a simple locking system that prevents accidental overwrites.

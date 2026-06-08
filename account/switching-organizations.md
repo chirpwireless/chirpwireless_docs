@@ -1,3 +1,7 @@
+---
+description: Move between multiple Chirp homes, like your house and a cabin, without signing out.
+---
+
 # Switching Homes
 
 If you have sensors in more than one place -- your own house and a vacation cabin, your apartment and a parent's home -- Chirp lets you move between them without signing out.

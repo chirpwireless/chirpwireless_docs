@@ -1,3 +1,7 @@
+---
+description: Put a reading on a horizontal track with a sliding marker and colored bands, so you spot the moment it crosses a limit.
+---
+
 # Gauge Display
 
 <figure><img src="../../../.gitbook/assets/last-data-gauge.jpg" alt="Last Data widget using the Gauge display type"><figcaption></figcaption></figure>

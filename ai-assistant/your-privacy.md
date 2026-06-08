@@ -1,5 +1,5 @@
 ---
-description: How the Chirp AI Helper keeps things private and safe — it works only within your access, asks before big changes, and never stores passwords.
+description: How the Chirp AI Helper stays private — it works within your access, asks before big changes, never stores passwords.
 ---
 
 # Your Privacy

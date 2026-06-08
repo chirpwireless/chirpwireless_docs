@@ -1,3 +1,7 @@
+---
+description: A ten-minute tutorial to build your first automation — a basement humidity alert, from blank canvas to working rule.
+---
+
 # Build Your First Smart Home Rule
 
 The best way to learn how automations work is to build one. In this tutorial, you will create a simple automation that watches a humidity sensor in your basement and raises an alert when the reading gets too high.

@@ -1,3 +1,7 @@
+---
+description: One small LoRaWAN gateway covers a whole home — learn how it works and how coverage spreads.
+---
+
 # LoRaWAN gateways
 
 A LoRaWAN gateway is the small box that listens for radio signals from your battery-powered sensors and forwards them to Chirp. If you have door sensors, leak detectors, temperature probes, or any other LoRaWAN-based devices in your home, a gateway is what makes them visible to Chirp.

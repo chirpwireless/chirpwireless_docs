@@ -1,3 +1,7 @@
+---
+description: Register a LoRaWAN, tracker, or MQTT sensor in Chirp and map its readings, step by step.
+---
+
 # Adding Sensors
 
 Every sensor you add to Chirp gets its own profile — a record that remembers the sensor's name, connection details, measurement settings, and full data history. Even when a sensor goes to sleep between transmissions, its profile keeps everything organized and ready for dashboards and automation. Because the physical sensor binding is optional, you can create and configure a sensor profile before the actual hardware is connected — so you can plan your setup first and plug in the sensors when you're ready.

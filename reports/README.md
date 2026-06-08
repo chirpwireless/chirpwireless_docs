@@ -1,3 +1,7 @@
+---
+description: Track who has access to your Chirp home — invitations, joins, permission changes, and removals in one activity record.
+---
+
 # Reports
 
 See what has been happening in your household — who joined, who was invited, and what permissions changed.

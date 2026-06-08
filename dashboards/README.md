@@ -1,3 +1,7 @@
+---
+description: See your whole smart home at a glance — overview, custom dashboards, widgets, maps, and live sensor data.
+---
+
 # Your Home at a Glance
 
 Once your sensors are connected and reporting, Chirp gives you several ways to see what's happening across your home — from a quick status check to fully personalized dashboards that show exactly the information you care about.

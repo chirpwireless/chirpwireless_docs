@@ -1,3 +1,7 @@
+---
+description: Stay in control of your automations — version history, editing locks, trash, and easy recovery when you need it.
+---
+
 # Keep Your Automations Organized and Safe
 
 Once you have a few automations running, you will want to know that everything is under control — that you can review what is running, undo a change if something goes wrong, and clean up automations you no longer need.

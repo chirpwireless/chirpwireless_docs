@@ -1,3 +1,7 @@
+---
+description: Turn a DXF floor plan into walls for your 3D home — set the source unit and preview before importing.
+---
+
 # Importing a Floor Plan
 
 If you already have a floor plan of your home — from when you bought the place, from a renovation, from an estate-agent listing — you don't have to draw your home from scratch. The editor can read a **DXF** file, the standard format that design and drawing programs export, and turn it straight into walls.

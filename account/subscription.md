@@ -1,3 +1,7 @@
+---
+description: Pick a Chirp plan, see what each tier includes, upgrade or manage billing, and top up SMS credits — all in one place.
+---
+
 # Subscription
 
 **How to get here:** Click your name in the bottom-left corner of the screen, then select **Subscription**.
@@ -30,6 +34,10 @@ The plan comparison shows the limits for each tier across:
 - Notification channels (email, SMS, push)
 - Rules engine capacity
 - Support level
+
+## When you reach a plan limit
+
+Your plan sets how many of certain things you can have at once — and dashboards are the one you're most likely to bump into. When you've built as many custom dashboards as your plan allows and try to add one more, Chirp lets you know you've **reached your dashboard limit** and tells you how many your plan includes. You have two easy options: remove a dashboard you no longer use to free up a slot, or tap **Upgrade Plan** to move to a tier that allows more. The same idea applies to the other limits — connected sensors, rules, and history — so if you find yourself running out of room, it's usually a sign it's time for the next plan up.
 
 ## Growing beyond the home plans
 

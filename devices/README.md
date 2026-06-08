@@ -1,3 +1,7 @@
+---
+description: Every sensor in your home gets its own profile — name, photos, readings, and full history in one place.
+---
+
 # Sensors
 
 Every sensor you add to Chirp gets its own profile — a complete record of its name, connection, measurements, photos, and full data history. Even when a sensor sleeps between transmissions, its profile keeps everything organized and ready for your dashboards and automations.

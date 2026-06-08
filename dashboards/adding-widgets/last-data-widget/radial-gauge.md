@@ -1,5 +1,5 @@
 ---
-description: Show a Chirp reading on a round dial with the Radial Gauge — a needle, a sweep angle you choose, and colored zones for the level.
+description: Show a Chirp reading on a round dial with the Radial Gauge — a needle, a sweep angle you choose, and colored zones.
 ---
 
 # Radial Gauge Display

@@ -1,3 +1,7 @@
+---
+description: Let your home react on its own — build visual automations that watch sensors and send alerts when something needs you.
+---
+
 # Make Your Home Work for You
 
 Your sensors are always listening — temperature shifts, doors opening, moisture creeping into the basement. Automations let your home **react** to those readings on its own. Instead of checking the dashboard yourself, Chirp watches for the conditions you care about and takes action the moment they happen.

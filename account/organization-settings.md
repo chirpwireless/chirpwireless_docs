@@ -1,3 +1,7 @@
+---
+description: Rename your Chirp home or hand ownership to someone else, available only to the home owner.
+---
+
 # Home Settings
 
 Home Settings is where you rename your Chirp home and, if needed, hand ownership to someone else. Only the home owner sees this option.

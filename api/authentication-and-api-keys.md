@@ -1,3 +1,7 @@
+---
+description: Sign every Chirp API request with a scoped key and home header, and keep keys narrow with scopes.
+---
+
 # Authentication & API Keys
 
 Every API request — REST or gRPC — is signed with a **scoped API key**. Create, scope, rotate, and revoke keys in [Settings → API Keys](../settings/api-keys.md); this page covers how requests are signed.

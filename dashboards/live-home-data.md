@@ -1,3 +1,7 @@
+---
+description: How live sensor updates reach your screen, what the Live Data indicators mean, and what to check if data is missing.
+---
+
 # Live Home Data
 
 One of the best things about a smart home is knowing what's happening right now — not five minutes ago, not after refreshing a page, but right now. Chirp delivers sensor readings to your screen in real time: the moment a sensor reports a temperature, humidity level, or door status, you see the updated value on your overview or dashboard.

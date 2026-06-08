@@ -1,3 +1,7 @@
+---
+description: Read your home at a glance — device and gateway status cards, notifications, and self-refreshing live readings.
+---
+
 # Home Overview
 
 The home overview is the first thing you see when you open Chirp. Think of it as your home's front page — a single screen that tells you whether everything is running smoothly, which devices need attention, and what's happened recently.

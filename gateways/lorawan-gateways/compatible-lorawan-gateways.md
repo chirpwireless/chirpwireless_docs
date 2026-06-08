@@ -1,3 +1,7 @@
+---
+description: What to look for when buying a LoRaWAN gateway for your home — Basics Station, band, and placement.
+---
+
 # Compatible Gateways
 
 Chirp works with LoRaWAN gateways that support the **Basics Station** protocol. This is the key thing to check when buying a gateway for your smart home.

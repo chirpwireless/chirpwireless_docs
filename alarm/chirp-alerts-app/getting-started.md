@@ -1,3 +1,7 @@
+---
+description: Download the Chirp Alerts app, sign in, and get your phone ready to receive home sensor alerts.
+---
+
 # Getting Started
 
 Setting up the Chirp Alerts app takes a few minutes. Once it's connected, your phone is ready to receive push notifications from your home sensors.

@@ -1,3 +1,7 @@
+---
+description: Gateways bring your sensors into Chirp — choose between a LoRaWAN gateway and a Zigbee2MQTT hub.
+---
+
 # Gateways
 
 Gateways are the connectivity hardware that brings sensors and end devices into Chirp. Different protocols use different kinds of gateways, but they share the same role: they sit in your home, listen for the radios your sensors use, and forward what they hear to Chirp.

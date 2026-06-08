@@ -1,3 +1,7 @@
+---
+description: See how critical, default, and quiet alerts behave on your phone based on the severity you assign.
+---
+
 # Alert Behavior
 
 The Chirp Alerts app handles three types of alert delivery, each with different behavior on your phone. The severity you assign to an alarm definition on the web platform determines which type your phone receives.

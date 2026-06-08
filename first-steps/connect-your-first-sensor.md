@@ -1,3 +1,7 @@
+---
+description: Hands-on guide to pair a gateway, register a LoRaWAN sensor, build a room dashboard, and set your first home alarm.
+---
+
 # Connect Your First Sensor
 
 Let's get something working. This guide walks you through the simplest LoRaWAN path to live data on your screen and an alarm watching over it. Not every Chirp setup starts with a gateway, but this one does because it covers the LNS / LoRaWAN route. Every feature has its own section later — here we're just getting you up and running.

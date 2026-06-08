@@ -1,3 +1,7 @@
+---
+description: Learn why LoRaWAN reaches every corner of your home and runs sensors for years on a single battery.
+---
+
 # What is LoRaWAN?
 
 LoRaWAN (Long Range Wide Area Network) is the wireless technology that connects your sensors to Chirp. It's designed specifically for the kind of devices you find in a smart home — small sensors that send readings like temperature, humidity, or door status — and it does so over long distances while using almost no battery power.

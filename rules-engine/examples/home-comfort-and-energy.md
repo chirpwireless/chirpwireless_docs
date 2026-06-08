@@ -1,3 +1,7 @@
+---
+description: Build automations that keep rooms comfortable — temperature zones, garden moisture, and wine cellar climate alerts.
+---
+
 # Home Comfort and Energy
 
 These automations help you keep your living spaces comfortable and catch issues before they become problems. Each example includes the workflow pattern, the CEL expressions, and suggestions for customization.

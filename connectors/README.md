@@ -1,3 +1,7 @@
+---
+description: See how connections link your home sensors to Chirp over LoRaWAN, MQTT, or a vehicle tracker.
+---
+
 # How Sensors Connect to Chirp
 
 A connection tells Chirp which protocol to listen on for a specific sensor type. It does not create sensor profiles — you register sensors separately through the sensor dialog. A connection establishes the protocol binding that makes data flow possible.

@@ -1,3 +1,7 @@
+---
+description: See and filter every membership change in your Chirp home — invites, joins, permission updates, and removals.
+---
+
 # Activity Log
 
 Every home needs a record of who has access and what changed. The Activity Log keeps a clear history of membership events in your Chirp home -- when someone was invited, when they joined, if their permissions were updated, or when they were removed. If you ever need to check who made a change or when a new member joined, this is where you look.

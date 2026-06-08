@@ -1,5 +1,5 @@
 ---
-description: Tell Chirp how to confirm a smart home command really worked — skip the check, wait for the next reading, or ask the device directly.
+description: Tell Chirp how to confirm a command really worked — skip the check, wait for the next reading, or ask the device.
 ---
 
 # Making sure it worked
@@ -24,7 +24,8 @@ This works nicely for devices that report their status as part of their regular 
 
 The most thorough choice. After the device confirms it received the command, Chirp sends a quick follow-up question and checks the answer.
 
-* **Follow-up command** — pick a command to use as the question. Don't have one? You can create it right there, and it'll be saved for reuse later.
+* **Follow-up command** — pick a command to use as the question, or create one right there. A follow-up question is a simple kind of command: it just asks the device for its current state, so there's nothing to fill in when it runs, and it needs no checking of its own — the device's answer *is* the check. Once saved, it's kept for reuse with any other command.
+* When you create one, you write the short message that asks the device. For sensors on a cloud or external connection, you can send that message exactly as you wrote it, or let Chirp encode it first.
 * Chirp matches the device's answer against what you expect to see.
 
 Use this for devices that don't mention their status on their own but will tell you if you ask.

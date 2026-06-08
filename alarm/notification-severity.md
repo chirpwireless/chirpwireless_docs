@@ -1,3 +1,7 @@
+---
+description: Set the five severity levels and choose how often each one re-sends a reminder while an alarm stays active.
+---
+
 # Notification Severity
 
 Chirp uses five severity levels to classify alarms by urgency. Each level carries its own notification repeat policy — how often Chirp re-sends the notification while the alarm stays active. You can adjust these policies to match how your household responds to different kinds of alerts.

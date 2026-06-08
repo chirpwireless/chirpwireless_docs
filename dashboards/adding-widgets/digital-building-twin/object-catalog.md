@@ -1,3 +1,7 @@
+---
+description: Browse the 60-plus 3D objects for your home model — furniture, kitchen, bathroom, appliances, and outdoor items.
+---
+
 # Object Library
 
 The editor comes with a library of more than 60 ready-made 3D objects, sorted into five tabs. This page is the rundown of what's in each one. For how to actually drop objects into your model, see [Placing objects](placing-objects.md).

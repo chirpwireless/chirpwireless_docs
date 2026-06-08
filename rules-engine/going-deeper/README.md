@@ -1,3 +1,7 @@
+---
+description: Go beyond single-sensor rules — pull in other sensors, do the math, and publish automations that run live.
+---
+
 # More Powerful Automations
 
 Your first automation watches a single sensor and reacts to a simple threshold. That covers a lot of useful scenarios — but sometimes you need your home to be smarter than that.

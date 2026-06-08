@@ -1,3 +1,7 @@
+---
+description: Turn your phone into a home alarm receiver, with critical alerts that keep ringing until you respond.
+---
+
 # Chirp Alerts App
 
 The Chirp Alerts app turns your phone into a dedicated alarm receiver for your home. When a sensor triggers an alert, the app delivers it directly to your phone — and for critical alerts, it keeps ringing with an alarm sound and vibration until you silence or acknowledge it.

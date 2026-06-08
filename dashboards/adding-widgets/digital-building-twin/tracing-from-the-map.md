@@ -1,3 +1,7 @@
+---
+description: Click your home's outline on a satellite map to turn it into walls and save its real-world location.
+---
+
 # Tracing from the Map
 
 No floor plan? No problem. You can build the shell of your home straight from a satellite map. Open the map, find your house, click around its outline, and the editor turns that shape into walls — and remembers where on Earth your home actually is.

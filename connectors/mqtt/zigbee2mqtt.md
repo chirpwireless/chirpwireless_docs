@@ -1,3 +1,7 @@
+---
+description: Install Zigbee2MQTT to bridge your Zigbee bulbs and sensors into Chirp through the MQTT connector.
+---
+
 # Setting up Zigbee2MQTT
 
 Zigbee2MQTT (Z2M) is the bridge between your Zigbee devices and your MQTT broker. Devices speak Zigbee — a low-power radio protocol — to a USB or network-attached coordinator. Z2M is the software, running on the same machine as the coordinator, that turns each Zigbee message into an MQTT publish. Once Z2M is running, every Zigbee sensor and bulb in your home becomes an MQTT publisher, and Chirp's MQTT connector picks it up like any other MQTT device.

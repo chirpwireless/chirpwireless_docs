@@ -1,3 +1,7 @@
+---
+description: Every automation node explained — Start, Script Task, Gateway, Set Alarm, Enrichment — its fields and runtime behavior.
+---
+
 # Automation Node Guide
 
 Every automation is built from nodes connected by flows on the visual canvas. This page describes each node type: what it does, what fields appear in its properties sidebar, and how it behaves when the automation runs.

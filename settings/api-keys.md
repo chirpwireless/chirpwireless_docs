@@ -1,3 +1,7 @@
+---
+description: Create scoped API keys to connect Chirp to your scripts and tools, and revoke or rotate them anytime.
+---
+
 # API Keys
 
 API keys let you connect Chirp to your own scripts, home automation setups, and integrations — securely and without sharing your account password. You might use one to pull temperature history into a spreadsheet, connect another smart home platform to your sensor data, or give a developer trusted read access to your home readings.

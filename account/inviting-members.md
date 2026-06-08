@@ -1,3 +1,7 @@
+---
+description: Invite people to your Chirp home and pick which sensors, dashboards, and automations they can use.
+---
+
 # Inviting Members
 
 Adding someone to your Chirp home takes just a few steps. Once they accept, they can see and interact with the sensors, dashboards, and automations you choose to share with them.

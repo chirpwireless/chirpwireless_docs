@@ -1,3 +1,7 @@
+---
+description: Look up how nodes, CEL expressions, the visual editor, and build errors work when building home automations.
+---
+
 # Reference
 
 The tutorials walk you through building automations step by step. This section is for when you need to look something up — how a specific node works, what a CEL expression does, or what a build error means.

@@ -1,3 +1,7 @@
+---
+description: Get programmatic access to your home's sensor data for scripts, spreadsheets, and smart-home integrations.
+---
+
 # API
 
 Chirp gives you programmatic access to your home's data — for personal scripts, local dashboards, spreadsheets, and trusted integrations with other home-automation tools.

@@ -1,3 +1,7 @@
+---
+description: Set per-metric color rules so a reading turns green, yellow, or red — green for comfortable, red for check it now.
+---
+
 # Conditions
 
 Conditions are per-metric color rules that turn a raw sensor reading into visible meaning. Instead of looking at a number and deciding whether it's good or bad, the widget does that for you — a green pin means comfortable, a red pin means check it now, a yellow marker means getting close to the limit. You define what those colors mean for each sensor in each place it's used.

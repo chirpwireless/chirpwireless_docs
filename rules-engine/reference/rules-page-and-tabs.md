@@ -1,3 +1,7 @@
+---
+description: A tour of the Rules page — the Rules, Artifacts, and Trash tabs, plus the actions on each automation row.
+---
+
 # Rules Page and Tabs
 
 The Rules page is where you manage all your home automations. Open it from the sidebar by clicking **Rules engine**. The page is organized into three tabs: **Rules**, **Artifacts**, and **Trash**.

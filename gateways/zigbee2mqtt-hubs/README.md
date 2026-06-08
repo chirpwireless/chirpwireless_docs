@@ -1,3 +1,7 @@
+---
+description: A Zigbee2MQTT hub — a small computer plus a coordinator — brings your Zigbee devices into Chirp.
+---
+
 # Zigbee2MQTT hubs
 
 A Zigbee2MQTT hub is a small always-on computer in your home — a Raspberry Pi, a home server, an old laptop, an Intel NUC — running Zigbee2MQTT software and connected to a Zigbee coordinator radio (usually a USB stick). Together, the host machine, the coordinator, and Z2M form what we call a "Zigbee2MQTT hub": the gateway that brings your Zigbee devices into Chirp.

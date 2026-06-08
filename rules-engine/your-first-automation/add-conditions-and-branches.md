@@ -1,3 +1,7 @@
+---
+description: Add a Script Task and a gateway so your automation classifies a reading and sends it down the right path.
+---
+
 # Add Conditions and Branches
 
 Your automation has a Start Event that listens for sensor readings. Now you need to tell it what to do with those readings. In this step, you will add a decision point that checks the humidity value and sends the automation down different paths depending on the result.

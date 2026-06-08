@@ -1,3 +1,7 @@
+---
+description: Show the latest value from one or more sensors as a number, gauge, or ring — is the door open, how warm is the room?
+---
+
 # Last Data Widget
 
 The Last Data widget shows the **last value received from a sensor**. When the device is actively reporting, that is also the current value. When the device goes offline after its last transmission, the widget continues showing that last value — it does not clear the display or flag that the device is silent. You see what the sensor last said, which is current if the device is still transmitting and may be stale if it is not.

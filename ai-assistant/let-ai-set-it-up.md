@@ -1,5 +1,5 @@
 ---
-description: Ask the Chirp AI Helper to do the setup — add a sensor, build an automation, or create an alert — from a plain-language chat, with your OK first.
+description: Have the Chirp AI Helper add a sensor, build an automation, or create an alert from a plain-language chat.
 ---
 
 # Let the Helper Set It Up

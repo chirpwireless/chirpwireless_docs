@@ -1,3 +1,7 @@
+---
+description: Fix MQTT data that isn't reaching Chirp — empty Logs, topic mismatches, and devices that won't publish.
+---
+
 # MQTT Troubleshooting
 
 When MQTT data isn't reaching Chirp, the failure is almost always at one of three places: Z2M-to-broker, broker-to-Chirp, or Chirp's device routing. This page walks through each in order — the same order to use when diagnosing — plus the two patterns that catch out almost every first-time MQTT user (empty Logs tab, no publish from a wall-switch toggle).

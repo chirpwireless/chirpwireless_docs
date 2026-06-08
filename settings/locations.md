@@ -1,3 +1,7 @@
+---
+description: Organize sensors by room and area to mirror your home, making dashboards and readings easier to find.
+---
+
 # Rooms and Locations
 
 Rooms and locations let you organize your sensors the way your home is actually laid out. Create a structure that mirrors your living space -- floors, rooms, outdoor areas, a detached garage, a greenhouse -- and assign sensors to the spots where they physically sit. This makes it much easier to filter dashboards, find specific readings, and keep track of where everything is.

@@ -1,3 +1,7 @@
+---
+description: Build a 3D model of your home and watch it light up with live sensor colors and readings, right on your dashboard.
+---
+
 # Digital Building Twin
 
 The Digital Building Twin lets you build a 3D model of your home and watch your sensors come to life inside it. Draw your rooms, drop in the furniture, place your sensors where they really are — and then the model lights up: the bedroom glows warm, the front door shows open, the basement turns blue when the leak sensor gets wet.

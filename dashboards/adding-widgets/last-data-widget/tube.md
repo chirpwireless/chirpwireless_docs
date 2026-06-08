@@ -1,3 +1,7 @@
+---
+description: Show a level as a filling cylinder, like a real tank — watch the salt, fuel, or rain barrel run low or rise too high.
+---
+
 # Tube Display
 
 <figure><img src="../../../.gitbook/assets/last-data-tube.jpg" alt="Last Data widget using the Tube display type"><figcaption></figcaption></figure>

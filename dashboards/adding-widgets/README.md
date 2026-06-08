@@ -1,3 +1,7 @@
+---
+description: Add and configure dashboard widgets — pick a type, connect it to your sensors, and tailor the ranges and colors.
+---
+
 # Adding Widgets
 
 A dashboard comes alive when you add widgets — the individual display panels that show what your sensors are doing right now. But the same temperature sensor in the bedroom and the same temperature sensor watching a fridge are not the same thing. One widget shows comfort. The other shows whether your groceries are safe. The value is identical in type; the meaning is entirely different.

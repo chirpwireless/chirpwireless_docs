@@ -1,3 +1,7 @@
+---
+description: Step through an automation with debug mode — feed it a test reading, set breakpoints, and watch the values change.
+---
+
 # Debugging Automations
 
 You built an automation, turned it on, and it didn't do what you expected — it fired when it shouldn't have, or stayed quiet when it should have alerted. Debug mode helps you figure out *why*. Instead of guessing, you run the automation step by step and watch exactly what it does at each point.

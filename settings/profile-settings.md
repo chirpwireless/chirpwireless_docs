@@ -1,3 +1,7 @@
+---
+description: Update the name and photo other household members see, and review your account email in Chirp.
+---
+
 # Profile
 
 Your profile is how other members of your home see you. The name and photo you set here appear wherever your identity shows up -- in member lists, activity records, and notifications.

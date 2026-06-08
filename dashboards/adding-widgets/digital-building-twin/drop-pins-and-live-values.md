@@ -1,3 +1,7 @@
+---
+description: Pin a sensor's exact value into your 3D home, colored by its status, and show or hide every pin at once.
+---
+
 # Pins and Live Readings
 
 Color tells you *that* something is up — the nursery's gone amber, the basement's gone blue. Sometimes you also want the actual **number**: not just "the nursery is warm" but "the nursery is 26.3 °C." A pin puts that exact reading right into the model, at the spot it belongs to.

@@ -1,5 +1,5 @@
 ---
-description: Ask the Chirp AI Helper about your home in plain language — live readings, history, and charts — with tips for getting the best answers.
+description: Ask the Chirp AI Helper about your home — live readings, history, and charts — plus tips for the best answers.
 ---
 
 # Talking to Your Home

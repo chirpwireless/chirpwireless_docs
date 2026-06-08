@@ -1,3 +1,7 @@
+---
+description: Set per-section access for every household member so each person sees only what matters to them.
+---
+
 # Household Members
 
 Your Chirp home works best when the people who live there can see what matters to them. You choose what each person can view and change, section by section — Dashboards, Devices, Rules, and everything else can be configured individually for every household member.

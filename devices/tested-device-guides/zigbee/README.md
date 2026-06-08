@@ -1,3 +1,7 @@
+---
+description: Zigbee bulbs and sensors we paired through a Zigbee2MQTT hub — pairing quirks and payload details.
+---
+
 # Tested Zigbee devices
 
 Zigbee end devices we have paired and registered end-to-end on Chirp through a Zigbee2MQTT hub. These pages cover the device-specific parts — pairing procedures, payload formats, behavioral quirks. The protocol-level setup (Z2M install, MQTT connector configuration, Chirp device registration flow) is the same for every Zigbee device and lives in [Setting up Zigbee2MQTT](../../../connectors/mqtt/zigbee2mqtt.md) and [Topics and device routing](../../../connectors/mqtt/topics-and-device-routing.md).

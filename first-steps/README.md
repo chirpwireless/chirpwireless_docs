@@ -1,3 +1,7 @@
+---
+description: Get started with Chirp — what you need and the LoRaWAN setup flow that takes you from unboxing to live sensor data.
+---
+
 # First Steps
 
 Welcome to Chirp. This section helps you get comfortable with the platform and walks you through connecting your first sensor. The hands-on guide here uses the LoRaWAN path from unboxing to live data, while the rest of the docs explain where other connection types start differently. Every feature has its own dedicated section later in the documentation — here we're just covering the essentials to get you up and running.

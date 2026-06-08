@@ -1,3 +1,7 @@
+---
+description: Check whether your home gateway is online, see its uptime, and know when a dip is worth a look.
+---
+
 # Checking Gateway Health
 
 Once your gateway is registered, you can check on it anytime to see whether it's online, how long it's been running, and how much sensor data it's handling.

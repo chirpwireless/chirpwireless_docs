@@ -1,3 +1,7 @@
+---
+description: Follow a working curl example to sign a Chirp REST request and list the sensors a key can see.
+---
+
 # Examples
 
 This shows how to sign a request. For the calls themselves, see the [API reference](https://api.chirpwireless.io/).

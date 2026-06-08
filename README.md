@@ -1,5 +1,5 @@
 ---
-description: Chirp is an AI-first home automation platform — connect sensors from any maker, and let a built-in AI helper set up devices, automations, and alerts.
+description: Chirp is an AI-first home automation platform — connect any maker's sensors and let a built-in AI helper run the setup.
 ---
 
 # Chirp — Home Automation Platform

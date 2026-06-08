@@ -1,3 +1,7 @@
+---
+description: See where each sensor sits in your home on an interactive map and assign a room to put it on the map.
+---
+
 # Maps and Device Placement
 
 When you have sensors spread around your home — in the kitchen, the garden, the garage — it helps to see where each one actually is. Chirp shows your sensor locations on an interactive map, so you always know which device is where without checking labels or room assignments.

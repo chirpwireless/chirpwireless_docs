@@ -1,3 +1,7 @@
+---
+description: Add and verify email and SMS contacts, then choose which channels deliver your home alerts.
+---
+
 # Manage Contact Methods
 
 When Chirp fires an alarm, notifications go to the contact methods you have set up. The **Settings** tab on the Alarm page is where you manage these contacts — add new ones, verify them, control which channels are active, and remove contacts you no longer need.

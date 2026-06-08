@@ -1,3 +1,7 @@
+---
+description: Create an LNS connection for LoRaWAN sensors or a Tracker connection for your vehicle, in a few clicks.
+---
+
 # Setting Up a Connection
 
 Creating a connection takes just a few clicks. Here's how to set up an LNS connection (for LoRaWAN sensors) and a Tracker connection (for vehicle trackers).

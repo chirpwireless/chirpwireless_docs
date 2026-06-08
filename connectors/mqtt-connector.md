@@ -1,3 +1,7 @@
+---
+description: Bring Zigbee sensors, smart plugs, and DIY hardware into your home with the MQTT connector.
+---
+
 # MQTT Connector
 
 The MQTT connector is how you bring Zigbee sensors, DIY microcontroller sensors, and other smart home hardware directly into Chirp — without needing LoRaWAN.

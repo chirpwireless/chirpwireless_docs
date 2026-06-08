@@ -1,3 +1,7 @@
+---
+description: Find your way around the automation editor — the header bar, canvas, node palette, and properties sidebar.
+---
+
 # Visual Editor
 
 The visual editor is where you design your automation logic. It opens when you create a new automation or click **Edit** on an existing one. The editor has four main areas: the header bar, the canvas, the node palette, and the properties sidebar.

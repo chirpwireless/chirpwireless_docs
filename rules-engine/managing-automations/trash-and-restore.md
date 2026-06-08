@@ -1,3 +1,7 @@
+---
+description: Deleted an automation by mistake? It waits in the Trash — find it, bring it back, and learn how long it's kept.
+---
+
 # Trash and Restore
 
 When you delete an automation, it does not disappear forever. It moves to the **Trash** — a holding area where deleted automations wait before being permanently removed. If you change your mind, you can bring it back.

@@ -1,3 +1,7 @@
+---
+description: Create an alarm definition that sets severity, channels, schedule, and message for a home alert.
+---
+
 # Set Up a Home Alert
 
 An alarm definition tells Chirp what to do when an automation in the [Rules Engine](../rules-engine/README.md) fires an alarm — who to notify, how urgently, through which channels, and what happens if nobody responds.

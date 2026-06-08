@@ -1,3 +1,7 @@
+---
+description: View location history for a GPS tracker — see the route your car, pet, or bike took on any chosen day.
+---
+
 # Tracking What Matters
 
 If you have a GPS tracker device — for your car, a pet collar, a bike, or anything else that moves — Chirp records where it's been and shows you the full history on a map. Instead of just knowing "the tracker is online," you can see the exact route it took, when it was at each point, and how fast it was moving.

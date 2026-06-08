@@ -1,3 +1,7 @@
+---
+description: Use the app's Inbox and rules tabs to view, resolve, and tune your home alerts from your phone.
+---
+
 # Managing Alerts
 
 The Chirp Alerts app has two tabs for managing your alerts and notification rules directly from your phone.

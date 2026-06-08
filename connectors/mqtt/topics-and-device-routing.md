@@ -1,3 +1,7 @@
+---
+description: Read this before registering an MQTT device — how Chirp matches topics to the right sensor in your home.
+---
+
 # Topics and device routing
 
 This is the page to read once before you register your first MQTT device. It explains what the **Device ID Topic** field actually accepts, how Chirp matches incoming messages to the right device, why the **Connector key** dropdown is empty when you first open it, and the small handful of conventions that — once you know them — make every MQTT device registration feel routine.

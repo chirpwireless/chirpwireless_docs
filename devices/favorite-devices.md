@@ -1,5 +1,5 @@
 ---
-description: Star the devices and gateways you check most in Chirp — Add to favorites / Remove from favorites, saved and shown right on their cards.
+description: Star the devices and gateways you check most in Chirp — saved and shown right on their cards for quick access.
 ---
 
 # Favorite Devices

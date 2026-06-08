@@ -1,3 +1,7 @@
+---
+description: Join someone's Chirp home from the email link, and learn how membership and ownership invitations differ.
+---
+
 # Accepting Invitations
 
 When someone adds you to their Chirp home, you receive an email with a link. Click it, and you are in — Chirp handles the rest.

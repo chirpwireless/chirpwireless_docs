@@ -1,3 +1,7 @@
+---
+description: Open any sensor to view live readings, edit its settings, and browse its full data history.
+---
+
 # Sensor Details
 
 Every sensor in Chirp has a detail view where you can see everything about it — its name, photos, connection settings, what it measures, and its complete data history. This is the same dialog you used when first adding the sensor, but now it shows live data and lets you make changes.

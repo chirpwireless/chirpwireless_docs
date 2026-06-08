@@ -1,3 +1,7 @@
+---
+description: Learn when the advanced gRPC interface is worth it over REST for typed, on-premise Chirp integrations.
+---
+
 # gRPC API
 
 Chirp also offers a gRPC interface. For almost everyone at home you won't need it — **REST is the practical choice for home scripts and integrations** (see [REST API](public-rest-api.md)). **gRPC is the advanced / on-premise path: use it only if you specifically need it for an on-premise or typed service-to-service integration.**

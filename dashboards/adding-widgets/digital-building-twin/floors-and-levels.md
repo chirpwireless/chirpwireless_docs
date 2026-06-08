@@ -1,3 +1,7 @@
+---
+description: Add upstairs, downstairs, and basement levels to your 3D home and switch between stacked and solo floor views.
+---
+
 # Floors and Levels
 
 Most homes have more than one level — an upstairs and a downstairs, maybe a basement, maybe a loft. A Digital Building Twin handles all of them in a single widget. Each floor is its own layer of the same model, with its own rooms, its own furniture, and its own sensors.

@@ -1,3 +1,7 @@
+---
+description: Decode build errors, understand deploy and stop, and recover an automation that the system force-stopped.
+---
+
 # Fixing Builds and Runtime Stops
 
 When you click **Build**, Chirp validates your entire automation before creating a deployable artifact. If something is wrong, the build fails and shows error messages. This page explains what those errors mean and how to fix them, along with how deployment works and what to do when the system force-stops an automation.

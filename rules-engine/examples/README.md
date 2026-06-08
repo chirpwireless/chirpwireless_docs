@@ -1,3 +1,7 @@
+---
+description: Ready-to-adapt smart home automation ideas for comfort, energy, and safety — copy a pattern and make it your own.
+---
+
 # Home Automation Ideas
 
 The best automations are the ones you build yourself — because you know your home, your routines, and what matters most to your family. But it helps to see how other people put the pieces together.

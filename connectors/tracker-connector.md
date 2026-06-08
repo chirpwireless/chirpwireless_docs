@@ -1,5 +1,5 @@
 ---
-description: Connect a cellular GPS vehicle tracker to Chirp with the Tracker connector — OBD2, CAN bus, and standalone GPS trackers, with 2,000+ preconfigured models.
+description: Connect a cellular GPS vehicle tracker to Chirp — OBD2, CAN bus, and standalone trackers, 2,000+ preconfigured models.
 ---
 
 # Tracker Connector

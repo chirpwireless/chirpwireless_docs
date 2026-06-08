@@ -1,3 +1,7 @@
+---
+description: Drop furniture and objects into your 3D home, turn them as you place, and adjust position, scale, and rotation.
+---
+
 # Placing Objects
 
 Walls give you rooms; objects make those rooms feel like *your* home. The sofa in the living room, the bed in the bedroom, the car on the driveway. And objects are more than decoration — they're what most of your sensors connect to. A sensor reads "the door is open," and the garage door you placed swings into red.

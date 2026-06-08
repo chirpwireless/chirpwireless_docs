@@ -1,3 +1,7 @@
+---
+description: Open the editor, name your automation, pick the sensor that triggers it, and save your first draft.
+---
+
 # Create an Automation
 
 This page walks you through opening the automation editor, naming your first automation, choosing the sensor that triggers it, and saving your initial draft.

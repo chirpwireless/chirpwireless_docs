@@ -1,5 +1,5 @@
 ---
-description: Add a Control widget to a Chirp dashboard — a switch or button that operates a device and shows its real state, right next to your readings.
+description: Add a Control widget to a Chirp dashboard — a switch or button that operates a device and shows its real state.
 ---
 
 # Control widget

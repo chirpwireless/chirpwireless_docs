@@ -1,3 +1,7 @@
+---
+description: Create, rename, and delete a personalized Chirp dashboard with its own name, icon, and folder.
+---
+
 # Building a Dashboard
 
 The home overview shows your whole smart home at a glance, but sometimes you want a view focused on just one part — the kitchen temperature and humidity, the security sensors on every door, or the garden moisture probe and weather station. That's what dashboards are for.

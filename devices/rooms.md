@@ -1,3 +1,7 @@
+---
+description: Group your sensors into rooms like Living Room, Kitchen, and Garden so everything's easy to find.
+---
+
 # Rooms
 
 As your smart home grows, organizing sensors by room keeps everything easy to find. Instead of scrolling through a flat list, you can group sensors into rooms like Living Room, Kitchen, Garden, and Garage — so you always know where each sensor lives.

@@ -1,3 +1,7 @@
+---
+description: Show a GPS device's live position on an outdoor map with one reading on the marker and route history by date.
+---
+
 # Map Widget
 
 The Map widget shows where a GPS-reporting device is on a real outdoor interactive map — the same kind of map you use for navigation. The device's current location appears as a marker, and the marker shows one selected sensor reading at a time: current speed, battery level, engine on/off status, or any other value the device transmits.

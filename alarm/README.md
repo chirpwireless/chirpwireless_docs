@@ -1,3 +1,7 @@
+---
+description: See how Chirp turns sensor readings into home alerts, with an Inbox, alarm rules, and contact settings.
+---
+
 # Alarm
 
 Your sensors watch your home around the clock, but you are not always looking at the dashboard. The Alarm section bridges that gap — when a reading crosses a threshold you care about, Chirp notifies you through the channels you choose so you can act before a small problem becomes a bigger one.

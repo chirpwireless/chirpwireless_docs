@@ -1,5 +1,5 @@
 ---
-description: Control your smart home devices from Chirp — turn things on or off, dim lights, change color temperature, and send settings over Zigbee/MQTT or LoRaWAN.
+description: Control your devices from Chirp — turn things on or off, dim lights, and change color temperature over MQTT or LoRaWAN.
 ---
 
 # Controlling Your Devices

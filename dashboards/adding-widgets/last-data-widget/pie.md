@@ -1,3 +1,7 @@
+---
+description: Show a reading as a bold filled circle that fills as the value rises — a chunkier take on the ring gauge.
+---
+
 # Pie Display
 
 <figure><img src="../../../.gitbook/assets/last-data-pie.jpg" alt="Last Data widget using the Pie display type"><figcaption></figcaption></figure>

@@ -1,3 +1,7 @@
+---
+description: Plug in the Sonoff ZBDongle-E, confirm Linux sees it, and get ready to run your Zigbee2MQTT hub.
+---
+
 # Sonoff ZBDongle-E coordinator
 
 This is a hardware-specific walkthrough for setting up a **Sonoff ZBDongle-E** — the Zigbee coordinator dongle we tested our Zigbee2MQTT-on-Chirp setup with. If you have this exact dongle, follow these steps to confirm it's plugged in correctly and Linux sees it. Then continue to [Setting up Zigbee2MQTT](../../connectors/mqtt/zigbee2mqtt.md) for the software install — Z2M is generic across coordinators, so once your dongle is detected, the rest of the setup follows the same flow as any other supported coordinator.

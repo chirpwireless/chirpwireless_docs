@@ -1,3 +1,7 @@
+---
+description: Catch trouble fast with leak, door, garage, and freezer automations that alert the moment something looks wrong.
+---
+
 # Safety and Alerting
 
 When it comes to safety, speed matters. These automations are designed to react immediately when something is wrong — a water leak, an unexpected door opening, or a sensor reading that should not be where it is. They use simple, direct logic because in a safety scenario, fewer steps mean faster response.

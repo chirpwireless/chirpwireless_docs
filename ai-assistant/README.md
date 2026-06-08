@@ -1,5 +1,5 @@
 ---
-description: The Chirp AI Helper knows your home and can set up sensors, build automations, and create alerts for you — all in plain language.
+description: The Chirp AI Helper knows your home and sets up sensors, automations, and alerts for you — all in plain language.
 ---
 
 # Your Home AI Helper

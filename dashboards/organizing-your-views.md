@@ -1,3 +1,7 @@
+---
+description: Group dashboards into folders and drag-and-drop them so the views you use most sit right at the top.
+---
+
 # Organizing Your Views
 
 When you have just one or two dashboards, finding them in the sidebar is easy. But as your smart home grows — a dashboard for each room, one for security, one for the garden — the list gets longer. Folders help you group related dashboards together, and drag-and-drop reordering lets you put the ones you use most right at the top.

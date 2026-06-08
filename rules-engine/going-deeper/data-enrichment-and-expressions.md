@@ -1,3 +1,7 @@
+---
+description: Combine readings from several sensors, transform them with CEL, and handle offline sensors with a fallback path.
+---
+
 # Data Enrichment and Expressions
 
 A single sensor reading tells you what is happening in one spot. But your home is a system of connected spaces — the basement humidity matters more when you also know it has been raining, and the living room temperature means something different when the outdoor reading is 35 degrees versus 15 degrees.

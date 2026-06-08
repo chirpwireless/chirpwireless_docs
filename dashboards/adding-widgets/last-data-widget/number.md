@@ -1,5 +1,5 @@
 ---
-description: Show a sensor's latest reading as-is — a number, text, or on/off (true/false) — with the Value display in the Chirp Last Data widget.
+description: Show a sensor's latest reading as a number, text, or on/off with the Value display in the Chirp Last Data widget.
 ---
 
 # Value Display

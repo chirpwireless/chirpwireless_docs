@@ -1,3 +1,7 @@
+---
+description: Add a Set Alarm node and a motivation message so your automation notifies you when the basement gets too humid.
+---
+
 # Trigger Alarms and Actions
 
 Your automation can now tell the difference between a normal humidity reading and a high one. The last piece is connecting the "high humidity" path to an action that actually notifies you. In this step, you will add a Set Alarm node so Chirp sends an alert when the basement gets too humid.
