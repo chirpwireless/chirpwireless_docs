@@ -1,6 +1,10 @@
+---
+description: Ask the Chirp AI Helper about your home in plain language — live readings, history, and charts — with tips for getting the best answers.
+---
+
 # Talking to Your Home
 
-Just ask. There are no special commands to memorize and no query syntax to learn. Type your question the same way you would text a friend who happens to know everything about your house.
+Just ask. There are no special commands to memorize and no query syntax to learn. Type the same way you would text a friend who happens to know everything about your house — whether you're *asking about* your home or *asking the helper to set something up*. This page is about asking questions; to hand it real jobs, see [Let the Helper Set It Up](let-ai-set-it-up.md).
 
 ## Tips for better answers
 
@@ -46,3 +50,7 @@ Because the helper keeps context within a session, you can refine your questions
 4. "Were there any readings above 25 degrees?"
 
 Each follow-up builds naturally on the last, turning a simple question into a detailed picture of what happened in your home.
+
+## From asking to doing
+
+The same chat can slide straight from a question into an action. After "how often did the basement get damp last week?" you can simply add "set up an alert if it happens again" — and the helper builds it for you. Whenever a request would change something that matters, it shows a **Confirm Action** / **Cancel** prompt first, so you're always the one who decides. See [Let the Helper Set It Up](let-ai-set-it-up.md).

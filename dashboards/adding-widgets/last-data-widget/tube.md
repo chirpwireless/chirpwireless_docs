@@ -6,10 +6,20 @@ The Tube display is a tall cylinder that fills up from the bottom as the reading
 
 It's the most natural way to show anything that has a level — a rainwater butt, a heating-oil tank, the salt in a water softener. And because the colors are yours to set, it works whether you're watching something fill up or watching it run down.
 
+## Watch it run low, or watch it climb too high
+
+The Tube has no fixed "good" end — you choose which way spells trouble and set the colors to match. That means one widget covers two opposite jobs:
+
+- **Watch something run low.** When the worry is *running out* — the fuel in a tank, the salt in your softener, the water in a rain barrel — the level drops as it's used, so put the warning colors at the **bottom**. The tube is green when there's plenty and turns yellow then red as it empties, so you know to refill in good time.
+- **Watch something rise too far.** When the worry is the level *getting too high* — say a sensor in your sump or basement pit, where the pump normally keeps the water down — a pump failure lets the water climb, so put the warning colors at the **top**. The tube stays short and green normally and fills into a red band near the top if something goes wrong, warning you before it floods.
+
+It's exactly the same widget — the only difference is whether you paint the red at the bottom or the top. Both are shown below.
+
 ## When to choose it
 
 - A real tank or container — water, fuel, propane, feed.
 - A "how much is left" reading, where you want to see the level drop toward the bottom.
+- A level that shouldn't climb too high — like a sump or drainage pit — where seeing it rise toward the top is the warning.
 - Anything you'd naturally picture as a level rising and falling.
 
 If your instinct is to imagine a reading as a column going up and down, the Tube is the display for it — and the colors then decide which end you're watching.
@@ -52,6 +62,6 @@ The same idea for collected rainwater — a level sensor in a 200-liter barrel �
 
 ## See also
 
-- [Last Data Widget](../last-data-widget.md) — The full widget setup and all five display types
+- [Last Data Widget](../last-data-widget.md) — The full widget setup and the other display types
 - [Conditions](../conditions.md) — Setting the From/To color rules for the fill
-- Other display types: [Number](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Gauge](gauge.md)
+- Other display types: [Number](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Gauge](gauge.md) · [Radial gauge](radial-gauge.md)

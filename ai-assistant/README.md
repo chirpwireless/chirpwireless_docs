@@ -1,27 +1,37 @@
+---
+description: The Chirp AI Helper is a smart-home expert built in — it knows your home and can set up sensors, build automations, and create alerts for you, in plain language.
+---
+
 # Your Home AI Helper
 
-Available on selected plans.
+Smart homes are supposed to be simple, but setting one up rarely feels that way — there's jargon, fiddly settings, and a different app for everything. Chirp's AI Helper fixes that by putting a friendly smart-home expert right inside the app. You talk to it like a person, and it gets things done.
 
-Your home is full of sensors collecting data around the clock — temperature, humidity, motion, door states, battery levels, and more. The AI Helper lets you ask about any of it in plain language, right from the Chirp interface. Think of it as a conversation with your home.
+It knows your home inside out — every sensor, every reading, the whole history — so it can answer "is the back door shut?" in a heartbeat. And it goes further: ask it to add a sensor, set up an automation, or create an alert, and it'll actually do the work, showing you what it's about to change and waiting for your OK first. Open it from **AI Chat** in the sidebar.
 
-## Where to find it
+## More than a chat box
 
-A floating chat button sits in the bottom-right corner of every page. Drag it to a different spot if it gets in the way. Click it to open the chat window, and close it whenever you like — your conversation stays right where you left it.
+Plenty of apps have a chat bubble that spits out canned answers. Chirp's helper is different in three ways that matter:
 
-## Four things it can do
+**It actually knows your home.** Its answers come from your real sensors and your real history — checked the moment you ask — not from generic guesses. If it can't find something, it says so instead of making it up. That's what makes it safe to rely on.
 
-1. **Answer questions about live sensor data.** Ask what any sensor is reading right now, which devices are online, or what the battery level looks like on your garden probe.
+**It rolls up its sleeves.** This is the big one. The helper doesn't just tell you *how* to set up an automation — it can build it for you, write the logic, test it, and switch it on. It can walk you through adding a new sensor, and create an alert that pings you when something's wrong. You describe what you want; it handles the how.
 
-2. **Dig into historical readings.** Ask about yesterday's temperatures, last week's humidity trends, or when a door was last opened. It pulls from your full sensor history.
+**It remembers, and it always asks first.** It keeps track of your conversation so you can refine things ("make that 10 minutes instead") without starting over. And before anything important or permanent — like deleting a device or an automation — it stops and asks you to confirm. Nothing big happens without your say-so.
 
-3. **Create charts.** Say "show me a chart of bedroom temperature this week" and a visual chart appears directly inside the chat.
+## What it can do for you
 
-4. **Search the Chirp help docs.** Not sure how a feature works? Ask, and the helper finds the relevant guide and gives you a summary with a link.
+* **Answer anything about your home** — live readings, which sensors are online, yesterday's trends — and draw you a chart on the spot. See [Talking to Your Home](talking-to-your-home.md).
+* **Set things up for you** — add a sensor, build and switch on an automation, create an alert. See [Let the Helper Set It Up](let-ai-set-it-up.md).
+* **Explain how Chirp works** — it searches the help guides and trusted smart-home know-how to walk you through anything. Built on [what it knows](what-it-knows.md).
 
-## What it will not do
+## One thing to know
 
-The AI Helper is focused entirely on your home sensors and the Chirp platform. It will not answer general trivia, make changes to your settings, or look at data from other homes. It is a home analyst, not a general-purpose chatbot.
+The helper **builds the automations that control your devices — it doesn't flip the switches itself.** Want the lights to come on at sunset? It'll create that automation for you. But actually turning a light on or off, dimming it, or changing its color right now is done with [Device Commands](../devices/commands/) and the dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). Think of the helper as the expert who wires everything up, and those controls as the light switches it leaves you with.
 
-## How it works
+It also keeps to the basics you'd expect: it only ever works with your home, never anyone else's, and it never touches passwords or billing. See [Your Privacy](your-privacy.md).
 
-Type a question in plain language. The helper streams its answer back in real time, and you can ask follow-up questions to dig deeper. No special commands, no technical syntax — just a conversation about your home.
+## Availability
+
+The helper comes with your Chirp plan, with a monthly number of requests included; higher plans include more. If you'd rather not worry about the limit, you can connect your own AI key and keep chatting. You'll see how many requests you have left above the message box.
+
+This is the first version of the helper and it's getting smarter all the time — everything above works today, with more on the way.

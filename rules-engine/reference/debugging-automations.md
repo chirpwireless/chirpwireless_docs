@@ -7,7 +7,7 @@ Debug mode is a step-through tester built right into the visual editor. You give
 ## Starting a debug session
 
 1. Open the automation in the [visual editor](visual-editor.md).
-2. In the editor's top bar, click **Set context** to open the **Start Debug Session** panel. (The top bar also has a **Start Debug** button, shortcut **F12**.)
+2. In the editor's top bar, click **Set context** to open the **Start Debug Session** panel. (The top bar also has a **Start Debug** button.)
 3. The panel asks you for some **initial context** — the pretend reading the automation will run against. Each row has a **Name** and a **Value**:
    * **Name** is the variable your automation expects — often `value`, or something like `temperature` or `status`.
    * **Value** is the test reading. It can be a number, `true` / `false`, `null`, or text — the panel works out what you mean.
@@ -20,11 +20,11 @@ This initial context stands in for what your sensor would really send. Set it to
 
 Once a session is running, a small toolbar appears at the bottom of the editor with five buttons:
 
-* **Run (F10)** — run the automation until it hits a breakpoint or finishes.
-* **Step over (F9)** — do the next node and stop, showing what it produced.
-* **Step into (F8)** — go *inside* the next node to see its inner workings — its inputs, scripts, and outputs — not just the result.
-* **Run ignore breakpoints (F11)** — run all the way through without stopping at any breakpoint.
-* **Stop (F12)** — end the debug session.
+* **Run** — run the automation until it hits a breakpoint or finishes.
+* **Step over** — do the next node and stop, showing what it produced.
+* **Step into** — go *inside* the next node to see its inner workings — its inputs, scripts, and outputs — not just the result.
+* **Run ignore breakpoints** — run all the way through without stopping at any breakpoint.
+* **Stop** — end the debug session.
 
 As the automation runs, the node it's currently on is highlighted on the canvas, so you always know where you are.
 

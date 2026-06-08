@@ -6,7 +6,7 @@ The most popular use is Zigbee. Thousands of Zigbee-compatible devices are suppo
 
 You can also connect non-Zigbee devices: an ESP32 you built yourself, a Tasmota-flashed smart plug, a soil moisture monitor with MQTT firmware, or any hardware that publishes data over MQTT.
 
-> **What this section covers, and what it doesn't.** These pages cover MQTT telemetry — bringing data *from* your devices into Chirp — and how to map it to sensor metrics. MQTT command and control (sending commands *to* your devices through the Chirp API) is not covered here. If you want to control a Zigbee bulb during setup, use the Zigbee2MQTT web UI; commands you send there round-trip through your broker and update Chirp automatically.
+> **What this section covers.** These pages cover MQTT telemetry — bringing data *from* your devices into Chirp — and how to map it to sensor metrics. Once a device is connected, you can also send commands *to* it from Chirp: turn a plug on or off, dim a bulb, change its color temperature, and more. That two-way control is set up on each device under [Device Commands](../devices/commands/).
 
 ## In this section
 

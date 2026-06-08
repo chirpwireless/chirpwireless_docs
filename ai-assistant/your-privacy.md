@@ -1,10 +1,18 @@
+---
+description: How the Chirp AI Helper keeps things private and safe — it works only within your access, asks before big changes, and never stores passwords.
+---
+
 # Your Privacy
 
 Your conversations with the AI Helper are private, and your sensor data stays secure.
 
-## It sees only what you see
+## It works only within your access
 
-The helper uses your active login session to determine what it can access. If you can view a sensor on your dashboard, the helper can answer questions about it. If you cannot, neither can the helper. There is no special elevated access.
+The helper uses your active login session to decide what it can do. If you can view a sensor on your dashboard, the helper can answer questions about it; if you can change an automation, the helper can help you change it. If you can't do something yourself, neither can the helper. There is no special elevated access.
+
+## It asks before anything big
+
+When you ask the helper to set something up, the small, safe steps just happen — but before anything important or permanent, like removing a device or an automation, it shows a clear **Confirm Action** / **Cancel** prompt and waits for you. You're always the one who approves a real change.
 
 ## Your home is isolated
 

@@ -49,6 +49,6 @@ Some readings should stay *between* two numbers. For a living-room temperature, 
 
 ## See also
 
-- [Last Data Widget](../last-data-widget.md) — The full widget setup and all five display types
+- [Last Data Widget](../last-data-widget.md) — The full widget setup and the other display types
 - [Conditions](../conditions.md) — The color rules that become the track bands
-- Other display types: [Number](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Tube](tube.md)
+- Other display types: [Number](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)

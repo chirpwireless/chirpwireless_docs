@@ -1,6 +1,10 @@
+---
+description: What the Chirp AI Helper can see — your live sensor data, your full history, Chirp help guides, and smart-home know-how, always limited to your own home.
+---
+
 # What It Knows
 
-The AI Helper can see everything your sensors report — but only yours. It has the same view of your home that you do when you log in, and it cannot peek into anyone else's.
+The AI Helper answers from your real home, not from guesswork. It can see everything your sensors report — but only yours — and it checks that data the moment you ask, so its answers reflect what's actually happening right now. It has the same view of your home that you do when you log in, it cannot peek into anyone else's, and if it can't find something it'll tell you rather than make it up.
 
 ## Live sensor data
 

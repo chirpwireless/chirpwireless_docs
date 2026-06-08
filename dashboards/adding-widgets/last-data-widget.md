@@ -4,7 +4,7 @@ The Last Data widget shows the **last value received from a sensor**. When the d
 
 Is the bedroom light on or off? Is the front door open or closed? What is the living room temperature? These are Last Data questions. The widget shows the last transmitted value for each — no chart, no history, no trend. If you want to see how a value changed over time, that is the [Chart widget](chart-widget.md).
 
-You can display a plain number, a ring gauge (Doughnut), a filled gauge (Pie), a Tube that fills up like a tank, or a Gauge that slides a marker along a colored track. One widget can hold multiple sensors — bedroom temperature, humidity, and CO2 level side by side, each styled independently. Conditions turn the raw number into visible meaning: green means everything is fine, red means look at this now.
+You can display a plain number, a ring gauge (Doughnut), a filled gauge (Pie), a Tube that fills up like a tank, a Gauge that slides a marker along a colored track, or a Radial Gauge that shows the reading on a round dial. One widget can hold multiple sensors — bedroom temperature, humidity, and CO2 level side by side, each styled independently. Conditions turn the raw number into visible meaning: green means everything is fine, red means look at this now.
 
 ## Setting up a Last Data widget
 
@@ -56,12 +56,15 @@ When your sensors are set, tap **Next** to continue to the Appearance tab.
 - **Pie** — A filled circle gauge — the same idea as Doughnut, with a bolder look. [→ Pie Display](last-data-widget/pie.md)
 - **Tube** — A tall cylinder that fills from the bottom like a tank. [→ Tube Display](last-data-widget/tube.md)
 - **Gauge** — A horizontal track with a sliding marker and your color conditions shown as bands. [→ Gauge Display](last-data-widget/gauge.md)
+- **Radial gauge** — A round dial with a needle, a sweep angle you choose, and your conditions as colored arcs. [→ Radial Gauge Display](last-data-widget/radial-gauge.md)
 
-**Value range** *(Doughnut, Pie, Tube, and Gauge)* — Appears per sensor once you choose one of these display types. Set the **Min** and **Max** values that define the scale the widget fills or marks against. The tooltip reads: **"Set min and max to define the chart scale. Max is the value where the indicator is fully filled (for a pie, the whole circle)."**
+**Value range** *(Doughnut, Pie, Tube, Gauge, and Radial gauge)* — Appears per sensor once you choose one of these display types. Set the **Min** and **Max** values that define the scale the widget fills or marks against. The tooltip reads: **"Set min and max to define the chart scale. Max is the value where the indicator is fully filled (for a pie, the whole circle)."**
 
 Validation: Min must be strictly less than Max. If they are equal or reversed, the widget won't save.
 
-**Tick marks** *(Tube and Gauge)* — Choose how many tick marks divide the scale. On a Gauge they run along the track; on a Tube they run down the side and pick up the color of whatever condition band they land in.
+**Tick marks** *(Tube, Gauge, and Radial gauge)* — Choose how many tick marks divide the scale. On a Gauge they run along the track, on a Tube they run down the side and pick up the color of whatever condition band they land in, and on a Radial gauge they ring the dial.
+
+**Sweep angle** and **Radial Gauge name** *(Radial gauge only)* — Set how far around the dial sweeps (0 to 360 degrees; 300 by default) and the label shown with it. See [Radial Gauge Display](last-data-widget/radial-gauge.md).
 
 **Tube and Gauge don't have a built-in "good" end.** The fill or marker just shows where the reading sits — your conditions decide what's fine and what isn't. Put the red band at the low end to be warned when something is running out, or at the high end when something is rising too far. The [Tube](last-data-widget/tube.md) and [Gauge](last-data-widget/gauge.md) pages walk through both.
 

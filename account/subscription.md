@@ -16,9 +16,9 @@ Chirp offers three paid plans alongside a free starter tier, plus a Business opt
 | **Max** | €19.99 / month |
 | **Business** | Contact sales |
 
-**If you're just getting started:** The free tier lets you connect a limited number of devices and explore the platform without entering payment details. When you're ready to expand, pick a plan and tap **Start trial** — you'll be taken to a secure checkout page to complete the setup.
+**If you're just getting started:** The free tier lets you connect a limited number of devices and explore the platform without entering payment details. When you're ready for more, pick a plan and tap **Upgrade Plan** — you go straight to a secure checkout page to finish, with no extra confirmation step in between. Your new plan's limits apply as soon as it's active.
 
-**If you already have a plan:** Your current plan is highlighted in the comparison. To switch plans, tap a different tier and follow the confirmation steps. To manage billing details, download invoices, or cancel, tap **Manage my subscription** — this opens your billing portal where all payment management happens.
+**If you already have a plan:** Your current plan is highlighted in the comparison. To switch, tap a different tier and you're taken straight to checkout. To manage billing details, download invoices, or cancel, tap **Manage my subscription** — this opens your billing portal where all payment management happens.
 
 ## What each plan includes
 

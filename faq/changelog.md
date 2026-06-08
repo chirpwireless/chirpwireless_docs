@@ -2,6 +2,65 @@
 
 <details>
 
+<summary>Flight Log. Release 3.5.0</summary>
+
+<!-- IMAGE: Flight_Release_3.5.0.jpg (hero) — alt: Chirp 3.5.0 release banner -->
+
+Chirp 3.5.0 is a big one: your home gets a brain, and a voice that talks back. The AI Helper grows from something you ask questions to something that does the work — tell it "add my new leak sensor" or "alert me if the basement gets damp" and it sets it up for you, always checking with you before anything important. And Chirp can now *control* your devices, not just listen to them: turn a plug on or off, dim a lamp, change its color temperature, all from the app. New Control, Text, and Radial Gauge widgets put those switches and a smart new dial right on your dashboard. [app.chirpwireless.io](https://app.chirpwireless.io)
+
+***
+
+#### What's in This Release
+
+* **A hands-on AI Helper** — It doesn't just answer questions anymore. Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, testing it, and switching it on — and it always asks before anything permanent.
+* **Control your devices** — Turn things on and off, dim lights, change color temperature, and send settings to any device that can receive commands, over Zigbee/MQTT or LoRaWAN.
+* **Control widget** — A switch or button on your dashboard, sitting right next to your readings.
+* **Text widget** — Headings and notes to tidy up and label a busy dashboard.
+* **Radial Gauge** — A new round-dial display for the Last Data widget, like the gauges on a car dashboard.
+* **Simpler upgrades** — One **Upgrade Plan** tap takes you straight to checkout, with no extra "are you sure?" steps.
+
+***
+
+**Your home, now hands-on**
+
+<!-- IMAGE: ai-helper-build.jpg — alt: AI Helper setting up an automation and asking to confirm -->
+
+The AI Helper used to be a great way to *ask* about your home. Now it rolls up its sleeves. Describe what you'd like — "turn the porch light on at sunset", "warn me if humidity stays high for an hour" — and it builds the automation, tries it out to make sure it behaves, and turns it on. It can walk you through adding a new sensor and set up alerts too. Everything it tells you comes from your real home data, it remembers what you talked about, and before anything big or permanent it stops and asks you to confirm. It builds the automations that run your home; flipping a switch right now is what the new device controls are for.
+
+[→ Your Home AI Helper](../ai-assistant/README.md)
+
+***
+
+**Control your devices from Chirp**
+
+<!-- IMAGE: device-control-states.jpg — alt: Commands & States tab on a device -->
+
+Until now Chirp mostly listened to your devices. Now it can talk back. On a device's new **Commands & States** tab you set up the actions it can do — "Turn on", "Set brightness", "Warm white" — and then run them with a tap, over Zigbee/MQTT or LoRaWAN. Inputs like a brightness level are kept sensible for you, Chirp can check the device actually responded, and every action is saved in a tidy history so you can see what happened. Works with smart home devices on MQTT and with always-listening (Class C) LoRaWAN devices.
+
+[→ Controlling Your Devices](../devices/commands/README.md)
+
+***
+
+**Control, Text, and Radial Gauge widgets**
+
+<!-- IMAGE: control-widget-home.jpg — alt: Control widget on a home dashboard -->
+
+Three new tiles for your dashboards. The **Control widget** is a switch or button you tap to operate a device, right beside the readings that tell you whether you need to — and it shows the device's real state. The **Text widget** drops in headings and notes so a crowded board turns into tidy, labeled sections. And the **Radial Gauge** gives the Last Data widget a round dial with a needle and colored zones, lovely for a headline reading like a water tank or battery level.
+
+[→ Control widget](../dashboards/adding-widgets/control-widget.md) · [→ Text widget](../dashboards/adding-widgets/text-widget.md) · [→ Radial Gauge Display](../dashboards/adding-widgets/last-data-widget/radial-gauge.md)
+
+***
+
+**Simpler plan upgrades**
+
+Upgrading is now one step: pick a plan, tap **Upgrade Plan**, and you go straight to secure checkout — no extra confirmation screens along the way.
+
+[→ Subscription](../account/subscription.md)
+
+</details>
+
+<details>
+
 <summary>Flight Log. Releases 3.2.0, 3.3.0, 3.4.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.4.0.jpg" alt=""><figcaption></figcaption></figure>

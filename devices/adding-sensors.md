@@ -36,7 +36,7 @@ Click the **Connection** tab to link your sensor to a physical device.
 **For LoRaWAN sensors (LNS connection):**
 
 1. Select your **LNS** connection from the **Connector type** dropdown (if you only have one, it may be pre-selected).
-2. Enter the **Device EUI** — the unique identifier from your sensor's label (a string of hexadecimal characters, usually printed on the sensor or its packaging). Once entered and saved, this field locks to prevent accidental changes.
+2. Enter the **Device EUI** — the unique identifier from your sensor's label (a string of hexadecimal characters, usually printed on the sensor or its packaging). Once entered and saved, this field locks to prevent accidental changes. Capital and lowercase letters are treated the same here, so it doesn't matter which your label uses — just copy it carefully.
 3. Choose how to set up the sensor profile:
 
    **Option A: Use device profile templates** — Check the **Use device profile templates** box to select from a library of known sensors. This is the easiest approach if your sensor brand is in the library.
@@ -50,7 +50,7 @@ Click the **Connection** tab to link your sensor to a physical device.
 
    - **Class** — Choose the LoRaWAN device class:
      - **Class A** — The sensor sleeps between transmissions and only briefly wakes to listen for responses. This is extremely power-efficient — most battery-powered home sensors use Class A and can run for years on a single battery.
-     - **Class C** — The sensor keeps its receiver on continuously, so it can receive commands from Chirp at any time. Because the radio is always listening, Class C sensors use significantly more power and are typically plugged into mains power. Choose Class C for devices that need to respond to commands instantly, such as smart switches or displays.
+     - **Class C** — The sensor keeps its receiver on continuously, so it can receive commands from Chirp at any time. Because the radio is always listening, Class C sensors use significantly more power and are typically plugged into mains power. Choose Class C for devices that need to respond to commands instantly, such as smart switches or displays. A Class C sensor gets a **Commands & States** tab so you can control it — see [Controlling Your Devices](commands/).
    - **Brand** and **Model** — Type the sensor manufacturer and model name.
    - **Band** — Select the LoRaWAN frequency band for your region. Sensors purchased from a local supplier are almost always on the correct band already. Available options: EU868 (Europe), US915 (USA), AU915 (Australia), AS923 (Asia), KR920 (South Korea), IN865 (India), RU864 (Russia), CN470 (China), CN779 (China), EU433 (Europe 433 MHz), ISM2400 (2.4 GHz global). For a complete list by country, see [LoRaWAN Frequencies](../connectors/lns-connector/lorawan-frequencies.md).
    - **AppKey** — The encryption key for your sensor, typically found on the sensor's packaging or in its documentation.
