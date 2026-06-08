@@ -7,11 +7,11 @@ Debug mode is a step-through tester built right into the visual editor. You give
 ## Starting a debug session
 
 1. Open the automation in the [visual editor](visual-editor.md).
-2. In the editor's top bar, click **Set context** to open the **Start Debug Session** panel. (The top bar also has a **Start Debug** button.)
-3. The panel asks you for some **initial context** — the pretend reading the automation will run against. Each row has a **Name** and a **Value**:
+2. In the editor's top bar, click **Set context** to open the **Start Debug Session** panel. (The top bar also has a **Start Debug** button, shortcut **F12**.)
+3. The panel asks you for some **initial context** — the pretend reading the automation will run against. It starts with one value row, and each row has a **Name** and a **Value**:
    * **Name** is the variable your automation expects — often `value`, or something like `temperature` or `status`.
    * **Value** is the test reading. It can be a number, `true` / `false`, `null`, or text — the panel works out what you mean.
-4. Click **Add metric** to add more.
+4. Click **Add metric** to add more, and remove any extra row you don't need.
 5. Click **Load and Start**. The automation loads and pauses, ready for its first step.
 
 This initial context stands in for what your sensor would really send. Set it to the situation you want to test — the moment the door opens, the temperature that should trigger the alert, the reading you think is causing trouble.
@@ -20,11 +20,11 @@ This initial context stands in for what your sensor would really send. Set it to
 
 Once a session is running, a small toolbar appears at the bottom of the editor with five buttons:
 
-* **Run** — run the automation until it hits a breakpoint or finishes.
-* **Step over** — do the next node and stop, showing what it produced.
-* **Step into** — go *inside* the next node to see its inner workings — its inputs, scripts, and outputs — not just the result.
-* **Run ignore breakpoints** — run all the way through without stopping at any breakpoint.
-* **Stop** — end the debug session.
+* **Run (F10)** — run the automation until it hits a breakpoint or finishes.
+* **Step over (F9)** — do the next node and stop, showing what it produced.
+* **Step into (F8)** — go *inside* the next node to see its inner workings — its inputs, scripts, and outputs — not just the result.
+* **Run ignore breakpoints (F11)** — run all the way through without stopping at any breakpoint.
+* **Stop (F12)** — end the debug session.
 
 As the automation runs, the node it's currently on is highlighted on the canvas, so you always know where you are.
 
@@ -62,13 +62,17 @@ Some nodes don't just shuffle data around — they actually *do* something, like
 
 * **Execute — run the real handler.** The action really happens, just like it would in a live automation.
 * **Skip — variables unchanged.** The action is skipped and the variables are left alone.
-* **Mock — provide a mock response.** You supply a pretend response and the automation carries on as if the action had returned it.
+* **Mock — provide a mock response.** You supply a pretend response as JSON and the automation carries on as if the action had returned it. It needs to be valid JSON — if it isn't, the mock just isn't used.
 
 This is what lets you test an automation that sends alerts without actually buzzing everyone's phone. Choose **Skip** or **Mock** while you're working on the logic, and **Execute** only when you want to check that the real notification goes out.
 
 ## When a node fails
 
-If a node hits an error while running, an error message appears with the node's name and what went wrong, plus a **Go to…** button that jumps the canvas straight to the node that failed — so you don't have to hunt for it in a big automation.
+If a node hits an error while running, the node that failed is highlighted on the canvas and a notification tells you what went wrong — so you can see exactly where the problem is without hunting through a big automation. If the error is one you can recover from, the debug session stays paused and loaded so you can take a look, adjust, and carry on; if it's not recoverable, the session ends.
+
+## When a session ends
+
+A debug session doesn't run forever. You'll get a heads-up just before it expires, and a message if it times out, closes (with the reason), or loses its connection — just start a fresh session to keep going. Breakpoints can also be cleared when the editor reloads; if any go missing, a note tells you how many, so you can set them again.
 
 ## Tips
 

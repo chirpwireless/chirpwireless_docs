@@ -1,5 +1,5 @@
 ---
-description: Chirp is an AI-first home automation platform — connect sensors from any manufacturer, and let a built-in AI helper set up devices, automations, and alerts for you.
+description: Chirp is an AI-first home automation platform — connect sensors from any maker, and let a built-in AI helper set up devices, automations, and alerts.
 ---
 
 # Chirp — Home Automation Platform
@@ -16,7 +16,7 @@ And Chirp doesn't stop at your front door. Connect a GPS or OBD-II tracker to yo
 
 The best part of Chirp is that you don't have to be technical to use it. A built-in AI helper knows your whole home — every sensor and its history — so you can ask it anything in plain English: *"What was the bedroom temperature overnight?"* or *"Were there any motion events in the hallway after 11 PM?"* It checks your real data and answers, then draws you a chart if you'd like one.
 
-And it doesn't stop at answers. Ask it to *do* something — "add my new leak sensor", "alert me if the basement gets damp", "turn the porch light on at sunset" — and it sets it up for you, writing the automation, testing it, and switching it on. Before anything important or permanent, it asks you to confirm, so you're always in charge. It's like having a smart-home installer on call, who happens to live inside the app. See [Your Home AI Helper](ai-assistant/).
+And it doesn't stop at answers. Ask it to *do* something — "add my new leak sensor", "alert me if the basement gets damp", "let me know if a door opens after midnight" — and it sets it up for you, writing the automation, testing it, and switching it on. Before anything important or permanent, it asks you to confirm, so you're always in charge. It's like having a smart-home installer on call, who happens to live inside the app. See [Your Home AI Helper](ai-assistant/).
 
 ### Connect any manufacturer, one platform
 

@@ -1,5 +1,5 @@
 ---
-description: Control your smart home devices from Chirp — turn things on and off, dim lights, change color temperature, and send settings to any device that can receive commands.
+description: Control your smart home devices from Chirp — turn things on or off, dim lights, change color temperature, and send settings over Zigbee/MQTT or LoRaWAN.
 ---
 
 # Controlling Your Devices
@@ -40,12 +40,13 @@ To control a device, you'll want:
 3. **Permission to control it** — managing and sending commands follows your home's sharing settings.
 4. **Sensible values** — if a command takes an input (like a brightness level), it has to be within the allowed range before Chirp will send it.
 
-## Three ways to control a device
+## Two ways to control a device
 
-Commands are the foundation. They show up in a few places:
+Commands are the foundation, and you can run them from two places:
 
 * **On the device** — open it, go to **States**, and press a command.
 * **On a dashboard** — add a [Control widget](../../dashboards/adding-widgets/control-widget.md) so a light switch or button sits right next to your readings.
-* **Through automations** — let the [Rules engine](../../rules-engine/) react to what's happening and send the right alert at the right time.
+
+Automations help in a different way: the [Rules engine](../../rules-engine/) keeps an eye on what's happening and sends you an **alert** at the right moment — so you know when to act. Rules notify you; pressing the actual control is done on the device or from a Control widget.
 
 Ready? Head to [Setting up a command](creating-commands.md).

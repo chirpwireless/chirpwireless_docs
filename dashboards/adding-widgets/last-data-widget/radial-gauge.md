@@ -1,3 +1,7 @@
+---
+description: Show a Chirp reading on a round dial with the Radial Gauge — a needle, a sweep angle you choose, and colored zones for the level.
+---
+
 # Radial Gauge Display
 
 <!-- IMAGE: last-data-radial-gauge.jpg — alt: Last Data widget using the Radial Gauge display -->

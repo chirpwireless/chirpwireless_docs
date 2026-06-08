@@ -1,3 +1,7 @@
+---
+description: Add a Control widget to a Chirp dashboard — a switch or button that operates a device and shows its real state, right next to your readings.
+---
+
 # Control widget
 
 Every other widget *shows* you something. The **Control widget** lets you *do* something. It puts a **switch** or a **button** right on your dashboard, so you can turn a device on or off — or run any action you've set up for it — without leaving the screen you're already looking at. It's the dashboard version of [Controlling Your Devices](../../devices/commands/): the command does the work, the widget is the switch on the wall.

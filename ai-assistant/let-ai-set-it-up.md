@@ -1,5 +1,5 @@
 ---
-description: Ask the Chirp AI Helper to do the setup — add a sensor, build and switch on an automation, or create an alert — all from a plain-language chat, with your OK before any change.
+description: Ask the Chirp AI Helper to do the setup — add a sensor, build an automation, or create an alert — from a plain-language chat, with your OK first.
 ---
 
 # Let the Helper Set It Up
@@ -15,12 +15,12 @@ When you ask the helper to set something up, it doesn't just give you instructio
 
 ## Build an automation, just by describing it
 
-This is where the helper really shines. Describe what you'd like to happen, and it creates the whole automation — working out the logic, testing it, and turning it on.
+This is where the helper really shines. Describe what you'd like to be warned about, and it creates the whole automation — working out the logic, testing it, and turning it on.
 
-> *"Turn on the porch light at sunset and off at midnight."*
 > *"Send me an alert if the basement humidity stays above 70% for an hour."*
+> *"Let me know if the front door opens after midnight."*
 
-The helper builds the automation, tries it against an example that *should* trigger it and one that *shouldn't* — so you can see it behaves — and then switches it on. Want to tweak it? Just say so ("make it 30 minutes", "alert my partner too") and it updates and re-saves. If you'd like to learn the automation builder yourself, see the [Rules engine](../rules-engine/).
+The helper builds the automation, tries it against an example that *should* trigger it and one that *shouldn't* — so you can see it behaves — and then switches it on. Want to tweak it? Just say so ("make it 30 minutes", "alert my partner too") and it updates and re-saves. (Automations like these keep watch and let you know; they don't switch devices on and off — that's [Device Commands](../devices/commands/).) If you'd like to learn the automation builder yourself, see the [Rules engine](../rules-engine/).
 
 ## Add a sensor
 
@@ -32,7 +32,7 @@ Ask for an alert and the helper creates it — who to notify, how, and what trig
 
 ## The one thing it hands off
 
-The helper sets up the *automations* that control your devices, but it doesn't operate them directly. If you want to turn a light on right now, dim it, or change its color this instant, that's [Device Commands](../devices/commands/) — and the easiest way is a [Control widget](../dashboards/adding-widgets/control-widget.md) on your dashboard. Ask the helper to "turn on the lamp" and it'll point you to that, and happily build any automation around it.
+The helper sets up the *automations* that watch your home and alert you, but it doesn't operate your devices — and those automations send alerts, not commands. If you want to turn a light on right now, dim it, or change its color this instant, that's [Device Commands](../devices/commands/) — and the easiest way is a [Control widget](../dashboards/adding-widgets/control-widget.md) on your dashboard. Ask the helper to "turn on the lamp" and it'll point you to that, and happily set up any alerting around it.
 
 ## Getting good results
 

@@ -1,5 +1,5 @@
 ---
-description: The Chirp AI Helper is a smart-home expert built in — it knows your home and can set up sensors, build automations, and create alerts for you, in plain language.
+description: The Chirp AI Helper knows your home and can set up sensors, build automations, and create alerts for you — all in plain language.
 ---
 
 # Your Home AI Helper
@@ -26,7 +26,7 @@ Plenty of apps have a chat bubble that spits out canned answers. Chirp's helper 
 
 ## One thing to know
 
-The helper **builds the automations that control your devices — it doesn't flip the switches itself.** Want the lights to come on at sunset? It'll create that automation for you. But actually turning a light on or off, dimming it, or changing its color right now is done with [Device Commands](../devices/commands/) and the dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). Think of the helper as the expert who wires everything up, and those controls as the light switches it leaves you with.
+The helper builds the automations that **watch your home and send you alerts** — and it can walk you through setting up device control — but it doesn't operate your devices itself, and the automations it makes send alerts rather than flip switches. Want to be told if the basement floods? It'll set that up. But actually turning a light on or off, dimming it, or changing its color right now is done with [Device Commands](../devices/commands/) — from the device or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). Think of the helper as the expert who sets up the watching and shows you where the switches are.
 
 It also keeps to the basics you'd expect: it only ever works with your home, never anyone else's, and it never touches passwords or billing. See [Your Privacy](your-privacy.md).
 

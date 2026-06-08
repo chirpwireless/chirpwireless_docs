@@ -1,3 +1,7 @@
+---
+description: Add a Text widget to a Chirp dashboard to label and organize your tiles with headings and short notes.
+---
+
 # Text widget
 
 As you add more tiles, a dashboard can start to feel like a jumble. The **Text widget** is the simple fix: it drops a heading or a note onto the board so you can group things and label them. "Upstairs", "Garden", "Security" — a few text labels turn a crowded screen into tidy, easy-to-scan sections.

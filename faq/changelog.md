@@ -1,3 +1,7 @@
+---
+description: Chirp changelog — Flight Log entries for every release, with feature highlights and links to the matching guides.
+---
+
 # Changelog
 
 <details>
@@ -25,7 +29,7 @@ Chirp 3.5.0 is a big one: your home gets a brain, and a voice that talks back. T
 
 <!-- IMAGE: ai-helper-build.jpg — alt: AI Helper setting up an automation and asking to confirm -->
 
-The AI Helper used to be a great way to *ask* about your home. Now it rolls up its sleeves. Describe what you'd like — "turn the porch light on at sunset", "warn me if humidity stays high for an hour" — and it builds the automation, tries it out to make sure it behaves, and turns it on. It can walk you through adding a new sensor and set up alerts too. Everything it tells you comes from your real home data, it remembers what you talked about, and before anything big or permanent it stops and asks you to confirm. It builds the automations that run your home; flipping a switch right now is what the new device controls are for.
+The AI Helper used to be a great way to *ask* about your home. Now it rolls up its sleeves. Describe what you'd like to be warned about — "warn me if humidity stays high for an hour", "tell me if a door opens after midnight" — and it builds the automation, tries it out to make sure it behaves, and turns it on. It can walk you through adding a new sensor and set up alerts too. Everything it tells you comes from your real home data, it remembers what you talked about, and before anything big or permanent it stops and asks you to confirm. The automations it builds keep watch and alert you; actually flipping a switch is what the new device controls are for.
 
 [→ Your Home AI Helper](../ai-assistant/README.md)
 
