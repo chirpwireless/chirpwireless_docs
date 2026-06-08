@@ -86,7 +86,7 @@ Chirp 3.4.0 is the release we couldn't wait to ship. The **Digital Building Twin
 
 **Digital Building Twin**
 
-<figure><img src="../.gitbook/assets/3d_Scene_Screen.png" alt="Chirp Digital Building Twin recoloring in real time — parking bay A123 red (occupied), A124 green (vacant), dumpsters in color-coded fill states, and sensor markers across the property"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/3d_Scene_Screen.jpg" alt="Chirp Digital Building Twin recoloring in real time — parking bay A123 red (occupied), A124 green (vacant), dumpsters in color-coded fill states, and sensor markers across the property"><figcaption></figcaption></figure>
 
 With the Digital Building Twin, your home and the property around it become a live, sensor-aware 3D model right inside Chirp. Wire any sensor in your Chirp setup to any object on the scene — house, apartment, garage, garden, driveway, parking spot, even the boom-barrier gate at a shared driveway — and the model lights up as readings come in. Open a dashboard, add the Digital Building Twin widget, switch to edit mode, and you're drawing — no separate app, no CAD program needed.
 

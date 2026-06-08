@@ -10,7 +10,7 @@ It's the difference between reading "Sensor 4: 1" in a list and glancing at a pi
 
 And it's all built right into Chirp. There's no extra app to download and no design software to learn. You sketch the layout, furnish it from a library of more than 60 ready-made 3D objects, connect each one to a sensor, and pick the colors that mean "all good" and "look at this." Once it's done, it sits on your dashboard like any other widget.
 
-<figure><img src="../../../.gitbook/assets/3d_Scene_Screen.png" alt="Digital Building Twin showing your home and yard live — parking spots out front colored red and green by occupancy, bins by the fence in color-coded fill states, and sensor markers across the rooms"><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/3d_Scene_Screen.jpg" alt="Digital Building Twin showing your home and yard live — parking spots out front colored red and green by occupancy, bins by the fence in color-coded fill states, and sensor markers across the rooms"><figcaption></figcaption></figure>
 
 ## What you can make with it
 
