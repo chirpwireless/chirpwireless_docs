@@ -104,6 +104,18 @@ A **True / False** dropdown. Matches the reading exactly. Available in the condi
 
 ## Examples
 
+### Keeping something topped up
+
+Say you've got a sensor on something you want to keep full — a rainwater tank, the salt in a water softener, a heating-oil tank — reporting how full it is as a percentage (0 = empty, 100 = full). Three rules turn that into a clear "do I need to refill?" status. Since the **first matching rule wins**, list the most urgent one first:
+
+- **Refill** — Number, From 0, To 30 — red
+- **Getting Low** — Number, From 30, To 50 — amber
+- **Normal Level** — Number, From 50, To 100 — green
+
+<figure><img src="../../.gitbook/assets/conditions.jpg" alt="Conditions window with three fill-level rules — Refill 0–30 red, Getting Low 30–50 amber, Normal Level 50–100 green"><figcaption></figcaption></figure>
+
+The tile stays green while it's well stocked, turns amber as it runs down, and goes red as soon as it drops into the refill zone — so you top it up before it runs out. Want a nudge on your phone too? Add an [alert](../../alarm/) on the same level.
+
 ### Number conditions — temperature in two contexts
 
 **Living room sensor:**
