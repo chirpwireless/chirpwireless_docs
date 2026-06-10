@@ -8,6 +8,8 @@ As you add more tiles, a dashboard can start to feel like a jumble. The **Text w
 
 It doesn't show any sensor data — it's purely there to organize and explain.
 
+<figure><img src="../../.gitbook/assets/text-widget.jpg" alt="Text widget adding a labeled heading tile to a Chirp dashboard"><figcaption></figcaption></figure>
+
 ## Handy for
 
 * **Section headings** — separate "Living Room", "Kids' Rooms", and "Outside" on one dashboard.

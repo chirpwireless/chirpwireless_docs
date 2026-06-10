@@ -8,6 +8,8 @@ Up to now, Chirp has mostly listened — gathering readings from your sensors an
 
 If a device can be told to do something, Chirp can do it for you: flick a smart plug on or off, dim the bedroom lights to 30%, warm a bulb's color temperature for movie night, nudge a thermostat to a new target, or send a setting to almost anything in your home. It works whether your device connects over Zigbee/MQTT or LoRaWAN — you don't have to think about the plumbing.
 
+<figure><img src="../../.gitbook/assets/device-command-states.jpg" alt="A device's Commands & States tab, with its commands and recent actions"><figcaption></figcaption></figure>
+
 ## Why you'll love it
 
 Before, controlling a smart device usually meant juggling apps — one for the lights, another for the plugs, a third for the thermostat. Chirp brings the controls into the same place you already watch your home:

@@ -8,6 +8,8 @@ A command is a saved action with a friendly name — "Turn on", "Set brightness"
 
 Open the device, go to the **Commands & States** tab, stay on the **Commands** part, and tap **Add new command**. The setup screen is split into four short steps.
 
+<figure><img src="../../.gitbook/assets/device-command-editor.jpg" alt="The command setup screen with the name, where-to-send, and message steps"><figcaption></figcaption></figure>
+
 ## 1. Name it
 
 * **Command name** — Required. Pick something you'll recognize at a glance, like `Turn on` or `Movie lighting`. Each command on a device needs its own name.

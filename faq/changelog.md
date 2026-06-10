@@ -27,7 +27,7 @@ Chirp 3.5.0 is a big one: your home gets a brain, and a voice that talks back. T
 
 **Your home, now hands-on**
 
-<!-- IMAGE: ai-helper-build.jpg — alt: AI Helper setting up an automation and asking to confirm -->
+<figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Helper ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
 
 The AI Helper used to be a great way to *ask* about your home. Now it rolls up its sleeves. Describe what you'd like to be warned about — "warn me if humidity stays high for an hour", "tell me if a door opens after midnight" — and it builds the automation, tries it out to make sure it behaves, and turns it on. It can walk you through adding a new sensor and set up alerts too. Everything it tells you comes from your real home data, it remembers what you talked about, and before anything big or permanent it stops and asks you to confirm. The automations it builds keep watch and alert you; actually flipping a switch is what the new device controls are for.
 
@@ -37,7 +37,7 @@ The AI Helper used to be a great way to *ask* about your home. Now it rolls up i
 
 **Control your devices from Chirp**
 
-<!-- IMAGE: device-control-states.jpg — alt: Commands & States tab on a device -->
+<figure><img src="../.gitbook/assets/device-command-states.jpg" alt="The Commands & States tab on a device, with commands and recent actions"><figcaption></figcaption></figure>
 
 Until now Chirp mostly listened to your devices. Now it can talk back. On a device's new **Commands & States** tab you set up the actions it can do — "Turn on", "Set brightness", "Warm white" — and then run them with a tap, over Zigbee/MQTT or LoRaWAN. Inputs like a brightness level are kept sensible for you, Chirp can check the device actually responded, and every action is saved in a tidy history so you can see what happened. Works with smart home devices on MQTT and with always-listening (Class C) LoRaWAN devices.
 
@@ -47,7 +47,7 @@ Until now Chirp mostly listened to your devices. Now it can talk back. On a devi
 
 **Control, Text, and Radial Gauge widgets**
 
-<!-- IMAGE: control-widget-home.jpg — alt: Control widget on a home dashboard -->
+<figure><img src="../.gitbook/assets/control-widget-switch.jpg" alt="A Control widget switch operating a device from a home dashboard"><figcaption></figcaption></figure>
 
 Three new tiles for your dashboards. The **Control widget** is a switch or button you tap to operate a device, right beside the readings that tell you whether you need to — and it shows the device's real state. The **Text widget** drops in headings and notes so a crowded board turns into tidy, labeled sections. And the **Radial Gauge** gives the Last Data widget a round dial with a needle and colored zones, lovely for a headline reading like a water tank or battery level.
 

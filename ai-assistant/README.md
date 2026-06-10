@@ -8,6 +8,8 @@ Smart homes are supposed to be simple, but setting one up rarely feels that way 
 
 It knows your home inside out — every sensor, every reading, the whole history — so it can answer "is the back door shut?" in a heartbeat. And it goes further: ask it to add a sensor, set up an automation, or create an alert, and it'll actually do the work, showing you what it's about to change and waiting for your OK first. Open it from **AI Chat** in the sidebar.
 
+<figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Helper ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
+
 ## More than a chat box
 
 Plenty of apps have a chat bubble that spits out canned answers. Chirp's helper is different in three ways that matter:

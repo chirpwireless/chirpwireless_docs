@@ -6,6 +6,8 @@ description: Connect a cellular GPS vehicle tracker to Chirp — OBD2, CAN bus, 
 
 Chirp goes beyond the walls of your home. The **Tracker connector** lets you bring a **vehicle GPS tracker** into Chirp, so your car, motorcycle, or camper shows up on the same dashboards and alerts as your sensors — live location, route history, speed, and whatever else the tracker reports.
 
+<figure><img src="../.gitbook/assets/tracker-connector.jpg" alt="Add connector dialog with Tracker selected as the connector type"><figcaption></figcaption></figure>
+
 ## What it's for
 
 The Tracker connector is for **cellular (GSM) vehicle trackers** — devices that send their location over the mobile network:

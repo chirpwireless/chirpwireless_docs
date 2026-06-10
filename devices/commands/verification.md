@@ -8,6 +8,8 @@ Pressing "Turn on" is satisfying — but did the light actually come on? Sometim
 
 You set this up when you create a command, in the fourth step. There are three choices.
 
+<figure><img src="../../.gitbook/assets/device-command-verification.jpg" alt="The verification step with don't check, wait for the next reading, and ask the device options"><figcaption></figcaption></figure>
+
 ## Don't check
 
 Send it and move on. Chirp won't verify anything.

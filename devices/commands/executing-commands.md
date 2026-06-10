@@ -6,6 +6,8 @@ description: Send a command from the States tab in Chirp, fill in any values, an
 
 Once a device has commands set up, the **States** part of the **Commands & States** tab is your remote control. It shows what you can do, lets you do it, and keeps a tidy record of everything you've sent.
 
+<figure><img src="../../.gitbook/assets/device-command-execute.jpg" alt="The Execute command dialog, setting a value before sending"><figcaption></figcaption></figure>
+
 ## What you can do
 
 The **Available commands** list shows every action set up for the device — its name, what it does, how many inputs it needs, and a **Execute** button to run it. If the list is empty, the device doesn't have any commands yet; pop over to the **Commands** part to set one up (see [Setting up a command](creating-commands.md)).
