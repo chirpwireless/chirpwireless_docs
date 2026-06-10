@@ -14,7 +14,7 @@ Tap a button to switch to a date range view and see the route the device took ov
 
 For placing stationary sensors on a map so you can see where each one is installed, see [Maps and Device Placement](../maps-and-device-placement.md). For full GPS route history on the device detail page, see [Tracking What Matters](../tracking-what-matters.md).
 
-<figure><img src="../../.gitbook/assets/map-widget-configuration.jpg" alt="Map widget setup — choosing a device and the reading shown on the marker"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/map-widget.jpg" alt="Add Map widget — appearance settings with a live map preview of a tracker"><figcaption></figcaption></figure>
 
 ## Setting up a Map widget
 
@@ -60,8 +60,6 @@ The Map widget has three controls for reviewing past location data:
 - **Clear data range** — Resets the view back to the tracker's current position.
 
 When a date range is active, the widget draws the tracker's recorded positions as a dashed line connecting all the logged locations during that period. Up to 500 GPS points are rendered per date range.
-
-<figure><img src="../../.gitbook/assets/map-widget-route-history.jpg" alt="Map widget showing a tracker's route as a dashed line over a chosen date range"><figcaption></figcaption></figure>
 
 ## Troubleshooting
 
