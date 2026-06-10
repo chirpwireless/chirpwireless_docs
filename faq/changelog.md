@@ -10,18 +10,18 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.5.0.jpg" alt="Chirp 3.5.0 release banner"><figcaption></figcaption></figure>
 
-Chirp 3.5.0 is a big one: your home gets a brain, and a voice that talks back. The AI Helper grows from something you ask questions to something that does the work — tell it "add my new leak sensor" or "alert me if the basement gets damp" and it sets it up for you, always checking with you before anything important. And Chirp can now *control* your devices, not just listen to them: turn a plug on or off, dim a lamp, change its color temperature, all from the app. New Control, Text, and Radial Gauge widgets put those switches and a smart new dial right on your dashboard. [app.chirpwireless.io](https://app.chirpwireless.io)
+This is the big one. Up to now Chirp has been brilliant at *listening* to your home — and 3.5.0 teaches it to **act**. Two things change. Your AI Helper stops being something you only ask questions and becomes something that rolls up its sleeves and does the setup for you: "add my new leak sensor", "warn me if the basement gets damp", "remind me if the garage door's left open" — it builds it, tries it, and switches it on, always checking with you first. And for the first time Chirp can **talk back to your devices**, not just hear them: flip a smart plug, dim a lamp, warm up its color, nudge the thermostat — right from the app. New Control widgets (a whole set of them), a Text widget, a round-dial Radial Gauge, and a try-before-it-runs automation tester round it out. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **A hands-on AI Helper** — It doesn't just answer questions anymore. Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, testing it, and switching it on — and it always asks before anything permanent.
-* **Control your devices** — Turn things on and off, dim lights, change color temperature, and send settings to any device that can receive commands, over Zigbee/MQTT or LoRaWAN.
-* **Control widget** — A switch or button on your dashboard, sitting right next to your readings.
+* **A hands-on AI Helper** — It doesn't just answer questions anymore. Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, testing it, and switching it on — always asking before anything permanent, and double-checking its own work.
+* **Control your devices** — Turn things on and off, dim lights, change color temperature, and send settings to any device that can take a command, over Zigbee/MQTT or LoRaWAN — with the action saved to a tidy history.
+* **Control widgets — six kinds** — A **switch, a button, three styles of slider (simple, round dial, and upright), and a type-in box** — each one tied to a device and showing its real state.
 * **Text widget** — Headings and notes to tidy up and label a busy dashboard.
 * **Radial Gauge** — A new round-dial display for the Last Data widget, like the gauges on a car dashboard.
-* **Test your automations step by step** — Walk an automation through a pretend sensor reading one step at a time to see exactly what it'll do, before you switch it on for real.
+* **Try your automations step by step** — Walk an automation through a pretend sensor reading, one step at a time, to see exactly what it'll do before it goes live.
 * **Simpler upgrades** — One **Upgrade Plan** tap takes you straight to checkout, with no extra "are you sure?" steps.
 
 ***
@@ -30,29 +30,56 @@ Chirp 3.5.0 is a big one: your home gets a brain, and a voice that talks back. T
 
 <figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Helper ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
 
-The AI Helper used to be a great way to *ask* about your home. Now it rolls up its sleeves. Describe what you'd like to be warned about — "warn me if humidity stays high for an hour", "tell me if a door opens after midnight" — and it builds the automation, tries it out to make sure it behaves, and turns it on. It can walk you through adding a new sensor and set up alerts too. Everything it tells you comes from your real home data, it remembers what you talked about, and before anything big or permanent it stops and asks you to confirm. The automations it builds keep watch and alert you; actually flipping a switch is what the new device controls are for.
+This is the headline of 3.5.0, and it changes what Chirp feels like to live with. Most "AI" in apps is a little help chat. Your Chirp Helper is more like a clever friend who knows your whole home and is happy to do the fiddly bits for you. Find it under **AI Chat** and just talk to it.
+
+**It does the work, not only the talking.** Tell it what you'd like to keep an eye on — "warn me if humidity stays high for an hour", "tell me if a door opens after midnight" — and it builds the automation, tries it out to make sure it behaves, and turns it on. It'll walk you through adding a new sensor, and set up alerts the same way. No menus to hunt through, no logic to wire up yourself.
+
+**It knows your home, and it always checks first.** Everything it tells you comes from your real home data, not made up, and it remembers what you were talking about so you can tweak things over a few messages. Before anything big or permanent — removing a device, deleting an automation — it stops and asks you to confirm, and once it's done it looks back to make sure it worked. There's a monthly allowance that grows with your plan, and you can plug in your own AI key if you'd rather not think about limits.
+
+One thing to know: the Helper sets up **watching and warning** — automations that keep an eye on things and ping you. Actually flipping a switch is what the new device controls (just below) are for.
 
 [→ Your Home AI Helper](../ai-assistant/README.md)
 
 ***
 
-**Control your devices from Chirp**
+**Chirp can talk back to your devices now**
 
 <figure><img src="../.gitbook/assets/device-command-states.jpg" alt="The Commands & States tab on a device, with commands and recent actions"><figcaption></figcaption></figure>
 
-Until now Chirp mostly listened to your devices. Now it can talk back. On a device's new **Commands & States** tab you set up the actions it can do — "Turn on", "Set brightness", "Warm white" — and then run them with a tap, over Zigbee/MQTT or LoRaWAN. Inputs like a brightness level are kept sensible for you, Chirp can check the device actually responded, and every action is saved in a tidy history so you can see what happened. Works with smart home devices on MQTT and with always-listening (Class C) LoRaWAN devices.
+For years Chirp listened: readings came in, and if you wanted to *do* something you reached for the maker's own app or a fiddly home-server setup. Not anymore. Every device now has a **Commands & States** tab where you set up the things it can do — "Turn on", "Set brightness", "Warm white" — and then run them with a tap.
+
+**Set it up once, tap it forever.** You describe the action in friendly terms and Chirp handles the technical bits underneath, whether the device speaks Zigbee/MQTT or LoRaWAN. Things like a brightness level are kept sensible so you can't send a silly value, Chirp can check the device actually did what you asked (not just that the message went out), and every action lands in a tidy history so you can see what happened and when. Works with smart-home devices on MQTT and with always-listening (Class C) LoRaWAN devices — and once a device has even one command, you can drop a control for it onto a dashboard.
 
 [→ Controlling Your Devices](../devices/commands/README.md)
 
 ***
 
-**Control, Text, and Radial Gauge widgets**
+**Control widgets — a switch for everything, right on your dashboard**
 
-<figure><img src="../.gitbook/assets/control-widget-switch.jpg" alt="A Control widget switch operating a device from a home dashboard"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/control-dashboard.jpg" alt="A home dashboard of Control widgets — a switch, a dial, a slider, and a type-in box controlling a lamp"><figcaption></figcaption></figure>
 
-Three new tiles for your dashboards. The **Control widget** is a switch or button you tap to operate a device, right beside the readings that tell you whether you need to — and it shows the device's real state. The **Text widget** drops in headings and notes so a crowded board turns into tidy, labeled sections. And the **Radial Gauge** gives the Last Data widget a round dial with a needle and colored zones, lovely for a headline reading like a water tank or battery level.
+Here's where controlling your home gets lovely. The Control widget isn't a single tile — it's **six kinds of control**, so the thing on your dashboard actually looks like what it does. Each one ties to a device and shows its real state, and if the device is offline it quietly greys out instead of pretending.
 
-[→ Control widget](../dashboards/adding-widgets/control-widget.md) · [→ Text widget](../dashboards/adding-widgets/text-widget.md) · [→ Radial Gauge Display](../dashboards/adding-widgets/last-data-widget/radial-gauge.md)
+| Control | Lovely for | What happens |
+| --- | --- | --- |
+| [Switch](../dashboards/adding-widgets/control-widget/switch.md) | A simple on/off you flip back and forth | Turns the device on or off as you toggle |
+| [Button](../dashboards/adding-widgets/control-widget/button.md) | A one-tap action (run, restart, open) | Fires once each time you tap |
+| [Simple Slider](../dashboards/adding-widgets/control-widget/slider-simple.md) | Sliding to a level, like brightness | Sends the value as you slide |
+| [Circular Slider](../dashboards/adding-widgets/control-widget/slider-circular.md) | A round dial, like a knob | Sends the value as you turn it |
+| [Vertical Slider](../dashboards/adding-widgets/control-widget/slider-vertical.md) | An upright slider you raise and lower | Sends the value as you slide |
+| [Input](../dashboards/adding-widgets/control-widget/input.md) | Typing an exact number | Sends it when you tap **Apply** |
+
+[→ Control widget overview](../dashboards/adding-widgets/control-widget.md)
+
+***
+
+**Text and Radial Gauge widgets**
+
+<figure><img src="../.gitbook/assets/last-data-radial-gauge.jpg" alt="A Radial Gauge showing a single reading on a round dial with colored zones"><figcaption></figcaption></figure>
+
+Two more tiles to make a dashboard your own. The **Text widget** drops in headings and little notes, so a crowded board turns into tidy, labeled corners — "Upstairs", "Garden", "Security" — instead of one big wall of numbers. And the **Radial Gauge** gives the Last Data widget a round dial with a needle and colored zones, lovely for a headline reading you glance at all the time, like a water-tank level or a battery.
+
+[→ Text widget](../dashboards/adding-widgets/text-widget.md) · [→ Radial Gauge display](../dashboards/adding-widgets/last-data-widget/radial-gauge.md)
 
 ***
 
