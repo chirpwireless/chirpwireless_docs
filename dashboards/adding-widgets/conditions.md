@@ -29,7 +29,7 @@ The **Chart** widget uses a different approach — per-metric color picker and t
 
 **Header (applies to the whole metric):**
 - **Device metric** — Read-only. Shows which sensor this modal is for.
-- **Unit** — Override the display unit shown on the widget. Leave blank to use the sensor's default unit.
+- **Unit** — A free-text box for the unit shown next to the value on the tile (like `42 cm`). Type **whatever unit you want** — `mm`, `cm`, `m`, inches, `L`, `°C`, anything. It's not limited to a list and it's not a percentage unless you make it one. It starts from the sensor's own unit, and you can change it to suit. The **From / To** numbers in your rules are in this unit (so `From 0 To 30` means 0–30 of whatever you set here).
 - **Icon** — Pick or change the icon for this metric.
 - **Default color** — The color used when no condition matches. This is the only place to set the metric's base color.
 
@@ -106,7 +106,7 @@ A **True / False** dropdown. Matches the reading exactly. Available in the condi
 
 ### Keeping something topped up
 
-Say you've got a sensor on something you want to keep full — a rainwater tank, the salt in a water softener, a heating-oil tank — reporting how full it is as a percentage (0 = empty, 100 = full). Three rules turn that into a clear "do I need to refill?" status. Since the **first matching rule wins**, list the most urgent one first:
+Say you've got a sensor on something you want to keep full — a rainwater tank, the salt in a water softener, a heating-oil tank — reading how full it is in whatever unit suits you. Set that in the **Unit** box (it takes anything — `cm`, `m`, inches, liters…); here we'll use **centimeters** of depth. Three rules then turn that into a clear "do I need to refill?" status, and since the **first matching rule wins**, list the most urgent one first:
 
 - **Refill** — Number, From 0, To 30 — red
 - **Getting Low** — Number, From 30, To 50 — amber
@@ -131,7 +131,7 @@ The readings look the same — both are temperatures in °C. The conditions are 
 
 ### Number conditions — open-ended bounds for a tank level
 
-A water tank sensor reports fill percentage (0–100%):
+A water tank sensor reports its fill level (here in percent, but you choose the unit):
 - "Critical" — (no From), To 20 — red
 - "Low" — From 20, To 50 — yellow
 - "Good" — From 50 (no upper limit) — green
