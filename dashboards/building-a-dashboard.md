@@ -10,6 +10,8 @@ A dashboard is a view you design yourself by choosing which sensors and readings
 
 This page covers creating, editing, and deleting dashboards. For organizing dashboards into folders, see [Organizing Your Views](organizing-your-views.md).
 
+<figure><img src="../.gitbook/assets/control-dashboard.jpg" alt="A home dashboard of Control widgets — a switch, a dial, a slider, and an input controlling a lamp"><figcaption></figcaption></figure>
+
 ## Finding your dashboards
 
 Your dashboards live in the **Dashboards** section of the sidebar. Dashboards are available on plans that include the Dashboard feature. Tap the section to expand and see everything you've created. If this is your first time, the sidebar shows **"No dashboards yet"** — which is perfectly normal.

@@ -6,6 +6,8 @@ description: Add a Control widget to a Chirp dashboard — a switch, button, sli
 
 Every other widget *shows* you something. The **Control widget** lets you *do* something. It puts an interactive control on your dashboard — a **switch**, **button**, **slider**, or **input** — bound to one of a device's commands, so you can operate the device without leaving the screen you're already looking at. It's the dashboard version of [Controlling Your Devices](../../devices/commands/): the command does the work, the widget is the switch on the wall.
 
+<figure><img src="../../.gitbook/assets/control-dashboard.jpg" alt="A home dashboard of Control widgets — a switch, a dial, a slider, and an input controlling a lamp"><figcaption></figcaption></figure>
+
 ## First, set up a command
 
 A Control widget runs an action you've already set up on the device — so the device needs at least one command on its **Commands & States** tab. Devices with no commands won't appear to choose from (you'll see *"No controllable devices in this organization"*). Set the command up first — see [Setting up a command](../../devices/commands/creating-commands.md) — then link the widget to it.
@@ -17,8 +19,6 @@ Every Control widget is added the same way; only the look-and-feel options diffe
 1. Open the dashboard in **edit mode** and tap **Add widget** → **Control**.
 2. On the **Datasource** tab (*"Control configuration"*), choose the **Source** (Device) and the **Device**, then pick the **Device metric** — the reading that shows the device's current state. Tap **Next**.
 3. On the **Appearance** tab, give it a **Widget name** and choose a **Widget type** (below). Fill in that type's options and tap **Save**.
-
-<figure><img src="../../.gitbook/assets/control-widget-datasource.jpg" alt="Control widget Datasource tab — choose the device and the metric that shows its state"><figcaption></figcaption></figure>
 
 ## Pick a control type
 
