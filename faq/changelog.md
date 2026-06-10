@@ -21,6 +21,7 @@ Chirp 3.5.0 is a big one: your home gets a brain, and a voice that talks back. T
 * **Control widget** — A switch or button on your dashboard, sitting right next to your readings.
 * **Text widget** — Headings and notes to tidy up and label a busy dashboard.
 * **Radial Gauge** — A new round-dial display for the Last Data widget, like the gauges on a car dashboard.
+* **Test your automations step by step** — Walk an automation through a pretend sensor reading one step at a time to see exactly what it'll do, before you switch it on for real.
 * **Simpler upgrades** — One **Upgrade Plan** tap takes you straight to checkout, with no extra "are you sure?" steps.
 
 ***
@@ -52,6 +53,14 @@ Until now Chirp mostly listened to your devices. Now it can talk back. On a devi
 Three new tiles for your dashboards. The **Control widget** is a switch or button you tap to operate a device, right beside the readings that tell you whether you need to — and it shows the device's real state. The **Text widget** drops in headings and notes so a crowded board turns into tidy, labeled sections. And the **Radial Gauge** gives the Last Data widget a round dial with a needle and colored zones, lovely for a headline reading like a water tank or battery level.
 
 [→ Control widget](../dashboards/adding-widgets/control-widget.md) · [→ Text widget](../dashboards/adding-widgets/text-widget.md) · [→ Radial Gauge Display](../dashboards/adding-widgets/last-data-widget/radial-gauge.md)
+
+***
+
+**See what an automation will do before it runs**
+
+Setting up an automation is a lot more relaxing when you can try it first. The visual editor now lets you step through an automation one piece at a time: give it a pretend sensor reading and watch it work, pausing where you like, seeing the values change, and checking the logic does what you meant. A little toolbar runs the session — step in, step over, run, run past your pauses, or stop — so there are no surprises when it goes live.
+
+[→ Debugging Automations](../rules-engine/reference/debugging-automations.md)
 
 ***
 
