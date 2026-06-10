@@ -2,13 +2,13 @@
 description: Add an Input Control to a Chirp dashboard to send an exact value, like a thermostat target or color temperature.
 ---
 
-# Input Control
+# Input
 
 The **Input** lets you type an **exact value** and tap **Apply** to send it — for when a slider is too rough and you want a precise number.
 
 ## When to use it
 
-Use an Input when the exact figure matters: a **thermostat target**, a **color temperature**, or a specific **dimming level**. Where a [Slider](slider.md) is for sliding to roughly the right spot, the Input is for entering an exact value.
+Use an Input when the exact figure matters: a **thermostat target**, a **color temperature**, or a specific **dimming level**. Where a [Simple Slider](slider-simple.md) is for sliding to roughly the right spot, the Input is for entering an exact value.
 
 ## What you need first
 

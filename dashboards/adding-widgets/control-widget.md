@@ -26,8 +26,12 @@ Every Control widget is added the same way; only the look-and-feel options diffe
 | --- | --- | --- |
 | [Switch](control-widget/switch.md) | A simple on/off you flip back and forth | An on or off command as you toggle |
 | [Button](control-widget/button.md) | A one-tap action (run, restart, open) | One command per tap |
-| [Slider](control-widget/slider.md) | Sliding to a value, like brightness | A command value as you slide |
+| [Simple Slider](control-widget/slider-simple.md) | Sliding to a value, like brightness | A command value as you slide |
+| [Circular Slider](control-widget/slider-circular.md) | A round dial, like a knob | A command value as you turn it |
+| [Vertical Slider](control-widget/slider-vertical.md) | An upright slider you raise and lower | A command value as you slide |
 | [Input](control-widget/input.md) | Typing an exact number | A command value when you tap **Apply** |
+
+The three sliders are the **Slider type** options — **Simple**, **Circular**, and **Vertical** — that you pick after choosing **Slider** as the widget type.
 
 ## How it behaves
 
@@ -39,4 +43,4 @@ Every Control widget is added the same way; only the look-and-feel options diffe
 
 * [Controlling Your Devices](../../devices/commands/) — set up the commands a Control widget uses
 * [Setting up a command](../../devices/commands/creating-commands.md)
-* Control types: [Switch](control-widget/switch.md) · [Button](control-widget/button.md) · [Slider](control-widget/slider.md) · [Input](control-widget/input.md)
+* Control types: [Switch](control-widget/switch.md) · [Button](control-widget/button.md) · [Simple Slider](control-widget/slider-simple.md) · [Circular Slider](control-widget/slider-circular.md) · [Vertical Slider](control-widget/slider-vertical.md) · [Input](control-widget/input.md)

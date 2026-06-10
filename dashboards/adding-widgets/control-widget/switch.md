@@ -2,7 +2,7 @@
 description: Add a Switch Control to a Chirp dashboard to flip a home device on or off — a lamp, plug, or relay — with one tap.
 ---
 
-# Switch Control
+# Switch
 
 The **Switch** is a simple on/off toggle. It's for things that stay in a state — on or off, open or closed — where you flip between the two and the dashboard shows which one is active right now.
 

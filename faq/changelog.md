@@ -8,7 +8,7 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <summary>Flight Log. Release 3.5.0</summary>
 
-<!-- IMAGE: Flight_Release_3.5.0.jpg (hero) — alt: Chirp 3.5.0 release banner -->
+<figure><img src="../.gitbook/assets/Flight_Release_3.5.0.jpg" alt="Chirp 3.5.0 release banner"><figcaption></figcaption></figure>
 
 Chirp 3.5.0 is a big one: your home gets a brain, and a voice that talks back. The AI Helper grows from something you ask questions to something that does the work — tell it "add my new leak sensor" or "alert me if the basement gets damp" and it sets it up for you, always checking with you before anything important. And Chirp can now *control* your devices, not just listen to them: turn a plug on or off, dim a lamp, change its color temperature, all from the app. New Control, Text, and Radial Gauge widgets put those switches and a smart new dial right on your dashboard. [app.chirpwireless.io](https://app.chirpwireless.io)
 

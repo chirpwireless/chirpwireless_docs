@@ -2,7 +2,7 @@
 description: Add a Button Control to a Chirp dashboard to run a one-tap device action — restart, run a scene, open — with a press.
 ---
 
-# Button Control
+# Button
 
 The **Button** sends a command once when you tap it. Unlike a switch, it doesn't hold an on/off state — it just does something and that's it.
 
