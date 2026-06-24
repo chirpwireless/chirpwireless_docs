@@ -10,6 +10,8 @@ Once alerts start landing on your phone, the app gives you everything you need t
 
 The **Inbox** lists every alert for the home you're currently viewing, newest first, and refreshes itself while the app is open — so new alerts just appear.
 
+<figure><img src="../../.gitbook/assets/chirp-alerts-inbox.jpg" alt="Chirp Alerts Inbox tab beside the Alert Definitions tab, showing an empty alert list"><figcaption></figcaption></figure>
+
 Each one shows:
 
 - **What happened** — the alert title and message
@@ -36,6 +38,8 @@ This is the quick fix for an alarm that won't stop pinging you — switch it off
 
 - **Home** — if you're part of more than one home, switch between them from the menu; the Inbox and Alert Definitions follow along.
 - **Platform** — under **Settings → Platform** you could switch to Business (Kilo) mode, but that signs you out and is meant for the Kilo platform, not your home.
+
+<figure><img src="../../.gitbook/assets/chirp-alerts-settings.jpg" alt="Chirp Alerts Settings screen showing the Platform section, Change mode, app version, and account options"><figcaption></figcaption></figure>
 
 ## Close, resolve, delete — what's the difference?
 
