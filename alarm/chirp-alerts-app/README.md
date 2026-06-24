@@ -1,39 +1,47 @@
 ---
-description: Turn your phone into a home alarm receiver, with critical alerts that keep ringing until you respond.
+description: Get Chirp alerts on your phone with the IoT Alerts app — critical alarms ring until you respond.
 ---
 
 # Chirp Alerts App
 
-The Chirp Alerts app turns your phone into a dedicated alarm receiver for your home. When a sensor triggers an alert, the app delivers it directly to your phone — and for critical alerts, it keeps ringing with an alarm sound and vibration until you silence or acknowledge it.
+Your sensors don't wait for you to be at a screen, and neither should your alerts. The mobile app puts your home's alarms straight on your phone — and when something serious happens, it doesn't just buzz once and hope you notice. A critical alert rings with an alarm sound and keeps going until you check it, even if your phone is on silent.
 
-The app adds alarm-style mobile delivery on top of email and SMS. A critical alert behaves like a phone alarm — it demands your attention. A quiet alert, on the other hand, arrives without interrupting what you're doing.
+Think of it as the difference between a text you might glance at later and a smoke detector going off. The app delivers both: gentle, quiet notes for the everyday stuff, and a loud, can't-miss-it alarm for the emergencies.
 
-## Download
+## One app for home and business
+
+The app you install is called **IoT Alerts**, and the first time you open it, it asks how you'll use it. For your Chirp smart home, choose **Home Use**. That tells the app to sign you in to your Chirp account and show your home's alerts. (The other option, Business Use, is for the Kilo platform — you won't need it for your home.)
+
+## Get the app
 
 - **iPhone:** [App Store](https://apps.apple.com/us/app/chirp-alerts/id6756504956)
 - **Android:** [Google Play](https://play.google.com/store/apps/details?id=io.chirpwireless.alarm)
 
-The app uses the same Chirp account and home membership as the web platform. If you can log in to Chirp on the web, you can log in to the app with the same credentials.
+You might see the app listed under the name **Chirp Alerts** while the new name rolls out — it's the same app, so go ahead and install it. After it's open, pick **Home Use**.
 
-## How It Works
+It's the same Chirp login you already use. Whatever email and password (or Google or Apple sign-in) gets you into Chirp on the web works here too, and you'll see the same homes you already belong to.
 
-The severity you assign to an alarm definition on the web platform determines how the alert appears on your phone. The app delivers alerts at three intensity levels — see [Alert Behavior](alert-behavior.md) for the full details on what each level does.
+## Why critical alerts can wake your phone
 
-### Recommended Setup Examples
+Phones normally keep notifications quiet when they're on silent or in a Focus / Do Not Disturb schedule — which is great for spam, but not for a flooding basement. Apple only lets a handful of trusted apps override that, and the IoT Alerts app has been granted that **Critical Alerts** approval. So when you mark an alarm as critical, it can ring through even a silenced phone — as long as you say yes to the alert permission when the app asks.
 
-- **Water leak sensor** → set the alarm as critical. Your phone rings with an alarm sound until you check it.
-- **Front door opened during the day** → set the alarm as information. A quiet notification appears — you see it when you glance at your phone.
-- **Freezer temperature spike** → set the alarm as important. A prominent notification catches your attention without the full alarm treatment.
+The everyday alerts still respect your quiet settings. Only the critical ones break through. [Alert Behavior](alert-behavior.md) walks through exactly what each level does.
 
-## What the App Contains
+## A few examples
 
-- **Inbox** — all your alerts with their current status. Resolve or delete alerts directly from your phone.
-- **Rules** — notification rules from your web setup. Enable or disable individual rules from the app.
-- **Home switching** — if you belong to multiple homes, switch between them from the app menu.
+- **Basement water leak** → set it **critical**. Your phone rings like an alarm clock until you look.
+- **Garage door still open at bedtime** → set it **important**. A noticeable notification nudges you, no full alarm.
+- **Front door opened during the afternoon** → set it **information**. A quiet note you'll spot when you next pick up your phone.
 
-## Web Alarm Pages vs App Pages
+## What's inside the app
 
-The web platform is where you create alarm definitions, configure severity levels, set up escalation chains, and manage contact methods. The Chirp Alerts app is where those alerts are delivered to your phone and where you acknowledge or resolve them.
+- **Inbox** — every alert and whether it's still active. Resolve the ones you've handled or clear old ones.
+- **Alert Definitions** — the alarms you set up on the web. Flip any one off from your phone if it's getting noisy.
+- **Home switching** — belong to more than one home? Switch between them from the menu.
 
-- **Web:** [Set Up a Home Alert](../set-up-a-home-alert.md) · [Escalation Chains](../escalation-chains.md) · [Notification Severity](../notification-severity.md) · [Manage Contact Methods](../manage-contact-methods.md)
-- **App:** [Getting Started](getting-started.md) · [Alert Behavior](alert-behavior.md) · [Managing Alerts](managing-alerts.md)
+## Where to do what
+
+You build and fine-tune your alarms on the Chirp web platform; the app is where they land and where you respond.
+
+- **On the web:** [Set Up a Home Alert](../set-up-a-home-alert.md) · [Escalation Chains](../escalation-chains.md) · [Notification Severity](../notification-severity.md) · [Manage Contact Methods](../manage-contact-methods.md)
+- **In the app:** [Getting Started](getting-started.md) · [Alert Behavior](alert-behavior.md) · [Managing Alerts](managing-alerts.md)
