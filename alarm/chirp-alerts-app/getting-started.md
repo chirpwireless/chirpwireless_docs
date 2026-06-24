@@ -17,7 +17,7 @@ If the store still shows the name **Chirp Alerts**, that's fine — it's the sam
 
 The first time you open the app, it asks **"How will you use the app?"** Tap **Home Use** — the option labeled *Chirp Wireless — alerts for your home IoT devices* — then tap **Continue**. This sets the app up for your Chirp home.
 
-<figure><img src="../../.gitbook/assets/chirp-alerts-mode-select.jpg" alt="IoT Alerts mode-select screen — choose Home Use for Chirp"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chirp-alerts-mode-select.jpg" alt="IoT Alerts mode-select screen — choose Home Use for Chirp" width="300"><figcaption></figcaption></figure>
 
 You can change this later under **Settings → Platform**, but switching to Business mode signs you out, so there's no reason to touch it for your home setup.
 
@@ -30,7 +30,7 @@ Sign in with the same Chirp account you use on the web — there's no new accoun
 
 Once you're in, you'll see the same homes you belong to on the web.
 
-<figure><img src="../../.gitbook/assets/chirp-alerts-sign-in.jpg" alt="Chirp Alerts sign-in screen with Google, Apple, and email options"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chirp-alerts-sign-in.jpg" alt="Chirp Alerts sign-in screen with Google, Apple, and email options" width="300"><figcaption></figcaption></figure>
 
 ## Step 4 — Say yes to notifications (and Critical Alerts)
 
