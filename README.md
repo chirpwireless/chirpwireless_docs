@@ -80,7 +80,7 @@ Chirp includes a built-in LoRaWAN Network Server, which means your gateway conne
 
 ## Available in your language
 
-The interface is available in English, German, French, and Spanish. Switch between light and dark modes with one click, and your preferences are remembered automatically.
+The interface is available in English, German, French, Spanish, and Portuguese. Switch between light and dark modes with one click, and your preferences are remembered automatically.
 
 ## Plans
 

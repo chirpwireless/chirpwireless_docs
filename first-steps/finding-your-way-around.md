@@ -51,7 +51,7 @@ You can collapse the menu to just icons by using the collapse arrow. This gives 
 
 Click your **name or photo** in the bottom-left corner to open a dropdown. This is where you'll find several important things that aren't in the main menu:
 
-- **Language** — Switch between English, German, French, and Spanish. The change is instant and Chirp remembers your choice.
+- **Language** — Switch between English, German, French, Spanish, and Portuguese. The change is instant and Chirp remembers your choice.
 - **Dark / Light mode** — Toggle between themes. Dark mode is great for checking sensors before bed or in dimly lit rooms.
 - **Subscription** — See which plan you're on, how many devices and rules you're using, and upgrade if you need more.
 - **Users** — Manage members of your organization — invite people, set permissions, and control who can see or change what. This is how you share your smart home with family members, roommates, or a landlord.
