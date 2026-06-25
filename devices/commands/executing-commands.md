@@ -37,9 +37,29 @@ Everything you send is listed in **Recent executions**, so you always have a rec
 A command's status will be one of:
 
 * **Pending** — on its way.
-* **Confirmed** — done, and (if you set up a check) the device's reading matched.
+* **Confirmed** — done, and the check you set up saw the device's reading match.
+* **Delivered** — sent on its way. You didn't set up a check, so Chirp isn't confirming the result — just that the command went out.
 * **Soft warning** — it was sent and received, but Chirp couldn't confirm the result in time. Often it worked anyway — just worth a peek.
 * **Failed** — it didn't go through. The **Details** note tells you why.
+
+### What the Details note can say
+
+When something needs a second look — a **Soft warning** or a **Failed** — the Details note explains why in plain language. The ones you'll run into most:
+
+| If you see… | It means… |
+| --- | --- |
+| Device downlink queue is full. | The device has too many messages waiting — give it a moment, then try again. |
+| Validation failed. | Something in the command wasn't right — check its settings. |
+| Payload too large for the device. | The message is bigger than the device can take — trim it down. |
+| Sent, but the device didn't confirm receipt. | It went out, but the device never said "got it." |
+| Sent, but the device didn't confirm the expected state in time. | It went out, but the reading you were expecting didn't show up in time. |
+| Device offline — command not delivered in time. | The device was asleep or out of reach, so it didn't arrive. |
+| No gateway available to reach the device. | No gateway was nearby to pass the message along. |
+| Broker authentication failed. | The connection was refused — check your MQTT login details. |
+| The command couldn't be sent. Please try again later. | A temporary hiccup — give it another go. |
+| Invalid payload — check the command. | The message didn't come out right — take another look at the command. |
+
+These are the common ones — you might occasionally see a different note, since Chirp passes along whatever reason it gets.
 
 ## Control from your dashboard
 

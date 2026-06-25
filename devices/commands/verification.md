@@ -14,7 +14,7 @@ You set this up when you create a command, in the fourth step. There are three c
 
 Send it and move on. Chirp won't verify anything.
 
-With this option, the command shows as done the moment it's sent on its way — *not* when the device actually does something. It's fine for harmless, everyday actions where it doesn't matter much if one tap is missed, but don't rely on it when you really need to know something changed.
+With this option, the command shows as **Delivered** the moment it's sent on its way — *not* when the device actually does something. (Delivered means "sent, but not checked" — it's a step short of **Confirmed**, which only happens when you set up a check.) It's fine for harmless, everyday actions where it doesn't matter much if one tap is missed, but don't rely on it when you really need to know something changed.
 
 ## Wait for the next reading
 
