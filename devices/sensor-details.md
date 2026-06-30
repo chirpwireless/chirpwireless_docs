@@ -60,9 +60,9 @@ Below the main metrics table, a **User Metadata** section lets you add your own 
 
 ### Logs
 
-The Logs tab is your sensor's raw data diary. Every reading the sensor has sent is recorded here, grouped by timestamp.
+The Logs tab is your sensor's raw data diary. Every reading the sensor has sent is recorded here, grouped by the minute — readings that arrive in the same minute are gathered under one heading, so a busy minute stays tidy instead of sprawling. A little status indicator in the sensor's header shows its live connection, so you can see at a glance whether it's sending data right now.
 
-Click a timestamp to expand it and see the individual readings:
+Click a minute to expand it and see the individual readings:
 
 | Column | What it shows |
 |--------|---------------|

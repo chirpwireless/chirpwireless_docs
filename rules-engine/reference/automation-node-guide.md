@@ -1,5 +1,5 @@
 ---
-description: Every automation node explained — Start, Script Task, Gateway, Set Alarm, Enrichment — its fields and runtime behavior.
+description: Every automation node — Gateway, Script Task, Set Alarm, Execute Command, Enrichment — its fields and runtime behavior.
 ---
 
 # Automation Node Guide
@@ -175,6 +175,39 @@ Your basement water leak sensor triggers the automation. The Set Alarm node fire
 ```
 
 Everyone in the household who subscribed to that alarm receives a notification.
+
+---
+
+## Execute Command
+
+Sends a command to a device when the automation reaches this node — the step that lets an automation *act* on your home, not just warn you. It runs one of a device's existing [commands](../../devices/commands/) (turn on, set brightness, change temperature) all by itself.
+
+For the full walkthrough and examples, see [When an Automation Runs a Command](automation-runs-a-command.md). This entry covers the fields.
+
+### Properties panel
+
+| Field | Description |
+|---|---|
+| **Name** | A label for this step. Leave it blank and pick a command, and it fills in with the command's name. Placeholder behaves like the other nodes. |
+| **Device** | A search box to pick the device to control. |
+| **Command** | A dropdown of that device's commands. Enabled once you pick a device. |
+| **Parameters** | One row per thing the command needs (brightness, target temperature, on/off). Each is either a fixed **Value** (checked against the allowed range) or an **Expression** — a CEL formula worked out at runtime, with the triggering reading available as `vars.value`. |
+| **Inputs** | Optional input parameters. Click **+ Add input**. |
+| **Outputs** | Optional output parameters. Click **+ Add output**. |
+
+The device must be controllable (Zigbee/MQTT, or a Class C LoRaWAN device) and must already have a command set up — see [Setting up a command](../../devices/commands/creating-commands.md).
+
+### What happens at runtime
+
+1. Each setting is worked out — fixed values as-is, expressions calculated from the current reading.
+2. The command is sent to the device, over Zigbee/MQTT or LoRaWAN, just as if you'd pressed it yourself.
+3. It's recorded in the device's history with how it went, and any "check it worked" set on the command applies here too.
+
+Attach a Boundary Error Event if you want to be alerted when a command doesn't go through.
+
+### Home example
+
+Your basement humidity sensor triggers the automation. A gateway routes any reading above 70% to an Execute Command node that sends "turn on" to the dehumidifier's smart plug — so the damp is dealt with before you'd even have seen the alert.
 
 ---
 

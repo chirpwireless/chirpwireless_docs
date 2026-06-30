@@ -28,7 +28,7 @@ Plenty of apps have a chat bubble that spits out canned answers. Chirp's helper 
 
 ## One thing to know
 
-The helper builds the automations that **watch your home and send you alerts** — and it can walk you through setting up device control — but it doesn't operate your devices itself, and the automations it makes send alerts rather than flip switches. Want to be told if the basement floods? It'll set that up. But actually turning a light on or off, dimming it, or changing its color right now is done with [Device Commands](../devices/commands/) — from the device or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). Think of the helper as the expert who sets up the watching and shows you where the switches are.
+The helper answers questions about your home and builds your automations for you. And automations can now do more than warn you — a rule can flip a switch on a device all by itself when something happens (see [When an Automation Runs a Command](../rules-engine/reference/automation-runs-a-command.md)). So *"if the basement gets damp, turn on the dehumidifier"* is something it can set up — not just *"tell me about it."* For flipping a switch yourself, right now, there's still [Device Commands](../devices/commands/) — on the device or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). And as always, before anything important it shows you what it'll do and waits for your OK.
 
 It also keeps to the basics you'd expect: it only ever works with your home, never anyone else's, and it never touches passwords or billing. See [Your Privacy](your-privacy.md).
 
@@ -36,4 +36,4 @@ It also keeps to the basics you'd expect: it only ever works with your home, nev
 
 The helper comes with your Chirp plan, with a monthly number of requests included; higher plans include more. If you'd rather not worry about the limit, you can connect your own AI key and keep chatting. You'll see how many requests you have left above the message box.
 
-This is the first version of the helper and it's getting smarter all the time — everything above works today, with more on the way.
+Everything above works today, and the helper keeps getting smarter the more it's used — the brains behind it run on an engine we built ourselves and improve all the time. We've even shared it openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew), for anyone curious about how it works under the hood.

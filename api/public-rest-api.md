@@ -17,7 +17,7 @@ Everything goes over a secure (TLS) connection. Look after the key like a passwo
 
 ## What the API can do
 
-REST is the broad, everyday way in. Depending on the scopes you give the key, a script can work across your home's data — for example: read your account; list your sensors and manage their setup, including how each one is wired to a connection and which readings it maps to; pull **history and latest readings** (great for spreadsheets and charts); read and change connections; read and build dashboards and widgets; read your home and subscription details; and read and manage your automations, including their saved versions.
+REST is the broad, everyday way in. Depending on the scopes you give the key, a script can work across your home's data — for example: read your account; list your sensors and manage their setup, including how each one is wired to a connection and which readings it maps to; pull **history and latest readings** (great for spreadsheets and charts); read and change connections; read and build dashboards and widgets; read your home and subscription details; read and manage your automations, including their saved versions; and set up and send **device commands** to control your gear.
 
 For typed service-to-service or on-premise setups, see [gRPC API](grpc-api.md).
 

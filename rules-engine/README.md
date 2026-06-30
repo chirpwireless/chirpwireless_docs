@@ -1,12 +1,12 @@
 ---
-description: Let your home react on its own — build visual automations that watch sensors and send alerts when something needs you.
+description: Let your home act on its own — automations that watch your sensors and respond, from an alert to flipping a switch.
 ---
 
 # Make Your Home Work for You
 
 Your sensors are always listening — temperature shifts, doors opening, moisture creeping into the basement. Automations let your home **react** to those readings on its own. Instead of checking the dashboard yourself, Chirp watches for the conditions you care about and takes action the moment they happen.
 
-An automation is a set of instructions you build once: "when this sensor reads something I care about, do this." It could be as simple as sending you a notification when the basement gets too humid, or as layered as comparing indoor and outdoor temperatures before deciding whether to sound an alert.
+An automation is a set of instructions you build once: "when this sensor reads something I care about, do this." And "do this" now really means *do*. An automation can send you a notification when the basement gets too humid — or it can switch the dehumidifier on by itself; it can warn you about a leak, or shut the water off the moment the sensor gets wet. Your home doesn't just tell you something's happening anymore — it can handle it. See [When an Automation Runs a Command](reference/automation-runs-a-command.md).
 
 ## What You Get
 
@@ -14,25 +14,27 @@ An automation is a set of instructions you build once: "when this sensor reads s
 
 **Smart expressions with CEL.** When simple thresholds are not enough, you can write conditions using [CEL](https://cel.dev) (Common Expression Language) — a safe, sandboxed expression language for precise logic inside the visual workflow. CEL lets you combine sensor values, compare readings from different rooms, calculate differences between indoor and outdoor temperatures, classify readings into severity levels, and build exactly the logic you need. That means Chirp is not limited to simple "if value > X" rules — you can model sophisticated home automations with branching, fallbacks, and dynamic alert messages.
 
+**Your home can act, not just alert.** An automation doesn't have to stop at telling you something's wrong — it can do something about it. With an Execute Command step it can flip a switch, dim a light, or nudge the thermostat on its own, the moment a condition is met. "If the basement gets damp, turn on the dehumidifier" is a single automation now, start to finish. See [When an Automation Runs a Command](reference/automation-runs-a-command.md).
+
 **Build before it goes live.** Nothing runs until you say so. After designing your automation, you build and deploy it explicitly. This means you can experiment freely in the editor without worrying about accidentally triggering alerts or actions in your home.
 
 **Version history and easy recovery.** Every save is recorded. If you change something and your automation stops behaving the way you want, you can look back at previous versions and restore any one of them. Your saved work is always recoverable.
 
 ## How Automations Fit Together
 
-Automations sit between your sensors and your alerts. Your sensors send data to Chirp continuously. When a reading arrives, Chirp checks it against any running automations. If the conditions match, the automation takes action — usually raising an alert that sends you a notification.
+Automations sit between your sensors and what happens next. Your sensors send data to Chirp continuously. When a reading arrives, Chirp checks it against any running automations. If the conditions match, the automation takes action — sending you an alert, acting on a device itself, or both.
 
 ```
 Sensor reading arrives
        |
   Automation evaluates conditions
        |
-  Conditions met? --> Raise alarm --> Notification sent to you
+  Conditions met? --> Send an alert  and/or  run a command on a device
        |
   Not met? --> No action, wait for next reading
 ```
 
-You build the automations. You choose the sensors, define the conditions, and pick the alerts. Chirp handles the rest — around the clock, whether you are home or away.
+You build the automations. You choose the sensors, define the conditions, and decide what happens — an alert, an action on a device, or both. Chirp handles the rest — around the clock, whether you are home or away.
 
 ## Getting Started
 

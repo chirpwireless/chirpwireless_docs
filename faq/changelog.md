@@ -6,6 +6,71 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <details>
 
+<summary>Flight Log. Release 3.6.0</summary>
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.6.0.jpg" alt="Chirp 3.6.0 release banner"><figcaption></figcaption></figure>
+
+3.6.0 is the one where Chirp goes **AI-first**. Your AI Helper grows up: ask it in plain English and it builds the automation, sets up the sensor, or creates the alert for you — no menus, no fiddly logic, always checking with you first. And your automations learn to *act*, not just warn: a new step lets a rule flip a switch on its own, so "if the basement gets damp, turn on the dehumidifier" happens by itself. This is **AIoT** — real intelligence built into your home. [app.chirpwireless.io](https://app.chirpwireless.io)
+
+***
+
+#### What's in This Release
+
+* **An AI Helper that does the setup** — Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, trying it out, and switching it on, always checking before anything permanent.
+* **Automations that act on their own** — A new step lets an automation send a device a command by itself — turn on the dehumidifier, shut off the water, nudge the thermostat — the moment something happens.
+* **Connect commands over the API** — The device-control calls are now part of the API, with new **Commands** permissions for your API keys.
+* **Tidier logs** — Your sensor's log now groups readings by the minute, and a little status dot in the header shows whether it's sending data right now.
+* **Portuguese** — Chirp now speaks Portuguese.
+* **Smoothing things out** — A handful of sign-in and app fixes to make everyday use steadier.
+
+***
+
+**Your home, now hands-on**
+
+<figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Helper ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
+
+This is the big one. Years ago Chirp was one of the first to let you simply *ask* about your home's data — then we went quiet for a while, not because we'd stopped, but because we were building the engine underneath properly instead of rushing it out. 3.6.0 is the result: a Helper that genuinely does the work. Find it under **AI Chat** and just talk to it.
+
+It answers from your real home — *"was the back door opened last night?"* — and it rolls up its sleeves: tell it "warn me if the nursery gets too warm" and it builds the automation, tries it, and turns it on; ask it to add your new leak sensor and it walks the whole thing through. Before anything big or permanent it stops and asks you to confirm, and once it's done it double-checks its own work.
+
+And it's only going to get better — the clever part is all in place now, and the Helper gets sharper the more it's used. We were proud enough of the engine behind it to share it openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew), for anyone curious how it all works.
+
+[→ Your Home AI Helper](../ai-assistant/README.md)
+
+***
+
+**Automations that act, not just alert**
+
+Up to now an automation could *tell* you something was up; now it can *do* something about it. A new step lets an automation send a device one of its commands all by itself, the moment your conditions are met. The basement creeps past 70% humidity and the dehumidifier comes on without you lifting a finger. A leak sensor gets wet and the water shuts off on its own — then you get the alert, so you know it happened. Pick the device and the command, set each value as a fixed number or a little formula based on the reading, and your home starts looking after itself.
+
+[→ When an Automation Runs a Command](../rules-engine/reference/automation-runs-a-command.md) · [→ Controlling Your Devices](../devices/commands/README.md)
+
+***
+
+**Connect commands over the API**
+
+The calls that control a device are now part of the API, so your own scripts and tools can switch things on and off, not just read data. New **Commands** permissions on your API keys let you hand a tool exactly that and nothing more.
+
+[→ REST API](../api/public-rest-api.md) · [→ API Keys](../settings/api-keys.md)
+
+***
+
+**Tidier logs**
+
+Your sensor's Logs tab now bundles readings by the minute, so a busy minute stays neat instead of scrolling on and on. And a small status dot in the header tells you, at a glance, whether the sensor is sending data right now.
+
+[→ Sensor Details](../devices/sensor-details.md)
+
+***
+
+**Smoothing things out**
+
+This release also irons out a handful of everyday wrinkles: getting signed in lands you in the right place more reliably, your alarm list refreshes when you switch homes, plan limits no longer get in the way of tidying up your devices and automations, and a few smaller bugs around adding devices and setting up commands are fixed.
+
+</details>
+
+<details>
+
 <summary>Flight Log. Release 3.5.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.5.0.jpg" alt="Chirp 3.5.0 release banner"><figcaption></figcaption></figure>

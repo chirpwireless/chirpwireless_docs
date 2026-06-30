@@ -11,6 +11,7 @@ Just ask. There are no special commands to memorize and no query syntax to learn
 - **Mention the sensor or room by name.** "What is the kitchen temperature?" works much better than "What is the temperature?" when you have sensors in every room.
 - **Be specific about time.** "Last night," "this morning," "past 3 days," "since Monday" — the helper understands everyday time expressions.
 - **Ask follow-ups.** The helper remembers what you talked about earlier in the conversation. You can say "now show me the same thing for the garage" without repeating yourself.
+- **Bring back your last message.** Tap the **Up arrow** key in the message box to pull up what you just sent, so you can tweak it and ask again.
 
 ## Example questions
 

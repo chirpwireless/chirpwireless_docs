@@ -42,6 +42,7 @@ Available scopes may depend on your home's plan. Pulling **history** or **latest
 
 | Scope | Read lets the key... | Write lets the key... |
 |-------|---------------------|----------------------|
+| **Commands** | View a device's commands and what they've done | Set up commands and send them to your devices |
 | **Connections** | View your connection setup | Change connection settings |
 | **Dashboards** | View dashboards and widget data | Create and edit dashboards and widgets |
 | **Devices** | View your sensors and their setup | Register sensors, change sensor settings |

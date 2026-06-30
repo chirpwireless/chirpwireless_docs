@@ -18,6 +18,8 @@ The best part of Chirp is that you don't have to be technical to use it. A built
 
 And it doesn't stop at answers. Ask it to *do* something — "add my new leak sensor", "alert me if the basement gets damp", "let me know if a door opens after midnight" — and it sets it up for you, writing the automation, testing it, and switching it on. Before anything important or permanent, it asks you to confirm, so you're always in charge. It's like having a smart-home installer on call, who happens to live inside the app. See [Your Home AI Helper](ai-assistant/).
 
+This is what people mean by **AIoT** — artificial intelligence built right into your connected home, not a chatbot stuck on the side. The helper keeps getting better the more it's used, and the engine behind it is something we built ourselves and were proud enough of to share openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew).
+
 ### Connect any manufacturer, one platform
 
 Chirp doesn't lock you into a single brand. You can connect LoRaWAN sensors, vehicle trackers, and MQTT-capable devices from any manufacturer — including thousands of Zigbee devices through the MQTT connector. The vehicle tracker library alone covers over 2,000 preconfigured models — OBD-II dongles that read engine codes, fuel level, and battery voltage, as well as standalone GPS trackers for location and route history.

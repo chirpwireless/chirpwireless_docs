@@ -106,6 +106,7 @@
     * [Visual Editor](rules-engine/reference/visual-editor.md)
     * [Debugging Automations](rules-engine/reference/debugging-automations.md)
     * [Automation Node Guide](rules-engine/reference/automation-node-guide.md)
+    * [When an Automation Runs a Command](rules-engine/reference/automation-runs-a-command.md)
     * [CEL for Home Automations](rules-engine/reference/cel-for-home-automations.md)
     * [Fixing Builds and Runtime Stops](rules-engine/reference/fixing-builds-and-runtime-stops.md)
 * [AI Assistant](ai-assistant/README.md)

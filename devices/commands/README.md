@@ -42,13 +42,14 @@ To control a device, you'll want:
 3. **Permission to control it** — managing and sending commands follows your home's sharing settings.
 4. **Sensible values** — if a command takes an input (like a brightness level), it has to be within the allowed range before Chirp will send it.
 
-## Two ways to control a device
+## Three ways to control a device
 
-Commands are the foundation, and you can run them from two places:
+Commands are the foundation, and you can run them from three places:
 
 * **On the device** — open it, go to **States**, and press a command.
 * **On a dashboard** — add a [Control widget](../../dashboards/adding-widgets/control-widget.md) so a light switch or button sits right next to your readings.
+* **From an automation** — the [Rules engine](../../rules-engine/) can now press a command for you, automatically, the moment something happens. The same command you'd tap yourself gets sent with nobody home — so a leak at 3 a.m. shuts the water off on its own. See [When an Automation Runs a Command](../../rules-engine/reference/automation-runs-a-command.md).
 
-Automations help in a different way: the [Rules engine](../../rules-engine/) keeps an eye on what's happening and sends you an **alert** at the right moment — so you know when to act. Rules notify you; pressing the actual control is done on the device or from a Control widget.
+Alerts still have their place alongside all three: an automation can act *and* tell you about it — shut the water off **and** send you a heads-up — so the problem's handled and you're never left in the dark.
 
 Ready? Head to [Setting up a command](creating-commands.md).

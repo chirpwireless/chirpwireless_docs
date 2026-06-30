@@ -53,6 +53,7 @@ The palette sits alongside the canvas and lists the node types you can drag onto
 | **Script Task** | Runs a CEL expression to compute new values. |
 | **Exclusive Gateway** | A decision point that checks conditions and picks one path to follow. |
 | **Set Alarm** | Fires an alarm notification when the automation reaches this point. |
+| **Execute Command** | Sends a command to a device when the automation fires — acts on your home, not just alerts. |
 | **Enrichment** | Fetches the latest reading from a different sensor. |
 | **Boundary Error Event** | Catches errors from a parent node and routes to a fallback path. |
 
