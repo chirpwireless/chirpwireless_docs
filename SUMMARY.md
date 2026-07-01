@@ -26,6 +26,7 @@
     * [Chart Widget](dashboards/adding-widgets/chart-widget.md)
     * [Image Widget](dashboards/adding-widgets/image-widget.md)
     * [Map Widget](dashboards/adding-widgets/map-widget.md)
+    * [iFrame Widget](dashboards/adding-widgets/iframe-widget.md)
     * [Digital Building Twin](dashboards/adding-widgets/digital-building-twin/README.md)
       * [Editor Tour](dashboards/adding-widgets/digital-building-twin/editor-tour.md)
       * [Drawing Your Home](dashboards/adding-widgets/digital-building-twin/drawing-your-building.md)

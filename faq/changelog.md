@@ -19,6 +19,7 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 * **An AI Helper that does the setup** — Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, trying it out, and switching it on, always checking before anything permanent.
 * **Automations that act on their own** — A new step lets an automation send a device a command by itself — turn on the dehumidifier, shut off the water, nudge the thermostat — the moment something happens.
 * **Connect commands over the API** — The device-control calls are now part of the API, with new **Commands** permissions for your API keys.
+* **iFrame widget** — Pin a live web page — a weather map, the family calendar, a flight tracker — right onto your dashboard, next to your sensors.
 * **Tidier logs** — Your sensor's log now groups readings by the minute, and a little status dot in the header shows whether it's sending data right now.
 * **Portuguese** — Chirp now speaks Portuguese.
 * **Smoothing things out** — A handful of sign-in and app fixes to make everyday use steadier.
@@ -52,6 +53,14 @@ Up to now an automation could *tell* you something was up; now it can *do* somet
 The calls that control a device are now part of the API, so your own scripts and tools can switch things on and off, not just read data. New **Commands** permissions on your API keys let you hand a tool exactly that and nothing more.
 
 [→ REST API](../api/public-rest-api.md) · [→ API Keys](../settings/api-keys.md)
+
+***
+
+**A web page, right on your dashboard**
+
+Some of the things you check every day aren't sensors at all — the weather, the shared calendar, a parcel on its way, a flight coming in. The new **iFrame** widget puts those web pages straight onto your dashboard, so they sit next to your temperature and door sensors instead of in yet another browser tab. Pick **iFrame** in the widget picker, paste the embed link the service gives you (usually under *Share → Embed*), give it a name, and the page appears live and keeps updating on its own. You can only embed sites from a friendly, checked list of services — shown grouped in the picker — so your home screen stays tidy and safe; if the one you want isn't there, just ask for it from the same panel.
+
+[→ iFrame Widget](../dashboards/adding-widgets/iframe-widget.md)
 
 ***
 
