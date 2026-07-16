@@ -22,10 +22,11 @@ This is where you manage the sensor's identity:
 
 - **Photos** — Add or change photos of the sensor. This is handy when you have several similar-looking sensors and need to tell them apart during a battery change or troubleshooting.
 - **Device name** — Update the name anytime. If you originally called it "Sensor 3," now's a good time to rename it to something more useful like "Kitchen Temperature" or "Basement Humidity."
+- **Location** — Where the sensor lives. You can set it, change it, or clear it entirely at any point, so a sensor that moves from the hallway to the garage doesn't have to keep pretending otherwise. Removing the location leaves the sensor unplaced without touching its readings or history. See [Rooms](rooms.md).
 
 ### Connection
 
-This tab shows how the sensor connects to Chirp and lets you adjust its profile.
+This tab shows how the sensor connects to Chirp and lets you adjust its profile. It also carries the sensor's connection diagnostics, which tell you whether data is arriving and being saved — the place to look when a sensor is quiet or a reading is missing. See [Connection Diagnostics](connection-diagnostics.md).
 
 **For LoRaWAN sensors:**
 
@@ -72,6 +73,8 @@ Click a minute to expand it and see the individual readings:
 | **Status** | Processing status (currently empty for standard readings) |
 
 **Date filtering:** Click the date button in the top-right corner to pick a time range — useful for investigating when something happened. Choose a preset like "Last week" or set a custom date range.
+
+If the Logs tab is empty and you're not sure why, the Connection tab's diagnostics will tell you whether anything is reaching Chirp in the first place. See [Connection Diagnostics](connection-diagnostics.md).
 
 ## Quick actions from sensor lists
 

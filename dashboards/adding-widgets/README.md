@@ -24,6 +24,13 @@ An empty dashboard shows **"You have no widgets here"** with an **Add widget** b
 
 In edit mode, a **plus (+) button** appears — use it to add more widgets. You can also tap the **three-dot menu** on any existing widget to edit, move, resize, or delete it.
 
+**Reusing a widget you've already set up:**
+
+Once a widget is configured just the way you like it, you don't have to build the next one from scratch.
+
+- **Duplicate** a widget from its three-dot menu to get a copy on the same dashboard — you'll see **"Widget successfully duplicated"**. This is the quick way to cover several identical sensors: set up the first radiator's temperature widget with the ranges and colors you want, duplicate it once per radiator, and just point each copy at its own sensor. If the copy doesn't appear, you'll see **"Could not duplicate widget"** — try again.
+- **Move to dashboard** sends a widget to a different dashboard entirely. Handy when the garden soil probe you added to "Kitchen" really belongs on "Garden". If the move doesn't go through, you'll see **"Could not move widget"**.
+
 **Saving your changes:**
 
 After configuring a widget, tap **Save** in the widget settings to add it to the dashboard. When you're done arranging, tap **Save** in the dashboard header to exit edit mode and keep your layout.

@@ -36,4 +36,6 @@ It also keeps to the basics you'd expect: it only ever works with your home, nev
 
 The helper comes with your Chirp plan, with a monthly number of requests included; higher plans include more. If you'd rather not worry about the limit, you can connect your own AI key and keep chatting. You'll see how many requests you have left above the message box.
 
+Prefer your own AI app? You can connect one — like Claude Code or Claude Desktop — straight to your home, sign in with your usual Chirp account, and ask it the same things from your desktop. See [MCP Server](../api/mcp-server.md).
+
 Everything above works today, and the helper keeps getting smarter the more it's used — the brains behind it run on an engine we built ourselves and improve all the time. We've even shared it openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew), for anyone curious about how it works under the hood.

@@ -6,6 +6,8 @@ description: Fix MQTT data that isn't reaching Chirp — empty Logs, topic misma
 
 When MQTT data isn't reaching Chirp, the failure is almost always at one of three places: Z2M-to-broker, broker-to-Chirp, or Chirp's device routing. This page walks through each in order — the same order to use when diagnosing — plus the two patterns that catch out almost every first-time MQTT user (empty Logs tab, no publish from a wall-switch toggle).
 
+**Start by letting Chirp narrow it down for you.** Open the device's **Connection** tab and read its diagnostics — they say whether messages are arriving, whether Chirp understood them, and whether they're being saved, which usually points straight at the right phase below. See [Connection Diagnostics](../../devices/connection-diagnostics.md). For the connector itself, its **Connector diagnostics** area has **Source health**, **Incoming**, and **Activity** tabs — the fastest way to tell a broker problem from a single misbehaving device.
+
 ## Phase 1 — Z2M is not connecting to the broker
 
 **Symptoms:** Z2M container is running, but the connector's **Last data received** in Chirp never updates. No `MQTT publish` log lines from Z2M.

@@ -6,6 +6,84 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <details>
 
+<summary>Flight Log. Release 3.7.0</summary>
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.7.0.jpg" alt="Chirp 3.7.0 release banner"><figcaption></figcaption></figure>
+
+3.7.0 is about letting your home out of the browser tab. A dashboard can now become a **link** — password-protected, yours to switch off — so the tablet in the hallway shows the house at a glance, and the person watering your plants next week can check on things without you handing over your account. When a new sensor goes quiet, the **Connection** tab finally *tells you why*, in words, with the next thing to try. Your sensors' setup codes get a proper **vault** instead of a drawer full of stickers. You can point your own AI app straight at your home. And adding a sensor no longer means squinting at 32 characters on the back of it — just **scan the code**. [app.chirpwireless.io](https://app.chirpwireless.io)
+
+***
+
+#### What's in This Release
+
+* **Share your dashboard** — Turn any dashboard into a password-protected link. Pick **View** so people can look, or **Control** so they can actually switch things on. Revoke it whenever you like.
+* **Connection diagnostics** — Your sensor's Connection tab now says whether data is arriving, what happens to it, and exactly what to check when nothing shows up.
+* **Key Vault** — An encrypted spot for your sensors' EUI and AppKey codes, so you can find them again years later without the sticker.
+* **MCP server** — Connect Claude Code or Claude Desktop to your home and ask your own AI app about your sensors.
+* **Scan a QR code** — Point your phone or laptop camera at the sensor instead of typing a long code by hand.
+* **Copy and move widgets** — Duplicate a widget you've already set up, or move it to a different dashboard.
+* **Smoothing things out** — Layout, mobile, and navigation fixes across dashboards, sensors, and the activity log.
+
+***
+
+**Share your dashboard — a link you can hand out, and take back**
+
+Until now, a dashboard was something only you and the people in your home could open. That's fine until you want the old tablet in the kitchen showing the house, or your neighbor is feeding the cat for a week, or your parents just want to see that the holiday home hasn't frozen.
+
+Open a dashboard, tap its menu, and choose **Share dashboard**. Set a password, hit **Generate link**, and you have an address that opens the dashboard full screen — no Chirp account needed at the other end. Choose **View** and they can look but not touch. Choose **Control** and they can genuinely switch your devices on and off — so pick that one deliberately, and only for people you'd hand a key to.
+
+The nice part is the off switch. **Change password** when the audience changes, **Regenerate link** to kill the old address, or **Revoke** to end it completely — the moment you do, the link stops working for everyone who has it.
+
+[→ Sharing Your Dashboard](../dashboards/sharing-your-dashboard.md)
+
+***
+
+**Connection diagnostics — why isn't my sensor showing anything?**
+
+It's the most deflating moment in a smart home: the sensor is on the wall, the batteries are in, you saved everything correctly — and the screen just says nothing. Until now you were left guessing whether it was the sensor, the range, the key you typed, or simply patience.
+
+The **Connection** tab now answers it. At the top, a **reception status** in plain words: *Receiving & storing*, *Waiting for first data*, *Sending data — set up mapping to keep it*, or *Hasn't reported — device looks offline*. Below that, an **event feed** shows what happened to each message that came in, and a legend explains what every status actually means — including that **Skipped** is usually normal, not a fault.
+
+Best of all, each unhappy state comes with a short **what to check** list — is it powered, is it in range of your gateway, does the AppKey match — and a button that takes you to the fix when the fix is in Chirp.
+
+[→ Connection Diagnostics](../devices/connection-diagnostics.md)
+
+***
+
+**Key Vault — stop keeping your keys on paper**
+
+Every LoRaWAN sensor arrives with two codes on a tiny sticker: a DevEUI and an AppKey. You use them once, during setup, and then the sticker goes in a drawer, or the box goes in the recycling, and two years later the sensor needs re-pairing after a flat battery and those codes are simply gone.
+
+**Key Vault** is an encrypted place in your home for exactly those pairs. Save them straight from the sensor form with **Add to Vault** as you set a sensor up, or add them by hand later. Search by any part of a code to find one. It lives under the new **Records & Reports** section in the sidebar, next to your activity log, and who can open it is up to you.
+
+[→ Key Vault](../reports/key-vault.md)
+
+***
+
+**Bring your own AI app**
+
+Chirp already has a helper built in. Now you can also connect the AI app you use elsewhere. Point Claude Code or Claude Desktop at your home's MCP address, sign in with your normal Chirp account in the browser — nothing to copy, no keys to paste — and you can ask it things like *which sensors have gone quiet?* or have it add a new sensor for you, right from your desktop. It only ever sees what your account can see.
+
+[→ MCP Server](../api/mcp-server.md) · [→ Your Home AI Helper](../ai-assistant/README.md)
+
+***
+
+**Two small things that save real annoyance**
+
+Adding a sensor used to mean copying a 32-character code off a label without a single typo. Now there's **Scan QR code** — point your phone or laptop camera at the sensor and it fills itself in. And if you've spent time getting a widget looking just right, you can now **Duplicate** it for your other identical sensors, or **Move to dashboard** to send it somewhere it fits better.
+
+[→ Adding Sensors](../devices/adding-sensors.md) · [→ Adding Widgets](../dashboards/adding-widgets/README.md)
+
+***
+
+**Smoothing things out**
+
+This release also tidies up a handful of rough edges: dashboards now resize properly on a big monitor instead of scrambling their layout, adding a sensor works properly on a phone, a sensor's location can be changed or cleared rather than set once and stuck, the date picker on the activity log sits where you'd expect, and the gateway photo form now matches every other form in Chirp.
+
+</details>
+
+<details>
+
 <summary>Flight Log. Release 3.6.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.6.0.jpg" alt="Chirp 3.6.0 release banner"><figcaption></figcaption></figure>
@@ -313,7 +391,7 @@ If your dashboard reports a critical issue while you're on Overview, you'll see 
 
 A bit of behind-the-scenes work that most homes will never directly notice, but which makes the platform more resilient:
 
-* **Cleaner startup behaviour** — If a key part of Chirp's data pipeline isn't ready when the platform boots, it now flags the problem clearly instead of carrying on in a half-broken state. The result: fewer mysterious "your sensor is not reporting" moments while everything spins up.
+* **Cleaner startup behavior** — If a key part of Chirp's data pipeline isn't ready when the platform boots, it now flags the problem clearly instead of carrying on in a half-broken state. The result: fewer mysterious "your sensor is not reporting" moments while everything spins up.
 * **Smoother rolling restarts** — When Chirp's hosting infrastructure rolls a restart of its messaging layer (something we do regularly to ship updates), the data path reconnects cleanly without leaving any stale sessions behind. Your sensors keep flowing into the dashboard without extra hiccups.
 
 You don't have to do anything — these improvements are already live.

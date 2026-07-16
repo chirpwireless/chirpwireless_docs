@@ -16,6 +16,10 @@ For home scripts and integrations, the **REST API** is the practical starting po
 
 A **gRPC API** also exists — the advanced / on-premise path. It is not the normal homeowner path: for home scripts and tools use REST, and reach for gRPC only if you specifically need it for an on-premise or typed service-to-service integration. See [gRPC API](grpc-api.md).
 
+## Bringing your own AI app
+
+If you'd rather not write code at all, the **MCP server** connects an AI client like Claude Code or Claude Desktop directly to your home. You sign in with your usual Chirp account — no key to create — and the AI app can then list your sensors, check your alerts, or add a device for you, with exactly your own permissions. See [MCP Server](mcp-server.md).
+
 ## Signing requests
 
 Each request carries a scoped API key in the `X-API-Key` header (format `chirp_<key>`) and your home's context in `X-Organization-Id`. You create and manage keys in **Settings → API Keys**; the essentials are in [Authentication & API keys](authentication-and-api-keys.md), and the full walkthrough is in [API Keys](../settings/api-keys.md).
@@ -24,5 +28,6 @@ Each request carries a scoped API key in the `X-API-Key` header (format `chirp_<
 
 - [REST API](public-rest-api.md) — the normal way to connect scripts and tools.
 - [gRPC API](grpc-api.md) — only for advanced typed-client or service integrations.
+- [MCP Server](mcp-server.md) — connect your own AI app to your home.
 - [Authentication & API keys](authentication-and-api-keys.md) — how requests are signed.
 - [Examples](examples.md) — a first authenticated request.

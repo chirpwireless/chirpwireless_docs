@@ -41,6 +41,8 @@ Click the **Connection** tab to link your sensor to a physical device.
 
 1. Select your **LNS** connection from the **Connector type** dropdown (if you only have one, it may be pre-selected).
 2. Enter the **Device EUI** — the unique identifier from your sensor's label (a string of hexadecimal characters, usually printed on the sensor or its packaging). Once entered and saved, this field locks to prevent accidental changes. Capital and lowercase letters are treated the same here, so it doesn't matter which your label uses — just copy it carefully.
+
+   **Or skip the typing entirely.** Most sensors carry a QR code on the label or the box. Click **Scan QR code**, point your laptop or phone camera at it, and Chirp fills the identifiers in for you — no squinting at sixteen characters of hex, no transposed digits to hunt down later. If your device doesn't have a camera available, you'll see "QR code scanner is not found. Please try again." — just type the values in by hand instead.
 3. Choose how to set up the sensor profile:
 
    **Option A: Use device profile templates** — Check the **Use device profile templates** box to select from a library of known sensors. This is the easiest approach if your sensor brand is in the library.
@@ -58,6 +60,12 @@ Click the **Connection** tab to link your sensor to a physical device.
    - **Brand** and **Model** — Type the sensor manufacturer and model name.
    - **Band** — Select the LoRaWAN frequency band for your region. Sensors purchased from a local supplier are almost always on the correct band already. Available options: EU868 (Europe), US915 (USA), AU915 (Australia), AS923 (Asia), KR920 (South Korea), IN865 (India), RU864 (Russia), CN470 (China), CN779 (China), EU433 (Europe 433 MHz), ISM2400 (2.4 GHz global). For a complete list by country, see [LoRaWAN Frequencies](../connectors/lns-connector/lorawan-frequencies.md).
    - **AppKey** — The encryption key for your sensor, typically found on the sensor's packaging or in its documentation.
+
+#### Keep the identifiers somewhere safe
+
+Once you've entered the sensor's identifiers, click **Add to Vault**. Chirp saves the EUI and its key together in your Key Vault, so you can look them up later without hunting for the box in the loft or unscrewing the sensor off the wall. For LoRaWAN sensors it stores the AppKey alongside the Device EUI.
+
+It's worth doing at the moment you have the label in your hand — that's the one time the numbers are easy to get at. See [Key Vault](../reports/key-vault.md).
 
 #### Code functions (codec)
 
@@ -134,7 +142,12 @@ Your sensor's profile appears in the sensor lists throughout Chirp.
 
 For LoRaWAN sensors, data starts flowing once the sensor powers on and connects to your gateway. For trackers, data flows once the physical device starts reporting to the URL you configured.
 
+**Saved everything and still seeing no readings?** Don't start pulling batteries out. Open the sensor's **Connection** tab — Chirp will tell you exactly where the data has stopped and what to do about it. See [Connection Diagnostics](connection-diagnostics.md).
+
+The registration dialog works comfortably on a phone, so you can add a sensor while you're standing at the spot where you're installing it.
+
 ## What's next
 
 - **Customize data templates** if Chirp doesn't automatically recognize what your sensor measures. See [Data Templates](data-templates.md).
 - **View and edit your sensor** anytime. See [Sensor Details](sensor-details.md).
+- **Nothing showing up?** See [Connection Diagnostics](connection-diagnostics.md).
