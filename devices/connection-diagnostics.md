@@ -38,7 +38,7 @@ You'll see one of these headlines:
 | **Sending data — set up mapping to keep it** | Your sensor is alive and talking — Chirp just doesn't know what its readings mean yet, so nothing is being saved. Shown as `{{count}} keys decoded · none mapped yet`. |
 | **Data arrives but nothing is stored** | "Data is arriving but nothing is stored yet." Messages are landing, but none of them are turning into readings you can chart. |
 | **Hasn't reported — device looks offline** | "Device was reporting but has gone quiet." It used to work. Something changed. |
-| **Waiting for first data** | Nothing has come in yet. You may also see **Waiting for the first uplink** or **No uplinks received yet** — same meaning. |
+| **Waiting for first data** | Nothing has come in yet. You may also see **Waiting for the first uplink** or **No uplinks received yet** — same meaning. If it never moves off this state, the sensor may still be joined to a network it used before Chirp — see [First things first: joining the network](#first-things-first-joining-the-network). |
 | **Reached network — waiting for data** | "Joined the network · no uplinks yet" — a LoRaWAN sensor that has successfully introduced itself to your gateway but hasn't sent an actual reading yet. Genuinely good news. |
 
 Around the headline you'll also spot a few supporting details:
@@ -89,6 +89,48 @@ MQTT sensors have their own set of messages, because there's a broker in the mid
 | **No publish topic is configured yet — set one above.** | Fill in the topic field on this tab, save, and the messages will start matching. |
 
 When things are working, MQTT diagnostics confirm all three of these: the device publishes to the expected topic, the payload is valid JSON, and the device ID resolves as configured.
+
+## First things first: joining the network
+
+There's a step people miss because nothing in the setup form hints at it. A LoRaWAN sensor doesn't simply start broadcasting readings the moment it has power. It has to **join** a network first.
+
+Here's how that goes. When the sensor wakes up, it sends out a **join request** — a little "hello, may I?" message carrying its identity. Your gateway passes it along, Chirp checks it against the Device EUI and AppKey you typed into the sensor form, and if those match, Chirp sends back a join accept. Only *after* that handshake does the sensor start sending actual readings.
+
+Which is why the states at the top of this tab read the way they do. They're that handshake, in order:
+
+1. **Waiting for first data** — the handshake hasn't happened. Chirp has heard nothing from this sensor at all.
+2. **Reached network — waiting for data** (shown as "Joined the network · no uplinks yet") — the handshake worked. The sensor is on your network, it just hasn't reached its next scheduled report.
+3. **Receiving & storing** — readings are flowing in and going into your history.
+
+### A sensor can only belong to one network at a time
+
+Here's the part that trips people up. Once a sensor joins a network, it settles in and stops asking. Its firmware is satisfied: it has a network, thank you, no need to knock on any more doors.
+
+So if your sensor has had a previous life — you found it on eBay, it was already screwed to the wall when you bought the house, it came off a different app or platform, or it's a returned or demo unit that someone else set up first — it is still, as far as it's concerned, joined to that old network. Adding it to Chirp doesn't undo that. You've told Chirp all about the sensor, but nobody has told the sensor about Chirp, and it isn't going to ask.
+
+The symptom is unmistakable once you know it: **Waiting for first data**, indefinitely, while every single thing you can check looks right. EUI correct. AppKey correct. Battery in. Sitting a meter from the gateway. Three reporting intervals have come and gone. Nothing. That's not a mistake you can find by checking harder — the sensor is simply talking to somewhere else.
+
+Worth saying plainly: Chirp can only report on what reaches it. It has no way to see that your sensor is quietly still attached to a previous owner's network, so it can't warn you about this one. That's what this section is for.
+
+### The fix: make it ask again
+
+Reset the sensor. A reset clears the old session and puts the sensor back to square one, where it sends a fresh join request — and this time your Device EUI and AppKey are waiting for it in Chirp.
+
+How you do that depends entirely on who made it. There's no universal button. Depending on the model it might be:
+
+- a magnet swiped past a specific spot on the casing
+- a button held down for a set number of seconds
+- a reed switch or a pinhole reset under the cover
+- a power cycle of a particular length, or repeated a particular number of times
+
+Look up the reset procedure for your exact model in the manufacturer's instructions — it's usually in the quick-start leaflet or on the maker's support page. One detail worth watching for: plenty of sensors treat "restart" and "rejoin" as two different things. Pulling the battery for a second may just restart it, leaving the old network session intact, and it'll come back exactly as silent as before. You want the full reset that clears the session.
+
+Once it's done, watch the Connection tab. You should see the status move to **Reached network — waiting for data** within a minute or two — that's the join accept landing. From there it's just waiting for the sensor's next report.
+
+### Two lookalikes that aren't this
+
+- **A sensor that worked for a while and then went quiet** is a different problem. Sensors don't quietly un-join a network on their own, so this isn't it. That case shows up as **Hasn't reported — device looks offline**, and it's almost always the battery, something new blocking the signal, or a schedule that's changed. Don't reset it — you'll just make more work for yourself.
+- **A sensor that joins, then drops back to "Waiting for first data" again and again** usually has a typo in its identifiers. One wrong character in the Device EUI or AppKey and the handshake can't complete. Re-enter both with **Scan QR code** on the sensor form rather than retyping — then reset the sensor once more so it tries again with the corrected values.
 
 ## Block 2 — Pipeline
 
@@ -147,7 +189,7 @@ Diagnostics don't just describe problems — they hand you the button. Depending
 
 ## What to do when it says…
 
-**"Waiting for first data" / "No uplinks received yet"** — Give it one full reporting interval before doing anything; a sensor set to report once an hour will look silent for an hour, and that's correct. If it stays silent past that, check the battery is in the right way round, confirm the sensor is within range of your gateway, and double-check the Device EUI and AppKey character by character against the sensor's label. If typing them was the risky part, re-enter them with **Scan QR code** on the sensor form — see [Adding Sensors](adding-sensors.md).
+**"Waiting for first data" / "No uplinks received yet"** — Give it one full reporting interval before doing anything; a sensor set to report once an hour will look silent for an hour, and that's correct. If it stays silent past that, check the battery is in the right way round, confirm the sensor is within range of your gateway, and double-check the Device EUI and AppKey character by character against the sensor's label. If typing them was the risky part, re-enter them with **Scan QR code** on the sensor form — see [Adding Sensors](adding-sensors.md). And if all of that checks out and it's *still* silent, stop checking and reset the sensor so it sends a fresh join request — this is the usual ending for any sensor that had an owner before you. See [First things first: joining the network](#first-things-first-joining-the-network).
 
 **"Reached network — waiting for data"** — Relax. Your LoRaWAN sensor found the gateway and joined successfully, which is the hard part. It's simply waiting for its next scheduled report. Come back after one interval.
 

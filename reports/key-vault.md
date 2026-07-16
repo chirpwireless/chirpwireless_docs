@@ -4,7 +4,7 @@ description: Store your sensors' DevEUI and AppKey codes in an encrypted vault i
 
 # Key Vault
 
-Every LoRaWAN sensor you buy arrives with two codes: a **DevEUI** (its serial number on the radio network) and an **AppKey** (the secret that lets it join your home securely). They usually live on a tiny sticker on the back of the sensor, or on a slip of paper inside the box — and once that sensor is screwed to the garage wall or buried in a flowerbed, those codes are effectively gone.
+Every LoRaWAN sensor you buy arrives with two codes: a **DevEUI** (its serial number on the radio network) and an **AppKey** (the secret that lets it join your home securely). They usually live on a tiny sticker on the back of the sensor, or on a slip of paper inside the box — and once that sensor is screwed to the garage wall or buried in a flowerbed, those codes are out of practical reach.
 
 Key Vault is an encrypted place inside your Chirp home where those pairs live instead. You save the DevEUI and AppKey once, and they're there whenever you need them again — no torch, no ladder, no shoebox of manuals.
 
@@ -86,7 +86,7 @@ Retired a sensor? Clear it out so the vault stays a list of things you actually 
 2. Chirp asks: *"Are you sure you want to delete this key pair?"*
 3. Confirm. You'll see **"Key pair deleted"**.
 
-Deleting is permanent — the codes are gone from the vault, and if the sticker is unreadable, they're gone for good. If deletion fails you'll see **"Failed to delete key pair"**; refresh and try again.
+Deleting is permanent — once a pair leaves the vault, Chirp has no copy of it left. After that you are back to the sticker, the box it came in, or whatever your sensor's maker allows: a few models will hand the code back if you wire something to them, most won't, and neither is a job for a Saturday morning. If deletion fails you'll see **"Failed to delete key pair"**; refresh and try again.
 
 Removing a pair from the vault does nothing to the sensor itself. A sensor already joined to your home carries on reporting exactly as before.
 

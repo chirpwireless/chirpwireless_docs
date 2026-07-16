@@ -19,7 +19,7 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 * **Share your dashboard** — Turn any dashboard into a password-protected link. Pick **View** so people can look, or **Control** so they can actually switch things on. Revoke it whenever you like.
 * **Connection diagnostics** — Your sensor's Connection tab now says whether data is arriving, what happens to it, and exactly what to check when nothing shows up.
 * **Key Vault** — An encrypted spot for your sensors' EUI and AppKey codes, so you can find them again years later without the sticker.
-* **MCP server** — Connect Claude Code or Claude Desktop to your home and ask your own AI app about your sensors.
+* **MCP server** — Connect the AI app you already use — Claude Code, Claude Desktop, ChatGPT, Codex — to your home and ask it about your sensors.
 * **Scan a QR code** — Point your phone or laptop camera at the sensor instead of typing a long code by hand.
 * **Copy and move widgets** — Duplicate a widget you've already set up, or move it to a different dashboard.
 * **Smoothing things out** — Layout, mobile, and navigation fixes across dashboards, sensors, and the activity log.
@@ -46,15 +46,17 @@ The **Connection** tab now answers it. At the top, a **reception status** in pla
 
 Best of all, each unhappy state comes with a short **what to check** list — is it powered, is it in range of your gateway, does the AppKey match — and a button that takes you to the fix when the fix is in Chirp.
 
+There's one answer in there that used to be impossible to find. A LoRaWAN sensor can only belong to one network at a time, so a second-hand find, a sensor that came with the house, or one that used to be on another app is still joined to *that* network — and adding it to Chirp won't change its mind. It'll sit on *Waiting for first data* forever while everything you can check looks right. Reset it, and it asks to join again.
+
 [→ Connection Diagnostics](../devices/connection-diagnostics.md)
 
 ***
 
 **Key Vault — stop keeping your keys on paper**
 
-Every LoRaWAN sensor arrives with two codes on a tiny sticker: a DevEUI and an AppKey. You use them once, during setup, and then the sticker goes in a drawer, or the box goes in the recycling, and two years later the sensor needs re-pairing after a flat battery and those codes are simply gone.
+Every LoRaWAN sensor arrives with two codes on a tiny sticker: a DevEUI and an AppKey. You use them once, during setup, and then the sticker goes in a drawer, or the box goes in the recycling. Two years later the sensor needs re-pairing after a flat battery, and now you're on a ladder with a torch trying to read a sun-bleached label. A few sensors will hand the code back if you wire something to them; most won't, and either way it's nobody's idea of a Saturday.
 
-**Key Vault** is an encrypted place in your home for exactly those pairs. Save them straight from the sensor form with **Add to Vault** as you set a sensor up, or add them by hand later. Search by any part of a code to find one. It lives under the new **Records & Reports** section in the sidebar, next to your activity log, and who can open it is up to you.
+**Key Vault** is an encrypted notebook in your home for exactly those pairs — one you don't have to go up a ladder to read. Save them straight from the sensor form with **Add to Vault** as you set a sensor up, or add them by hand later. Search by any part of a code to find one. It lives under the new **Records & Reports** section in the sidebar, next to your activity log, and who can open it is up to you.
 
 [→ Key Vault](../reports/key-vault.md)
 
@@ -62,7 +64,7 @@ Every LoRaWAN sensor arrives with two codes on a tiny sticker: a DevEUI and an A
 
 **Bring your own AI app**
 
-Chirp already has a helper built in. Now you can also connect the AI app you use elsewhere. Point Claude Code or Claude Desktop at your home's MCP address, sign in with your normal Chirp account in the browser — nothing to copy, no keys to paste — and you can ask it things like *which sensors have gone quiet?* or have it add a new sensor for you, right from your desktop. It only ever sees what your account can see.
+Chirp already has a helper built in. Now you can also connect the AI app you use elsewhere — Claude Code, Claude Desktop, ChatGPT, Codex, or anything else that speaks MCP. Point it at your home's MCP address, sign in with your normal Chirp account in the browser — nothing to copy, no keys to paste — and you can ask it things like *which sensors have gone quiet?* or have it add a new sensor for you, right from your desktop. It only ever sees what your account can see. MCP is a shared standard, so as more apps adopt it, they'll work here too.
 
 [→ MCP Server](../api/mcp-server.md) · [→ Your Home AI Helper](../ai-assistant/README.md)
 

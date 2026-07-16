@@ -142,6 +142,8 @@ Your sensor's profile appears in the sensor lists throughout Chirp.
 
 For LoRaWAN sensors, data starts flowing once the sensor powers on and connects to your gateway. For trackers, data flows once the physical device starts reporting to the URL you configured.
 
+Worth knowing about that LoRaWAN connection: registering the sensor here sets Chirp up to recognize it, but the sensor still has to *join* the network itself before it sends anything. A sensor straight out of the box does that on its own the moment you power it up. A sensor with a past life — second-hand, inherited with the house, or previously set up on something else — is still joined to that old network and needs a reset before it will join yours. See [First things first: joining the network](connection-diagnostics.md#first-things-first-joining-the-network).
+
 **Saved everything and still seeing no readings?** Don't start pulling batteries out. Open the sensor's **Connection** tab — Chirp will tell you exactly where the data has stopped and what to do about it. See [Connection Diagnostics](connection-diagnostics.md).
 
 The registration dialog works comfortably on a phone, so you can add a sensor while you're standing at the spot where you're installing it.

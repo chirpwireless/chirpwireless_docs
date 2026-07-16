@@ -1,12 +1,14 @@
 ---
-description: Connect Claude Code or Claude Desktop straight to your Chirp home with MCP — sign in, no API key needed.
+description: Connect your favorite AI app straight to your Chirp home with MCP — sign in, no API key needed.
 ---
 
 # MCP Server
 
 You've probably got an AI app you already like talking to. Chirp's MCP server lets you point that app at your own home, so you can ask it *"which sensors have stopped reporting?"* or say *"add this new sensor for me"* right where you're already working — and it can actually go and do it.
 
-MCP (Model Context Protocol) is simply an agreed way for an AI app to reach out and use something else safely. Chirp speaks it, so any MCP-capable client — [Claude Code](https://claude.com/claude-code) or Claude Desktop, for example — can connect to your home without any custom plumbing on your side.
+MCP (Model Context Protocol) is simply an agreed way for an AI app to reach out and use something else safely. Chirp speaks it, so the app you already use can connect to your home without any custom plumbing on your side — [Claude Code](https://claude.com/claude-code), Claude Desktop, ChatGPT, Codex, Cursor, and others all support it.
+
+Because MCP is a shared standard rather than a deal with one company, that list keeps growing. If your AI app supports MCP, it can talk to your home.
 
 The best part: there's no key to generate, copy, or paste. You sign in with your usual Chirp account in your browser, and the connection carries exactly your own permissions — nothing more. If you can't see something in the Chirp app, your AI app can't see it either.
 
@@ -38,6 +40,12 @@ The connection uses Streamable HTTP, which the clients below handle for you — 
 4. Click **Connect**. Your browser opens for sign-in.
 5. Sign in with your usual Chirp account.
 6. Check the connector shows as active in the Connectors list. You're done — start a chat and ask it about your home.
+
+## Connecting a different AI app
+
+ChatGPT, Codex, Cursor and the rest work the same way — they just put the setting in a different place. Look for **Connectors**, **Integrations**, or **MCP servers** in your app's settings, choose whatever it calls "add a custom server", and paste the same address. If your app is configured from a file or a terminal instead, add the address as a **Streamable HTTP** server.
+
+Whichever app you use, the rest is identical: your browser opens, you sign in as yourself, and it sees exactly what you see. Your app's own documentation will tell you where its MCP setting lives.
 
 ## Choosing which home it sees
 
