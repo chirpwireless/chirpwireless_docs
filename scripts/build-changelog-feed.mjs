@@ -99,27 +99,92 @@ const extractHighlightBullets = (body) => {
   return bullets;
 };
 
+const STOPWORDS = new Set([
+  'a', 'an', 'the', 'this', 'that', 'these', 'those', 'your', 'you', 'it', 'its', 'their',
+  'and', 'or', 'not', 'just', 'now', 'can', 'what', 'of', 'to', 'in', 'on', 'for', 'with', 'over', 'right',
+]);
+
+const escapeRegExp = (text) => text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+const tokenize = (text) =>
+  toPlainText(text)
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter((word) => word.length >= 2 && !STOPWORDS.has(word));
+
+/** Share of slide-title tokens present in the text (word-prefix match covers plurals). */
+const tokenOverlap = (slideTokens, text) => {
+  const lowered = text.toLowerCase();
+  const hits = slideTokens.filter((token) => new RegExp(`\\b${escapeRegExp(token)}`).test(lowered));
+  return hits.length / slideTokens.length;
+};
+
 /**
  * Feature deep-dive sections (split by ***) open with a bold header line.
- * Matching a slide title against those headers recovers the slide's image and docs link.
+ * Tier 1: a header that starts with the slide title (writer kept the same wording).
+ * Tier 2: best token overlap between the slide title and the whole section text —
+ * covers sections headed with a tagline ("Your home, now hands-on" for the AI Helper).
  */
-const findSectionDetails = (body, slideTitle) => {
+const findSlideSection = (sections, slideTitle) => {
   const needle = slideTitle.toLowerCase();
-  const sections = body
-    .split(/^\*\*\*$/m)
-    .filter((chunk) => !chunk.split('\n').some((line) => HIGHLIGHTS_HEADING.test(line.trim())));
 
-  const section = sections.find((chunk) => {
+  const byPrefix = sections.find((chunk) => {
     const header = chunk.match(/\*\*([^*]+)\*\*/);
     return header && header[1].toLowerCase().startsWith(needle.slice(0, 12));
   });
+  if (byPrefix) return byPrefix;
 
-  // Fallback: a "→ [Page Title](path)" link whose text matches the slide title.
-  const linkByTitle = body.match(new RegExp(`\\[→ ${needle.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\]\\(([^)]+)\\)`, 'i'));
+  const slideTokens = [...new Set(tokenize(slideTitle))];
+  if (slideTokens.length === 0) return null;
 
-  const image = section ? extractFigureSrc(section) : null;
-  const link = section ? section.match(/\[→ ([^\]]+)\]\(([^)]+)\)/) : null;
-  const docsHref = link ? link[2] : linkByTitle ? linkByTitle[1] : null;
+  let best = null;
+  let bestScore = 0;
+
+  for (const section of sections) {
+    const score = tokenOverlap(slideTokens, section);
+    if (score > bestScore) {
+      best = section;
+      bestScore = score;
+    }
+  }
+
+  return bestScore >= 0.6 ? best : null;
+};
+
+/** A section may document several small features — pick the link closest to the slide title. */
+const findSlideDocsLink = (section, slideTitle) => {
+  const links = [...section.matchAll(/\[→ ([^\]]+)\]\(([^)]+)\)/g)];
+  if (links.length === 0) return null;
+  if (links.length === 1) return links[0][2];
+
+  const slideTokens = [...new Set(tokenize(slideTitle))];
+  let best = links[0];
+  let bestScore = 0;
+
+  for (const link of links) {
+    const score = slideTokens.length > 0 ? tokenOverlap(slideTokens, link[1]) : 0;
+    if (score > bestScore) {
+      best = link;
+      bestScore = score;
+    }
+  }
+
+  return best[2];
+};
+
+const findSectionDetails = (body, slideTitle) => {
+  // Drop the leading banner/intro chunk — it name-drops every feature and would steal matches.
+  const sections = body
+    .split(/^\*\*\*$/m)
+    .slice(1)
+    .filter((chunk) => !chunk.split('\n').some((line) => HIGHLIGHTS_HEADING.test(line.trim())));
+
+  const section = findSlideSection(sections, slideTitle);
+  if (!section) return {};
+
+  const image = extractFigureSrc(section);
+  const docsHref = findSlideDocsLink(section, slideTitle);
 
   return {
     ...(image ? { image } : {}),
