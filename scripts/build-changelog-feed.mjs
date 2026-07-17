@@ -14,6 +14,7 @@
  *   OUTPUT_DIR         where releases.json is written (default "out")
  */
 
+import { existsSync, readFileSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
@@ -173,35 +174,60 @@ const findSlideDocsLink = (section, slideTitle) => {
   return best[2];
 };
 
-const findSectionDetails = (body, slideTitle) => {
-  // Drop the leading banner/intro chunk — it name-drops every feature and would steal matches.
-  const sections = body
+/** First figure of the docs page a slide links to — feature pages usually open with a screenshot. */
+const extractLinkedPageImage = (docsHref) => {
+  if (!docsHref || /^https?:\/\//.test(docsHref)) return null;
+
+  const relPath = docsHref.split('#')[0];
+  const repoPath = path.posix.normalize(path.posix.join(path.posix.dirname(CHANGELOG_PATH), relPath));
+  if (!repoPath.endsWith('.md') || !existsSync(repoPath)) return null;
+
+  return extractFigureSrc(readFileSync(repoPath, 'utf8'));
+};
+
+// Drop the leading banner/intro chunk — it name-drops every feature and would steal matches.
+const splitFeatureSections = (body) =>
+  body
     .split(/^\*\*\*$/m)
     .slice(1)
     .filter((chunk) => !chunk.split('\n').some((line) => HIGHLIGHTS_HEADING.test(line.trim())));
 
-  const section = findSlideSection(sections, slideTitle);
-  if (!section) return {};
-
-  const image = extractFigureSrc(section);
-  const docsHref = findSlideDocsLink(section, slideTitle);
-
-  return {
-    ...(image ? { image } : {}),
-    ...(docsHref ? { docsUrl: toDocsUrl(docsHref) } : {}),
-  };
-};
-
-const parseSlide = (bullet, body) => {
+const parseBullet = (bullet) => {
   const match = bullet.match(/^\*\*([^*]+)\*\*\s*—\s*([\s\S]+)$/);
   if (!match) return null;
 
-  const title = toPlainText(match[1]);
-  return {
-    title,
-    description: toPlainText(match[2]),
-    ...findSectionDetails(body, title),
-  };
+  return { title: toPlainText(match[1]), description: toPlainText(match[2]) };
+};
+
+const buildSlides = (body, bullets) => {
+  const sections = splitFeatureSections(body);
+  const parsed = bullets.map(parseBullet).filter(Boolean);
+
+  const matchedSections = parsed.map((slide) => findSlideSection(sections, slide.title));
+  const sectionUsage = new Map();
+  matchedSections.forEach((section) => {
+    if (section) sectionUsage.set(section, (sectionUsage.get(section) ?? 0) + 1);
+  });
+
+  return parsed.map((slide, index) => {
+    const section = matchedSections[index];
+    if (!section) return slide;
+
+    const docsHref = findSlideDocsLink(section, slide.title);
+    const sectionImage = extractFigureSrc(section);
+    const pageImage = extractLinkedPageImage(docsHref);
+
+    // A section shared by several slides covers several features — its figure
+    // rarely depicts this particular one, so the linked page's screenshot wins.
+    const isSharedSection = (sectionUsage.get(section) ?? 0) > 1;
+    const image = isSharedSection ? pageImage || sectionImage : sectionImage || pageImage;
+
+    return {
+      ...slide,
+      ...(image ? { image } : {}),
+      ...(docsHref ? { docsUrl: toDocsUrl(docsHref) } : {}),
+    };
+  });
 };
 
 const parseRelease = (block) => {
@@ -222,7 +248,7 @@ const parseRelease = (block) => {
   const banner = extractFigureSrc(body);
   const intro = extractIntro(body);
   const bullets = extractHighlightBullets(body);
-  const slides = bullets.map((bullet) => parseSlide(bullet, body)).filter(Boolean);
+  const slides = buildSlides(body, bullets);
 
   const problems = [];
   if (slides.length === 0) problems.push(`Release ${version}: no highlight bullets parsed into slides.`);
@@ -295,6 +321,15 @@ const main = async () => {
   console.log(`✓ ${outputPath}: ${releases.length} release(s), latest ${releases[0].version}`);
   for (const release of releases) {
     console.log(`  ${release.version}: ${release.slides.length} slide(s)${release.banner ? '' : ' (no banner)'}`);
+  }
+
+  // Non-blocking nudge for writers: the in-app modal falls back to the release
+  // banner for these slides. A figure in the feature section or on the linked
+  // docs page is picked up automatically.
+  const latestImageless = releases[0].slides.filter((slide) => !slide.image);
+  if (latestImageless.length > 0) {
+    console.warn(`\n⚠ ${releases[0].version}: ${latestImageless.length} slide(s) without an own image:`);
+    for (const slide of latestImageless) console.warn(`  – ${slide.title}`);
   }
 };
 
