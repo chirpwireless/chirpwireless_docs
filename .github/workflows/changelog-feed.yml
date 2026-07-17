@@ -2,8 +2,7 @@ name: Build changelog feed
 
 on:
   push:
-    # TODO: remove the feature branch after testing, before merge
-    branches: [synchronize, feature/chirp-3531/changelog-release]
+    branches: [synchronize]
     paths:
       - 'faq/changelog.md'
       - 'scripts/build-changelog-feed.mjs'
