@@ -10,7 +10,7 @@ Your subscription controls how many devices you can connect, how many dashboards
 
 ## Choosing a plan
 
-Chirp offers three paid plans alongside a free starter tier, plus a Business option for larger setups. Each plan card shows the monthly price and a full feature comparison so you know exactly what you're getting before you commit.
+Chirp offers three paid plans alongside a free starter tier, plus a Business option for larger setups. Each card carries a full feature comparison so you know exactly what you're getting before you commit. The paid home plans show their monthly price; Business is not priced here, because it takes you to Kilo IoT Server instead.
 
 | Plan | Price |
 |---|---|
@@ -18,7 +18,7 @@ Chirp offers three paid plans alongside a free starter tier, plus a Business opt
 | **Light** | €7.99 / month |
 | **Pro** | €12.99 / month |
 | **Max** | €19.99 / month |
-| **Business** | Contact sales |
+| **Business** | Not priced here — the card's **Switch to Kilo** button takes you to Kilo IoT Server |
 
 **If you're just getting started:** The Chirp-tenant Free plan includes **2 devices, 1 rule, 1 dashboard, unlimited gateways, push and email notifications, and 1 day of device-log retention** without entering payment details. A gateway does not consume either device slot. When you're ready for more, pick a plan and tap **Upgrade Plan** — you go straight to a secure checkout page to finish, with no extra confirmation step in between. Your new plan's limits apply as soon as it's active.
 

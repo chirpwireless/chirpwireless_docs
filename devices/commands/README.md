@@ -1,5 +1,5 @@
 ---
-description: Control your devices from Chirp — turn things on or off, dim lights, and change color temperature over MQTT or LoRaWAN.
+description: Control your devices from Chirp — turn things on or off, dim lights, or just ask the AI helper to do it for you.
 ---
 
 # Controlling Your Devices
@@ -55,6 +55,6 @@ Commands are the foundation, and you can run them from five places:
 
 All five end up in the same place: the commands you set up here, sent the same way, logged the same way.
 
-Alerts still have their place alongside all three: an automation can act *and* tell you about it — shut the water off **and** send you a heads-up — so the problem's handled and you're never left in the dark.
+Alerts still have their place alongside all of them: an automation can act *and* tell you about it — shut the water off **and** send you a heads-up — so the problem's handled and you're never left in the dark.
 
 Ready? Head to [Setting up a command](creating-commands.md).

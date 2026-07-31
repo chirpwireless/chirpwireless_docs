@@ -1,5 +1,5 @@
 ---
-description: See how connections link your home sensors to Chirp over LoRaWAN, MQTT, or a vehicle tracker.
+description: See how connections link your home sensors to Chirp over LoRaWAN, MQTT or a vehicle tracker — or use pretend sensors before any hardware arrives.
 ---
 
 # How Sensors Connect to Chirp

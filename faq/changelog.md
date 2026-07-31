@@ -19,7 +19,7 @@ Three big ones in 3.8.0. **First, you don't have to wait for the parcel** — **
 * **Pretend sensors** — Set up your home before the hardware arrives. Make up readings, watch your alerts fire, then point the same device at the real sensor when it turns up and keep everything.
 * **The helper can switch things on** — *"Turn on the lamp"* now turns on the lamp. Ask it to flip a relay or change how often a sensor reports, and it does — showing you what it's about to do, asking first, then telling you whether the device got it.
 * **Control your home from ChatGPT or Claude** — Connect the AI app you already use and it can switch things in your house too, with the same confirmation before anything happens.
-* **The helper sets up pretend sensors as well** — Ask for one and it builds it, sends a test reading, and switches it to the real sensor later.
+* **The helper sets up pretend sensors as well** — Ask for one and it builds it, sends a test reading, and takes it live onto your LoRaWAN connection later.
 * **What's New in the app** — A note that tells you what changed, so a release doesn't quietly pass you by.
 * **Smoothing things out** — Your plan dates read correctly, adding a widget stops shoving your other widgets around, long addresses don't run off the screen on your phone, and a handful of labels finally say what they mean.
 

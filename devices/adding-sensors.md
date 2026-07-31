@@ -1,5 +1,5 @@
 ---
-description: Register a LoRaWAN, tracker, or MQTT sensor in Chirp and map its readings, step by step.
+description: Register a LoRaWAN, tracker, MQTT or pretend sensor in Chirp and map its readings, step by step.
 ---
 
 # Adding Sensors
@@ -10,7 +10,7 @@ Every sensor you add to Chirp gets its own profile — a record that remembers t
 
 You'll need:
 - **A connection** set up — an LNS connection for LoRaWAN sensors, a Tracker connection for vehicle trackers, an MQTT connector (Cloud or External) for Zigbee2MQTT and other MQTT-publishing hardware, or an Emulator connection if your sensor hasn't arrived yet. See [Setting Up a Connection](../connectors/setting-up-a-connection.md) and the [MQTT Connector](../connectors/mqtt-connector.md) docs.
-- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it byte-for-byte (no whitespace). A [pretend sensor](pretend-sensors.md) needs none of this — you make the name up.
+- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it byte-for-byte (no whitespace). A [pretend sensor](pretend-sensors.md) needs none of this — you choose its Device ID yourself, within the naming rules on that page.
 - **For MQTT sensors only — the device must be publishing before you can finish mapping.** The Connector key dropdown in the Mapping tab is populated from payload keys actually received from the device. See the [MQTT-specific note](#a-note-for-mqtt-sensors) further down for the two-pass save flow.
 
 ## Where to add a sensor
@@ -103,7 +103,7 @@ A [pretend sensor](pretend-sensors.md) is the exception: there is no hardware ke
 **For pretend sensors (Emulator connection):**
 
 1. Select your **Emulator** connection from the **Connector type** dropdown.
-2. Make up a **Device ID** — anything that helps you tell your pretend sensors apart.
+2. Choose a **Device ID** — up to 64 characters (letters, numbers, spaces, dots, underscores, dashes), unique across all of Chirp. See [Pretend Sensors](pretend-sensors.md).
 3. Say **how often it reports**, and either tick **Use device preset** to borrow a real model's readings or add them yourself.
 
 Chirp then invents the readings for you, and an extra **Emulator** tab appears so you can push a value whenever you want to test something. This is how you get your dashboards and alerts working before the hardware arrives — and you can switch the same sensor over to the real one when it does. See [Pretend Sensors](pretend-sensors.md).

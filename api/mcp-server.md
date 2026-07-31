@@ -69,7 +69,7 @@ Once connected, your AI client can work across your home on your behalf. Here's 
 |---|---|
 | **Sensors** | List the sensors in your home, see their details, and add a new one for you — a LoRaWAN sensor or a tracker — picking from the available sensor profiles. |
 | **Switching things on** | See what a device is set up to do, do it, and check the device actually got the message — so *"turn on the lamp"* works from the app you're already in. |
-| **Pretend sensors** | Set up an emulated sensor, change what it reports, send a one-off reading to test an alert, and switch a device over to the real sensor when it arrives. |
+| **Pretend sensors** | Set up an emulated sensor, change what it reports, send a one-off reading to test an alert, and move a sensor between pretend and real. It can put any of your real sensors onto the emulator, and take a pretend one live onto a LoRaWAN connection. |
 | **Connections** | See how your home is connected and set up a new connection for a sensor. |
 | **Automations** | Go through the automations you've built and tell you what each one does. |
 | **Alerts** | Look at your alerts, summarize what's been triggering and how often, and send a test notification so you can check it lands on your phone. |

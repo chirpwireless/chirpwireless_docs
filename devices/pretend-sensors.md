@@ -20,7 +20,7 @@ That's the whole list. No sensor, no gateway, no identifiers off the back of a b
 
 Add a sensor as usual, then on its **Connection** tab choose **Emulator**. You will be asked for:
 
-* **Device ID** — any name you like, so you can tell your pretend sensors apart.
+* **Device ID** — a name of your own, so you can tell your pretend sensors apart. Up to 64 characters, using letters, numbers, spaces, dots, underscores and dashes. It has to be unique across all of Chirp — not just your home — so something like `garage-temp-01` will be accepted where `sensor1` may already be taken.
 * **How often it reports** — a number and a unit, like every 10 minutes. Match roughly what the real sensor will do, so your alerts behave realistically. Unlike a real sensor, this genuinely is the schedule — Chirp sends on it.
 * **Support commands** — switch this on if you want to practise turning the thing on and off, not just reading from it. See [Controlling Your Devices](commands/README.md).
 * **Use device preset** — the quick way. Pick a real sensor model and Chirp fills in the readings that model actually sends.
@@ -56,11 +56,17 @@ You can go the other way too, putting a real sensor back on the emulator for a m
 
 ## Copying one
 
-Duplicating a sensor brings its pretend settings along — the readings, their value types, and how often it reports. Set one room up nicely, copy it for the other five, and rename them. See [Sensor Details](sensor-details.md).
+Copying a sensor gets you part of the way, but not all of it — worth knowing before you set one up carefully and expect five free copies.
+
+The copy arrives with the original's name, its reading rows, its connection and its photos. What it does **not** bring is the pretend setup itself: the readings it invents, how often it reports, and whether it accepts commands all go back to their defaults. Until you set those up again, the copy sits there quietly and sends nothing.
+
+The mapping between raw fields and your data templates does not survive the save either, so redo that on the copy too.
+
+See [Sensor Details](sensor-details.md).
 
 ## Just ask the helper
 
-You do not have to do any of this by hand. Ask your [AI helper](../ai-assistant/README.md) to set up a pretend sensor and it will — choosing a model, creating the sensor, sending a reading to test an alert, and later switching it over to the real one.
+You do not have to do any of this by hand. Ask your [AI helper](../ai-assistant/README.md) to set up a pretend sensor and it will — choosing a model, creating the sensor, sending a reading to test an alert, and later taking it live onto your LoRaWAN connection. Asking the helper to switch a pretend sensor to a tracker or an MQTT sensor is the one part it cannot do for you; do that yourself on the Connection tab.
 
 > *"Make a pretend temperature sensor for the garage and send a reading of 2 degrees."*
 

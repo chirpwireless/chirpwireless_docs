@@ -28,7 +28,7 @@ Tell the helper about a new device and it walks the setup with you, step by step
 
 ## Make a pretend sensor
 
-Nothing arrived yet? Ask the helper for a pretend sensor and it makes one — picking a real sensor model so the readings match what you have on order, sending a test value so you can watch your alert fire, and switching the same sensor over to the real one when it finally turns up.
+Nothing arrived yet? Ask the helper for a pretend sensor and it makes one — picking a real sensor model so the readings match what you have on order, sending a test value so you can watch your alert fire, and taking the same sensor live onto your LoRaWAN connection when it finally turns up. It can move things the other way too — put one of your real sensors onto the emulator for a moment to test something.
 
 > *"Make a pretend temperature sensor for the garage and send a reading of 2 degrees."*
 
