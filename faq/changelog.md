@@ -45,7 +45,7 @@ Your helper could already answer anything about your home and set up automations
 
 That changes here. Ask what a device can do and it tells you; ask it to do one of those things and it does. Switch a lamp, flip a relay, change how often a sensor reports.
 
-It stays careful about it, which matters when something physical is about to happen in your house. It only does things your device is already set up to do — it does not invent new ones. It shows you what it is about to do and waits for you to say yes. And because a message to a sensor takes a moment and a sleeping device can miss one, it checks afterwards and tells you if it did not land, rather than just saying "done".
+It stays careful about it, which matters when something physical is about to happen in your house. It only does things your device is already set up to do — it does not invent new ones — and it works with the sensors connected to Chirp rather than gear that lives in someone else's app. (Bridge a Zigbee plug in over MQTT and it becomes an ordinary Chirp device the helper can switch.) It shows you what it is about to do and waits for you to say yes. And because a message to a sensor takes a moment and a sleeping device can miss one, it checks afterwards and tells you if it did not land, rather than just saying "done".
 
 If you have connected your own AI app to your home, it can do all of this too.
 

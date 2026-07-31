@@ -39,8 +39,11 @@ Ask what a device can do and it lists what that device is set up for; ask it to 
 Three things to know:
 
 * **It only does things your device is already set up to do.** Those actions live on the device itself (see [Device Commands](../devices/commands/)). The helper runs them; it doesn't make up new ones.
+* **It works with sensors connected to Chirp**, over LoRaWAN, MQTT or HTTP. It is not a universal smart-home remote: a Hue bulb or a Tuya plug that lives in its own app isn't controllable from here. Bridge that gear into Chirp over MQTT — with zigbee2mqtt, for example — and it becomes an ordinary Chirp device that the helper can switch like any other.
 * **It always asks first.** Something is about to physically happen in your house, so it shows you what it's about to do and waits for you to say yes.
 * **It tells you if it didn't work.** Messages to a device take a moment and a sleeping sensor might miss one, so it checks and reports back instead of just saying "done".
+
+<figure><img src="../.gitbook/assets/ai-chat-commands.jpg" alt="The Chirp helper explaining which devices it can switch on and which it cannot"><figcaption></figcaption></figure>
 
 You can still do all of this by hand, of course — the device's own page, or a [Control widget](../dashboards/adding-widgets/control-widget.md) on your dashboard for one-tap switching.
 

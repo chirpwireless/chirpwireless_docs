@@ -35,6 +35,8 @@ Tick **Use device preset** and choose a model, and you get its genuine set of re
 
 Worth knowing: picking a preset **replaces** anything you typed in by hand, including how often it reports. Choose the preset first, then adjust.
 
+<figure><img src="../.gitbook/assets/emulator-device-metrics.jpg" alt="A pretend sensor set up from a real model, listing its readings and their value types"><figcaption></figcaption></figure>
+
 ### Or type the readings yourself
 
 Use **Add device data key** and give each reading a name — `temperature`, `humidity`, whatever you like — and say what kind of value it is. Pick **Float** for anything with a decimal point. A whole-number reading will quietly drop the decimals: type 1.5 and you get 1.
@@ -45,6 +47,8 @@ Open the device's **Emulator** tab and you will see each reading with a box next
 
 * **Save** parks a value there. The sensor keeps reporting it, which is how you hold the basement at 85% humidity while you check your damp alert behaves.
 * **Send once** fires a single reading and goes back to normal. This is the one for "does my alert actually work?"
+
+<figure><img src="../.gitbook/assets/emulator-manual-value.jpg" alt="The Emulator tab with a temperature value typed in, ready to send"><figcaption></figcaption></figure>
 
 ## When the real sensor arrives
 
