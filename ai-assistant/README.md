@@ -23,12 +23,13 @@ Plenty of apps have a chat bubble that spits out canned answers. Chirp's helper 
 ## What it can do for you
 
 * **Answer anything about your home** — live readings, which sensors are online, yesterday's trends — and draw you a chart on the spot. See [Talking to Your Home](talking-to-your-home.md).
-* **Set things up for you** — add a sensor, build and switch on an automation, create an alert. See [Let the Helper Set It Up](let-ai-set-it-up.md).
+* **Set things up for you** — add a sensor, build and switch on an automation, create an alert, or stand up a pretend sensor to try things with before your hardware arrives. See [Let the Helper Set It Up](let-ai-set-it-up.md).
+* **Switch things on and off** — run a command on a device and check it arrived, after showing you what it's about to do. See [Ask It to Turn Things On](let-ai-set-it-up.md).
 * **Explain how Chirp works** — it searches the help guides and trusted smart-home know-how to walk you through anything. Built on [what it knows](what-it-knows.md).
 
 ## One thing to know
 
-The helper answers questions about your home and builds your automations for you. And automations can now do more than warn you — a rule can flip a switch on a device all by itself when something happens (see [When an Automation Runs a Command](../rules-engine/reference/automation-runs-a-command.md)). So *"if the basement gets damp, turn on the dehumidifier"* is something it can set up — not just *"tell me about it."* For flipping a switch yourself, right now, there's still [Device Commands](../devices/commands/) — on the device or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). And as always, before anything important it shows you what it'll do and waits for your OK.
+The helper can operate your home, not just describe it. Say *"turn on the lamp"* and it will — it runs the commands already set up on a device, and tells you whether the device actually got the message (see [Ask It to Turn Things On](let-ai-set-it-up.md)). Automations can do the same on their own: a rule can flip a switch when something happens (see [When an Automation Runs a Command](../rules-engine/reference/automation-runs-a-command.md)), so *"if the basement gets damp, turn on the dehumidifier"* is something it can both set up and do. You can still press the button yourself any time from [Device Commands](../devices/commands/) or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). And because switching something on is a real, physical thing to do, it always shows you what it's about to send and waits for your OK.
 
 It also keeps to the basics you'd expect: it only ever works with your home, never anyone else's, and it never touches passwords or billing. See [Your Privacy](your-privacy.md).
 

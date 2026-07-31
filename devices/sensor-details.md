@@ -14,7 +14,7 @@ There are several ways to open a sensor's details:
 - **From a connection** — Open your LNS connection's **Connected Devices** tab, or open your Tracker connection's sensor list, and click a sensor row.
 - **Edit button** — Click the pencil icon on any sensor row to jump straight into editing.
 
-## The four tabs
+## The tabs
 
 ### Device info
 
@@ -30,7 +30,7 @@ This tab shows how the sensor connects to Chirp and lets you adjust its profile.
 
 **For LoRaWAN sensors:**
 
-- **Connector type** — Shows which connection this sensor uses (LNS). You can switch to a different connection if needed.
+- **Connector type** — Shows which connection this sensor uses — LNS, Tracker, MQTT or Emulator. You can switch a [pretend sensor](pretend-sensors.md) over to the real connection here when your hardware arrives (and back again if you want to test something).
 - **Device EUI** — The unique identifier that links this profile to the physical sensor. This field is locked once set. If you need to change it (for example, if you're replacing a broken sensor with a new one), click the **detach** button (X icon) to unbind the physical sensor first. The profile and all its history are preserved.
 - **Device profile** — Switch between template-based and manual configuration. If you originally set up the sensor manually, you can switch to a template later (or vice versa).
 - **Data sending interval** — Where you tell Chirp how often this sensor sends. A sensor's sending schedule is set on the sensor itself and varies by brand — sometimes preconfigured by the manufacturer, sometimes set when you install it — so enter the schedule the sensor is actually on. A daily sensor → **1 day**, a monthly one → **1 month**. The field defaults to **1 hour**, but that's only a placeholder. If nothing arrives within the interval the sensor shows as offline; entering the right schedule keeps a healthy sensor from looking offline between reports. Pick a number and a unit (minute, hour, day, week, or month).

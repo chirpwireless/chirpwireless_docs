@@ -30,6 +30,7 @@ You'll see the **Commands & States** tab on devices that can be controlled:
 
 * **Smart home devices connected over MQTT** — most Zigbee devices (through Zigbee2MQTT), DIY ESP32 builds, Tasmota plugs, and similar.
 * **Class C LoRaWAN devices** — these listen all the time, so they're always ready to receive a command. (Battery-saving Class A LoRaWAN sensors only wake briefly, so they can't be controlled on demand.)
+* **Pretend sensors with Support commands switched on** — a [pretend sensor](../pretend-sensors.md) behaves like the real thing, so you can practise the whole business before the hardware turns up.
 
 Once a device has at least one command set up, it becomes *controllable* — and you can also drop it onto a dashboard as a [Control widget](../../dashboards/adding-widgets/control-widget.md).
 
@@ -37,18 +38,22 @@ Once a device has at least one command set up, it becomes *controllable* — and
 
 To control a device, you'll want:
 
-1. **A device that can receive commands** — connected over MQTT, or a Class C LoRaWAN device.
+1. **A device that can receive commands** — connected over MQTT, a Class C LoRaWAN device, or a [pretend sensor](../pretend-sensors.md) with commands switched on.
 2. **At least one command set up** — a brand-new device has no actions yet. Start with [Setting up a command](creating-commands.md).
 3. **Permission to control it** — managing and sending commands follows your home's sharing settings.
 4. **Sensible values** — if a command takes an input (like a brightness level), it has to be within the allowed range before Chirp will send it.
 
-## Three ways to control a device
+## Five ways to control a device
 
-Commands are the foundation, and you can run them from three places:
+Commands are the foundation, and you can run them from five places:
 
 * **On the device** — open it, go to **States**, and press a command.
 * **On a dashboard** — add a [Control widget](../../dashboards/adding-widgets/control-widget.md) so a light switch or button sits right next to your readings.
 * **From an automation** — the [Rules engine](../../rules-engine/) can now press a command for you, automatically, the moment something happens. The same command you'd tap yourself gets sent with nobody home — so a leak at 3 a.m. shuts the water off on its own. See [When an Automation Runs a Command](../../rules-engine/reference/automation-runs-a-command.md).
+* **By asking the helper** — say *"turn on the lamp"* and your [AI helper](../../ai-assistant/README.md) does it, after showing you what it's about to send and checking afterwards that the device got it. See [Ask It to Turn Things On](../../ai-assistant/let-ai-set-it-up.md).
+* **From your own AI app** — connect ChatGPT, Claude or anything else that speaks MCP and ask it the same thing from wherever you already work. See [Your Own AI App](../../api/mcp-server.md).
+
+All five end up in the same place: the commands you set up here, sent the same way, logged the same way.
 
 Alerts still have their place alongside all three: an automation can act *and* tell you about it — shut the water off **and** send you a heads-up — so the problem's handled and you're never left in the dark.
 

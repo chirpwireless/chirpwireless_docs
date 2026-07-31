@@ -17,7 +17,7 @@ Most homes need just one connection: an **LNS connection** for LoRaWAN sensors. 
 | **MQTT** | Direct MQTT sensor connections — including Zigbee devices via Zigbee2MQTT, DIY sensors, and other MQTT-capable hardware. Two options: **External MQTT** (your own broker, up to 10 per home) and **Cloud MQTT** (Chirp-hosted broker, unlimited) | Available |
 | **Emulator** | Pretend sensors that make up their own readings, so you can set up and try your whole home before the real ones arrive — then switch the device over to the real sensor when it does | Available |
 
-Your home can have **one LNS connection** and **one Tracker connection**. MQTT connections can be External (up to 10 per home) or Cloud MQTT (unlimited — each gets its own hosted broker credentials).
+Your home can have **one LNS connection**, **one Tracker connection** and **one Emulator connection**. MQTT connections can be External (up to 10 per home) or Cloud MQTT (unlimited — each gets its own hosted broker credentials).
 
 ## Where to find connections
 
@@ -35,6 +35,8 @@ Once you have connections, the page shows a table with:
 ## What's next
 
 Ready to set up your first connection? Head to [Setting Up a Connection](setting-up-a-connection.md) for a step-by-step walkthrough.
+
+Nothing arrived yet? The [Emulator Connector](emulator-connector.md) gives you pretend sensors that invent their own readings, so you can build and test your whole home before the real ones turn up.
 
 Want to learn more about LoRaWAN — the wireless technology behind your sensors? See the [LNS Connector](lns-connector/README.md) section for an introduction to the protocol, frequency bands by country, and how Chirp's built-in network server works.
 

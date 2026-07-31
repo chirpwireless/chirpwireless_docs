@@ -1,10 +1,10 @@
 ---
-description: Create an LNS connection for LoRaWAN sensors or a Tracker connection for your vehicle, in a few clicks.
+description: Create an LNS connection for LoRaWAN sensors, a Tracker connection for your vehicle, or an Emulator connection to start with no hardware.
 ---
 
 # Setting Up a Connection
 
-Creating a connection takes just a few clicks. Here's how to set up an LNS connection (for LoRaWAN sensors) and a Tracker connection (for vehicle trackers).
+Creating a connection takes just a few clicks. Here's how to set up an LNS connection (for LoRaWAN sensors), a Tracker connection (for vehicle trackers), and an Emulator connection (for trying Chirp before your sensors arrive).
 
 ## Adding an LNS connection
 
@@ -35,9 +35,22 @@ If you want to track a vehicle, add a Tracker connection alongside your LNS conn
 
 The Tracker connection is created instantly. Click its row to see the shared sensor list. For registration and management, see [Adding Sensors](../devices/adding-sensors.md) and [Sensor Details](../devices/sensor-details.md). For what this connector is (and isn't) for — cellular/GSM vehicle trackers, not LoRaWAN ones — see the [Tracker Connector](tracker-connector.md) page.
 
-## One of each
+## Adding an Emulator connection
 
-Each home can have one LNS connection and one Tracker connection. Once both exist, the **Add connector** button becomes unavailable. If you need to start fresh, you can remove a connection by clicking the red trash icon on its row in the connection table (a confirmation dialog will appear before anything is deleted).
+No sensors yet? Add an **Emulator** connection and Chirp will make up the readings for you, so you can build your dashboards and alerts before anything arrives in the post.
+
+1. Click **Connectors** in the sidebar.
+2. Click **Add connector**.
+3. Select **Emulator** from the **Connector type** dropdown.
+4. Click **Add**.
+
+There is nothing to fill in — no account to link, no keys to copy. See [Emulator Connector](emulator-connector.md) for what it's for, and [Pretend Sensors](../devices/pretend-sensors.md) for making one.
+
+## How many of each
+
+Each home can have **one LNS connection**, **one Tracker connection** and **one Emulator connection**. MQTT is the exception: up to 10 External MQTT connections, and as many Cloud MQTT connections as you like.
+
+Once you already have every kind you can add, the **Add connector** button stops offering new ones. If you need to start fresh, remove a connection by clicking the red trash icon on its row in the connection table (a confirmation dialog appears before anything is deleted).
 
 ## Next step
 

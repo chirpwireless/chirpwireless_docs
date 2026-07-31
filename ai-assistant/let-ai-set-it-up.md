@@ -26,6 +26,14 @@ The helper builds the automation, tries it against an example that *should* trig
 
 Tell the helper about a new device and it walks the setup with you, step by step, asking for whatever it needs along the way. For many devices that's all it takes to get readings flowing — and it'll check that data is actually arriving so you're not left wondering.
 
+## Make a pretend sensor
+
+Nothing arrived yet? Ask the helper for a pretend sensor and it makes one — picking a real sensor model so the readings match what you have on order, sending a test value so you can watch your alert fire, and switching the same sensor over to the real one when it finally turns up.
+
+> *"Make a pretend temperature sensor for the garage and send a reading of 2 degrees."*
+
+See [Pretend Sensors](../devices/pretend-sensors.md).
+
 ## Set up an alert
 
 Ask for an alert and the helper creates it — who to notify, how, and what triggers it — so you find out the moment something needs attention. It can also mark an alert as resolved once you tell it the situation's handled (with a quick confirmation first).

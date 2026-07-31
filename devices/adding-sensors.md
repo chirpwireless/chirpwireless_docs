@@ -9,8 +9,8 @@ Every sensor you add to Chirp gets its own profile — a record that remembers t
 ## Before you start
 
 You'll need:
-- **A connection** set up — an LNS connection for LoRaWAN sensors, a Tracker connection for vehicle trackers, or an MQTT connector (Cloud or External) for Zigbee2MQTT and other MQTT-publishing hardware. See [Setting Up a Connection](../connectors/setting-up-a-connection.md) and the [MQTT Connector](../connectors/mqtt-connector.md) docs.
-- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it byte-for-byte (no whitespace).
+- **A connection** set up — an LNS connection for LoRaWAN sensors, a Tracker connection for vehicle trackers, an MQTT connector (Cloud or External) for Zigbee2MQTT and other MQTT-publishing hardware, or an Emulator connection if your sensor hasn't arrived yet. See [Setting Up a Connection](../connectors/setting-up-a-connection.md) and the [MQTT Connector](../connectors/mqtt-connector.md) docs.
+- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it byte-for-byte (no whitespace). A [pretend sensor](pretend-sensors.md) needs none of this — you make the name up.
 - **For MQTT sensors only — the device must be publishing before you can finish mapping.** The Connector key dropdown in the Mapping tab is populated from payload keys actually received from the device. See the [MQTT-specific note](#a-note-for-mqtt-sensors) further down for the two-pass save flow.
 
 ## Where to add a sensor
@@ -31,11 +31,11 @@ Enter a name for your sensor and click **Save**. The profile is created and the 
 
 ## Step 2 — Configure the connection and details
 
-After the first save, the dialog reopens with four tabs — **Device info**, **Connection**, **Metrics**, and **Logs** — and a **Next** button for navigating between them.
+After the first save, the dialog reopens with **Device info**, **Connection**, **Metrics** and **Logs** tabs, and a **Next** button for navigating between them. Two more appear when they apply: **Commands & States** on a device you can switch on and off, and **Emulator** on a pretend sensor.
 
 ### Connection
 
-Click the **Connection** tab to link your sensor to a physical device.
+Click the **Connection** tab to link your sensor to the thing that feeds it.
 
 **For LoRaWAN sensors (LNS connection):**
 
@@ -85,12 +85,28 @@ If nothing arrives within the interval, the sensor shows as offline in your sens
 
 Pick a number and a unit: **minute**, **hour**, **day**, **week**, or **month**.
 
+A [pretend sensor](pretend-sensors.md) is the exception: there is no hardware keeping a schedule, so this field *is* the schedule — Chirp sends on it.
+
 **For vehicle trackers (Tracker connection):**
 
 1. Select your **Tracker** connection from the **Connector type** dropdown.
 2. Enter the **Unique ID** for your tracker.
 3. Select a **Device model** by searching the tracker library.
 4. A **Url for GPS tracker** panel appears — copy this URL and configure your tracker to send data to it.
+
+**For MQTT sensors (Cloud or External MQTT):**
+
+1. Select your **MQTT** connection from the **Connector type** dropdown.
+2. Enter the **Device ID** — the device-level part of the topic your sensor publishes under. For Zigbee2MQTT that's the friendly name, and it has to match byte-for-byte.
+3. Save, and let the sensor publish at least once before you map its readings — see [A note for MQTT sensors](#a-note-for-mqtt-sensors) below.
+
+**For pretend sensors (Emulator connection):**
+
+1. Select your **Emulator** connection from the **Connector type** dropdown.
+2. Make up a **Device ID** — anything that helps you tell your pretend sensors apart.
+3. Say **how often it reports**, and either tick **Use device preset** to borrow a real model's readings or add them yourself.
+
+Chirp then invents the readings for you, and an extra **Emulator** tab appears so you can push a value whenever you want to test something. This is how you get your dashboards and alerts working before the hardware arrives — and you can switch the same sensor over to the real one when it does. See [Pretend Sensors](pretend-sensors.md).
 
 ### Metrics
 

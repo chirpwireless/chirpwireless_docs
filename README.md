@@ -18,6 +18,8 @@ The best part of Chirp is that you don't have to be technical to use it. A built
 
 And it doesn't stop at answers. Ask it to *do* something — "add my new leak sensor", "alert me if the basement gets damp", "let me know if a door opens after midnight" — and it sets it up for you, writing the automation, testing it, and switching it on. It can also work the house itself: *"turn on the lamp"* now turns on the lamp. Before anything important or permanent, it asks you to confirm, so you're always in charge. It's like having a smart-home installer on call, who happens to live inside the app. See [Your Home AI Helper](ai-assistant/).
 
+You don't even need the hardware to start. Chirp can make up **pretend sensors** that invent their own readings, so you can build your dashboards and test your alerts while your real ones are still in the post — then point the same sensor at the real thing when it arrives and keep everything you set up. See [Pretend Sensors](devices/pretend-sensors.md).
+
 This is what people mean by **AIoT** — artificial intelligence built right into your connected home, not a chatbot stuck on the side. The helper keeps getting better the more it's used, and the engine behind it is something we built ourselves and were proud enough of to share openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew).
 
 ### Connect any manufacturer, one platform

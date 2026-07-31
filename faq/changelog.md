@@ -51,17 +51,29 @@ That changes here, and it's the biggest thing we've shipped for the helper yet. 
 
 It stays careful about it, which matters when something physical is about to happen in your house. It only does things your device is already set up to do — it does not invent new ones — and it works with the sensors connected to Chirp rather than gear that lives in someone else's app. (Bridge a Zigbee plug in over MQTT and it becomes an ordinary Chirp device the helper can switch.) It shows you what it is about to do and waits for you to say yes. And because a message to a sensor takes a moment and a sleeping device can miss one, it checks afterwards and tells you if it did not land, rather than just saying "done".
 
-And it isn't only the helper inside Chirp. Connect the AI app you already use — **ChatGPT**, **Claude**, or anything else that speaks MCP — and it can do exactly the same, with the same confirmation step, from wherever you already work.
-
 <figure><img src="../.gitbook/assets/ai-chat-commands.jpg" alt="The Chirp helper explaining what it can switch on and what it cannot"><figcaption></figcaption></figure>
 
-[→ Ask it to turn things on](../ai-assistant/let-ai-set-it-up.md) · [→ Your own AI app](../api/mcp-server.md)
+[→ Ask it to turn things on](../ai-assistant/let-ai-set-it-up.md)
 
 ***
 
-**A note that tells you what's new**
+**Control your home from ChatGPT or Claude**
 
-Small things ship all the time and most of them go unnoticed. There is now a **What's New** panel in the app that walks you through what changed — so a release like this one does not pass you by.
+And it isn't only the helper inside Chirp. Connect the AI app you already use — **ChatGPT**, **Claude**, or anything else that speaks MCP — sign in with your usual Chirp account, and it can switch things in your house too.
+
+Same rules apply: only the things your devices are already set up to do, the same confirmation before anything happens, and the same check afterwards that the device actually got the message. The difference is where you are standing when you ask.
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.8.0.jpg" alt="Chirp 3.8.0 — control your home from the AI app you already use"><figcaption></figcaption></figure>
+
+[→ Your own AI app](../api/mcp-server.md)
+
+***
+
+**What's New in the app**
+
+Small things ship all the time and most of them go unnoticed. There is now a **What's New** panel in the app that walks you through what changed, one card at a time — so a release like this one does not pass you by.
+
+<figure><img src="../.gitbook/assets/whats-new-panel.jpg" alt="The What's New panel in Chirp, listing the 3.8.0 changes with a card open beside them"><figcaption></figcaption></figure>
 
 ***
 

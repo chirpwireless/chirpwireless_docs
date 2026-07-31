@@ -18,58 +18,17 @@ The Emulator fixes that. It gives you **pretend sensors that invent their own re
 
 ## Setting it up
 
-Go to **Connectors → Add connector** and pick **Emulator**. That's it — there is nothing to fill in, no account to link, no code to copy.
+Go to **Connectors → Add connector** and pick **Emulator**. That's it — there is nothing to fill in, no account to link, no code to copy. One per home.
 
-## Creating a pretend sensor
+## Then make a pretend sensor
 
-Add a device as usual, then on its **Connection** tab choose **Emulator**. You will be asked for:
+Everything else happens on the sensor itself, not here. Once the connection exists you add a sensor, point it at the Emulator, choose what it measures, and drive its readings from its own **Emulator** tab.
 
-* **Device ID** — any name you like, so you can tell your pretend sensors apart.
-* **How often it reports** — a number and a unit, like every 10 minutes. Match roughly what the real sensor will do, so your alerts behave realistically.
-* **Support commands** — switch this on if you want to practise turning the thing on and off, not just reading from it.
-* **Use device preset** — the quick way. Pick a real sensor model and Chirp fills in the readings that model actually sends.
-
-### Starting from a real sensor model
-
-Tick **Use device preset** and pick from the list of real sensor models, and you get that model's genuine set of readings — a multi-sensor gives you temperature, humidity, CO2 and air quality, each with the right kind of value. It saves typing, and it means the names on your dashboard are the ones the real sensor will use when it arrives.
-
-Worth knowing: picking a preset **replaces** anything you typed in by hand, including how often it reports. Choose the preset first, then adjust.
-
-<figure><img src="../.gitbook/assets/emulator-device-metrics.jpg" alt="A pretend sensor set up from a real model, listing its readings and their value types"><figcaption></figcaption></figure>
-
-### Or type the readings yourself
-
-Use **Add device data key** and give each reading a name — `temperature`, `humidity`, whatever you like — and say what kind of value it is. Pick **Float** for anything with a decimal point. A whole-number reading will quietly drop the decimals: type 1.5 and you get 1.
-
-## Making it send something
-
-Open the device's **Emulator** tab and you will see each reading with a box next to it:
-
-* **Save** parks a value there. The sensor keeps reporting it, which is how you hold the basement at 85% humidity while you check your damp alert behaves.
-* **Send once** fires a single reading and goes back to normal. This is the one for "does my alert actually work?"
-
-<figure><img src="../.gitbook/assets/emulator-manual-value.jpg" alt="The Emulator tab with a temperature value typed in, ready to send"><figcaption></figcaption></figure>
-
-## When the real sensor arrives
-
-Open the device, go to its **Connection** tab, and change it from **Emulator** to the real connection — then enter the details that came with the sensor.
-
-Everything else stays exactly as you left it: the dashboard, the widgets, the alerts, who gets told. You are swapping out where the numbers come from, nothing else. Your Thursday delivery becomes a five-minute job instead of an evening.
-
-You can go the other way too, putting a real sensor back on the emulator for a moment if you want to test something without waiting for the house to cooperate.
-
-## Copying a pretend sensor
-
-Duplicating a device brings its emulator settings along. Set one room up nicely, copy it for the other five, and rename them.
-
-## Just ask the helper
-
-You do not have to do any of this by hand. Ask your [AI helper](../ai-assistant/) to set up a pretend sensor and it will — choosing a model, creating the device, sending a reading to test an alert, and later switching it over to the real sensor.
-
-> *"Make a pretend temperature sensor for the garage and send a reading of 2 degrees."*
+**See [Pretend Sensors](../devices/pretend-sensors.md)** for the whole thing: making one, picking a real sensor model, sending a reading to test an alert, and switching it over to the real sensor when it turns up.
 
 ## See also
 
+* [Pretend Sensors](../devices/pretend-sensors.md) — make one, and make it send something
 * [Adding Sensors](../devices/adding-sensors.md) — the normal way, once your hardware is here
-* [Rules Engine](../rules-engine/) — the automations you can now build early
-* [Alarms](../alarm/) — and the alerts you can finally test properly
+* [Rules Engine](../rules-engine/README.md) — the automations you can now build early
+* [Alarms](../alarm/README.md) — and the alerts you can finally test properly
