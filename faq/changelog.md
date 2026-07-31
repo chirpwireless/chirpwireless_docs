@@ -10,15 +10,15 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.8.0.jpg" alt="Chirp 3.8.0 release banner"><figcaption></figcaption></figure>
 
-3.8.0 is about not having to wait. Waiting for the sensor to arrive before you can set anything up — that's gone: **pretend sensors** let you build your dashboards and your alerts now, test that they actually go off, and then swap in the real thing when the parcel lands. And the bit people have been asking for since the helper arrived: say *"turn on the lamp"* and it **turns on the lamp**. Your helper can work the house now, not just watch it. There's also a **What's New** note in the app so you stop missing things like this. [app.chirpwireless.io](https://app.chirpwireless.io)
+3.8.0 is the one where your home starts doing things, not just telling you about them. Waiting for the sensor to arrive before you can set anything up — that's gone: **pretend sensors** let you build your dashboards and your alerts now, test that they actually go off, and then swap in the real thing when the parcel lands. And the bit people have been asking for since the helper arrived: say *"turn on the lamp"* and it **turns on the lamp**. Your helper can work the house now, not just watch it. There's also a **What's New** note in the app so you stop missing things like this. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
 * **Pretend sensors** — Set up your home before the hardware arrives. Make up readings, watch your alerts fire, then point the same device at the real sensor when it turns up and keep everything.
-* **The helper can switch things on** — Ask it to turn on a lamp, flip a relay, or change how often a sensor reports. It shows you what it's about to do, asks first, and tells you whether the device got it.
-* **Your own AI app can too** — The same goes for Claude, ChatGPT or whatever you've connected to your home.
+* **The helper can switch things on** — *"Turn on the lamp"* now turns on the lamp. Ask it to flip a relay or change how often a sensor reports, and it does — showing you what it's about to do, asking first, then telling you whether the device got it.
+* **Control your home from ChatGPT or Claude** — Connect the AI app you already use and it can switch things in your house too, with the same confirmation before anything happens.
 * **The helper sets up pretend sensors as well** — Ask for one and it builds it, sends a test reading, and switches it to the real sensor later.
 * **What's New in the app** — A note that tells you what changed, so a release doesn't quietly pass you by.
 * **Smoothing things out** — Your plan dates read correctly, adding a widget stops shoving your other widgets around, long addresses don't run off the screen on your phone, and a handful of labels finally say what they mean.
@@ -47,11 +47,11 @@ Then Thursday comes, the sensor arrives, and you open the same device and switch
 
 Your helper could already answer anything about your home and set up automations for you. What it could not do was actually *do* anything, which is a strange thing to explain to someone standing in their kitchen.
 
-That changes here. Ask what a device can do and it tells you; ask it to do one of those things and it does. Switch a lamp, flip a relay, change how often a sensor reports.
+That changes here, and it's the biggest thing we've shipped for the helper yet. Ask what a device can do and it tells you; ask it to do one of those things and it does it. Switch a lamp, flip a relay, change how often a sensor reports — by asking.
 
 It stays careful about it, which matters when something physical is about to happen in your house. It only does things your device is already set up to do — it does not invent new ones — and it works with the sensors connected to Chirp rather than gear that lives in someone else's app. (Bridge a Zigbee plug in over MQTT and it becomes an ordinary Chirp device the helper can switch.) It shows you what it is about to do and waits for you to say yes. And because a message to a sensor takes a moment and a sleeping device can miss one, it checks afterwards and tells you if it did not land, rather than just saying "done".
 
-If you have connected your own AI app to your home, it can do all of this too.
+And it isn't only the helper inside Chirp. Connect the AI app you already use — **ChatGPT**, **Claude**, or anything else that speaks MCP — and it can do exactly the same, with the same confirmation step, from wherever you already work.
 
 <figure><img src="../.gitbook/assets/ai-chat-commands.jpg" alt="The Chirp helper explaining what it can switch on and what it cannot"><figcaption></figcaption></figure>
 
