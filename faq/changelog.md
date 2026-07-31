@@ -10,7 +10,7 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.8.0.jpg" alt="Chirp 3.8.0 release banner"><figcaption></figcaption></figure>
 
-3.8.0 is the one where your home starts doing things, not just telling you about them. Waiting for the sensor to arrive before you can set anything up — that's gone: **pretend sensors** let you build your dashboards and your alerts now, test that they actually go off, and then swap in the real thing when the parcel lands. And the bit people have been asking for since the helper arrived: say *"turn on the lamp"* and it **turns on the lamp**. Your helper can work the house now, not just watch it. There's also a **What's New** note in the app so you stop missing things like this. [app.chirpwireless.io](https://app.chirpwireless.io)
+Three big ones in 3.8.0. **First, you don't have to wait for the parcel** — **pretend sensors** let you build your dashboards and your alerts today, test that they really go off, and swap in the real sensor when it lands. **Second, the bit people have asked for since the helper arrived**: say *"turn on the lamp"* and it **turns on the lamp**. Your helper works the house now, it doesn't just watch it. **And third — the one we're most excited about — connect ChatGPT or Claude and they can switch things on too.** The AI app you already use, controlling your actual home, asking you first every time. There's also a **What's New** note in the app so you stop missing things like this. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
