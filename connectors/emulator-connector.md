@@ -31,7 +31,7 @@ Add a device as usual, then on its **Connection** tab choose **Emulator**. You w
 
 ### Starting from a real sensor model
 
-Tick **Use device preset** and choose a model, and you get its genuine set of readings — a multi-sensor gives you temperature, humidity, CO2 and air quality, each with the right kind of value. It saves typing, and it means the names on your dashboard are the ones the real sensor will use when it arrives.
+Tick **Use device preset** and pick from the list of real sensor models, and you get that model's genuine set of readings — a multi-sensor gives you temperature, humidity, CO2 and air quality, each with the right kind of value. It saves typing, and it means the names on your dashboard are the ones the real sensor will use when it arrives.
 
 Worth knowing: picking a preset **replaces** anything you typed in by hand, including how often it reports. Choose the preset first, then adjust.
 
