@@ -33,7 +33,11 @@ Now you can add a **pretend sensor**: pick the model you have ordered and it wil
 
 The best part is testing an alert honestly. You want to know the damp alert really lands on your phone at 2am? You do not need to leave a tap running. Park the humidity at 85%, or fire a single reading, and watch what happens.
 
+<figure><img src="../.gitbook/assets/emulator-manual-value.jpg" alt="Typing a value on the Emulator tab to test an alert"><figcaption></figcaption></figure>
+
 Then Thursday comes, the sensor arrives, and you open the same device and switch it from pretend to real. The dashboard, the alerts, who gets told — all still there. It takes five minutes instead of an evening.
+
+<figure><img src="../.gitbook/assets/emulator-device-metrics.jpg" alt="A pretend sensor set up from a real model, showing the readings it will send"><figcaption></figcaption></figure>
 
 [→ Pretend sensors](../connectors/emulator-connector.md)
 
@@ -49,6 +53,8 @@ It stays careful about it, which matters when something physical is about to hap
 
 If you have connected your own AI app to your home, it can do all of this too.
 
+<figure><img src="../.gitbook/assets/ai-chat-commands.jpg" alt="The Chirp helper explaining what it can switch on and what it cannot"><figcaption></figcaption></figure>
+
 [→ Ask it to turn things on](../ai-assistant/let-ai-set-it-up.md) · [→ Your own AI app](../api/mcp-server.md)
 
 ***
@@ -62,6 +68,8 @@ Small things ship all the time and most of them go unnoticed. There is now a **W
 **Smoothing things out**
 
 Your subscription now shows the right dates for the current period. Adding a widget no longer nudges the widgets you had already arranged. On a phone, a long address no longer runs off the edge and hides the delete button. The label box on an alert threshold is wide enough to actually read what you typed, and the tooltip on sensor mapping now says what it means. Plus the usual round of quieter fixes underneath.
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.8.0.jpg" alt="Chirp 3.8.0"><figcaption></figcaption></figure>
 
 </details>
 
