@@ -20,7 +20,7 @@ Chirp offers three paid plans alongside a free starter tier, plus a Business opt
 | **Max** | €19.99 / month |
 | **Business** | Contact sales |
 
-**If you're just getting started:** The free tier lets you connect a limited number of devices and explore the platform without entering payment details. When you're ready for more, pick a plan and tap **Upgrade Plan** — you go straight to a secure checkout page to finish, with no extra confirmation step in between. Your new plan's limits apply as soon as it's active.
+**If you're just getting started:** The Chirp-tenant Free plan includes **2 devices, 1 rule, 1 dashboard, unlimited gateways, push and email notifications, and 1 day of device-log retention** without entering payment details. A gateway does not consume either device slot. When you're ready for more, pick a plan and tap **Upgrade Plan** — you go straight to a secure checkout page to finish, with no extra confirmation step in between. Your new plan's limits apply as soon as it's active.
 
 **If you already have a plan:** Your current plan is highlighted in the comparison. To switch, tap a different tier and you're taken straight to checkout. To manage billing details, download invoices, or cancel, tap **Manage my subscription** — this opens your billing portal where all payment management happens.
 
@@ -41,7 +41,7 @@ Your plan sets how many of certain things you can have at once — and dashboard
 
 ## Growing beyond the home plans
 
-If you're connecting devices across multiple locations, managing sensors on behalf of others, or running a commercial installation, the home plans may no longer be the right fit. In that case, the next step is **Kilo IoT Server** — a platform built for commercial and multi-site deployments, with higher device limits, multi-organisation support, and features designed for operational teams.
+Multiple personally operated homes and rentals can remain in Chirp. The route to Kilo is based on the operating model rather than an arbitrary property count. If you are a brokerage or property-management company, manage commercial client portfolios, require staff roles and collaboration, or run a commercial installation, the next step is **Kilo IoT Server** — a platform built for operational teams, commercial deployments, and multi-organisation requirements.
 
 The **Business** plan card in Chirp includes a **Switch to Kilo** option. Tapping it takes you to Kilo IoT Server, where you can start a deployment at a scale suited to your needs. There is no automatic migration of your existing data — Kilo is a separate platform with its own account.
 
