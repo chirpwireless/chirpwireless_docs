@@ -52,6 +52,7 @@
     * [Built-in Network Server](connectors/lns-connector/built-in-lns.md)
   * [Tracker Connector](connectors/tracker-connector.md)
   * [MQTT Connector](connectors/mqtt-connector.md)
+  * [Emulator Connector](connectors/emulator-connector.md)
     * [What MQTT is](connectors/mqtt/what-is-mqtt.md)
     * [Cloud MQTT](connectors/mqtt/cloud-mqtt.md)
     * [External MQTT](connectors/mqtt/external-mqtt.md)

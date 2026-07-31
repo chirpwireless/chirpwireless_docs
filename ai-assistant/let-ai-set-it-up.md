@@ -30,9 +30,19 @@ Tell the helper about a new device and it walks the setup with you, step by step
 
 Ask for an alert and the helper creates it — who to notify, how, and what triggers it — so you find out the moment something needs attention. It can also mark an alert as resolved once you tell it the situation's handled (with a quick confirmation first).
 
-## The one thing it hands off
+## Ask it to turn things on
 
-The helper sets up the *automations* that watch your home and alert you, but it doesn't operate your devices — and those automations send alerts, not commands. If you want to turn a light on right now, dim it, or change its color this instant, that's [Device Commands](../devices/commands/) — and the easiest way is a [Control widget](../dashboards/adding-widgets/control-widget.md) on your dashboard. Ask the helper to "turn on the lamp" and it'll point you to that, and happily set up any alerting around it.
+Say *"turn on the lamp"* and it will. The helper can now operate the things in your home, not just watch them.
+
+Ask what a device can do and it lists what that device is set up for; ask it to do one of those things and it does it, then tells you whether the device actually got the message. Switch a lamp or a relay, change how often a sensor reports, adjust a setting — if it is set up on the device, the helper can run it.
+
+Three things to know:
+
+* **It only does things your device is already set up to do.** Those actions live on the device itself (see [Device Commands](../devices/commands/)). The helper runs them; it doesn't make up new ones.
+* **It always asks first.** Something is about to physically happen in your house, so it shows you what it's about to do and waits for you to say yes.
+* **It tells you if it didn't work.** Messages to a device take a moment and a sleeping sensor might miss one, so it checks and reports back instead of just saying "done".
+
+You can still do all of this by hand, of course — the device's own page, or a [Control widget](../dashboards/adding-widgets/control-widget.md) on your dashboard for one-tap switching.
 
 ## Getting good results
 

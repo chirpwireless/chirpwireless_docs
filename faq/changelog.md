@@ -6,6 +6,67 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <details>
 
+<summary>Flight Log. Release 3.8.0</summary>
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.8.0.jpg" alt="Chirp 3.8.0 release banner"><figcaption></figcaption></figure>
+
+3.8.0 is about not having to wait. Waiting for the sensor to arrive before you can set anything up — that's gone: **pretend sensors** let you build your dashboards and your alerts now, test that they actually go off, and then swap in the real thing when the parcel lands. And the bit people have been asking for since the helper arrived: say *"turn on the lamp"* and it **turns on the lamp**. Your helper can work the house now, not just watch it. There's also a **What's New** note in the app so you stop missing things like this. [app.chirpwireless.io](https://app.chirpwireless.io)
+
+***
+
+#### What's in This Release
+
+* **Pretend sensors** — Set up your home before the hardware arrives. Make up readings, watch your alerts fire, then point the same device at the real sensor when it turns up and keep everything.
+* **The helper can switch things on** — Ask it to turn on a lamp, flip a relay, or change how often a sensor reports. It shows you what it's about to do, asks first, and tells you whether the device got it.
+* **Your own AI app can too** — The same goes for Claude, ChatGPT or whatever you've connected to your home.
+* **The helper sets up pretend sensors as well** — Ask for one and it builds it, sends a test reading, and switches it to the real sensor later.
+* **What's New in the app** — A note that tells you what changed, so a release doesn't quietly pass you by.
+* **Smoothing things out** — Your plan dates read correctly, adding a widget stops shoving your other widgets around, long addresses don't run off the screen on your phone, and a handful of labels finally say what they mean.
+
+***
+
+**Set your home up before the sensors get here**
+
+Ordering a sensor used to mean a few days of nothing. You could not lay out a dashboard because there was nothing to put on it, and you certainly could not check your alert worked.
+
+Now you can add a **pretend sensor**: pick the model you have ordered and it will make up believable readings all by itself, on whatever schedule you choose. Your dashboard fills in, your automations run, and your alerts go off — all before the box arrives.
+
+The best part is testing an alert honestly. You want to know the damp alert really lands on your phone at 2am? You do not need to leave a tap running. Park the humidity at 85%, or fire a single reading, and watch what happens.
+
+Then Thursday comes, the sensor arrives, and you open the same device and switch it from pretend to real. The dashboard, the alerts, who gets told — all still there. It takes five minutes instead of an evening.
+
+[→ Pretend sensors](../connectors/emulator-connector.md)
+
+***
+
+**"Turn on the lamp" — and it turns on the lamp**
+
+Your helper could already answer anything about your home and set up automations for you. What it could not do was actually *do* anything, which is a strange thing to explain to someone standing in their kitchen.
+
+That changes here. Ask what a device can do and it tells you; ask it to do one of those things and it does. Switch a lamp, flip a relay, change how often a sensor reports.
+
+It stays careful about it, which matters when something physical is about to happen in your house. It only does things your device is already set up to do — it does not invent new ones. It shows you what it is about to do and waits for you to say yes. And because a message to a sensor takes a moment and a sleeping device can miss one, it checks afterwards and tells you if it did not land, rather than just saying "done".
+
+If you have connected your own AI app to your home, it can do all of this too.
+
+[→ Ask it to turn things on](../ai-assistant/let-ai-set-it-up.md) · [→ Your own AI app](../api/mcp-server.md)
+
+***
+
+**A note that tells you what's new**
+
+Small things ship all the time and most of them go unnoticed. There is now a **What's New** panel in the app that walks you through what changed — so a release like this one does not pass you by.
+
+***
+
+**Smoothing things out**
+
+Your subscription now shows the right dates for the current period. Adding a widget no longer nudges the widgets you had already arranged. On a phone, a long address no longer runs off the edge and hides the delete button. The label box on an alert threshold is wide enough to actually read what you typed, and the tooltip on sensor mapping now says what it means. Plus the usual round of quieter fixes underneath.
+
+</details>
+
+<details>
+
 <summary>Flight Log. Release 3.7.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.7.0.jpg" alt="Chirp 3.7.0 release banner"><figcaption></figcaption></figure>
