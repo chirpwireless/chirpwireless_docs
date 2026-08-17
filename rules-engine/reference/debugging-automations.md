@@ -103,7 +103,7 @@ Some nodes don't just shuffle data around — they actually *do* something, like
 * **Skip — variables unchanged.** The action is skipped and the variables are left alone.
 * **Mock — provide a mock response.** You supply a pretend response as JSON and the automation carries on as if the action had returned it. It needs to be valid JSON — if it isn't, the mock just isn't used.
 
-This is what lets you test an automation that sends alerts without actually buzzing everyone's phone. Choose **Skip** or **Mock** while you're working on the logic, and **Execute** only when you want to check that the real notification goes out.
+**Execute is already ticked when the box opens**, so change it before you hit Apply if you'd rather nothing really happened. This is what lets you test an automation that sends alerts without actually buzzing everyone's phone. Choose **Skip** or **Mock** while you're working on the logic, and **Execute** only when you want to check that the real notification goes out.
 
 Two things happen after you answer:
 
