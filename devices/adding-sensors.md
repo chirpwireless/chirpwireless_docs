@@ -116,6 +116,8 @@ Click the **Metrics** tab to map your sensor's raw data to measurement definitio
 
 Once your sensor is connected and transmitting, the Metrics tab shows a live view of the raw data — a table listing every field your sensor sends, its current value, and when it last updated. You see exactly what's coming in, with the actual field names the sensor uses (like `t`, `hum`, `battery_mv`, or whatever the manufacturer chose).
 
+Come back to this table any time you need to know what a device reports and how it words it — writing an automation condition, or setting up a check on a command. See [What Your Device Is Sending](what-your-device-is-sending.md).
+
 #### Map raw fields to your data templates
 
 This is where cryptic sensor output becomes something you can actually read. When you map a raw field like `t` to a data template called "Temperature" with the unit °C, Chirp starts displaying that reading as "Temperature (°C)" everywhere — in dashboards, automations, alerts, and history charts. You're giving each raw field a proper name, unit, and format.

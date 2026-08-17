@@ -135,6 +135,18 @@ Flows can be **reordered by dragging** — this changes the evaluation order. If
 
 Always include a default flow so your automation has somewhere to go even when readings are normal.
 
+The default flow covers "none of these matched". It does not cover a condition that can't be worked out at all — if one mentions a variable the automation hasn't got, or comes back as something other than true or false, the gateway stops there and nothing further along that path runs. In a debug session you'll see a red ring on the gateway; see [Debugging Automations](debugging-automations.md#what-the-rings-and-dots-mean).
+
+A gateway also has to do one job or the other: two or more paths leading out of it (a decision), or two or more coming in (paths joining back up). One in and one out doesn't decide anything, and the build turns it down — join those two nodes directly instead.
+
+### Do you need Inputs and Outputs?
+
+No — and most gateways don't use them. Conditions can read your values directly, so you can leave both empty and put `vars.value > 25` straight on the branch.
+
+They're there for when a condition would otherwise be long, or when you'd be writing the same sum on several branches. An **Input** works something out just before the gateway decides and gives it a short name that the gateway's own conditions can use — set an input called `feelsLike` to `vars.temperature + vars.humidity / 10`, then write your branches as `vars.feelsLike > 30`. An input belongs to that gateway alone; nodes further along can't see it.
+
+An **Output** goes the other way: it's worked out after the branch is picked and added to your automation's values, so a later node — an alarm message, say — can use it.
+
 ### Home example
 
 A temperature sensor reports 28 degrees. The gateway has three flows:

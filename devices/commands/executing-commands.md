@@ -69,4 +69,5 @@ For everyday use, you don't even need to open the device. Add a [Control widget]
 
 * [Setting up a command](creating-commands.md)
 * [Making sure it worked](verification.md)
+* [Example: Switching a Lamp](lamp-example.md) — two commands set up and checked, start to finish
 * [Control widget](../../dashboards/adding-widgets/control-widget.md)

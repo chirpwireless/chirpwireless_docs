@@ -15,6 +15,7 @@ From here you can add new sensors, configure how they report data, organize them
 * [Adding Sensors](adding-sensors.md) — register a sensor and map what it measures
 * [Pretend Sensors](pretend-sensors.md) — get set up before your hardware arrives
 * [Data Templates](data-templates.md) — what your readings mean, with the right units
+* [What Your Device Is Sending](what-your-device-is-sending.md) — see the fields your sensor reports, and what they say
 * [Sensor Details](sensor-details.md) — live readings, settings and full history
 * [Connection Diagnostics](connection-diagnostics.md) — added a sensor but nothing's showing up?
 * [Rooms](rooms.md) — group sensors by where they are

@@ -24,12 +24,18 @@ This tells Chirp how to reach the device. What you see depends on how the device
 * **MQTT topic** — The address the message is sent to.
   * On Chirp's hosted broker, the first part of the address (the prefix) is filled in for you; you add the rest, like `living-room-lamp/set`. Your device needs to be listening on the full address.
   * On your own broker, type the full topic exactly as your device expects it.
+  * Keep it under 500 characters, leave out the `#` and `+` symbols, don't leave an empty gap between slashes, and don't start it with `iot/`, `external/` or `external-downlink/` — those are reserved.
 * If another command already uses the same address, Chirp gives you a heads-up so two actions don't clash.
 
 ### Devices on LoRaWAN
 
 * **fPort** — A number from **1 to 223** that tells the device which "channel" the message is for. Your device's manual will tell you which to use.
-* **Confirmed downlink** — A switch: leave it **On** to have the network wait for the device to confirm it got the message, or **Off** to simply send and move on.
+* **Confirmed downlink** — A switch: leave it **On** to have the network wait for the device to confirm it got the message, or **Off** to simply send and move on. Turn it **On** if you plan to pick *Ask the device* in step 4 — that check waits for the confirmation, so it can't be saved without one.
+* LoRaWAN messages always go out as raw bytes, so they always go through a converter. The send-as-is option only applies to MQTT devices.
+
+### Devices that can't be controlled
+
+Some devices only ever report in — there's no way to send anything back to them, so they don't offer commands at all.
 
 ## 3. What the command does
 
@@ -55,6 +61,12 @@ For MQTT devices, you choose how the message is built:
 * **Process with encoder** — run it through a small converter first.
 
 When a converter is used (and it always is for LoRaWAN, where messages have to be turned into raw bytes), you write a short **template** with `{{ placeholders }}` that get filled in with your inputs — so a "set brightness" command drops the brightness number into the right spot. Most of the time the converter that came with your device's setup is all you need; advanced users can supply their own.
+
+## 4. Decide how Chirp checks it worked
+
+The last step is where you say whether Chirp should confirm the command actually did something — send and forget, wait for the device's next update, or ask the device outright. It's also where you pick which reading should change and what it should say.
+
+It has a page of its own: [Making sure it worked](verification.md). To find out what your device reports back and how it writes it, see [What Your Device Is Sending](../what-your-device-is-sending.md).
 
 ## Test it before you save
 

@@ -136,6 +136,50 @@ This is a safety measure — it protects your home from an automation that might
 
 ---
 
+## Debug sessions
+
+### "I started debugging and nothing is happening"
+
+That's how it's meant to work. A debug session opens your automation, puts the marker on the Start node and waits for you — it doesn't run anything on its own.
+
+1. Look at the bottom of the canvas for the little toolbar. It sits on the diagram, not up in the top bar with Save and Build.
+2. Press **Run (F10)** to go to the first breakpoint or the end, or **Step over (F9)** to move one node.
+3. Check it's actually going: the Start node has a blue ring and your values are listed in the panel on the right.
+
+See [Debugging Automations](debugging-automations.md#nothing-happens-until-you-press-a-button).
+
+### "A node has a red ring around it"
+
+That's the node that just hit an error — not a breakpoint (a small dot on top) and not where you are (a blue ring). Start with the expression on it.
+
+1. Open the node and read its expression.
+2. Check every name in it is listed in the Variables tab. `vars.temperature` falls over if nothing called `temperature` was set at the start or made earlier on.
+3. Check the `vars.` is there — `temperature > 25` isn't `vars.temperature > 25`.
+4. Check a branch condition comes out as `true` or `false`.
+5. Paste it into **Evaluate** on the Watch tab to try it out.
+
+### "The automation didn't take any branch"
+
+Two possibilities.
+
+**A condition couldn't be worked out.** If one of them mentions something that isn't there, the gateway stops with an error and nothing further runs — it doesn't fall back to the default. You'll see the red ring; work through the steps above.
+
+**Nothing matched and there's no default.** Every condition came out false and no branch is set as the fallback, so there's nowhere to go. Open the gateway, pick the branch that should catch everything else, and click **Set as default**.
+
+### "The buttons have gone grey"
+
+The Step buttons only work while things are paused — not while the automation is running, not while a Side Effect box is open, and not after an automation failed to load. Stop always works. If the automation didn't load, start a fresh session.
+
+### "My breakpoints vanished"
+
+Either you pressed **Run ignore breakpoints (F11)**, which turns them all off and leaves them off — switch them back on in the Breakpoints tab — or the editor reloaded, which clears them. A note tells you how many went.
+
+### "The session ended while I was in the middle of something"
+
+Sessions last 30 minutes from when they start, and stepping through doesn't extend that. You get a warning shortly before; start a fresh one to carry on.
+
+---
+
 ## Build-time CEL validation
 
 CEL expressions are validated at build time — not just checked for syntax, but also analyzed for type correctness:
