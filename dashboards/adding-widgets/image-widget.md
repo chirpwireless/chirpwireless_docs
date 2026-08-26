@@ -23,7 +23,7 @@ Let's build a real one — keeping an eye on the basement using a photo of the u
 5. Under the layer, tap **Add datasource** — this adds an empty datasource block. In the block, tap **Choose device** and pick the salt-tank level sensor.
 6. Tap **Add metric**. Leave **Data type** on **Telemetry**, choose the salt-level reading under **Device metric**, and pick an **Icon**.
 
-   > **Don't see your sensor reading?** The Image Widget only pins number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Data Templates** (the **Metrics Templates** button on your connection's Connected Devices list), find the metric on the **Metrics** tab, and switch its **Type** to Integer or Float — as long as the sensor really does send a number. See [Data Templates](../../devices/data-templates.md).
+   > **Don't see your sensor reading?** The Image Widget only pins number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Devices → Metrics**, find it, and switch it to a number type — as long as the sensor really does send a number. See [Data Templates](../../devices/data-templates.md).
 7. Tap **Conditions: N** to open the Conditions window. Choose a **Default color**, then for each band tap **Add condition** and fill in the row — a **Condition name**, **Data type** set to **Number**, the **From** and **To** values, and a **Color**. The pin takes its color entirely from these. For the salt level as a percentage, add four:
    - "Empty" — **From** 0, **To** 10 — burgundy (a deep red)
    - "Add salt now" — **From** 10, **To** 30 — red

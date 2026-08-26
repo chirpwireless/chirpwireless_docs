@@ -4,7 +4,7 @@ description: Graph a reading's history over the hour, day, week, or month with c
 
 # Chart Widget
 
-<figure><img src="../../.gitbook/assets/chart-widget.jpg" alt="Chart widget — the Appearance settings beside a live preview of the graph"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chart-widget.jpg" alt="A bar Chart widget on a dashboard, each bar labelled with its own value and the reading repeated in a row underneath"><figcaption></figcaption></figure>
 
 The Chart widget draws a reading's history as a graph — a line or bars stretching back over the last hour, day, week, or month — so you can follow how it has moved, not just where it is right now.
 
@@ -24,7 +24,7 @@ Let's build a real one — a chart that tracks the living-room humidity through 
 4. Tap **Add metric**. A metric row appears.
 5. In the row, leave **Data type** on **Telemetry**, choose the humidity reading under **Device metric**, and pick a **Color** — this is the color of the line (or bars) on the graph, and the starting color of the big number at the top.
 
-   > **Don't see your sensor reading?** The **Device metric** list only shows number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Data Templates** (the **Metrics Templates** button on your connection's Connected Devices list), find the metric on the **Metrics** tab, and switch its **Type** to Integer or Float — as long as the sensor really does send a number. See [Data Templates](../../devices/data-templates.md).
+   > **Don't see your sensor reading?** The **Device metric** list only shows number readings. If one is missing, that metric is set up as text (String) or on/off (Boolean) instead of a number. Open **Devices → Metrics**, find it, and switch it to a number type — as long as the sensor really does send a number. See [Data Templates](../../devices/data-templates.md).
 
    A Chart widget follows just **one reading** — once that metric is in place, there is no second row to fill in. For another reading, build another Chart widget.
 6. Tap **Next** to open the **Appearance** tab.
@@ -41,7 +41,9 @@ Let's build a real one — a chart that tracks the living-room humidity through 
 12. Turn on **Show average value** to add a dashed line at the week's average humidity, marked "Average" in the legend.
 13. **Show vertical axis lines** and **Show horizontal axis lines** add a faint grid behind the graph — switch them on if a grid makes it easier to read.
 14. Turn on **Display data legend** to list your band labels and the average next to the graph.
-15. Tap **Save** to drop the widget onto your dashboard.
+15. Turn on **Show metrics below** to repeat the reading and its current value in a line underneath the graph. Handy on a phone, or when the widget is small enough that the big number at the top gets squeezed.
+16. If you picked **bar** back at step 8, **Display value on bar** writes each bar's own number onto the bar. Saves squinting across at the scale to work out what a particular day actually was. It is only there for bar charts — a line has no bars to write on.
+17. Tap **Save** to drop the widget onto your dashboard.
 
 Now the tile shows the room's humidity right now as a big number, with the whole week traced behind it — and the green band makes it plain whether the room sat comfortable or kept sliding into the dry or damp zones. The same steps fit any reading with a history worth following; just change the sensor, the value range, and the bands.
 

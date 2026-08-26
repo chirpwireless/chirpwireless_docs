@@ -29,7 +29,7 @@ You'll see the key pairs saved for the home you're currently viewing. If nothing
 
 ## A note on the field labels
 
-The form calls its two fields **EUI** and **AppKey / Network Key**. The labels are deliberately generic because the platform speaks to more than one kind of radio. For your Chirp home, read them as:
+The form calls its two fields **EUI** and **AppKey / Network Key**, while your sensor's own documentation is likely to use slightly different words for the same two values. Read them as:
 
 - **EUI** → your sensor's **DevEUI**
 - **AppKey / Network Key** → your sensor's **AppKey**

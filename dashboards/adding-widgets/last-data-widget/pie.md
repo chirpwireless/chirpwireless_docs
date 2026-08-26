@@ -28,7 +28,7 @@ Let's build a real one — a bold tile showing how much water is in the garden r
 4. Tap **Add metric**. A metric row appears.
 5. In the row, leave **Data type** on **Telemetry**, choose the volume reading under **Device metric**, and choose an **Icon**.
 
-   > **This display needs a number.** The **Device metric** list shows every reading, but a gauge fills against a scale — pick a numeric one here; a text reading shows as 0. (To show text or an on/off value as-is, use the [Value display](number.md).) To change a reading's type, use the **Metrics Templates** button on your connection's Connected Devices list — see [Data Templates](../../../devices/data-templates.md).
+   > **This display needs a number.** The **Device metric** list shows every reading, but a gauge fills against a scale — pick a numeric one here; a text reading shows as 0. (To show text or an on/off value as-is, use the [Value display](number.md).) To change how a reading is stored, open **Devices → Metrics** — see [Data Templates](../../../devices/data-templates.md).
 6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — a **Condition name**, **Data type** set to **Number** (the condition's own Data type, not the metric's), the band's **From** and **To** — the barrel holds 200 liters, so those run from **0** (empty) to **200** (full) — and a **Color**. Then you set the color levels — for example:
 
    Starting from empty:

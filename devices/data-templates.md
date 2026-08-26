@@ -1,80 +1,108 @@
 ---
-description: Data templates tell Chirp what your sensors measure, so readings show up labeled with the right units.
+description: Tell Chirp what your sensors measure so readings appear with the right name and unit, all from one Metrics list you can search and filter.
 ---
 
 # Data Templates
 
-Data templates tell Chirp what your sensors are measuring and how to display it. They're the reason a temperature reading shows up as "22.5 °C" instead of a mysterious number — and why a humidity sensor from one manufacturer shows the same kind of data as a humidity sensor from a completely different brand.
+This is the part of Chirp that turns a raw number into something you can read.
 
-Many common sensor types come pre-configured, so you might never need to touch data templates at all. But if you're using a less common sensor or want to customize how measurements are labeled, this is where you do it.
+Your sensors do not send tidy labels. One temperature sensor might send `temp_c`, another `t`, a third `temperature` — three names for the same thing. Data templates are how Chirp knows all three mean *temperature*, that it is measured in °C, and that it should be shown with a decimal point.
 
-## How to get there
+Most common sensors arrive already set up, so plenty of people never open this page at all. You come here when you have something unusual, or when you want a reading labelled your way.
 
-There are two ways to reach data templates:
+## Where it lives
 
-- **From a sensor list** — When viewing your sensors in a connection's **Connected Devices** tab, click the **Metrics Templates** button in the top-right area.
-- **Direct URL** — Navigate to `/metrics` in your browser.
+Open **Devices** and choose the **Metrics** tab.
 
-## The three tabs
+It is all on one screen now — the list of what your sensors measure, and, inside the form, the units and names those measurements are built from.
 
-Data templates are organized into three tabs, each handling a different layer:
+<figure><img src="../.gitbook/assets/device-metrics.jpg" alt="The Devices Metrics list with search, unit, type and data type filters and a sort control"><figcaption></figcaption></figure>
 
-### Units
+## Finding your way around the list
 
-Units define the measurement units available in Chirp — things like °C, °F, %, lux, mV, and so on.
+The list shows everything your home measures. Once you have a few dozen sensors that is a long list, so there are a few ways to cut it down:
 
-**What you see:** A table with **Name** and **Symbol** columns, plus edit and delete buttons.
+- **Search** — start typing and the list narrows. It looks at the measurement's proper name only, not its unit or the raw name your sensor uses.
+- **All units** — show only the ones measured in a particular unit. You can search inside this one, and there is a bucket for things that have no unit at all.
+- **All types** — show only one way of storing a value: String, Integer, Float or Boolean.
+- **All data type** — show only one kind of measurement: Telemetry, Device metadata or Custom attributes.
+- **Sort by** — **Newest** or **Oldest**, meaning when it was added. **Newest** is the quick way back to something you have just created.
 
-**To add a unit:**
-1. Click **Add Unit**.
-2. Enter a **Name** (e.g., "Celsius") and **Symbol** (e.g., "°C").
-3. Click **Save**.
+You can tick several options in any of them. They behave slightly differently, though: **All types** and **All data type** take effect the moment you tick a box, while **All units** waits for you to press **Apply**.
 
-Some units come built in and can't be edited — these cover the most common measurements.
+Anything you created has **Edit** and **Delete** on its row. **The ones that came with Chirp do not** — they are shared, so they are not yours to change.
 
-### Normalized Keys
+## Adding something new
 
-Normalized keys are standard names for what a measurement represents. Instead of every sensor using its own name for temperature (one might call it `temp`, another `temperature`, another `t_celsius`), you create one normalized key called `temperature` and map all of them to it.
+Press **Add metric** at the top of the page. The same form is used for adding and editing, so there is only one set of boxes to learn.
 
-**What you see:** A table with **Normalized Key** and **Type** columns, plus edit and delete buttons.
+There are four boxes, in this order.
 
-**To add a key:**
-1. Click **Add Normalized Key**.
-2. Enter a name — use something descriptive and lowercase, like `temperature`, `humidity`, `soil_moisture`, or `battery_level`.
-3. Click **Save**.
+<figure><img src="../.gitbook/assets/device-metrics-add.jpg" alt="The Add Metric dialog with Data type, Type, Normalized key and Unit of measurement"><figcaption></figcaption></figure>
 
-Built-in keys cover common measurements and can't be edited.
+### Data type
 
-### Metrics
+What sort of thing this is:
 
-Metrics (also called sensor templates) combine a normalized key, a unit, a value type, and a data type into a complete measurement definition. When you add a sensor, this is what gets attached to map the sensor's raw output into something meaningful.
+| Data type | Meaning |
+|---|---|
+| **Telemetry** | A normal reading that changes as the day goes on — temperature, humidity, battery. Nearly everything is this. |
+| **Device metadata** | Facts the sensor reports about itself and hardly ever changes, like its firmware version. |
+| **Custom attributes** | Notes you add yourself that no sensor sends — when you installed it, which room you bought it for, when it next needs a battery. |
 
-**What you see:** A table with columns for **Normalized key**, **Unit of measurement**, **Type**, **Data type**, and action buttons.
+That last pair are kept out of the lists you see when mapping what a sensor sends, which is exactly right: a sensor cannot report a note you wrote.
 
-**To add a metric:**
-1. A new row appears at the top of the table.
-2. **Normalized key** — Select an existing key or create a new one right from the dropdown.
-3. **Unit of measurement** — Pick from your units list (e.g., °C, %, lux).
-4. **Type** — This tells Chirp what kind of number or value to expect. Pick the one that matches your sensor's output:
-   - **Integer** — Whole numbers with no decimal point. Use for readings that are always whole numbers. Examples: battery percentage (85), signal strength (-120), count of events (42).
-   - **Float** — Numbers with a decimal point. Use for readings that need fractional precision. Examples: temperature (22.5), humidity (67.3), voltage (3.28). **This is the most common choice for sensor readings.**
-   - **String** — Text. Use for readings reported as words or codes. Examples: door status ("open" / "closed"), firmware version ("1.2.3"), device mode ("standby").
-   - **Boolean** — True or false. Use for simple yes/no or on/off states. Examples: motion detected (true/false), alarm active (true/false), window open (true/false).
-5. **Data type** — This tells Chirp how to treat the measurement:
-   - **Telemetry** — Regular sensor readings that change over time. This is the most common type — temperature, humidity, battery level, soil moisture, air quality, and similar readings all use Telemetry.
-   - **Device Metadata** — Information the sensor reports about itself that doesn't change often. Examples: firmware version, hardware revision, signal strength. You won't need this for most home sensors.
-   - **User Metadata** — Properties you add yourself, not sent by the sensor. Examples: "Installed: March 2025", "Battery type: CR2032", "Location: back garden". Useful for keeping notes attached to a sensor.
-6. Click save on the row.
+### Type
 
-**Filtering:** Use the dropdown filters above the table to narrow the list by type or data type.
+How the value itself is stored:
 
-## Do I need to set this up?
+| Type | For |
+|---|---|
+| **Float** | Anything with a decimal point — 22.5 °C, 67.3 % |
+| **Integer** | Whole numbers — battery 85, signal −120 |
+| **String** | Words — `"open"`, `"standby"` |
+| **Boolean** | Yes or no — motion detected, or not |
 
-For most common LoRaWAN sensors, Chirp comes with built-in templates that cover standard measurements. When you register a sensor using a device profile template, the right data templates are often assigned automatically.
+> **This decides whether you can put it on a dashboard.** The dial and gauge widgets need an actual number to fill against. If a reading is stored as words or as yes/no, it will not turn up when you go looking for it in a widget. If something you expected is missing from a widget's list, come back here and check the **Type** — assuming, of course, that the sensor really does send a number.
 
-You'll want to create custom data templates if:
-- Your sensor measures something unusual (e.g., a specific industrial gas)
-- You want different display units (e.g., Fahrenheit instead of Celsius)
-- You're using a sensor brand that isn't in the template library
+### Normalized key
 
-For how data templates connect to individual sensors, see [Adding Sensors](adding-sensors.md) and [Sensor Details](sensor-details.md).
+The proper name for what is being measured, regardless of what your sensor calls it internally.
+
+Open the box and either pick one that already exists or choose **Create a new normalized key** and type it. **This box is also where you rename or remove keys** — there is no separate screen for them any more, and the unit box below works the same way.
+
+One thing to know about both: **the names and units that came with Chirp cannot be renamed or removed.** They are shared, so those buttons do nothing on them. The ones you made yourself are fine to change.
+
+Name the thing being measured, not the gadget measuring it: `soil_moisture` reads much better than `sensor_3_value` when you meet it again in six months. Lowercase with underscores is the house style.
+
+Each name gets used once. Pick one that is already taken and the form will tell you.
+
+### Unit of measurement
+
+What gets shown next to the number — °C, %, lux, mV.
+
+Same as above: pick an existing one, or choose **Create a new unit** and type the symbol. **Whatever symbol you type becomes the unit**, so write it exactly as you want to see it on your dashboard.
+
+**Whether you have to fill it in depends on the Data type above.** A **Telemetry** reading needs a unit — a number on your dashboard with nothing beside it is anyone's guess. **Device metadata** and **Custom attributes** can be left blank, and usually should be: a firmware version or a note about which room a sensor is in has no unit, and inventing one just adds clutter.
+
+Press **Add** to save it, or **Cancel** to back out.
+
+## Editing — worth reading the warning
+
+Here is the thing to understand: **these are shared across your whole home, not set per sensor.** Every sensor using a measurement uses the same definition of it.
+
+So changing one is not a small local edit. Chirp asks you to confirm, and the confirmation spells out what happens: every sensor using it updates to match.
+
+That is perfect when you are fixing a unit everywhere at once. It is not what you want if you meant to change one sensor. **If it is just the one, make a new metric and point that sensor at it instead** — leave the shared one alone.
+
+## Deleting
+
+Deleting asks first too.
+
+If anything is still using it, Chirp will not delete it, and says so — it is *used in other devices*. Unhook it from the sensors using it, then delete. Nothing gets pulled out from under a sensor that still depends on it.
+
+## See also
+
+- [Adding Sensors](adding-sensors.md) — pointing a new sensor at these measurements
+- [What Your Device Is Sending](what-your-device-is-sending.md) — matching raw readings to the right name
+- [Sensor Details](sensor-details.md) — the per-sensor Metrics tab

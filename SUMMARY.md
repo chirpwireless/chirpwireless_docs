@@ -101,6 +101,7 @@
   * [Going Deeper](rules-engine/going-deeper/README.md)
     * [Data Enrichment and Expressions](rules-engine/going-deeper/data-enrichment-and-expressions.md)
     * [Publish and Run](rules-engine/going-deeper/publish-and-run-an-automation.md)
+    * [Triggers](rules-engine/going-deeper/triggers.md)
   * [Managing Automations](rules-engine/managing-automations/README.md)
     * [View, Edit, and Locks](rules-engine/managing-automations/view-edit-and-locks.md)
     * [History, Restore, and Recovery](rules-engine/managing-automations/history-restore-and-recovery.md)

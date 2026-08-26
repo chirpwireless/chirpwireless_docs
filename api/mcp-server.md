@@ -72,12 +72,26 @@ Once connected, your AI client can work across your home on your behalf. Here's 
 | **Pretend sensors** | Set up an emulated sensor, change what it reports, send a one-off reading to test an alert, and move a sensor between pretend and real. It can put any of your real sensors onto the emulator, and take a pretend one live onto a LoRaWAN connection. |
 | **Connections** | See how your home is connected and set up a new connection for a sensor. |
 | **Automations** | Go through the automations you've built and tell you what each one does. |
-| **Alerts** | Look at your alerts, summarize what's been triggering and how often, and send a test notification so you can check it lands on your phone. |
+| **Alerts** | Look at your alerts, summarize what's been triggering and how often, clear one that you've dealt with, and set up which alerts reach you and where. |
 | **Dashboards** | List your dashboards and pull the data behind a widget, so it can chart or explain a reading you're looking at. |
-| **History** | Search back through your home's activity, export a slice of it, and map out which sensor is measuring what. |
+| **History** | Look back over when your alerts fired and when your automations ran, and map out which sensor is measuring what. |
 | **Household** | Look up your home's details and members, invite someone new, and set what they're allowed to see. |
 
 Everything it does runs with your permissions, and destructive or important actions are shown to you before they happen — same as anywhere else in Chirp.
+
+## How your AI app knows what's safe
+
+Your assistant doesn't have to guess which of those things are harmless and which ones change your home. Each one comes with a readable name and a note on how it behaves, so an app that reads those notes can tell them apart before it does anything. Chirp publishes the notes; what each app does with them is up to that app.
+
+What that note says is simple enough:
+
+- **This one only looks.** Listing your sensors, reading back when an alert fired, pulling the numbers behind a widget. Nothing changes, so your assistant can just answer you.
+- **This one changes something.** Removing a sensor, switching a lamp, moving a sensor onto a different connection, editing who gets told about an alert. These are flagged, so an app can put them behind a confirmation.
+- **This one goes outside your home.** Nearly everything stays within your own data. Looking up hardware to buy is the exception, because it searches a shop catalog and the web.
+
+Adding something sits in between. Creating a sensor or a dashboard doesn't overwrite or switch off anything you already have, and you can undo it by deleting what was just made — so it isn't treated as risky, though it does still change your home.
+
+You get the benefit of this without setting anything up: with an app that respects the notes, ordinary questions are answered straight away and the things that would actually affect your house pause for a yes. And whatever the app does, it is still limited to what your own account is allowed to do.
 
 ## How this differs from the AI Helper in the app
 

@@ -38,7 +38,7 @@ Let's build a real one — a tube that watches the salt level in a water softene
 4. Tap **Add metric**. A metric row appears.
 5. In the row, leave **Data type** on **Telemetry**, choose the level reading under **Device metric**, and pick an **Icon**.
 
-   > **This display needs a number.** The **Device metric** list shows every reading, but a gauge fills against a scale — pick a numeric one here; a text reading shows as 0. (To show text or an on/off value as-is, use the [Value display](number.md).) To change a reading's type, use the **Metrics Templates** button on your connection's Connected Devices list — see [Data Templates](../../../devices/data-templates.md).
+   > **This display needs a number.** The **Device metric** list shows every reading, but a gauge fills against a scale — pick a numeric one here; a text reading shows as 0. (To show text or an on/off value as-is, use the [Value display](number.md).) To change how a reading is stored, open **Devices → Metrics** — see [Data Templates](../../../devices/data-templates.md).
 6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — type a **Condition name**, set **Data type** to **Number** (this is the condition's own Data type, not the metric's), because the salt tank is 100 cm tall, enter **From** 0 cm (the empty bottom) and **To** 100 cm (the full top), and pick a **Color**. Then you set the color levels — for example:
 
    Starting at the bottom:

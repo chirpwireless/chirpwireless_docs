@@ -19,8 +19,10 @@ The entry point of your automation. Every automation has exactly one Start Event
 | Field | Description |
 |---|---|
 | **Name** | A label for this node. Placeholder: *e.g., Fire Alarm*. |
-| **Event filter — Device** | Dropdown to select the device. Placeholder: *Select device*. |
-| **Event filter — Sensor** | Dropdown to select the sensor on that device. Enabled after you choose a device. Placeholder: *Select sensor*. |
+| **Start source** | What sets the automation off: **Sensor reading** (one sensor's readings, the usual choice) or **Trigger condition** (a [trigger](../going-deeper/triggers.md), for "only if it's still happening" and for covering several sensors at once). One or the other, never both. |
+| **Event filter — Device** | Shown for **Sensor reading**. Dropdown to select the device. Placeholder: *Select device*. |
+| **Event filter — Sensor** | Shown for **Sensor reading**. Dropdown to select the sensor on that device. Enabled after you choose a device. Placeholder: *Select sensor*. |
+| **Trigger condition** | Shown for **Trigger condition** instead of the Event filter. Dropdown listing your triggers. Placeholder: *Select trigger*. Only the first page loads, and it says so when there are more. |
 | **Enable Schedule** | Toggle (Off by default). When turned On, the automation only runs during the specified time window. |
 | **Time Range** | Appears when Schedule is On. Presets: "0:00 – 24:00", "8:00 – 20:00", "9:00 – 18:00", "6:00 – 22:00". |
 | **Time Zone** | Appears when Schedule is On. Select the time zone for the schedule. |
@@ -29,13 +31,25 @@ The entry point of your automation. Every automation has exactly one Start Event
 
 ### What happens at runtime
 
-When the selected sensor reports a new reading, the automation creates three variables that all downstream nodes can access:
+What you get depends on the **Start source**.
+
+**Started by a sensor reading** — when the selected sensor reports, the automation creates three variables that all downstream nodes can access:
 
 | Variable | Contains |
 |---|---|
 | `vars.value` | The sensor reading (number, string, or boolean depending on sensor type) |
 | `vars.sensor_id` | The unique identifier of the sensor that triggered the automation |
 | `vars.timestamp` | The time the reading was recorded |
+
+**Started by a trigger condition** — you get a different three:
+
+| Variable | Contains |
+|---|---|
+| `vars.device_name` | The name of the sensor that set it off — how a grouped automation tells you *which* window or door it was |
+| `vars.sensor_id` | The identifier of the sensor behind it |
+| `vars.timestamp` | When the situation was met |
+
+There is **no `vars.value`** on a trigger-started automation: a trigger reports that something *held for a while*, not what the reading was. An expression using `vars.value` will fail every time it runs.
 
 If you defined Inputs, they are computed as local helper values. If you defined Outputs, they are published into the shared workflow context so downstream nodes can use them.
 
