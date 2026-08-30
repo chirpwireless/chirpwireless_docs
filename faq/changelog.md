@@ -22,7 +22,7 @@ In Chirp you build automations. An automation is a little flowchart: a sensor re
 * **Numbers printed on your bar charts** — Turn on **Display value on bar** and the figure is printed straight onto the bar. **Show metrics below** adds a row beneath the graph listing where each reading stands.
 * **Use your own AI instead of the monthly allowance** — Your plan includes a set number of Helper messages a month. Connect your own OpenAI, Anthropic or Ollama account and that limit stops applying. Ollama accounts would not connect at all before; now they do.
 * **Your AI app knows what's safe** — If you have connected ChatGPT or Claude to your home, each thing it can do now says whether it only looks something up or actually changes something. So it answers your questions straight away, and asks you first before switching anything.
-* **Smoothing things out** — Sensor photos save again, the Activity Log lists permission changes again, a widget number goes back to changing color, log retention matches your plan, and the Helper has stopped telling you it did things it did not do.
+* **Smoothing things out** — Sensor photos save again, the Activity Log stops handing you an out-of-date page, a widget number goes back to changing color, log retention matches your plan, and the Helper has stopped telling you it did things it did not do.
 
 ***
 
@@ -73,7 +73,7 @@ Sensors from different makers report the same thing in different ways. Chirp kee
 
 Before 3.9.0 these were spread across three tabs, and the form for adding one sat inside the table itself, which is why it never checked what you typed.
 
-All of it now sits in a single place, **Devices → Metrics**, where you can search by name, narrow things down by unit and type, reorder the list, and add or edit without leaving the box.
+All of it now sits in a single place, **Devices → Metrics**, where you can search by name, narrow things down by unit and type, sort it newest or oldest first, and add or edit without leaving the box.
 
 One thing to watch: the list covers your whole home, so editing one changes it for every sensor using it. That is what you want when you are fixing a unit everywhere and not what you want when you meant one sensor — so Chirp warns you that every sensor using it will pick up the change, and waits for you to confirm.
 
@@ -102,7 +102,7 @@ Your plan includes a set number of Helper messages each month. Most homes never 
 
 Open **Connect your AI** at the top of AI Chat and fill in four boxes: the **provider** (OpenAI, Anthropic, OpenRouter, Ollama, or a custom one), the **address**, which fills itself in once you pick a provider, your **API key** from that provider, and the **model name**.
 
-One of those five was simply broken until this release. Every Ollama model name ends in a colon and a version — `gemma4:31b` — and Chirp threw that colon out before it even tried to connect, which ruled out every Ollama model that carries one, meaning very nearly all of them. The two names offered as suggestions were no help either: the tag they use is not in Ollama Cloud's list at all, and the model behind them wants a paid Ollama plan. Both problems are gone, and the names you are offered now work on a free account.
+One of those five was simply broken until this release. Ollama model names usually carry a colon and a version on the end — `gemma4:31b` — and Chirp threw that colon out before it even tried to connect, so any model named that way was refused out of hand. The two names offered as suggestions were no help either: the tag they use is not in Ollama Cloud's list at all, and the model behind them wants a paid Ollama plan. Both problems are gone, and the names you are offered now work on a free account.
 
 You also get told what actually went wrong. Whatever the reason, the box used to say the model rejected the request. It now tells the difference between a key it does not recognize, a key that is fine but on a plan that does not cover the model you picked, and a model name that provider does not have. And once it is connected, it keeps showing which model you are on, so you are not guessing months later.
 
@@ -118,7 +118,7 @@ Since 3.7.0 you have been able to connect an AI app you already use — ChatGPT,
 
 Before 3.9.0, those apps could see the things they were allowed to do, but with no proper name for any of them and no way to tell looking something up from changing it. An app could not tell "how warm is the nursery" apart from "turn off the heating", so it either checked with you about everything or about nothing.
 
-Now each one says what it is: whether it only looks something up, whether it changes something, and whether it reaches outside your home. So your app answers "how warm is the nursery?" straight away, and stops to ask before it switches a lamp off or removes a sensor. You do not have to set any of this up, and what each one claims about itself is checked against what the server really offers, so it cannot drift out of date.
+Now each one says what it is: whether it only looks something up, whether it changes something, and whether it reaches outside your home. So your app answers "how warm is the nursery?" straight away, and stops to ask before it switches a lamp off or removes a sensor. You do not have to set any of this up. Each one carries that label in the server's own definition of it, and a test keeps the published list in step.
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 — your AI app knows what is safe to run"><figcaption></figcaption></figure>
 
@@ -141,7 +141,7 @@ Most of the fixing in this release went into the Helper, and nearly all of it wa
 
 All fixed. The Helper also sticks to your plan's sensor limit now — on the free plan you could get past it by asking the Helper instead of using the form.
 
-The rest: photos you add to a sensor now save. **The Activity Log lists permission changes again** — changing what someone in your home can see had stopped leaving a record, so the page looked frozen. **A number on a Last Data widget goes back to changing color with its conditions.** **The Key Vault now describes only the fields it actually uses**, instead of mentioning kinds of sensor Chirp does not support. **How long your device logs are kept now matches your plan.** The Helper copes with being asked for longer stretches of history instead of saying it is unavailable. A sensor set to report once a day is no longer called offline a few hours later, and the warning now tells you the units it means. Asking for help is a quick pick of bug report, feature request or integration request rather than a blank box. Pretend sensors timestamp their first reading correctly, and their Connection tab no longer goes askew on a small screen. Building a trigger on your phone no longer runs off the side of it. The screens you have not filled in yet all look the same as each other — your saved automations included — and the sensor and gateway ones now point you at the shop if you have no hardware yet. The Download the app card lays out correctly.
+The rest: photos you add to a sensor now save. **The Activity Log shows permission changes without a reload** — the record was always being kept, but the page could hand you an out-of-date copy that was missing the newest entries. **A number on a Last Data widget goes back to changing color with its conditions.** **The Key Vault now describes only the fields it actually uses**, instead of mentioning kinds of sensor Chirp does not support. **How long your device logs are kept now matches your plan.** The Helper copes with being asked for longer stretches of history instead of saying it is unavailable. A sensor set to report once a day is no longer called offline a few hours later, and the warning now tells you the units it means. Asking for help is a quick pick of bug report, feature request or integration request rather than a blank box. Pretend sensors timestamp their first reading correctly, and their Connection tab no longer goes askew on a small screen. Building a trigger on your phone no longer runs off the side of it. The screens you have not filled in yet all look the same as each other — the list of built automation artifacts included — and the sensor and gateway ones now point you at the shop if you have no hardware yet. The Download the app card lays out correctly.
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0"><figcaption></figcaption></figure>
 
