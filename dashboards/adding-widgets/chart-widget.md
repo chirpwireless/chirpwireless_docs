@@ -4,7 +4,7 @@ description: Graph a reading's history over the hour, day, week, or month with c
 
 # Chart Widget
 
-<figure><img src="../../.gitbook/assets/chart-widget.jpg" alt="A bar Chart widget on a dashboard, each bar labelled with its own value and the reading repeated in a row underneath"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chart-widget.jpg" alt="The Add Chart widget dialog on its Appearance tab, with the widget type, value range and thresholds beside a live preview"><figcaption></figcaption></figure>
 
 The Chart widget draws a reading's history as a graph — a line or bars stretching back over the last hour, day, week, or month — so you can follow how it has moved, not just where it is right now.
 
