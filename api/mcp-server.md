@@ -79,19 +79,19 @@ Once connected, your AI client can work across your home on your behalf. Here's 
 
 Everything it does runs with your permissions, and destructive or important actions are shown to you before they happen — same as anywhere else in Chirp.
 
-## How your AI app knows what's safe
+## How your AI app knows what an action does
 
-Your assistant doesn't have to guess which of those things are harmless and which ones change your home. Each one comes with a readable name and a note on how it behaves, so an app that reads those notes can tell them apart before it does anything. Chirp publishes the notes; what each app does with them is up to that app.
+Chirp publishes a readable name, description, and safety notes with each action. AI apps that support these notes can use them to decide whether to run an action immediately or ask you to confirm.
 
-What that note says is simple enough:
+| Safety note | Examples | What it tells the app |
+|---|---|---|
+| **Only reads** | List sensors, read alert history, get the data behind a widget | The action does not change your home. |
+| **Changes or removes something** | Remove a sensor, switch a device, change a connection, update alert recipients | The action can affect your home or equipment, so the app can ask for confirmation. |
+| **Looks outside your home** | Search a product catalog or the web for hardware | The action accesses information beyond your Chirp data. |
 
-- **This one only looks.** Listing your sensors, reading back when an alert fired, pulling the numbers behind a widget. Nothing changes, so your assistant can just answer you.
-- **This one changes something.** Removing a sensor, switching a lamp, moving a sensor onto a different connection, editing who gets told about an alert. These are flagged, so an app can put them behind a confirmation.
-- **This one goes outside your home.** Nearly everything stays within your own data. Looking up hardware to buy is the exception, because it searches a shop catalog and the web.
+Creating a sensor or dashboard changes your home, but it does not overwrite or switch off anything already there and can be reversed by deleting the new item. Chirp therefore does not describe creation as destructive.
 
-Adding something sits in between. Creating a sensor or a dashboard doesn't overwrite or switch off anything you already have, and you can undo it by deleting what was just made — so it isn't treated as risky, though it does still change your home.
-
-You get the benefit of this without setting anything up: with an app that respects the notes, ordinary questions are answered straight away and the things that would actually affect your house pause for a yes. And whatever the app does, it is still limited to what your own account is allowed to do.
+These notes help the AI app explain an action; they are not permission checks. Each app decides how to present confirmations. Chirp still enforces your account permissions, so the app cannot do anything that your account is not allowed to do.
 
 ## How this differs from the AI Helper in the app
 

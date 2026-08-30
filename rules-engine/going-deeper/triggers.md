@@ -1,156 +1,144 @@
 ---
-description: Only get alerted when something has been going on for a while, and cover every door or window in your home with one automation instead of one each.
+description: Use one trigger to watch up to 500 sensors independently and wait until a condition lasts before starting a Chirp automation.
 ---
 
-# Triggers — "only if it's still happening"
+# Triggers
 
-Most automations react to a single reading. The sensor says something, the automation runs. That is exactly right for a leak — water on the basement floor is worth knowing about the same second it appears.
+A trigger starts an automation when selected sensor data matches a condition. One trigger can watch up to **500 sensors**, evaluate each sensor independently, and start the same automation for whichever sensor meets the condition.
 
-But a lot of what happens in a house is only worth telling you about if it **keeps** happening.
+Before triggers, an automation could be started by only one sensor. If you wanted the same response for nine windows, you needed nine automations. With a trigger, you define the condition once, select all nine window sensors, and connect one automation.
 
-A trigger is how you say that. It watches for a situation and waits to see whether it lasts, and only then starts your automation. It also lets one automation look after a whole set of sensors at once, instead of you building the same thing over and over.
+A trigger can act immediately or wait until the condition has remained true for a set time. For example, Chirp can ignore a refrigerator door opened briefly and alert you only if it remains open for 10 minutes.
 
-## The alerts you turn off
+## Before you start
 
-Think about a motion sensor by the side gate.
+Decide which sensors need the same response and which reading the trigger will evaluate, such as temperature, humidity, motion, or whether a door is open.
 
-If it alerts on every movement, it alerts on the neighbour's cat, on a delivery driver turning around, on you taking the bins out, and on a branch moving in the wind. Within about a week you stop reading the notifications. And then, on the evening it matters, you stop reading that one too.
+Each watched sensor must provide the reading used as the main condition. If a sensor is missing from the trigger's device list, open that sensor's **Mapping** tab and confirm that its incoming data is mapped to the required metric. See [Data Templates](../../devices/data-templates.md).
 
-Now say it differently: **tell me if there's someone by the side gate and they're still there ten minutes later.** Cats leave. Delivery drivers leave. You leave. Somebody who is still standing there after ten minutes is worth a look.
+You can create the trigger before the automation, but the trigger does not send an alert or control equipment by itself. After saving it, connect it to an automation's Start Event.
 
-Same sensor, same readings — the waiting is what turns a noisy sensor into a useful one.
+## Create a trigger
 
-It works the same way all over the house:
+1. Open **Rules Engine → Triggers**.
+2. Click **Add trigger**.
+3. Complete the **Create trigger** dialog from top to bottom.
 
-- The freezer door open for **thirty seconds** is you getting the peas out. Open for **ten minutes** means it has not shut properly, and dinner is defrosting.
-- The bathroom humid for **half an hour** is somebody's shower. Humid **all day** means it is not clearing, and that is how you get mould.
-- The garage door open **for a few minutes** is normal. Open **all night** is not.
+### 1. Name the trigger
 
-None of those need a cleverer sensor. They need you to be able to say *"and it stayed that way."*
+Enter a **Name** that describes the situation, such as `Refrigerator door left open` or `Bathroom humidity remains high`. This is the name you will select later when configuring the automation.
 
-## One automation instead of nine
+### 2. Define what should start the automation
 
-The other thing triggers fix is repetition.
+Under **What should start the rule?**, click **Add normalized key** and select the reading to evaluate.
 
-Say you want to know about any window left open when the heating is on. If you have nine window sensors, you used to need nine automations — nine copies of the same idea, and nine places to go if you change your mind about the timing.
+For each reading, set:
 
-A trigger holds the list of sensors itself. You describe the situation once, tick the sensors it applies to, and that is the whole job. Adding a tenth window later is one more tick, not another automation.
+- **Is** — the comparison operator. Number readings offer **equals**, **is greater than**, and **is less than**. Text and yes/no readings offer **equals**.
+- **Value** — the value to compare with the sensor reading.
 
-They are still watched **separately**, which is the part that matters. The kitchen window being open has nothing to do with the landing window, each one is timed on its own, and when your automation runs it can tell you **which** window it was.
+Use **Add check on ‹reading›** when one reading needs another comparison. Use **Add normalized key** when the condition also depends on a different reading.
 
-There is one handy exception. If your situation depends on a second reading as well, that reading does not have to come from each window — it can come from **one sensor speaking for all of them**. Windows open *and* the heating on: the heating is one thing, measured once, and applied to every window you are watching. What you cannot do is have it come from *some* of them; Chirp will not save that.
+When a condition uses several readings, the additional reading must be available from every watched sensor or from exactly one selected sensor that supplies a shared value for all of them.
+
+For example, each window sensor can provide its own open-or-closed reading while one thermostat provides the shared heating status. Chirp will not save a combination where only some watched sensors provide the additional reading.
+
+### 3. Choose when the trigger starts
+
+Under **When should it start?**, choose one timing mode:
+
+- **Immediately** — start the automation as soon as the condition becomes true. Use this when you need sensor grouping without a delay.
+- **Only if it lasts** — start the automation only after the condition has remained true for the duration you enter.
+
+For **Only if it lasts**, select seconds, minutes, hours, or days. New triggers default to 10 minutes. The allowed range is 10 seconds to 30 days.
+
+Set the duration longer than the sensor's reporting interval. If a sensor sends no new value during the wait, the countdown continues; silence does not reset it. A 10-minute duration on a sensor that reports every 15 minutes would still be based on only one reading.
 
 <figure><img src="../../.gitbook/assets/trigger-time-window.jpg" alt="The Create trigger dialog with a humidity condition and Only if it lasts set to 10 minutes"><figcaption></figcaption></figure>
 
-## Making a trigger
+### 4. Configure clear behavior
 
-Triggers have their own tab next to your automations. Open **Triggers** and click **Add trigger**.
+By default, the trigger clears on the first reading that no longer satisfies the starting condition.
 
-Give it a **Name** you will recognise later — "Side gate, someone lingering", "Window left open" — because you will be picking it from a list when you build the automation.
+Turn on **Clear by a separate condition** when returning to normal requires a different condition or its own delay. For example, a motion trigger can start after 10 minutes of activity and clear only after the area has remained quiet for five minutes.
 
-Then there are four things to fill in.
+### 5. Select sensors
 
-### What should start the rule?
+Under **Devices**, select the sensors the trigger should watch. The list becomes available after you select a normalized key and includes only compatible sensors.
 
-The situation you are watching for. You pick what the sensors report — motion, contact, humidity, temperature — then how to compare it:
+Use **Search devices**, **Select all**, **Select all shown**, **Clear selection**, and **Load more devices** to manage the selection. A trigger requires at least one sensor and accepts up to 500. The limit includes watched sensors and any sensor supplying a shared reading.
 
-- **Is** — for numbers you get **equals**, **is greater than** and **is less than**. For text or a simple yes/no, just **equals**.
-- **Value** — what you are comparing against.
+If an expected sensor is missing, open its **Mapping** tab and map its incoming data to the reading used by the trigger.
 
-Two buttons let you say more. **Add check on ‹reading›** adds a second comparison against the *same* reading, for when one value needs to satisfy two things at once. **Add normalized key** brings in a different reading altogether — one of your chosen sensors has to be able to report it.
+### 6. Review and save
 
-### When should it start?
-
-This is the waiting, and it is the whole point of the page.
-
-- **Immediately** — don't wait, start as soon as it's true. Pick this when you only wanted the grouping.
-- **Only if it lasts** — it has to still be true after the time you set. Choose a number and pick **seconds**, **minutes**, **hours** or **days**.
-
-A new trigger starts out on **Only if it lasts, 10 minutes**, since that is what most people want it for.
-
-The shortest you can set is **10 seconds** and the longest is **30 days**. The box will let you type something shorter than ten seconds, but it will refuse to save — so if a save is not going through, check that first.
-
-> **Make the wait longer than the gap between your sensor's reports.** Battery sensors do not report constantly — some only speak every fifteen minutes to make the battery last. If nothing new arrives during the wait, the situation just carries on counting, so you will not get a false all-clear. But a ten-minute wait on a sensor that reports every fifteen minutes is really being decided by one reading, which rather misses the point.
-
-### Clear behavior
-
-Normally the trigger stops the moment a reading says the situation is over — the window shuts, done.
-
-Occasionally that is too jumpy. A motion sensor going quiet for one report does not prove everyone has gone. Turn on **Clear by a separate condition** and you can describe the all-clear separately, with **its own** wait — so it has to be properly quiet for a while before the trigger lets go.
-
-### Devices
-
-This is where you tick the sensors. The list only offers sensors that can actually answer the question you asked, so choose what you are measuring first — until then it will tell you to pick that first.
-
-Once you have, you will see how many **compatible devices** you have — meaning sensors that report the thing your trigger needs — a **Search devices** box, and the sensors as little chips you click to select. **Select all** takes the lot, and **Clear selection** starts again.
-
-You need at least one, and you can have up to 500 — counting the sensors you are watching plus any that supply a shared reading. Far more than any house needs, so you will never bump into it.
-
-If a sensor you expected is not offered, it is because nothing on it reports the thing you asked about. Add that reading on the sensor's **Mapping** tab and it will turn up.
-
-### Have a look before you save
-
-At the bottom, **How this trigger will run** shows you exactly what you just built — one row per sensor, so you can see it really is watching the nine windows you meant and not every contact sensor in the house.
+**How this trigger will run** shows one row for every independently evaluated sensor. Check that the list contains the sensors you intended and that the **Uses** column shows the correct readings.
 
 <figure><img src="../../.gitbook/assets/trigger-device-group.jpg" alt="The sensor picker and the How this trigger will run table, one row per selected sensor"><figcaption></figcaption></figure>
 
-It is worth a glance every time. It is much easier to spot a mistake here than to work out later why your phone is buzzing.
+Click **Create trigger**. The trigger now watches the selected sensors, but it will not perform an action until an automation uses it.
 
-## Using it in an automation
+## Use the trigger in an automation
 
-The trigger just watches. To make something happen, point an automation at it.
+1. Open the automation that should respond to the trigger.
+2. Select the **Start Event** node.
+3. Click the pencil beneath the node to open its properties.
+4. Set **Start source** to **Trigger condition**.
+5. Select the trigger under **Trigger condition**.
+6. Save, build, and deploy the automation as usual.
 
-Open the automation, select the **Start Event** and click the little **pencil** that appears under it, then set **Start source**:
+Set **Start source** to **Sensor reading** when an automation should continue to start directly from one sensor. A Start Event uses one source or the other, not both.
 
-- **Sensor reading** — what you have always done: pick a sensor, run on its readings.
-- **Trigger condition** — hand the job to a trigger. The sensor boxes disappear and one **Trigger condition** box takes their place.
+The selector currently shows only the first page of triggers. If the trigger you need is not listed, it cannot yet be selected from this field.
 
-It is one or the other, never both.
+## Name the sensor in an alert
 
-### Naming the sensor in your alert
-
-When one automation covers nine windows, the alert needs to say which window — otherwise you are told "a window is open" and you go and check all nine.
-
-The name of the sensor that set it off is available as `vars.device_name`, and you put it into your alarm's message yourself:
+A trigger-started automation provides the name of the sensor that met the condition as `vars.device_name`. Include it in the alarm's message so the alert identifies the affected sensor:
 
 ```
 "Window left open: " + vars.device_name
 ```
 
-There is no automatic way to do this. If you leave it out, the alert simply will not say which one.
+The sensor name is not added automatically.
 
-> **One thing to watch:** `vars.value` isn't there when an automation starts from a trigger. A trigger tells you a situation *held*, not what the reading was, so there is no single number to give you. If you are converting an automation you already had, that is the line that will need changing.
+`vars.value` is not available to a trigger-started automation. A trigger reports that a condition held; it does not pass one reading as the event value. Update any existing expression that expects `vars.value` before changing its Start Event to a trigger.
 
-## Triggers and time of day work together
+The other available trigger variables are:
 
-The **Enable Schedule** switch on the Start Event still does its job, and putting the two together is where this gets genuinely useful:
+| Variable | Value |
+|---|---|
+| `vars.sensor_id` | Sensor that supplied the reading |
+| `vars.timestamp` | Time the condition was met |
 
-> **Schedule** — only between 22:00 and 06:00
-> **Trigger** — motion at the side gate, only if it lasts 10 minutes
-> **Automation** — alert me, and say where
+## Combine a trigger with a schedule
 
-Someone wandering past at two in the morning: nothing. Someone who is still out there ten minutes later: one alert, and it tells you which sensor.
+**Enable Schedule** on the Start Event also applies to trigger-started automations. The trigger watches and counts continuously; the schedule is checked when the countdown completes and the automation starts.
 
-There is one detail worth knowing, because it is not quite what you would guess. **The trigger is not watching the clock.** It counts its ten minutes whatever the hour; the schedule is checked at the end, when the trigger has made up its mind and hands the job to your automation.
+For a schedule of 22:00–06:00 and a 10-minute trigger:
 
-So somebody who turns up at 21:55 and is still there at 22:05 *will* wake you, even though they arrived before your night hours started — the ten minutes ran out inside the window, and that is the moment that counts. Somebody whose ten minutes run out at 06:05 will not, even though they arrived while it was still night.
+- a condition that begins at 21:55 and completes at 22:05 can start the automation;
+- a condition that completes at 06:05 cannot start the automation.
 
-That is usually what you want: something that carries on into the small hours is exactly the thing worth being told about. If you would rather the whole episode had to happen inside your hours, just set the window a little wider than the wait.
-## Changing or removing one
+This lets an event that continues into your scheduled hours still receive a response.
 
-**Editing a trigger can restart what it is watching.** If you change the situation itself, anything mid-count goes back to zero — a window that has been open eight minutes starts again. Chirp warns you first.
+## Change or remove a trigger
 
-**Deleting one cannot be undone.** It stops watching, clears the alerts it raised, and any automation using it stops starting. Check what is pointing at it before you delete.
+Editing a trigger's condition can restart active countdowns. Chirp warns you before saving a change that resets the current trigger state.
 
-## Tips
+Deleting a trigger cannot be undone. It stops monitoring, clears alerts raised by that trigger, and prevents connected automations from starting. Check which automations use the trigger before deleting it.
 
-- **Name it after the situation, not the sensor.** "Freezer door left open" tells you what you are picking. "Sensor 4 trigger" does not.
-- **Start with a longer wait than feels right.** If a week goes by with nothing, shorten it. That is much nicer than being pestered while you tune it down.
-- **Always put `vars.device_name` in a grouped alert.** An alert that says a window is open somewhere is only slightly better than no alert.
-- **Group sensors that you'd react to the same way.** All the ground-floor windows belong together. The freezer does not belong with them, because you would do something completely different about it.
+## Troubleshooting
+
+| Problem | What to check |
+|---|---|
+| A sensor is missing from the selection | Confirm its data is mapped to the required reading on the sensor's **Mapping** tab. |
+| The trigger will not save | Confirm the duration is between 10 seconds and 30 days and review any problem under **How this trigger will run**. |
+| The automation starts but an expression fails | Remove uses of `vars.value`; use the trigger variables listed above. |
+| The alert does not identify the sensor | Add `vars.device_name` to the alarm message. |
+| A countdown restarted after editing | Changes to the condition can reset active countdowns; Chirp warns before saving. |
 
 ## See also
 
-- [Trigger Alarms and Actions](../your-first-automation/trigger-alarms-and-actions.md) — setting up what actually happens
-- [CEL for Home Automations](../reference/cel-for-home-automations.md) — writing the message that names the sensor
-- [Safety and Alerting](../examples/safety-and-alerting.md) — worked examples you can adapt
+- [Trigger Alarms and Actions](../your-first-automation/trigger-alarms-and-actions.md) — choose what the automation does
+- [CEL for Home Automations](../reference/cel-for-home-automations.md) — use trigger variables in expressions
+- [Safety and Alerting](../examples/safety-and-alerting.md) — adapt complete home-safety examples

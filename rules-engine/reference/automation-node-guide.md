@@ -12,7 +12,7 @@ All properties panels have **Save** and **Cancel** buttons at the bottom. Change
 
 ## Start Event
 
-The entry point of your automation. Every automation has exactly one Start Event, placed automatically when you create it. When the sensor you select reports a new reading, the automation starts running.
+The entry point of your automation. Every automation has exactly one Start Event, placed automatically when you create it. It can start from one sensor's readings or from a trigger that watches a condition across one or more sensors.
 
 ### Properties panel
 
@@ -24,8 +24,8 @@ The entry point of your automation. Every automation has exactly one Start Event
 | **Event filter — Sensor** | Shown for **Sensor reading**. Dropdown to select the sensor on that device. Enabled after you choose a device. Placeholder: *Select sensor*. |
 | **Trigger condition** | Shown for **Trigger condition** instead of the Event filter. Dropdown listing your triggers. Placeholder: *Select trigger*. Only the first page loads, and it says so when there are more. |
 | **Enable Schedule** | Toggle (Off by default). When turned On, the automation only runs during the specified time window. |
-| **Time Range** | Appears when Schedule is On. Presets: "0:00 – 24:00", "8:00 – 20:00", "9:00 – 18:00", "6:00 – 22:00". |
-| **Time Zone** | Appears when Schedule is On. Select the time zone for the schedule. |
+| **Time Range** | Appears when Schedule is On. Tap **Change schedule**, choose the days of the week, and enter the **From** and **To** times. Outside this window, incoming data is ignored. |
+| **Time Zone** | Appears when Schedule is On. Select the time zone used for the schedule. |
 | **Inputs** | Optional input parameters. Each has a name and a CEL expression. Click **+ Add input** to add entries. |
 | **Outputs** | Optional output parameters. Same structure as Inputs. Click **+ Add output**. |
 

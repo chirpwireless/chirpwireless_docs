@@ -41,8 +41,8 @@ Let's build a real one — a chart that tracks the living-room humidity through 
 12. Turn on **Show average value** to add a dashed line at the week's average humidity, marked "Average" in the legend.
 13. **Show vertical axis lines** and **Show horizontal axis lines** add a faint grid behind the graph — switch them on if a grid makes it easier to read.
 14. Turn on **Display data legend** to list your band labels and the average next to the graph.
-15. Turn on **Show metrics below** to repeat the reading and its current value in a line underneath the graph. Handy on a phone, or when the widget is small enough that the big number at the top gets squeezed.
-16. If you picked **bar** back at step 8, **Display value on bar** writes each bar's own number onto the bar. Saves squinting across at the scale to work out what a particular day actually was. It is only there for bar charts — a line has no bars to write on.
+15. Turn on **Show metrics below** to display the reading name and current value beneath the graph. This keeps the reading visible on a phone or when the widget is too small to show the large value clearly.
+16. If you chose **bar** in step 8, turn on **Display value on bar** to print the exact value on each bar. This option is available only for bar charts.
 17. Tap **Save** to drop the widget onto your dashboard.
 
 Now the tile shows the room's humidity right now as a big number, with the whole week traced behind it — and the green band makes it plain whether the room sat comfortable or kept sliding into the dry or damp zones. The same steps fit any reading with a history worth following; just change the sensor, the value range, and the bands.
