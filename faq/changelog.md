@@ -17,7 +17,7 @@ In Chirp you build automations. An automation is a little flowchart: a sensor re
 #### What's in This Release
 
 * **Triggers: wait until something has really been going on** — Before, a sensor reading set an automation off the second it crossed your limit. A trigger holds it back until the situation has lasted — anything from 10 seconds to 30 days. Example: put 10 minutes on the fridge door and nothing happens while the shopping goes away, but a door genuinely left open gets dealt with — a message, or the automation switching something itself.
-* **One trigger, up to 500 sensors** — Before, one sensor's reading set an automation off, so the same idea on nine windows meant nine automations. A trigger keeps the sensor list itself: describe the situation once and tick up to 500 sensors. They are watched one by one, not as a lump, and when the alert lands it says which window.
+* **One trigger, up to 500 sensors** — Before, one sensor's reading set an automation off, so the same idea on nine windows meant nine automations. A trigger keeps the sensor list itself: describe the situation once and tick up to 500 sensors. They are watched one by one, not as a lump, and the alert can tell you which window if you have set the message up to say so.
 * **Everything your sensors measure, on one page** — Every kind of reading your sensors send — temperature, damp, battery, door open or shut — used to be spread over three tabs. It is now one list under Devices → Metrics that you can search, filter and edit in one place.
 * **Numbers printed on your bar charts** — Turn on **Display value on bar** and the figure is printed straight onto the bar. **Show metrics below** adds a row beneath the graph listing where each reading stands.
 * **Use your own AI instead of the monthly allowance** — Your plan includes a set number of Helper messages a month. Connect your own OpenAI, Anthropic or Ollama account and that limit stops applying. Ollama accounts would not connect at all before; now they do.
@@ -59,7 +59,7 @@ Now you pick the sensors when you create the trigger, **up to 500 of them**, and
 
 They are not lumped together. Each sensor is watched on its own and keeps its own countdown, so one window being open makes no difference to the other eight. Before you save, a table called **How this trigger will run** shows one line per sensor so you can check you built what you meant.
 
-The alert can also name the sensor that set it off — worth turning on, because "a window is open" is much less useful at 11pm than "the landing window is open".
+The alert can name the sensor that set it off, but only if you put that into the message yourself — it does not appear on its own. Worth the minute it takes: "a window is open" is much less useful at 11pm than "the landing window is open".
 
 <figure><img src="../.gitbook/assets/trigger-device-group.jpg" alt="The sensor picker and the How this trigger will run table, one row per selected sensor"><figcaption></figcaption></figure>
 
@@ -75,7 +75,7 @@ Before 3.9.0 these were spread across three tabs, and the form for adding one sa
 
 All of it now sits in a single place, **Devices → Metrics**, where you can search by name, narrow things down by unit and type, reorder the list, and add or edit without leaving the box.
 
-One thing to watch: the list covers your whole home, so editing one changes it for every sensor using it. That is what you want when you are fixing a unit everywhere and not what you want when you meant one sensor — so Chirp tells you which of the two is about to happen and waits for you to confirm.
+One thing to watch: the list covers your whole home, so editing one changes it for every sensor using it. That is what you want when you are fixing a unit everywhere and not what you want when you meant one sensor — so Chirp warns you that every sensor using it will pick up the change, and waits for you to confirm.
 
 <figure><img src="../.gitbook/assets/device-metrics.jpg" alt="The Devices Metrics list with search, unit, type and data type filters and a sort control"><figcaption></figcaption></figure>
 
@@ -102,7 +102,7 @@ Your plan includes a set number of Helper messages each month. Most homes never 
 
 Open **Connect your AI** at the top of AI Chat and fill in four boxes: the **provider** (OpenAI, Anthropic, OpenRouter, Ollama, or a custom one), the **address**, which fills itself in once you pick a provider, your **API key** from that provider, and the **model name**.
 
-One of those five was simply broken until this release. Every Ollama model name ends in a colon and a version — `gemma4:31b` — and Chirp threw that colon out before it even tried to connect, which ruled out Ollama entirely. The two names offered as suggestions were no help either, since one of them does not exist and the other is behind a paid Ollama subscription. Both problems are gone, and the names you are offered now work on a free account.
+One of those five was simply broken until this release. Every Ollama model name ends in a colon and a version — `gemma4:31b` — and Chirp threw that colon out before it even tried to connect, which ruled out every Ollama model that carries one, meaning very nearly all of them. The two names offered as suggestions were no help either: the tag they use is not in Ollama Cloud's list at all, and the model behind them wants a paid Ollama plan. Both problems are gone, and the names you are offered now work on a free account.
 
 You also get told what actually went wrong. Whatever the reason, the box used to say the model rejected the request. It now tells the difference between a key it does not recognize, a key that is fine but on a plan that does not cover the model you picked, and a model name that provider does not have. And once it is connected, it keeps showing which model you are on, so you are not guessing months later.
 
@@ -116,9 +116,9 @@ You also get told what actually went wrong. Whatever the reason, the box used to
 
 Since 3.7.0 you have been able to connect an AI app you already use — ChatGPT, Claude and others — straight to your home and ask it about your sensors, and since 3.8.0 it has been able to switch things for you as well, without you opening Chirp.
 
-Before 3.9.0, those apps could see a list of things they were allowed to do but nothing about what any of them would actually cause. An app could not tell "how warm is the nursery" apart from "turn off the heating", so it either checked with you about everything or about nothing.
+Before 3.9.0, those apps could see the things they were allowed to do, but with no proper name for any of them and no way to tell looking something up from changing it. An app could not tell "how warm is the nursery" apart from "turn off the heating", so it either checked with you about everything or about nothing.
 
-Now each one says what it is: whether it only looks something up, whether it changes something, and whether it reaches outside your home. So your app answers "how warm is the nursery?" straight away, and stops to ask before it switches a lamp off or removes a sensor. You do not have to set any of this up, and because the descriptions come from what the server can genuinely do, they cannot go out of date.
+Now each one says what it is: whether it only looks something up, whether it changes something, and whether it reaches outside your home. So your app answers "how warm is the nursery?" straight away, and stops to ask before it switches a lamp off or removes a sensor. You do not have to set any of this up, and what each one claims about itself is checked against what the server really offers, so it cannot drift out of date.
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 — your AI app knows what is safe to run"><figcaption></figcaption></figure>
 
@@ -132,11 +132,11 @@ Most of the fixing in this release went into the Helper, and nearly all of it wa
 
 * It said it had changed how often a sensor reports when the sensor never accepted it.
 * It renamed a sensor you had named yourself when you tried adding it a second time.
-* It quietly attached a temperature reading to a door sensor that nobody had asked for.
+* Setting a sensor up, it would quietly attach a temperature reading that nobody had asked for.
 * It insisted it could not switch your equipment, which it has been able to do since 3.8.0. Where something really does have to be done on a screen, it now tells you which one.
 * Having just added a sensor for you, it would sometimes display a failure alongside the success for it.
 * A confirmation message came out with stray characters where the line breaks belonged.
-* It occasionally sent the same reply twice over, and charged you two messages out of your allowance for it.
+* It occasionally said the same thing twice inside one reply — once written out, then again in a box repeating it.
 * A reply that came back in a single burst left the chat looking blank until the page was refreshed.
 
 All fixed. The Helper also sticks to your plan's sensor limit now — on the free plan you could get past it by asking the Helper instead of using the form.
