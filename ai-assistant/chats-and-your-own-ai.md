@@ -26,14 +26,32 @@ When you run out, the Helper lets you know you've reached your limit — but eve
 
 ## Using your own AI key
 
-Prefer to bring your own? Open **Connect your AI** at the top of AI Chat and fill in:
+Prefer to bring your own? Open **Connect your AI** at the top of AI Chat. There are four boxes, and the last one is the only fiddly bit.
 
-* **Provider** — OpenAI, Anthropic, Ollama, or Custom (OpenAI compatible).
-* **Base URL** — leave it as-is for OpenAI; for another compatible service (such as DeepSeek or Qwen), paste its address here.
-* **API Key** — your key from that provider. It's kept private and hidden like a password.
-* **Model ID** — type or pick the model you'd like to use.
+* **Provider** — OpenAI, Anthropic, OpenRouter, Ollama, or Custom (OpenAI compatible).
+* **Base URL** — fills itself in once you choose a provider. Only change it if you are pointing at your own server or at a service that is not on the list, and make sure it is an address reachable from outside your house — something that only answers on your home network will not work.
+* **API Key** — the key from that provider. It is kept private and hidden like a password. You need one whichever provider you choose, Ollama included.
+* **Model ID** — the model's name, spelled the way your provider spells it. Type it, or tap one of the suggestions.
 
-Tap **Check connectivity** to make sure it's working — you'll see **Connected** or **Not connected** — then **Save**. From then on, your own AI runs your chats and the monthly limit no longer applies. You can change or remove the key anytime from the same place.
+### Spelling the model name
+
+This is where it usually goes wrong. The name is handed straight to your provider, so it has to match theirs letter for letter.
+
+Ollama is the one to watch. Its names finish with a colon and a version — `gemma4:31b` — and that version is part of the name, so `gemma4` on its own finds nothing at all. Ollama's suggestions point at Ollama Cloud, where most models want a paid Ollama subscription; the two offered in the box do not. OpenRouter, if you go that way, puts the company first: `anthropic/claude-sonnet-4-6`.
+
+### If it will not connect
+
+Tap **Check connectivity** before you save and it genuinely tries, so you find out now instead of halfway through a conversation next week. You will see **Connected**, or a line naming the problem:
+
+* *the provider rejected the API key* — mistyped, cancelled, or belonging to a different account.
+* *the provider denied this key access to the model* — the key is fine, the plan behind it is not. Almost always Ollama Cloud asking for a subscription.
+* *the provider does not serve this model* — check the spelling, and on Ollama check the version on the end.
+* *this model has been retired by the provider* — it existed once; pick a current one.
+* *the provider refused the request for billing reasons* — worth logging in to that provider and looking at the account.
+* *the provider is rate limiting this key* — you have asked too much too quickly. Wait a moment.
+* *could not reach AI provider* — whatever is in Base URL is not answering.
+
+Then **Save**. From then on your own AI runs your chats, the monthly limit stops applying, and the panel goes on showing which model you are using so you are not guessing about it later. You can change or remove the key anytime from the same place.
 
 ## Where to go next
 
