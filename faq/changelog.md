@@ -10,14 +10,14 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 release banner"><figcaption></figcaption></figure>
 
-In Chirp you build automations. An automation watches one of your sensors and tells you when a reading crosses a limit you set — the garage door opening, the basement getting damp. Two things about automations changed in 3.9.0. **First, an automation can now wait before it runs.** Before, it ran the second the reading crossed the limit, which is why the motion sensor by the gate has been telling you about the cat. Now you can insist the situation holds for a while first — anything from 10 seconds to 30 days. **Second, one automation can now cover many sensors.** Before, you built one automation per sensor: nine windows meant nine automations. Now you pick the sensors and build it once. There is more in this release: everything your sensors measure is on one page you can search, bar charts can print their numbers, you can run the Helper on your own AI account instead of the monthly allowance, and if you have connected ChatGPT or Claude to your home they now know which of their actions change something and which only look. [app.chirpwireless.io](https://app.chirpwireless.io)
+In Chirp you build automations. An automation is a little flowchart: a sensor reading sets it off, it works through whatever you told it to check, and then it does something — messages you, **switches something on or off for you** (the dehumidifier, the water valve, a lamp), or looks at a second sensor before it decides. What changed in 3.9.0 is **what sets one off**. Before, it was one sensor's reading, the second that reading crossed your limit — which is why the motion sensor by the gate has been telling you about the cat. Now a **trigger** can do it instead: a situation you describe once, that has to go on for a while before anything happens — 10 seconds to 30 days — across as many as 500 sensors, each watched on its own. There is more in this release: everything your sensors measure is on one page you can search, bar charts can print their numbers, you can run the Helper on your own AI account instead of the monthly allowance, and if you have connected ChatGPT or Claude to your home they now know which of their actions change something and which only look. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **Make an automation wait before it runs** — Before, an automation ran the moment a reading crossed your limit. Now it can be made to hold off until the situation has gone on for a while — anything from 10 seconds to 30 days. Example: set 10 minutes on the fridge door and you will not hear about it while someone is putting the shopping away, but you will hear about it if the door was left open.
-* **One automation for many sensors** — Before, you built one automation per sensor, so nine windows meant nine automations. Now you pick up to 500 sensors and build one automation for all of them. Each sensor is still watched on its own, and the alert tells you which one it was.
+* **Triggers: wait until something has really been going on** — Before, a sensor reading set an automation off the second it crossed your limit. A trigger holds it back until the situation has lasted — anything from 10 seconds to 30 days. Example: put 10 minutes on the fridge door and nothing happens while the shopping goes away, but a door genuinely left open gets dealt with — a message, or the automation switching something itself.
+* **One trigger, up to 500 sensors** — Before, one sensor's reading set an automation off, so the same idea on nine windows meant nine automations. A trigger keeps the sensor list itself: describe the situation once and tick up to 500 sensors. They are watched one by one, not as a lump, and when the alert lands it says which window.
 * **Everything your sensors measure, on one page** — Every kind of reading your sensors send — temperature, damp, battery, door open or shut — used to be spread over three tabs. It is now one list under Devices → Metrics that you can search, filter and edit in one place.
 * **Numbers printed on your bar charts** — Turn on **Display value on bar** and the figure is printed straight onto the bar. **Show metrics below** adds a row beneath the graph listing where each reading stands.
 * **Use your own AI instead of the monthly allowance** — Your plan includes a set number of Helper messages a month. Connect your own OpenAI, Anthropic or Ollama account and that limit stops applying. Ollama accounts would not connect at all before; now they do.
@@ -28,7 +28,7 @@ In Chirp you build automations. An automation watches one of your sensors and te
 
 **Make an automation wait before it runs**
 
-Before 3.9.0, an automation ran the second a sensor reading crossed the limit you set. For a water leak that is exactly right — you want to know the moment there is water on the floor. For nearly everything else it is why people end up muting their alerts.
+Before 3.9.0, one sensor's reading set an automation off, the second it crossed the limit you set. For a water leak that is exactly right — you want to know the moment there is water on the floor, and the automation can shut the valve while it tells you. For nearly everything else it is why people end up muting their alerts.
 
 The problem is that a harmless reading and a serious one look identical at the moment they happen:
 
@@ -53,7 +53,7 @@ Two things worth knowing:
 
 **One automation for many sensors**
 
-Before 3.9.0, an automation watched one sensor. If you wanted the same thing on all nine windows, you built it nine times — and if you later changed the waiting time, you edited all nine.
+An automation could always involve more than one sensor — it can check a second one before deciding, and switch a device that is nowhere near the sensor that woke it. The one thing only ever came from a single sensor: the nudge that woke it up. So the same idea on all nine windows meant building it nine times over, and a change of mind about the timing meant going back through all nine.
 
 Now you pick the sensors when you create the trigger, **up to 500 of them**, and one automation covers the lot. Adding a tenth window later is a checkbox, not another automation.
 
@@ -114,7 +114,7 @@ You also get told what actually went wrong. Whatever the reason, the box used to
 
 **Your AI app knows what's safe**
 
-Since 3.7.0 you have been able to connect an AI app you already use — ChatGPT, Claude and others — straight to your home, so you can ask it about your sensors and have it switch things without opening Chirp.
+Since 3.7.0 you have been able to connect an AI app you already use — ChatGPT, Claude and others — straight to your home and ask it about your sensors, and since 3.8.0 it has been able to switch things for you as well, without you opening Chirp.
 
 Before 3.9.0, those apps could see a list of things they were allowed to do but nothing about what any of them would actually cause. An app could not tell "how warm is the nursery" apart from "turn off the heating", so it either checked with you about everything or about nothing.
 
