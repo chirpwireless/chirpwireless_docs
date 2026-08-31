@@ -22,10 +22,10 @@ An automation is a set of instructions you build once: "when this sensor reads s
 
 ## How Automations Fit Together
 
-Automations sit between your sensors and what happens next. Your sensors send data to Chirp continuously. When a reading arrives, Chirp checks it against any running automations. If the conditions match, the automation takes action — sending you an alert, acting on a device itself, or both.
+Automations sit between your sensors and what happens next. A Start Event can run on every reading from one sensor, or it can wait for a saved trigger condition that watches one or several devices. When the selected source fires, the automation takes action—sending an alert, controlling a device, or both.
 
 ```
-Sensor reading arrives
+Sensor reading or trigger signal arrives
        |
   Automation evaluates conditions
        |
@@ -34,7 +34,7 @@ Sensor reading arrives
   Not met? --> No action, wait for next reading
 ```
 
-You build the automations. You choose the sensors, define the conditions, and decide what happens — an alert, an action on a device, or both. Chirp handles the rest — around the clock, whether you are home or away.
+You choose the Start source, define the conditions, and decide what happens—an alert, an action on a device, or both. Chirp handles the rest around the clock. See [Triggers](going-deeper/triggers.md) when a condition should wait or apply to several devices.
 
 ## Getting Started
 

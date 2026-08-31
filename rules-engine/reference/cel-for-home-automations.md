@@ -33,7 +33,7 @@ Every expression has access to a `vars` object that holds the current automation
 | `vars.detector_id` | The identifier of the trigger |
 | `vars.timestamp` | The trigger signal time as Unix seconds |
 
-A trigger-started automation does not receive `vars.value`, because it reports a condition rather than one raw reading. Replace expressions that use `vars.value` before switching an existing automation to **Trigger condition**.
+A trigger-started automation does not receive `vars.value`, because it reports a condition transition rather than one normalized sensor event. This applies to immediate and delayed triggers. Replace expressions that use `vars.value` before switching an existing automation to **Trigger condition**.
 
 ### Accessing fields
 
