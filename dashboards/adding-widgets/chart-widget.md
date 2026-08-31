@@ -4,7 +4,7 @@ description: Graph a reading's history over the hour, day, week, or month with c
 
 # Chart Widget
 
-<figure><img src="../../.gitbook/assets/chart-widget.jpg" alt="The Add Chart widget dialog on its Appearance tab, with the widget type, value range and thresholds beside a live preview"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/dashboard-widget-picker.jpg" alt="The Chirp widget picker with Chart listed separately from Last Data, Text, Map, and Control"><figcaption></figcaption></figure>
 
 The Chart widget draws a reading's history as a graph — a line or bars stretching back over the last hour, day, week, or month — so you can follow how it has moved, not just where it is right now.
 
@@ -13,6 +13,15 @@ One Chart widget puts four things together: the **current value** as a big numbe
 Those color bands also tint the **big number** at the top: when the current reading sits inside a band, that number takes the band's color — the line or bars themselves keep the color you gave the metric. So the tile tells you how things are going before you even look at the graph.
 
 A Chart widget follows one reading. If you want to watch several, add a separate Chart widget for each.
+
+## Pick the shape of the history
+
+**Chart** is the item in the dashboard widget picker. Its **Appearance** tab then offers two Chart types:
+
+- [Line Chart](chart-widget/line-chart.md) connects the readings so you can follow a changing trend.
+- [Bar Chart](chart-widget/bar-chart.md) keeps each report separate so you can compare the values.
+
+Both types use the same sensor, timeframe, range, color bands, average, axes, legend, and **Show metrics below** switch. Only Bar offers **Display value on bar**.
 
 ## Configure a Chart widget
 
@@ -73,5 +82,7 @@ Any reading with a history worth watching fits the Chart widget — soil moistur
 ## See also
 
 - [Last Data Widget](last-data-widget.md) — The current reading on its own, when you do not need the history
+- [Line Chart](chart-widget/line-chart.md) — See how a reading moves over time
+- [Bar Chart](chart-widget/bar-chart.md) — Compare reports and show their exact values
 - [Conditions](conditions.md) — Color rules for the Last Data and Image widgets
 - [Adding Widgets](README.md) — How to open edit mode and use the widget picker

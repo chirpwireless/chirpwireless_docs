@@ -10,13 +10,13 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 release banner"><figcaption></figcaption></figure>
 
-Chirp automations respond to sensor data by sending an alert, checking another reading, or controlling equipment such as a lamp, dehumidifier, or water valve. A **trigger** defines the condition that starts an automation. Before 3.9.0, applying the same response to nine window devices meant creating and maintaining nine automations. Now you can group those devices in one trigger and connect them to one automation. Each watched device is evaluated independently, while another selected device can provide a shared reading used by the whole group. A trigger can also wait until the condition has remained true for a set time — from 10 seconds to 30 days — before anything happens. This release also puts all metrics on one searchable page, adds values to bar charts, improves the Helper and bring-your-own-AI connections, and helps connected AI apps distinguish between actions that look up information and actions that change something. [app.chirpwireless.io](https://app.chirpwireless.io)
+Chirp automations send alerts, check other readings, or control equipment when something happens at home. A **trigger** is a saved condition that starts an automation. It can now watch one device or several selected devices, and it can react immediately or only after the condition lasts for a set time. Before 3.9.0, covering nine windows meant maintaining nine automations; now one trigger and automation can cover them while keeping each window's condition and countdown separate. This release also puts metrics on one searchable page, prints exact values on bar charts, improves the Helper and bring-your-own-AI connection, and helps connected AI apps tell read-only actions from actions that change something. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **One automation for a group of up to 500 devices** — Previously, applying the same automation to nine devices required nine separate automations. Now one trigger can include the group, evaluate each watched device separately, and start the shared automation for whichever one meets the condition.
+* **One automation for up to 500 devices** — Previously, applying the same automation to nine devices required nine separate automations. Now one trigger can select those devices, check each one separately, and start the shared automation for whichever device meets the condition.
 * **Wait before an automation runs** — A trigger can require a condition to remain true for 10 seconds to 30 days before starting the automation. For example, it can ignore a refrigerator door opened briefly but act when the door remains open for 10 minutes.
 * **All sensor metrics on one page** — A metric is a type of reading, such as temperature, humidity, or battery level. Metrics that were spread across three tabs are now available in one searchable list at **Devices → Metrics**, where you can also add and edit them.
 * **Show values on bar charts** — **Display value on bar** prints each value on its bar. **Show metrics below** adds the current readings beneath the chart.
@@ -32,9 +32,9 @@ An automation is a flowchart that tells Chirp how to respond to sensor data. It 
 
 Before 3.9.0, each automation could listen to only one device's sensor. If the same condition and response applied to nine windows, you needed nine separate automations. Updating the condition later meant editing every copy.
 
-Now one trigger can include up to **500 devices**, and one automation applies to the group. Adding another device means updating the trigger instead of creating another automation.
+Now one trigger can select up to **500 devices**, and one automation responds for all of them. Adding another sensor means updating that trigger instead of copying the automation. This selection is saved inside the trigger rather than as a reusable device group.
 
-Most grouped triggers are simple: every selected device supplies the same reading and is watched independently. Every watched device has its own trigger state and countdown, so one window remaining open does not affect any other window.
+Most multi-device triggers are simple: every selected device supplies the same reading and is watched independently. Every watched device has its own trigger state and countdown, so one window remaining open does not affect any other window.
 
 A selected device can also supply a shared reading instead of being watched. For example, nine window devices can each supply their own open-or-closed reading while one thermostat supplies the heating status for every window check. Before you save, **How this trigger will run** shows one row for each watched device and identifies any shared reading in the **Uses** column.
 
@@ -42,7 +42,7 @@ An alert can also identify the watched device that triggered the automation. Inc
 
 <figure><img src="../.gitbook/assets/trigger-device-group.jpg" alt="The device picker and the How this trigger will run table, one row per watched device"><figcaption></figcaption></figure>
 
-[→ Triggers](../rules-engine/going-deeper/triggers.md)
+[→ One Automation for Multiple Devices](../rules-engine/going-deeper/triggers/multiple-devices.md)
 
 ***
 
@@ -65,7 +65,7 @@ Two additional behaviors control how the timer works:
 
 <figure><img src="../.gitbook/assets/trigger-time-window.jpg" alt="The Create trigger dialog with a humidity condition and Only if it lasts set to 10 minutes"><figcaption></figcaption></figure>
 
-[→ Triggers](../rules-engine/going-deeper/triggers.md)
+[→ Trigger Timing](../rules-engine/going-deeper/triggers/trigger-timing.md)
 
 ***
 
@@ -91,7 +91,9 @@ Turn on **Display value on bar** to print the value directly on each bar. This o
 
 Turn on **Show metrics below** to add a row beneath the chart with each metric and its current reading. This can make compact dashboard widgets easier to read.
 
-[→ Chart Widget](../dashboards/adding-widgets/chart-widget.md)
+<figure><img src="../.gitbook/assets/chart-widget.jpg" alt="A Chirp Bar chart with values printed above its bars and the current reading below"><figcaption></figcaption></figure>
+
+[→ Bar Chart](../dashboards/adding-widgets/chart-widget/bar-chart.md)
 
 ***
 

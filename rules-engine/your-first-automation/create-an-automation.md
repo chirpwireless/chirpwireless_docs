@@ -1,10 +1,10 @@
 ---
-description: Open the editor, name your automation, pick the sensor that triggers it, and save your first draft.
+description: Open the editor, name an automation, choose a Sensor reading or Trigger condition start, and save the first version.
 ---
 
 # Create an Automation
 
-This page walks you through opening the automation editor, naming your first automation, choosing the sensor that triggers it, and saving your initial draft.
+This page walks you through opening the automation editor, naming your first automation, deciding what starts it, and saving your initial draft.
 
 ## Open the Rules Engine
 
@@ -23,22 +23,32 @@ At the top of the editor, you will see a name field. Click it and type a name th
 
 You can also add a description: click the three-dot menu next to the name and select **Edit description**. This is optional but helpful if you have several automations and want to remember the purpose of each one.
 
-## Choose Your Sensor
+## Choose What Starts the Automation
 
-The Start Event is the trigger for your automation. It decides which sensor's readings will kick off the logic every time new data arrives.
+The **Start Event** is the automation's entry point. Its **Start source** offers two choices:
+
+| Start source | Use it when |
+|---|---|
+| **Sensor reading** | One sensor should run the automation every time it reports. The normalized reading value is available as `vars.value`. |
+| **Trigger condition** | Chirp should evaluate a saved condition first—immediately or after a wait, for one device or several devices. |
+
+This tutorial uses **Sensor reading** for one basement humidity sensor:
 
 1. Click the **Start Event** node on the canvas (the circle with the envelope icon).
 2. A properties panel opens on the right side of the screen.
-3. In the **Device** dropdown, search for and select the device you want to monitor (for our example, the basement humidity sensor).
-4. In the **Sensor** dropdown, select the specific sensor on that device (this dropdown becomes available after you pick a device).
+3. Set **Start source** to **Sensor reading**.
+4. In **Device**, search for and select the basement sensor.
+5. In **Sensor**, choose its humidity reading. This field becomes available after you pick the device.
 
-That is all you need for a basic trigger. Every time your basement sensor sends a new humidity reading, this automation will evaluate it.
+Every time that sensor reports humidity, this automation will now start and evaluate the reading.
+
+To start from a condition instead, first create it under **Rules Engine → Triggers**. Then return to the Start Event, choose **Trigger condition**, and select it. This is how one automation can cover several similar devices or ignore a condition that ends before its timer finishes. See [Triggers](../going-deeper/triggers.md).
 
 At this stage, you are still working entirely visually. As you build more advanced automations, some fields let you add CEL expressions for precise conditions or message text, but most of the structure stays BPMN-based and easy to follow.
 
 ### Optional: Restrict When It Runs
 
-If you only want this automation to run during certain hours — for example, only overnight when you are not home to check things yourself — toggle the **Enable Schedule** switch in the Start Event properties. You can pick a time range and time zone.
+If you only want this automation to run during certain hours—for example, overnight—turn on **Enable Schedule** in the Start Event and choose the days, time range, and time zone. Schedule limits the start source you selected; it is not a third source.
 
 For now, leave the schedule off so the automation evaluates every reading around the clock.
 

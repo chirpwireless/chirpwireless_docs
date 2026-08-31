@@ -1,5 +1,5 @@
 ---
-description: Go beyond single-sensor rules — pull in other sensors, do the math, and publish automations that run live.
+description: Build Chirp automations with saved triggers, several devices, enriched readings, expressions, and controlled deployment.
 ---
 
 # More Powerful Automations
@@ -9,6 +9,8 @@ Your first automation watches a single sensor and reacts to a simple threshold. 
 What if you want to compare the temperature inside your home with the temperature outside before deciding whether something is wrong? Or check the humidity in your wine cellar against a recommended range that depends on the season? These situations call for automations that pull data from more than one source and do a bit of math before making a decision.
 
 This section covers the tools that make that possible:
+
+- **[Triggers](triggers.md)** — Define the condition before the automation starts. React immediately or only after it lasts, apply one automation to several devices, and combine that wait with overnight hours.
 
 - **[Data Enrichment and Expressions](data-enrichment-and-expressions.md)** — Fetch readings from other sensors inside the same automation, transform data with CEL expressions, and handle what happens when a sensor is offline. This is how you build automations that consider the full picture, not just one number.
 
