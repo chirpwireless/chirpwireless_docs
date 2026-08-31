@@ -6,6 +6,160 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <details>
 
+<summary>Flight Log. Release 3.9.0</summary>
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 release banner"><figcaption></figcaption></figure>
+
+Chirp automations respond to sensor data by sending an alert, checking another reading, or controlling equipment such as a lamp, dehumidifier, or water valve. A **trigger** defines the condition that starts an automation. Before 3.9.0, applying the same response to nine window devices meant creating and maintaining nine automations. Now you can group those devices in one trigger and connect them to one automation. Each watched device is evaluated independently, while another selected device can provide a shared reading used by the whole group. A trigger can also wait until the condition has remained true for a set time — from 10 seconds to 30 days — before anything happens. This release also puts all metrics on one searchable page, adds values to bar charts, improves the Helper and bring-your-own-AI connections, and helps connected AI apps distinguish between actions that look up information and actions that change something. [app.chirpwireless.io](https://app.chirpwireless.io)
+
+***
+
+#### What's in This Release
+
+* **One automation for a group of up to 500 devices** — Previously, applying the same automation to nine devices required nine separate automations. Now one trigger can include the group, evaluate each watched device separately, and start the shared automation for whichever one meets the condition.
+* **Wait before an automation runs** — A trigger can require a condition to remain true for 10 seconds to 30 days before starting the automation. For example, it can ignore a refrigerator door opened briefly but act when the door remains open for 10 minutes.
+* **All sensor metrics on one page** — A metric is a type of reading, such as temperature, humidity, or battery level. Metrics that were spread across three tabs are now available in one searchable list at **Devices → Metrics**, where you can also add and edit them.
+* **Show values on bar charts** — **Display value on bar** prints each value on its bar. **Show metrics below** adds the current readings beneath the chart.
+* **Use your own AI account** — Connect an OpenAI, Anthropic, OpenRouter, Ollama, or compatible account instead of using the monthly Helper-message allowance included with your Chirp plan. Ollama model names with version tags are now supported.
+* **Connected AI apps can distinguish read and write actions** — Actions available to ChatGPT, Claude, and other connected AI apps now identify whether they only read information or can change or delete something.
+* **Reliability and interface improvements** — Sensor photos save correctly, the Activity Log refreshes after permission changes, widget colors work again, log retention follows your plan, and the Helper reports completed actions more reliably.
+
+***
+
+**One automation for many devices**
+
+An automation is a flowchart that tells Chirp how to respond to sensor data. It can check readings, send an alert, or control equipment. A trigger defines the condition that starts the automation.
+
+Before 3.9.0, each automation could listen to only one device's sensor. If the same condition and response applied to nine windows, you needed nine separate automations. Updating the condition later meant editing every copy.
+
+Now one trigger can include up to **500 devices**, and one automation applies to the group. Adding another device means updating the trigger instead of creating another automation.
+
+Most grouped triggers are simple: every selected device supplies the same reading and is watched independently. Every watched device has its own trigger state and countdown, so one window remaining open does not affect any other window.
+
+A selected device can also supply a shared reading instead of being watched. For example, nine window devices can each supply their own open-or-closed reading while one thermostat supplies the heating status for every window check. Before you save, **How this trigger will run** shows one row for each watched device and identifies any shared reading in the **Uses** column.
+
+An alert can also identify the watched device that triggered the automation. Include `vars.device_name` in the alert message so it says “Landing window is open” instead of only “A window is open.”
+
+<figure><img src="../.gitbook/assets/trigger-device-group.jpg" alt="The device picker and the How this trigger will run table, one row per watched device"><figcaption></figcaption></figure>
+
+[→ Triggers](../rules-engine/going-deeper/triggers.md)
+
+***
+
+**Make an automation wait before it runs**
+
+Before 3.9.0, an automation ran as soon as a sensor reading crossed the limit you set. An immediate response is useful for urgent conditions such as a water leak, but a brief increase in humidity or an open door does not always require action.
+
+A trigger can now require the condition to remain true before the automation starts. Choose **Only if it lasts**, then set a duration in seconds, minutes, hours, or days. New triggers start at 10 minutes; you can set any duration from 10 seconds to 30 days.
+
+For example:
+
+* Ignore a refrigerator door opened briefly, but send an alert if it remains open for 10 minutes.
+* Ignore the temporary humidity from a shower, but act if the bathroom remains at 80% humidity all day.
+* Ignore a few seconds of movement near a gate, but respond if motion continues for 10 minutes.
+
+Two additional behaviors control how the timer works:
+
+* **A gap between sensor reports does not reset the countdown.** A battery-powered sensor that reports every 15 minutes will not cancel a 20-minute wait simply because no new reading arrived between reports.
+* **Clearing the trigger can have its own condition and delay.** Under **Clear behavior**, define when the trigger returns to normal and how long that clear condition must last. This prevents one normal reading from clearing a condition too early.
+
+<figure><img src="../.gitbook/assets/trigger-time-window.jpg" alt="The Create trigger dialog with a humidity condition and Only if it lasts set to 10 minutes"><figcaption></figcaption></figure>
+
+[→ Triggers](../rules-engine/going-deeper/triggers.md)
+
+***
+
+**All sensor metrics on one page**
+
+A metric defines a type of sensor reading, such as temperature, humidity, battery level, or whether a door is open. The definition tells Chirp the metric's name, unit, and data type so readings from different manufacturers can be used consistently in dashboards and automations.
+
+Before 3.9.0, metric definitions were divided across three tabs. They are now managed in one list at **Devices → Metrics**. From this page, you can search by name, filter by unit or type, sort by newest or oldest, and add or edit a metric in the same dialog.
+
+Metrics apply across your Chirp account. Editing one changes it for every sensor that uses it, so Chirp now warns you about the wider effect and asks for confirmation before saving.
+
+<figure><img src="../.gitbook/assets/device-metrics.jpg" alt="The Devices Metrics list with search, unit, type and data type filters and a sort control"><figcaption></figcaption></figure>
+
+[→ Data Templates](../devices/data-templates.md)
+
+***
+
+**Show values on bar charts**
+
+A chart widget displays sensor readings on a dashboard. Before 3.9.0, values on a bar chart had to be estimated from the chart's scale.
+
+Turn on **Display value on bar** to print the value directly on each bar. This option is available only for bar charts.
+
+Turn on **Show metrics below** to add a row beneath the chart with each metric and its current reading. This can make compact dashboard widgets easier to read.
+
+[→ Chart Widget](../dashboards/adding-widgets/chart-widget.md)
+
+***
+
+**Use your own AI account**
+
+Each Chirp plan includes a monthly allowance of Helper messages. You can instead connect an account from OpenAI, Anthropic, OpenRouter, Ollama, or a custom OpenAI-compatible provider. Messages sent through that connection do not use the allowance included with your Chirp plan.
+
+Open **Connect your AI** at the top of AI Chat and enter the provider, endpoint, API key, and model name.
+
+Before 3.9.0, Chirp rejected Ollama model names that included a version after a colon, such as `gemma4:31b`. The suggested Ollama models were also unavailable to free accounts. Versioned model names are now accepted, and the suggestions have been updated to models that work with a free Ollama account.
+
+Connection errors now explain whether the provider rejected the API key, the account does not include access to the selected model, or the model name does not exist. After you connect, the panel continues to show which model is in use.
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 — use your own AI instead of the monthly allowance"><figcaption></figcaption></figure>
+
+[→ Your Chats and Your Own AI](../ai-assistant/chats-and-your-own-ai.md)
+
+***
+
+**Connected AI apps can distinguish read and write actions**
+
+Chirp can connect to AI apps such as ChatGPT and Claude. These apps can answer questions about your sensors and, with permission, perform actions such as controlling equipment.
+
+Before 3.9.0, the available actions did not have clear titles or identify whether they only read information or changed something. The AI app could not reliably distinguish a question such as “How warm is the nursery?” from an action such as “Turn off the heating.”
+
+Each action now identifies whether it reads information, changes or deletes something, or reaches outside your Chirp account. Compatible AI apps can use this information to answer read-only questions directly and request confirmation before performing a change. No additional Chirp configuration is required, and the published action list is generated from the same definitions used by the server.
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 — your AI app knows what is safe to run"><figcaption></figcaption></figure>
+
+[→ MCP Server](../api/mcp-server.md)
+
+***
+
+**Reliability and interface improvements**
+
+The Helper now reports the outcome of an action more accurately:
+
+* It confirms a reporting-interval change only when the sensor accepts it.
+* Retrying sensor registration no longer replaces the name you chose.
+* Sensor registration no longer adds an unrequested temperature mapping.
+* The Helper correctly explains that Chirp can control equipment. When an action must be completed in the web interface, it directs you to the correct screen.
+* A successful sensor registration no longer displays a contradictory failure message.
+* Confirmation messages display line breaks correctly.
+* Replies no longer repeat the same answer in both text and a widget.
+* Replies that arrive all at once appear immediately without requiring a page refresh.
+* Sensor limits are enforced consistently whether a sensor is added through the Helper or through a form.
+
+Additional improvements in this release include:
+
+* Sensor photos save correctly.
+* The Activity Log refreshes after permission changes, so new entries appear without reloading the page.
+* Last Data widget values change color according to their conditions again.
+* The Key Vault describes only the fields Chirp uses.
+* Device-log retention follows the limit included with your plan.
+* The Helper can retrieve longer periods of sensor history.
+* Sensors that report once a day are no longer marked offline after only a few hours, and the warning identifies its units.
+* The support form lets you select a bug report, feature request, or integration request.
+* Emulated sensors timestamp their first reading correctly and display properly on mobile screens.
+* The trigger dialog fits on mobile screens.
+* Empty states are consistent across the platform, including automation artifacts. Device and gateway empty states also link to the shop when no hardware has been added.
+* The Download the app card displays correctly.
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0"><figcaption></figcaption></figure>
+
+</details>
+
+<details>
+
 <summary>Flight Log. Release 3.8.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.8.0.jpg" alt="Chirp 3.8.0 release banner"><figcaption></figcaption></figure>

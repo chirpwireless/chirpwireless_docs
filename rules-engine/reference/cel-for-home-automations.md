@@ -10,15 +10,30 @@ You do not need to be a programmer to use CEL. Most home automations use only a 
 
 ---
 
-## Your sensor data
+## Your automation data
 
-Every expression has access to a `vars` object that holds the current automation data. When your sensor sends a reading and the automation starts, three values are available right away:
+Every expression has access to a `vars` object that holds the current automation data. The variables available at the start depend on the **Start source**.
+
+**Sensor reading** provides:
 
 | Variable | What it contains |
 |---|---|
 | `vars.value` | The sensor reading — a number (like soil moisture `42.5`), a string (like door status `"open"`), or a boolean (like motion `true`) |
 | `vars.sensor_id` | The unique identifier of the sensor that triggered the automation |
 | `vars.timestamp` | The time the reading was recorded |
+
+**Trigger condition** provides:
+
+| Variable | What it contains |
+|---|---|
+| `vars.device_name` | The name of the watched device that met the condition |
+| `vars.subject_kind` | The watched resource type; currently `device` |
+| `vars.subject_id` | The identifier of the watched device |
+| `vars.sensor_id` | The sensor identifier used to associate the run and any alarm with the watched device |
+| `vars.detector_id` | The identifier of the trigger |
+| `vars.timestamp` | The trigger signal time as Unix seconds |
+
+A trigger-started automation does not receive `vars.value`, because it reports a condition rather than one raw reading. Replace expressions that use `vars.value` before switching an existing automation to **Trigger condition**.
 
 ### Accessing fields
 

@@ -4,7 +4,7 @@ description: Start a new chat, find past conversations, see how many requests yo
 
 # Your chats and your own AI
 
-The Helper lives in **AI Chat** in the sidebar. Beyond the conversation itself, there are a few handy things around it: starting fresh chats, finding old ones, keeping an eye on how many requests you have left, and — if you'd like — bringing your own AI.
+The Helper lives in **AI Chat** in the sidebar. From there you can start a new conversation, reopen an earlier one, check your remaining monthly requests, or connect your own AI provider.
 
 ## Starting a fresh chat
 
@@ -26,14 +26,41 @@ When you run out, the Helper lets you know you've reached your limit — but eve
 
 ## Using your own AI key
 
-Prefer to bring your own? Open **Connect your AI** at the top of AI Chat and fill in:
+Connect your own provider when you want to use a particular model or pay the provider directly. Chats that use your connection do not count against the Helper requests included with your Chirp plan.
 
-* **Provider** — OpenAI, Anthropic, Ollama, or Custom (OpenAI compatible).
-* **Base URL** — leave it as-is for OpenAI; for another compatible service (such as DeepSeek or Qwen), paste its address here.
-* **API Key** — your key from that provider. It's kept private and hidden like a password.
-* **Model ID** — type or pick the model you'd like to use.
+Before you start, get an API key from your provider. If you use your own server, it must be reachable from Chirp; an address that works only on your home network will not connect.
 
-Tap **Check connectivity** to make sure it's working — you'll see **Connected** or **Not connected** — then **Save**. From then on, your own AI runs your chats and the monthly limit no longer applies. You can change or remove the key anytime from the same place.
+To connect:
+
+1. Open **AI Chat**, then tap **Connect your AI**.
+2. Under **Provider**, choose OpenAI, Anthropic, OpenRouter, Ollama, or Custom (OpenAI compatible).
+3. Check the **Base URL** filled in for the provider. Change it only if you use your own server or another compatible service.
+4. Enter the **API Key** supplied by the provider. Chirp keeps it private and masks it in the form. Every provider requires a key, including Ollama.
+5. Enter the provider's exact **Model ID**, or choose one of the suggestions.
+6. Tap **Check connectivity**. Continue only when the panel reports **Connected**.
+7. Tap **Save**.
+
+### Spelling the model name
+
+Chirp sends the Model ID to your provider exactly as entered, so it must match the provider's catalog letter for letter.
+
+Choosing **Ollama** fills in the hosted Ollama Cloud address; it does not connect Chirp to an Ollama server running only on your home network. Ollama model names finish with a colon and a version — `gemma4:31b` — and that version is part of the name, so `gemma4` on its own finds nothing at all. Most of the Ollama Cloud catalog needs a paid Ollama subscription; the two suggestions offered in the box do not. OpenRouter, if you go that way, puts the company first: `anthropic/claude-sonnet-4-6`.
+
+### If it will not connect
+
+**Check connectivity** sends a real request to the provider. If the panel reports **Not connected**, use its message to correct the problem:
+
+| Message | What to do |
+|---|---|
+| the provider rejected the API key | Copy a valid key from the selected provider. |
+| the provider denied this key access to the model | Choose a model included in your provider plan or update the plan. |
+| the provider does not serve this model | Correct the Model ID. For Ollama, include the version tag. |
+| this model has been retired by the provider | Choose a current model. |
+| the provider refused the request for billing reasons | Check billing and spending limits with the provider. |
+| the provider is rate limiting this key | Wait, then check the connection again. |
+| could not reach AI provider | Check the Base URL and make sure Chirp can reach it. |
+
+After you save, the panel shows the active Base URL, masked key, and Model ID. Return to **Connect your AI** whenever you want to update or disconnect it.
 
 ## Where to go next
 

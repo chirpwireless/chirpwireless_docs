@@ -72,12 +72,26 @@ Once connected, your AI client can work across your home on your behalf. Here's 
 | **Pretend sensors** | Set up an emulated sensor, change what it reports, send a one-off reading to test an alert, and move a sensor between pretend and real. It can put any of your real sensors onto the emulator, and take a pretend one live onto a LoRaWAN connection. |
 | **Connections** | See how your home is connected and set up a new connection for a sensor. |
 | **Automations** | Go through the automations you've built and tell you what each one does. |
-| **Alerts** | Look at your alerts, summarize what's been triggering and how often, and send a test notification so you can check it lands on your phone. |
+| **Alerts** | Look at your alerts, summarize what's been triggering and how often, clear one that you've dealt with, and set up which alerts reach you and where. |
 | **Dashboards** | List your dashboards and pull the data behind a widget, so it can chart or explain a reading you're looking at. |
-| **History** | Search back through your home's activity, export a slice of it, and map out which sensor is measuring what. |
+| **History** | Look back over when your alerts fired and when your automations ran, and map out which sensor is measuring what. |
 | **Household** | Look up your home's details and members, invite someone new, and set what they're allowed to see. |
 
-Everything it does runs with your permissions, and destructive or important actions are shown to you before they happen — same as anywhere else in Chirp.
+Everything it does runs with your permissions. For destructive or important actions, Chirp supplies safety information that a compatible AI app can use to ask before it continues.
+
+## How your AI app knows what an action does
+
+Chirp publishes a readable name, description, and safety notes with each action. AI apps that support these notes can use them to decide whether to run an action immediately or ask you to confirm.
+
+| Safety note | Examples | What it tells the app |
+|---|---|---|
+| **Only reads** | List sensors, read alert history, get the data behind a widget | The action does not change your home. |
+| **Changes or removes something** | Remove a sensor, switch a device, change a connection, update alert recipients | The action can affect your home or equipment, so the app can ask for confirmation. |
+| **Looks outside your home** | Search a product catalog or the web for hardware | The action accesses information beyond your Chirp data. |
+
+Creating a sensor or dashboard changes your home, but it does not overwrite or switch off anything already there and can be reversed by deleting the new item. Chirp therefore does not describe creation as destructive.
+
+These notes help the AI app explain an action; they are not permission checks. Each app decides how to present confirmations. Chirp still enforces your account permissions, so the app cannot do anything that your account is not allowed to do.
 
 ## How this differs from the AI Helper in the app
 
