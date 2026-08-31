@@ -6,6 +6,8 @@ description: Create and manage the metrics that give readings from different hom
 
 A data template tells Chirp what a sensor reading means and how to display it. In the app, these definitions are called **metrics**.
 
+The two type fields answer different questions: **Data type** says whether the information is telemetry, device metadata, or a custom attribute; **Type** says whether its value is stored as a Float, Integer, String, or Boolean.
+
 For example, one temperature sensor may send `temp_c` while another sends `t`. Mapping both raw names to a metric called `temperature` lets your dashboards and automations use them in the same way.
 
 Most common sensors already have the metrics they need. Use this page when adding an unusual sensor, correcting a reading, or creating a measurement that does not exist yet.

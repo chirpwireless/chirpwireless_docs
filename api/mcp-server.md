@@ -77,7 +77,7 @@ Once connected, your AI client can work across your home on your behalf. Here's 
 | **History** | Look back over when your alerts fired and when your automations ran, and map out which sensor is measuring what. |
 | **Household** | Look up your home's details and members, invite someone new, and set what they're allowed to see. |
 
-Everything it does runs with your permissions, and destructive or important actions are shown to you before they happen — same as anywhere else in Chirp.
+Everything it does runs with your permissions. For destructive or important actions, Chirp supplies safety information that a compatible AI app can use to ask before it continues.
 
 ## How your AI app knows what an action does
 

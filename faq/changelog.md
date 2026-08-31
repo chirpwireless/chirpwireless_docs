@@ -10,13 +10,13 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 release banner"><figcaption></figcaption></figure>
 
-Chirp automations respond to sensor data by sending an alert, checking another reading, or controlling equipment such as a lamp, dehumidifier, or water valve. Before 3.9.0, each automation could be triggered by only one sensor. If you wanted the same automation on nine windows, you had to create and maintain it nine times. Now one **trigger** can monitor up to 500 selected sensors independently and start the same automation for whichever sensor meets its condition. A trigger can also wait until the condition has remained true for a set time — from 10 seconds to 30 days — before anything happens. This release also puts all metrics on one searchable page, adds values to bar charts, improves the Helper and bring-your-own-AI connections, and helps connected AI apps distinguish between actions that look up information and actions that change something. [app.chirpwireless.io](https://app.chirpwireless.io)
+Chirp automations respond to sensor data by sending an alert, checking another reading, or controlling equipment such as a lamp, dehumidifier, or water valve. A **trigger** defines the condition that starts an automation. Before 3.9.0, applying the same response to nine window devices meant creating and maintaining nine automations. Now you can group those devices in one trigger and connect them to one automation. Each watched device is evaluated independently, while another selected device can provide a shared reading used by the whole group. A trigger can also wait until the condition has remained true for a set time — from 10 seconds to 30 days — before anything happens. This release also puts all metrics on one searchable page, adds values to bar charts, improves the Helper and bring-your-own-AI connections, and helps connected AI apps distinguish between actions that look up information and actions that change something. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **One automation, up to 500 sensors** — Previously, applying the same automation to nine sensors required nine separate automations. Now you can select up to 500 sensors in one trigger. Each sensor is monitored independently, and any one of them can start the shared automation when it meets the condition.
+* **One automation for a group of up to 500 devices** — Previously, applying the same automation to nine devices required nine separate automations. Now one trigger can include the group, evaluate each watched device separately, and start the shared automation for whichever one meets the condition.
 * **Wait before an automation runs** — A trigger can require a condition to remain true for 10 seconds to 30 days before starting the automation. For example, it can ignore a refrigerator door opened briefly but act when the door remains open for 10 minutes.
 * **All sensor metrics on one page** — A metric is a type of reading, such as temperature, humidity, or battery level. Metrics that were spread across three tabs are now available in one searchable list at **Devices → Metrics**, where you can also add and edit them.
 * **Show values on bar charts** — **Display value on bar** prints each value on its bar. **Show metrics below** adds the current readings beneath the chart.
@@ -26,19 +26,21 @@ Chirp automations respond to sensor data by sending an alert, checking another r
 
 ***
 
-**One automation for many sensors**
+**One automation for many devices**
 
 An automation is a flowchart that tells Chirp how to respond to sensor data. It can check readings, send an alert, or control equipment. A trigger defines the condition that starts the automation.
 
-Before 3.9.0, an automation could be triggered by only one sensor. If the same condition and response applied to nine windows, you needed nine separate automations. Updating the condition later meant editing every copy.
+Before 3.9.0, each automation could listen to only one device's sensor. If the same condition and response applied to nine windows, you needed nine separate automations. Updating the condition later meant editing every copy.
 
-Now you select up to **500 sensors** when you create the trigger, and one automation applies to the entire selection. Adding another sensor means updating the trigger instead of creating another automation.
+Now one trigger can include up to **500 devices**, and one automation applies to the group. Adding another device means updating the trigger instead of creating another automation.
 
-Each sensor is still monitored independently. Every sensor has its own trigger state and countdown, so one window remaining open does not affect any other window. Before you save, **How this trigger will run** shows one row for each selected sensor so you can review the setup.
+Most grouped triggers are simple: every selected device supplies the same reading and is watched independently. Every watched device has its own trigger state and countdown, so one window remaining open does not affect any other window.
 
-An alert can also identify the sensor that triggered the automation. Include the sensor name in the alert message so it says “Landing window is open” instead of only “A window is open.”
+A selected device can also supply a shared reading instead of being watched. For example, nine window devices can each supply their own open-or-closed reading while one thermostat supplies the heating status for every window check. Before you save, **How this trigger will run** shows one row for each watched device and identifies any shared reading in the **Uses** column.
 
-<figure><img src="../.gitbook/assets/trigger-device-group.jpg" alt="The sensor picker and the How this trigger will run table, one row per selected sensor"><figcaption></figcaption></figure>
+An alert can also identify the watched device that triggered the automation. Include `vars.device_name` in the alert message so it says “Landing window is open” instead of only “A window is open.”
+
+<figure><img src="../.gitbook/assets/trigger-device-group.jpg" alt="The device picker and the How this trigger will run table, one row per watched device"><figcaption></figcaption></figure>
 
 [→ Triggers](../rules-engine/going-deeper/triggers.md)
 

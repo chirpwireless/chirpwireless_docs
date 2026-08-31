@@ -28,8 +28,8 @@ The easiest way to get this right is to open your conditions and copy the names 
 
 You don't have to fill in everything yourself:
 
-* The panel starts you off with a row called `value`, which is what plenty of automations read straight from the sensor. Rename it if yours uses something else.
-* `sensor_id` is filled in from the sensor on your Start node, and turns up in the Variables tab by itself.
+* The panel starts you off with a row called `value`, which suits automations started by **Sensor reading**. A live automation started by **Trigger condition** does not receive `vars.value`, so remove or rename this test value to match the trigger context.
+* The debugger provides `sensor_id` automatically. In a live automation it comes from the selected sensor or trigger signal, depending on the Start source.
 
 ## Nothing happens until you press a button
 

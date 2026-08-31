@@ -44,7 +44,7 @@ To connect:
 
 Chirp sends the Model ID to your provider exactly as entered, so it must match the provider's catalog letter for letter.
 
-Ollama is the one to watch. Its names finish with a colon and a version — `gemma4:31b` — and that version is part of the name, so `gemma4` on its own finds nothing at all. Ollama's suggestions point at Ollama Cloud, where most models want a paid Ollama subscription; the two offered in the box do not. OpenRouter, if you go that way, puts the company first: `anthropic/claude-sonnet-4-6`.
+Choosing **Ollama** fills in the hosted Ollama Cloud address; it does not connect Chirp to an Ollama server running only on your home network. Ollama model names finish with a colon and a version — `gemma4:31b` — and that version is part of the name, so `gemma4` on its own finds nothing at all. Most of the Ollama Cloud catalog needs a paid Ollama subscription; the two suggestions offered in the box do not. OpenRouter, if you go that way, puts the company first: `anthropic/claude-sonnet-4-6`.
 
 ### If it will not connect
 

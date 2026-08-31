@@ -24,7 +24,7 @@ The entry point of your automation. Every automation has exactly one Start Event
 | **Event filter — Sensor** | Shown for **Sensor reading**. Dropdown to select the sensor on that device. Enabled after you choose a device. Placeholder: *Select sensor*. |
 | **Trigger condition** | Shown for **Trigger condition** instead of the Event filter. Dropdown listing your triggers. Placeholder: *Select trigger*. Only the first page loads, and it says so when there are more. |
 | **Enable Schedule** | Toggle (Off by default). When turned On, the automation only runs during the specified time window. |
-| **Time Range** | Appears when Schedule is On. Tap **Change schedule**, choose the days of the week, and enter the **From** and **To** times. Outside this window, incoming data is ignored. |
+| **Time Range** | Appears when Schedule is On. Tap **Change schedule**, choose the days of the week, and enter the **From** and **To** times. Outside this window, the automation does not run. For a trigger source, monitoring and countdowns continue; only the attempted automation run is skipped. |
 | **Time Zone** | Appears when Schedule is On. Select the time zone used for the schedule. |
 | **Inputs** | Optional input parameters. Each has a name and a CEL expression. Click **+ Add input** to add entries. |
 | **Outputs** | Optional output parameters. Same structure as Inputs. Click **+ Add output**. |
@@ -41,13 +41,16 @@ What you get depends on the **Start source**.
 | `vars.sensor_id` | The unique identifier of the sensor that triggered the automation |
 | `vars.timestamp` | The time the reading was recorded |
 
-**Started by a trigger condition** — you get a different three:
+**Started by a trigger condition** — you get a different context:
 
 | Variable | Contains |
 |---|---|
-| `vars.device_name` | The name of the sensor that set it off — how a grouped automation tells you *which* window or door it was |
-| `vars.sensor_id` | The identifier of the sensor behind it |
-| `vars.timestamp` | When the situation was met |
+| `vars.device_name` | The name of the watched device that met the condition |
+| `vars.subject_kind` | The watched resource type; currently `device` |
+| `vars.subject_id` | The identifier of the watched device |
+| `vars.sensor_id` | The sensor identifier used to associate the run and any alarm with the watched device |
+| `vars.detector_id` | The identifier of the trigger |
+| `vars.timestamp` | The trigger signal time as Unix seconds |
 
 There is **no `vars.value`** on a trigger-started automation: a trigger reports that something *held for a while*, not what the reading was. An expression using `vars.value` will fail every time it runs.
 
