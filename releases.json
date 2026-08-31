@@ -1,0 +1,333 @@
+{
+  "generatedAt": "2026-08-31T23:13:32.641Z",
+  "source": "chirpwireless/chirpwireless_docs@synchronize:faq/changelog.md",
+  "releases": [
+    {
+      "version": "3.9.0",
+      "title": "Flight Log. Release 3.9.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.9.0.jpg",
+      "intro": "Chirp automations send alerts, check other readings, or control equipment when something happens at home. A trigger is a saved condition that starts an automation. It can now watch one device or several selected devices, and it can react immediately or only after the condition lasts for a set time. Before 3.9.0, covering nine windows meant maintaining nine automations; now one trigger and automation can cover them while keeping each window's condition and countdown separate. This release also puts metrics on one searchable page, prints exact values on bar charts, improves the Helper and bring-your-own-AI connection, and helps connected AI apps tell read-only actions from actions that change something. app.chirpwireless.io",
+      "slides": [
+        {
+          "title": "One automation for up to 500 devices",
+          "description": "Previously, applying the same automation to nine devices required nine separate automations. Now one trigger can select those devices, check each one separately, and start the shared automation for whichever device meets the condition.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/trigger-device-group.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/rules-engine/going-deeper/triggers/multiple-devices"
+        },
+        {
+          "title": "Wait before an automation runs",
+          "description": "A trigger can require a condition to remain true for 10 seconds to 30 days before starting the automation. For example, it can ignore a refrigerator door opened briefly but act when the door remains open for 10 minutes.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/trigger-time-window.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/rules-engine/going-deeper/triggers/trigger-timing"
+        },
+        {
+          "title": "All sensor metrics on one page",
+          "description": "A metric is a type of reading, such as temperature, humidity, or battery level. Metrics that were spread across three tabs are now available in one searchable list at Devices → Metrics, where you can also add and edit them.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/device-metrics.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/devices/data-templates"
+        },
+        {
+          "title": "Show values on bar charts",
+          "description": "Display value on bar prints each value on its bar. Show metrics below adds the current readings beneath the chart.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/chart-widget.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/chart-widget/bar-chart"
+        },
+        {
+          "title": "Use your own AI account",
+          "description": "Connect an OpenAI, Anthropic, OpenRouter, Ollama, or compatible account instead of using the monthly Helper-message allowance included with your Chirp plan. Ollama model names with version tags are now supported.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.9.0.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/ai-assistant/chats-and-your-own-ai"
+        },
+        {
+          "title": "Connected AI apps can distinguish read and write actions",
+          "description": "Actions available to ChatGPT, Claude, and other connected AI apps now identify whether they only read information or can change or delete something.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.9.0.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/api/mcp-server"
+        },
+        {
+          "title": "Reliability and interface improvements",
+          "description": "Sensor photos save correctly, the Activity Log refreshes after permission changes, widget colors work again, log retention follows your plan, and the Helper reports completed actions more reliably.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.9.0.jpg"
+        }
+      ]
+    },
+    {
+      "version": "3.8.0",
+      "title": "Flight Log. Release 3.8.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.8.0.jpg",
+      "intro": "Three big ones in 3.8.0. First, you don't have to wait for the parcel — pretend sensors let you build your dashboards and your alerts today, test that they really go off, and swap in the real sensor when it lands. Second, the bit people have asked for since the helper arrived: say \"turn on the lamp\" and it turns on the lamp. Your helper works the house now, it doesn't just watch it. And third — the one we're most excited about — connect ChatGPT or Claude and they can switch things on too. The AI app you already use, controlling your actual home, asking you first every time. There's also a What's New note in the app so you stop missing things like this. app.chirpwireless.io",
+      "slides": [
+        {
+          "title": "Pretend sensors",
+          "description": "Set up your home before the hardware arrives. Make up readings, watch your alerts fire, then point the same device at the real sensor when it turns up and keep everything.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/emulator-connector-list.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/connectors/emulator-connector"
+        },
+        {
+          "title": "The helper can switch things on",
+          "description": "\"Turn on the lamp\" now turns on the lamp. Ask it to flip a relay or change how often a sensor reports, and it does — showing you what it's about to do, asking first, then telling you whether the device got it.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/ai-chat-commands.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/ai-assistant/let-ai-set-it-up"
+        },
+        {
+          "title": "Control your home from ChatGPT or Claude",
+          "description": "Connect the AI app you already use and it can switch things in your house too, with the same confirmation before anything happens.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.8.0.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/api/mcp-server"
+        },
+        {
+          "title": "The helper sets up pretend sensors as well",
+          "description": "Ask for one and it builds it, sends a test reading, and takes it live onto your LoRaWAN connection later.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/emulator-connector-list.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/connectors/emulator-connector"
+        },
+        {
+          "title": "What's New in the app",
+          "description": "A note that tells you what changed, so a release doesn't quietly pass you by.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/whats-new-panel.jpg"
+        },
+        {
+          "title": "Smoothing things out",
+          "description": "Your plan dates read correctly, adding a widget stops shoving your other widgets around, long addresses don't run off the screen on your phone, and a handful of labels finally say what they mean.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.8.0.jpg"
+        }
+      ]
+    },
+    {
+      "version": "3.7.0",
+      "title": "Flight Log. Release 3.7.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.7.0.jpg",
+      "intro": "3.7.0 is about letting your home out of the browser tab. A dashboard can now become a link — password-protected, yours to switch off — so the tablet in the hallway shows the house at a glance, and the person watering your plants next week can check on things without you handing over your account. When a new sensor goes quiet, the Connection tab finally tells you why, in words, with the next thing to try. Your sensors' setup codes get a proper vault instead of a drawer full of stickers. You can point your own AI app straight at your home. And adding a sensor no longer means squinting at 32 characters on the back of it — just scan the code. app.chirpwireless.io",
+      "slides": [
+        {
+          "title": "Share your dashboard",
+          "description": "Turn any dashboard into a password-protected link. Pick View so people can look, or Control so they can actually switch things on. Revoke it whenever you like.",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/sharing-your-dashboard"
+        },
+        {
+          "title": "Connection diagnostics",
+          "description": "Your sensor's Connection tab now says whether data is arriving, what happens to it, and exactly what to check when nothing shows up.",
+          "docsUrl": "https://docs.chirpwireless.io/devices/connection-diagnostics"
+        },
+        {
+          "title": "Key Vault",
+          "description": "An encrypted spot for your sensors' EUI and AppKey codes, so you can find them again years later without the sticker.",
+          "docsUrl": "https://docs.chirpwireless.io/reports/key-vault"
+        },
+        {
+          "title": "MCP server",
+          "description": "Connect the AI app you already use — Claude Code, Claude Desktop, ChatGPT, Codex — to your home and ask it about your sensors.",
+          "docsUrl": "https://docs.chirpwireless.io/api/mcp-server"
+        },
+        {
+          "title": "Scan a QR code",
+          "description": "Point your phone or laptop camera at the sensor instead of typing a long code by hand.",
+          "docsUrl": "https://docs.chirpwireless.io/devices/adding-sensors"
+        },
+        {
+          "title": "Copy and move widgets",
+          "description": "Duplicate a widget you've already set up, or move it to a different dashboard.",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets"
+        },
+        {
+          "title": "Smoothing things out",
+          "description": "Layout, mobile, and navigation fixes across dashboards, sensors, and the activity log."
+        }
+      ]
+    },
+    {
+      "version": "3.6.0",
+      "title": "Flight Log. Release 3.6.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.6.0.jpg",
+      "intro": "3.6.0 is the one where Chirp goes AI-first. Your AI Helper grows up: ask it in plain English and it builds the automation, sets up the sensor, or creates the alert for you — no menus, no fiddly logic, always checking with you first. And your automations learn to act, not just warn: a new step lets a rule flip a switch on its own, so \"if the basement gets damp, turn on the dehumidifier\" happens by itself. This is AIoT — real intelligence built into your home. app.chirpwireless.io",
+      "slides": [
+        {
+          "title": "An AI Helper that does the setup",
+          "description": "Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, trying it out, and switching it on, always checking before anything permanent.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/ai-assistant.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/ai-assistant"
+        },
+        {
+          "title": "Automations that act on their own",
+          "description": "A new step lets an automation send a device a command by itself — turn on the dehumidifier, shut off the water, nudge the thermostat — the moment something happens.",
+          "docsUrl": "https://docs.chirpwireless.io/rules-engine/reference/automation-runs-a-command"
+        },
+        {
+          "title": "Connect commands over the API",
+          "description": "The device-control calls are now part of the API, with new Commands permissions for your API keys.",
+          "docsUrl": "https://docs.chirpwireless.io/api/public-rest-api"
+        },
+        {
+          "title": "iFrame widget",
+          "description": "Pin a live web page — a weather map, live traffic, the family calendar — right onto your dashboard, next to your sensors.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/iframe-widget-dashboard.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/iframe-widget"
+        },
+        {
+          "title": "Tidier logs",
+          "description": "Your sensor's log now groups readings by the minute, and a little status dot in the header shows whether it's sending data right now.",
+          "docsUrl": "https://docs.chirpwireless.io/devices/sensor-details"
+        },
+        {
+          "title": "Portuguese",
+          "description": "Chirp now speaks Portuguese."
+        },
+        {
+          "title": "Smoothing things out",
+          "description": "A handful of sign-in and app fixes to make everyday use steadier."
+        }
+      ]
+    },
+    {
+      "version": "3.5.0",
+      "title": "Flight Log. Release 3.5.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.5.0.jpg",
+      "intro": "This is the big one. Up to now Chirp has been brilliant at listening to your home — and 3.5.0 teaches it to act. For the first time Chirp can talk back to your devices, not just hear them: flip a smart plug, dim a lamp, warm up its color, nudge the thermostat — right from the app, with a whole set of new Control widgets to do it. A Text widget, a round-dial Radial Gauge, and a try-before-it-runs automation tester round it out. app.chirpwireless.io",
+      "slides": [
+        {
+          "title": "Control widgets — six kinds",
+          "description": "A switch, a button, three styles of slider (simple, round dial, and upright), and a type-in box — each one tied to a device and showing its real state, so the control sits right next to the readings you check.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/control-dashboard.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/control-widget"
+        },
+        {
+          "title": "Control your devices",
+          "description": "Behind those controls: turn things on and off, dim lights, change color temperature, and send settings to any device that can take a command, over Zigbee/MQTT or LoRaWAN — with the action saved to a tidy history.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/device-command-states.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/devices/commands"
+        },
+        {
+          "title": "Text widget",
+          "description": "Headings and notes to tidy up and label a busy dashboard.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/text-widget.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/text-widget"
+        },
+        {
+          "title": "Radial Gauge",
+          "description": "A new round-dial display for the Last Data widget, like the gauges on a car dashboard.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/last-data-radial-gauge.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/last-data-widget/radial-gauge"
+        },
+        {
+          "title": "Try your automations step by step",
+          "description": "Walk an automation through a pretend sensor reading, one step at a time, to see exactly what it'll do before it goes live.",
+          "docsUrl": "https://docs.chirpwireless.io/rules-engine/reference/debugging-automations"
+        },
+        {
+          "title": "Simpler upgrades",
+          "description": "One Upgrade Plan tap takes you straight to checkout, with no extra \"are you sure?\" steps.",
+          "docsUrl": "https://docs.chirpwireless.io/account/subscription"
+        }
+      ]
+    },
+    {
+      "version": "3.4.0",
+      "title": "Flight Log. Releases 3.2.0, 3.3.0, 3.4.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.4.0.jpg",
+      "intro": "Chirp 3.4.0 is the release we couldn't wait to ship. The Digital Building Twin lands at its center: a live IoT digital twin of your home and property, built right inside Chirp. Wire any sensor in your Chirp setup to any object on a 3D model of your place — the front door, the driveway gate or boom barrier, the garage, the parking spot out front, a smart trash bin on collection day, the kitchen smoke detector, the bathtub, a water tank in the cellar — and the scene lights up live as readings come in. House, garden, garage, driveway, and multiple floors all sit in one model. Draw it from scratch in 2D and 3D, or trace its outline onto an aerial map and anchor it to its real GPS spot. The release also brings two new single-value displays for the Last Data widget — Tube and Gauge. 3.2.0 and 3.3.0 shipped along the way as quick maintenance updates; their notes are bundled in here too. app.chirpwireless.io",
+      "slides": [
+        {
+          "title": "Digital Building Twin",
+          "description": "Wire any sensor in your Chirp setup to any object on a live 3D model of your home and property — the front door, the driveway gate or boom barrier, the garage door, the parking spot, a smart trash bin, the kitchen smoke detector, the bathtub, a basement leak sensor — and the model recolors live as readings come in. House, garden, garage, driveway, and multiple floors in one model. Draw in 2D and 3D, or trace from an aerial map and anchor to GPS; 60+ ready-to-place 3D objects, indoors and out.",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/3d_Scene_Screen.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/digital-building-twin"
+        },
+        {
+          "title": "Tube Widget",
+          "description": "A new Last Data widget look that shows a single reading as a filled vertical tube — a level you can read at a glance, for anything that rises and falls",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/last-data-widget"
+        },
+        {
+          "title": "Gauge Widget",
+          "description": "A horizontal track gauge for any single reading — temperature, humidity, battery, signal strength — with color bands you set yourself",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/adding-widgets/last-data-widget"
+        },
+        {
+          "title": "Connectors menu access fix",
+          "description": "Household members who don't have access to Connectors no longer see the entry in the menu",
+          "docsUrl": "https://docs.chirpwireless.io/account/users-and-permissions"
+        },
+        {
+          "title": "Overview shows what's going on right now",
+          "description": "The Overview page now surfaces active alerts and links straight to the Alarm app",
+          "docsUrl": "https://docs.chirpwireless.io/alarm/check-and-clear-alerts"
+        },
+        {
+          "title": "Quieter, more reliable data path",
+          "description": "Background reliability work on how Chirp ingests sensor data; the platform now recovers cleanly when our infrastructure rolls a restart"
+        }
+      ]
+    },
+    {
+      "version": "3.1.0",
+      "title": "Flight Log. Release 3.1.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.1.0.png",
+      "intro": "Chirp 3.1.0 is the platform's largest connectivity expansion to date. MQTT support means a much wider range of MQTT-capable sensors, bridges, and home hardware can now connect to Chirp directly — opening access to thousands of device models across hundreds of manufacturers. This release also introduces live tracker maps with route history, scoped API keys for home automation integrations, a refreshed subscription structure, and sharper alert controls. app.chirpwireless.io",
+      "slides": [
+        {
+          "title": "MQTT Connector",
+          "description": "Cloud MQTT and External MQTT open Chirp to a much wider range of MQTT-capable devices: thousands of supported models across hundreds of manufacturers",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/mqtt-connector-type-selector.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/connectors/mqtt-connector"
+        },
+        {
+          "title": "Map Widget",
+          "description": "Live tracker position on a dashboard map, plus one selected transmitted metric and historical route playback",
+          "image": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/map-widget-configuration.jpg",
+          "docsUrl": "https://docs.chirpwireless.io/dashboards/choosing-widgets"
+        },
+        {
+          "title": "API Keys",
+          "description": "Scoped access keys for home automation scripts, local tools, and trusted integrations — with create, rotate, and revoke lifecycle",
+          "docsUrl": "https://docs.chirpwireless.io/settings/api-keys"
+        },
+        {
+          "title": "Subscription Plans",
+          "description": "Refreshed tiers — Free, Light, Pro, Max — with a Business path for larger deployments",
+          "docsUrl": "https://docs.chirpwireless.io/account/subscription"
+        },
+        {
+          "title": "Alert Improvements",
+          "description": "Required Notify recipients in escalation steps, clearer one-time notification behavior by severity, and last-trigger timestamps in the alert inbox",
+          "docsUrl": "https://docs.chirpwireless.io/alarm/set-up-a-home-alert"
+        }
+      ]
+    },
+    {
+      "version": "3.0.0",
+      "title": "Flight Log. Release 3.0.0",
+      "banner": "https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.0.0.png",
+      "intro": "CHIRP 3.0.0 is a fundamental platform rework. We rebuilt the entire connectivity layer with a new Connector architecture, overhauled device management around a Digital Twin model with visual data normalization that lets you connect any device instantly, shipped a visual BPMN-based rules engine with version control and production-grade deployment, introduced a multi-channel alarm system with mobile push notifications for Android and iOS, delivered fully configurable dashboard widgets with context-aware conditional formatting, and added organization-level access control powered by ABAC with full audit logging. This release also completes our migration from Sui JSON-RPC to gRPC and GraphQL across all blockchain services.",
+      "slides": [
+        {
+          "title": "Connector Architecture",
+          "description": "Protocol-agnostic connectivity framework with LoRaWAN and Tracker connectors"
+        },
+        {
+          "title": "Digital Twin Device Management",
+          "description": "New device model with visual data normalization, sensor templates, and device photos"
+        },
+        {
+          "title": "Visual Rules Engine",
+          "description": "BPMN-based automation with CEL expressions, version control, and one-click deployment"
+        },
+        {
+          "title": "Alarm Management System",
+          "description": "Five severity levels, escalation policies, and mobile push notifications for Android and iOS"
+        },
+        {
+          "title": "Fully Configurable Dashboards",
+          "description": "Context-aware widgets with conditional formatting, plus a new Image Widget"
+        },
+        {
+          "title": "Organizations and Access Control",
+          "description": "Multi-tenant isolation with ABAC permissions and audit trail"
+        },
+        {
+          "title": "Sui Blockchain Migration",
+          "description": "All services migrated from JSON-RPC to gRPC and GraphQL"
+        }
+      ]
+    }
+  ]
+}
