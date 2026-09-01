@@ -48,7 +48,7 @@ The palette sits alongside the canvas and lists the node types you can drag onto
 
 | Node | What it does |
 |---|---|
-| **Start Event** | The entry point — binds to a sensor. One is placed on the canvas automatically when you create a new automation. |
+| **Start Event** | The entry point — starts from one device sensor or a saved trigger condition. One is placed on the canvas automatically when you create a new automation. |
 | **End Event** | Marks the end of a path. Every branch of your automation must end here. |
 | **Script Task** | Runs a CEL expression to compute new values. |
 | **Exclusive Gateway** | A decision point that checks conditions and picks one path to follow. |

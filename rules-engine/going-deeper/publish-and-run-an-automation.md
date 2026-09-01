@@ -4,7 +4,7 @@ description: Take an automation live — build it, deploy the artifact, stop it 
 
 # Publish and Run an Automation
 
-Saving an automation keeps your design safe — but it does not make it live. For your automation to start reacting to sensor data, you need to **build** it and then **deploy** it. This two-step process is deliberate: it lets you work on your automations freely, knowing nothing will run until you are ready.
+Saving an automation keeps your design safe — but it does not make it live. For your automation to respond to its selected sensor reading or trigger condition, you need to **build** it and then **deploy** it. This two-step process is deliberate: it lets you work on your automations freely, knowing nothing will run until you are ready.
 
 ## The Lifecycle at a Glance
 
@@ -16,7 +16,7 @@ Design and save  -->  Build  -->  Deploy  -->  Running
 
 - **Design and save** — You work in the editor, adding nodes and expressions. Saving preserves your work but does not affect anything running in your home.
 - **Build** — Chirp validates your automation (checks the diagram structure, verifies expressions, confirms all paths are complete) and creates a deployable package called an **artifact**.
-- **Deploy** — You activate the artifact so it starts processing live sensor data.
+- **Deploy** — You activate the artifact so it starts processing its selected sensor or trigger source.
 - **Stop** — You can pause a running automation at any time.
 
 ## Building Your Automation
@@ -43,7 +43,7 @@ Common issues that prevent a successful build:
 - A node has no outgoing connection (dead end that is not an End Event)
 - An Exclusive Gateway has a flow without a condition and it is not set as the default
 - A CEL expression has a syntax error
-- The Start Event has no device or sensor selected
+- The Start Event has no sensor selected for **Sensor reading**, or no saved trigger selected for **Trigger condition**
 
 Fix the issue in the editor, save, and build again.
 
@@ -65,7 +65,7 @@ The Artifacts tab shows:
 
 | Status | Color | Meaning |
 |---|---|---|
-| **Running** | Green | The artifact is live and processing sensor data |
+| **Running** | Green | The artifact is live and waiting for its selected sensor or trigger source |
 | **Stopped** | Orange | The artifact was stopped by you or another household member |
 | **Force Stopped** | Red | The system automatically stopped the artifact due to sustained errors during execution |
 
@@ -81,7 +81,7 @@ From the Artifacts tab:
 2. Click the **Deploy** action.
 3. The artifact status changes to **Running** (green).
 
-Your automation is now live. Every time the trigger sensor sends a new reading, Chirp evaluates it against your automation logic.
+Your automation is now live. A **Sensor reading** automation runs when its selected sensor reports. A **Trigger condition** automation runs when its saved condition becomes active for a watched device.
 
 You can also deploy right after a successful build — the option is available in the build flow.
 
@@ -94,7 +94,7 @@ If you need to pause an automation — maybe you are doing maintenance, adjustin
 3. Click **Stop**.
 4. The status changes to **Stopped** (orange).
 
-Stopping is immediate. The automation will not process any new readings until you deploy it again. Sensor data is not lost — it is still recorded — but the automation will not evaluate it while stopped.
+Stopping is immediate. The automation will not process new starts until you deploy it again. Sensor data is still recorded and triggers continue monitoring their conditions, but a stopped automation does not run from either source.
 
 ## Emergency Auto-Stop
 

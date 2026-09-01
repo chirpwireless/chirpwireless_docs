@@ -8,7 +8,7 @@ The tutorials walk you through building automations step by step. This section i
 
 ## What you will find here
 
-- [Rules Page and Tabs](rules-page-and-tabs.md) — The main Rules hub: your automations list, built artifacts, and trash
+- [Rules Page and Tabs](rules-page-and-tabs.md) — The main Rules hub: automations, triggers, built artifacts, and trash
 - [Visual Editor](visual-editor.md) — The canvas, node palette, properties sidebar, and editor controls
 - [Automation Node Guide](automation-node-guide.md) — Every node type explained: what it does, what fields it has, and how it behaves
 - [CEL for Home Automations](cel-for-home-automations.md) — The expression language that powers your conditions, calculations, and alarm messages

@@ -38,6 +38,21 @@ The trigger watches and remembers the condition; the automation decides what to 
 
 A saved trigger does nothing visible until you connect it to an automation and deploy that automation.
 
+## From a trigger to a running automation
+
+A trigger is a saved **start source**, not a node that you drag onto the automation canvas. Creating it and connecting it to an automation happen in two different tabs:
+
+1. Open **Rules Engine → Triggers**, select **Add trigger**, configure the condition, timing, and devices, and select **Create trigger**.
+2. Return to the **Rules** tab. The **Add Rule** button is available there, not on the Triggers tab.
+3. Select **Add Rule**, or edit an existing automation that should respond.
+4. Find the **Start Event** already placed on the canvas. Select it and use the pencil beneath the node to open its properties.
+5. Change **Start source** to **Trigger condition**, then select the trigger you saved.
+6. Select **Save** at the bottom of the Start Event panel. This applies the trigger to the diagram.
+7. Add the alert, command, enrichment, or other nodes that define the response. Then select **Save** in the automation editor.
+8. Build the automation and deploy the resulting artifact. Only a deployed automation can respond when the trigger becomes active.
+
+Creating a trigger does not create an automation, add a node to the canvas, or select the trigger automatically. The trigger decides **when and for which device** the automation starts; the nodes after the Start Event decide **what happens next**.
+
 ## Create a trigger
 
 1. Open **Rules Engine → Triggers**.
@@ -65,13 +80,11 @@ Use **Add check on ‹reading›** to add another comparison for the same readin
 
 The form also has an AND/OR choice between different reading keys. These choices combine readings for one watched device. They never make one device's state depend on another watched device's state.
 
-## Connect the trigger to an automation
+## Where triggers can be used
 
-1. Create or edit the automation that should respond.
-2. Select the **Start Event** and open its properties.
-3. Change **Start source** to **Trigger condition**.
-4. Pick the saved trigger in **Trigger condition**.
-5. Save, build, and deploy the automation.
+In the current automation editor, the Start Event is the only place where you select a saved trigger. Triggers are not available on gateways, Set Alarm, Execute Command, Enrichment, or other nodes later in the automation.
+
+One saved trigger can be selected by several automations. When it becomes active, every deployed automation that uses it can run. Each individual automation still has exactly one Start Event and one start source.
 
 Set the source back to **Sensor reading** only when you want every event from one selected sensor. The Start Event cannot use both sources together.
 

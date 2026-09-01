@@ -42,7 +42,16 @@ This tutorial uses **Sensor reading** for one basement humidity sensor:
 
 Every time that sensor reports humidity, this automation will now start and evaluate the reading.
 
-To start from a condition instead, first create it under **Rules Engine → Triggers**. Then return to the Start Event, choose **Trigger condition**, and select it. This is how one automation can cover several similar devices or ignore a condition that ends before its timer finishes. See [Triggers](../going-deeper/triggers.md).
+To start from a condition instead:
+
+1. Leave the editor and open **Rules Engine → Triggers**.
+2. Select **Add trigger**, configure and create the trigger, then return to the **Rules** tab.
+3. Create a new automation or reopen this one in Edit mode.
+4. Select the Start Event and use the pencil beneath it to open the properties panel.
+5. Choose **Trigger condition**, select the saved trigger, and select **Save** at the bottom of the panel.
+6. Save the automation separately from the editor toolbar, then build and deploy it when the workflow is complete.
+
+The trigger selector does not create triggers, and a trigger is not a node in the palette. This path lets one automation cover several similar devices or ignore a condition that ends before its timer finishes. See [Triggers](../going-deeper/triggers.md) for the complete workflow.
 
 At this stage, you are still working entirely visually. As you build more advanced automations, some fields let you add CEL expressions for precise conditions or message text, but most of the structure stays BPMN-based and easy to follow.
 

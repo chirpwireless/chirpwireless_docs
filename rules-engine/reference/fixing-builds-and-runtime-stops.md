@@ -86,17 +86,41 @@ Build errors appear after you click Build. Each error describes the problem the 
 
 ---
 
+## Trigger setup
+
+### "I created a trigger, but nothing happens"
+
+A saved trigger only monitors its condition. It does not contain an alert, command, or other response, and Chirp does not attach it to an automation automatically.
+
+1. Return to the **Rules** tab and create or edit the automation that should respond.
+2. Select the Start Event, use its pencil to open the properties, and choose **Trigger condition** as the Start source.
+3. Select the saved trigger and select **Save** at the bottom of the Start Event panel.
+4. Add the response nodes, then save the automation from the editor toolbar.
+5. Build the automation and deploy its artifact from the **Artifacts** tab.
+
+See [From a trigger to a running automation](../going-deeper/triggers.md#from-a-trigger-to-a-running-automation) for the complete workflow.
+
+### "My trigger is missing from the Start Event"
+
+The **Trigger condition** selector appears only when the Start source is set to **Trigger condition**. It lists saved triggers for the current organization and currently loads only the first page.
+
+- Confirm the trigger was created in the same organization as the automation.
+- Confirm **Trigger condition** is selected as the Start source.
+- If the trigger exists beyond the first page, it cannot yet be selected from this field.
+
+---
+
 ## Deploy and redeploy
 
 ### How deployment works
 
-When you click **Deploy** on an artifact in the Artifacts tab, that build becomes the live version of your automation. It starts evaluating sensor data immediately.
+When you click **Deploy** on an artifact in the Artifacts tab, that build becomes the live version of your automation. It begins waiting for the sensor reading or saved trigger selected in its Start Event.
 
 Only one build per automation can be running at a time. If you deploy a new build while another one is already running, the platform automatically stops the old one and starts the new one in a single operation. There is no need to stop the running artifact first — the transition is handled for you.
 
 ### Stopping an automation
 
-Click **Stop** on a running artifact to pause it. The sensor continues reporting data, but the automation no longer evaluates those readings.
+Click **Stop** on a running artifact to pause it. Sensors continue reporting and triggers continue monitoring, but the automation no longer starts from either source.
 
 Stopping is for deliberate pauses — when you want to temporarily disable an automation without deleting it. A stopped artifact can be restarted at any time by clicking **Deploy** again.
 
