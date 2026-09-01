@@ -12,7 +12,7 @@ This is also where the balance becomes clear: Chirp remains a visual automation 
 
 ## Enrichment: Pulling Data from Another Sensor
 
-An **Enrichment** node fetches the most recent reading from a different sensor — one that is not the trigger sensor for this automation. This lets you bring in context from anywhere in your home.
+An **Enrichment** node fetches the most recent reading from a different sensor — one that is not the source sensor for this automation. This lets you bring in context from anywhere in your home.
 
 ### How to Add an Enrichment Node
 
@@ -44,7 +44,7 @@ You can use these in any CEL expression downstream — in Script Tasks, gateway 
 
 ## Script Tasks: Transforming and Computing
 
-A **Script Task** runs a CEL expression that can transform data, compute new values, or prepare variables for decisions. You already used one in the first tutorial to classify a reading. Here, Script Tasks become even more useful because you can combine data from the trigger sensor and the enriched sensor.
+A **Script Task** runs a CEL expression that can transform data, compute new values, or prepare variables for decisions. You already used one in the first tutorial to classify a reading. Here, Script Tasks become even more useful because you can combine data from the source sensor and the enriched sensor.
 
 You are still not writing an application from scratch here. The automation remains a visual BPMN flow, and the Script Task is the focused place where you add the exact expression the flow needs.
 

@@ -1,10 +1,10 @@
 ---
-description: A tour of the Rules page — the Rules, Artifacts, and Trash tabs, plus the actions on each automation row.
+description: A tour of the Rules page — Rules, Triggers, Artifacts, and Trash, plus the actions on each automation row.
 ---
 
 # Rules Page and Tabs
 
-The Rules page is where you manage all your home automations. Open it from the sidebar by clicking **Rules engine**. The page is organized into three tabs: **Rules**, **Artifacts**, and **Trash**.
+The Rules page is where you manage automations and the saved trigger conditions that can start them. Open it from the sidebar by clicking **Rules engine**. The page has four tabs: **Rules**, **Triggers**, **Artifacts**, and **Trash**.
 
 ---
 
@@ -37,6 +37,14 @@ Click the **Add Rule** button to create a new automation. This opens a blank can
 
 ---
 
+## Triggers tab
+
+This tab contains saved conditions such as “freezer door open for 10 minutes” or “any leak sensor is wet.” Select **Add trigger** to choose the reading, comparison, timing, and devices.
+
+Creating a trigger does not create an automation or add anything to the canvas. After saving it, return to the **Rules** tab, add or edit an automation, and select the trigger in that automation's **Start Event**. It is a Start Event source, not a node in the palette. See [From a trigger to a running automation](../going-deeper/triggers.md#from-a-trigger-to-a-running-automation) for every step.
+
+---
+
 ## Artifacts tab
 
 The Artifacts tab shows every automation that has been **built** — compiled into a deployable artifact. This is where you deploy, stop, and manage the running versions of your automations.
@@ -55,7 +63,7 @@ Each build shows:
 
 - **Build timestamp** — When this artifact was compiled.
 - **Status** — One of:
-  - **Running** (green) — The artifact is live and processing sensor data right now.
+  - **Running** (green) — The artifact is live and waiting for its selected sensor or trigger source.
   - **Stopped** (orange) — The artifact was deliberately stopped by you or a household member.
   - **Force Stopped** (red) — The system detected repeated errors and automatically stopped the artifact. See [Fixing Builds and Runtime Stops](fixing-builds-and-runtime-stops.md) for recovery steps.
 - **Comment** — A text note attached to the build. Comments are inline editable — click a comment to update it without rebuilding. Add notes like "initial version" or "replaced by v3 due to false alarms."

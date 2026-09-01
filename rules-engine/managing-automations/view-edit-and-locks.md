@@ -106,4 +106,4 @@ If your browser crashes or you lose your internet connection unexpectedly, the l
 - **Keep editing sessions focused.** The lock means nobody else can work on that automation while you have it open. Make your changes, save, and exit so the automation is available to others.
 - **Name important versions.** After a significant change, save manually and then rename the version in the History tab so you can find it easily if you need to restore later.
 
-For a detailed look at the Rules page layout including all three tabs, see [Rules Page and Tabs](../reference/rules-page-and-tabs.md).
+For a detailed look at all four Rules page tabs, see [Rules Page and Tabs](../reference/rules-page-and-tabs.md).
