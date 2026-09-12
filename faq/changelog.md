@@ -351,7 +351,7 @@ This is the big one. Years ago Chirp was one of the first to let you simply *ask
 
 It answers from your real home — *"was the back door opened last night?"* — and it rolls up its sleeves: tell it "warn me if the nursery gets too warm" and it builds the automation, tries it, and turns it on; ask it to add your new leak sensor and it walks the whole thing through. Before anything big or permanent it stops and asks you to confirm, and once it's done it double-checks its own work.
 
-And it's only going to get better — the clever part is all in place now, and the Helper gets sharper the more it's used. We were proud enough of the engine behind it to share it openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew), for anyone curious how it all works.
+The Helper runs on [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. Visit its public website for background on the runtime powering CHIRP's home assistant.
 
 [→ Your Home AI Helper](../ai-assistant/README.md)
 
