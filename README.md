@@ -20,7 +20,7 @@ And it doesn't stop at answers. Ask it to *do* something — "add my new leak se
 
 You don't even need the hardware to start. Chirp can make up **pretend sensors** that invent their own readings, so you can build your dashboards and test your alerts while your real ones are still in the post — then point the same sensor at the real thing when it arrives and keep everything you set up. See [Pretend Sensors](devices/pretend-sensors.md).
 
-This is what people mean by **AIoT** — artificial intelligence built right into your connected home, not a chatbot stuck on the side. The helper keeps getting better the more it's used, and the engine behind it is something we built ourselves and were proud enough of to share openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew).
+CHIRP brings **AIoT** into home monitoring and automation through its built-in helper. It runs on [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. Your connected devices, configured actions and permissions determine what the helper can do in your home.
 
 ### Connect any manufacturer, one platform
 

@@ -39,4 +39,4 @@ The helper comes with your Chirp plan, with a monthly number of requests include
 
 Prefer your own AI app? You can connect one — like Claude Code or Claude Desktop — straight to your home, sign in with your usual Chirp account, and ask it the same things from your desktop. See [MCP Server](../api/mcp-server.md).
 
-Everything above works today, and the helper keeps getting smarter the more it's used — the brains behind it run on an engine we built ourselves and improve all the time. We've even shared it openly as [Synthetic Brew](https://github.com/syntheticinc/syntheticbrew), for anyone curious about how it works under the hood.
+The helper is powered by [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. In CHIRP, that runtime works with your home's device information and the actions available to your account. A capability described on the runtime website is not automatically an action available for every home device.
