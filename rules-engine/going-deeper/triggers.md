@@ -4,7 +4,11 @@ description: Learn how to create a Chirp trigger on its own, how it differs from
 
 # Triggers
 
-A **trigger** is a saved condition you create separately in **Rules Engine → Triggers**. A **rule**, also called an automation, is the flowchart that decides what happens next. You do not need a rule to create a trigger: open **Triggers**, select **Add trigger**, fill in the condition and devices, then select **Create trigger**.
+A **trigger** watches device readings for a condition you choose, such as a freezer door staying open for ten minutes. When that condition is met, the trigger can start a connected **rule**, also called an automation. The rule defines the response, such as raising an alert.
+
+For example, if you want an alert when the freezer door is left open, the **trigger** checks the door readings and the ten-minute wait. The **rule** contains the steps that raise the alert. Creating the trigger alone does not send an alert; you need to connect it to a running automation.
+
+You create and save these separately. You do not need a rule to create a trigger: open **Rules Engine → Triggers**, select **Add trigger**, fill in the condition and devices, then select **Create trigger**. Connect it to an automation when you are ready to set up the response.
 
 Triggers have two separate choices:
 
@@ -15,7 +19,7 @@ Selecting several devices does not create a reusable room or device group elsewh
 
 ## Is a trigger the same as a rule?
 
-No. A freezer-door **trigger** might watch whether the door has stayed open for ten minutes. The **rule** connected to it might raise an alert. You save these separately and then connect them.
+No. The trigger checks whether the condition for a response has been met. The rule carries out the response. You save these separately and then connect them.
 
 | Name in Chirp | What it does | Where to find it |
 |---|---|---|
