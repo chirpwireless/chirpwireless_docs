@@ -2,15 +2,15 @@
 description: Add a Set Alarm node and a motivation message so your automation notifies you when the basement gets too humid.
 ---
 
-# Trigger Alarms and Actions
+# Send Alerts and Run Actions
 
 Your automation can now tell the difference between a normal humidity reading and a high one. The last piece is connecting the "high humidity" path to an action that actually notifies you. In this step, you will add a Set Alarm node so Chirp sends an alert when the basement gets too humid.
 
-## Prerequisites: You Need an Alert Rule
+## Before you start: create an alarm definition
 
-The Set Alarm node triggers an existing **Alarm Definition** — it does not create one from scratch. Before continuing, make sure you have at least one alert rule configured in the [Alerts](../../alarm/) section.
+The Set Alarm node triggers an existing **Alarm Definition** — it does not create one from scratch. Before continuing, make sure you have at least one alarm definition configured in the [Alarm](../../alarm/) section.
 
-If you followed the alerts guide and created a rule for basement humidity, you are all set. If not, head over to [Set Up a Home Alert](../../alarm/set-up-a-home-alert.md), create a quick alert rule, and come back. The automation will reference that rule.
+If you already created an alarm definition for basement humidity, select it here. Otherwise, follow [Set Up a Home Alert](../../alarm/set-up-a-home-alert.md) first. The automation will reference that alarm definition.
 
 ## Add a Set Alarm Node
 
@@ -20,21 +20,21 @@ If you followed the alerts guide and created a rule for basement humidity, you a
 
 ## Configure the Alarm
 
-In the properties panel you will see a header that reads: **"Select an alarm. A new alarm can be created on the Alarms page."** This is a reminder that the Set Alarm node triggers an existing Alarm Definition — it does not define severity, notification channels, or escalation steps. All of that is configured once in the [Alerts](../../alarm/) section and reused by every automation that references it.
+In the properties panel you will see a header that reads: **"Select an alarm. A new alarm can be created on the Alarms page."** This is a reminder that the Set Alarm node triggers an existing Alarm Definition — it does not define severity, notification channels, or escalation steps. All of that is configured once in the [Alarm](../../alarm/) section and reused by every automation that references it.
 
 Fill in the following fields:
 
 | Field | What to enter |
 |---|---|
 | **Name** | A label for this node on the canvas — for example, "Alert: high humidity" |
-| **Choose Alarm** | A searchable autocomplete field — start typing an alarm name and select the one you created in the Alerts section. |
+| **Choose Alarm** | A searchable autocomplete field — start typing an alarm name and select the one you created on the Alarm page. |
 | **Motivation Message** | A multiline CEL expression that builds the notification text. The placeholder shows an example: `"Temperature is " + string(vars.temp) + " degrees"`. See below for more detail. |
 
 ### Writing a Motivation Message
 
 The motivation message is what you (and anyone else in your household) will see when the alert arrives. The field is multiline, so you can write longer messages comfortably. This is one of the places where Chirp uses CEL inside the visual automation: the workflow stays drag-and-drop, but the message field can generate text dynamically from the live sensor data.
 
-Because it is a CEL expression, you can include the actual sensor reading in the text:
+This tutorial uses a **Sensor reading** start, so its CEL expression can include the incoming value:
 
 ```cel
 "Humidity is " + string(vars.value) + "% in the basement"
@@ -47,6 +47,8 @@ You can make the message as detailed as you like:
 ```cel
 "Basement humidity reached " + string(vars.value) + "% — check for leaks or ventilation issues"
 ```
+
+If you came from the [Triggers guide](../going-deeper/triggers.md), use a message such as `"Window left open: " + vars.device_name` instead. A **Trigger condition** start has no `vars.value`; the trigger has already checked its condition, so it does not need the humidity comparison from this sensor-based tutorial.
 
 Click **Save** in the properties panel.
 
@@ -82,9 +84,9 @@ Start Event (Basement Humidity Sensor)
  ("Alert sent")
 ```
 
-Every time the basement sensor sends a reading:
+For a reading processed by the running automation:
 
-- If humidity is above 70%, the automation takes the left path, triggers the alarm, and you get a notification.
+- If humidity is above 70%, the automation takes the left path, raises the alarm. Its delivery settings determine who receives a notification and when.
 - If humidity is at or below 70%, the automation takes the right path and ends quietly.
 
 ## Save and Review

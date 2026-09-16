@@ -31,7 +31,7 @@ The **Start Event** is the automation's entry point. Its **Start source** offers
 
 | Start source | Use it when |
 |---|---|
-| **Sensor reading** | One sensor should run the automation every time it reports. The normalized reading value is available as `vars.value`. |
+| **Sensor reading** | Incoming readings from one sensor should start the automation. The normalized reading value is available as `vars.value`. |
 | **Trigger condition** | Chirp should evaluate a saved condition first—immediately or after a wait, for one device or several devices. |
 
 This tutorial uses **Sensor reading** for one basement humidity sensor:
@@ -46,7 +46,7 @@ Every time that sensor reports humidity, this automation will now start and eval
 
 To start from a condition instead:
 
-1. Leave the editor and open **Rules Engine → Triggers**.
+1. Save your work, then leave the editor and open **Rules Engine → Triggers**.
 2. Select **Add trigger**, configure and create the trigger, then return to the **Rules** tab.
 3. Create a new automation or reopen this one in Edit mode.
 4. Select the Start Event and use the pencil beneath it to open the properties panel.
@@ -61,7 +61,7 @@ At this stage, you are still working entirely visually. As you build more advanc
 
 If you only want this automation to run during certain hours—for example, overnight—turn on **Enable Schedule** in the Start Event and choose the days, time range, and time zone. Schedule limits the start source you selected; it is not a third source.
 
-For now, leave the schedule off so the automation evaluates every reading around the clock.
+For now, leave the schedule off so the running automation can process readings at any hour. Execution-rate limits still apply. A trigger-started automation can also receive repeated signals while its condition remains active; see [Trigger Timing](../going-deeper/triggers/trigger-timing.md).
 
 ## Save Your Work
 

@@ -1,81 +1,86 @@
 ---
-description: Make Chirp react now or only after a condition lasts, and combine that wait with overnight automation hours.
+description: Choose when a Chirp trigger reacts, learn what interrupts its wait, and decide when an active condition returns to normal.
 ---
 
 # Trigger Timing
 
-Some sensor changes need an immediate response. Others are normal when they last only a moment. Trigger timing lets you choose which is which before an automation sends an alert or controls a device.
+A trigger checks your device readings for a condition, such as a window being open. Timing lets you choose whether to react straight away or wait. A short window opening may be normal; one that lasts ten minutes may be worth an alert.
 
-Timing does not choose the sensors. It controls how long each selected device's condition must stay true.
+When the condition qualifies, that device's trigger becomes **active** and can start its connected automation. **Clearing** means it has returned to normal. Each watched device has its own wait and state. If you have not created a trigger yet, start with [Triggers](../triggers.md).
 
 ## Immediately or Only if it lasts
 
-Open **When should it start?** in the trigger and choose:
+Under **When should it start?**, choose:
 
-- **Immediately** when the first matching reading should activate the trigger.
-- **Only if it lasts** when Chirp should start a countdown and react only if the condition is still true when that countdown finishes.
+- **Immediately** to react when the reported data meets the condition, without adding a wait.
+- **Only if it lasts** to require a qualifying period. A reading that makes the condition false interrupts that period, even if the condition is true again at the original finish time.
 
-<figure><img src="../../../.gitbook/assets/trigger-time-window.jpg" alt="A Chirp humidity trigger set to Only if it lasts for 10 minutes"><figcaption></figcaption></figure>
+For a wait, enter a whole number and choose **seconds**, **minutes**, **hours**, or **days**. The shortest duration is **10 seconds**, the longest is **30 days**, and the starting choice is **10 minutes**.
 
-For a delayed trigger:
+<figure><img src="../../../.gitbook/assets/trigger-time-window.jpg" alt="Chirp trigger timing controls set to Only if it lasts for ten minutes"><figcaption>The timing controls work with the condition you chose above them.</figcaption></figure>
 
-1. Select **Only if it lasts**.
-2. Enter the wait as a whole number.
-3. Choose seconds, minutes, hours, or days.
+## What if the window closes and opens again?
 
-The shortest wait is 10 seconds and the longest is 30 days. A new delayed trigger starts with 10 minutes selected.
+For a ten-minute window-open condition, this is how reported changes affect the wait:
+
+| Reported time | What the sensor reports | What it means |
+|---|---|---|
+| 18:00 | Open | The qualifying period begins. |
+| 18:04 | Closed | The first opening did not last long enough. |
+| 18:07 | Open again | A new qualifying period begins. |
+| 18:10 | Still open | Only three minutes of the new period have passed, so the first deadline cannot qualify. |
+| 18:17 | No closed report since 18:07 | The new ten-minute period can qualify. |
+
+The wait requires a qualifying period, not just an open reading at the beginning and another open reading at the original deadline. A reported closed state in between matters.
 
 ## What happens between reports
 
-No new sensor message does not cancel the countdown. Chirp continues using the condition state it already knows until a relevant reading changes it.
+No new message does not cancel the wait. Chirp continues evaluating the state established by the reports it has received. A ten-minute wait can finish before another message from a sensor that reports every 15 minutes.
 
-Match the wait to how often the sensor reports. If a door sensor reports only every 15 minutes, a 10-minute wait may finish before a second report confirms that the door is still open.
+Check how your sensor reports changes before choosing the duration. A window sensor needs to report closed as well as open. A motion sensor must report no motion if you want that change to interrupt a movement condition. Silence after a motion message does not by itself mean movement stopped. Missing or unreadable data is not a confirmed return to normal.
 
 ## Decide when the trigger returns to normal
 
-The usual clear behavior is simple: when the starting condition no longer matches, that device's trigger state clears.
+With **Clear by a separate condition** off, the trigger clears when an evaluation shows that the starting condition is false. In the window example, the reported closed state clears that window's active condition. Another window's wait is unaffected.
 
-Turn on **Clear by a separate condition** when recovery needs a different threshold or its own wait. For example, start a humidity trigger after the reading stays above 75% for 20 minutes, then clear it only after humidity stays below 65% for 30 minutes. That gap prevents the alert from repeatedly opening and clearing around one borderline value.
+Use a separate recovery condition when a different reading or a longer recovery is needed:
 
-Each watched device clears separately. A normal reading from one window does not cancel the timer or active condition for another window.
+1. Under **Clear behavior**, turn on **Clear by a separate condition**.
+2. Add the reading, comparison, and recovery value.
+3. Choose **Immediately**, or **Only if it lasts** with a recovery duration.
+4. Review the selected devices and preview, then save. The recovery readings need to be supplied too.
 
-## Does it only run once?
+For example, you could detect humidity **above 75% for 20 minutes** and clear it only after humidity stays **below 65% for 30 minutes**. These example values are yours to adjust. If humidity drops to 70% after activation, the trigger stays active because it has not met the separate recovery condition. A reported rise above the recovery threshold during its wait means that recovery period does not qualify.
 
-An active trigger can signal again when more readings support the same condition. Its connected automation can therefore run again before the trigger clears, subject to the automation's execution-rate limit and schedule. Keep this in mind if the automation operates a device: the command may be sent more than once.
+Clearing requests resolution of associated trigger alerts through connected automations that are still running. If you stopped the automation first, check **Alarm → Inbox** for an alert needing manual resolution. Clearing does not undo a command to a lamp, relay, or other device.
 
-Alert notification intervals are separate settings in the alarm definition. When the condition clears, Chirp requests that its associated alerts clear too; it does not automatically undo a lamp, relay, or other command.
+## Does the automation run only once?
 
-A reading that contradicts a delayed condition means that period does not qualify. For door or motion examples, the sensor must report the change back to closed or no motion; silence does not cancel the wait.
+Not necessarily. More readings can signal the same active condition again, and the connected automation can run again subject to execution-rate limits and its schedule. If the automation sends a command, that command can be repeated.
 
-## Add hours with Enable Schedule
+How often an alarm sends notifications is a separate setting in its alarm definition. The trigger's wait is neither a notification interval nor a timer between automation runs.
 
-The trigger's wait and the automation's schedule are two controls:
+If you use `vars.timestamp` in a message, it gives the original activation time. Repeated signals for the same active condition keep that value. The automation's execution history shows individual run times.
 
-- **Only if it lasts** filters out conditions that end too quickly.
-- **Enable Schedule** on the Start Event limits the hours when the automation may respond.
+## Allow the response only at certain hours
 
-The trigger continues watching outside those hours. When it activates, the automation checks the schedule before it runs.
+A trigger's wait and an automation's schedule do different jobs. The wait checks how long the condition qualifies; the schedule limits when the automation may respond.
 
-## Examples
+1. Open the automation's Start Event properties and turn on **Enable Schedule**.
+2. Select **Change schedule**, choose the days and **From**/**To** hours, and set the **Time Zone**.
+3. Save the automation and build and deploy the updated version. See the [Automation Node Guide](../../reference/automation-node-guide.md) for the fields.
 
-### Freezer door at night
+The trigger keeps watching and waiting outside those hours. The automation checks the schedule when it processes a trigger signal; an attempt outside its hours is skipped and recorded in history. A response is not guaranteed to finish at the exact moment the wait ends.
 
-Create a trigger for `door_open = true` and choose **Only if it lasts — 10 minutes**. On the automation's Start Event, enable a schedule from 23:00 to 06:00. Opening the freezer briefly for a late-night snack does not finish the countdown. A door left open for 10 minutes during those hours starts the automation, which can wake you with an alert before the food warms up.
+Suppose the schedule is 23:00–06:00. A window-open period beginning at 22:55 can qualify at 23:05 and lead to a response inside those hours. A signal processed at 06:05 is outside the window. The clock reaching 23:00 does not itself start an automation: a later trigger signal is needed. Another matching report from an already active trigger may provide it.
 
-### Sustained movement in a garage
+## Choosing a useful setup
 
-Motion can be ordinary when someone walks to a car and leaves. Set the motion condition to last 10 minutes and let the automation run only overnight. A short visit ends before the wait completes; continuing movement during the night starts the security alert.
-
-### Shower humidity
-
-Bathroom humidity often rises briefly during a shower. Use a 30-minute duration without a schedule so Chirp ignores the expected spike but starts the dehumidifier if damp air lingers. The duration is useful here even though the automation should work all day.
-
-### Water leak
-
-For a leak sensor, choose **Immediately** and leave the schedule off. Water needs a response at any hour, and waiting would add risk rather than reduce a false alarm.
+- **Window left open:** wait ten minutes and raise an alert. A short opening is filtered when the closed report arrives before the period qualifies.
+- **Shower humidity:** use a sustained high-humidity condition without a schedule if it matters throughout the day. The automation can alert you or send a supported command to a dehumidifier; clearing does not automatically turn it off.
+- **Water detected:** choose **Immediately** and leave the automation schedule off when you want a response at any hour. The alert depends on the sensor's report and your configured delivery settings.
 
 ## See also
 
-- [Triggers](../triggers.md) — define the condition and connect it to an automation
-- [One Automation for Multiple Devices](multiple-devices.md) — give each selected device its own countdown
-- [Automation Node Guide](../../reference/automation-node-guide.md) — configure the Start Event schedule
+- [Triggers](../triggers.md) — create the condition and connect the automation
+- [Use a Trigger with Multiple Devices](multiple-devices.md) — separate waits for several home devices
