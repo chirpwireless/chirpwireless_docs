@@ -4,7 +4,9 @@ description: Let a Chirp automation act on its own — the Execute Command step 
 
 # When an Automation Runs a Command
 
-**Execute Command** is the automation step that sends one of a device's saved commands. A command is an operation you have already configured, such as turning on a smart plug or setting a light's brightness. The automation chooses when to send it and supplies any required values.
+An automation can do more than send you an alert: it can run a saved action on a connected device. Add an **Execute Command** step when you want the rule to switch a smart plug or set a light's brightness as part of the response.
+
+The command must already be configured on the device. The automation decides when to send it and supplies any required values, so the same saved action can be used by a person or by a rule.
 
 For example, a humidity automation could request that a compatible plug turns on a dehumidifier. Set up and test the [device command](../../devices/commands/README.md) first, then select it in this step.
 

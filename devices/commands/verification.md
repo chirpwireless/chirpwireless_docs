@@ -4,9 +4,9 @@ description: Tell Chirp how to confirm a command really worked — skip the chec
 
 # Making sure it worked
 
-Command verification is Chirp's optional check of what a device reports after you send it a command. For example, after asking a smart plug to turn on, you can check whether its next reading reports an on state.
+After you ask a smart plug to turn on, Chirp can check whether the plug reports an on state. That optional check is **command verification**: it compares the device's feedback with the result you expected, so you can distinguish a sent request from a reported change.
 
-A command being sent or accepted does not prove the light came on. You can choose no check, wait for the device's next message (**uplink**), or ask it for a reading after it acknowledges the command. The available evidence depends on what your device reports.
+Choose no check, wait for the device's next message, or query after acknowledgement when the device supports it. An accepted command alone does not prove the lamp came on; the feedback tells you what the connected device actually reported.
 
 Set this up in the fourth step of [creating a command](creating-commands.md). Choose the strategy that matches your device and the state you need to check.
 

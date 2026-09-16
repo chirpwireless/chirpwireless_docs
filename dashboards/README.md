@@ -4,9 +4,9 @@ description: See your whole smart home at a glance — overview, custom dashboar
 
 # Your Home at a Glance
 
-A Chirp dashboard is a customizable view of your home: you choose which readings, charts, and device controls appear together. Each individual display or control is a **widget**, such as a tile showing the bedroom temperature or a switch for a connected lamp.
+Put the things you check together on one screen: the bedroom temperature, garden moisture, front-door state, and a control for a connected lamp. A Chirp **dashboard** is a view you design for your home. Each reading, chart, or control on it is a **widget**.
 
-Use dashboards to put the information you check together on one screen. Start with connected sensors that are reporting data, then [build a dashboard](building-a-dashboard.md) and add its widgets. The home overview is a separate, ready-made summary; custom dashboards let you choose the content and layout.
+You can make a view for a room or a purpose and place it on the screen where it is most useful, such as a tablet by the front door. Start with connected sensors, then [build a dashboard](building-a-dashboard.md) and choose its widgets. The home overview remains a ready-made summary; your dashboards reflect the way you use your home.
 
 ## What you can see
 

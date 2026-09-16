@@ -201,7 +201,7 @@ Then Thursday comes, the sensor arrives, and you open the same device and switch
 
 **"Turn on the lamp" — and it turns on the lamp**
 
-Your helper could already answer anything about your home and set up automations for you. What it could not do was actually *do* anything, which is a strange thing to explain to someone standing in their kitchen.
+Your helper could already register sensors and set up automations. This release adds another kind of action: running a command already configured on a connected device, after your confirmation.
 
 That changes here, and it's the biggest thing we've shipped for the helper yet. Ask what a device can do and it tells you; ask it to do one of those things and it does it. Switch a lamp, flip a relay, change how often a sensor reports — by asking.
 

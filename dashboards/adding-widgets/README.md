@@ -4,7 +4,7 @@ description: Add Chirp dashboard widgets for live sensor data, charts, controls,
 
 # Adding Widgets
 
-A widget is one display or control on a Chirp dashboard. It can show a sensor's latest reading, draw a history chart, control a configured device, or add a picture or note. You arrange widgets to build a view that suits your home.
+Widgets let you decide how each part of your home appears on a dashboard. Show an exact temperature, follow its history in a chart, place a reading on a picture of the room, or add a control for a connected lamp. A **widget** is one of these individual displays or controls; arranging them together creates your dashboard.
 
 Create or open a [dashboard](../building-a-dashboard.md) before adding widgets. A reading widget needs a registered sensor; a Control widget needs a saved device command. Text and image content can help organize the view without a sensor connection.
 

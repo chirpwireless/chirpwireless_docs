@@ -4,9 +4,9 @@ description: Manage household members, your subscription, and home settings from
 
 # Account
 
-Your Chirp account is your personal login. A **home**, called an **organization** in some menus, is a separate workspace holding devices, dashboards, automations, and household access. It is not a room or a location label inside the same workspace.
+Your Chirp account lets you work with the homes you belong to from one login. A **home**, called an **organization** in some menus, is a shared workspace for its devices, dashboards, automations, and household members.
 
-Use the **user menu** at the bottom-left to manage household members, subscription, and home settings. Your login can belong to several homes, each with its own access permissions. Check the selected home before changing shared settings.
+You can belong to your own home and help with another, with different permissions in each. Rooms and locations organize devices inside a home; switching homes changes the whole workspace. Open the **user menu** at the bottom of the sidebar to manage that access.
 
 Click your name at the bottom-left to open the menu. From there you can:
 

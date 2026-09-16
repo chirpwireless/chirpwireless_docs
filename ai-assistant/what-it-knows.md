@@ -1,14 +1,20 @@
 ---
-description: See which sensor records, stored readings, and help guides Chirp AI Chat can use, and how permissions and missing data limit answers.
+description: How Chirp’s AI Helper uses your home setup, device information, and guides to add sensors, build automations, and answer questions.
 ---
 
 # What It Knows
 
-The Chirp AI Helper can look up information exposed by its platform tools, including your devices, their stored readings, and automation or alarm settings. It also searches help guides to explain how Chirp works.
+Chirp's AI Helper can work with the sensors, connections, automations, alerts, and dashboards already in your home. It also uses device information and Chirp's guides to help you choose the next step and configure it.
 
-Its view is limited to the selected home's workspace, your permissions, and the data available from your devices. It does not know everything happening in the house. A sensor that stopped reporting may only have an old reading, and history is limited by retention. Check dates and missing data when using an answer.
+That means you can ask *“add another temperature sensor like the one upstairs”* or *“change who gets this alert”* without explaining your whole setup again. Readings and history then help you check how the home is behaving after setup.
+
+## Your home setup
+
+Your selected home and your permissions determine what the helper can inspect and change. See [Let the Helper Set It Up](let-ai-set-it-up.md) for adding sensors, building automations, and preparing dashboards.
 
 ## Live sensor data
+
+Check the reading time when interpreting a result: a quiet device may only have an older value, and stored history depends on your retention window.
 
 Current readings from every sensor you have access to: temperature, humidity, motion, door states, air quality, and anything else your devices measure. It also knows which sensors are online, which are offline, battery levels, and when each one last reported in.
 

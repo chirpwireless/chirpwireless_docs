@@ -4,9 +4,9 @@ description: See how Chirp turns sensor readings into home alerts, with an Inbox
 
 # Alarm
 
-An alarm in Chirp is a record of something in your home that needs attention, such as a leak sensor reporting water. The Alarm section keeps those events in an Inbox and sends notifications to the people you choose.
+Chirp alarms help your home reach the person who can respond. A leak sensor can start an alert on your phone, and an escalation chain can contact someone else if the event stays unresolved. The Inbox keeps the event visible until you mark it handled.
 
-Three pieces work together. A saved **alarm definition** says what message to send and who should receive it. A **rule**, or automation, raises an event using that definition. The **delivery channel** carries the notification by email, SMS, or push to your phone.
+An **alarm** is the record of something needing attention. Its saved **alarm definition** sets the message, people, and notification behavior; an automation **rule** raises it when the appropriate sensor condition is met. Set these pieces up once and let Chirp follow that response when new events occur.
 
 Start with [Set Up a Home Alert](set-up-a-home-alert.md) to configure the notification and its responding automation. A separate [trigger](../rules-engine/going-deeper/triggers.md) can watch for a condition, such as a door staying open; the automation supplies the response.
 

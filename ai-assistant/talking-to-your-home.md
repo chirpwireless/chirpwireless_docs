@@ -4,9 +4,9 @@ description: Ask the Chirp AI Helper about your home — live readings, history,
 
 # Talking to Your Home
 
-You can ask Chirp's **AI Helper** about readings your home sensors have reported, such as the bedroom temperature or how humidity changed yesterday. Open **AI Chat**, name the sensor or room, and say whether you want the latest reading or a particular period.
+Once your sensors and automations are set up, Chirp's **AI Helper** can help you understand what happened at home. Ask whether the bedroom cooled overnight, when the basement humidity rose, or which sensor has stopped reporting. You can explore the answer with follow-up questions instead of searching through each device's history.
 
-The helper can look up available data and explain the results; it cannot observe your home beyond what your connected devices report. Check the reading's time before treating it as the current state. For changes to devices or automations, see [Let the Helper Set It Up](let-ai-set-it-up.md).
+Open **AI Chat**, name the sensor or room, and give a time period. The answer uses reported readings, so check their timestamps when a device has been quiet. To add sensors or change an automation, use [Let the Helper Set It Up](let-ai-set-it-up.md).
 
 ## Tips for better answers
 

@@ -4,7 +4,7 @@ description: Understand Chirp AI Chat access, confirmation prompts, saved conver
 
 # Your Privacy
 
-Chirp's AI Helper uses your signed-in account and the home currently selected in the platform when it requests readings or changes settings. This page explains its access, confirmation prompts, and saved conversations.
+The AI Helper can work on your home setup using the same account permissions you have. Adding sensors, changing automations, and reading their results stay within the home selected in Chirp. Here is how access, confirmation prompts, and saved conversations work while you delegate those tasks.
 
 Your messages and the information retrieved to answer them can reach the configured AI model provider. Conversations remain available in chat history, so keep passwords and unrelated secrets out of your messages. Use [Your Chats and Your Own AI](chats-and-your-own-ai.md) to review your chat and provider choices.
 
@@ -30,11 +30,11 @@ The chat is not a full archive of sensor history. Readings included in an answer
 
 ## How a question gets answered
 
-1. You type a question.
-2. The helper interprets what you mean.
-3. It queries only the sensor data and resources your account is authorized to access.
-4. It composes an answer and streams it back to you in real time.
+1. You describe a task or ask a question.
+2. The helper works out which information and operations it needs.
+3. It can read your setup and make authorized changes, using confirmation prompts for consequential actions.
+4. It uses the operation results to explain what happened, ask for a missing detail, or continue the setup. The response streams back into the conversation.
 
 ## A simple guideline
 
-Do not paste passwords or API keys into the chat. The helper does not need them, will not use them, and they do not belong in a conversation log.
+Keep account passwords and unrelated API keys out of chat. Device onboarding may require the device identifiers and network keys supplied by its manufacturer; share those only for the intended setup, remembering that conversation content can be retained. Enter your model-provider key in the dedicated AI settings.

@@ -4,9 +4,9 @@ description: The LNS connector links your LoRaWAN sensors to Chirp's built-in ne
 
 # LNS Connector
 
-The LNS connector links your home's workspace to Chirp's built-in **LoRaWAN Network Server**. This software manages messages arriving from LoRaWAN sensors through a radio gateway, so Chirp can show their readings and use them in automations.
+The LNS connector lets you use LoRaWAN sensors in Chirp without running a separate network server at home. Chirp's built-in **LoRaWAN Network Server** handles the messages arriving from your radio gateway and makes the readings available to dashboards, alerts, and automations.
 
-LoRaWAN is the wireless protocol your sensors and gateway use. Adding the connector supplies the software link; it does not install a gateway or register your sensors. For a working setup, you need compatible sensors and a [gateway using Basics Station](../../gateways/lorawan-gateways/README.md). Chirp runs the network server for you.
+LoRaWAN is the wireless protocol used by your sensors and gateway. Add the connector, connect a gateway that supports **Basics Station**, and register the sensors. You supply the radio equipment; Chirp supplies the network-server software.
 
 ## What You'll Find Here
 

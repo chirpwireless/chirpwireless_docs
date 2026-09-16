@@ -1,39 +1,43 @@
 ---
-description: Ask Chirp AI Chat about your sensors and use supported setup tasks for devices, alerts, and automations in your home.
+description: Set up your smart home with an experienced helper beside you — add sensors, build automations, and configure alerts through conversation.
 ---
 
 # Your Home AI Helper
 
-Chirp's **AI Helper** is the chat interface for asking about your sensors and getting help with supported setup tasks. It can look up readings, help add a supported sensor, create an alert definition, build an automation, or run a command already configured on a device.
+Chirp's **AI Helper** is like having an experienced smart-home integrator beside you. Tell it what you want your home to do, and it can add sensors, build automations, and set up alerts for you. You bring the idea; the helper works through the configuration with you.
 
-Open **AI Chat** in the sidebar and describe the device or job. The helper uses the data and operations available through your account in the selected home's workspace. Check which sensor and time period an answer refers to before relying on it.
+Connecting a home can mean learning unfamiliar radio types, device codes, and automation settings before anything useful happens. The helper explains the choices as you go and makes changes in Chirp, so *“help me monitor the basement”* can become a sensor, an alert, and an automation you can open and inspect.
 
-Some steps still need the interface. The helper **cannot currently save or edit a trigger**—the monitoring condition that can start an automation. It can explain the choices; you create the trigger in [Rules Engine → Triggers](../rules-engine/going-deeper/triggers.md).
+Open **AI Chat** in the sidebar. Start with one job, such as adding a new temperature sensor or creating an alert when a connected door sensor reports open. The helper asks for missing details, and you can adjust the setup in the same conversation.
 
 <figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Helper ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
 
 ## More than a chat box
 
-Plenty of apps have a chat bubble that spits out canned answers. Chirp's helper is different in three ways that matter:
+**It does the setup with you.** Ask for an automation and the helper can write its logic, build it, switch it on, and test sample readings. It can register sensors and configure who receives an alert, rather than leave you to follow a list of settings yourself.
 
-**It can look up your sensor data.** Ask for a named sensor and time range so the helper can retrieve relevant readings. Check the timestamps and coverage in the result, especially if a sensor has stopped reporting.
+**You can start before the parcel arrives.** Ask for a pretend sensor, send a test reading, and try out the response. You can prepare the dashboard and automation while you are still choosing or waiting for hardware.
 
-**It rolls up its sleeves.** This is the big one. The helper doesn't just tell you *how* to set up an automation — it can build it for you, write the logic, test it, and switch it on. It can walk you through adding a new sensor, and create an alert that pings you when something's wrong. You describe what you want; it handles the how.
-
-**It remembers, and it always asks first.** It keeps track of your conversation so you can refine things ("send that alert to my partner too") without starting over. And before anything important or permanent — like deleting a device or an automation — it stops and asks you to confirm. Nothing big happens without your say-so.
+**You stay involved where it matters.** The conversation remembers what you are working on, so *“send that alert to my partner too”* builds on the existing task. Running a device command or deleting a sensor brings up a confirmation. Read the proposed action, then choose **Confirm Action** or **Cancel**.
 
 ## What it can do for you
 
-* **Answer questions about available home data** — live readings, which sensors are online, yesterday's trends — and draw you a chart on the spot. See [Talking to Your Home](talking-to-your-home.md).
-* **Set things up for you** — add a sensor, build and switch on an automation, create an alert, or stand up a pretend sensor to try things with before your hardware arrives. See [Let the Helper Set It Up](let-ai-set-it-up.md).
-* **Switch things on and off** — run a saved device command and inspect its status, after showing you what it's about to do. See [Ask It to Turn Things On](let-ai-set-it-up.md).
-* **Explain how Chirp works** — it searches the help guides and trusted smart-home know-how to walk you through anything. Built on [what it knows](what-it-knows.md).
+* **Connect and configure** — add a sensor, choose its connection, map its readings, and check whether messages are arriving.
+* **Make your home respond** — build an automation, create its alert, and refine the threshold or recipients in conversation. See [Let the Helper Set It Up](let-ai-set-it-up.md).
+* **Prepare your views** — create dashboards and folders, arrange an existing dashboard's layout, and get guidance on which widgets suit your rooms. See [Prepare a dashboard](let-ai-set-it-up.md#prepare-a-dashboard).
+* **Try an idea with pretend sensors** — generate readings and exercise an automation before connecting real hardware.
+* **Operate a connected device** — run a saved command after confirmation, then inspect its status.
+* **Understand what happened** — compare temperatures, explore a sensor's history, or find devices that stopped reporting. See [Talking to Your Home](talking-to-your-home.md).
+
+The helper can explain saved triggers, but **cannot currently save or edit them in chat**. Set up that monitoring condition on the [Triggers page](../rules-engine/going-deeper/triggers.md); the automation is the response.
 
 ## One thing to know
 
-The helper can operate your home, not just describe it. For a connected lamp with a saved command, ask *"turn on the lamp"*. The helper can run that command and report its available execution status (see [Ask It to Turn Things On](let-ai-set-it-up.md)). Automations can do the same on their own: a rule can flip a switch when something happens (see [When an Automation Runs a Command](../rules-engine/reference/automation-runs-a-command.md)), so *"if the basement gets damp, turn on the dehumidifier"* is something it can both set up and do. You can still press the button yourself any time from [Device Commands](../devices/commands/) or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). And because switching something on is a real, physical thing to do, it always shows you what it's about to send and waits for your OK.
+The automation the helper creates is yours to inspect and adjust in the [Rules Engine](../rules-engine/README.md). You can follow its steps, test its decisions, and change the setup as your home changes.
 
-It also keeps to the basics you'd expect: it only ever works with your home, never anyone else's, and you should keep account passwords and unrelated secrets out of the conversation. See [Your Privacy](your-privacy.md).
+For direct control, ask it to run a command already configured on a connected lamp or smart plug. It shows what it will send and waits for your confirmation. The reported result distinguishes command status from optional checks of the device's state. You can also use [Device Commands](../devices/commands/) or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md).
+
+The helper uses your access to the home selected in Chirp. [Your Privacy](your-privacy.md) explains permissions, model providers, and saved conversations.
 
 ## Availability
 
@@ -41,4 +45,4 @@ The helper comes with your Chirp plan, with a monthly number of requests include
 
 Prefer your own AI app? You can connect one — like Claude Code or Claude Desktop — straight to your home, sign in with your usual Chirp account, and ask it the same things from your desktop. See [MCP Server](../api/mcp-server.md).
 
-The helper is powered by [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. In CHIRP, that runtime works with your home's device information and the actions available to your account. A capability described on the runtime website is not automatically an action available for every home device.
+The helper is powered by [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. In CHIRP, that runtime works with your home's device information and the actions available to your account. That connects the conversation to the setup work you can do in Chirp.

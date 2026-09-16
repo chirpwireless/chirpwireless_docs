@@ -4,7 +4,9 @@ description: Take an automation live — build it, deploy the artifact, stop it 
 
 # Publish and Run an Automation
 
-To make a Chirp automation run, first **build** it: Chirp checks the saved diagram and creates a version that can execute. That version is called an **artifact**. Then **deploy** the artifact to start responding to the selected sensor reading or trigger condition.
+You choose when an edited automation starts controlling the response in your home. Saving keeps your draft; it does not replace the version already running. This gives you time to finish the change before putting it into use.
+
+First **build** the automation: Chirp checks its diagram and creates a runnable version called an **artifact**. Then **deploy** that artifact to respond to the selected sensor or saved trigger.
 
 Saving keeps your design; deploying makes a chosen build active. This lets you edit a draft while the existing deployed version keeps running. Before following these steps, complete the automation's paths and configure the sensors, alarms, or device commands it uses.
 

@@ -4,7 +4,9 @@ description: Connect your favorite AI app straight to your Chirp home with MCP �
 
 # MCP Server
 
-You've probably got an AI app you already like talking to. Chirp's MCP server lets you point that app at your own home, so you can ask it *"which sensors have stopped reporting?"* or say *"add this new sensor for me"* right where you're already working — and it can actually go and do it.
+You can ask the AI app you already use to help set up your Chirp home. Connect it through **MCP**, then ask it to add a sensor, create an alert, or build an automation. It can make those changes in your home rather than just describe the steps.
+
+**MCP (Model Context Protocol)** is the connection that lets an AI client find and call Chirp's operations. Sign in with your Chirp account and work within the home and permissions you already have. Reading sensor history is available alongside the setup work.
 
 MCP (Model Context Protocol) is simply an agreed way for an AI app to reach out and use something else safely. Chirp speaks it, so the app you already use can connect to your home without any custom plumbing on your side — [Claude Code](https://claude.com/claude-code), Claude Desktop, ChatGPT, Codex, Cursor, and others all support it.
 

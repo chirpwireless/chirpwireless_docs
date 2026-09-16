@@ -4,7 +4,7 @@ description: Find your way around the automation editor — the header bar, canv
 
 # Visual Editor
 
-Chirp's visual editor lets you draw the steps of a home automation and connect them with arrows. A step is called a **node**; an arrow is a **flow** showing where the automation goes next. Select a step to set its options, such as the alarm to raise or the command to send.
+Chirp's visual editor lets you see why an automation will take one action rather than another. Draw each step and connect it with an arrow: check the humidity, choose the high or normal path, then send an alert or finish. A step is a **node**; an arrow is a **flow**. Select a node to configure it.
 
 Open it by [creating an automation](../your-first-automation/create-an-automation.md) or clicking **Edit** on an existing one. The canvas holds your diagram, the palette offers the available steps, and the properties sidebar contains the selected step's settings. The header bar holds the overall editing controls.
 
