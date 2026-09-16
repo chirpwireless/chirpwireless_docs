@@ -6,6 +6,12 @@ description: Have the Chirp AI Helper add a sensor, build an automation, or crea
 
 The most useful thing about the helper isn't answering questions — it's doing the jobs you'd normally have to figure out yourself. Tell it what you want your home to do, and it sets it up.
 
+## Ask about triggers
+
+A **trigger** is the condition Chirp watches; a **rule** is the automation that responds. You can create the trigger first, before any rule exists. The helper can walk you through it, but it cannot currently save or edit a trigger for you in chat.
+
+Open **Rules Engine → Triggers → Add trigger** to set it up. When you want an automation to respond, select the saved trigger in its **Start Event** using **Start source → Trigger condition**, then save, build, and deploy the automation. Follow [Create a trigger](../rules-engine/going-deeper/triggers.md#create-a-trigger) for the full instructions.
+
 ## How it works
 
 When you ask the helper to set something up, it doesn't just give you instructions — it makes the change for you, then double-checks that it worked. Two simple promises keep you in charge:

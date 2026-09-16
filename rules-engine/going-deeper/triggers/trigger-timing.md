@@ -39,6 +39,14 @@ Turn on **Clear by a separate condition** when recovery needs a different thresh
 
 Each watched device clears separately. A normal reading from one window does not cancel the timer or active condition for another window.
 
+## Does it only run once?
+
+An active trigger can signal again when more readings support the same condition. Its connected automation can therefore run again before the trigger clears, subject to the automation's execution-rate limit and schedule. Keep this in mind if the automation operates a device: the command may be sent more than once.
+
+Alert notification intervals are separate settings in the alarm definition. When the condition clears, Chirp requests that its associated alerts clear too; it does not automatically undo a lamp, relay, or other command.
+
+A reading that contradicts a delayed condition means that period does not qualify. For door or motion examples, the sensor must report the change back to closed or no motion; silence does not cancel the wait.
+
 ## Add hours with Enable Schedule
 
 The trigger's wait and the automation's schedule are two controls:

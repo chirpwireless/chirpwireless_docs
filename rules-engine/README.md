@@ -8,6 +8,8 @@ Your sensors are always listening — temperature shifts, doors opening, moistur
 
 An automation is a set of instructions you build once: "when this sensor reads something I care about, do this." And "do this" now really means *do*. An automation can send you a notification when the basement gets too humid — or it can switch the dehumidifier on by itself; it can warn you about a leak, or shut the water off the moment the sensor gets wet. Your home doesn't just tell you something's happening anymore — it can handle it. See [When an Automation Runs a Command](reference/automation-runs-a-command.md).
 
+In Chirp, a **rule** is an automation flowchart and a **trigger** is a condition saved separately. Start with **Rules Engine → Triggers → Add trigger** if you want to create a trigger; use the **Rules** tab when you want to build the response. [Learn how triggers and rules fit together](going-deeper/triggers.md#is-a-trigger-the-same-as-a-rule).
+
 ## What You Get
 
 **A visual workflow designer.** Every automation is a visual flowchart built using BPMN (Business Process Model and Notation), an industry-standard way to represent workflows. You can see the entire chain of "if this, then that" at a glance. Drag nodes onto a canvas, connect them with arrows, and watch your logic take shape. Most home automations can be built this way without writing traditional code.
