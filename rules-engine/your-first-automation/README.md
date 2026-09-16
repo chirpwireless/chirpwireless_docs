@@ -27,6 +27,6 @@ We will build this automation in three short steps:
 
 1. **[Create an Automation](create-an-automation.md)** — Open the editor, name your automation, and choose which sensor to watch.
 2. **[Add Conditions and Branches](add-conditions-and-branches.md)** — Set up a decision point that checks the humidity level and routes to different actions depending on the reading.
-3. **[Trigger Alarms and Actions](trigger-alarms-and-actions.md)** — Connect your conditions to an alert so Chirp notifies you when something needs attention.
+3. **[Send Alerts and Run Actions](trigger-alarms-and-actions.md)** — Connect your conditions to an alert so Chirp notifies you when something needs attention.
 
 Each step builds on the previous one, so follow them in order. The whole process takes about ten minutes.

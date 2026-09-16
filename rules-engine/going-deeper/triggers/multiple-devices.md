@@ -1,68 +1,84 @@
 ---
-description: Use one Chirp trigger and automation for several devices while checking every sensor and countdown separately.
+description: Watch several home devices with one Chirp trigger, keep their waits separate, and use a shared reading when the condition needs it.
 ---
 
-# One Automation for Multiple Devices
+# Use a Trigger with Multiple Devices
 
-When the same idea applies to several sensors, you do not need to copy the automation. Select those devices in one trigger and connect that trigger to one automation.
+A trigger checks readings for a condition you choose. If you want the same alert for several windows, you can select them in one trigger and connect it to one automation. You do not need a separate copy for every window.
 
-This is a per-trigger selection, not a saved household group. You can choose a different set of devices in every trigger.
+Each window is still checked on its own. The kitchen window can reach its ten-minute wait before the bedroom window, and the automation receives the identity of the window that needs attention. Start with [Triggers](../triggers.md) if you have not created one yet.
 
-## What stays separate
+## Separate devices, separate waits
 
-The reading labeled **Devices answering this key are the watched ones** decides which selected devices Chirp checks independently.
+Every watched device has its own condition state and start or recovery wait. Closing one window does not cancel another window's wait. The automation can respond to different windows at different times.
 
-If one trigger watches nine windows:
+AND/OR joins readings within each evaluation, not all the selected windows into one condition. The selection is saved inside this trigger; it does not create a household group that other triggers automatically reuse.
 
-- every window has its own open-or-closed state;
-- every window has its own “Only if it lasts” countdown;
-- one open window does not advance another window's timer;
-- the automation is told which window met the condition.
+## Choose the devices
 
-That means one automation can alert for the kitchen window tonight and the bedroom window tomorrow without mixing the two events.
+1. Add the reading keys used by the trigger and any separate recovery condition.
+2. Open **Devices** and use **Search devices** to find your devices. A listed compatible device supplies at least one of those keys.
+3. Select the windows to watch. **Select all shown** selects eligible results already loaded; use **Load more devices** for further results. The button becomes **Select all** when all results for that search are loaded.
+4. You can search for another device without losing earlier selections. **Clear selection** removes the whole selection.
+5. Look at **How this trigger will run**, resolve any problems, and then save the trigger.
 
-## Build the device selection
+At least one device must be watched. You can select up to **500 devices**, including those that supply a shared reading. The starting and recovery conditions together can use up to **10 distinct reading keys**.
 
-1. Add the reading that defines the trigger condition.
-2. Open **Devices** after the reading has been selected.
-3. Find the sensors with **Search devices**, or use **Select all shown** when the same trigger belongs on the whole list.
-4. If one device maps several sensors to the same reading, choose the correct sensor.
-5. Inspect **How this trigger will run** and create the trigger only when every expected device has its own row.
+If a device is missing or unavailable, check its **Mapping** tab. It needs an incoming sensor value mapped to a required key. If two mapped sensors answer the same key, use the form's Mapping link to resolve that ambiguity. The trigger form does not let you choose between duplicate sensors. Check other uses of the mapping before changing it.
 
-You can select as many as 500 participants. That total includes devices watched independently and any device that supplies one shared reading.
+## Use two readings from every device
 
-<figure><img src="../../../.gitbook/assets/trigger-device-group.jpg" alt="The Chirp device selector and run preview showing one row for each watched device"><figcaption></figcaption></figure>
+Suppose each room sensor provides temperature and humidity. You could require temperature above an illustrative **26°C AND humidity above 70%**, with your chosen duration. Chirp checks the pair of readings within each selected room device.
 
-If a sensor is not available, check its **Mapping** tab. Its incoming value must be mapped to one of the readings used in the trigger.
+Every watched device must supply both readings in that arrangement. The form will report a missing input rather than guess which other device should supply it.
 
-## Conditions using more than one reading
+## Add a reading shared by all watched devices
 
-Suppose every room sensor reports both temperature and humidity. A trigger can require `temperature > 26` AND `humidity > 70`, then evaluate that pair separately in every selected room.
+A **shared reading** comes from one selected device and supplies information for every watched device. For example, each window could provide its open state, while one home controller supplies whether the heating is on.
 
-Every watched device must provide each reading used this way. Chirp will not guess how to fill a missing input.
+To set up that example:
 
-## Add one shared reading
+1. Add the window-state and heating-state keys with the comparisons you need.
+2. Select the window devices and the controller that supplies the heating reading.
+3. Check that **Devices answering this key are the watched ones** appears for the window-state key.
+4. Check the preview: the windows should appear under **Evaluated device**, and **Uses** should name the shared heating reading and its controller.
 
-One extra device can provide context for all watched devices. For example:
+The controller supplies context; it does not get its own window-evaluation row. Its heating reading can affect all the windows, but each window still keeps its own state and wait.
 
-- each window sensor provides its own `window_open` reading;
-- one thermostat provides the home's `heating_on` reading;
-- the trigger checks every window separately against that one heating status.
+For each additional key, Chirp accepts either a reading from every watched device or a reading from exactly one selected provider. That provider can also be one of the watched devices. Different shared keys can use different providers. If several possible providers make the setup ambiguous, change the selection or mappings as described by the preview.
 
-The thermostat appears under **Uses** in the preview instead of getting a window row. A shared reading must come from exactly one selected provider; otherwise Chirp refuses the ambiguous setup.
+## Understand the preview
+
+**How this trigger will run** describes the result of your selection:
+
+| Column | What to look for |
+|---|---|
+| **Check** | A number for each independent evaluation. |
+| **Evaluated device** | The window or other device whose condition will be watched. |
+| **Uses** | Its own input readings and any shared reading, with the shared provider named. |
+
+Every window you intend to watch should have a row. A device chosen only to supply a shared reading need not have one. Fix unanswered or ambiguous readings before saving.
 
 ## Say which device needs attention
 
-Use `vars.device_name` in the alert created by the automation:
+In your automation's **Set Alarm** node, use this expression in **Motivation Message**:
 
 ```cel
-"Window still open: " + vars.device_name
+"Window left open: " + vars.device_name
 ```
 
-The trigger also supplies the watched device and sensor IDs. It does not supply `vars.value`, because the automation receives the trigger's condition change rather than an individual sensor event.
+Chirp does not automatically add the name. The trigger also supplies the watched device and sensor IDs, but it does **not** supply `vars.value`: the automation receives a trigger signal rather than one sensor reading. See [CEL for Home Automations](../../reference/cel-for-home-automations.md) if you need more detail or another reading through enrichment.
+
+## Add or remove devices later
+
+Open the trigger's **Edit** form, update **Devices**, and review the preview before selecting **Save changes**. Read any warning about restarting countdowns. The change applies to all automations using that trigger.
+
+Removing a watched device stops this trigger from watching it and requests clearing of its associated active trigger alert through connected, running automations. If an automation was stopped first, check **Alarm → Inbox** for an alert needing manual resolution.
+
+If a warning appears beside the trigger after you change a device's mapping, review that mapping and the trigger's selected inputs. Save only once the preview describes the intended setup.
 
 ## See also
 
-- [Triggers](../triggers.md) — create the saved condition
-- [Trigger Timing](trigger-timing.md) — immediate and delayed reactions
-- [Data Templates](../../../devices/data-templates.md) — check sensor mappings
+- [Triggers](../triggers.md) — create a trigger and connect an automation
+- [Trigger Timing](trigger-timing.md) — immediate responses, waits, and recovery
+- [Data Templates](../../../devices/data-templates.md) — understand reading keys and mappings

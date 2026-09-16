@@ -8,7 +8,7 @@ Your sensors are always listening — temperature shifts, doors opening, moistur
 
 An automation is a set of instructions you build once: "when this sensor reads something I care about, do this." And "do this" now really means *do*. An automation can send you a notification when the basement gets too humid — or it can switch the dehumidifier on by itself; it can warn you about a leak, or shut the water off the moment the sensor gets wet. Your home doesn't just tell you something's happening anymore — it can handle it. See [When an Automation Runs a Command](reference/automation-runs-a-command.md).
 
-In Chirp, a **rule** is an automation flowchart and a **trigger** is a condition saved separately. Start with **Rules Engine → Triggers → Add trigger** if you want to create a trigger; use the **Rules** tab when you want to build the response. [Learn how triggers and rules fit together](going-deeper/triggers.md#is-a-trigger-the-same-as-a-rule).
+A **trigger** watches device readings for a condition, such as a window left open for ten minutes. A **rule**, also called an automation, contains the response steps, such as raising an alert. You save them separately in the **Triggers** and **Rules** tabs under **Rules Engine**, then connect them. Saving a trigger alone does not set up a response. [Learn how triggers and rules fit together](going-deeper/triggers.md#is-a-trigger-the-same-as-a-rule).
 
 ## What You Get
 
@@ -24,7 +24,7 @@ In Chirp, a **rule** is an automation flowchart and a **trigger** is a condition
 
 ## How Automations Fit Together
 
-Automations sit between your sensors and what happens next. A Start Event can run on every reading from one sensor, or it can wait for a saved trigger condition that watches one or several devices. When the selected source fires, the automation takes action—sending an alert, controlling a device, or both.
+Automations sit between your sensors and what happens next. A Start Event can run on every reading from one sensor, or it can wait for a saved trigger condition that watches one or several devices. The automation must be running, and its schedule and execution-rate limits determine whether it processes each reading or trigger signal. An active trigger can signal again, so its response may repeat.
 
 ```
 Sensor reading or trigger signal arrives
@@ -36,7 +36,7 @@ Sensor reading or trigger signal arrives
   Not met? --> No action, wait for next reading
 ```
 
-You choose the Start source, define the conditions, and decide what happens—an alert, an action on a device, or both. Chirp handles the rest around the clock. See [Triggers](going-deeper/triggers.md) when a condition should wait or apply to several devices.
+You choose the Start source, define the conditions, and decide what happens—an alert, an action on a device, or both. Chirp handles the rest around the clock. See [Triggers](going-deeper/triggers.md) to check a condition before starting the response, immediately or after a wait, for one device or several.
 
 ## Getting Started
 

@@ -1,163 +1,135 @@
 ---
-description: Learn how to create a Chirp trigger on its own, how it differs from a rule, and how to connect it to a home automation.
+description: Understand how a trigger watches your home sensors, detects a condition, and starts an automation that can alert you or operate a device.
 ---
 
 # Triggers
 
-A **trigger** watches device readings for a condition you choose, such as a freezer door staying open for ten minutes. When that condition is met, the trigger can start a connected **rule**, also called an automation. The rule defines the response, such as raising an alert.
+A **trigger** watches information sent by your devices and detects a condition you choose. That condition could be a window left open, a water leak, or humidity staying too high for half an hour. You tell Chirp what to look for, which devices to watch, and whether to react straight away or wait to see if the condition lasts.
 
-For example, if you want an alert when the freezer door is left open, the **trigger** checks the door readings and the ten-minute wait. The **rule** contains the steps that raise the alert. Creating the trigger alone does not send an alert; you need to connect it to a running automation.
+The trigger can then start a **rule**, also called an automation, which contains the steps that respond. Suppose you want an alert when a window has been open for ten minutes. The trigger checks the window readings and the wait. The automation raises the alert so you can decide whether to close the window.
 
-You create and save these separately. You do not need a rule to create a trigger: open **Rules Engine → Triggers**, select **Add trigger**, fill in the condition and devices, then select **Create trigger**. Connect it to an automation when you are ready to set up the response.
-
-Triggers have two separate choices:
-
-- **When to react** — immediately, or only after the condition has stayed true for a set time.
-- **What to watch** — one device, or several devices that should all use the same condition and automation.
-
-Selecting several devices does not create a reusable room or device group elsewhere in Chirp. Those devices belong to this trigger, and Chirp keeps a separate condition and timer for each one.
+You create the trigger and automation separately and connect them. A trigger can be saved before you have an automation. On its own, it does not send an alert, turn off a light, or operate another device.
 
 ## Is a trigger the same as a rule?
 
-No. The trigger checks whether the condition for a response has been met. The rule carries out the response. You save these separately and then connect them.
+No. The trigger detects the condition; the rule carries out the response. Both are in **Rules Engine**, with separate **Triggers** and **Rules** tabs.
 
-| Name in Chirp | What it does | Where to find it |
-|---|---|---|
-| **Trigger** | Watches a condition and remembers its timing for each selected device. | **Rules Engine → Triggers** |
-| **Rule** or **automation** | Carries out the steps in your flowchart. | **Rules Engine → Rules** |
-| **Start Event** | Selects the sensor reading or saved trigger that starts the rule. | The automation's canvas |
+| Name in Chirp | Meaning |
+|---|---|
+| **Trigger** | The condition to watch, its devices, and its timing. It also defines when the condition returns to normal. |
+| **Rule** or **automation** | The steps performed in response, such as raising an alert or sending a supported device command. |
+| **Start Event** | The first node in the automation's diagram. You use it to choose what starts the automation. |
 
-Picking a sensor inside an automation is not the same as creating a trigger. That choice starts the rule from sensor readings directly. A saved trigger can start more than one rule, while each rule chooses one start source.
+A saved trigger can start more than one automation. An **alarm definition** is a separate setup for handling and delivering an alert; the automation's **Set Alarm** step raises it.
 
-An **alarm definition** is separate too: it sets up the alert and its delivery. The trigger watches the condition; the rule's **Set Alarm** step raises the alert.
+## When do I need a trigger?
 
-## Trigger or Sensor reading?
+Use **Immediately** when a matching reading should lead to a response without an added wait, such as a leak sensor reporting water. Choose **Only if it lasts** when a brief change is normal, such as opening a window for a moment.
 
-Open the automation's **Start Event** and choose the source that matches what you want:
+You can also select several devices in one trigger. Each window can have its own ten-minute wait while using the same automation to raise an alert.
 
-| What should happen? | Choose | Then configure |
-|---|---|---|
-| Run the automation every time one sensor sends a reading | **Sensor reading** | Pick the device and sensor in the Start Event. |
-| Wait until a condition is true | **Trigger condition** | Create a trigger and choose **Immediately**. |
-| Ignore a brief door opening, motion event, or humidity spike | **Trigger condition** | Choose **Only if it lasts** and set the wait. |
-| Use one automation for several similar devices | **Trigger condition** | Select those devices in the trigger. |
-| Limit either choice to certain hours | Keep that start source | Turn on **Enable Schedule** in the Start Event. |
+Not every automation needs a saved trigger. Its Start Event offers two choices:
 
-There are only two Start sources. A schedule is an optional time restriction, while immediate or delayed timing is part of the trigger itself.
+- **Sensor reading** starts from incoming readings from one selected sensor. Put any comparisons or decisions inside the automation.
+- **Trigger condition** starts from a saved trigger that checks the condition and timing first.
 
-## What happens when a trigger fires
-
-The trigger watches and remembers the condition; the automation decides what to do about it.
-
-1. Chirp evaluates the trigger whenever relevant device data arrives.
-2. The trigger activates immediately or after its configured wait.
-3. Chirp sends the watched device's identity to every running automation connected to that trigger.
-4. The automation follows its diagram to send an alert, check more data, or control something.
-
-A saved trigger does nothing visible until you connect it to an automation and deploy that automation.
-
-## From a trigger to a running automation
-
-A trigger is a saved **start source**, not a node that you drag onto the automation canvas. Creating it and connecting it to an automation happen in two different tabs:
-
-1. Open **Rules Engine → Triggers**, select **Add trigger**, configure the condition, timing, and devices, and select **Create trigger**.
-2. Return to the **Rules** tab. The **Add Rule** button is available there, not on the Triggers tab.
-3. Select **Add Rule**, or edit an existing automation that should respond.
-4. Find the **Start Event** already placed on the canvas. Select it and use the pencil beneath the node to open its properties.
-5. Change **Start source** to **Trigger condition**, then select the trigger you saved.
-6. Select **Save** at the bottom of the Start Event panel. This applies the trigger to the diagram.
-7. Add the alert, command, enrichment, or other nodes that define the response. Then select **Save** in the automation editor.
-8. Build the automation and deploy the resulting artifact. Only a deployed automation can respond when the trigger becomes active.
-
-Creating a trigger does not create an automation, add a node to the canvas, or select the trigger automatically. The trigger decides **when and for which device** the automation starts; the nodes after the Start Event decide **what happens next**.
+Picking a device and sensor under **Sensor reading** does not create a trigger. Choose one start source. Whichever source you use, the automation must be running, and its schedule and execution-rate limits still apply.
 
 ## What you need first
 
-Use the organization containing your devices, with permission to create or edit Rules Engine items. At least one device must supply a mapped reading used by the condition. A **normalized key** is the common name of that reading, such as temperature or door state.
+Use the organization containing your devices and an account with permission to create or edit Rules Engine items. Check that the device is sending the reading you want to watch.
 
-You can save the trigger before creating an automation or setting up its alert. If a device has several sensors for the same reading, choose the one you want Chirp to watch.
+Chirp uses a **normalized key** as the common name for a reading, such as humidity or window state. The device's incoming value must be connected to that key on its **Mapping** tab. See [Data Templates](../../devices/data-templates.md).
+
+Check the actual values: an open window might be represented by text, a number, or a Boolean value. If the trigger form reports that two sensors answer the same key, follow its link to **Mapping** and leave one intended mapped sensor for that key. There is no sensor-choice dropdown inside the trigger form.
+
+You can create the trigger before its automation or alert exists. You will need an [alarm definition](../../alarm/set-up-a-home-alert.md) later if the response should notify you.
 
 ## Create a trigger
 
-1. Open **Rules Engine → Triggers**.
-2. Select **Add trigger**.
-3. Give the trigger a clear **Name**, such as `Freezer door left open`.
-4. Under **What should start the rule?**, select a normalized key—the common reading name Chirp uses across devices.
-5. Choose the comparison under **Is** and enter the **Value**.
-6. Under **When should it start?**, select **Immediately** or **Only if it lasts**.
-7. Set a separate clear condition if one normal reading should not clear the trigger.
-8. Select the device or devices under **Devices**.
-9. Check **How this trigger will run**. Each **Evaluated device** row is watched separately; **Uses** shows any shared reading. Resolve any missing or ambiguous input, then select **Create trigger**.
+For this example, use a window sensor that reports the Boolean value `true` when open and `false` when closed. If your sensor uses another type or different values, use those instead.
 
-You return to the **Triggers** tab with a saved trigger. It has not created a rule or added anything to a canvas. The condition can be monitored, but it will only lead to an alert or device action once you [connect and deploy an automation](#from-a-trigger-to-a-running-automation).
+1. Open **Rules Engine → Triggers** and select **Add trigger**.
+2. Enter a **Name**, such as `Window left open`.
+3. Under **What should start the rule?**, select **Add normalized key** and choose the key for your window reading.
+4. Set **Is** to **equals** and **Value** to `true` for this example.
+5. Under **When should it start?**, choose **Only if it lasts**, enter `10`, and choose **minutes**.
+6. Leave **Clear by a separate condition** off. A reported closed state will return this trigger to normal. [Trigger Timing](triggers/trigger-timing.md#decide-when-the-trigger-returns-to-normal) explains how to use a different recovery condition or wait.
+7. Under **Devices**, select the window device.
+8. Check **How this trigger will run**. Your window should appear as an **Evaluated device**, with its reading under **Uses**. Resolve any reported problem.
+9. Select **Create trigger**.
 
-<figure><img src="../../.gitbook/assets/trigger-time-window.jpg" alt="The Chirp trigger form with a condition and Only if it lasts selected"><figcaption></figcaption></figure>
+You return to the **Triggers** list with the trigger saved. It can watch incoming data, but it has not created an automation or configured an alert. The next section connects it to a response.
 
-One trigger can use up to 10 reading keys, select up to 500 devices, and wait from 10 seconds to 30 days.
+<figure><img src="../../.gitbook/assets/trigger-time-window.jpg" alt="Chirp trigger form showing a humidity comparison and a ten-minute wait"><figcaption>The same form supports other readings. This example screen uses humidity; choose the key and value reported by your window sensor for the walkthrough above.</figcaption></figure>
 
-Read [Trigger Timing](triggers/trigger-timing.md) for countdown, clearing, schedule, and practical examples. Read [One Automation for Multiple Devices](triggers/multiple-devices.md) when the same setup belongs on several sensors.
+### Choose and combine comparisons
 
-## Combine readings
+Numbers support **equals**, **is greater than**, and **is less than**. Text and Boolean readings use **equals**. Chirp shows a value field suited to the reading's type. A **Reported over the last … days** hint describes recent data; it does not define all the values a sensor can send.
 
-Use **Add check on ‹reading›** to add another comparison for the same reading. Use **Add normalized key** when another kind of reading belongs in the condition.
+**Add check on ‹reading›** adds another comparison for the same reading. **Add normalized key** includes another reading. Use **AND** when all checks must match or **OR** when any check may match. There is also an AND/OR choice between different keys.
 
-- **AND** means every check must match.
-- **OR** means at least one check must match.
+These controls combine readings for each watched device; they do not require all selected windows to be open together. Every key needs a valid input, even in an OR condition. A trigger accepts up to **10 distinct reading keys** across its starting and clear conditions, and **500 selected devices**, including any shared-reading providers. Delayed conditions range from **10 seconds to 30 days**.
 
-The form also has an AND/OR choice between different reading keys. These choices are evaluated separately for each watched device. They can include a reading supplied by one shared device, such as the heating status from a home controller. This does not require every watched device to match at once. See [shared readings](triggers/multiple-devices.md).
+## From a trigger to a running automation
 
-## Where triggers can be used
+1. Go to **Rules Engine → Rules**. Select **Add Rule**, or edit an automation that should respond.
+2. Select its **Start Event**, the first node already on the diagram. Use the pencil beneath it to open the properties.
+3. Set **Start source** to **Trigger condition** and choose your saved trigger.
+4. Select **Save** at the bottom of that panel.
+5. Add and connect the response steps. For an alert, use **Set Alarm**, select an alarm definition, and enter a message. Connect the flow to an End Event. See [Send Alerts and Run Actions](../your-first-automation/trigger-alarms-and-actions.md).
+6. Save the automation, then [build and deploy it](publish-and-run-an-automation.md). This makes the saved automation available to run; check that it is running.
 
-In the current automation editor, the Start Event is the only place where you select a saved trigger. Triggers are not available on gateways, Set Alarm, Execute Command, Enrichment, or other nodes later in the automation.
+The trigger itself has no Build or Deploy step. Saved triggers are selected in the Start Event, not in decision gateways or action nodes later in the diagram.
 
-One saved trigger can be selected by several automations. When it becomes active, every deployed automation that uses it can run. Each individual automation still has exactly one Start Event and one start source.
+## Try it with a test device
 
-Set the source back to **Sensor reading** only when you want every event from one selected sensor. The Start Event cannot use both sources together.
+Start with a spare window sensor and an automation that only raises a test alert.
 
-The Trigger condition field currently loads only the first page of triggers. A trigger outside that first page cannot yet be chosen from the field.
+1. Confirm that the open and closed values arrive in the device's mapped reading.
+2. Open the test sensor and wait for its open report, then allow the configured ten-minute duration.
+3. Look at the automation's [execution history](../reference/debugging-automations.md) and **Alarm → Inbox**. If an alarm appears but no notification reaches you, check its recipients and delivery settings.
+4. Close the sensor, confirm that its closed report arrives, and check that the condition clears.
+5. Try a short opening followed by a closed report before the duration ends. That period should not qualify.
 
-## Use the device identity in your automation
-
-The trigger signal provides:
-
-| Variable | What it tells you |
-|---|---|
-| `vars.device_name` | Name of the watched device that met the condition |
-| `vars.subject_kind` | Kind of watched item; currently `device` |
-| `vars.subject_id` | ID of the watched device |
-| `vars.sensor_id` | Sensor associated with the automation run and any alert |
-| `vars.detector_id` | ID of the trigger |
-| `vars.timestamp` | Trigger signal time in Unix seconds |
-
-It does not provide `vars.value`. The trigger starts the automation with a condition transition, not with one normalized sensor event. This is true for immediate and delayed triggers.
-
-Use the device name in an alert so you know which sensor needs attention:
-
-```cel
-"Freezer door left open: " + vars.device_name
-```
-
-Chirp does not add the name automatically.
+Chirp can only judge the data it receives. No new report does not cancel the wait. Further matching readings can also run the automation again while the condition is active. Read [Trigger Timing](triggers/trigger-timing.md) before adding device commands.
 
 ## Change or remove a trigger
 
-On the **Triggers** tab, select **Edit** beside the trigger, change its settings, and select **Save changes**. If Chirp warns that the countdowns will restart, confirm **Save** only when you want the affected devices to start their wait again. Every automation using that trigger will use its updated monitoring condition. You do not build or deploy the trigger itself.
+Select **Edit** beside the trigger, make your changes, and select **Save changes**. If a warning says the countdowns will restart, review it before confirming **Save**. The affected waits need to qualify again. Changes apply to every automation using that trigger, without building or deploying the trigger itself.
 
-To remove a trigger, select its trash icon and confirm **Delete**. Monitoring stops, Chirp requests clearing of alerts associated with its active conditions, and rules using it stop receiving its signals. The rules themselves remain saved, and device commands already sent are not reversed. The **Trash** tab restores deleted rules, not triggers; trigger deletion cannot be undone there. Automatic clearing uses the connected rules that are still running. If you stopped a rule before deleting its trigger, check **Alarm → Inbox** for alerts that still need to be resolved.
+Removing a watched device stops this trigger from watching it and requests clearing of its associated active trigger alert. Check any existing alert for that device.
+
+To delete the trigger, select its trash icon and confirm **Delete**. This stops monitoring and pending waits. Connected automations remain saved but receive no more signals from that trigger. The **Trash** tab restores deleted rules, not triggers. Trigger deletion cannot be undone there and does not undo commands already sent.
+
+Automatic clearing of associated alerts uses connected automations that are still running. This applies when a condition returns to normal, a watched device is removed, or the trigger is deleted. If you stopped the automation first, check **Alarm → Inbox** for alerts that still need to be resolved.
 
 ## Fix common problems
 
-| Problem | Check this |
+| Problem | What to do |
 |---|---|
-| A device is missing | Make sure its sensor data is mapped to a reading used by the trigger. |
-| Chirp cannot choose a sensor | If more than one sensor supplies the same reading, select the intended one. |
-| The trigger will not save | Check the duration, then inspect every row in **How this trigger will run**. |
-| An expression says `vars.value` is missing | Replace it with trigger context such as `vars.device_name`, or use enrichment to fetch another reading. |
-| An alert does not name the sensor | Include `vars.device_name` in the alert message. |
+| My device is missing or unavailable | Check **Mapping**. It must supply a required reading through a mapped sensor. Resolve duplicate sensors for the same key there. |
+| The preview cannot use my selected devices | Check missing readings and shared providers. See [Use a Trigger with Multiple Devices](triggers/multiple-devices.md). |
+| There is a warning beside the trigger | Its telemetry mapping changed. Review the device's mapping, then edit the trigger and check its inputs and preview before saving. |
+| I cannot save | Complete the name, comparison values, duration, and devices. If the form says it cannot display this condition, it cannot safely save edits to that trigger. |
+| A saved trigger is missing | The Triggers list and Start Event selector currently show only the first page. They display a notice when more exist; the selector cannot choose a trigger beyond that page. |
+| I saved the trigger but got no alert | Connect a deployed, running automation with a **Set Alarm** step. Check received readings, duration, schedule, execution history, and alert delivery settings. |
+| The action happens more than once | Further readings can signal an active condition again. Notification intervals are separate from automation execution limits. |
+
+## Include the device in the alert
+
+Put this expression in the **Set Alarm** node's **Motivation Message** to identify the affected device:
+
+```cel
+"Window left open: " + vars.device_name
+```
+
+Chirp does not add the name automatically. A trigger-started automation provides device and trigger identity information, but **no `vars.value`**. Update any expressions that use it before changing an existing automation from **Sensor reading** to **Trigger condition**. Use enrichment to obtain another reading when needed.
+
+`vars.timestamp` is the time the trigger activated, in whole Unix seconds. Repeated signals for that active occurrence keep the same timestamp. It is not the time of each later reading or automation run. The [CEL guide](../reference/cel-for-home-automations.md) lists the available variables.
 
 ## See also
 
-- [Create an Automation](../your-first-automation/create-an-automation.md) — choose and configure a Start Event
-- [Trigger Timing](triggers/trigger-timing.md) — filter brief events and apply schedules
-- [One Automation for Multiple Devices](triggers/multiple-devices.md) — watch several devices independently
-- [CEL for Home Automations](../reference/cel-for-home-automations.md) — use the available variables
+- [Trigger Timing](triggers/trigger-timing.md) — waiting, returning to normal, and repeated responses
+- [Use a Trigger with Multiple Devices](triggers/multiple-devices.md) — one condition for several home devices
+- [Create an Automation](../your-first-automation/create-an-automation.md) — build the response diagram

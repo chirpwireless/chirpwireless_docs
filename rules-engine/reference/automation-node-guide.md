@@ -19,7 +19,7 @@ The entry point of your automation. Every automation has exactly one Start Event
 | Field | Description |
 |---|---|
 | **Name** | A label for this node. Placeholder: *e.g., Fire Alarm*. |
-| **Start source** | What sets the automation off: **Sensor reading** for every event from one sensor, or **Trigger condition** for a saved [trigger](../going-deeper/triggers.md). A trigger may be immediate or delayed and may watch one or several devices. One source or the other, never both. |
+| **Start source** | What sets the automation off: **Sensor reading** for incoming events from one sensor, or **Trigger condition** for a saved [trigger](../going-deeper/triggers.md). A trigger may be immediate or delayed and may watch one or several devices. Choose one source. The automation must be running, and its schedule and execution-rate limits still apply. An active trigger can signal again on further readings. |
 | **Event filter — Device** | Shown for **Sensor reading**. Dropdown to select the device. Placeholder: *Select device*. |
 | **Event filter — Sensor** | Shown for **Sensor reading**. Dropdown to select the sensor on that device. Enabled after you choose a device. Placeholder: *Select sensor*. |
 | **Trigger condition** | Shown for **Trigger condition** instead of the Event filter. Dropdown listing your triggers. Placeholder: *Select trigger*. Only the first page loads, and it says so when there are more. |
@@ -50,9 +50,9 @@ What you get depends on the **Start source**.
 | `vars.subject_id` | The identifier of the watched device |
 | `vars.sensor_id` | The sensor identifier used to associate the run and any alarm with the watched device |
 | `vars.detector_id` | The identifier of the trigger |
-| `vars.timestamp` | The trigger signal time as Unix seconds |
+| `vars.timestamp` | The original activation time in whole Unix seconds; repeated signals for the same occurrence retain it |
 
-There is **no `vars.value`** on a trigger-started automation. The automation receives the trigger's condition transition rather than one normalized sensor event, whether that trigger is immediate or delayed. An expression using `vars.value` will fail every time it runs.
+There is **no `vars.value`** on a trigger-started automation. The automation receives a trigger signal rather than one normalized sensor event, whether that trigger is immediate or delayed. An expression using `vars.value` will fail every time it runs.
 
 If you defined Inputs, they are computed as local helper values. If you defined Outputs, they are published into the shared workflow context so downstream nodes can use them.
 
@@ -220,7 +220,7 @@ For the full walkthrough and examples, see [When an Automation Runs a Command](a
 | **Name** | A label for this step. Leave it blank and pick a command, and it fills in with the command's name. Placeholder behaves like the other nodes. |
 | **Device** | A search box to pick the device to control. |
 | **Command** | A dropdown of that device's commands. Enabled once you pick a device. |
-| **Parameters** | One row per thing the command needs (brightness, target temperature, on/off). Each is either a fixed **Value** (checked against the allowed range) or an **Expression** — a CEL formula worked out at runtime, with the triggering reading available as `vars.value`. |
+| **Parameters** | One row per thing the command needs (brightness, target temperature, on/off). Each is either a fixed **Value** (checked against the allowed range) or an **Expression** — a CEL formula worked out at runtime, with `vars.value` available only for a **Sensor reading** start. A trigger start supplies device and trigger identity instead. |
 | **Inputs** | Optional input parameters. Click **+ Add input**. |
 | **Outputs** | Optional output parameters. Click **+ Add output**. |
 
