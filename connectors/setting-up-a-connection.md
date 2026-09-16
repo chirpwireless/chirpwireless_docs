@@ -4,7 +4,9 @@ description: Create an LNS connection for LoRaWAN sensors, a Tracker connection 
 
 # Setting Up a Connection
 
-Creating a connection takes just a few clicks. Here's how to set up an LNS connection (for LoRaWAN sensors), a Tracker connection (for vehicle trackers), and an Emulator connection (for trying Chirp before your sensors arrive).
+A connection tells Chirp how to receive a particular kind of device message in your home's workspace. Creating one prepares the software path; you add the individual sensors afterward so Chirp can associate their messages with readings.
+
+This guide covers the built-in LoRaWAN network server (**LNS**), vehicle trackers, and the Emulator for simulated sensors. Choose LNS if your sensors use LoRaWAN and you have a compatible gateway. For MQTT devices or Zigbee sensors connected through Zigbee2MQTT, use the separate [MQTT setup guides](mqtt-connector.md).
 
 ## Adding an LNS connection
 

@@ -4,7 +4,9 @@ description: Read this before registering an MQTT device — how Chirp matches t
 
 # Topics and device routing
 
-This is the page to read once before you register your first MQTT device. It explains what the **Device ID Topic** field actually accepts, how Chirp matches incoming messages to the right device, why the **Connector key** dropdown is empty when you first open it, and the small handful of conventions that — once you know them — make every MQTT device registration feel routine.
+Topic routing tells Chirp which device a received MQTT message belongs to and which readings it contains. A **topic** is a named message channel, such as one used by a bedroom sensor. The message content is its **payload**, which might contain temperature and battery fields.
+
+Once your [MQTT connection](../mqtt-connector.md) exists, use an actual topic and example message from your device or Zigbee2MQTT bridge to set up the mapping. The device identifier selects the right sensor device; the mapped fields supply its readings. This page walks through those choices, including when to save before selecting a **Connector key**.
 
 ## The shape of an incoming MQTT topic
 

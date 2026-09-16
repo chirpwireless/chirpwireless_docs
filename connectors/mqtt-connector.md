@@ -4,7 +4,9 @@ description: Bring Zigbee sensors, smart plugs, and DIY hardware into your home 
 
 # MQTT Connector
 
-The MQTT connector is how you bring Zigbee sensors, DIY microcontroller sensors, and other smart home hardware directly into Chirp — without needing LoRaWAN.
+The MQTT connector brings messages from MQTT devices or a smart-home bridge into Chirp. MQTT is a messaging protocol: devices send messages to a server called a **broker**, and Chirp receives the messages it subscribes to.
+
+Zigbee sensors do not speak MQTT themselves. A bridge such as [Zigbee2MQTT](mqtt/zigbee2mqtt.md), running with a compatible Zigbee coordinator, translates their radio messages into MQTT. Devices with MQTT firmware can send messages to the broker directly.
 
 The most popular use is Zigbee. Thousands of Zigbee-compatible devices are supported through [Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/) — temperature sensors, motion detectors, smart plugs, door and window sensors, leak detectors, and many more from brands including Aqara, IKEA, Sonoff, Philips Hue, and Tuya. Compatibility depends on Zigbee2MQTT's device support, your coordinator adapter, and the specific device model — check the [Zigbee2MQTT supported devices list](https://www.zigbee2mqtt.io/supported-devices/) to confirm your device before purchasing.
 

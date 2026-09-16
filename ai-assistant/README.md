@@ -1,12 +1,14 @@
 ---
-description: The Chirp AI Helper knows your home and sets up sensors, automations, and alerts for you — all in plain language.
+description: Ask Chirp AI Chat about your sensors and use supported setup tasks for devices, alerts, and automations in your home.
 ---
 
 # Your Home AI Helper
 
-Smart homes are supposed to be simple, but setting one up rarely feels that way — there's jargon, fiddly settings, and a different app for everything. Chirp's AI Helper fixes that by putting a friendly smart-home expert right inside the app. You talk to it like a person, and it gets things done.
+Chirp's **AI Helper** is the chat interface for asking about your sensors and getting help with supported setup tasks. It can look up readings, help add a supported sensor, create an alert definition, build an automation, or run a command already configured on a device.
 
-It knows your home inside out — every sensor, every reading, the whole history — so it can answer "is the back door shut?" in a heartbeat. And it goes further: ask it to add a sensor, set up an automation, or create an alert, and it'll actually do the work, showing you what it's about to change and waiting for your OK first. Open it from **AI Chat** in the sidebar.
+Open **AI Chat** in the sidebar and describe the device or job. The helper uses the data and operations available through your account in the selected home's workspace. Check which sensor and time period an answer refers to before relying on it.
+
+Some steps still need the interface. The helper **cannot currently save or edit a trigger**—the monitoring condition that can start an automation. It can explain the choices; you create the trigger in [Rules Engine → Triggers](../rules-engine/going-deeper/triggers.md).
 
 <figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Helper ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
 
@@ -14,24 +16,24 @@ It knows your home inside out — every sensor, every reading, the whole history
 
 Plenty of apps have a chat bubble that spits out canned answers. Chirp's helper is different in three ways that matter:
 
-**It actually knows your home.** Its answers come from your real sensors and your real history — checked the moment you ask — not from generic guesses. If it can't find something, it says so instead of making it up. That's what makes it safe to rely on.
+**It can look up your sensor data.** Ask for a named sensor and time range so the helper can retrieve relevant readings. Check the timestamps and coverage in the result, especially if a sensor has stopped reporting.
 
 **It rolls up its sleeves.** This is the big one. The helper doesn't just tell you *how* to set up an automation — it can build it for you, write the logic, test it, and switch it on. It can walk you through adding a new sensor, and create an alert that pings you when something's wrong. You describe what you want; it handles the how.
 
-**It remembers, and it always asks first.** It keeps track of your conversation so you can refine things ("make that 10 minutes instead") without starting over. And before anything important or permanent — like deleting a device or an automation — it stops and asks you to confirm. Nothing big happens without your say-so.
+**It remembers, and it always asks first.** It keeps track of your conversation so you can refine things ("send that alert to my partner too") without starting over. And before anything important or permanent — like deleting a device or an automation — it stops and asks you to confirm. Nothing big happens without your say-so.
 
 ## What it can do for you
 
-* **Answer anything about your home** — live readings, which sensors are online, yesterday's trends — and draw you a chart on the spot. See [Talking to Your Home](talking-to-your-home.md).
+* **Answer questions about available home data** — live readings, which sensors are online, yesterday's trends — and draw you a chart on the spot. See [Talking to Your Home](talking-to-your-home.md).
 * **Set things up for you** — add a sensor, build and switch on an automation, create an alert, or stand up a pretend sensor to try things with before your hardware arrives. See [Let the Helper Set It Up](let-ai-set-it-up.md).
-* **Switch things on and off** — run a command on a device and check it arrived, after showing you what it's about to do. See [Ask It to Turn Things On](let-ai-set-it-up.md).
+* **Switch things on and off** — run a saved device command and inspect its status, after showing you what it's about to do. See [Ask It to Turn Things On](let-ai-set-it-up.md).
 * **Explain how Chirp works** — it searches the help guides and trusted smart-home know-how to walk you through anything. Built on [what it knows](what-it-knows.md).
 
 ## One thing to know
 
-The helper can operate your home, not just describe it. Say *"turn on the lamp"* and it will — it runs the commands already set up on a device, and tells you whether the device actually got the message (see [Ask It to Turn Things On](let-ai-set-it-up.md)). Automations can do the same on their own: a rule can flip a switch when something happens (see [When an Automation Runs a Command](../rules-engine/reference/automation-runs-a-command.md)), so *"if the basement gets damp, turn on the dehumidifier"* is something it can both set up and do. You can still press the button yourself any time from [Device Commands](../devices/commands/) or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). And because switching something on is a real, physical thing to do, it always shows you what it's about to send and waits for your OK.
+The helper can operate your home, not just describe it. For a connected lamp with a saved command, ask *"turn on the lamp"*. The helper can run that command and report its available execution status (see [Ask It to Turn Things On](let-ai-set-it-up.md)). Automations can do the same on their own: a rule can flip a switch when something happens (see [When an Automation Runs a Command](../rules-engine/reference/automation-runs-a-command.md)), so *"if the basement gets damp, turn on the dehumidifier"* is something it can both set up and do. You can still press the button yourself any time from [Device Commands](../devices/commands/) or a dashboard [Control widget](../dashboards/adding-widgets/control-widget.md). And because switching something on is a real, physical thing to do, it always shows you what it's about to send and waits for your OK.
 
-It also keeps to the basics you'd expect: it only ever works with your home, never anyone else's, and it never touches passwords or billing. See [Your Privacy](your-privacy.md).
+It also keeps to the basics you'd expect: it only ever works with your home, never anyone else's, and you should keep account passwords and unrelated secrets out of the conversation. See [Your Privacy](your-privacy.md).
 
 ## Availability
 

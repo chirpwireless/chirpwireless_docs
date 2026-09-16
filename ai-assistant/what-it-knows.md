@@ -1,10 +1,12 @@
 ---
-description: What the Chirp AI Helper can see — your live sensors, full history, and help guides, always limited to your home.
+description: See which sensor records, stored readings, and help guides Chirp AI Chat can use, and how permissions and missing data limit answers.
 ---
 
 # What It Knows
 
-The AI Helper answers from your real home, not from guesswork. It can see everything your sensors report — but only yours — and it checks that data the moment you ask, so its answers reflect what's actually happening right now. It has the same view of your home that you do when you log in, it cannot peek into anyone else's, and if it can't find something it'll tell you rather than make it up.
+The Chirp AI Helper can look up information exposed by its platform tools, including your devices, their stored readings, and automation or alarm settings. It also searches help guides to explain how Chirp works.
+
+Its view is limited to the selected home's workspace, your permissions, and the data available from your devices. It does not know everything happening in the house. A sensor that stopped reporting may only have an old reading, and history is limited by retention. Check dates and missing data when using an answer.
 
 ## Live sensor data
 

@@ -4,11 +4,11 @@ description: Create scoped API keys to connect Chirp to your scripts and tools, 
 
 # API Keys
 
-API keys let you connect Chirp to your own scripts, home automation setups, and integrations — securely and without sharing your account password. You might use one to pull temperature history into a spreadsheet, connect another smart home platform to your sensor data, or give a developer trusted read access to your home readings.
+An API key is a secret credential for a script or application you want to connect to Chirp. It allows that tool to request supported operations without using your account password—for example, reading temperatures for a personal report.
 
-Each key has exactly the permissions you choose. If you need to cut off access to one tool, you revoke or rotate just that key — everything else keeps working.
+Each key belongs to the selected home's workspace. You choose its **scopes**, the permissions that say what the tool may read or change. Give each tool its own key so you can revoke its access without changing the others.
 
-> **Want to know how to actually call the API?** The [API](../api/README.md) section covers the protocols, signing requests, and examples. This page is just about making and managing the keys.
+Create and manage keys here. The [API guide](../api/README.md) explains how to send authenticated requests using a key and the matching home identifier.
 
 ## Getting there
 

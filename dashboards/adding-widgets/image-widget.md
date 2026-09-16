@@ -4,13 +4,13 @@ description: Pin live sensor readings onto your own photo or floor plan, each co
 
 # Image Widget
 
-<figure><img src="../../.gitbook/assets/image-widget.jpg" alt="The Image Widget being set up — a photo with sensor pins on it, shown next to a live preview"><figcaption></figcaption></figure>
-
 The Image Widget lets you put your sensor readings straight onto a picture. Upload an image — and it really can be **any image**: a floor plan of your home, a photo of a room, a picture of the basement, a snapshot of the garden, a diagram of a piece of equipment — then drop live readings onto it, each one where its sensor actually sits.
 
 Instead of scanning a list of device names and trying to remember which is which, you look at the real space and see what every part of it is doing. Glance at the floor plan and a cold room stands out; glance at a photo of the basement and you see the water softener is running low on salt.
 
 Upload a supported image file — a PNG or JPG — of any place, object, or thing you want to keep an eye on. Each reading you place shows its current value, its unit, and an icon, and changes color as your conditions say, so the whole picture tells you the story at a glance.
+
+<figure><img src="../../.gitbook/assets/image-widget.jpg" alt="The Image Widget being set up — a photo with sensor pins on it, shown next to a live preview"><figcaption></figcaption></figure>
 
 ## Configure an Image Widget
 

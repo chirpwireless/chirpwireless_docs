@@ -4,11 +4,11 @@ description: Let a Chirp automation act on its own — the Execute Command step 
 
 # When an Automation Runs a Command
 
-This is a big one. Until now, when an automation noticed something, the most it could do was *tell* you — send an alert and leave the doing to you. The **Execute Command** step changes that. Your automations can now *act*: flip a switch, dim a light, nudge the thermostat, all by themselves, the instant the conditions you set are met.
+**Execute Command** is the automation step that sends one of a device's saved commands. A command is an operation you have already configured, such as turning on a smart plug or setting a light's brightness. The automation chooses when to send it and supplies any required values.
 
-Think about what that unlocks. Before, "the basement is damp" got you a notification — and then you went down and switched on the dehumidifier yourself. Now the automation can turn the dehumidifier on for you, the moment the humidity climbs. A leak under the sink used to mean a frantic dash to the stopcock; now the automation can shut the water off the second the sensor gets wet, then tell you it did. Too hot in the nursery? The fan comes on by itself. Your home stops just warning you about things and starts handling them.
+For example, a humidity automation could request that a compatible plug turns on a dehumidifier. Set up and test the [device command](../../devices/commands/README.md) first, then select it in this step.
 
-It all runs on the same [device controls](../../devices/commands/) you already use by hand — the automation just presses one of the buttons you've already set up. So everything that keeps manual controls safe and tidy (sensible value limits, a check that it really happened, a history of every action) applies here too.
+A request being sent does not prove the appliance turned on. [Verification](../../devices/commands/verification.md) is optional and checks the feedback your device can report. Choose it when you need to distinguish a sent request from a reported result.
 
 ## Before you start
 
@@ -60,24 +60,24 @@ Because it goes through the normal controls, any "check it actually worked" you 
 
 ## Doing *and* telling, together
 
-Acting doesn't mean you stop getting told. The best automations do both — shut the water off **and** send you an alert, so the problem is handled *and* you know about it. A common shape:
+Acting doesn't mean you stop getting told. An automation can request that a valve closes **and** send you an alert about that request. A common shape:
 
 | Step | Node | What it does |
 |---|---|---|
 | Notice | Start Event → Gateway | Watch the leak sensor; branch when it gets wet |
 | Act | Execute Command | Send "turn off" to the water shutoff |
-| Tell | Set Alarm | Fire a Critical alert so you know the water was shut off and why |
+| Tell | Set Alarm | Raise a Critical alert explaining why the shutoff command was requested |
 
-If the action itself might miss — say the device is briefly offline — attach a [Boundary Error Event](automation-node-guide.md#boundary-error-event) to the Execute Command step and send the error path to a Set Alarm, so you still hear about it if the command doesn't go through.
+A [Boundary Error Event](automation-node-guide.md#boundary-error-event) can route errors returned by the command step to an alert. Check the command's execution record for later delivery or verification results; moving to the next automation step does not prove the device changed state.
 
 ## A home example
 
-Keep the basement dry, hands-free. The Start Event watches the basement humidity sensor. A gateway routes any reading above 70% down a "too damp" branch. On that branch:
+For a hypothetical basement setup, connect a humidity sensor and a compatible smart plug with a saved command. The Start Event watches the basement humidity sensor. A gateway routes any reading above 70% down a "too damp" branch. On that branch:
 
 1. An **Execute Command** step sends "turn on" to the dehumidifier's smart plug.
-2. A **Set Alarm** step sends you a gentle heads-up that the dehumidifier kicked in — no action needed from you, just good to know.
+2. A **Set Alarm** step tells you that the automation requested the plug to turn on.
 
-The damp gets dealt with the moment it shows up, and you're kept in the loop. That's the difference between a home that nags you and one that quietly looks after itself.
+Check the plug's reported state and the appliance's behavior when testing this setup. The alert records the request; it does not prove the dehumidifier started or that humidity has fallen.
 
 ## Related pages
 

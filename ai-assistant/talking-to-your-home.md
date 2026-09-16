@@ -4,7 +4,9 @@ description: Ask the Chirp AI Helper about your home — live readings, history,
 
 # Talking to Your Home
 
-Just ask. There are no special commands to memorize and no query syntax to learn. Type the same way you would text a friend who happens to know everything about your house — whether you're *asking about* your home or *asking the helper to set something up*. This page is about asking questions; to hand it real jobs, see [Let the Helper Set It Up](let-ai-set-it-up.md).
+You can ask Chirp's **AI Helper** about readings your home sensors have reported, such as the bedroom temperature or how humidity changed yesterday. Open **AI Chat**, name the sensor or room, and say whether you want the latest reading or a particular period.
+
+The helper can look up available data and explain the results; it cannot observe your home beyond what your connected devices report. Check the reading's time before treating it as the current state. For changes to devices or automations, see [Let the Helper Set It Up](let-ai-set-it-up.md).
 
 ## Tips for better answers
 

@@ -1,10 +1,12 @@
 ---
-description: How the Chirp AI Helper stays private — it works within your access, asks before big changes, never stores passwords.
+description: Understand Chirp AI Chat access, confirmation prompts, saved conversations, and the data sent to your configured model provider.
 ---
 
 # Your Privacy
 
-Your conversations with the AI Helper are private, and your sensor data stays secure.
+Chirp's AI Helper uses your signed-in account and the home currently selected in the platform when it requests readings or changes settings. This page explains its access, confirmation prompts, and saved conversations.
+
+Your messages and the information retrieved to answer them can reach the configured AI model provider. Conversations remain available in chat history, so keep passwords and unrelated secrets out of your messages. Use [Your Chats and Your Own AI](chats-and-your-own-ai.md) to review your chat and provider choices.
 
 ## It works only within your access
 
@@ -12,7 +14,7 @@ The helper uses your active login session to decide what it can do. If you can v
 
 ## It asks before anything big
 
-When you ask the helper to set something up, the small, safe steps just happen — but before anything important or permanent, like removing a device or an automation, it shows a clear **Confirm Action** / **Cancel** prompt and waits for you. You're always the one who approves a real change.
+When you ask the helper to set something up, the small, safe steps just happen — but before anything important or permanent, like removing a device or an automation, it shows a clear **Confirm Action** / **Cancel** prompt and waits for you. Read the confirmation before approving it. Routine setup steps can run without a separate prompt.
 
 ## Your home is isolated
 
@@ -24,7 +26,7 @@ Your questions and the helper's answers are stored so you can scroll back throug
 
 ## What does not get saved
 
-Raw sensor readings are not copied or stored by the helper. Passwords, payment details, and API keys are never captured in conversation logs.
+The chat is not a full archive of sensor history. Readings included in an answer or a tool result can still appear in the conversation, and anything you type becomes conversation content. Keep passwords, payment details, and unrelated API keys out of chat; use the dedicated settings for your model key.
 
 ## How a question gets answered
 

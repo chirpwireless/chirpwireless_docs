@@ -4,9 +4,9 @@ description: The simplest MQTT path — Chirp hosts the broker, you paste the cr
 
 # Cloud MQTT
 
-Cloud MQTT is the simpler of the two MQTT paths into Chirp. You don't run a broker yourself — Chirp provisions a managed MQTT broker for the connector, gives you the endpoint and credentials, and you point your devices (or Zigbee2MQTT) at it. That's the whole architecture.
+Cloud MQTT gives your home an MQTT connection using a broker managed by Chirp. The **broker** is the server that receives messages from your devices or bridge and passes them on. Chirp gives you its address and login details, so you do not need to run that server yourself.
 
-For most homes this is the right choice. You're not running a server in the basement, you're not exposing a port on your router, and you're not managing TLS certificates. You install Zigbee2MQTT on the machine that owns your USB Zigbee dongle, paste in four credentials, and the data starts flowing.
+For Zigbee sensors, you still need Zigbee2MQTT and a compatible coordinator in your home. Point the bridge at the supplied broker, then register and [map the devices](topics-and-device-routing.md) in Chirp. Creating the connection alone does not create sensor readings.
 
 ## When to choose Cloud MQTT
 

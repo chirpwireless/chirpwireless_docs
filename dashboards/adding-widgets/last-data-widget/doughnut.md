@@ -4,11 +4,11 @@ description: Show a reading as a filling ring with the number in the middle — 
 
 # Doughnut Display
 
-<figure><img src="../../../.gitbook/assets/last-data-doughnut.jpg" alt="Last Data widget using the Doughnut display type"><figcaption></figcaption></figure>
-
 The Doughnut display shows a reading as a ring that fills up between a low and a high value you choose, with the number in the middle. One look tells you how full something is — you don't have to read the figure to know it's nearly empty or almost maxed out.
 
 It's a great fit for anything with a sensible range — a water tank, a battery, a humidity level. As the reading climbs, more of the ring fills in.
+
+<figure><img src="../../../.gitbook/assets/last-data-doughnut.jpg" alt="Last Data widget using the Doughnut display type"><figcaption></figcaption></figure>
 
 ## When to choose it
 

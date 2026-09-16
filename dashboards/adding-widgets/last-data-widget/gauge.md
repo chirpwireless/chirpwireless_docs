@@ -4,9 +4,9 @@ description: Put a reading on a horizontal track with a sliding marker and color
 
 # Gauge Display
 
-<figure><img src="../../../.gitbook/assets/last-data-gauge.jpg" alt="Last Data widget using the Gauge display type"><figcaption></figcaption></figure>
-
 The Gauge display puts a reading on a horizontal track with a marker that slides along it, and the color rules you set show up as bands across that track. The number sits above. So you see two things at once — the value, and whether it's sitting in a good stretch or a worrying one.
+
+<figure><img src="../../../.gitbook/assets/last-data-gauge.jpg" alt="Last Data widget using the Gauge display type"><figcaption></figcaption></figure>
 
 ## When to choose it
 

@@ -4,9 +4,11 @@ description: Every automation node — Gateway, Script Task, Set Alarm, Execute 
 
 # Automation Node Guide
 
-Every automation is built from nodes connected by flows on the visual canvas. This page describes each node type: what it does, what fields appear in its properties sidebar, and how it behaves when the automation runs.
+A **node** is a step on Chirp's automation canvas, such as checking a value or raising an alert. The arrows between nodes are **flows**: follow them to see the order of steps and which branch a decision can take.
 
-All properties panels have **Save** and **Cancel** buttons at the bottom. Changes are not applied until you click Save.
+Use this guide while [editing an automation](visual-editor.md) to choose the right step and fill in its settings. An alarm step needs a saved alarm definition, and a command step needs a command already configured on the device. Calculating a value, fetching a reading, and choosing a path are separate jobs with separate node types.
+
+Each properties panel has **Save** and **Cancel** buttons. Click **Save** to apply its changes.
 
 ---
 

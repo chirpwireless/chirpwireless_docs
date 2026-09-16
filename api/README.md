@@ -4,11 +4,9 @@ description: Get programmatic access to your home's sensor data for scripts, spr
 
 # API
 
-Chirp gives you programmatic access to your home's data — and now the ability to send commands to your devices — for personal scripts, local dashboards, spreadsheets, and trusted integrations with other home-automation tools.
+Chirp's **API** (application programming interface) lets your own software work with your home's device data. For example, a script can request readings for a report without opening the dashboard. Supported command operations can also send commands already configured on connected devices.
 
-Use the **[API reference](https://api.chirpwireless.io/)** for the complete list of calls, request fields, responses, and required scopes. This section covers what the API is for, how requests are signed, and where to get a key.
-
-> You can control a device through the API too: a key with the **Commands** scope can send a device its commands — turn it on or off, dim a light, change a setting. See [Device Commands](../devices/commands/) for the in-app way, or the [API reference](https://api.chirpwireless.io/) for the command calls.
+Begin with the [REST API](public-rest-api.md), which uses ordinary web requests. You will need an [API key](../settings/api-keys.md), a credential for your integration, and the identifier of the home it belongs to. The key's **scopes** are the operations it is allowed to use. The [API reference](https://api.chirpwireless.io/) lists those requirements for each call.
 
 ## REST is the way in
 

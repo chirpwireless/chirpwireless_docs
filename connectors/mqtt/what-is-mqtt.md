@@ -4,9 +4,11 @@ description: A friendly intro to MQTT brokers, topics, and JSON payloads — the
 
 # What MQTT is
 
-MQTT is the messaging protocol that ties most of the modern smart home together. If you've ever watched a Zigbee sensor's reading appear on a dashboard, or asked your home automation to turn off the kitchen lights, MQTT was almost certainly carrying the message under the hood. It was designed in the late 1990s for satellite oil pipeline monitoring — devices with tiny radios, intermittent connectivity, and no patience for protocol overhead — and that pedigree is exactly why it works so well for battery-powered home sensors today.
+MQTT is a way for devices and software to exchange messages. Think of a temperature sensor sending a reading to a named channel, such as `home/bedroom/temperature`. That channel is a **topic**. A server called a **broker** receives the message and passes it to software listening to that topic.
 
-If you already understand publish/subscribe messaging and just want to see how Chirp's MQTT connector fits in, skip ahead to [Cloud MQTT](cloud-mqtt.md) or [External MQTT](external-mqtt.md). If MQTT is new to you, the rest of this page is the orientation that will make those next pages click.
+Sending a message is called **publishing**; asking to receive messages is **subscribing**. Chirp uses an MQTT connection to receive readings and associate them with your registered sensors. Zigbee sensors need a bridge such as Zigbee2MQTT to translate their messages first.
+
+You can let Chirp supply the broker connection with [Cloud MQTT](cloud-mqtt.md), or connect a broker you already run with [External MQTT](external-mqtt.md).
 
 ## The mental model
 

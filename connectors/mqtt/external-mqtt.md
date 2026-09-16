@@ -4,7 +4,9 @@ description: Point Chirp at a broker you already run at home — set up Mosquitt
 
 # External MQTT
 
-External MQTT is the second way to connect MQTT data into Chirp: instead of using a broker Chirp provides, you point Chirp at one you already run. Chirp connects out to your broker, subscribes to its messages, and brings them into the same device-routing pipeline as everything else.
+External MQTT lets Chirp receive readings from a broker you already run. The **broker** is the server that collects MQTT messages from your devices or Zigbee2MQTT bridge. Chirp connects to that server and subscribes to the message channels you configure.
+
+Use this route if your home already has a broker you want to keep. You need its address, the appropriate login details, and a network path that Chirp can reach. If you would prefer Chirp to manage the broker, choose [Cloud MQTT](cloud-mqtt.md). Either route still needs [device registration and topic mapping](topics-and-device-routing.md).
 
 ## How the connection works
 

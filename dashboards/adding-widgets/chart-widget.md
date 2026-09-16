@@ -4,8 +4,6 @@ description: Graph a reading's history over the hour, day, week, or month with c
 
 # Chart Widget
 
-<figure><img src="../../.gitbook/assets/dashboard-widget-picker.jpg" alt="The Chirp widget picker with Chart listed separately from Last Data, Text, Map, and Control"><figcaption></figcaption></figure>
-
 The Chart widget draws a reading's history as a graph — a line or bars stretching back over the last hour, day, week, or month — so you can follow how it has moved, not just where it is right now.
 
 One Chart widget puts four things together: the **current value** as a big number at the top, the **graph** of its history as a line or bars, an optional **average line** for the period, and optional **color bands** that mark which ranges are fine and which are not. You see today's reading and the pattern that led to it on a single tile.
@@ -13,6 +11,8 @@ One Chart widget puts four things together: the **current value** as a big numbe
 Those color bands also tint the **big number** at the top: when the current reading sits inside a band, that number takes the band's color — the line or bars themselves keep the color you gave the metric. So the tile tells you how things are going before you even look at the graph.
 
 A Chart widget follows one reading. If you want to watch several, add a separate Chart widget for each.
+
+<figure><img src="../../.gitbook/assets/dashboard-widget-picker.jpg" alt="The Chirp widget picker with Chart listed separately from Last Data, Text, Map, and Control"><figcaption></figcaption></figure>
 
 ## Pick the shape of the history
 

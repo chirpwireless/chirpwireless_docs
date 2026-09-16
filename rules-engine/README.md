@@ -4,11 +4,11 @@ description: Let your home act on its own — automations that watch your sensor
 
 # Make Your Home Work for You
 
-Your sensors are always listening — temperature shifts, doors opening, moisture creeping into the basement. Automations let your home **react** to those readings on its own. Instead of checking the dashboard yourself, Chirp watches for the conditions you care about and takes action the moment they happen.
+An **automation**, called a **rule** in Chirp, is a set of saved steps that responds to a sensor reading or a monitored condition. It can decide whether to alert someone, fetch another reading for context, or send a command to a device you have set up to control.
 
-An automation is a set of instructions you build once: "when this sensor reads something I care about, do this." And "do this" now really means *do*. An automation can send you a notification when the basement gets too humid — or it can switch the dehumidifier on by itself; it can warn you about a leak, or shut the water off the moment the sensor gets wet. Your home doesn't just tell you something's happening anymore — it can handle it. See [When an Automation Runs a Command](reference/automation-runs-a-command.md).
+For example, an automation can raise an alert when basement humidity is high. With a compatible smart plug and a saved command, it can also request that a dehumidifier turns on. A sent command is not proof that the appliance started; [command verification](../devices/commands/verification.md) explains how to check reported feedback.
 
-A **trigger** watches device readings for a condition, such as a window left open for ten minutes. A **rule**, also called an automation, contains the response steps, such as raising an alert. You save them separately in the **Triggers** and **Rules** tabs under **Rules Engine**, then connect them. Saving a trigger alone does not set up a response. [Learn how triggers and rules fit together](going-deeper/triggers.md#is-a-trigger-the-same-as-a-rule).
+A **trigger** watches for the condition, such as a window left open for ten minutes. The **rule** contains the response steps. You save them separately in the **Triggers** and **Rules** tabs under **Rules Engine**, then connect them. Saving a trigger alone does not set up a response. [Learn how triggers and rules fit together](going-deeper/triggers.md#is-a-trigger-the-same-as-a-rule).
 
 ## What You Get
 

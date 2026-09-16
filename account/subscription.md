@@ -4,9 +4,9 @@ description: Pick a Chirp plan, see what each tier includes, upgrade or manage b
 
 # Subscription
 
-**How to get here:** Click your name in the bottom-left corner of the screen, then select **Subscription**.
-
 Your subscription controls how many devices you can connect, how many dashboards you can build, how far back your data history goes, and which notification channels are available to you.
+
+**How to get here:** Click your name in the bottom-left corner of the screen, then select **Subscription**.
 
 ## Choosing a plan
 

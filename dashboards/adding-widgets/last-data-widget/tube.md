@@ -4,11 +4,11 @@ description: Show a level as a filling cylinder, like a real tank — watch the 
 
 # Tube Display
 
-<figure><img src="../../../.gitbook/assets/last-data-tube.jpg" alt="Last Data widget using the Tube display type"><figcaption></figcaption></figure>
-
 The Tube display is a tall cylinder that fills up from the bottom as the reading rises — just like looking at the level in a real tank. Tick marks run down the side, and the number shows on the tube itself.
 
 It's the most natural way to show anything that has a level — a rainwater butt, a heating-oil tank, the salt in a water softener. And because the colors are yours to set, it works whether you're watching something fill up or watching it run down.
+
+<figure><img src="../../../.gitbook/assets/last-data-tube.jpg" alt="Last Data widget using the Tube display type"><figcaption></figcaption></figure>
 
 ## Watch it run low, or watch it climb too high
 
