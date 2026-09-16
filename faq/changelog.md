@@ -695,7 +695,7 @@ Did you know that Chirp goes beyond your house walls? Connect a car tracker, mot
 
 Any tracker device registered in Chirp can appear on the map. The widget fits into the same dashboard layout as everything else — resize it, organize it in folders, share it with your household.
 
-[→ Choosing Widgets](../dashboards/choosing-widgets.md)
+[→ Choosing Widgets](../dashboards/adding-widgets/README.md)
 
 ***
 
@@ -746,7 +746,7 @@ Three targeted changes to how home alerts work:
 **What to read next**
 
 * [MQTT Connector](../connectors/mqtt-connector.md) — Connect your devices and bridges
-* [Choosing Widgets](../dashboards/choosing-widgets.md) — Add a Map widget to your dashboard
+* [Choosing Widgets](../dashboards/adding-widgets/README.md) — Add a Map widget to your dashboard
 * [API Keys](../settings/api-keys.md) — Set up scoped access for scripts and integrations
 * [Subscription](../account/subscription.md) — Review your current plan
 * [Set Up a Home Alert](../alarm/set-up-a-home-alert.md) — Configure alerts with the latest improvements
