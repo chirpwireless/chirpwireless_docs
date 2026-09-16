@@ -6,6 +6,8 @@ description: Open the editor, name an automation, choose a Sensor reading or Tri
 
 This page walks you through opening the automation editor, naming your first automation, deciding what starts it, and saving your initial draft.
 
+Looking for **how to create a trigger**? Start on **Rules Engine → Triggers → Add trigger**. You save that condition separately, then choose it in a rule. This guide creates the rule itself; the [Triggers guide](../going-deeper/triggers.md) covers the condition.
+
 ## Open the Rules Engine
 
 1. Click **Rules engine** in the Chirp sidebar. This takes you to `/rules`.
