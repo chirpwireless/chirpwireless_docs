@@ -1,10 +1,10 @@
 ---
-description: Chirp is an AI-first home automation platform — connect any maker's sensors and let a built-in AI helper run the setup.
+description: Build your smart home with Chirp’s AI Assistant by your side. Connect sensors, create automations, and set up alerts in one home automation platform.
 ---
 
 # Chirp — Home Automation Platform
 
-Chirp is an **AI-first** home automation platform that connects sensors from different manufacturers into one system — with shared dashboards, unified automations, and a single alerting workflow across every device in your home. No vendor lock-in, no juggling multiple apps. And instead of hunting through settings to get any of it working, you can just *ask*: a built-in AI helper sets up sensors, builds automations, and creates alerts for you, in plain language.
+Chirp is an **AI-first** home automation platform that connects sensors from different manufacturers into one system — with shared dashboards, unified automations, and a single alerting workflow across every device in your home. No vendor lock-in, no juggling multiple apps. And instead of hunting through settings to get any of it working, you can just *ask*: a built-in AI Assistant sets up sensors, builds automations, and creates alerts for you, in plain language.
 
 Whether you're monitoring temperature in a baby's room, watching for water leaks in the basement, tracking soil moisture in the garden, or making sure the garage door closed after you left — Chirp brings it all together. Sensors from different brands, using different protocols, reporting data in different formats, all working as one.
 
@@ -14,13 +14,15 @@ And Chirp doesn't stop at your front door. Connect a GPS or OBD-II tracker to yo
 
 ### Just ask — your home has an expert built in
 
-The best part of Chirp is that you don't have to be technical to use it. A built-in AI helper knows your whole home — every sensor and its history — so you can ask it anything in plain English: *"What was the bedroom temperature overnight?"* or *"Were there any motion events in the hallway after 11 PM?"* It checks your real data and answers, then draws you a chart if you'd like one.
+Chirp’s **AI Assistant** is like having an experienced integrator by your side. You can start with the home you want to create, while it helps work through wireless protocols, compatible devices, and configuration. Ask it to add your new leak sensor or alert you when a basement sensor reports humidity above 70%. The assistant works through the connection details, registers the device, configures the alert, and can build and switch on its automation.
 
-And it doesn't stop at answers. Ask it to *do* something — "add my new leak sensor", "alert me if the basement gets damp", "let me know if a door opens after midnight" — and it sets it up for you, writing the automation, testing it, and switching it on. It can also work the house itself: *"turn on the lamp"* now turns on the lamp. Before anything important or permanent, it asks you to confirm, so you're always in charge. It's like having a smart-home installer on call, who happens to live inside the app. See [Your Home AI Helper](ai-assistant/).
+You can ask for changes in the same conversation, create dashboards and folders for the views you want, or run a device's saved command after reviewing a confirmation. For widgets, use the dashboard editor to add displays and configure their readings. The assistant can guide the choices and update dashboard layouts. See [Your Home AI Assistant](ai-assistant/README.md).
 
-You don't even need the hardware to start. Chirp can make up **pretend sensors** that invent their own readings, so you can build your dashboards and test your alerts while your real ones are still in the post — then point the same sensor at the real thing when it arrives and keep everything you set up. See [Pretend Sensors](devices/pretend-sensors.md).
+You can start before the hardware arrives. Ask for a [pretend sensor](devices/pretend-sensors.md), send a sample reading, and exercise your automation. Once the real device is connected, the same profile can keep the dashboards and rules you prepared.
 
-CHIRP brings **AIoT** into home monitoring and automation through its built-in helper. It runs on [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. Your connected devices, configured actions and permissions determine what the helper can do in your home.
+After setup, the assistant can investigate the readings too: compare overnight temperatures, find a quiet sensor, or draw a chart. It uses the data your devices have reported, giving you context for the next adjustment.
+
+The assistant runs on [SyntheticBrew](https://syntheticbrew.ai/), our team's AI agent runtime, which connects the conversation to Chirp's operations and confirmation workflow.
 
 ### Connect any manufacturer, one platform
 
@@ -32,7 +34,7 @@ If a better sensor comes along next year, just add it. Your existing rules, dash
 
 ### Every sensor, fully modeled
 
-When you connect a sensor, it doesn't just show you a number. Every device becomes a living digital model — its current state, full history, and patterns over time. Even when a sensor temporarily loses connection, its data and configuration are preserved. You always know what's happening at home.
+When you connect a sensor, it doesn't just show you a number. Every device becomes a living digital model — its current state, full history, and patterns over time. Even when a sensor temporarily loses connection, its data and configuration are preserved. Its last readings remain available with their timestamps, so you can distinguish the recorded state from a fresh report.
 
 ### Automate with confidence
 
@@ -40,9 +42,9 @@ Set rules that make your home — and your vehicles — respond to what's happen
 
 Rules are built visually — you pick a sensor, set a condition, choose what should happen. Behind the scenes, Chirp uses [CEL (Common Expression Language)](https://cel.dev) for conditions, giving you precise control when you want it. You can combine readings from multiple sensors — regardless of manufacturer — in a single rule, schedule rules to run only on certain days, and set conditions that need to persist for a minimum time before triggering.
 
-That last point matters more than you'd think: a temperature sensor might briefly spike to 35 degrees if sunlight hits it for a moment, then settle back to 22. With Chirp's "remain true for" conditions, you can say *"only alert me if the temperature stays above 30 for at least 15 minutes."* Transient spikes are ignored. You only hear about real problems.
+That last point matters more than you'd think: a temperature sensor might briefly spike to 35 degrees if sunlight hits it for a moment, then settle back to 22. With Chirp's "remain true for" conditions, you can say *"only alert me if the temperature stays above 30 for at least 15 minutes."* Short excursions need not start an alert; choose the duration that fits the condition you are monitoring.
 
-And here's something you won't find in most smart home systems: every change you make to a rule is versioned. If you adjust an automation and it starts behaving unexpectedly, you can see exactly what changed, compare with the previous version, and undo it with one click. Nothing is lost.
+Every saved rule change has a version. If an adjustment behaves unexpectedly, inspect the history and restore an earlier design without losing the intervening versions. Build and deploy the restored draft when you want it to replace the running automation. See [History and Recovery](rules-engine/managing-automations/history-restore-and-recovery.md).
 
 ### Know when it matters
 
@@ -72,7 +74,7 @@ You can even place your home on the real-world map, anchored to its actual locat
 
 Invite family members, roommates, or property managers to your organization. Give everyone full access, or limit some members to view-only — kids can check the temperature but can't modify rules. If you're a landlord, give tenants view access to shared utility sensors without exposing your own devices or settings.
 
-Every organization has an activity log, so you can see who changed what and when. From the user menu, go to **Users** to manage members and **Organization settings** to configure your setup.
+Each home has an activity log of membership and permission changes, so you can review who gained or lost access and when. From the user menu, go to **Users** to manage members and **Organization settings** to configure your setup.
 
 ### Connect your own tools
 

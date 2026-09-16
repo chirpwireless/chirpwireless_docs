@@ -1,15 +1,17 @@
 ---
-description: Sign every Chirp API request with a scoped key and home header, and keep keys narrow with scopes.
+description: Authenticate Chirp API requests with an API key, its allowed scopes, and the required matching X-Organization-Id header.
 ---
 
 # Authentication & API Keys
 
-Every API request — REST or gRPC — is signed with a **scoped API key**. Create, scope, rotate, and revoke keys in [Settings → API Keys](../settings/api-keys.md); this page covers how requests are signed.
+An **API key** is a secret credential that identifies a script or integration when it calls Chirp. Its **scopes** limit what it can do, such as read device information. Each key belongs to one home's workspace, called an **organization** in the API.
+
+Create the key in [Settings → API Keys](../settings/api-keys.md), then send it with that home's identifier on each authenticated request. Chirp checks the key, its allowed scopes, and whether the organization matches. This is API-key authentication; you do not create a separate cryptographic signature for the request.
 
 ## What a request carries
 
 - **`X-API-Key`** — your key (format `chirp_<key>`), on every request.
-- **`X-Organization-Id`** — your home; it has to match the home the key was made in. Some calls also accept it as an `organizationId` query value instead of the header.
+- **`X-Organization-Id`** — your home; it has to match the home the key was made in. The authentication gateway requires this header. An `organizationId` query value required by a particular call is additional; it cannot replace the header.
 
 Requests always go over a secure connection.
 

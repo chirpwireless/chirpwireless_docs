@@ -4,7 +4,9 @@ description: Find your way around the automation editor — the header bar, canv
 
 # Visual Editor
 
-The visual editor is where you design your automation logic. It opens when you create a new automation or click **Edit** on an existing one. The editor has four main areas: the header bar, the canvas, the node palette, and the properties sidebar.
+Chirp's visual editor lets you see why an automation will take one action rather than another. Draw each step and connect it with an arrow: check the humidity, choose the high or normal path, then send an alert or finish. A step is a **node**; an arrow is a **flow**. Select a node to configure it.
+
+Open it by [creating an automation](../your-first-automation/create-an-automation.md) or clicking **Edit** on an existing one. The canvas holds your diagram, the palette offers the available steps, and the properties sidebar contains the selected step's settings. The header bar holds the overall editing controls.
 
 ---
 

@@ -64,9 +64,9 @@ The mapping between raw fields and your data templates does not survive the save
 
 See [Sensor Details](sensor-details.md).
 
-## Just ask the helper
+## Just ask the assistant {#just-ask-the-helper}
 
-You do not have to do any of this by hand. Ask your [AI helper](../ai-assistant/README.md) to set up a pretend sensor and it will — choosing a model, creating the sensor, sending a reading to test an alert, and later taking it live onto your LoRaWAN connection. Asking the helper to switch a pretend sensor to a tracker or an MQTT sensor is the one part it cannot do for you; do that yourself on the Connection tab.
+You do not have to do any of this by hand. Ask your [AI Assistant](../ai-assistant/README.md) to set up a pretend sensor and it will — choosing a model, creating the sensor, sending a reading to test an alert, and later taking it live onto your LoRaWAN connection. Asking the assistant to switch a pretend sensor to a tracker or an MQTT sensor is the one part it cannot do for you; do that yourself on the Connection tab.
 
 > *"Make a pretend temperature sensor for the garage and send a reading of 2 degrees."*
 

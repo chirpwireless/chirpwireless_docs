@@ -4,7 +4,9 @@ description: Learn when the advanced gRPC interface is worth it over REST for ty
 
 # gRPC API
 
-Chirp also offers a gRPC interface. For almost everyone at home you won't need it — **REST is the practical choice for home scripts and integrations** (see [REST API](public-rest-api.md)). **gRPC is the advanced / on-premise path: use it only if you specifically need it for an on-premise or typed service-to-service integration.**
+The **gRPC API** is an advanced way for software to call Chirp operations using predefined message types and a generated client library. It is useful when you are developing an integration that already relies on those service definitions, often within an on-premise setup.
+
+You need the service definitions and endpoint from your integration package, plus [authentication credentials](authentication-and-api-keys.md). For a home script or a first integration, the [REST API](public-rest-api.md) is the simpler starting point: you can call it with standard web tools such as curl.
 
 ## When it's worth it
 

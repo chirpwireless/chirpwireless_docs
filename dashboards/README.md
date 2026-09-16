@@ -4,7 +4,9 @@ description: See your whole smart home at a glance — overview, custom dashboar
 
 # Your Home at a Glance
 
-Once your sensors are connected and reporting, Chirp gives you several ways to see what's happening across your home — from a quick status check to fully personalized dashboards that show exactly the information you care about.
+Put the things you check together on one screen: the bedroom temperature, garden moisture, front-door state, and a control for a connected lamp. A Chirp **dashboard** is a view you design for your home. Each reading, chart, or control on it is a **widget**.
+
+You can make a view for a room or a purpose and place it on the screen where it is most useful, such as a tablet by the front door. Start with connected sensors, then [build a dashboard](building-a-dashboard.md) and choose its widgets. The home overview remains a ready-made summary; your dashboards reflect the way you use your home.
 
 ## What you can see
 

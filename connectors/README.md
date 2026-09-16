@@ -4,9 +4,11 @@ description: See how connections link your home sensors to Chirp over LoRaWAN, M
 
 # How Sensors Connect to Chirp
 
-A connection tells Chirp which protocol to listen on for a specific sensor type. It does not create sensor profiles — you register sensors separately through the sensor dialog. A connection establishes the protocol binding that makes data flow possible.
+Chirp connections let sensors with different communication methods become part of the same home. A garden sensor and an indoor smart plug can appear on your dashboards and participate in the same automation setup, even when their messages take different routes to Chirp.
 
-Most homes need just one connection: an **LNS connection** for LoRaWAN sensors. If you also want to track a vehicle, you can add a **Tracker connection** for vehicle trackers (OBD2, CAN bus, and standalone GPS vehicle tracking devices).
+A **connection** is the software link that brings those messages into your home's workspace. A gateway or hub is the physical equipment some sensors need: LoRaWAN uses a radio gateway; Zigbee reaches an MQTT connection through a bridge such as Zigbee2MQTT. Choose the connection first, then add the sensors that use it.
+
+Choose the route that matches your equipment. You can also use the Emulator to try Chirp with simulated readings before buying hardware; see [Setting Up a Connection](setting-up-a-connection.md).
 
 ## Connection types
 

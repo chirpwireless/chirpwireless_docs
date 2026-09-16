@@ -4,9 +4,11 @@ description: See how Chirp turns sensor readings into home alerts, with an Inbox
 
 # Alarm
 
-Your sensors watch your home around the clock, but you are not always looking at the dashboard. The Alarm section bridges that gap — when a reading crosses a threshold you care about, Chirp notifies you through the channels you choose so you can act before a small problem becomes a bigger one.
+Chirp alarms help your home reach the person who can respond. A leak sensor can start an alert on your phone, and an escalation chain can contact someone else if the event stays unresolved. The Inbox keeps the event visible until you mark it handled.
 
-> **How triggers and response work together:** The [Rules Engine](../rules-engine/README.md) decides _when_ an alarm is raised — it evaluates sensor data and fires an alarm when conditions are met. The Alarm section defines _what happens after_ the alarm fires: who gets notified, through which channels, how often, how escalation proceeds if nobody responds, and when notifications are suppressed.
+An **alarm** is the record of something needing attention. Its saved **alarm definition** sets the message, people, and notification behavior; an automation **rule** raises it when the appropriate sensor condition is met. Set these pieces up once and let Chirp follow that response when new events occur.
+
+Start with [Set Up a Home Alert](set-up-a-home-alert.md) to configure the notification and its responding automation. A separate [trigger](../rules-engine/going-deeper/triggers.md) can watch for a condition, such as a door staying open; the automation supplies the response.
 
 ## What you will find here
 

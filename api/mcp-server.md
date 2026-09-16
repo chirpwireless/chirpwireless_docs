@@ -4,7 +4,9 @@ description: Connect your favorite AI app straight to your Chirp home with MCP �
 
 # MCP Server
 
-You've probably got an AI app you already like talking to. Chirp's MCP server lets you point that app at your own home, so you can ask it *"which sensors have stopped reporting?"* or say *"add this new sensor for me"* right where you're already working — and it can actually go and do it.
+You can ask the AI app you already use to help set up your Chirp home. Connect it through **MCP**, then ask it to add a sensor, create an alert, or build an automation. It can make those changes in your home rather than just describe the steps.
+
+**MCP (Model Context Protocol)** is the connection that lets an AI client find and call Chirp's operations. Sign in with your Chirp account and work within the home and permissions you already have. Reading sensor history is available alongside the setup work.
 
 MCP (Model Context Protocol) is simply an agreed way for an AI app to reach out and use something else safely. Chirp speaks it, so the app you already use can connect to your home without any custom plumbing on your side — [Claude Code](https://claude.com/claude-code), Claude Desktop, ChatGPT, Codex, Cursor, and others all support it.
 
@@ -93,9 +95,9 @@ Creating a sensor or dashboard changes your home, but it does not overwrite or s
 
 These notes help the AI app explain an action; they are not permission checks. Each app decides how to present confirmations. Chirp still enforces your account permissions, so the app cannot do anything that your account is not allowed to do.
 
-## How this differs from the AI Helper in the app
+## How this differs from the AI Assistant in the app {#how-this-differs-from-the-ai-helper-in-the-app}
 
-Chirp already has an [AI Helper](../ai-assistant/README.md) built into the app: open **AI Chat** in the sidebar and it's right there, knows your home, and needs no setup at all. For most people, most of the time, that's the one to use.
+Chirp’s built-in [AI Assistant](../ai-assistant/README.md) works like an experienced integrator by your side. It can add sensors, build automations, and configure alerts from the home project you describe. Open it using **AI Chat** in the sidebar; you can start without connecting an external AI client.
 
 MCP is for when you'd rather bring your own AI app to the same home — because you live in your desktop client all day, because you want your home's data in the same conversation as everything else you're working on, or simply because you prefer that assistant. Both talk to the same home and respect the same permissions.
 

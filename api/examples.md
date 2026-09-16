@@ -1,12 +1,14 @@
 ---
-description: Follow a working curl example to sign a Chirp REST request and list the sensors a key can see.
+description: Make an authenticated Chirp REST request with curl, an API key, and its home identifier to list accessible devices.
 ---
 
 # Examples
 
-This shows how to sign a request. For the calls themselves, see the [API reference](https://api.chirpwireless.io/).
+This example shows an **authenticated REST request**: a web request carrying an API key so Chirp can check which home and operations the caller may access. It lists devices without changing them, making it a useful first check for a new integration.
 
-## A signed REST request
+Create a key with Devices **Read** access and have its matching home identifier ready. Store them in the environment variables shown below, then run the request with curl. For other operations and required scopes, use the [API reference](https://api.chirpwireless.io/).
+
+## An authenticated REST request {#a-signed-rest-request}
 
 Swap in your own key and home ID:
 

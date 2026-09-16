@@ -1,5 +1,5 @@
 ---
-description: Control your devices from Chirp — turn things on or off, dim lights, or just ask the AI helper to do it for you.
+description: Control your devices from Chirp — turn things on or off, dim lights, or just ask the AI Assistant to do it for you.
 ---
 
 # Controlling Your Devices
@@ -50,7 +50,7 @@ Commands are the foundation, and you can run them from five places:
 * **On the device** — open it, go to **States**, and press a command.
 * **On a dashboard** — add a [Control widget](../../dashboards/adding-widgets/control-widget.md) so a light switch or button sits right next to your readings.
 * **From an automation** — the [Rules engine](../../rules-engine/) can now press a command for you, automatically, the moment something happens. The same command you'd tap yourself gets sent with nobody home — so a leak at 3 a.m. shuts the water off on its own. See [When an Automation Runs a Command](../../rules-engine/reference/automation-runs-a-command.md).
-* **By asking the helper** — say *"turn on the lamp"* and your [AI helper](../../ai-assistant/README.md) does it, after showing you what it's about to send and checking afterwards that the device got it. See [Ask It to Turn Things On](../../ai-assistant/let-ai-set-it-up.md).
+* **By asking the assistant** — say *"turn on the lamp"* and your [AI Assistant](../../ai-assistant/README.md) does it, after showing you what it's about to send and checking afterwards that the device got it. See [Ask It to Turn Things On](../../ai-assistant/let-ai-set-it-up.md).
 * **From your own AI app** — connect ChatGPT, Claude or anything else that speaks MCP and ask it the same thing from wherever you already work. See [Your Own AI App](../../api/mcp-server.md).
 
 All five end up in the same place: the commands you set up here, sent the same way, logged the same way.

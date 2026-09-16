@@ -4,13 +4,13 @@ description: Show a sensor's latest reading as a number, text, or on/off with th
 
 # Value Display
 
-<figure><img src="../../../.gitbook/assets/last-data-number.jpg" alt="Last Data widget using the Value display"><figcaption></figcaption></figure>
-
 The Value display shows a reading's latest value just as it comes in — no dial, no bar, just the value. It works for **any** kind of reading: a number with its unit, a bit of **text** shown as-is, or an on/off (**Boolean**) value shown as `true` or `false`. As the screenshot shows, several readings can share one tile, sitting side by side, each in its own color — handy for showing a room's temperature and humidity together.
 
 Pick Value when the reading itself is what you want to see, and there's nothing to "fill up" — the actual temperature, the actual battery percentage, a text status, an open/closed state. It's also the neatest way to fit two or three related readings into one small tile.
 
 Value is the only display type with no value range, because there's no scale to fill against.
+
+<figure><img src="../../../.gitbook/assets/last-data-number.jpg" alt="Last Data widget using the Value display"><figcaption></figcaption></figure>
 
 ## When to choose it
 

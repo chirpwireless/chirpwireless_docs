@@ -4,13 +4,13 @@ description: Drop a live web page — a weather map, live traffic, or your calen
 
 # iFrame Widget
 
-<figure><img src="../../.gitbook/assets/iframe-widget.jpg" alt="Setting up the iFrame Widget — an embed link in the Data source box, the list of supported services below, and a live preview"><figcaption></figcaption></figure>
+An iFrame Widget shows a live web page inside a tile on your dashboard. The page keeps doing its thing — updating, animating, refreshing — just as it would in its own window, only now it sits next to your temperature, humidity, and door sensors. You give the widget a web address (an **embed link**) from a supported service, name it, and it appears.
 
 Your home dashboard is where you glance to see how things are. Some of what you want there isn't a sensor reading at all: the local weather map, the traffic before the school run, the family calendar, a published camera or video feed. The iFrame Widget lets you pin those web pages right onto your dashboard, so the things you check every morning live in one place instead of a pile of open tabs.
 
-An iFrame Widget shows a live web page inside a tile on your dashboard. The page keeps doing its thing — updating, animating, refreshing — just as it would in its own window, only now it sits next to your temperature, humidity, and door sensors. You give the widget a web address (an **embed link**) from a supported service, name it, and it appears.
-
 Because the tile loads a real page from the web, Chirp only lets you embed sites from a friendly, checked list of services that are safe to show this way. That keeps your dashboard tidy and trustworthy — a tile can only show a page from a service we've okayed, so nothing unexpected ends up on your home screen.
+
+<figure><img src="../../.gitbook/assets/iframe-widget.jpg" alt="Setting up the iFrame Widget — an embed link in the Data source box, the list of supported services below, and a live preview"><figcaption></figcaption></figure>
 
 ## Add an iFrame Widget
 

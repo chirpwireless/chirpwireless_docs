@@ -4,11 +4,13 @@ description: Add a Script Task and a gateway so your automation classifies a rea
 
 # Add Conditions and Branches
 
-Your automation has a Start Event that listens for sensor readings. Now you need to tell it what to do with those readings. In this step, you will add a decision point that checks the humidity value and sends the automation down different paths depending on the result.
+Conditions let a Chirp automation choose what to do with its data. A **branch** is one of the possible paths through the diagram: for example, one path raises a humidity alert and another finishes without an alert.
+
+This guide continues a [sensor-started automation](create-an-automation.md). Its Start Event receives a humidity reading. You will use a **Script Task** to calculate a label for that reading, then an **Exclusive Gateway** to choose a path from that label. Calculating the label and selecting the path are separate steps.
 
 ## Add a Script Task to Prepare the Data
 
-Before branching, it helps to classify the incoming reading so the decision logic stays clean and readable.
+A **Script Task** calculates values from data already in the automation. Here it assigns a humidity reading the label `high` or `normal`, so the next step can choose the appropriate path. It does not fetch a new sensor reading.
 
 1. From the palette on the left, drag a **Script Task** node onto the canvas (it looks like a rounded rectangle with a document icon).
 2. Draw a connection (arrow) from the **Start Event** to the Script Task — hover over the Start Event until the connection handle appears, then drag to the Script Task.

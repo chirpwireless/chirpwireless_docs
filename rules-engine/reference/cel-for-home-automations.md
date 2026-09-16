@@ -4,9 +4,11 @@ description: A friendly CEL guide for home rules — sensor variables, compariso
 
 # CEL for Home Automations
 
-Chirp uses [CEL (Common Expression Language)](https://cel.dev) to power the expressions inside your automations — gateway conditions, script computations, alarm messages, and input/output definitions. CEL was originally designed by Google for evaluating conditions safely, and that safety carries over to your home automations: expressions cannot access your network, your files, or anything outside the automation's own data. They simply take in sensor values and produce results.
+An **expression** is a small formula that uses your automation's data to produce an answer. It might compare humidity with a limit, calculate a temperature difference, or put a reading into an alert message. Chirp writes these formulas in **CEL**, short for Common Expression Language.
 
-You do not need to be a programmer to use CEL. Most home automations use only a handful of short expressions. This page covers everything you need.
+You still connect the automation's steps visually. Use CEL only in fields that need a precise calculation or condition. A Script Task can calculate a value; a gateway uses a condition to select a path. To fetch a reading from another sensor first, use [Enrichment](../going-deeper/data-enrichment-and-expressions.md).
+
+This guide explains the variables and formulas you can use in those fields. Start with the data available to your automation, then choose the comparison or calculation you need.
 
 ---
 

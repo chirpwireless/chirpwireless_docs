@@ -4,11 +4,11 @@ description: Show a reading as a bold filled circle that fills as the value rise
 
 # Pie Display
 
-<figure><img src="../../../.gitbook/assets/last-data-pie.jpg" alt="Last Data widget using the Pie display type"><figcaption></figcaption></figure>
-
 The Pie display is a solid filled circle rather than a ring — it fills in like a slice of pie and becomes whole when the reading reaches its maximum, with the value shown beside it. It works on exactly the same idea as the Doughnut; it just looks bolder and more solid.
 
 Reach for Pie when you'd like a stronger splash of color on the dashboard instead of a thin ring.
+
+<figure><img src="../../../.gitbook/assets/last-data-pie.jpg" alt="Last Data widget using the Pie display type"><figcaption></figcaption></figure>
 
 ## When to choose it
 

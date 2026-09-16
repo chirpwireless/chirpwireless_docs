@@ -4,11 +4,11 @@ description: Start a new chat, find past conversations, see how many requests yo
 
 # Your chats and your own AI
 
-The Helper lives in **AI Chat** in the sidebar. From there you can start a new conversation, reopen an earlier one, check your remaining monthly requests, or connect your own AI provider.
+The Chirp AI Assistant works with you on sensor setup and home automation. Open it using **AI Chat** in the sidebar. From there you can start a new conversation, reopen an earlier one, check your remaining monthly requests, or connect your own AI provider.
 
 ## Starting a fresh chat
 
-Tap **New Chat** at the top of AI Chat to begin a clean conversation. The Helper remembers what you've been talking about *within* a chat, which is great for refining ("make that 10 minutes instead") — so when you switch to something unrelated, like asking about the garden after sorting out the bedroom, start a new chat so it doesn't mix the two up.
+Tap **New Chat** at the top of the assistant to begin a clean conversation. The Assistant remembers what you've been talking about *within* a chat, which is great for refining ("make that 10 minutes instead") — so when you switch to something unrelated, like asking about the garden after sorting out the bedroom, start a new chat so it doesn't mix the two up.
 
 ## Finding past chats
 
@@ -20,13 +20,13 @@ In Chat history, **Delete conversation** clears a chat for good. There's no undo
 
 ## How many requests you have
 
-Your Chirp plan includes a set number of Helper requests each month, and higher plans include more. You'll always see how many you have left right above the message box.
+Your Chirp plan includes a set number of Assistant requests each month, and higher plans include more. You'll always see how many you have left right above the message box.
 
-When you run out, the Helper lets you know you've reached your limit — but everything else in Chirp keeps working exactly as before. You can still check on your home, get your alerts, and control your devices as usual. To keep chatting with the Helper, move up to a plan with more requests, or connect your own AI key (below), which doesn't count against the monthly number.
+When you run out, the Assistant lets you know you've reached your limit — but everything else in Chirp keeps working exactly as before. You can still check on your home, get your alerts, and control your devices as usual. To keep chatting with the Assistant, move up to a plan with more requests, or connect your own AI key (below), which doesn't count against the monthly number.
 
 ## Using your own AI key
 
-Connect your own provider when you want to use a particular model or pay the provider directly. Chats that use your connection do not count against the Helper requests included with your Chirp plan.
+Connect your own provider when you want to use a particular model or pay the provider directly. Chats that use your connection do not count against the Assistant requests included with your Chirp plan.
 
 Before you start, get an API key from your provider. If you use your own server, it must be reachable from Chirp; an address that works only on your home network will not connect.
 
@@ -64,6 +64,6 @@ After you save, the panel shows the active Base URL, masked key, and Model ID. R
 
 ## Where to go next
 
-* [Talking to Your Home](talking-to-your-home.md) — ask the Helper about your sensors
-* [Let the Helper Set It Up](let-ai-set-it-up.md) — have it build automations and alerts
-* [Your Privacy](your-privacy.md) — what the Helper can and can't see
+* [Talking to Your Home](talking-to-your-home.md) — ask the Assistant about your sensors
+* [Let the Assistant Set It Up](let-ai-set-it-up.md) — have it build automations and alerts
+* [Your Privacy](your-privacy.md) — what the Assistant can and can't see

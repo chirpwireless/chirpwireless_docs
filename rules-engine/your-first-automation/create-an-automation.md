@@ -4,9 +4,11 @@ description: Open the editor, name an automation, choose a Sensor reading or Tri
 
 # Create an Automation
 
-This page walks you through opening the automation editor, naming your first automation, deciding what starts it, and saving your initial draft.
+Creating an automation saves the instructions Chirp will follow when it receives a selected sensor reading or a signal from a saved trigger. The automation is called a **rule** in the interface. Here you will name it, choose what starts it, and save its first draft.
 
-Looking for **how to create a trigger**? Start on **Rules Engine → Triggers → Add trigger**. You save that condition separately, then choose it in a rule. This guide creates the rule itself; the [Triggers guide](../going-deeper/triggers.md) covers the condition.
+Have a registered sensor ready, or create a [trigger](../going-deeper/triggers.md) first if you want to watch a condition separately. A trigger can exist before any rule: open **Rules Engine → Triggers → Add trigger** to create it.
+
+Saving the automation does not make it run. After adding its response steps, you will [build and deploy it](../going-deeper/publish-and-run-an-automation.md).
 
 ## Open the Rules Engine
 

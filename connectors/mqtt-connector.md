@@ -4,7 +4,11 @@ description: Bring Zigbee sensors, smart plugs, and DIY hardware into your home 
 
 # MQTT Connector
 
-The MQTT connector is how you bring Zigbee sensors, DIY microcontroller sensors, and other smart home hardware directly into Chirp — without needing LoRaWAN.
+Chirp's MQTT connector lets MQTT devices and bridged Zigbee sensors join the same dashboards and automations as the rest of your home. It is a way to bring a smart plug, temperature sensor, or DIY device into a shared setup instead of leaving its readings in a separate application.
+
+**MQTT** is a messaging protocol: devices send messages to a server called a **broker**, and Chirp receives the messages it subscribes to.
+
+Zigbee sensors do not speak MQTT themselves. A bridge such as [Zigbee2MQTT](mqtt/zigbee2mqtt.md), running with a compatible Zigbee coordinator, translates their radio messages into MQTT. Devices with MQTT firmware can send messages to the broker directly.
 
 The most popular use is Zigbee. Thousands of Zigbee-compatible devices are supported through [Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/) — temperature sensors, motion detectors, smart plugs, door and window sensors, leak detectors, and many more from brands including Aqara, IKEA, Sonoff, Philips Hue, and Tuya. Compatibility depends on Zigbee2MQTT's device support, your coordinator adapter, and the specific device model — check the [Zigbee2MQTT supported devices list](https://www.zigbee2mqtt.io/supported-devices/) to confirm your device before purchasing.
 
@@ -182,7 +186,7 @@ This is the default path for most Zigbee sensors, ESP32 projects publishing flat
 
 ### Mapping tab — what the data means
 
-The Mapping tab links incoming MQTT keys to normalized Chirp sensor metrics. This is where raw data becomes something Chirp can display in dashboards, trigger in alarms, and query in the AI assistant.
+The Mapping tab links incoming MQTT keys to normalized Chirp sensor metrics. This is where incoming fields become readings you can put on dashboards and use in automations. The AI Assistant can help map them and build the response around them.
 
 The Connector Key in the Mapping tab must match the key published in the MQTT payload (or the Connector Key defined in the Topic tab). If they don't match, data is ignored — the helper text above the table says: **"If the Connector key is not filled in, the data will be ignored."**
 

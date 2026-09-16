@@ -4,7 +4,9 @@ description: Manage household members, your subscription, and home settings from
 
 # Account
 
-Manage your household members, subscription, and home settings. These options are found in the **user menu** at the bottom-left corner of the screen — separate from Settings in the sidebar.
+Your Chirp account lets you work with the homes you belong to from one login. A **home**, called an **organization** in some menus, is a shared workspace for its devices, dashboards, automations, and household members.
+
+You can belong to your own home and help with another, with different permissions in each. Rooms and locations organize devices inside a home; switching homes changes the whole workspace. Open the **user menu** at the bottom of the sidebar to manage that access.
 
 Click your name at the bottom-left to open the menu. From there you can:
 

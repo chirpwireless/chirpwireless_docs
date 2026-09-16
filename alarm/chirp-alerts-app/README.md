@@ -4,9 +4,11 @@ description: Get Chirp alerts on your phone with the IoT Alerts app — critical
 
 # Chirp Alerts App
 
-Your sensors don't wait for you to be at a screen, and neither should your alerts. The mobile app puts your home's alarms straight on your phone — and when something serious happens, it doesn't just buzz once and hope you notice. A critical alert rings with an alarm sound and keeps going until you check it, even if your phone is on silent.
+The Chirp Alerts app, installed as **IoT Alerts**, receives your home's alarm notifications on your phone. You can read an event, silence its sound, and resolve it after you have dealt with the issue, without keeping the Chirp website open.
 
-Think of it as the difference between a text you might glance at later and a smoke detector going off. The app delivers both: gentle, quiet notes for the everyday stuff, and a loud, can't-miss-it alarm for the emergencies.
+For example, a configured leak alert can notify a household member when a sensor reports water. The sensor, automation, alarm definition, and push channel must already be set up; installing the phone app does not create that monitoring setup.
+
+How an alert sounds depends on its severity, your phone, and its permissions. Follow [Getting Started](getting-started.md) to connect the app to Chirp, then check [Alert Behavior](alert-behavior.md) for the phone settings that affect delivery.
 
 ## One app for home and business
 

@@ -4,11 +4,11 @@ description: Combine readings from several sensors, transform them with CEL, and
 
 # Data Enrichment and Expressions
 
-A single sensor reading tells you what is happening in one spot. But your home is a system of connected spaces — the basement humidity matters more when you also know it has been raining, and the living room temperature means something different when the outdoor reading is 35 degrees versus 15 degrees.
+**Data enrichment** adds another sensor's latest reading to a running Chirp automation. Use it when one reading is not enough—for example, when an indoor-temperature automation also needs the outdoor temperature before deciding whether to send an alert.
 
-Enrichment nodes and Script Tasks let you build automations that consider multiple data points before making a decision. Together, they turn a simple "is this number too high?" check into a thoughtful, context-aware response.
+Fetching, calculating, and choosing are different jobs. An **Enrichment** node fetches the latest stored reading. A **Script Task** evaluates an expression—a short formula—to calculate a value such as the indoor/outdoor difference. An **Exclusive Gateway** uses a condition to choose the next path.
 
-This is also where the balance becomes clear: Chirp remains a visual automation builder, but CEL lets you express very sophisticated logic when you need it — nested conditions, computed derived values, multi-sensor delta calculations, severity classifications, and dynamic alert messages that include live readings. The range of automations you can build goes well beyond simple thresholds.
+Have the other sensor registered and reporting, then add enrichment to an existing [automation](../your-first-automation/create-an-automation.md). Check the reading's timestamp when freshness matters: the latest stored value may be old if a sensor has stopped reporting.
 
 ## Enrichment: Pulling Data from Another Sensor
 

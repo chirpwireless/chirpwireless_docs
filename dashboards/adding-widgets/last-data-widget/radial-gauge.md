@@ -4,11 +4,11 @@ description: Show a Chirp reading on a round dial with the Radial Gauge — a ne
 
 # Radial Gauge Display
 
-<figure><img src="../../../.gitbook/assets/last-data-radial-gauge.jpg" alt="Last Data widget using the Radial Gauge display"><figcaption></figcaption></figure>
-
 The Radial Gauge shows a reading on a **round dial**, with a needle pointing to the value — just like the dials on a car dashboard or an old thermostat. Your color conditions wrap around it as arcs, and you can choose how far the dial sweeps, from a near-full circle to a small arc.
 
 It is one of the [Last Data widget](../last-data-widget.md) display types, joining Number, Doughnut, Pie, Tube, and the flat [Gauge](gauge.md).
+
+<figure><img src="../../../.gitbook/assets/last-data-radial-gauge.jpg" alt="Last Data widget using the Radial Gauge display"><figcaption></figcaption></figure>
 
 ## Radial Gauge or the flat Gauge?
 

@@ -4,7 +4,9 @@ description: Install IoT Alerts, pick Home Use, sign in to Chirp, and get your p
 
 # Getting Started
 
-You can be up and running in about five minutes. Once the app is installed and push is switched on, your phone is ready to catch alerts from your home sensors — day or night. If more than one person in your household wants alerts, have each of them follow these same steps on their own phone.
+**IoT Alerts** is the phone app for receiving and responding to Chirp alarms. This guide connects the app to your Chirp account and enables push notifications, so an alert configured for your home can reach you away from the dashboard.
+
+Have your Chirp login ready. You also need a [home alert](../set-up-a-home-alert.md) with your account selected as a recipient and push delivery enabled. Each household member who needs alerts should sign in on their own phone and check the required permissions.
 
 ## Step 1 — Install the app
 
