@@ -1,10 +1,10 @@
 ---
-description: Chirp is an AI-first home automation platform — connect any maker's sensors and let a built-in AI helper run the setup.
+description: Build your smart home with Chirp’s AI Assistant by your side. Connect sensors, create automations, and set up alerts in one home automation platform.
 ---
 
 # Chirp — Home Automation Platform
 
-Chirp is an **AI-first** home automation platform that connects sensors from different manufacturers into one system — with shared dashboards, unified automations, and a single alerting workflow across every device in your home. No vendor lock-in, no juggling multiple apps. And instead of hunting through settings to get any of it working, you can just *ask*: a built-in AI helper sets up sensors, builds automations, and creates alerts for you, in plain language.
+Chirp is an **AI-first** home automation platform that connects sensors from different manufacturers into one system — with shared dashboards, unified automations, and a single alerting workflow across every device in your home. No vendor lock-in, no juggling multiple apps. And instead of hunting through settings to get any of it working, you can just *ask*: a built-in AI Assistant sets up sensors, builds automations, and creates alerts for you, in plain language.
 
 Whether you're monitoring temperature in a baby's room, watching for water leaks in the basement, tracking soil moisture in the garden, or making sure the garage door closed after you left — Chirp brings it all together. Sensors from different brands, using different protocols, reporting data in different formats, all working as one.
 
@@ -14,15 +14,15 @@ And Chirp doesn't stop at your front door. Connect a GPS or OBD-II tracker to yo
 
 ### Just ask — your home has an expert built in
 
-Chirp's AI Helper works like an experienced smart-home integrator beside you. Start with *“add my new leak sensor”* or *“alert me when this basement sensor reports humidity above 70%.”* The helper works through the connection details, registers the device, configures the alert, and can build and switch on its automation. It asks for the information it needs, so you can learn the setup while getting it done.
+Chirp’s **AI Assistant** is like having an experienced integrator by your side. You can start with the home you want to create, while it helps work through wireless protocols, compatible devices, and configuration. Ask it to add your new leak sensor or alert you when a basement sensor reports humidity above 70%. The assistant works through the connection details, registers the device, configures the alert, and can build and switch on its automation.
 
-You can ask for changes in the same conversation, create dashboards and folders for the views you want, or run a device's saved command after reviewing a confirmation. For widgets, use the dashboard editor to add displays and configure their readings. The helper can guide the choices and update dashboard layouts. See [Your Home AI Helper](ai-assistant/README.md).
+You can ask for changes in the same conversation, create dashboards and folders for the views you want, or run a device's saved command after reviewing a confirmation. For widgets, use the dashboard editor to add displays and configure their readings. The assistant can guide the choices and update dashboard layouts. See [Your Home AI Assistant](ai-assistant/README.md).
 
 You can start before the hardware arrives. Ask for a [pretend sensor](devices/pretend-sensors.md), send a sample reading, and exercise your automation. Once the real device is connected, the same profile can keep the dashboards and rules you prepared.
 
-After setup, the helper can investigate the readings too: compare overnight temperatures, find a quiet sensor, or draw a chart. It uses the data your devices have reported, giving you context for the next adjustment.
+After setup, the assistant can investigate the readings too: compare overnight temperatures, find a quiet sensor, or draw a chart. It uses the data your devices have reported, giving you context for the next adjustment.
 
-The helper runs on [SyntheticBrew](https://syntheticbrew.ai/), our team's AI agent runtime, which connects the conversation to Chirp's operations and confirmation workflow.
+The assistant runs on [SyntheticBrew](https://syntheticbrew.ai/), our team's AI agent runtime, which connects the conversation to Chirp's operations and confirmation workflow.
 
 ### Connect any manufacturer, one platform
 

@@ -123,7 +123,7 @@
     * [Fixing Builds and Runtime Stops](rules-engine/reference/fixing-builds-and-runtime-stops.md)
 * [AI Assistant](ai-assistant/README.md)
   * [Talking to Your Home](ai-assistant/talking-to-your-home.md)
-  * [Let the Helper Set It Up](ai-assistant/let-ai-set-it-up.md)
+  * [Let the Assistant Set It Up](ai-assistant/let-ai-set-it-up.md)
   * [What It Knows](ai-assistant/what-it-knows.md)
   * [Your Chats and Your Own AI](ai-assistant/chats-and-your-own-ai.md)
   * [Your Privacy](ai-assistant/your-privacy.md)

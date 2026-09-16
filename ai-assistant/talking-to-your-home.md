@@ -1,18 +1,18 @@
 ---
-description: Ask the Chirp AI Helper about your home — live readings, history, and charts — plus tips for the best answers.
+description: Ask the Chirp AI Assistant about your home — live readings, history, and charts — plus tips for the best answers.
 ---
 
 # Talking to Your Home
 
-Once your sensors and automations are set up, Chirp's **AI Helper** can help you understand what happened at home. Ask whether the bedroom cooled overnight, when the basement humidity rose, or which sensor has stopped reporting. You can explore the answer with follow-up questions instead of searching through each device's history.
+Once your sensors and automations are set up, Chirp's **AI Assistant** can help you understand what happened at home. Ask whether the bedroom cooled overnight, when the basement humidity rose, or which sensor has stopped reporting. You can explore the answer with follow-up questions instead of searching through each device's history.
 
-Open **AI Chat**, name the sensor or room, and give a time period. The answer uses reported readings, so check their timestamps when a device has been quiet. To add sensors or change an automation, use [Let the Helper Set It Up](let-ai-set-it-up.md).
+Open **AI Chat**, name the sensor or room, and give a time period. The answer uses reported readings, so check their timestamps when a device has been quiet. To add sensors or change an automation, use [Let the Assistant Set It Up](let-ai-set-it-up.md).
 
 ## Tips for better answers
 
 - **Mention the sensor or room by name.** "What is the kitchen temperature?" works much better than "What is the temperature?" when you have sensors in every room.
-- **Be specific about time.** "Last night," "this morning," "past 3 days," "since Monday" — the helper understands everyday time expressions.
-- **Ask follow-ups.** The helper remembers what you talked about earlier in the conversation. You can say "now show me the same thing for the garage" without repeating yourself.
+- **Be specific about time.** "Last night," "this morning," "past 3 days," "since Monday" — the assistant understands everyday time expressions.
+- **Ask follow-ups.** The assistant remembers what you talked about earlier in the conversation. You can say "now show me the same thing for the garage" without repeating yourself.
 - **Bring back your last message.** Tap the **Up arrow** key in the message box to pull up what you just sent, so you can tweak it and ask again.
 
 ## Example questions
@@ -45,7 +45,7 @@ Open **AI Chat**, name the sensor or room, and give a time period. The answer us
 
 ## Building on a conversation
 
-Because the helper keeps context within a session, you can refine your questions step by step:
+Because the assistant keeps context within a session, you can refine your questions step by step:
 
 1. "What was the bedroom temperature last night?"
 2. "Compare that with the nursery"
@@ -56,4 +56,4 @@ Each follow-up builds naturally on the last, turning a simple question into a de
 
 ## From asking to doing
 
-The same chat can slide straight from a question into an action. After "how often did the basement get damp last week?" you can simply add "set up an alert if it happens again" — and the helper builds it for you. Whenever a request would change something that matters, it shows a **Confirm Action** / **Cancel** prompt first, so you're always the one who decides. See [Let the Helper Set It Up](let-ai-set-it-up.md).
+The same chat can slide straight from a question into an action. After "how often did the basement get damp last week?" you can simply add "set up an alert if it happens again" — and the assistant builds it for you. Whenever a request would change something that matters, it shows a **Confirm Action** / **Cancel** prompt first, so you're always the one who decides. See [Let the Assistant Set It Up](let-ai-set-it-up.md).

@@ -6,7 +6,7 @@ description: Let your home act on its own — automations that watch your sensor
 
 Chirp automations let your home respond to the readings it receives: alert you about high humidity, check another sensor before deciding, or run a saved command on a connected device. An **automation**, called a **rule** in Chirp, is the set of steps that makes that response happen.
 
-Draw the steps yourself or ask the [AI Helper](../ai-assistant/let-ai-set-it-up.md) to build them with you. You can follow the decisions in the diagram, inspect a run, and keep earlier versions as you refine the setup. For example, a basement reading can take an alert path when humidity is high and finish quietly when it is normal.
+Draw the steps yourself or ask the [AI Assistant](../ai-assistant/let-ai-set-it-up.md) to build them with you. You can follow the decisions in the diagram, inspect a run, and keep earlier versions as you refine the setup. For example, a basement reading can take an alert path when humidity is high and finish quietly when it is normal.
 
 A **trigger** watches for the condition, such as a window left open for ten minutes. The **rule** contains the response steps. You save them separately in the **Triggers** and **Rules** tabs under **Rules Engine**, then connect them. Saving a trigger alone does not set up a response. [Learn how triggers and rules fit together](going-deeper/triggers.md#is-a-trigger-the-same-as-a-rule).
 

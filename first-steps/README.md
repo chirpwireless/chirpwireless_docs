@@ -4,7 +4,7 @@ description: Get started with Chirp — what you need and the LoRaWAN setup flow
 
 # First Steps
 
-Start with one useful job for your home: see a room's temperature, watch a door sensor, or receive a leak alert. This section helps you find your way around Chirp and connect your first sensor. You can also ask the [AI Helper](../ai-assistant/let-ai-set-it-up.md) to work through the configuration with you.
+Start with one useful job for your home: see a room's temperature, watch a door sensor, or receive a leak alert. This section helps you find your way around Chirp and connect your first sensor. You can also ask the [AI Assistant](../ai-assistant/let-ai-set-it-up.md) to work through the configuration with you.
 
 The hands-on tutorial uses LoRaWAN. If your sensor uses another connection, the [Connectors guide](../connectors/README.md) shows where to begin.
 

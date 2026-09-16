@@ -186,7 +186,7 @@ This is the default path for most Zigbee sensors, ESP32 projects publishing flat
 
 ### Mapping tab — what the data means
 
-The Mapping tab links incoming MQTT keys to normalized Chirp sensor metrics. This is where incoming fields become readings you can put on dashboards and use in automations. The AI Helper can help map them and build the response around them.
+The Mapping tab links incoming MQTT keys to normalized Chirp sensor metrics. This is where incoming fields become readings you can put on dashboards and use in automations. The AI Assistant can help map them and build the response around them.
 
 The Connector Key in the Mapping tab must match the key published in the MQTT payload (or the Connector Key defined in the Topic tab). If they don't match, data is ignored — the helper text above the table says: **"If the Connector key is not filled in, the data will be ignored."**
 

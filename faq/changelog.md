@@ -10,7 +10,7 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 release banner"><figcaption></figcaption></figure>
 
-Chirp automations send alerts, check other readings, or control equipment when something happens at home. A **trigger** is a saved condition that starts an automation. It can now watch one device or several selected devices, and it can react immediately or only after the condition lasts for a set time. Before 3.9.0, covering nine windows meant maintaining nine automations; now one trigger and automation can cover them while keeping each window's condition and countdown separate. This release also puts metrics on one searchable page, prints exact values on bar charts, improves the Helper and bring-your-own-AI connection, and helps connected AI apps tell read-only actions from actions that change something. [app.chirpwireless.io](https://app.chirpwireless.io)
+Chirp automations send alerts, check other readings, or control equipment when something happens at home. A **trigger** is a saved condition that starts an automation. It can now watch one device or several selected devices, and it can react immediately or only after the condition lasts for a set time. Before 3.9.0, covering nine windows meant maintaining nine automations; now one trigger and automation can cover them while keeping each window's condition and countdown separate. This release also puts metrics on one searchable page, prints exact values on bar charts, improves the Assistant and bring-your-own-AI connection, and helps connected AI apps tell read-only actions from actions that change something. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
@@ -20,9 +20,9 @@ Chirp automations send alerts, check other readings, or control equipment when s
 * **Wait before an automation runs** — A trigger can require a condition to remain true for 10 seconds to 30 days before starting the automation. For example, it can ignore a refrigerator door opened briefly but act when the door remains open for 10 minutes.
 * **All sensor metrics on one page** — A metric is a type of reading, such as temperature, humidity, or battery level. Metrics that were spread across three tabs are now available in one searchable list at **Devices → Metrics**, where you can also add and edit them.
 * **Show values on bar charts** — **Display value on bar** prints each value on its bar. **Show metrics below** adds the current readings beneath the chart.
-* **Use your own AI account** — Connect an OpenAI, Anthropic, OpenRouter, Ollama, or compatible account instead of using the monthly Helper-message allowance included with your Chirp plan. Ollama model names with version tags are now supported.
+* **Use your own AI account** — Connect an OpenAI, Anthropic, OpenRouter, Ollama, or compatible account instead of using the monthly Assistant-message allowance included with your Chirp plan. Ollama model names with version tags are now supported.
 * **Connected AI apps can distinguish read and write actions** — Actions available to ChatGPT, Claude, and other connected AI apps now identify whether they only read information or can change or delete something.
-* **Reliability and interface improvements** — Sensor photos save correctly, the Activity Log refreshes after permission changes, widget colors work again, log retention follows your plan, and the Helper reports completed actions more reliably.
+* **Reliability and interface improvements** — Sensor photos save correctly, the Activity Log refreshes after permission changes, widget colors work again, log retention follows your plan, and the Assistant reports completed actions more reliably.
 
 ***
 
@@ -99,9 +99,9 @@ Turn on **Show metrics below** to add a row beneath the chart with each metric a
 
 **Use your own AI account**
 
-Each Chirp plan includes a monthly allowance of Helper messages. You can instead connect an account from OpenAI, Anthropic, OpenRouter, Ollama, or a custom OpenAI-compatible provider. Messages sent through that connection do not use the allowance included with your Chirp plan.
+Each Chirp plan includes a monthly allowance of Assistant messages. You can instead connect an account from OpenAI, Anthropic, OpenRouter, Ollama, or a custom OpenAI-compatible provider. Messages sent through that connection do not use the allowance included with your Chirp plan.
 
-Open **Connect your AI** at the top of AI Chat and enter the provider, endpoint, API key, and model name.
+Open **Connect your AI** at the top of the AI Assistant and enter the provider, endpoint, API key, and model name.
 
 Before 3.9.0, Chirp rejected Ollama model names that included a version after a colon, such as `gemma4:31b`. The suggested Ollama models were also unavailable to free accounts. Versioned model names are now accepted, and the suggestions have been updated to models that work with a free Ollama account.
 
@@ -129,17 +129,17 @@ Each action now identifies whether it reads information, changes or deletes some
 
 **Reliability and interface improvements**
 
-The Helper now reports the outcome of an action more accurately:
+The Assistant now reports the outcome of an action more accurately:
 
 * It confirms a reporting-interval change only when the sensor accepts it.
 * Retrying sensor registration no longer replaces the name you chose.
 * Sensor registration no longer adds an unrequested temperature mapping.
-* The Helper correctly explains that Chirp can control equipment. When an action must be completed in the web interface, it directs you to the correct screen.
+* The Assistant correctly explains that Chirp can control equipment. When an action must be completed in the web interface, it directs you to the correct screen.
 * A successful sensor registration no longer displays a contradictory failure message.
 * Confirmation messages display line breaks correctly.
 * Replies no longer repeat the same answer in both text and a widget.
 * Replies that arrive all at once appear immediately without requiring a page refresh.
-* Sensor limits are enforced consistently whether a sensor is added through the Helper or through a form.
+* Sensor limits are enforced consistently whether a sensor is added through the Assistant or through a form.
 
 Additional improvements in this release include:
 
@@ -148,7 +148,7 @@ Additional improvements in this release include:
 * Last Data widget values change color according to their conditions again.
 * The Key Vault describes only the fields Chirp uses.
 * Device-log retention follows the limit included with your plan.
-* The Helper can retrieve longer periods of sensor history.
+* The Assistant can retrieve longer periods of sensor history.
 * Sensors that report once a day are no longer marked offline after only a few hours, and the warning identifies its units.
 * The support form lets you select a bug report, feature request, or integration request.
 * Emulated sensors timestamp their first reading correctly and display properly on mobile screens.
@@ -166,16 +166,16 @@ Additional improvements in this release include:
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.8.0.jpg" alt="Chirp 3.8.0 release banner"><figcaption></figcaption></figure>
 
-Three big ones in 3.8.0. **First, you don't have to wait for the parcel** — **pretend sensors** let you build your dashboards and your alerts today, test that they really go off, and swap in the real sensor when it lands. **Second, the bit people have asked for since the helper arrived**: say *"turn on the lamp"* and it **turns on the lamp**. Your helper works the house now, it doesn't just watch it. **And third — the one we're most excited about — connect ChatGPT or Claude and they can switch things on too.** The AI app you already use, controlling your actual home, asking you first every time. There's also a **What's New** note in the app so you stop missing things like this. [app.chirpwireless.io](https://app.chirpwireless.io)
+Three big ones in 3.8.0. **First, you don't have to wait for the parcel** — **pretend sensors** let you build your dashboards and your alerts today, test that they really go off, and swap in the real sensor when it lands. **Second, the bit people have asked for since the assistant arrived**: say *"turn on the lamp"* and it **turns on the lamp**. Your assistant works the house now, it doesn't just watch it. **And third — the one we're most excited about — connect ChatGPT or Claude and they can switch things on too.** The AI app you already use, controlling your actual home, asking you first every time. There's also a **What's New** note in the app so you stop missing things like this. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
 * **Pretend sensors** — Set up your home before the hardware arrives. Make up readings, watch your alerts fire, then point the same device at the real sensor when it turns up and keep everything.
-* **The helper can switch things on** — *"Turn on the lamp"* now turns on the lamp. Ask it to flip a relay or change how often a sensor reports, and it does — showing you what it's about to do, asking first, then telling you whether the device got it.
+* **The assistant can switch things on** — *"Turn on the lamp"* now turns on the lamp. Ask it to flip a relay or change how often a sensor reports, and it does — showing you what it's about to do, asking first, then telling you whether the device got it.
 * **Control your home from ChatGPT or Claude** — Connect the AI app you already use and it can switch things in your house too, with the same confirmation before anything happens.
-* **The helper sets up pretend sensors as well** — Ask for one and it builds it, sends a test reading, and takes it live onto your LoRaWAN connection later.
+* **The assistant sets up pretend sensors as well** — Ask for one and it builds it, sends a test reading, and takes it live onto your LoRaWAN connection later.
 * **What's New in the app** — A note that tells you what changed, so a release doesn't quietly pass you by.
 * **Smoothing things out** — Your plan dates read correctly, adding a widget stops shoving your other widgets around, long addresses don't run off the screen on your phone, and a handful of labels finally say what they mean.
 
@@ -201,13 +201,13 @@ Then Thursday comes, the sensor arrives, and you open the same device and switch
 
 **"Turn on the lamp" — and it turns on the lamp**
 
-Your helper could already register sensors and set up automations. This release adds another kind of action: running a command already configured on a connected device, after your confirmation.
+Your assistant could already register sensors and set up automations. This release adds another kind of action: running a command already configured on a connected device, after your confirmation.
 
-That changes here, and it's the biggest thing we've shipped for the helper yet. Ask what a device can do and it tells you; ask it to do one of those things and it does it. Switch a lamp, flip a relay, change how often a sensor reports — by asking.
+That changes here, and it's the biggest thing we've shipped for the assistant yet. Ask what a device can do and it tells you; ask it to do one of those things and it does it. Switch a lamp, flip a relay, change how often a sensor reports — by asking.
 
-It stays careful about it, which matters when something physical is about to happen in your house. It only does things your device is already set up to do — it does not invent new ones — and it works with the sensors connected to Chirp rather than gear that lives in someone else's app. (Bridge a Zigbee plug in over MQTT and it becomes an ordinary Chirp device the helper can switch.) It shows you what it is about to do and waits for you to say yes. And because a message to a sensor takes a moment and a sleeping device can miss one, it checks afterwards and tells you if it did not land, rather than just saying "done".
+It stays careful about it, which matters when something physical is about to happen in your house. It only does things your device is already set up to do — it does not invent new ones — and it works with the sensors connected to Chirp rather than gear that lives in someone else's app. (Bridge a Zigbee plug in over MQTT and it becomes an ordinary Chirp device the assistant can switch.) It shows you what it is about to do and waits for you to say yes. And because a message to a sensor takes a moment and a sleeping device can miss one, it checks afterwards and tells you if it did not land, rather than just saying "done".
 
-<figure><img src="../.gitbook/assets/ai-chat-commands.jpg" alt="The Chirp helper explaining what it can switch on and what it cannot"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ai-chat-commands.jpg" alt="The Chirp assistant explaining what it can switch on and what it cannot"><figcaption></figcaption></figure>
 
 [→ Ask it to turn things on](../ai-assistant/let-ai-set-it-up.md)
 
@@ -215,7 +215,7 @@ It stays careful about it, which matters when something physical is about to hap
 
 **Control your home from ChatGPT or Claude**
 
-And it isn't only the helper inside Chirp. Connect the AI app you already use — **ChatGPT**, **Claude**, or anything else that speaks MCP — sign in with your usual Chirp account, and it can switch things in your house too.
+And it isn't only the assistant inside Chirp. Connect the AI app you already use — **ChatGPT**, **Claude**, or anything else that speaks MCP — sign in with your usual Chirp account, and it can switch things in your house too.
 
 Same rules apply: only the things your devices are already set up to do, the same confirmation before anything happens, and the same check afterwards that the device actually got the message. The difference is where you are standing when you ask.
 
@@ -301,9 +301,9 @@ Every LoRaWAN sensor arrives with two codes on a tiny sticker: a DevEUI and an A
 
 **Bring your own AI app**
 
-Chirp already has a helper built in. Now you can also connect the AI app you use elsewhere — Claude Code, Claude Desktop, ChatGPT, Codex, or anything else that speaks MCP. Point it at your home's MCP address, sign in with your normal Chirp account in the browser — nothing to copy, no keys to paste — and you can ask it things like *which sensors have gone quiet?* or have it add a new sensor for you, right from your desktop. It only ever sees what your account can see. MCP is a shared standard, so as more apps adopt it, they'll work here too.
+Chirp already has a assistant built in. Now you can also connect the AI app you use elsewhere — Claude Code, Claude Desktop, ChatGPT, Codex, or anything else that speaks MCP. Point it at your home's MCP address, sign in with your normal Chirp account in the browser — nothing to copy, no keys to paste — and you can have it add a sensor, build an automation, or configure an alert, right from your desktop. It only ever sees what your account can see. MCP is a shared standard, so as more apps adopt it, they'll work here too.
 
-[→ MCP Server](../api/mcp-server.md) · [→ Your Home AI Helper](../ai-assistant/README.md)
+[→ MCP Server](../api/mcp-server.md) · [→ Your Home AI Assistant](../ai-assistant/README.md)
 
 ***
 
@@ -327,13 +327,13 @@ This release also tidies up a handful of rough edges: dashboards now resize prop
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.6.0.jpg" alt="Chirp 3.6.0 release banner"><figcaption></figcaption></figure>
 
-3.6.0 is the one where Chirp goes **AI-first**. Your AI Helper grows up: ask it in plain English and it builds the automation, sets up the sensor, or creates the alert for you — no menus, no fiddly logic, always checking with you first. And your automations learn to *act*, not just warn: a new step lets a rule flip a switch on its own, so "if the basement gets damp, turn on the dehumidifier" happens by itself. This is **AIoT** — real intelligence built into your home. [app.chirpwireless.io](https://app.chirpwireless.io)
+3.6.0 is the one where Chirp goes **AI-first**. Your AI Assistant grows up: ask it in plain English and it builds the automation, sets up the sensor, or creates the alert for you — no menus, no fiddly logic, with confirmation for actions such as deleting a sensor. And your automations learn to *act*, not just warn: a new step lets a rule flip a switch on its own, so "if the basement gets damp, turn on the dehumidifier" happens by itself. This is **AIoT** — real intelligence built into your home. [app.chirpwireless.io](https://app.chirpwireless.io)
 
 ***
 
 #### What's in This Release
 
-* **An AI Helper that does the setup** — Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, trying it out, and switching it on, always checking before anything permanent.
+* **An AI Assistant that does the setup** — Ask it to add a sensor, build an automation, or set up an alert, and it does it for you — writing the logic, building it, and switching it on. Ask it to simulate readings to test the response.
 * **Automations that act on their own** — A new step lets an automation send a device a command by itself — turn on the dehumidifier, shut off the water, nudge the thermostat — the moment something happens.
 * **Connect commands over the API** — The device-control calls are now part of the API, with new **Commands** permissions for your API keys.
 * **iFrame widget** — Pin a live web page — a weather map, live traffic, the family calendar — right onto your dashboard, next to your sensors.
@@ -345,15 +345,15 @@ This release also tidies up a handful of rough edges: dashboards now resize prop
 
 **Your home, now hands-on**
 
-<figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Helper ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ai-assistant.jpg" alt="The Chirp AI Assistant ready to set up sensors, automations, and alerts"><figcaption></figcaption></figure>
 
-This is the big one. Years ago Chirp was one of the first to let you simply *ask* about your home's data — then we went quiet for a while, not because we'd stopped, but because we were building the engine underneath properly instead of rushing it out. 3.6.0 is the result: a Helper that genuinely does the work. Find it under **AI Chat** and just talk to it.
+The AI Assistant puts an experienced integrator by your side as you build your smart home. Wireless protocols, compatibility, and configuration can make even a simple home project complicated. With 3.6.0, you can describe the result you want and have the assistant add sensors, build automations, and configure alerts with you. Find it under **AI Chat** in the sidebar.
 
-It answers from your real home — *"was the back door opened last night?"* — and it rolls up its sleeves: tell it "warn me if the nursery gets too warm" and it builds the automation, tries it, and turns it on; ask it to add your new leak sensor and it walks the whole thing through. Before anything big or permanent it stops and asks you to confirm, and once it's done it double-checks its own work.
+Tell it *“warn me when the nursery sensor reports above 25 °C”* and it can build and switch on the automation; ask it to add your new leak sensor and it works through the connection details with you. You can ask it to simulate readings and check the response, then refine the setup in the same conversation. Actions such as deleting a sensor require your confirmation. After setup, questions about your home’s readings help you understand how everything is working.
 
-The Helper runs on [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. Visit its public website for background on the runtime powering CHIRP's home assistant.
+The AI Assistant runs on [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. Visit its public website for background on the runtime powering CHIRP's home assistant.
 
-[→ Your Home AI Helper](../ai-assistant/README.md)
+[→ Your Home AI Assistant](../ai-assistant/README.md)
 
 ***
 
@@ -971,7 +971,7 @@ CHIRP has completed a full migration of all blockchain-facing services from Sui 
 **Migrated Services**
 
 * **Fountain Assistant** — Token distribution and faucet service
-* **Chirp Assistant** — Blockchain interaction helper
+* **Chirp Assistant** — Blockchain interaction assistant
 * **Data Extractor** — Blockchain data retrieval service
 * **Controller** — Network coordination service
 * **Validator** — Transaction validation service

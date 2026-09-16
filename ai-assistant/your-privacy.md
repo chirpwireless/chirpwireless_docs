@@ -1,28 +1,28 @@
 ---
-description: Understand Chirp AI Chat access, confirmation prompts, saved conversations, and the data sent to your configured model provider.
+description: Understand Chirp AI Assistant access, confirmation prompts, saved conversations, and the data sent to your configured model provider.
 ---
 
 # Your Privacy
 
-The AI Helper can work on your home setup using the same account permissions you have. Adding sensors, changing automations, and reading their results stay within the home selected in Chirp. Here is how access, confirmation prompts, and saved conversations work while you delegate those tasks.
+The AI Assistant can work on your home setup using the same account permissions you have. Adding sensors, changing automations, and reading their results stay within the home selected in Chirp. Here is how access, confirmation prompts, and saved conversations work while you delegate those tasks.
 
 Your messages and the information retrieved to answer them can reach the configured AI model provider. Conversations remain available in chat history, so keep passwords and unrelated secrets out of your messages. Use [Your Chats and Your Own AI](chats-and-your-own-ai.md) to review your chat and provider choices.
 
 ## It works only within your access
 
-The helper uses your active login session to decide what it can do. If you can view a sensor on your dashboard, the helper can answer questions about it; if you can change an automation, the helper can help you change it. If you can't do something yourself, neither can the helper. There is no special elevated access.
+The assistant uses your active login session to decide what it can do. If you can view a sensor on your dashboard, the assistant can answer questions about it; if you can change an automation, the assistant can help you change it. If you can't do something yourself, neither can the assistant. There is no special elevated access.
 
 ## It asks before anything big
 
-When you ask the helper to set something up, the small, safe steps just happen — but before anything important or permanent, like removing a device or an automation, it shows a clear **Confirm Action** / **Cancel** prompt and waits for you. Read the confirmation before approving it. Routine setup steps can run without a separate prompt.
+When you ask the assistant to set something up, the small, safe steps just happen — but before anything important or permanent, like removing a device or an automation, it shows a clear **Confirm Action** / **Cancel** prompt and waits for you. Read the confirmation before approving it. Routine setup steps can run without a separate prompt.
 
 ## Your home is isolated
 
-The helper is walled off from every other household on the platform. It cannot access data from other homes, and no one else's helper can access yours — even if you belong to more than one home in Chirp.
+The assistant is walled off from every other household on the platform. It cannot access data from other homes, and no one else's assistant can access yours — even if you belong to more than one home in Chirp.
 
 ## What gets saved
 
-Your questions and the helper's answers are stored so you can scroll back through previous conversations. This chat history is private to your individual account. Other members of your household cannot see what you asked or what the helper replied.
+Your questions and the assistant's answers are stored so you can scroll back through previous conversations. This chat history is private to your individual account. Other members of your household cannot see what you asked or what the assistant replied.
 
 ## What does not get saved
 
@@ -31,7 +31,7 @@ The chat is not a full archive of sensor history. Readings included in an answer
 ## How a question gets answered
 
 1. You describe a task or ask a question.
-2. The helper works out which information and operations it needs.
+2. The assistant works out which information and operations it needs.
 3. It can read your setup and make authorized changes, using confirmation prompts for consequential actions.
 4. It uses the operation results to explain what happened, ask for a missing detail, or continue the setup. The response streams back into the conversation.
 

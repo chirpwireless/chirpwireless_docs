@@ -182,4 +182,4 @@ From here, you might want to:
 - **Add more sensors** — Repeat Step 3 for each new device through your connector
 - **Build automations** — Check out the Automation section for rules like "alert me if the door opens after midnight"
 - **Invite your family** — Go to **Users** in the user menu to invite family members and control what they can see and change
-- **Explore the AI helper** — Ask it *"When was the front door last opened?"* and get a real answer from your data
+- **Build with the AI Assistant** — Ask it to create an automation that alerts you when this sensor reports above a limit you choose. See [Let the Assistant Set It Up](../ai-assistant/let-ai-set-it-up.md).

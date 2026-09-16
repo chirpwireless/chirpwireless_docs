@@ -95,9 +95,9 @@ Creating a sensor or dashboard changes your home, but it does not overwrite or s
 
 These notes help the AI app explain an action; they are not permission checks. Each app decides how to present confirmations. Chirp still enforces your account permissions, so the app cannot do anything that your account is not allowed to do.
 
-## How this differs from the AI Helper in the app
+## How this differs from the AI Assistant in the app {#how-this-differs-from-the-ai-helper-in-the-app}
 
-Chirp already has an [AI Helper](../ai-assistant/README.md) built into the app: open **AI Chat** in the sidebar and it's right there, knows your home, and needs no setup at all. For most people, most of the time, that's the one to use.
+Chirp’s built-in [AI Assistant](../ai-assistant/README.md) works like an experienced integrator by your side. It can add sensors, build automations, and configure alerts from the home project you describe. Open it using **AI Chat** in the sidebar; you can start without connecting an external AI client.
 
 MCP is for when you'd rather bring your own AI app to the same home — because you live in your desktop client all day, because you want your home's data in the same conversation as everything else you're working on, or simply because you prefer that assistant. Both talk to the same home and respect the same permissions.
 
