@@ -107,3 +107,7 @@ If your browser crashes or you lose your internet connection unexpectedly, the l
 - **Name important versions.** After a significant change, save manually and then rename the version in the History tab so you can find it easily if you need to restore later.
 
 For a detailed look at all four Rules page tabs, see [Rules Page and Tabs](../reference/rules-page-and-tabs.md).
+
+## Finish an editing session
+
+When you close or leave the editor, Chirp attempts to save the diagram and release the editing lock. Save important changes before handing the rule to someone else. An interrupted connection or browser crash can prevent the last request, so a remaining lock may need to expire or be released by the organization owner.

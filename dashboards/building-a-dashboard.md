@@ -77,3 +77,7 @@ This permanently removes the dashboard and everything on it.
 - [Choosing Widgets](adding-widgets/README.md) — Add sensor data, charts, and floor plans to your new dashboard.
 - [Organizing Your Views](organizing-your-views.md) — Group dashboards into folders like "Upstairs" and "Garden".
 - [Home Overview](../overview.md) — The default view that's always there, even before you create dashboards.
+
+## Show the dashboard in a home application
+
+When creating or editing a dashboard, choose its **Application**. For example, associate your home overview with Home Watch so it is available when you open that setup. Leave **Default** selected to keep it outside a named application. You still edit the widgets in the dashboard itself; see [Using Application Dashboards](../applications/using-application-dashboards.md).

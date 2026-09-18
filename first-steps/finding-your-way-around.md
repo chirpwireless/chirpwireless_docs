@@ -100,3 +100,7 @@ Click a gateway to see:
 
 - **Overview** — Whether it's online, how long it's been running, signal quality, traffic, and which devices connect through it.
 - **Settings** — Change the name, update the location, manage antenna configuration.
+
+## Applications and cameras
+
+Open **Applications** to find the parts of a named household setup together. Choose **Cameras** for Lens and your connected camera views. The return control in Lens takes you back to the rest of Chirp.

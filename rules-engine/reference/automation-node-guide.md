@@ -326,3 +326,7 @@ Your automation enriches living room data with a reading from the garden sensor.
 3. Its outgoing flow leads to a Set Alarm node with a "Sensor Offline" alarm — so you know the garden sensor needs attention.
 
 Without the Boundary Error Event, the automation would quietly stop and you would never know the garden sensor went dark.
+
+## Camera motion as a starting reading
+
+A connected Lens camera can start a rule with its motion reading. Select its motion sensor under **Sensor readings** and route true readings to the action you want. See [Camera Rules and Alerts](../../lens/camera-rules-and-alerts.md).

@@ -45,3 +45,7 @@ If you think you might need an automation again, restore it sooner rather than l
 - **Delete with confidence.** Trash gives you a safety net — you are not making an irreversible decision.
 - **Check the Trash tab periodically.** If something has been sitting there for a while and you know you do not need it, you can let it expire naturally. If you realize you do need it, restore before the retention window closes.
 - **Restored automations are clean slates operationally.** They come back with their full version history intact, but without a running artifact. Treat the restore as a starting point — review the automation, rebuild if needed, and deploy when ready.
+
+## When the automation is running
+
+Moving a running rule to Trash also stops its deployment. Read the confirmation so that you know what will stop. If the operation reports a failure, check the rule’s state before relying on it being inactive. After restoring the rule, review it and build and deploy it again when you want it to run.

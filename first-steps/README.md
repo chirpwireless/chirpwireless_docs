@@ -38,3 +38,7 @@ Most people have their first LoRaWAN sensor reporting data within 15 minutes. Th
 ## After your first sensor
 
 Want to connect scripts or trusted tools to Chirp? Create an API key and use the [API](../api/README.md) — REST over plain HTTPS is all most home setups need.
+
+## Start with an existing camera
+
+Already have a compatible IP camera? Begin with [Lens and Twin](../lens/installing-twin.md). Twin runs at your home, one container for each camera, and connects it to Chirp. You can complete the sensor walkthrough separately.

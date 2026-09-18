@@ -1,32 +1,51 @@
 ---
-description: Add a Text widget to a Chirp dashboard to label and organize your tiles with headings and short notes.
+description: "Add a household note, sensor list, or automation list to a Chirp dashboard using the Text widget."
 ---
 
 # Text widget
 
-As you add more tiles, a dashboard can start to feel like a jumble. The **Text widget** is the simple fix: it drops a heading or a note onto the board so you can group things and label them. "Upstairs", "Garden", "Security" — a few text labels turn a crowded screen into tidy, easy-to-scan sections.
+The **Text widget** gives a home dashboard a heading, a useful note, or a list of selected resources. Put a short explanation beside an unfamiliar reading, keep the home's sensors together, or show which rules are part of your monitoring setup.
 
-It doesn't show any sensor data — it's purely there to organize and explain.
+For example, **Home Sensors** can list the door sensor next to its open/closed reading, while **Home Automations** identifies the rule watching the entrance camera. The list shows the configured resources; the measurement widgets show what those devices are reporting.
 
-<figure><img src="../../.gitbook/assets/text-widget.jpg" alt="Text widget adding a labeled heading tile to a Chirp dashboard"><figcaption></figcaption></figure>
+## Set up your tile
 
-## Handy for
+1. Open your dashboard and select **Actions → Edit dashboard**. You need editing permission and access to the resources you plan to include.
+2. Select **Add widget**, then **Text**.
+3. Enter a **Widget name**, such as Home Sensors. Add a **Description** if the household needs an explanation beneath the heading.
+4. Choose **Data type**: **None** leaves the tile as a heading and note; **Devices**, **Rules**, and **Alarms** provide resource-list controls.
+5. For a resource list, choose the entries from **Artifacts**. You can select more than one and remove a selection you no longer need.
+6. Adjust the options for that type, review the preview, and select **Save**.
+7. Arrange the new tile on the dashboard, then save the dashboard layout.
 
-* **Section headings** — separate "Living Room", "Kids' Rooms", and "Outside" on one dashboard.
-* **Little notes** — a reminder next to a group of tiles, like "Check these before bed."
-* **Naming areas** — label each room or zone so anyone in the house knows what they're looking at.
+<figure><img src="../../.gitbook/assets/chirp-text-widget-settings.jpg" alt="Chirp Text widget settings with a home device selected"><figcaption><p>Select the resources and display options before saving the tile.</p></figcaption></figure>
 
-## Adding a Text widget
+## Choose what the list shows
 
-1. In dashboard edit mode, pick **Text** from the widget picker.
-2. Fill in:
-   * **Widget name** *(required)* — the heading text. Placeholder *"Enter widget name."*
-   * **Description** — optional text under the heading. You can write more than one line, so it works for a short note as well as a title.
-3. Tap **Save**.
+| Data type | Available display controls |
+|---|---|
+| None | The name and description provide a simple household note. |
+| Devices | **Number of devices**, **Connector**, **Device provider**, **Icon**. |
+| Rules | **Number of rules**, **Icon**. |
+| Alarms | **Number of alarms**, **Alarm severity**, **Icon**. |
 
-Then resize and move it like any tile — stretch it wide as a banner across the top of a section, or keep it small as a little label beside a group of readings. With a few text labels and your dashboard folders, even a busy home dashboard stays easy to read.
+The number is a count of the selected resources that the widget can currently display. For alarms, it counts definitions, not unresolved incidents. **Alarm severity** refers to a definition's severity. Device connector and provider information appears when those details are available.
 
-## See also
+<figure><img src="../../.gitbook/assets/chirp-text-widget-lists.jpg" alt="Chirp dashboard with Home Sensors and Home Automations lists beside temperature and door readings"><figcaption><p>The two Text tiles explain which sensor and camera-motion rule belong with the household readings.</p></figcaption></figure>
 
-* [Adding Widgets](README.md) — edit mode and the widget picker
-* [Dashboards](../README.md) — organizing your boards
+## Keep the dashboard useful
+
+Select a device row to open that device. Rule and alarm rows display information; use **Rules engine** or **Alarm** to manage those resources. Choosing a resource for a tile neither runs its automation nor assigns it to an Application.
+
+Entries stay in the order you selected. A deleted resource, or one the widget can no longer retrieve, drops out of the displayed list and its count. Edit **Artifacts** when you want to change the selection.
+
+Public/kiosk views hide organization resource lists. Use a plain heading and description when a note needs to appear on a public display.
+
+## If the alarm selector is empty
+
+Choosing **Alarms** can leave **Artifacts** showing **No options**, including when alarm definitions already exist. You can check those definitions through **Alarm → Alarm definitions** and use **Alarm** to follow incidents. The empty selector does not mean your home has no active alarms. You can still add device and rule lists to the dashboard.
+
+## Continue building your view
+
+- [Choosing Widgets](../choosing-widgets.md)
+- [Application dashboards](../../applications/using-application-dashboards.md)

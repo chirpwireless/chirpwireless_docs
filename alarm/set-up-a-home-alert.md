@@ -90,3 +90,7 @@ Once created, your alarm definition appears in the **Alarm definitions** tab:
 - **Basement flood alarm:** Severity Critical, immediate notification to homeowner via email and push, escalation to partner via SMS if unresolved. Schedule: 24/7. Suppression: 5 minutes.
 - **Freezer temperature spike:** Severity High, notify homeowner. Theme: "Freezer temperature rising." Message: "The kitchen freezer sensor has reported an unusual reading."
 - **Front door after bedtime:** Severity Medium, schedule active 11 PM – 6 AM only. Notify both household members immediately.
+
+## Put the alert in a home application
+
+Select **Application** in the alarm definition’s setup dialog to include it in a grouping such as Home Watch. Save the definition. The rule still needs to select this alarm definition in its alarm action; sharing an application does not create that connection. See [Organizing Content](../applications/organizing-content.md).

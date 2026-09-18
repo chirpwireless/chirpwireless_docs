@@ -83,3 +83,7 @@ Automations you delete from the Rules tab appear here. Each row shows:
 | **Deleted time** | The date and time it was deleted |
 
 The only action available is **Restore rule**, which moves the automation back to the Rules tab. Restored automations come back unlocked.
+
+## Choose an application
+
+The **Application** selector in the rules list places a rule in a household setup such as Home Watch. Changing that selection organizes the rule; it does not rewrite its conditions or actions. Choose **Default** for an ungrouped rule. See [Applications](../../applications/README.md).

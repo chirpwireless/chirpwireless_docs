@@ -171,3 +171,7 @@ The registration dialog works comfortably on a phone, so you can add a sensor wh
 - **Customize data templates** if Chirp doesn't automatically recognize what your sensor measures. See [Data Templates](data-templates.md).
 - **View and edit your sensor** anytime. See [Sensor Details](sensor-details.md).
 - **Nothing showing up?** See [Connection Diagnostics](connection-diagnostics.md).
+
+## Check a key without leaving it exposed
+
+While entering an **AppKey**, you can see what you type. Click outside the field or press Enter to hide it again. The eye button lets you reveal it when needed; a key filled from a QR code stays hidden. Close the visible-key state before sharing a screenshot.

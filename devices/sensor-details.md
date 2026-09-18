@@ -85,3 +85,7 @@ You don't always need to open the full detail view. From any sensor list, the ro
 - **Delete** (trash icon) — Remove the sensor (with a confirmation dialog)
 
 For more about what your sensors measure and how to customize it, see [Data Templates](data-templates.md). To organize sensors by room, see [Rooms](rooms.md).
+
+## Keep a home setup together
+
+The **Application** field on **Device Info** lets you put this sensor into a setup such as Home Watch. Select the application and save, or choose **Default** to keep the sensor ungrouped. [Organizing Content](../applications/organizing-content.md) explains how the dashboard, rule, and alarm definition join it.

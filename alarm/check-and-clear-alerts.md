@@ -61,3 +61,7 @@ Each alarm has a link that navigates to the automation in the Rules Engine that 
 - **Use severity filters during busy periods.** If you have many alarms, filter to Critical and High first to prioritize what needs immediate action.
 - **Check the originating rule if an alarm seems wrong.** If an alarm fires unexpectedly, the Rules Engine rule might have a condition that is too sensitive or a sensor that is reporting unexpected data.
 - **Resolve alerts from your phone.** If you have the [Chirp Alerts app](chirp-alerts-app/managing-alerts.md) installed, you can resolve and manage alerts directly from your phone without opening the web platform.
+
+## If an alert appears again
+
+Marking an incident resolved does not fix the underlying condition or turn off the rule. Later qualifying readings can raise it again. Check the sensor, [trigger timing](../rules-engine/going-deeper/triggers/trigger-timing.md), and suppression settings before changing your notification setup. Scroll within the inbox to review the rest of a long list.

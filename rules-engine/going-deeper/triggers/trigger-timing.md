@@ -84,3 +84,7 @@ Suppose the schedule is 23:00–06:00. A window-open period beginning at 22:55 c
 
 - [Triggers](../triggers.md) — create the condition and connect the automation
 - [Use a Trigger with Multiple Devices](multiple-devices.md) — separate waits for several home devices
+
+## Why an alert can return after you clear it
+
+Clearing an incident does not change the sensor reading. If later readings still meet the trigger’s raise condition, another alert can be raised according to your suppression settings. Readings that no longer meet that condition should not keep raising the alert while a separate clear timer is still running. Check the trigger and alarm settings together when tuning repeated notifications.
