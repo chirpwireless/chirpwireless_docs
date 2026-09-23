@@ -32,7 +32,7 @@ You can return to **Edit** whenever you want to change the wall. Remove an unwan
 
 Choose the wall in the Lens sidebar to open your saved camera arrangement. **Preview** gives you refreshed still pictures. Switch a panel to **Live** for continuous video and use **Toggle fullscreen** when you want a closer look.
 
-Online-panel and stream counts help you see which views are available. An offline camera needs attention even if an earlier image is still visible. The **HD streams** and **SD streams** counters reflect viewing modes; they do not increase the resolution supplied by the camera.
+Online-panel and stream counts help you see which views are available. When a panel reports its camera as offline, the preview replaces the earlier snapshot with **Camera is offline**. If you see **No preview available**, check the camera's state before assuming it is disconnected; see [Watching Live Video](watching-live-video.md#when-a-picture-is-missing). The **HD streams** and **SD streams** counters reflect viewing modes; they do not increase the resolution supplied by the camera.
 
 To listen or speak through a supported camera, open that camera's individual view. Use the wall to watch several views together and return supported cameras to their home positions. See [Watching Live Video](watching-live-video.md) for camera controls.
 
