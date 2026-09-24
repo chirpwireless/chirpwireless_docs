@@ -27,6 +27,8 @@ Continuous mode saves video without waiting for movement and skips motion proces
 
 ### Set a recording schedule
 
+Twin's supplied configuration starts with **UTC** as its timezone. Before enabling a schedule, check **Timezone** and choose the zone for your home. Leaving an unintended zone selected can shift both recording and motion-processing periods away from the hours you expect. An upgrade that keeps the existing configuration volume preserves your saved setting.
+
 In **Recording schedule**, select **Timezone**, enable **Use schedule**, and configure the active intervals for each relevant day. Each day supports two intervals, useful for times when you are away from home. Save the schedule and test both an active and an inactive period. Schedules also restrict motion processing, so use unrestricted operation for the initial motion-rule test.
 
 ## Leave space for the rest of the computer

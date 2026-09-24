@@ -28,6 +28,8 @@ A compatible motorized camera can offer pan, tilt, zoom, and preset positions. A
 
 ## When a picture is missing
 
+Once Lens reports a camera as offline, its preview shows **Camera is offline** instead of keeping the last snapshot on screen. **No preview available** means there is no preview to display; that message alone does not tell you whether the camera is offline. Check its connection state as well as the picture.
+
 Check whether the camera is online. If it is offline, inspect its power and home network, then check that the computer running Twin is still on. If it is online but the live picture will not open, follow [Access and Troubleshooting](access-and-troubleshooting.md).
 
 To hear about useful activity without watching continuously, [select a motion area](motion-zones.md) and connect it to [a home rule and alert](camera-rules-and-alerts.md).
