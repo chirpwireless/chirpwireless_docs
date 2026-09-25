@@ -68,6 +68,8 @@
   * [Emulator Connector](connectors/emulator-connector.md)
 * [Devices](devices/README.md)
   * [Adding Sensors](devices/adding-sensors.md)
+  * [LoRaWAN Devices](devices/lorawan-devices.md)
+  * [MQTT Devices](devices/mqtt-devices.md)
   * [Pretend Sensors](devices/pretend-sensors.md)
   * [Data Templates](devices/data-templates.md)
   * [What Your Device Is Sending](devices/what-your-device-is-sending.md)

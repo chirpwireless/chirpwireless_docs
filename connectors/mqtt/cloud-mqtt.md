@@ -88,3 +88,5 @@ The username and Topic prefix don't change on rotation — only the password.
 ## Limits
 
 Cloud MQTT connectors are unlimited per home. If you want separate connectors for different device groups (one for the indoor Zigbee mesh, one for the garden sensors, one for the workshop), create as many as you need — each gets its own credentials and topic prefix.
+
+For the device-level setup, follow [MQTT Devices](../../devices/mqtt-devices.md). It covers the physical identifier, connection fields, measurement mapping and checking retained history.

@@ -35,6 +35,17 @@ Any gap while the tracker was broken or disconnected remains a gap: Chirp can on
 
 The same principle applies to **Living Room Temperature**. Open that existing device, detach the old source, and supply the replacement sensor's connection details. For LoRaWAN, the detach control is beside **Device EUI**; enter the new EUI, key, and matching profile. Reconnect the new temperature field to the existing temperature measurement and check fresh readings before relying on its automations.
 
+## Swap between an emulator and hardware
+
+**Swap connection** is available when there is an eligible connection involving the emulator: emulator to real hardware, or real hardware to emulator. It is not a physical-to-physical replacement control.
+
+1. Open **Connection** and click **Swap connection**. The connection picker shows eligible destinations and unlocks the target identity fields.
+2. Choose the destination, fill its required configuration, and review mappings and commands for the new source.
+3. Click **Save** to apply the swap. **Cancel swap** exits swap editing before saving and restores the original connection fields.
+4. Confirm the new source supplies the expected readings. Keep the retained measurement identities; generated readings and real readings both remain subject to the history retention period.
+
+For one physical sensor replacing another, use **Detach physical device**, bind the replacement and restore its key mappings. Detach takes effect immediately; it does not wait for the page's Save button. It removes the physical binding and source mappings while retaining the twin and its measurement channels.
+
 ## The tabs
 
 ### Device info
@@ -45,38 +56,35 @@ This is where you manage the sensor's identity:
 - **Device name** — Update the name anytime. If you originally called it "Sensor 3," now's a good time to rename it to something more useful like "Kitchen Temperature" or "Basement Humidity."
 - **Application** — Select the home setup this device belongs to, or **Default** to leave it outside a named application.
 
+
+**Photo controls:** Use **Add photo** or drag PNG/JPG files onto the upload area. You can keep up to three photos; the UI recommends 5 MB per photo. The first photo is the cover. Use the remove control on a photo to remove it from the edited list, then save. The name is required; **Application** assigns the twin to a named setup, or **Default** leaves it outside a named application. Save profile changes before leaving the page.
+
 ### Connection
 
 This tab shows how the sensor connects to Chirp and lets you adjust its profile. It also carries the sensor's connection diagnostics, which tell you whether data is arriving and being saved — the place to look when a sensor is quiet or a reading is missing. See [Connection Diagnostics](connection-diagnostics.md).
 
-**For LoRaWAN sensors:**
-
-- **Connector type** — Shows which connection this sensor uses — LNS, Tracker, MQTT or Emulator. You can switch a [pretend sensor](pretend-sensors.md) over to the real connection here when your hardware arrives (and back again if you want to test something).
-- **Device EUI** — The unique identifier that links this profile to the physical sensor. This field is locked once set. If you need to change it (for example, if you're replacing a broken sensor with a new one), click the **detach** button (X icon) to unbind the physical sensor first. The digital device and its retained measurement history remain in place. Reconnect the replacement's source mappings before expecting new readings.
-- **Device profile** — Switch between template-based and manual configuration. If you originally set up the sensor manually, you can switch to a template later (or vice versa).
-- **Data sending interval** — Where you tell Chirp how often this sensor sends. A sensor's sending schedule is set on the sensor itself and varies by brand — sometimes preconfigured by the manufacturer, sometimes set when you install it — so enter the schedule the sensor is actually on. A daily sensor → **1 day**, a monthly one → **1 month**. The field defaults to **1 hour**, but that's only a placeholder. Connection diagnostics uses that schedule to spot overdue readings. The command screen checks last-seen time separately; see [Sending a command](commands/executing-commands.md#if-the-device-is-offline). Pick a number and a unit (minute, hour, day, week, or month).
-- **Code functions** — The sensor's payload codec: the logic that decodes raw data into the named fields you see in the Mapping tab. When a device profile template is selected, this field is pre-filled with the template's codec. If your readings look wrong — missing fields, incorrect values — you can edit the code directly. For the full explanation, see [Adding Sensors](adding-sensors.md).
-
-**For tracker devices:**
-
-- **Unique ID** — The tracker's identifier (locked once set).
-- **Device model** — The selected tracker model.
-- **Url for GPS tracker** — The endpoint your tracker sends data to. You can copy this again if you need to reconfigure the tracker.
+**For LoRaWAN sensors:** Follow [LoRaWAN Devices](lorawan-devices.md) for every identity, profile, codec and interval field. Detach before changing a bound physical identifier; keep the twin and its measurement rows, then restore the source mappings.
 
 ### Mapping {#metrics}
 
-This tab shows what the sensor measures and how each measurement is mapped to a data template.
+The **Mapping** tab connects incoming data keys to retained measurement channels. Use the same measurement rows when a sensor is replaced: changing an incoming key is different from replacing the measurement itself.
 
-**Table columns:** Metrics template, Unit, Type, Data type, Connector key, Value, Last update.
+| Column or control | Purpose and configuration |
+| --- | --- |
+| **Device data key** | Select a received source field, such as `temperature` or `vibration.rms`. This is the incoming connector key. Options appear after messages arrive; a blank choice records nothing for this measurement. Save changes to this key with **Save**. |
+| **Value** | Latest received value for the selected source key. This snapshot is not the historical record. |
+| **Last update** | When that source key was last received. An empty value means no corresponding received value is available. |
+| **Normalized key** | Choose the metric template defining the measurement. Only Telemetry templates are offered. A template already assigned to this device is disabled in the dropdown. |
+| **Unit** | The template's unit, shown for reference. Set or change it in [metric templates](data-templates.md); the mapping does not perform unit conversion. |
+| **Type** | Read-only template value type: Integer, Float, String or Boolean. It controls conversion of incoming readings. |
+| **Data type** | Telemetry in this mapping form. Reported switch states can be recorded as telemetry too. |
+| **Add key** | Add a mapping row, then select a template and an incoming key. |
+| **+ Add new metric** | Opens **Add Metric** from the Normalized key dropdown. Enter a non-empty **Normalized key**, choose **Type** (initially String), and keep **Data type** as Telemetry. **Add** creates the template and selects it; **Cancel** closes without creating it. This compact dialog has no unit selector; use the full metric catalog to configure units. |
+| **Remove** | Removes the row and its measurement assignment immediately on a saved device. This is not the procedure for changing hardware. |
 
-Here's what each column means:
+Selecting a template adds its measurement immediately on an existing device. Selecting a different template on an existing row removes the old measurement assignment and creates the new one. Closing the page without clicking Save does not undo those actions. Preserve templates during replacement and change only source-key assignments, then save.
 
-- **Metrics template** — The data template assigned to this measurement. Select from the dropdown to change it.
-- **Connector key** — The raw name the sensor uses for this reading (e.g., `temp_c`). Map it to the right template so Chirp knows what the number means.
-- **Value** — The most recent reading for this measurement.
-- **Last update** — When the last reading came in.
-
-You can add new measurement rows or remove existing ones. Adding or removing a template row takes effect immediately. Choosing another template on a row also replaces its measurement assignment, so avoid that when you want to retain its history. Changes to **Connector key** take effect when you click **Save**.
+After saving mappings, allow a fresh message and check **Logs**. A field can appear in the incoming snapshot before its mapping is complete; older messages are not backfilled. Match template types to the actual values: `"ON"` and `"OFF"` are strings, while `true` and `false` are booleans. See [metric templates](data-templates.md) for conversion and rejection rules.
 
 ### Keep the asset recognizable
 
@@ -97,11 +105,12 @@ Click a minute to expand it and see the individual readings:
 | **Key** | The normalized name of the measurement |
 | **Type** | The data type of the value |
 | **Value** | The actual reading |
-| **Status** | Processing status (currently empty for standard readings) |
 
 **Date filtering:** Click the date button in the top-right corner to pick a time range — useful for investigating when something happened. Choose a preset like "Last week" or set a custom date range.
 
 If the Logs tab is empty and you're not sure why, the Connection tab's diagnostics will tell you whether anything is reaching Chirp in the first place. See [Connection Diagnostics](connection-diagnostics.md).
+
+The date button shows the current preset or date range. Choose a quick range or a custom start/end range and click **Apply changes**. **Clear filter** resets the selection. Available dates and presets are limited by your plan's retention. **Timestamp** identifies each reading; **Key** is the normalized measurement name, followed by **Type** and **Value**. Expand/collapse the minute groups to inspect individual readings. **No logs found** means no retained readings match the range; check mapping and a fresh message before widening it. If loading fails, reload the page.
 
 ## Quick actions from sensor lists
 
@@ -120,3 +129,7 @@ For a replacement, use the existing device instead of **Copy**. Copy is for addi
 ## Keep a home setup together
 
 The **Application** field on **Device Info** lets you put this sensor into a setup such as Home Watch. Select the application and save, or choose **Default** to keep the sensor ungrouped. [Organizing Content](../applications/organizing-content.md) explains how the dashboard, rule, and alarm definition join it.
+
+## Protocol setup references
+
+Use [LoRaWAN Devices](lorawan-devices.md) or [MQTT Devices](mqtt-devices.md) for the complete connection fields, then return here for common profile, mapping and history controls.

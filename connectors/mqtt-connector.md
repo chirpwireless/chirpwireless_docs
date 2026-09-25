@@ -327,3 +327,5 @@ If saving a device on a Cloud MQTT connector fails, contact support for help com
 - [Adding Sensors](../devices/adding-sensors.md) — Complete your sensor setup and assign it to a room.
 - [Adding Widgets](../dashboards/adding-widgets/README.md) — Display your new sensor readings on a dashboard.
 - [Set Up a Home Alert](../alarm/set-up-a-home-alert.md) — Get notified when readings go outside normal ranges.
+
+For the device-level setup, follow [MQTT Devices](../devices/mqtt-devices.md). It covers the physical identifier, connection fields, measurement mapping and checking retained history.

@@ -214,7 +214,7 @@ After renaming, Z2M publishes to `{base_topic}/{newName}` immediately. The IEEE-
 
 The device is now publishing JSON payloads on a topic like `iot/{org}/{conn}/zigbee2mqtt/LivingRoomSensor` (Cloud MQTT) or `zigbee2mqtt/LivingRoomSensor` (External MQTT). Now register it in Chirp.
 
-The full registration flow — the Mapping/Topic sub-tabs, byte-for-byte Device ID, the Connector key two-pass save, the Reported State vs Telemetry choice — is on [Topics and device routing](topics-and-device-routing.md). That's the next page to read.
+Continue with [MQTT Devices](../../devices/mqtt-devices.md) to register the sensor, configure routing on Connection, select its received data keys on Mapping and check recorded readings. The [routing reference](topics-and-device-routing.md) explains every topic control.
 
 ## Where to go next
 

@@ -40,6 +40,15 @@ You can create a digital device before the hardware arrives. [Pretend Sensors](p
 
 Keeping the same twin preserves the link to its stored readings; your subscription determines how far back you can access them. Hardware replacement does not restart the retention period. See [Keeping your data history](../account/subscription.md#keeping-your-data-history) for details and how to discuss a longer period.
 
+## Choose the source for your digital twin
+
+| Source | Start here |
+| --- | --- |
+| LoRaWAN sensor | [LoRaWAN Devices](lorawan-devices.md) — profiles, radio identity, decoding and first readings |
+| MQTT publisher or bridged sensor | [MQTT Devices](mqtt-devices.md) — connect messages to a twin and its measurements |
+| GPS tracker | [Tracker Connector](../connectors/tracker-connector.md) — tracker identity, model and reporting endpoint |
+| Generated readings | [Pretend Sensors](pretend-sensors.md) — prepare dashboards before the sensor arrives |
+
 ## What's in this section
 
 * [Adding Sensors](adding-sensors.md) — register a sensor and map what it measures

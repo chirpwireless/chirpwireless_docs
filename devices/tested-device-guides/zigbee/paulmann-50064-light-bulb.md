@@ -57,7 +57,7 @@ When the bulb pairs, its initial friendly name is its IEEE address. Rename it to
 In the Z2M web UI:
 1. Click the bulb's row in the Devices tab.
 2. Click the pencil icon next to the name at the top of the detail panel.
-3. Type a new name. **Avoid spaces** — Chirp's Device ID input strips whitespace, which causes silent topic-match failures. Use CamelCase (`TableLampLivingRoom`) or snake_case (`table_lamp_living_room`).
+3. Type a new name. Use a clear name such as `TableLampLivingRoom` or `table_lamp_living_room`. Chirp preserves case and spaces; its Device ID must match the friendly name exactly.
 4. Press Enter or click the checkmark.
 
 The example friendly name we'll use in this page: **`TableLampLivingRoom`**.
@@ -120,13 +120,13 @@ Once Z2M is publishing to a topic Chirp can see (verify via the connector's **La
 
 1. **Connectors → your MQTT connector → Add device.**
 2. **Device ID:** `TableLampLivingRoom` (or whatever whitespace-free friendly name you chose). It must match the Z2M friendly name byte-for-byte.
-3. Open the **Mapping** tab. You land on the **Topic** sub-tab first.
-4. **Topic sub-tab:**
-   - **Device ID Topic:** `zigbee2mqtt/{{deviceId}}`
+3. Create and save the named digital device, then open **Connection** and select your MQTT connector.
+4. **Connection — topic routing:**
+   - **MQTT Topic for device ID:** `zigbee2mqtt/{{deviceId}}`
    - **Where to get the device ID:** `Topic` (default).
-   - **Telemetry topics:** leave empty. The Paulmann publishes a flat JSON payload — Chirp parses all keys automatically.
-5. Click **Next** or the inner **Mapping** sub-tab to reach the per-key rows.
-6. **Mapping sub-tab — Pass 1:** add a row per metric you want, but **leave Connector key empty**. Recommended initial set:
+   - **Topic Telemetry:** leave empty. The Paulmann publishes a flat JSON payload — Chirp parses all keys automatically.
+5. Click **Save**, then open **Mapping** to reach the per-key rows. See [MQTT Devices](../../mqtt-devices.md) for the complete workflow.
+6. **Mapping — Pass 1:** add a row per metric you want, but **leave Device data key empty**. Recommended initial set:
 
    | Normalized key | Type | Data type |
    |---------------|------|-----------|
@@ -142,9 +142,9 @@ Once Z2M is publishing to a topic Chirp can see (verify via the connector's **La
 
 7. Click **Save**.
 8. **Generate a publish.** Open the bulb in the Z2M web UI and drag the brightness slider, or use the on/off toggle. Z2M sends a `/set` command, the bulb confirms the new state, and Z2M publishes the confirmed payload — that's the publish Chirp needs.
-9. **Mapping sub-tab — Pass 2:** reopen the device record. The **Connector key** dropdowns now list the keys received from the bulb. Match each row:
+9. **Mapping — Pass 2:** reopen the device record. The **Device data key** dropdowns now list the keys received from the bulb. Match each row:
 
-   | Mapping row | Connector key |
+   | Mapping row | Device data key |
    |------------|--------------|
    | State | `state` |
    | Brightness | `brightness` |
@@ -156,30 +156,30 @@ Once Z2M is publishing to a topic Chirp can see (verify via the connector's **La
 
 ### Pass 3 — add Start Up Color after the first publishes arrive
 
-Once the bulb has been publishing for a little while, the Connector key dropdown shows one more useful field: **`color_temp_startup`**. The bulb only emits this in some payloads — typically after a `/get` poll or after explicitly setting it — so it often isn't visible during Pass 2. Treat it as a third pass:
+Once the bulb has been publishing for a little while, the Device data key dropdown shows one more useful field: **`color_temp_startup`**. The bulb only emits this in some payloads — typically after a `/get` poll or after explicitly setting it — so it often isn't visible during Pass 2. Treat it as a third pass:
 
-11. Reopen the device record. Confirm the Connector key dropdown now lists `color_temp_startup` as an option (if not, force a publish that includes it: send a `/get` request, or send a `/set` with a `color_temp_startup` value).
+11. Reopen the device record. Confirm the Device data key dropdown now lists `color_temp_startup` as an option (if not, force a publish that includes it: send a `/get` request, or send a `/set` with a `color_temp_startup` value).
 12. Click **Add key** in the Mapping sub-tab.
 13. Pick or create a **Start Up Color** normalized key (Integer type, Telemetry data type).
-14. Set the Connector key to `color_temp_startup`.
+14. Set the Device data key to `color_temp_startup`.
 15. Click **Save**.
 
-| Mapping row | Connector key | Type | Data type |
+| Mapping row | Device data key | Type | Data type |
 |------------|--------------|------|-----------|
 | Start Up Color | `color_temp_startup` | Integer | Telemetry |
 
 **What "Start Up Color" means:** the color temperature the bulb turns on as when power is restored. A specific number (150–500 mired) means "always cold-start at this color." `65535` means "remember the previous setting and restore it on power-on." `null` means it isn't configured — the bulb uses its firmware default. Useful in homes where you want the lamp to always come on warm regardless of how it was last left.
 
-This three-pass progression — register the obvious fields first, fill in Connector keys after the first publish, then add the late-discovered field — is normal for MQTT mapping. Most devices have at least one field you'll only see once data is flowing.
+This three-pass progression — register the obvious fields first, fill in Device data keys after the first publish, then add the late-discovered field — is normal for MQTT mapping. Most devices have at least one field you'll only see once data is flowing.
 
 After the three passes, the **Value** column on the Mapping tab populates with the bulb's current state across all six metrics. Generate one more publish (drag the Z2M slider) to confirm records arrive in the **Logs** tab — that's your end-to-end verification.
 
 ## Things that look like problems but aren't
 
-- **Mapping tab Value column updates but Logs tab is empty.** Normal after Pass 2 if you saved Connector keys after the most recent publish. Generate a fresh publish from the Z2M web UI.
+- **Mapping tab Value column updates but Logs tab is empty.** Normal after Pass 2 if you saved Device data keys after the most recent publish. Generate a fresh publish from the Z2M web UI.
 - **`color_mode` always shows `"color_temp"`.** This bulb has no RGB capability. The field is always `color_temp` for CCT bulbs.
 - **`color_temp_startup` shows `65535` or `null`.** `65535` is the sentinel for "restore previous color temperature on power-on." `null` means it hasn't been configured and the bulb uses its firmware default. Set a specific number (150–500 mired) via `/set` if you want a fixed color on every cold power-on.
-- **`color_temp_startup` doesn't appear in early payloads.** The bulb only emits this field in certain payloads — typically after a `/get` poll or after the field has been explicitly set. If your Connector key dropdown doesn't show it during Pass 2, that's normal — see Pass 3 above.
+- **`color_temp_startup` doesn't appear in early payloads.** The bulb only emits this field in certain payloads — typically after a `/get` poll or after the field has been explicitly set. If your Device data key dropdown doesn't show it during Pass 2, that's normal — see Pass 3 above.
 - **Multiple publishes from one `/get` request.** Z2M polls Zigbee attribute clusters separately, so one `/get` produces 2–4 publishes back as the cluster responses arrive. Normal — not an error.
 - **Wall-switch toggle produces no Logs entry.** As covered above — this bulb doesn't publish on physical power-cycle. Use the Z2M web UI to generate publishes for setup-time verification.
 

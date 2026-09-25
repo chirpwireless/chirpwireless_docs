@@ -14,8 +14,8 @@ Replacing a broken tracker or sensor is a different task: open its existing digi
 
 You'll need:
 - **A connection** set up — an LNS connection for LoRaWAN sensors, a Tracker connection for vehicle trackers, an MQTT connector (Cloud or External) for Zigbee2MQTT and other MQTT-publishing hardware, or an Emulator connection if your sensor hasn't arrived yet. See [Setting Up a Connection](../connectors/setting-up-a-connection.md) and the [MQTT Connector](../connectors/mqtt-connector.md) docs.
-- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it byte-for-byte (no whitespace). A [pretend sensor](pretend-sensors.md) needs none of this — you choose its Device ID yourself, within the naming rules on that page.
-- **For MQTT sensors only — the device must be publishing before you can finish mapping.** The Connector key dropdown in the Mapping tab is populated from payload keys actually received from the device. See the [MQTT-specific note](#a-note-for-mqtt-sensors) further down for the two-pass save flow.
+- **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it exactly, including case and spaces. A [pretend sensor](pretend-sensors.md) needs none of this — you choose its Device ID yourself, within the naming rules on that page.
+- **For MQTT sensors only — the device must be publishing before you can finish mapping.** The Device data key dropdown in the Mapping tab is populated from payload keys actually received from the device. See the [MQTT-specific note](#a-note-for-mqtt-sensors) further down for the two-pass save flow.
 
 ## Where to add a sensor
 
@@ -43,55 +43,20 @@ After the first save, the page shows with **Device info**, **Connection**, **Map
 
 Click the **Connection** tab to link your sensor to the thing that feeds it.
 
-**For LoRaWAN sensors (LNS connection):**
-
-1. Select your **LNS** connection from the **Connector type** dropdown (if you only have one, it may be pre-selected).
-2. Enter the **Device EUI** — the unique identifier from your sensor's label (a string of hexadecimal characters, usually printed on the sensor or its packaging). Once entered and saved, this field locks to prevent accidental changes. Capital and lowercase letters are treated the same here, so it doesn't matter which your label uses — just copy it carefully.
-
-   **Or skip the typing entirely.** Most sensors carry a QR code on the label or the box. Click **Scan QR code**, point your laptop or phone camera at it, and Chirp fills the identifiers in for you — no squinting at sixteen characters of hex, no transposed digits to hunt down later. If your device doesn't have a camera available, you'll see "QR code scanner is not found. Please try again." — just type the values in by hand instead.
-3. Choose how to set up the sensor profile:
-
-   **Option A: Use device profile templates** — Check the **Use device profile templates** box to select from a library of known sensors. This is the easiest approach if your sensor brand is in the library.
-
-   - Pick the **Brand**, **Model**, and **Profile** from the dropdowns. These selections identify which template to load.
-   - Once all three are selected, Chirp fetches the matching template and fills in the sensor's settings automatically — including the LoRaWAN class, frequency band, and a **codec** (the decoding logic that translates the sensor's raw data into readable fields).
-
-   Templates are provided as convenience helpers. If a template's codec doesn't produce the correct readings for your sensor — for example, if values look wrong or fields are missing — you can edit the **Code functions** field directly (see below).
-
-   **Option B: Manual setup** — Leave the checkbox unchecked to enter details yourself:
-
-   - **Class** — Choose the LoRaWAN device class:
-     - **Class A** — The sensor sleeps between transmissions and only briefly wakes to listen for responses. This is extremely power-efficient — most battery-powered home sensors use Class A and can run for years on a single battery.
-     - **Class C** — The sensor keeps its receiver on continuously, so it can receive commands from Chirp at any time. Because the radio is always listening, Class C sensors use significantly more power and are typically plugged into mains power. Choose Class C for devices that need to respond to commands instantly, such as smart switches or displays. A saved LoRaWAN device can offer **Commands & States** in either class; receive timing still depends on the class — see [Controlling Your Devices](commands/).
-   - **Brand** and **Model** — Type the sensor manufacturer and model name.
-   - **Band** — Select the LoRaWAN frequency band for your region. Sensors purchased from a local supplier are almost always on the correct band already. Available options: EU868 (Europe), US915 (USA), AU915 (Australia), AS923 (Asia), KR920 (South Korea), IN865 (India), RU864 (Russia), CN470 (China), CN779 (China), EU433 (Europe 433 MHz), ISM2400 (2.4 GHz global). For a complete list by country, see [LoRaWAN Frequencies](../connectors/lns-connector/lorawan-frequencies.md).
-   - **AppKey** — The encryption key for your sensor, typically found on the sensor's packaging or in its documentation.
+**For LoRaWAN sensors (LNS connection):** Follow [LoRaWAN Devices](lorawan-devices.md) for identifiers, profile templates and manual fields, codecs, reporting interval and network joining.
 
 #### Keep the identifiers somewhere safe
 
-Once you've entered the sensor's identifiers, click **Add to Vault**. Chirp saves the EUI and its key together in your Key Vault, so you can look them up later without hunting for the box in the loft or unscrewing the sensor off the wall. For LoRaWAN sensors it stores the AppKey alongside the Device EUI.
-
-It's worth doing at the moment you have the label in your hand — that's the one time the numbers are easy to get at. See [Key Vault](../reports/key-vault.md).
+Use **Add to Vault** to store the sensor's EUI/key pair in [Key Vault](../reports/key-vault.md). See [identity and credentials](lorawan-devices.md#identity-and-credentials).
 
 #### Code functions (codec)
 
-The **Code functions** field contains the logic that decodes your sensor's raw data into readable fields. Think of it as a translator — your sensor sends its readings as compact binary data, and the codec turns that into named values like `temperature`, `humidity`, or `battery`.
-
-When you pick a device profile template, this field is filled in automatically. If you set up manually, it starts empty — you may need to paste a codec from your sensor's manufacturer documentation.
-
-If the readings in the Mapping tab don't look right after connecting your sensor — values seem wrong, some fields are missing, or names don't match what you expected — you can open this field and edit the code. The field is a text editor with a code-friendly monospace font.
+The LoRaWAN codec turns binary uplinks into named readings. See [Templates and manual profiles](lorawan-devices.md#templates-and-manual-profiles) for selecting or supplying it.
 
 #### Data sending interval
 
-Every sensor sends on its own schedule — some every few minutes, some once a day, some once a month. That schedule is set **on the sensor itself**, and it differs from brand to brand: some sensors arrive with it already set by the manufacturer, others you set yourself when you install the sensor. The **Data sending interval** field is simply where you tell Chirp what that schedule is.
+Enter the physical sensor's reporting schedule: a positive whole number and minute/hour/day/week/month. The initial value is 1 hour. This describes the expected cadence; it does not change hardware settings. For a [pretend sensor](pretend-sensors.md), it controls generation instead.
 
-Set it to match how the sensor is actually configured to send. A sensor that reports once a day → **1 day**; once a month → **1 month**. The field starts at **1 hour** by default, but that's only a placeholder — Chirp has no way to know your sensor's real schedule, so replace it with the right value.
-
-Chirp uses this schedule in reception diagnostics to tell an expected pause from an overdue reading. Commands have a separate check based on whether the last message was more than 30 minutes ago; see [Sending a command](commands/executing-commands.md#if-the-device-is-offline).
-
-Pick a number and a unit: **minute**, **hour**, **day**, **week**, or **month**.
-
-A [pretend sensor](pretend-sensors.md) is the exception: there is no hardware keeping a schedule, so this field *is* the schedule — Chirp sends on it.
 
 **For vehicle trackers (Tracker connection):**
 
@@ -100,11 +65,8 @@ A [pretend sensor](pretend-sensors.md) is the exception: there is no hardware ke
 3. Select a **Device model** by searching the tracker library.
 4. A **Url for GPS tracker** panel appears — copy this URL and configure your tracker to send data to it.
 
-**For MQTT sensors (Cloud or External MQTT):**
+**For MQTT sensors (Cloud or External MQTT):** Follow [MQTT Devices](mqtt-devices.md) to save the connection and topic routing, receive a message, then map its readings. Device ID must match the publisher's identifier, including case and spaces.
 
-1. Select your **MQTT** connection from the **Connector type** dropdown.
-2. Enter the **Device ID** — the device-level part of the topic your sensor publishes under. For Zigbee2MQTT that's the friendly name, and it has to match byte-for-byte.
-3. Save, and let the sensor publish at least once before you map its readings — see [A note for MQTT sensors](#a-note-for-mqtt-sensors) below.
 
 **For pretend sensors (Emulator connection):**
 
@@ -115,6 +77,8 @@ A [pretend sensor](pretend-sensors.md) is the exception: there is no hardware ke
 Chirp then invents the readings for you, and an extra **Emulator** tab appears so you can push a value whenever you want to test something. This is how you get your dashboards and alerts working before the hardware arrives — and you can switch the same sensor over to the real one when it does. See [Pretend Sensors](pretend-sensors.md).
 
 ### Mapping {#metrics}
+
+See [mapping controls](sensor-details.md#metrics) for every column, inline metric creation, and immediate template-change/removal behavior.
 
 Click the **Mapping** tab to map your sensor's raw data to measurement definitions. A profile supplies the network configuration and codec. Assign measurement templates and connector keys here after the source has reported, or return later to finish mapping.
 
@@ -131,28 +95,20 @@ This is where cryptic sensor output becomes something you can actually read. Whe
 To set up a mapping:
 
 1. **Add a metric** — Click **Add key** and pick a data template from the dropdown (e.g., "Temperature", °C, Float). The Unit, Type, and Data type columns fill in automatically from the template. If you need a template that doesn't exist yet, create one in [Data Templates](data-templates.md).
-2. **Choose the matching field** — In the **Connector key** dropdown, pick the raw field name that carries this measurement (e.g., pick `t` if your sensor sends temperature as `t`).
+2. **Choose the matching field** — In the **Device data key** dropdown, pick the raw field name that carries this measurement (e.g., pick `t` if your sensor sends temperature as `t`).
 3. **Save** — The next matching transmission supplies the measurement to dashboards, automations, alerts, and history.
 
-If the Connector key is not filled in, the data for that metric will be ignored.
+If the Device data key is not filled in, the data for that metric will be ignored.
 
 Add as many metrics as your sensor reports — you can map them all in one go.
 
 #### Works with any sensor — even prototypes
 
-This is not limited to sensors in Chirp's device library. If you're testing a prototype sensor that doesn't have a standard codec, a DIY sensor with custom firmware, or older hardware that sends cryptic field codes instead of readable names — it all works. As long as Chirp receives the data, you see the fields and map them.
-
-For details on data templates, see [Data Templates](data-templates.md).
+A device does not need a library preset to supply measurements. It does need a compatible connector and decoding path: a LoRaWAN codec, a supported MQTT message shape, or the appropriate adapter. Once named fields arrive, map the readings you need. See [LoRaWAN Devices](lorawan-devices.md) and [MQTT Devices](mqtt-devices.md).
 
 #### A note for MQTT sensors
 
-Two things behave differently for sensors connected through the [MQTT connector](../connectors/mqtt-connector.md), worth knowing before you start mapping:
-
-- **The Connector key dropdown is empty until your sensor has published at least once.** The dropdown lists keys actually received from your device. For a brand-new MQTT device, that means a two-pass save: add a row per metric and pick a normalized template, leave the Connector key blank, save, ensure your device is publishing, reopen the device — the dropdown now lists the payload keys, match each row, save again.
-- **The Mapping tab Value column and the Logs tab show different things.** The Value column is a live snapshot of the most recent payload. The Logs tab is per-sensor history, populated only by publishes that arrive *after* you save the Connector keys. Older publishes don't fill in retroactively — generate a fresh publish (use a Z2M web UI control, send a `/get` poll, or wait for the device's next scheduled report — don't rely on a wall-switch toggle, which doesn't generate a publish on many Zigbee bulbs) after saving Connector keys to populate the Logs tab.
-- **Mapping is iterative.** The first publish may reveal payload keys you didn't anticipate. Return to the device's Mapping tab whenever you want to add more fields — review the Connector key dropdown and Value column, add rows for the keys you missed, set the right Data type, save, and generate another publish so the Logs tab starts collecting history for the new mappings.
-
-For full details, see [Topics and device routing](../connectors/mqtt/topics-and-device-routing.md).
+The **Device data key** dropdown fills after messages arrive. Save the connection first, let the sensor publish, then select the received keys for your measurements and save. Wait for another message to see stored history. See [MQTT Devices](mqtt-devices.md#map-messages-to-retained-measurements).
 
 ### Logs
 

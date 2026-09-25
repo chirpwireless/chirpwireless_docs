@@ -41,7 +41,7 @@ This is rare — if the Z2M side is publishing successfully on a topic that star
 This is a device-routing problem inside Chirp. The connector is receiving messages but they're not matching the device record.
 
 - **Device ID Topic pattern doesn't match the published topic.** Z2M publishes to `zigbee2mqtt/{friendlyName}` (after Chirp strips the prefix). The Device ID Topic field must be `zigbee2mqtt/{{deviceId}}` — exactly. Common mistakes: leading slash, missing the `zigbee2mqtt/` prefix, an extra path segment that the published topic doesn't have.
-- **Device ID is byte-for-byte different from the friendly name.** This is the single most common cause. Chirp's Device ID input strips whitespace, so a Z2M friendly name with spaces (`Living Room Sensor`) won't match a Device ID typed with the same spaces — Chirp stored a different string. The fix: rename the device in Z2M to a whitespace-free name (`LivingRoomSensor`), and use the same exact string in Chirp's Device ID field. Capitalisation is preserved and significant — `LivingRoomSensor` and `livingroomsensor` are different.
+- **Device ID differs from the publisher’s identifier.** Compare the configured ID with the actual topic segment or payload field, including case and spaces. MQTT IDs preserve both. Keep the existing twin when replacing a bound identity: see [MQTT Devices](../../devices/mqtt-devices.md).
 
 Verify what Z2M is publishing right now:
 ```bash
@@ -54,12 +54,12 @@ The topic in those lines is what your Device ID Topic and Device ID need to matc
 
 **Symptoms:** Open a registered device, the Mapping tab shows live values and Last update timestamps, but the Logs tab stays empty even after toggling the device. The most common cause of "is this thing broken?"
 
-It's not broken. The two tabs read different things:
+The two tabs show different information:
 
-- **Mapping tab Value column** = a live snapshot of the most recent payload. Updates on every accepted publish, regardless of whether you've finished setting up Connector keys.
-- **Logs tab** = per-sensor history. Populated only by publishes that arrive *after* you've saved Connector keys for that sensor.
+- **Mapping tab Value column** = a live snapshot of the most recent payload. Updates on every accepted publish, regardless of whether you've finished setting up Device data keys.
+- **Logs tab** = per-sensor history. Populated only by publishes that arrive *after* you've saved Device data keys for that sensor.
 
-If the most recent publish happened before you saved Connector keys, that publish never reaches Logs — only future publishes will. The fix is to **generate a fresh publish**.
+If the most recent publish happened before you saved Device data keys, that publish never reaches Logs — only future publishes will. The fix is to **generate a fresh publish**.
 
 For a Zigbee device the cleanest way is to use the Z2M web UI:
 
@@ -134,3 +134,7 @@ The username and Topic prefix don't change on rotation.
 - Back to [Topics and device routing](topics-and-device-routing.md) — to confirm the Device ID Topic pattern and friendly-name rules.
 - [External MQTT](external-mqtt.md) — for broker-side issues with self-hosted brokers.
 - [Setting up Zigbee2MQTT](zigbee2mqtt.md) — to recheck the Z2M install.
+
+## Rejected measurement values
+
+If incoming fields update but one measurement has no fresh history, compare its template Type with the actual payload. `"ON"`/`"OFF"` need String; Boolean accepts actual booleans and supported true/false or 0/1 forms. Incompatible values are rejected individually, not stored as nulls. See [Connection Diagnostics](../../devices/connection-diagnostics.md).

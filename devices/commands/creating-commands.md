@@ -88,3 +88,13 @@ Tap **Save**. The command shows up straight away in your list of commands and on
 
 * Decide how Chirp confirms the command worked — [Making sure it worked](verification.md).
 * Actually press the button — [Sending a command](executing-commands.md).
+
+## Parameter and editor actions
+
+**Add Parameter** creates another input. Give each parameter a distinct non-empty **Name** and select Integer, Float, String or Boolean. Use the same name inside `{{ parameterName }}` placeholders. The **Remove** control deletes that parameter from the edited command; update payload and expected-value placeholders that referred to it before saving.
+
+Numeric **Min** and **Max** are optional bounds; if both are supplied, Max must exceed Min. An optional numeric **Default** must fit the range. For String, **Enum (comma-separated, optional)** defines allowed values; separate choices with commas, and choose a matching Default when using one. The string editor has no minimum/maximum length controls. Boolean Default offers **No default**, **true** and **false**. **Description** explains the parameter in the execution dialog.
+
+In encoder mode, **Available fields** lists inputs available to your function. Fill **Test inputs** for the parameter values, then use **Try Encoder** to inspect output or an error and any console messages. This previews encoding; it does not send the command. Correct invalid JSON, unknown placeholders or out-of-range parameter settings before saving.
+
+**Back to Commands** returns to the list. Save your changes first if you want to keep them. Read-only access disables editing. To execute a saved command, follow the execution guide; configuring its payload does not itself operate the hardware.
