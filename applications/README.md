@@ -8,7 +8,7 @@ An **application** is a complete setup for a household need, with its devices, d
 
 The idea is for a specialist to prepare that setup so a household can start using a solution without having to design every part of it. A home-equipment provider knows which sensors are suitable, what a useful dashboard should show, and how the notifications should work. Applications gives those pieces a place together.
 
-**The planned next step is to offer those prepared setups as templates.** You would choose a solution for your home, apply its template, and have its digital devices, dashboards, rules, and alarms created together. In release 3.10.0, you can create an application and assemble its contents yourself. Provider templates and the ability to apply them are planned capabilities.
+**The planned next step is to offer those prepared setups as templates.** You would choose a solution for your home, apply its template, and have its digital devices, dashboards, rules, and alarms created together. You can create an application and assemble its contents yourself. Provider templates and the ability to apply them are planned capabilities.
 
 <figure><img src="../.gitbook/assets/chirp-applications-dashboard.jpg" alt="Chirp application showing its assigned home dashboard"><figcaption><p>Open an application's Dashboard tab to see the views associated with that household setup.</p></figcaption></figure>
 
@@ -37,7 +37,7 @@ This is the direction for Applications. Template publishing and installation are
 
 ## Build and use an application today
 
-The current release lets you assemble your own solution and keep its parts together. Creating an application starts an empty setup: it does not automatically add sensors, build dashboards, or configure notifications.
+Applications lets you assemble your own solution and keep its parts together. Creating an application starts an empty setup: it does not automatically add sensors, build dashboards, or configure notifications.
 
 1. [Create an application](creating-an-application.md), such as Home Watch, and describe what you use it for.
 2. Set up the devices, dashboard, rules, and alarm definitions you need.
