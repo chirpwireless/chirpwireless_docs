@@ -4,7 +4,7 @@ description: "Make a named home setup in Chirp and give it a description that yo
 
 # Creating an Application
 
-Create an application to give a household task a clear home in Chirp. A name such as **Home Watch** tells you more than a collection of device model numbers: it identifies what the setup is meant to help you do.
+Use this guide when you are assembling your own household solution in Chirp. First create the application, then set up and assign the devices, dashboards, rules, and alarms it needs. The planned option to apply a provider's prepared template is explained in [Applications](README.md). A name such as **Home Watch** identifies the purpose of the setup.
 
 Before starting, check the organization shown in the sidebar. You need to belong to that organization. There is no separate Applications permission; the permissions for devices, dashboards, rules, and alarms still determine what you can see or change inside the setup.
 

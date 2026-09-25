@@ -28,8 +28,3 @@ For detailed instructions, see [Building a Dashboard](../dashboards/building-a-d
 ## An empty Dashboard tab
 
 Open **Content** and look under **Dashboards**. If no dashboard is associated, edit the one you want to use and choose this application in its **Application** field. You can also make a new dashboard and assign it during setup. If a dashboard exists but is not available to you, check your access with the organization's owner.
-
-
-## Show the resources behind the view
-
-Use a [Text widget](../dashboards/adding-widgets/text-widget.md) to list selected devices, rules, or alarms alongside the dashboard readings. A home dashboard can show the sensors and alerts that belong to the household task.
