@@ -8,11 +8,13 @@ This is a hardware-specific walkthrough for the **Paulmann SmartHome LED spot, m
 
 If you have a **different Zigbee bulb or device**, you don't need this page — the generic flow applies. Pair the device through Z2M following your manufacturer's instructions, then [register it in Chirp](../../../connectors/mqtt/topics-and-device-routing.md) the same way as any other Z2M-bridged device. The Paulmann 50064 happens to be the bulb we had in hand for the testing — the procedure transfers cleanly to other Zigbee devices.
 
+The [Zigbee2MQTT model reference](https://www.zigbee2mqtt.io/devices/50064.html) documents its supported controls and payload ranges. The pairing notes below describe the setup used for this guide.
+
 ## What this bulb is
 
 - **Type:** CCT (correlated color temperature) tunable-white LED. Adjusts brightness and color temperature, but not color (no RGB).
 - **Color temperature range:** 150–500 mired (about 6667K daylight to 2000K candle-warm).
-- **Power:** mains, screw-in fitting (varies by region — E14, E27, GU10 versions exist).
+- **Power:** mains-powered; confirm the fitting and electrical rating on your unit before installation.
 - **Zigbee profile:** Zigbee 3.0, identifies as `Paulmann SmartHome led spot (50064)` in Z2M.
 - **Z2M auto-identifies it** — once paired, Z2M shows the brand and model in the Devices tab without manual selection.
 
@@ -85,14 +87,14 @@ Full field reference:
 
 | Field | Type | Range | Notes |
 |-------|------|-------|-------|
-| `state` | string | `"ON"`, `"OFF"`, `"TOGGLE"` | **String, not boolean.** Map to a String-typed metric in Chirp. |
+| `state` | string | `"ON"`, `"OFF"` | `TOGGLE` is a command input, not a reported steady state. **String, not boolean.** Map to a String-typed metric in Chirp. |
 | `brightness` | integer | 0–254 | 0 turns the bulb off on some firmware versions. Note: 0–254, not 0–255 or 0–100. |
 | `color_temp` | integer | 150–500 mired | See the Mirek-scale table below. |
 | `color_temp_startup` | integer or null | 150–500, `65535`, or `null` | "Start Up Color" — what color temperature the bulb turns on as when power is restored. `null` = not configured; the bulb uses its firmware default on cold power-on. `65535` = sentinel for "restore previous color temperature." Any number in 150–500 = a fixed mired value to apply on every power-on. Set via a `/set` command with an explicit numeric value to configure. |
 | `power_on_behavior` | enum | `off`, `on`, `toggle`, `previous` | Behavior after a power loss. Send via `/set` to configure. |
-| `effect` | enum | `blink`, `breathe`, `okay`, `channel_change`, `finish_effect`, `stop_effect` | One-shot effects. Send via `/set` to trigger. |
-| `linkquality` | integer | 0–255 | Zigbee link quality. Diagnostic only — not user-facing. |
-| `color_mode` | string | `"color_temp"` | **Always present in payloads even though it's not on the [zigbee2mqtt.io device page](https://www.zigbee2mqtt.io/devices/50064.html).** Trust the actual payload over the device page when they disagree. |
+| `effect` | enum | `blink`, `breathe`, `okay`, `channel_change`, `finish_effect`, `stop_effect` | Command-only effects. Send via `/set`; this field is not published as a state reading and cannot be read with `/get`. |
+| `linkquality` | integer | 0–255 | Zigbee link quality. Signal-quality reading useful during troubleshooting. |
+| `color_mode` | string | `"color_temp"` | Reported by the setup used for this guide. Map it if your bridge publishes it; optional fields can differ with firmware and bridge versions. |
 
 ### Mirek scale (`color_temp` values)
 
@@ -108,7 +110,9 @@ Z2M ships named presets for the Paulmann 50064:
 | warm | 454 | 2203K | Candle-like |
 | warmest | 500 | 2000K | Very warm amber |
 
-When you map `color_temp` in Chirp, choose a Number-typed metric. The unit is mired (lower = cooler).
+When you map `color_temp` in Chirp, choose a numeric metric. The unit is mired (lower = cooler).
+
+If this bulb replaces one already represented in Chirp, keep that digital device and reconnect its MQTT source and measurement mappings. Review any saved commands for the replacement model. The steps below describe a new registration; [Sensor Details](../../sensor-details.md#replacing-a-sensor-at-home) covers the replacement approach.
 
 ## Registering the bulb in Chirp
 
@@ -126,15 +130,15 @@ Once Z2M is publishing to a topic Chirp can see (verify via the connector's **La
 
    | Normalized key | Type | Data type |
    |---------------|------|-----------|
-   | State | String | Reported State |
-   | Brightness | Number | Reported State |
-   | Color Temperature | Number | Reported State |
+   | State | String | Telemetry |
+   | Brightness | Integer | Telemetry |
+   | Color Temperature | Integer | Telemetry |
    | Color Mode | String | Telemetry |
-   | Link Quality | Number | Telemetry |
+   | Link Quality | Integer | Telemetry |
 
    If a normalized key you want doesn't exist, use **+ Add new metric** and create one. The modal handles both the normalized name and the underlying sensor template.
 
-   > **Color Mode must be a String, not an Integer.** It's tempting to default to a numeric type for what looks like a small enumerated value, but the actual payload value is a string (`"color_temp"`). A Number-typed metric will report null. The same is true for `state` (`"ON"`/`"OFF"`).
+   > **Color Mode must be a String, not an Integer.** It's tempting to default to a numeric type for what looks like a small enumerated value, but the actual payload value is a string (`"color_temp"`). A numeric metric rejects this text instead of storing it. The same is true for `state` (`"ON"`/`"OFF"`).
 
 7. Click **Save**.
 8. **Generate a publish.** Open the bulb in the Z2M web UI and drag the brightness slider, or use the on/off toggle. Z2M sends a `/set` command, the bulb confirms the new state, and Z2M publishes the confirmed payload — that's the publish Chirp needs.
@@ -156,13 +160,13 @@ Once the bulb has been publishing for a little while, the Connector key dropdown
 
 11. Reopen the device record. Confirm the Connector key dropdown now lists `color_temp_startup` as an option (if not, force a publish that includes it: send a `/get` request, or send a `/set` with a `color_temp_startup` value).
 12. Click **Add key** in the Mapping sub-tab.
-13. Pick or create a **Start Up Color** normalized key (Number type, Reported State data type).
+13. Pick or create a **Start Up Color** normalized key (Integer type, Telemetry data type).
 14. Set the Connector key to `color_temp_startup`.
 15. Click **Save**.
 
 | Mapping row | Connector key | Type | Data type |
 |------------|--------------|------|-----------|
-| Start Up Color | `color_temp_startup` | Number | Reported State |
+| Start Up Color | `color_temp_startup` | Integer | Telemetry |
 
 **What "Start Up Color" means:** the color temperature the bulb turns on as when power is restored. A specific number (150–500 mired) means "always cold-start at this color." `65535` means "remember the previous setting and restore it on power-on." `null` means it isn't configured — the bulb uses its firmware default. Useful in homes where you want the lamp to always come on warm regardless of how it was last left.
 

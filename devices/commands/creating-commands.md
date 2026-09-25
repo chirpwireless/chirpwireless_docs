@@ -6,7 +6,7 @@ description: Set up a device command in Chirp — name it, pick the device, add 
 
 A command is a saved action with a friendly name — "Turn on", "Set brightness", "Warm white" — that you create once and then use again and again. After it's set up, you (or anyone you share your home with) can run it without ever seeing the technical bits.
 
-Open the device, go to the **Commands & States** tab, stay on the **Commands** part, and tap **Add new command**. The setup screen is split into four short steps.
+Open the device, go to the **Commands & States** tab, stay on the **Commands** part, and tap **Add new command**. For physical devices, the editor has four sections: Identity, Routing, Payload, and Verification. A pretend sensor skips Routing.
 
 <figure><img src="../../.gitbook/assets/device-command-editor.jpg" alt="The command setup screen with the name, where-to-send, and message steps"><figcaption></figcaption></figure>
 
@@ -24,14 +24,18 @@ This tells Chirp how to reach the device. What you see depends on how the device
 * **MQTT topic** — The address the message is sent to.
   * On Chirp's hosted broker, the first part of the address (the prefix) is filled in for you; you add the rest, like `living-room-lamp/set`. Your device needs to be listening on the full address.
   * On your own broker, type the full topic exactly as your device expects it.
-  * Keep it under 500 characters, leave out the `#` and `+` symbols, don't leave an empty gap between slashes, and don't start it with `iot/`, `external/` or `external-downlink/` — those are reserved.
+  * Use at most 500 characters, leave out the `#` and `+` symbols, don't leave an empty gap between slashes, and don't start it with `iot/`, `external/` or `external-downlink/` — those are reserved.
 * If another command already uses the same address, Chirp gives you a heads-up so two actions don't clash.
 
 ### Devices on LoRaWAN
 
 * **fPort** — A number from **1 to 223** that tells the device which "channel" the message is for. Your device's manual will tell you which to use.
-* **Confirmed downlink** — A switch: leave it **On** to have the network wait for the device to confirm it got the message, or **Off** to simply send and move on. Turn it **On** if you plan to pick *Ask the device* in step 4 — that check waits for the confirmation, so it can't be saved without one.
-* LoRaWAN messages always go out as raw bytes, so they always go through a converter. The send-as-is option only applies to MQTT devices.
+* **Confirmed downlink** — A switch: leave it **On** to have the network wait for the device to confirm it got the message, or **Off** to simply send and move on. Turn it **On** if you plan to pick **Query after ack** in step 4 — that check waits for the confirmation, so it can't be saved without one.
+* LoRaWAN messages always go out as raw bytes, so they always go through a converter. MQTT devices and pretend sensors also offer a send-as-is option.
+
+### Pretend sensors
+
+There is no topic or fPort. With **Support commands** on, send an object using the pretend sensor's data keys, for example `{"light_on": true}`. For **Process with encoder**, supply a custom encoder that returns the same kind of object.
 
 ### Devices that can't be controlled
 
@@ -60,7 +64,7 @@ For MQTT devices, you choose how the message is built:
 * **Send as-is** — send the message straight through (best when your device understands plain JSON).
 * **Process with encoder** — run it through a small converter first.
 
-When a converter is used (and it always is for LoRaWAN, where messages have to be turned into raw bytes), you write a short **template** with `{{ placeholders }}` that get filled in with your inputs — so a "set brightness" command drops the brightness number into the right spot. Most of the time the converter that came with your device's setup is all you need; advanced users can supply their own.
+When a converter is used (and it always is for LoRaWAN, where messages have to be turned into raw bytes), you write a short **template** with `{{ placeholders }}` that get filled in with your inputs — so a "set brightness" command drops the brightness number into the right spot. LoRaWAN can use its device codec when no custom encoder is supplied. MQTT and pretend sensors require a **Custom encoder** when you choose **Process with encoder**; they do not fall back to a device codec.
 
 ## 4. Decide how Chirp checks it worked
 
@@ -70,7 +74,11 @@ It has a page of its own: [Making sure it worked](verification.md). To find out 
 
 ## Test it before you save
 
-Whenever a converter is involved, there's a **Try it** tool right in the setup screen. Put in some test values and run it to see exactly what will be sent — including the technical form of the message and whether it ran cleanly. It's a no-risk way to be sure the command is right *before* it ever reaches your device.
+Whenever a converter is involved, there's a **Try Encoder** tool right in the setup screen. Put in some test values and run it to see exactly what will be sent — including the technical form of the message and whether it ran cleanly. It's a no-risk way to be sure the command is right *before* it ever reaches your device.
+
+## If you have replaced the hardware
+
+Reopen the saved command and check where it sends, what message it sends, and which reading confirms the result. A new smart-plug model may need a different message even though you kept its name and digital device. Update those details before using its dashboard button or automation again.
 
 ## Save
 

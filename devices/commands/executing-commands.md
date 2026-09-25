@@ -17,12 +17,14 @@ The **Available commands** list shows every action set up for the device — its
 Tap **Execute** next to a command.
 
 * If it doesn't need any inputs, just confirm and it's on its way.
-* If it does — say, a brightness level — fill in the **value**. Chirp shows the allowed range (like `Min: 0 - Max: 100`) and won't let you send something the device can't handle.
+* If it does — say, a brightness level — fill in the **value**. Chirp shows the allowed range (like `Min: 0 - Max: 100`) and checks the limits configured for that command.
 * Tap **Execute** to send, or **Cancel** to change your mind.
 
 ## If the device is offline
 
-If Chirp hasn't heard from the device recently, you'll see a note at the top saying it's offline and when it was last seen. You can't send a command to a sleeping device on the spot — but anything you've queued will be sent automatically the moment it wakes up and reconnects, so nothing gets lost.
+Chirp disables **Execute** here when the last message is more than 30 minutes old. That check is separate from the reporting schedule used by Connection diagnostics, so a sensor that normally reports hourly can be healthy there but unavailable for an interactive command.
+
+If Chirp has no last-seen time, the absence of a banner does not mean the device is reachable. Check its connection and recent readings. After sending, read **Recent executions** before repeating an action.
 
 ## Your activity history
 
@@ -39,7 +41,7 @@ A command's status will be one of:
 * **Pending** — on its way.
 * **Confirmed** — done, and the check you set up saw the device's reading match.
 * **Delivered** — sent on its way. You didn't set up a check, so Chirp isn't confirming the result — just that the command went out.
-* **Soft warning** — it was sent and received, but Chirp couldn't confirm the result in time. Often it worked anyway — just worth a peek.
+* **Soft warning** — receipt or the expected reading was not confirmed in time. Check Details; this status alone does not prove the device received or performed the action.
 * **Failed** — it didn't go through. The **Details** note tells you why.
 
 ### What the Details note can say

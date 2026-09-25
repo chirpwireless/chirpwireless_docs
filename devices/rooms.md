@@ -1,71 +1,28 @@
 ---
-description: Group your sensors into rooms like Living Room, Kitchen, and Garden so everything's easy to find.
+description: Make Chirp devices easy to recognize by room using clear names, photos, applications, and dashboards.
 ---
 
 # Rooms
 
-As your smart home grows, organizing sensors by room keeps everything easy to find. Instead of scrolling through a flat list, you can group sensors into rooms like Living Room, Kitchen, Garden, and Garage — so you always know where each sensor lives.
+Room-based names help you find the right digital device as your home grows. **Living Room Temperature**, **Garage Door**, and **Garden Valve** tell you what each record follows, even when its physical sensor is replaced.
 
-In Chirp, rooms are managed through **Settings → Locations**. Think of each location as a room or area of your home. The interface uses the term "Location settings," but throughout this guide we'll call them rooms because that's how most home users think about them.
+## Name devices by room
 
-## Getting to the rooms page
+1. Open **Devices** and choose the existing device.
+2. On **Device info**, change **Device name** to include the room and purpose.
+3. Add a photo if it helps distinguish similar devices.
+4. Save.
 
-1. Click **Settings** in the sidebar.
-2. Click **Locations** (or go directly to `/settings/locations`).
+Renaming keeps the same digital device and measurement history. If you are replacing a sensor in the same room, retain that device and [reconnect the replacement](sensor-details.md#replacing-a-sensor-at-home).
 
-The page title reads **Location settings** with the subtitle "Manage your locations."
+## Keep related devices together
 
-## Adding a room
+Use **Application** on Device info to associate a device with a setup such as Home Watch. Each device belongs to one application at a time; **Default** leaves it outside a named application. See [Organizing Content](../applications/organizing-content.md).
 
-1. Click **Add location** in the top-right corner.
-2. In the dialog, enter a name for the room — something that matches how you think about your home: "Living Room," "Kitchen," "Garden," "Garage," "Basement."
-3. Click **Save**.
+For everyday viewing, arrange a dashboard around the rooms you check together and select their measurements in its widgets. The room name helps you pick the right device; it does not automatically create a location assignment or filter an automation. Choose the relevant devices explicitly when configuring a rule.
 
-The room appears in the list. If this is your first one, it replaces the empty state message ("You don't have locations yet").
+## Room names and location readings
 
-## Editing a room
+A room name identifies a monitoring point. GPS coordinates are measurements sent by a tracker, such as the one attached to **Family Car**. Renaming a device does not change those coordinates or move a marker. See [Tracking What Matters](../dashboards/tracking-what-matters.md) to view recorded positions.
 
-Each room in the list shows:
-
-- **Name** — An editable text field. Just click it, type a new name, and click away to save.
-- **Delete** — Click the trash icon to remove the room (a confirmation dialog appears first).
-- **Expand** — Click the chevron to reveal details and sub-rooms.
-
-### Setting a location on the map
-
-When you expand a room, a search/coordinates field appears. You can:
-
-- Type an address or place name to search
-- Enter latitude and longitude directly
-
-This places the room on a map, which helps when viewing sensor data spatially (covered in the Home Dashboards section).
-
-## Sub-rooms
-
-Sub-rooms let you add a layer of detail within a room. For example:
-
-| Room | Sub-rooms |
-|------|-----------|
-| Garden | Greenhouse, Lawn, Raised Beds |
-| House | Upstairs, Downstairs, Attic |
-| Garage | Workshop, Storage |
-
-**To add a sub-room:**
-
-1. Expand the parent room by clicking the chevron.
-2. Click the **+** button that appears below the sub-room list.
-3. Enter a name and click **Save**.
-
-Sub-rooms appear nested under their parent. Each can be renamed or deleted independently.
-
-### Showing and hiding sub-rooms
-
-The **Show sub-locations** toggle at the top of the page controls whether sub-rooms are visible. Turn it off for a clean overview of just your main rooms; turn it on to see the full hierarchy.
-
-This toggle is on by default.
-
-## Tips
-
-- **Name rooms like you talk about them.** "Kitchen" is better than "Room 3." Future you will thank present you.
-- **Start simple.** You don't need sub-rooms right away. Add them later if your setup gets complex enough to need them.
-- **Rooms help everywhere.** Once set up, rooms can be used to organize dashboards, filter sensor data, and group automations (covered in later sections).
+The current digital-device editor does not include a room/location assignment field. Use its name, photo, and application for organization.

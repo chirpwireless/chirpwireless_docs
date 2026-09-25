@@ -14,7 +14,7 @@ A pretend sensor behaves like a real one in every way that matters. It appears i
 
 You need an **Emulator** connection. It takes two clicks and there is nothing to fill in — no account to link, no keys to copy. See [Emulator Connector](../connectors/emulator-connector.md).
 
-That's the whole list. No sensor, no gateway, no identifiers off the back of a box.
+You also need permission to edit devices and room in your subscription for another digital device. No physical sensor or gateway is needed.
 
 ## Making one
 
@@ -29,11 +29,23 @@ Add a sensor as usual, then on its **Connection** tab choose **Emulator**. You w
 
 Tick **Use device preset** and pick from the list of real sensor models, and you get that model's genuine set of readings — a multi-sensor gives you temperature, humidity, CO2 and air quality, each with the right kind of value. It saves typing, and it means the names on your dashboard are the ones the real sensor will use when it arrives.
 
-Worth knowing: picking a preset **replaces** anything you typed in by hand, including how often it reports. Choose the preset first, then adjust.
+Choose your preset before collecting readings. It replaces the current keys and reporting interval, and Chirp asks you to confirm if rows already exist. Saving the replacement can remove measurements you were using and their accessible history. Unticking **Use device preset** keeps the current settings; it does not undo that replacement.
 
 ### Or type the readings yourself
 
-Use **Add device data key** and give each reading a name — `temperature`, `humidity`, whatever you like — and say what kind of value it is. Pick **Float** for anything with a decimal point. A whole-number reading will quietly drop the decimals: type 1.5 and you get 1. See [Data Templates](data-templates.md) for how value types work.
+Use **Add device data key** and give each reading a name — `temperature`, `humidity`, whatever you like — and say what kind of value it is. Pick **Float** for anything with a decimal point. For **Integer**, enter a whole number: the manual-value field rejects `1.5`. Float inputs accept decimals with a dot, not a comma. See [Data Templates](data-templates.md) for how value types work.
+
+## Choose how the pretend readings behave
+
+Beside each key on **Connection**, click **Emulator**. The controls depend on the kind of reading:
+
+- For a number, set **From** and **To**, the value it **Holds around**, and **Variability**. The lower limit must be below the upper limit, and the usual value must sit between them.
+- For true/false, choose a **Default state** and how often it changes with **Activity**: Rare, Occasional, or Frequent.
+- For text, enter **Values & weights** and adjust **Stickiness**. Add between 1 and 32 values, no longer than 64 characters each. Their weights must be positive whole numbers adding up to 100%.
+
+Apply your choices and save the device. For a leak sensor, use false as the usual state and Rare activity; for room temperature, choose a realistic temperature range. Set **Data sending interval** in whole minutes, hours, or days, between one minute and one day.
+
+One pretend sensor can contain up to **50 readings** and **20 preset commands**. Use nonempty data keys no longer than **256 characters**; a manually pinned text value has the same length limit.
 
 ## Making it send something
 
@@ -44,23 +56,31 @@ Open the sensor's **Emulator** tab and you will see each reading with a box next
 
 <figure><img src="../.gitbook/assets/emulator-manual-value.jpg" alt="The Emulator tab with a temperature value typed in, ready to send"><figcaption></figcaption></figure>
 
+To let Chirp generate values again, empty the pinned value and press **Save**. If the input is a dropdown, select **No manual value** first. Save a newly added reading on the device before using its value controls.
+
 Sending a value counts as changing something, so a household member with view-only access can watch a pretend sensor but cannot push readings into it.
+
+A pretend sensor offers **No verification** for commands. It can exercise your setup, but it does not confirm delivery to real hardware. Automations triggered by its readings can still operate other connected devices, so check their actions before sending generated values.
 
 ## When the real sensor arrives
 
 Open the sensor, go to its **Connection** tab, and change it from **Emulator** to the real connection — then enter the details that came with it.
 
-Everything else stays exactly as you left it: the dashboard, the widgets, the alerts, who gets told. You are swapping out where the numbers come from, nothing else. Your Thursday delivery becomes a five-minute job instead of an evening.
+The same digital device and measurement identities remain available to your dashboards and automations. Check that the new hardware fields feed those measurements and review any commands before using them with the replacement.
 
 You can go the other way too, putting a real sensor back on the emulator for a moment if you want to test something without waiting for the house to cooperate.
 
+### Know which readings were generated
+
+Switching to real hardware keeps the digital device and its existing measurements. Earlier generated readings remain part of their history, so note when the actual sensor or tracker starts reporting. Use a separate pretend device if you want the real device's history to contain observations only.
+
+After the change, check the source fields and the time of the latest reading. For a broken tracker that you are replacing with another tracker, follow [Sensor Details](sensor-details.md#replace-your-cars-tracker).
+
 ## Copying one
 
-Copying a sensor gets you part of the way, but not all of it — worth knowing before you set one up carefully and expect five free copies.
+The copy brings its pretend readings, generator settings, reporting interval, command-support setting, and preset commands with it. Enter a new **Device ID** and check its name before saving.
 
-The copy arrives with the original's name, its reading rows, its connection and its photos. What it does **not** bring is the pretend setup itself: the readings it invents, how often it reports, and whether it accepts commands all go back to their defaults. Until you set those up again, the copy sits there quietly and sends nothing.
-
-The mapping between raw fields and your data templates does not survive the save either, so redo that on the copy too.
+It is a new digital device with a fresh history. Use it to create another example, not to replace hardware on the original device. If saving the emulator setup fails after the device was created, reopen its **Connection** tab and save the corrected setup again.
 
 See [Sensor Details](sensor-details.md).
 
