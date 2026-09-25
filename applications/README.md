@@ -1,14 +1,16 @@
 ---
-description: "Bring a complete home setup together in Chirp Applications, and see how planned templates will let providers prepare solutions for your household."
+description: "Bring a complete home setup together in Chirp Applications, and see how planned templates will let dealers prepare solutions for your household."
 ---
 
 # Applications
 
 An **application** is a complete setup for a household need, with its devices, dashboards, rules, and alarms brought together in Chirp. A **Home Leak Monitoring** application, for example, could include water sensors under the sinks, a dashboard showing their readings, and a rule that sends an alert when a sensor detects a leak.
 
-The idea is for a specialist to prepare that setup so a household can start using a solution without having to design every part of it. A home-equipment provider knows which sensors are suitable, what a useful dashboard should show, and how the notifications should work. Applications gives those pieces a place together.
+A dealer is a business that supplies and sets up equipment for customers, such as home security or leak-monitoring systems. The dealer knows which devices are needed and can configure the dashboards, widgets, rules, and alerts that make them useful. Applications brings those parts together as a complete household solution.
 
-**The planned next step is to offer those prepared setups as templates.** You would choose a solution for your home, apply its template, and have its digital devices, dashboards, rules, and alarms created together. You can create an application and assemble its contents yourself. Provider templates and the ability to apply them are planned capabilities.
+**The planned next step is for the dealer to save that prepared solution as a reusable template.** You would choose the solution you need and apply it to create your own digital devices, dashboards, widgets, rules, and alarms, already configured to work together. Then you would connect your real sensors or other equipment to the prepared setup, replacing simulated inputs where needed. The views and automation would use your devices' readings without you having to build every dashboard and rule yourself. The dealer does the configuration work once, making it easier for each household to get started.
+
+You can create an application and assemble its contents yourself today. Dealer-provided templates and the ability to apply them are planned capabilities.
 
 <figure><img src="../.gitbook/assets/chirp-applications-dashboard.jpg" alt="Chirp application showing its assigned home dashboard"><figcaption><p>Open an application's Dashboard tab to see the views associated with that household setup.</p></figcaption></figure>
 
@@ -29,9 +31,9 @@ You can also name an application **Home Watch** and build it up around the readi
 
 ## How a prepared template would help
 
-An **application** is your own household setup inside Chirp. A **template** is the planned reusable setup that a specialist would prepare for households with a similar need.
+An **application** is your own household setup inside Chirp. A **template** is the planned reusable setup that a dealer would prepare for households with a similar need.
 
-For example, an equipment provider could build and configure a leak-monitoring solution, then make it available as a template. Applying it would create a household's own digital device configurations, dashboards, rules, and alarms together. You would connect the setup to your equipment and adapt it to your home, starting from the provider's work rather than assembling every piece independently.
+For example, a leak-monitoring dealer could prepare the sensor configurations, a dashboard with useful widgets, a rule that responds to water detection, and the alarm definition it uses. After applying the template, you would connect the prepared digital devices to the real sensors in your home and set installation-specific details such as notification recipients. The dashboard and rules would already be connected to those digital devices, so you could use the setup without rebuilding them.
 
 This is the direction for Applications. Template publishing and installation are planned; selecting a ready-made template is not part of the current creation process.
 
