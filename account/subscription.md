@@ -35,6 +35,14 @@ The plan comparison shows the limits for each tier across:
 - Rules engine capacity
 - Support level
 
+## Keeping your data history
+
+Your plan's retention period controls how far back you can access device readings. Check the current plan comparison for the period included in your tier.
+
+Replacing your car's tracker or a sensor at home does not start a new retention period. Keep the existing digital device and reconnect the replacement to its measurements, and the readings already stored remain available within that period. See [Sensor Details](../devices/sensor-details.md#replace-your-cars-tracker).
+
+If you need to keep readings for longer, use **Contact support** to discuss extended retention and suitable terms. Agree the period you need before relying on it; a longer arrangement does not by itself restore readings that have already expired. Commercial operations with compliance requirements can discuss their needs with the Kilo team through the [Kilo retention guide](https://docs.kiloiot.io/kilo-iot-server/settings/subscription#data-retention).
+
 ## When you reach a plan limit
 
 Your plan sets how many of certain things you can have at once — and dashboards are the one you're most likely to bump into. When you've built as many custom dashboards as your plan allows and try to add one more, Chirp lets you know you've **reached your dashboard limit** and tells you how many your plan includes. You have two easy options: remove a dashboard you no longer use to free up a slot, or tap **Upgrade Plan** to move to a tier that allows more. The same idea applies to the other limits — connected sensors, rules, and history — so if you find yourself running out of room, it's usually a sign it's time for the next plan up.

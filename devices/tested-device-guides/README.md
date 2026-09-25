@@ -4,9 +4,11 @@ description: Hands-on walkthroughs for specific sensors and bulbs we paired end-
 
 # Tested device guides
 
-These walkthroughs cover end devices we have tested end-to-end on Chirp. They are not the supported device list — Chirp's MQTT and LoRaWAN connectors work with thousands of devices across many brands, and you don't need to find your specific hardware in this section before adding it. The point of these pages is simply that **if you happen to have one of these exact devices**, the pairing procedure, configuration values, and quirks are documented here so you don't have to figure them out yourself.
+These walkthroughs cover end devices we have tested end-to-end on Chirp. They are not the supported device list — Chirp can receive readings from other compatible MQTT and LoRaWAN devices, and you don't need to find your specific hardware in this section before adding it. The point of these pages is simply that **if you happen to have one of these exact devices**, the pairing procedure, configuration values, and quirks are documented here so you don't have to figure them out yourself.
 
 For the standard registration flow that applies to any device, see [Adding Sensors](../adding-sensors.md). For Zigbee devices specifically, [Setting up Zigbee2MQTT](../../connectors/mqtt/zigbee2mqtt.md) explains the generic pairing pattern and links you to your device's manufacturer instructions.
+
+For replacement hardware, use these guides for pairing and payload details, then reconnect the new source to your existing digital device. Keep its measurement rows rather than repeating the new-device registration step. [Sensor Details](../sensor-details.md#replacing-a-sensor-at-home) explains the distinction.
 
 ## What's in this section
 

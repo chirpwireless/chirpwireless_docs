@@ -17,7 +17,7 @@ The Connection tab collapses all of that into one screen. It tells you which of 
 ## Where to find it
 
 1. Click **Devices** in the sidebar.
-2. Click the sensor you're worried about to open its detail dialog.
+2. Click the sensor you're worried about to open its detail page.
 3. Click the **Connection** tab.
 
 Diagnostics appear right there alongside the sensor's connection settings. Three blocks stack down the tab:
@@ -211,6 +211,12 @@ Sometimes the sensor is fine and the connection itself is the issue. MQTT connec
 
 If every one of your MQTT sensors looks silent, start at the connector rather than the sensors. See [MQTT Troubleshooting](../connectors/mqtt/troubleshooting.md).
 
+## A replacement is connected, but the values look old
+
+Your digital device keeps earlier readings when you disconnect its hardware. An old value does not mean the new tracker or sensor is working. Check the time of the last update, then follow the reception and mapping statuses.
+
+If messages arrive but measurements do not update, open **Mapping** and reconnect the new source fields to the existing rows. For Family Car, check both latitude and longitude. Keep the car's digital device while fixing the connection; [Sensor Details](sensor-details.md#replace-your-cars-tracker) explains the replacement steps.
+
 ## Tips
 
 - **Read top to bottom, fix bottom to top.** The reception status names the problem, the pipeline shows where it stops, the event feed proves it. But the fix almost always sits at the earliest stage that isn't OK.
@@ -224,3 +230,9 @@ If every one of your MQTT sensors looks silent, start at the connector rather th
 - [Adding Sensors](adding-sensors.md) — register a sensor and map its readings.
 - [Sensor Details](sensor-details.md) — the rest of the sensor dialog, including Logs.
 - [MQTT Troubleshooting](../connectors/mqtt/troubleshooting.md) — broker-side problems in depth.
+
+## A field arrives but its reading is missing
+
+Check the data template's **Type** as well as the connector key. Text such as `ON` cannot be saved as a Boolean, and an Integer measurement drops decimal places with a diagnostic warning. [What Your Device Is Sending](what-your-device-is-sending.md#readings-keep-the-shape-they-arrived-in) explains the accepted values.
+
+These reception checks use your reporting interval, with a one-hour fallback when no valid interval is configured. The command screen uses its own 30-minute last-seen check. With no last-seen time, diagnostics waits for data instead of treating a new sensor as proven offline.

@@ -1,75 +1,47 @@
 ---
-description: View location history for a GPS tracker — see the route your car, pet, or bike took on any chosen day.
+description: Follow your car's recorded locations on a Chirp dashboard and keep its history together when you replace the GPS tracker.
 ---
 
 # Tracking What Matters
 
-If you have a GPS tracker device — for your car, a pet collar, a bike, or anything else that moves — Chirp records where it's been and shows you the full history on a map. Instead of just knowing "the tracker is online," you can see the exact route it took, when it was at each point, and how fast it was moving.
+Chirp's **Map** widget lets you follow your car's reported positions on a dashboard. It shows the last known location and lets you choose a date range to see a route drawn from recorded coordinates. The same digital device can keep that location history when you replace the tracker installed in the car.
 
-GPS tracking is only available for tracker-type devices. It's not a feature for every sensor — your living room temperature sensor stays put and doesn't need tracking. For seeing where stationary sensors are placed, see [Maps and Device Placement](maps-and-device-placement.md).
-
-Location history works for any device that reports GPS coordinates. A cellular vehicle tracker (OBD2, CAN, or standalone GPS) connects through the [Tracker Connector](../connectors/tracker-connector.md); a LoRaWAN GPS tag connects through the [LNS Connector](../connectors/lns-connector/README.md). Either way, once a device reports its location, its history shows up here.
+For example, name the digital device **Family Car**, connect its GPS tracker, and map the reported latitude and longitude. If the tracker later malfunctions, keep Family Car and those measurements when connecting the replacement. You can then review recorded locations from both trackers on the same map, within your retention period.
 
 ## Where to find tracking
 
-1. Tap **Devices** in the sidebar.
-2. Tap a tracker device to open its detail page.
-3. The tracker page opens with the **Overview** tab showing a map of the device's recent movements.
+1. Connect your car through the [Tracker Connector](../connectors/tracker-connector.md) and map its location readings. A LoRaWAN GPS device uses the [LNS Connector](../connectors/lns-connector/README.md) instead.
+2. Add a [Map widget](adding-widgets/map-widget.md) to a dashboard and select the digital device, such as Family Car.
+3. Use latitude and longitude measurements with recognizable names: `lat` or `latitude`, and `lon`, `longitude`, or `lng`. The widget uses these measurements to find the coordinates.
+4. Save the dashboard and leave edit mode. The map displays the last known position as the tracker reports.
 
-### What tabs you'll see
+<figure><img src="../.gitbook/assets/map-widget.jpg" alt="Chirp Map widget settings with a device position shown in the map preview"><figcaption><p>Connect the Map widget to the car's digital device. Retain its coordinate measurements when replacing the tracker.</p></figcaption></figure>
 
-The tabs on the tracker page depend on your screen size and the type of tracker:
-
-**On your computer (all tracker types):**
-- **Overview** — The map with location history.
-- **Device log** — A raw log of events from the tracker.
-- **Settings** — Tracker configuration.
-
-**On your phone (standard and GPS trackers):**
-- **Overview**, **Metrics**, **Device log**, **Settings**
-
-**On your phone (mobile tracker type):**
-- **Overview**, **Device log**, **Settings**
-
-The **Metrics** tab shows up on mobile for certain tracker types, giving you access to telemetry readings in a phone-friendly format.
+You can also select one additional measurement, such as speed or battery level, for the current-position marker. Only readings the tracker actually supplies can be displayed.
 
 ## Picking a date range
 
-At the top of the tracker page, you'll see a **"Date range"** button. Tap it to choose which time period you want to see on the map.
+Select **History** on the Map widget and choose the dates you want to review. The map draws a line connecting the recorded positions for that period. Once history is open, use the date range button to choose another period or **Clear data range** to return to the current-position view.
 
-The calendar opens with only the days that have recorded data available for selection — grayed-out dates mean the tracker didn't send any position updates on those days. You can also use quick-select shortcuts for common ranges.
+The **Snap to roads** switch adjusts the displayed route to roads where matching is available. Turn it off to view the line between reported coordinates. A drawn line between positions is not a recording of every point travelled between them.
 
-Once selected, the button updates to show either the range name (like "Today" or "This week") or the specific dates in **DD.MM.YYYY - DD.MM.YYYY** format.
+Choose a shorter date range for a busy tracker if the route appears incomplete. The widget loads a limited batch of coordinate readings for each selected range. It needs both latitude and longitude at a matching timestamp to form a position.
 
-## Reading the map
+## Replacing a tracker while keeping location history
 
-The Overview tab shows every recorded position from the selected date range as a **dot on the map**, connected by lines that trace the route.
+Open the existing **Family Car** digital device and replace its physical connection. Keep its latitude and longitude measurement rows, then map the replacement tracker's fields onto those same rows. The Map widget continues using those measurements, so its history can include positions recorded before and after the change.
 
-### Tapping a point
+Follow [Replace your car's tracker](../devices/sensor-details.md#replace-your-cars-tracker) for the connection and mapping steps. Creating another digital device with the same name does not join the histories.
 
-- **Tap** a point on the map to select it. The map smoothly zooms in on that location.
-- The selected point appears at full brightness, while all other points fade to make it stand out.
-- A **tooltip** pops up showing:
-  - **When:** The date and time in DD.MM.YYYY, HH:mm format.
-  - **Signal strength (RSSI):** If available — this tells you how strong the tracker's signal was at that point.
-  - **Speed:** If available — how fast the tracker was moving.
+## Checking an unexpected route or missing position
 
-### Following the route
-
-The lines between points show the path the tracker took. You can trace the route visually to see:
-
-- Where the tracker went during the day.
-- Where it stopped or lingered (points clustered together).
-- Whether it followed the expected path.
-
-## What you might use this for
-
-- **Checking on your car** — "Where did the car go today?" Select today's date and see the full route on the map.
-- **Pet tracking** — If your dog's collar has a GPS tracker, check where your pet wandered during the afternoon.
-- **Bike security** — Left your bike locked up somewhere? Confirm it hasn't moved since you parked it.
-- **Reviewing yesterday** — Use the date range to look back at any day and see the full movement history.
+- **The position is old:** open the device's **Mapping** tab and check the values and **Last update** for both coordinates. A last known position does not mean the tracker is reporting now.
+- **New positions stopped after replacement:** reconnect `position.latitude` and `position.longitude` to the existing coordinate measurements and check [Connection Diagnostics](../devices/connection-diagnostics.md).
+- **The history is empty:** choose a period with recorded data inside your [retention window](../account/subscription.md#keeping-your-data-history). Open **Logs** to inspect the stored coordinate values and timestamps.
+- **There is a gap:** the tracker may have been disconnected, out of coverage, or not reporting during that period. Replacing it cannot recreate positions it never sent.
 
 ## What's next
 
-- [Maps and Device Placement](maps-and-device-placement.md) — See where your stationary sensors are placed.
-- [Live Home Data](live-home-data.md) — How real-time updates reach your dashboards and maps.
+- [Map Widget](adding-widgets/map-widget.md) — configure the map and its additional reading.
+- [Sensor Details](../devices/sensor-details.md) — manage the digital device and replace its hardware.
+- [Maps and Device Placement](maps-and-device-placement.md) — organize stationary devices by where they are installed.

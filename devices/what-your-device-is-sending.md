@@ -27,11 +27,11 @@ If a device has never sent anything, there's nothing to show yet. Wait for its n
 
 ## Where the decoder lives
 
-The decoder sits in the **Code functions** box on the device's connection settings. Picking a ready-made device profile fills it in for you. Setting a device up by hand leaves it empty, and you paste in the code from the manufacturer's instructions or a community collection.
+A **LoRaWAN** sensor uses **Code functions** on its **Connection** tab. Choosing a device profile fills in its codec; manual setup needs a compatible codec from the manufacturer. If you change it, save and check a new message.
 
-You can change it whenever you like. If readings are missing, look wrong, or the names don't match what the manufacturer describes, edit it and save — the device's next message comes through your version.
+**MQTT** devices use their message-format and field-extraction settings instead. A tracker gets its fields from the tracking integration, while a pretend sensor uses the keys you configured. Those sources do not use the LoRaWAN Code functions box.
 
-See [Adding Sensors](adding-sensors.md) for the whole setup walkthrough.
+See [Adding Sensors](adding-sensors.md) for the setup that fits your connection.
 
 ## Giving the fields proper names
 
@@ -41,17 +41,18 @@ You do that from the same Mapping section — see [Adding Sensors](adding-sensor
 
 A field you never map keeps arriving but has nowhere to go: it won't turn up in automations, on dashboards, or in a command check.
 
-## Readings keep the shape they arrived in
+## Match the reading to its type {#readings-keep-the-shape-they-arrived-in}
 
-Chirp keeps what the decoder produced, exactly as it was. If your plug reports the word `on`, the measurement holds the word `on` — not `true`, and not `1`. If it reports the number `1`, you get a number.
+The incoming field and the stored measurement can have different types. Chirp uses the **Type** chosen in your data template when saving readings:
 
-That matters any time you compare something:
+- **Float** accepts numbers and numeric text: `"19.5"` becomes the number `19.5`.
+- **Integer** accepts numeric values but removes their fractional part toward zero. A reading of `19.5` becomes `19`, with a warning in diagnostics.
+- **Boolean** accepts true/false, text `true`/`false`, and `0` or `1` as numbers or text. It does not translate words such as `ON`, `OFF`, or `yes` into Boolean values.
+- **String** keeps text and turns other values into text.
 
-* **In an automation**, compare a word to a word: `vars.socket_status == "on"`.
-* **On a command**, what you type as the expected value has to match how the device says it — see [Making sure it worked](commands/verification.md#what-to-type-as-the-expected-value).
-* **On a dashboard**, the same goes for conditions.
+If a value cannot be converted to its chosen type, it is not saved for that measurement. For a lamp reporting `ON` and `OFF`, choose String. For temperatures or car coordinates with decimals, use Float.
 
-When a comparison never seems to match, go and read the current value in the Mapping table and write yours to match.
+Look at **Logs** to check what was stored and **Connection** diagnostics to investigate rejected values. Write automation conditions and [command checks](commands/verification.md#what-to-type-as-the-expected-value) using that stored type. Adding a unit label does not convert the number into another unit.
 
 ## When the fields aren't what you expected
 
@@ -60,6 +61,12 @@ When a comparison never seems to match, go and read the current value in the Map
 **The names aren't the ones you were expecting.** The decoder is producing different field names than your measurements are looking for — which usually means the code was written for a different version of the device. Compare the names in the table against what you've mapped, and either fix the mapping or swap the code.
 
 **Nothing's being decoded at all.** Check the device is actually sending, then check the code. [Connection Diagnostics](connection-diagnostics.md) shows what arrived most recently and whether anything came out of it.
+
+## When a replacement sends different fields
+
+A new tracker or sensor may use different field names from the old one. The connector keys table shows what the current hardware reports. Map those fields to the digital device's existing measurements to keep their history together.
+
+For Family Car, reconnect the tracker fields `position.latitude` and `position.longitude` to the existing coordinate measurements. Check units for other values such as speed. The **Logs** tab shows stored measurement readings; the current payload table shows what is arriving now. See [Sensor Details](sensor-details.md#replace-your-cars-tracker).
 
 ## See also
 

@@ -12,7 +12,7 @@ This is different from the [Image Widget](image-widget.md), which lets you uploa
 
 Tap a button to switch to a date range view and see the route the device took over any period.
 
-For placing stationary sensors on a map so you can see where each one is installed, see [Maps and Device Placement](../maps-and-device-placement.md). For full GPS route history on the device detail page, see [Tracking What Matters](../tracking-what-matters.md).
+For placing stationary sensors on a map so you can see where each one is installed, see [Maps and Device Placement](../maps-and-device-placement.md). For reviewing the car's retained locations and keeping history through tracker replacement, see [Tracking What Matters](../tracking-what-matters.md).
 
 <figure><img src="../../.gitbook/assets/map-widget.jpg" alt="Add Map widget — appearance settings with a live map preview of a tracker"><figcaption></figcaption></figure>
 
@@ -59,7 +59,7 @@ The Map widget has three controls for reviewing past location data:
 - **Date range button** — Displays the active period in **DD.MM.YYYY - DD.MM.YYYY** format. Tap to change the range.
 - **Clear data range** — Resets the view back to the tracker's current position.
 
-When a date range is active, the widget draws the tracker's recorded positions as a dashed line connecting all the logged locations during that period. Up to 500 GPS points are rendered per date range.
+When a date range is active, the widget draws the tracker's recorded positions as a dashed line connecting all the logged locations during that period. The widget loads a limited batch of coordinate readings per date range. Choose a shorter range when reviewing a busy tracker so the period you need fits in the view.
 
 ## Troubleshooting
 

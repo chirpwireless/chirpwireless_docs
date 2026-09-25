@@ -4,7 +4,7 @@ description: Create and manage the metrics that give readings from different hom
 
 # Data Templates
 
-A data template tells Chirp what a sensor reading means and how to display it. In the app, these definitions are called **metrics**.
+A data template tells Chirp what a sensor reading means and how to display it. In the interface, these definitions are called **metrics**.
 
 The two type fields answer different questions: **Data type** says whether the information is telemetry, device metadata, or a custom attribute; **Type** says whether its value is stored as a Float, Integer, String, or Boolean.
 
@@ -16,7 +16,7 @@ Most common sensors already have the metrics they need. Use this page when addin
 
 Go to **Devices → Metrics**.
 
-The list shows every metric available in your Chirp account, including its normalized key, unit, value type, and data type.
+The list shows every metric available in your current organization, including its normalized key, unit, value type, and data type.
 
 <figure><img src="../.gitbook/assets/device-metrics.jpg" alt="The Devices Metrics list with search, unit, type and data type filters and a sort control"><figcaption></figcaption></figure>
 
@@ -51,7 +51,7 @@ Choose what kind of information the metric represents:
 | **Device metadata** | Information the sensor reports about itself | Firmware version, hardware revision |
 | **Custom attributes** | Information you add | Room name, installation date, next battery change |
 
-Only Telemetry metrics appear when mapping incoming sensor readings. Device metadata and Custom attributes are not offered as telemetry mappings.
+Use **Telemetry** for the readings you want in history, dashboards, and automations. The catalog also lists Device metadata and Custom attributes, but these categories cannot be selected for incoming telemetry. Creating such a template does not provide a working screen for storing your own notes or room assignments.
 
 ### Type
 
@@ -63,6 +63,8 @@ Choose how Chirp stores the value:
 | **Integer** | Whole numbers | `85`, `-120` |
 | **String** | Text | `"open"`, `"standby"` |
 | **Boolean** | True or false | Motion detected, door closed |
+
+Incoming values are converted to the chosen type; incompatible values are skipped. See [What Your Device Is Sending](what-your-device-is-sending.md#readings-keep-the-shape-they-arrived-in) for the conversion rules.
 
 Chart widgets and the gauge-style Last Data displays require an Integer or Float metric. The Last Data **Value** display can also show text and yes/no values.
 
@@ -86,7 +88,7 @@ Units are created, renamed, and deleted from this field. Units supplied by Chirp
 
 ## Edit a metric
 
-Metrics apply across your Chirp account, not to one sensor only. Editing a metric changes the definition for every sensor mapped to it.
+Metrics apply across the current organization, not to one sensor only. Editing a metric changes the definition for every sensor mapped to it.
 
 1. Find the metric under **Devices → Metrics**.
 2. Click **Edit**.
@@ -94,7 +96,7 @@ Metrics apply across your Chirp account, not to one sensor only. Editing a metri
 4. Click **Save**.
 5. Review the confirmation describing which sensors are affected and confirm the change.
 
-If only one sensor needs a different definition, create a new metric and remap that sensor instead of editing the shared metric.
+If only one sensor needs a different definition, create a separate metric. Changing a row to that template replaces its measurement assignment, so use this for a new kind of reading rather than a hardware replacement that should keep the old history.
 
 ## Delete a metric
 
@@ -104,9 +106,17 @@ Chirp refuses to delete a metric that is still mapped to a sensor. Remove the ma
 
 ## Connect a sensor reading to the metric
 
-Creating a metric does not connect it to a sensor automatically. Open the sensor's **Metrics** tab and map the raw key sent by the sensor to the normalized metric.
+Creating a metric does not connect it to a sensor automatically. Open the sensor's **Mapping** tab and map the raw key sent by the sensor to the normalized metric.
 
 Once different sensors map their temperature readings to `temperature`, the same chart or automation can work with all of them.
+
+## Keep familiar readings when hardware changes
+
+A data template gives a reading its meaning. The measurement attached to **Family Car** is the car's own record of that kind of reading. Another car can use the same template without sharing its history.
+
+After replacing a tracker, keep the existing latitude, longitude, and speed rows. In **Mapping**, connect the new tracker's fields to those rows instead of removing and recreating them. Their saved readings then remain attached to the same car.
+
+Check the units too. Giving a speed value a km/h label does not convert a value reported in another unit. The source or decoding step must provide the expected value. Follow [Replace your car's tracker](sensor-details.md#replace-your-cars-tracker) for the complete sequence.
 
 ## Troubleshooting
 
