@@ -14,10 +14,6 @@ You may already have a camera at the front door and a different brand in the gar
 
 ## Meet your camera's Twin
 
-A camera can be useful to more than the person watching its feed. Your front-door camera, a door sensor and a household automation can contribute different information about the same entrance. Lens lets compatible camera observations join that wider home setup, even when the equipment comes from different manufacturers.
-
-This is a practical foundation for physical AI: software can work with information from the environment instead of relying on one device's view. The camera still captures the scene; your configured rules and chosen responses determine what happens with its readings.
-
 **Twin** takes its name from *digital twin*: it represents one camera on a computer at the property. It runs as a Docker container and connects that camera to Lens. Lens is the cloud side; Twin stays at your premises.
 
 There is **one Twin container for each camera**. Two cameras need two Twins. Twenty cameras need twenty. A suitable computer can run more than one container, but each needs its own configuration and enough host resources.
@@ -34,17 +30,19 @@ flowchart LR
 
 RTSP is the camera's video-streaming connection. You will need its address and login details. ONVIF can help discover and control supported cameras. Check the camera's own settings or manual for those features.
 
-## Can several cameras share one computer?
+## Why doesn't your camera need to be smart?
 
-Yes. Each camera needs its own Twin container, but those containers can share a computer with enough processing, network and storage capacity. This separates the cameras from the software handling their connection to Chirp. It can let you keep suitable cameras while maintaining the local software independently.
+Some home cameras come with smart features built in, which means a small computer inside each camera running its maker's software. Lens does not need any of that. The camera only has to send its video as an RTSP stream.
 
-The shared computer also becomes something several cameras depend on. If it loses power or is shut down for maintenance, its Twins stop. Choose a location and power arrangement that you can maintain, and check the workload before adding more cameras.
+Twin, on a computer in your home, watches that stream, detects motion in the areas you draw and can keep local recordings. Chirp shows the live video and lets the camera's motion reading start rules, just like a reading from any of your other sensors.
 
-## What happens if the home internet goes down?
+That means you can:
 
-The local Twin and Chirp's cloud service have different jobs. A camera may still supply video over your home network, and configured local functions have their own requirements. That does not keep cloud viewing, cloud automations or remote notifications connected when internet access is unavailable.
+- keep the cameras you already own, whatever the brand
+- get motion alerts from an older camera that has no smart features of its own
+- pick up Twin and Chirp updates without buying new cameras
 
-Check the behavior your household actually needs rather than assuming that every camera function has the same dependencies. Use the camera's connection status alongside its motion reading: a disconnected camera cannot establish that nothing is happening.
+For example, you have a camera above the back door and a door sensor on the same door. When the camera sees movement at the doorway, a rule checks the door sensor and sends an alert to your phone if the door is open.
 
 ## Watch the part that matters
 
