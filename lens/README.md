@@ -44,7 +44,7 @@ The shared computer also becomes something several cameras depend on. If it lose
 
 The local Twin and Chirp's cloud service have different jobs. A camera may still supply video over your home network, and configured local functions have their own requirements. That does not keep cloud viewing, cloud automations or remote notifications connected when internet access is unavailable.
 
-Check the behaviour your household actually needs rather than assuming that every camera function has the same dependencies. Use the camera's connection status alongside its motion reading: a disconnected camera cannot establish that nothing is happening.
+Check the behavior your household actually needs rather than assuming that every camera function has the same dependencies. Use the camera's connection status alongside its motion reading: a disconnected camera cannot establish that nothing is happening.
 
 ## Watch the part that matters
 
