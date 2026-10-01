@@ -14,7 +14,7 @@ You may already have a camera at the front door and a different brand in the gar
 
 ## Meet your camera's Twin
 
-**Twin** takes its name from *digital twin*: it represents one camera on a computer at the property. It runs as a Docker container and connects that camera to Lens. Lens is the cloud side; Twin stays at your premises.
+**Twin** is the program you install on a computer at the property. It is the digital twin of one physical camera: it connects to that camera's video on your home network and links the camera to Lens. It runs as a Docker container. Lens is the cloud side; Twin stays at your premises.
 
 There is **one Twin container for each camera**. Two cameras need two Twins. Twenty cameras need twenty. A suitable computer can run more than one container, but each needs its own configuration and enough host resources.
 
@@ -30,11 +30,11 @@ flowchart LR
 
 RTSP is the camera's video-streaming connection. You will need its address and login details. ONVIF can help discover and control supported cameras. Check the camera's own settings or manual for those features.
 
-## Why doesn't your camera need to be smart?
+## How can Lens make an older camera smart?
 
-Some home cameras come with smart features built in, which means a small computer inside each camera running its maker's software. Lens does not need any of that. The camera only has to send its video as an RTSP stream.
+Some home cameras come with smart features built in, which means a small computer inside each camera running its maker's software. Lens does not need any of that. The camera only has to send its video as an RTSP stream, which most IP cameras can do, including older ones.
 
-Twin, on a computer in your home, watches that stream, detects motion in the areas you draw and can keep local recordings. Chirp shows the live video and lets the camera's motion reading start rules, just like a reading from any of your other sensors.
+The processing happens off the camera. Twin, on a computer in your home, watches the stream, detects motion in the areas you draw and can keep local recordings. Chirp shows the live video and lets the camera's motion reading start rules, just like a reading from any of your other sensors.
 
 That means you can:
 
@@ -43,6 +43,14 @@ That means you can:
 - pick up Twin and Chirp updates without buying new cameras
 
 For example, you have a camera above the back door and a door sensor on the same door. When the camera sees movement at the doorway, a rule checks the door sensor and sends an alert to your phone if the door is open.
+
+## Who in your household can see the cameras?
+
+Instead of sharing one camera-app password, each household member signs in with their own Chirp account. You choose for each person whether they can **Edit**, **View** or have **No access** to Cameras (see [Users and Permissions](../account/users-and-permissions.md)). If someone moves out, you remove their access in Chirp without changing anything on the cameras. The local Twin login stays separate.
+
+## Where is Lens going?
+
+We are adding more AI to Lens. It runs off the camera, where there is room for larger models and smarter logic than a chip inside a single camera can hold. Because of that, the cameras you already own, even older ones, get new features through software updates instead of being replaced. Today, Lens detects motion in the areas you draw; it does not recognize people or objects.
 
 ## Watch the part that matters
 
@@ -53,8 +61,6 @@ An older camera does not need its own AI feature for this. Twin performs the sel
 ## From live checks to a useful home setup
 
 Use Lens to check the entrance or garden, then combine camera motion with the platform's rule and alarm workflows. Configure an alert for the times it is useful, rather than treating every movement as a reason to notify everyone.
-
-Cameras belong to your selected organization. Manage household access through Chirp instead of sharing a single platform password. The local Twin login remains separate.
 
 ## Save your favorite camera view
 
