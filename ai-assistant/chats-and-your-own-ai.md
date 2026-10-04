@@ -12,7 +12,7 @@ Tap **New Chat** at the top of the assistant to begin a clean conversation. The 
 
 ## Finding past chats
 
-**Chat history**, also at the top, lists your previous conversations with the newest first. Each one is named after what you talked about; a brand-new one shows as **Untitled chat**. Tap any entry to reopen it and carry on. Your chats are saved between visits and are only ever yours. Haven't chatted yet? You'll see **No conversations yet**.
+**Chat history**, also at the top, lists the conversations saved for your account, with the newest first. Each one is named after what you talked about; a brand-new one shows as **Untitled chat**. Tap any entry to reopen it and carry on. Your chats are saved between visits. Haven't chatted yet? You'll see **No conversations yet**.
 
 ## Deleting a chat
 
