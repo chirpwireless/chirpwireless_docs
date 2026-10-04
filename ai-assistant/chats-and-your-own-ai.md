@@ -16,7 +16,7 @@ Tap **New Chat** at the top of the assistant to begin a clean conversation. The 
 
 ## Deleting a chat
 
-In Chat history, **Delete conversation** clears a chat for good. There's no undo, so only remove the ones you don't want to keep.
+In Chat history, **Delete conversation** requests removal of that conversation. There is no undo in the interface, so save anything you need first. Account closure and copies already sent to an AI provider need separate handling; [Your Privacy](your-privacy.md) explains how to request it.
 
 ## How many requests you have
 
