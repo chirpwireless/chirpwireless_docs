@@ -33,7 +33,7 @@ flowchart TD
 ## Get your home ready
 
 1. Add the plug by following [LoRaWAN Devices](../devices/lorawan-devices.md). It needs gateway coverage, the correct device profile, and a working connection.
-2. Give it an easy name, such as **Iron**, and map its reported on/off state in **Mapping**. Check that readings appear in Chirp.
+2. Give the plug an easy name, such as **Iron**, and check that its on/off state appears in Chirp.
 3. Under **Commands & States**, create a **Turn off** command using the instructions for your exact plug model. [Creating Commands](../devices/commands/creating-commands.md) explains the settings; Milesight publishes the [WS52x command format](https://www.milesight.com/products/docs/en/ws52x/protocol/ws5xx/ws52x-downlink.html). Grok runs commands you save here.
 4. Follow [Connect Grok](../api/mcp-server.md#connect-grok) on your phone or computer. Ask Grok to list your Chirp devices and check that it can find **Iron** in the correct home.
 
@@ -49,7 +49,7 @@ The car needs an **AMD processor**, software **2026.26 or later**, and **Premium
 
 ## Other things to ask on your way out
 
-- *“What is the temperature in the living room?”* Grok uses the mapped reading from your room sensor.
+- *“What is the temperature in the living room?”* Grok uses the temperature reading reported by your room sensor.
 - *“Are the hallway lights on? Please switch them off.”* The connected lights need a reported state and a saved command.
 - *“Are there any active leak or smoke alerts at home?”* Grok checks the [alerts](../alarm/README.md) recorded by the sensors and automations you have configured.
 
@@ -57,6 +57,6 @@ If you manage more than one home, ask Grok which home it is using. The normal co
 
 ## When something does not respond
 
-If Grok cannot see Chirp in the car, check the car's software, connectivity, and Grok account. If it sees your home but cannot find the plug or its state, check the device name, mapping, and last update in Chirp.
+If Grok cannot see Chirp in the car, check the car's software, connectivity, and Grok account. If it sees your home but cannot find the plug or its state, check the device name and whether its latest on/off state appears in Chirp.
 
 If the action is missing, check the saved command and your permission to run it. If it is accepted or queued, ask Grok for the execution status and the plug's latest reported state. [Command Verification](../devices/commands/verification.md) explains how Chirp checks device feedback.

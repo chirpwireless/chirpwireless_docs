@@ -8,7 +8,7 @@ You can ask the AI app you already use to help set up your Chirp home. Connect i
 
 **MCP (Model Context Protocol)** is the connection that lets an AI client find and call Chirp's operations. Sign in with your Chirp account and work within the home and permissions you already have. Reading sensor history is available alongside the setup work.
 
-You can bring [Claude Code](https://claude.com/claude-code), Claude Desktop, ChatGPT, Codex, Cursor, or Grok to your home through this connection.
+MCP (Model Context Protocol) is simply an agreed way for an AI app to reach out and use something else safely. Chirp speaks it, so the app you already use can connect to your home without any custom plumbing on your side — [Claude Code](https://claude.com/claude-code), Claude Desktop, ChatGPT, Codex, Cursor, and others all support it.
 
 Because MCP is a shared standard rather than a deal with one company, that list keeps growing. If your AI app supports MCP, it can talk to your home.
 
@@ -43,9 +43,9 @@ The connection uses Streamable HTTP, which the clients below handle for you — 
 5. Sign in with your usual Chirp account.
 6. Check the connector shows as active in the Connectors list. You're done — start a chat and ask it about your home.
 
-## Connect Grok
+## Connecting Grok {#connect-grok}
 
-Grok can answer questions about your Chirp home and switch connected devices on or off. Set up the connection on your phone or computer; you can use it without owning a car.
+Use Grok to ask about your Chirp home and switch a connected plug or light on or off. Connect it from your phone or computer using your usual Chirp sign-in.
 
 1. Open [Grok Connectors](https://grok.com/connectors) and sign in to your Grok account.
 2. Choose **New Connector**, then **Custom**.
@@ -56,9 +56,7 @@ Grok can answer questions about your Chirp home and switch connected devices on 
 
 [Grok's connector guide](https://docs.x.ai/grok/connectors) describes the custom connection flow. If you use a Grok Business or Enterprise account, your team administrator must add the connector first; see [the administrator instructions](https://docs.x.ai/grok/connector-management).
 
-A device needs mapped readings to answer a question about its state. For switching, first save the device's supported actions under **Commands & States** in Chirp; [Creating Commands](../devices/commands/creating-commands.md) explains how. Grok can use those actions with your permissions. Its confirmation prompts belong to Grok, so the wording may differ from Chirp's built-in assistant.
-
-Once this works, the same Grok account can bring your home into a voice conversation in the car. See [Use Chirp from Your Tesla](../ai-assistant/tesla-grok.md).
+To use the connection by voice in the car, see [Use Chirp from Your Tesla](../ai-assistant/tesla-grok.md).
 
 ## Connecting a different AI app
 
@@ -70,7 +68,7 @@ Whichever app you use, the rest is identical: your browser opens, you sign in as
 
 If you're only in one home, skip this — everything just works.
 
-The plain `/mcp` address checks which home is selected in Chirp on every request. After switching homes, ask your AI app to check the selected home before continuing. There is no need to reconnect.
+The plain `/mcp` address follows whichever home is currently selected in the Chirp app. Switch homes in the app and reconnect, and your AI client sees the new one.
 
 If you'd rather pin the connection to a specific home — handy if you look after a holiday flat as well as your own place, and want each AI client fixed to one — use the address with the home's ID in it:
 
@@ -87,23 +85,16 @@ Once connected, your AI client can work across your home on your behalf. Here's 
 | Area | What your AI app can do |
 |---|---|
 | **Sensors** | List the sensors in your home, see their details, and add a new one for you — a LoRaWAN sensor or a tracker — picking from the available sensor profiles. |
-| **Readings** | Read mapped measurements, such as room temperature or a smart plug's reported on/off state. |
-| **Switching things on or off** | Run a command already saved on a device and check its execution status — for example, ask it to turn off a connected plug. Device confirmation depends on the hardware and configured verification. |
+| **Switching things on** | See what a device is set up to do, do it, and check the device actually got the message — so *"turn on the lamp"* works from the app you're already in. |
 | **Pretend sensors** | Set up an emulated sensor, change what it reports, send a one-off reading to test an alert, and move a sensor between pretend and real. It can put any of your real sensors onto the emulator, and take a pretend one live onto a LoRaWAN connection. |
 | **Connections** | See how your home is connected and set up a new connection for a sensor. |
 | **Automations** | Go through the automations you've built and tell you what each one does. |
 | **Alerts** | Look at your alerts, summarize what's been triggering and how often, clear one that you've dealt with, and set up which alerts reach you and where. |
-| **Dashboards** | List your dashboards and inspect which readings their widgets are configured to show. |
+| **Dashboards** | List your dashboards and pull the data behind a widget, so it can chart or explain a reading you're looking at. |
 | **History** | Look back over when your alerts fired and when your automations ran, and map out which sensor is measuring what. |
 | **Household** | Look up your home's details and members, invite someone new, and set what they're allowed to see. |
 
 Everything it does runs with your permissions. For destructive or important actions, Chirp supplies safety information that a compatible AI app can use to ask before it continues.
-
-## If something is missing
-
-If Grok sees the wrong devices, check [which home is selected](#choosing-which-home-it-sees). If a reading is missing or old, open the device in Chirp and check its mapping and last update. A missing action needs to be saved under **Commands & States**, with permission for your account to use it.
-
-If a command is accepted or queued, ask Grok to check its status again. The request has entered the delivery process; the plug's reported state or [command verification](../devices/commands/verification.md) tells you the result.
 
 ## How your AI app knows what an action does
 
@@ -111,7 +102,7 @@ Chirp publishes a readable name, description, and safety notes with each action.
 
 | Safety note | Examples | What it tells the app |
 |---|---|---|
-| **Only reads** | List sensors, read alert history, inspect widget settings | The action does not change your home. |
+| **Only reads** | List sensors, read alert history, get the data behind a widget | The action does not change your home. |
 | **Changes or removes something** | Remove a sensor, switch a device, change a connection, update alert recipients | The action can affect your home or equipment, so the app can ask for confirmation. |
 | **Looks outside your home** | Search a product catalog or the web for hardware | The action accesses information beyond your Chirp data. |
 

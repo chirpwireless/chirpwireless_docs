@@ -18,11 +18,11 @@ A **gRPC API** also exists — the advanced / on-premise path. It is not the nor
 
 ## Bringing your own AI app
 
-If you'd rather not write code at all, the **MCP server** connects an AI client like Grok, Claude Code, or Claude Desktop directly to your home. You sign in with your usual Chirp account — no key to create — and the AI app can then list your sensors, check your alerts, or add a device for you, with exactly your own permissions. See [MCP Server](mcp-server.md) or go straight to [Connect Grok](mcp-server.md#connect-grok).
+If you'd rather not write code at all, the **MCP server** connects an AI client like Claude Code or Claude Desktop directly to your home. You sign in with your usual Chirp account — no key to create — and the AI app can then list your sensors, check your alerts, or add a device for you, with exactly your own permissions. See [MCP Server](mcp-server.md).
 
 ## Signing requests
 
-REST and gRPC requests carry a scoped API key in the `X-API-Key` header (format `chirp_<key>`) and your home's context in `X-Organization-Id`. You create and manage keys in **Settings → API Keys**; the essentials are in [Authentication & API keys](authentication-and-api-keys.md), and the full walkthrough is in [API Keys](../settings/api-keys.md).
+Each request carries a scoped API key in the `X-API-Key` header (format `chirp_<key>`) and your home's context in `X-Organization-Id`. You create and manage keys in **Settings → API Keys**; the essentials are in [Authentication & API keys](authentication-and-api-keys.md), and the full walkthrough is in [API Keys](../settings/api-keys.md).
 
 ## In this section
 
