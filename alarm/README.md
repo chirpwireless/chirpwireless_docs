@@ -40,6 +40,10 @@ When an alarm fires and nobody resolves it, Chirp can escalate — notifying add
 
 For full details, see [Escalation Chains](escalation-chains.md).
 
+## Check your alerts with Grok
+
+Once you [connect Grok to Chirp](../api/mcp-server.md#connect-grok), you can ask which alerts are still active at home. Try *“Have any leak or smoke sensors raised an alert?”* Grok reads the alerts your setup has recorded. For a voice conversation in the car, follow [Use Chirp from Your Tesla](../ai-assistant/tesla-grok.md).
+
 ## Where to go next
 
 - [Set Up a Home Alert](set-up-a-home-alert.md) — Walk through creating an alarm definition: name, severity, escalation chain, schedule, message.

@@ -146,6 +146,7 @@
   * [What It Knows](ai-assistant/what-it-knows.md)
   * [Your Chats and Your Own AI](ai-assistant/chats-and-your-own-ai.md)
   * [Your Privacy](ai-assistant/your-privacy.md)
+  * [Use Chirp from Your Tesla](ai-assistant/tesla-grok.md)
 * [Records & Reports](reports/README.md)
   * [Activity Log](reports/audit-trail.md)
   * [Key Vault](reports/key-vault.md)

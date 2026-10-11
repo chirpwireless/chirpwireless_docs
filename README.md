@@ -66,6 +66,8 @@ The assistant is also a way to learn the platform as you use it. You do not need
 
 <figure><img src=".gitbook/assets/chirp-introduction-ai-readings.jpg" alt="Chirp AI assistant explaining the latest state of a pretend door sensor"><figcaption><p>Ask about a household reading and get an explanation tied to the device. This demonstration uses a pretend sensor.</p></figcaption></figure>
 
+You can also [connect Grok to Chirp](api/mcp-server.md#connect-grok). That lets you ask about your rooms and control a configured plug from Grok on your phone or computer — or [from your Tesla](ai-assistant/tesla-grok.md). If the iron is plugged into a connected smart plug, ask whether it is on, then ask Grok to switch it off.
+
 ## Share the setup with your household
 
 Your selected organization is the working context for devices, dashboards, and other resources. Give household members appropriate access through the [organization settings](settings/README.md), rather than sharing one account password. Their permissions determine what they can see and change. Lens currently requires camera-management access to open its workspace.

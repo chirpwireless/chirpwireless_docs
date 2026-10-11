@@ -45,6 +45,6 @@ The assistant uses your access to the home selected in Chirp. [Your Privacy](you
 
 The assistant comes with your Chirp plan, with a monthly number of requests included; higher plans include more. If you'd rather not worry about the limit, you can connect your own AI key and keep chatting. You'll see how many requests you have left above the message box.
 
-Prefer your own AI app? You can connect one — like Claude Code or Claude Desktop — straight to your home, sign in with your usual Chirp account, and ask it the same things from your desktop. See [MCP Server](../api/mcp-server.md).
+Prefer Grok or another AI app? [Connect your own app through MCP](../api/mcp-server.md), sign in with your Chirp account, and ask about your home there. The [Grok setup](../api/mcp-server.md#connect-grok) works on a phone or computer. With that account signed in to a supported Tesla, you can also ask whether you left the iron on and turn its smart plug off. See [Use Chirp from Your Tesla](tesla-grok.md).
 
 The assistant is powered by [SyntheticBrew](https://syntheticbrew.ai/), the AI agent runtime built by our team. In CHIRP, that runtime works with your home's device information and the actions available to your account. That connects the conversation to the setup work you can do in Chirp.
