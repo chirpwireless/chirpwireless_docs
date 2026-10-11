@@ -23,7 +23,7 @@ Here is an example conversation once that setup is ready:
 Grok sends the plug's saved turn-off command through Chirp. Switching the plug off cuts power to the iron. You can then ask Grok to check the result. The dialogue illustrates the request; Grok's exact wording and confirmation prompts can vary.
 
 ```mermaid
-flowchart LR
+flowchart TD
     You[You in the Tesla] <--> Grok[Grok]
     Grok <--> Chirp[Chirp MCP connection]
     Chirp <--> Plug[Smart plug]
