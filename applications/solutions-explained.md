@@ -1,42 +1,49 @@
 ---
-description: "Learn how a Chirp solution differs from an application: a ready-made catalog application versus your own working copy, plus where use cases fit in."
+description: "Learn what a solution, an application, and a use case are in Chirp and how they differ: a solution is the template, your application the result."
 ---
 
-# What Is a Ready-Made Home Solution?
+# What Are Solutions and Applications in Chirp?
 
-Two words sit side by side in Chirp, and they describe different things. Knowing which is which makes every screen in this section easier to read.
+Chirp uses three words that sound alike: solution, application, and use case. Here is what each one means.
+
+## What is a solution?
+
+A **solution** is a ready-made setup that we prepared for one problem at home or in a rental, such as keeping an eye on a holiday home or catching a leak early. It comes with the sensors, dashboard, automations, and alerts you would otherwise have to create yourself. You find solutions on the **Solutions** tab, preview them, and install the ones that fit.
+
+## What is an application?
+
+An **application** is what you have in your account after you install a solution: its sensors, dashboard, automations, and alerts together, already working. You can also create an application yourself and fill it with your own devices. It is yours to change either way.
 
 ## How is a solution different from an application?
 
-Think of a family recipe and the dinner you cook from it.
+Think of a family recipe and the dinner you cook from it. The solution is the recipe card, and your application is the dinner on your table. You pick a recipe, press **Install solution**, and cook a dinner of your own.
 
-* An **application** is the dinner on your table: a working household setup inside your Chirp organization. You can rename it, add sensors, redraw the dashboard, or retire it whenever you like.
-* A **solution** is the recipe card: a ready-made application from the Chirp catalog, already figured out for one home use case. Installing it cooks you a dinner of your own.
-
-When you install a solution you receive an ordinary application. Nothing in the application list marks it as installed from a solution, and nothing is synced back and forth afterward. Edit your copy, rename it, or delete it, and the catalog's solution and every other household's copy stay exactly as they were. If a solution is later withdrawn from the catalog, its catalog card disappears, but the application you already created keeps running.
+When the install finishes, nothing in the list marks the application as installed from a solution, and your changes never touch the solution in the catalog. Rename it, rearrange it, or delete it as you like; the solution stays available for you to install again. If a solution is later withdrawn from the catalog, the application you already created keeps running.
 
 ## What comes with a solution?
 
 | Piece | What you will see in your home |
 |---|---|
-| Practice sensors | Emulated devices with named readings, each marked with an **Emulator** badge. |
-| Automations | Rules that watch those readings, already deployed and running. |
-| Alerts | Alarm definitions whose recipient is you, the person who pressed install. |
-| Dashboard | A finished view in which every widget is already wired to a practice sensor. |
+| Practice sensors | Sample sensors that send realistic readings. Each one has an **Emulator** badge. |
+| Automations | Rules that react to those readings, for example by sending an alert. They are already running. |
+| Alerts | Notifications that tell you something needs attention. They go to you, the person who installed the solution. |
+| Dashboard | A finished view. Every widget already shows a practice sensor. |
 
 ## Where do I find solutions in Chirp?
 
 Choose **Applications** in the left sidebar. The page is called **Applications and solutions** and has tabs across the top:
 
-* **Solutions** is the first tab. It is the catalog of ready-made applications you can install.
-* **My applications** lists every application in your organization, both ones you built and ones you installed.
+* **Solutions** is the first tab. It is the catalog of ready-made solutions you can install.
+* **My applications** lists every application in your organization, both ones you built and ones you installed. (Your organization is your Chirp account space. For a single household, it is simply your home.)
 
-## Where do ready-made applications come from?
+To install one, press **Preview**, then **Use this solution**, then **Install solution** on the next screen.
 
-Chirp prepares them. Each one is built around a single home use case and arrives pre-configured: practice sensors, a dashboard, automations, and alerts, all wired together. The install screen also lists the real devices to buy, so a household never begins from a blank screen. We are adding new applications starting with the next release, and the collection keeps growing.
+## Where do ready-made solutions come from?
+
+Chirp prepares them and controls the catalog. Each solution is made for one job at home and comes with practice sensors, a dashboard, automations, and alerts that already work together. The install page also lists the real devices to buy, so you never start from a blank screen. We add new solutions with new releases.
 
 ## What is a use case?
 
-A **use case** is a short description of the problem a solution is meant to solve, such as watching a holiday home or catching a leak early. Each application shows the use case it solves. You never have to manage them to benefit from them, and there is no screen for them in your account.
+A **use case** is the job a solution does, such as leak protection. It matters to you because it is how solutions are labeled, so you can find the one that fits your problem. There is no screen for use cases in your account, and you never have to manage them.
 
 Next, [explore the solutions on offer](exploring-ready-made-solutions.md).

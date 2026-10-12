@@ -6,6 +6,12 @@ description: "Replace a solution's practice sensors with your real Chirp devices
 
 The practice sensors in a solution exist so you can watch the whole setup work first. When your real sensors arrive, you point the same setup at them. This page shows the installed application and the exact screens involved.
 
+## What do I need before swapping?
+
+You need two things: your real sensor, and the way it connects. The sensor's manual says which one it uses: LoRaWAN, MQTT, or a tracker. A connector is the link that brings a sensor's readings into Chirp.
+
+If no connector for that type exists in your account yet, add one first. Press **Go to connectors** on the application's **Emulator** card, or read [Connectors](../connectors/README.md). Then come back here.
+
 ## What does my new application look like?
 
 After the install, **Go to application** opens the application page. The title reads **Applications /** followed by the application's name, with a pencil icon (edit) and a trash can (delete) at the top right. If the setup has a description, it sits in small grey text under the title. Two tabs sit underneath:
@@ -23,14 +29,24 @@ flowchart LR
     D --> E[Dashboard and automations read real data]
 ```
 
-1. Make sure the [connector](../connectors/README.md) for your sensor exists. If not, choose **Go to connectors** on the Emulator card and add it first.
-2. Open the application's **Content** tab, then select a device under **Devices**. The device editor opens with the tabs **Device info**, **Connection**, **Emulator**, **Mapping**, and **Logs**. If the device has **Support commands** switched on, a **Commands & States** tab appears too.
+1. Make sure the [connector](../connectors/README.md) for your sensor exists. If not, press **Go to connectors** on the Emulator card and add it first.
+2. Open the application's **Content** tab, then select a device under **Devices**. The device editor opens with the tabs **Device info**, **Connection**, **Emulator**, **Mapping**, and **Logs**. If the device has **Support commands** switched on, a **Commands & States** tab appears too. For the swap you need **Connection** and, if the names differ, **Mapping**. The others are optional.
 3. Open **Connection**. At the top, under the heading **Choose a connector to add a device**, you will see **Connector type** showing **Emulator**, and a **Swap connection** link on the right.
-4. Select **Swap connection**. The link turns into **Cancel swap** and **Connector type** becomes a drop-down. Choose the real connector, such as LoRaWAN, MQTT, or a tracker, then fill in the fields it shows.
-5. Keep the **Device data key** rows as they are: each row is one reading, shown with its **Data type**, an **Emulator** button, and a trash can. They carry your mappings across, so the dashboard keeps working.
+4. Select **Swap connection**. The link turns into **Cancel swap** and **Connector type** becomes a drop-down. Choose the real connector, such as LoRaWAN, MQTT, or a tracker, then fill in the fields it shows (the identifiers from your sensor's manual or label).
+5. Keep the **Device data key** rows as they are. A device data key is the name the sensor uses for one reading, such as temperature. Each row shows its **Data type**, an **Emulator** button, and a trash can. Keeping the rows lets the dashboard keep working.
 6. Select **Save**. The **Reception** strip at the bottom reports **Receiving & storing** with a **LIVE** marker once real readings arrive.
 
-Read the solution's **Content** text before you begin. Applications usually write down the identifiers each device needs.
+Read the solution's **Content** text before you begin. It usually lists the identifiers each device needs.
+
+{% hint style="warning" %}
+A real sensor may report its readings under different names than the practice sensor. If the dashboard stays empty after the swap, open the **Mapping** tab and match the real sensor's names to the readings the dashboard uses.
+{% endhint %}
+
+## What if the Reception strip does not show LIVE?
+
+1. Check the identifiers you entered on the **Connection** tab. One wrong character is enough.
+2. Check that the sensor is powered on and in range of its gateway or network.
+3. If you use MQTT, see [How do I troubleshoot MQTT and Zigbee2MQTT?](../connectors/mqtt/troubleshooting.md). For other connectors, see [Connection diagnostics](../devices/connection-diagnostics.md). Still stuck? Contact Chirp support.
 
 ## How do I tell a practice sensor from a real one?
 
@@ -42,8 +58,8 @@ Look at the small badge beside a device name on the application's **Content** ta
 ## What do the other device tabs do while it is still a practice sensor?
 
 * **Emulator** lets you type a value for any reading and choose **Save**, or **Send once** to push a single reading through right away. Use it to test an automation without waiting.
-* **Mapping** lists each reading's **Device data key**, current **Value**, **Last update**, **Normalized key**, **Unit**, **Type**, and **Data type**, with a trash can at the end of the row to remove a reading from the list. Hover over the **Device data key** header for a reminder that the key is part of the device configuration. For a practice sensor these rows follow the device configuration, so add or rename readings on the **Connection** tab instead.
-* **Commands & States** appears only when **Support commands** is on. It is where you define the actions an operator can send to the device and see their results; see [Commands](../devices/commands/README.md).
+* **Mapping** lists each reading's **Device data key**, current **Value**, **Last update**, **Normalized key** (Chirp's standard name for the reading), **Unit**, **Type**, and **Data type**, with a trash can at the end of the row to remove a reading from the list. For a practice sensor these rows follow the device configuration, so add or rename readings on the **Connection** tab instead.
+* **Commands & States** appears only when **Support commands** is on. It is where you define the actions you can send to the device and see their results; see [Commands](../devices/commands/README.md).
 
 
 <figure><img src="../.gitbook/assets/chirp-device-emulator-tab.jpg" alt="The Emulator tab with a Device data key field, a Value field and the Save and Send once buttons"><figcaption><p>The Emulator tab.</p></figcaption></figure>
@@ -56,4 +72,4 @@ Readings keep their names and units, and the dashboard, automations, and alerts 
 
 ## Can I swap one sensor at a time?
 
-Yes. Replace them in any order; the rest keep simulating until you get to them. For background reading, see [Pretend Sensors](../devices/pretend-sensors.md) and the [Emulator Connector](../connectors/emulator-connector.md).
+Yes. Replace them in any order. The rest keep sending practice readings until you get to them. For background, see [How do I create a pretend sensor in Chirp?](../devices/pretend-sensors.md) and the [Emulator Connector](../connectors/emulator-connector.md).
