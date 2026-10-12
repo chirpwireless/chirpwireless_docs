@@ -1,5 +1,5 @@
 ---
-description: "Not sure what you can automate at home? Open Solutions, install a ready-made setup in one click, then buy the devices and swap them in."
+description: "Not sure what you can automate at home? Open Solutions, install a ready-made setup in a few clicks, then buy the devices and swap them in."
 ---
 
 # What are applications and solutions in Chirp?

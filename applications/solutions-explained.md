@@ -2,7 +2,7 @@
 description: "Learn what a solution, an application, and a use case are in Chirp and how they differ: a solution is the template, your application the result."
 ---
 
-# What Is a Ready-Made Home Solution?
+# What Are Solutions and Applications in Chirp?
 
 Chirp uses three words that sound alike: solution, application, and use case. Here is what each one means.
 
@@ -18,7 +18,7 @@ An **application** is what you have in your account after you install a solution
 
 Think of a family recipe and the dinner you cook from it. The solution is the recipe card, and your application is the dinner on your table. You pick a recipe, press **Install solution**, and cook a dinner of your own.
 
-When the install finishes, nothing in the list marks the application as installed from a solution, and nothing is synced back and forth. Rename it, rearrange it, or delete it, and the catalog's solution and every other household's copy stay as they were. If a solution is later withdrawn from the catalog, the application you already created keeps running.
+When the install finishes, nothing in the list marks the application as installed from a solution, and your changes never touch the solution in the catalog. Rename it, rearrange it, or delete it as you like; the solution stays available for you to install again. If a solution is later withdrawn from the catalog, the application you already created keeps running.
 
 ## What comes with a solution?
 
