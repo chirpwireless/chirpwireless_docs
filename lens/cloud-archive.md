@@ -51,9 +51,14 @@ Your camera's Twin must run version **1.1.0** or later; an older Twin keeps reco
 
 Higher up the same tab, **Automatic cleanup** has **Limit by total size** and **Limit by age**. The age limit, **Maximum recording age (days)**, applies to cloud backups as well as local clips, and the card shows "Kept for at least N days", so a short limit will also remove cloud copies.
 
+
+<figure><img src="../.gitbook/assets/chirp-lens-camera-cloud-backup.jpg" alt="The Storage tab of a camera showing Automatic cleanup with Limit by total size and Limit by age, and the Cloud backup card with the Backup to list, a link to Manage storage connectors, and the Save and Send to camera buttons"><figcaption><p>The Cloud backup card on a camera's Storage tab.</p></figcaption></figure>
+
 ## How do I find, save, or delete a clip?
 
 Choose **Recordings** in the Lens sidebar. The toolbar has an **All devices** drop-down, a **Date range** button, a sort drop-down (**Newest first** or **Oldest first**), and the buttons **Export**, **Clear filters**, and **Refresh**. Use **Refresh** to pull in new clips.
+
+<figure><img src="../.gitbook/assets/chirp-lens-recordings.jpg" alt="The Recordings page with the All devices filter, Date range, sort list and the Export, Clear filters and Refresh buttons above a grid of clips grouped by date"><figcaption><p>The Recordings page.</p></figcaption></figure>
 
 - **Play** a clip in Chirp's player. If your storage cannot serve partial reads, a notice says seeking is unavailable; with Walrus, pick an aggregator that supports range requests.
 - **Download** it to your phone or computer, or use **Export** to prepare a ZIP package of selected clips.

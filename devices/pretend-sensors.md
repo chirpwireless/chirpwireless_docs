@@ -35,6 +35,9 @@ Choose your preset before collecting readings. It replaces the current keys and 
 
 Use **Add device data key** and give each reading a name — `temperature`, `humidity`, whatever you like — and say what kind of value it is. Pick **Float** for anything with a decimal point. For **Integer**, enter a whole number: the manual-value field rejects `1.5`. Float inputs accept decimals with a dot, not a comma. See [Data Templates](data-templates.md) for how value types work.
 
+
+<figure><img src="../.gitbook/assets/chirp-device-add-emulator-connection.jpg" alt="The Connection tab with the Emulator connector selected, the Support commands switch, Device ID, data sending interval, Use device preset and Add device data key"><figcaption><p>Setting up a pretend sensor on the Emulator connector.</p></figcaption></figure>
+
 ## Choose how the pretend readings behave
 
 Beside each key on **Connection**, click **Emulator**. The controls depend on the kind of reading:

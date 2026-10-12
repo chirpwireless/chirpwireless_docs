@@ -16,6 +16,11 @@ Select a camera to open **Camera detail**. Its **Lens connection** panel contain
 
 <figure><img src="../.gitbook/assets/chirp-lens-camera-management.jpg" alt="Chirp inventory retaining two home cameras while their Twins are offline"><figcaption><p>A disconnected camera stays in the list so you can check its details and recover its connection.</p></figcaption></figure>
 
+
+<figure><img src="../.gitbook/assets/chirp-lens-cameras.jpg" alt="The Cameras list with two offline cameras, their last Twin activity, capability badges and Edit and Delete buttons, plus Setup guide and Add camera buttons"><figcaption><p>The Cameras list.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/chirp-lens-camera-detail.jpg" alt="A camera detail page with the Details, Recording, Recording Area and Storage tabs, a preview that says the camera is offline, and the Lens connection, Device details and Device specs cards"><figcaption><p>A camera detail page with its four tabs.</p></figcaption></figure>
+
 ## Give a camera a recognizable name
 
 Choose **Edit camera**, update **Camera name**, and select **Save**. Use the place the camera watches rather than just its model number: for example, Back Door is easier to recognize than a manufacturer's product code. This changes its platform name without replacing or pairing the Twin again.

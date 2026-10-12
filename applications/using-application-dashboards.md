@@ -8,7 +8,7 @@ An application's **Dashboard** tab is a convenient way to check the views that b
 
 An installed [solution](installing-a-ready-made-solution.md) arrives with its dashboard connected to its sensors. These are your existing dashboards, grouped with the application. Their widgets continue to use the devices and settings you configured.
 
-<figure><img src="../.gitbook/assets/chirp-applications-dashboard-assignment.jpg" alt="Chirp Applications: Choose the application in the dashboard editor."><figcaption><p>Choose the application in the dashboard editor.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/chirp-add-dashboard-dialog.jpg" alt="The Add dashboard dialog with Icon, Name, Folder, Application and Description fields, where the Application field names the current application"><figcaption><p>Pick the application in the Add dashboard dialog.</p></figcaption></figure>
 
 ## Check your home
 
@@ -18,6 +18,9 @@ An installed [solution](installing-a-ready-made-solution.md) arrives with its da
 4. Read the widgets or use the controls available to your account.
 
 Use **Content** when you want to find the sensors or automations behind the view.
+
+
+<figure><img src="../.gitbook/assets/chirp-application-dashboard.jpg" alt="An application page with the Dashboard tab selected, a dashboard button named Leak Watch, a Go to the dashboard link and a widget carrying an Emulator badge"><figcaption><p>The Dashboard tab of an application.</p></figcaption></figure>
 
 ## Adjust what the dashboard shows
 

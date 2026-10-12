@@ -13,6 +13,11 @@ After the install, **Go to application** opens the application page. Its header 
 * **Dashboard** shows the dashboards that came with the setup, with a **Go to the dashboard** link at the right. Each widget carries an **Emulator** badge while it reads from a practice sensor.
 * **Content** lists **Devices**, **Dashboards**, **Rules**, and **Alarms**. At the bottom is an **Emulator** card that explains the swap and offers **Go to connectors**.
 
+
+<figure><img src="../.gitbook/assets/chirp-installed-application-dashboard.jpg" alt="An installed application with the Dashboard tab selected, a Publish application button, a pencil and trash icon, and a live widget with an Emulator badge"><figcaption><p>An installed application on its Dashboard tab.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/chirp-application-content.jpg" alt="The Content tab of the installed application listing its device, dashboard and the Emulator card with the Go to connectors button"><figcaption><p>The Content tab, with the Emulator card at the bottom of the left column.</p></figcaption></figure>
+
 ## How do I swap a practice sensor for the real one?
 
 ```mermaid
@@ -32,10 +37,18 @@ flowchart LR
 
 Read the solution's **Content** text before you begin. Providers usually write down the identifiers each device needs.
 
+
+<figure><img src="../.gitbook/assets/chirp-device-connection-emulator.jpg" alt="The Connection tab of a practice sensor showing the Swap connection link, Connector type Emulator, the Device ID, the data sending interval, a Device data key row and the Reception strip"><figcaption><p>The Connection tab of a practice sensor, with Swap connection at the top.</p></figcaption></figure>
+
 ## What do the other device tabs do while it is still a practice sensor?
 
 * **Emulator** lets you type a value for any reading and choose **Save**, or **Send once** to push a single reading through right away. Use it to test an automation without waiting.
 * **Mapping** lists each reading's **Device data key**, current **Value**, **Last update**, **Normalized key**, **Unit**, **Type**, and **Data type**. For a practice sensor these rows follow the device configuration, so add or rename readings on the **Connection** tab instead.
+
+
+<figure><img src="../.gitbook/assets/chirp-device-emulator-tab.jpg" alt="The Emulator tab with a Device data key field, a Value field and the Save and Send once buttons"><figcaption><p>The Emulator tab.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/chirp-device-mapping-tab.jpg" alt="The Mapping tab listing Device data key, Value, Last update, Normalized key, Unit, Type and Data type for one reading"><figcaption><p>The Mapping tab.</p></figcaption></figure>
 
 ## What stays the same, and what changes?
 

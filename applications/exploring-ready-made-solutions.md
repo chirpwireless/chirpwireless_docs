@@ -13,7 +13,11 @@ A solution preview lets you walk through a finished home setup before you commit
 
 Under the **Solutions** heading you will read a short paragraph describing what a solution contains. In plain terms: it is a bundle of practice devices, automations, alert rules, and a prepared dashboard. The practice devices stream through the Emulator connector, so the dashboard comes alive the instant you install, and no hardware is needed.
 
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Applications and solutions page with the Solutions tab selected, showing the introduction text and one solution card with a name, description, four counters and a Preview button"><figcaption><p>The Solutions tab with one published solution.</p></figcaption></figure>
+
 If the grid is empty, your provider has not published anything yet and the page says **Your provider has not published any solutions yet**. If the list cannot be fetched, you will see **Couldn't load the solution catalog**; reload the page after a moment.
+
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog-empty.jpg" alt="The Solutions tab before anything is published, with the message that your provider has not published any solutions yet"><figcaption><p>The Solutions tab before your provider publishes anything.</p></figcaption></figure>
 
 ## What is on a solution card?
 
@@ -38,6 +42,11 @@ The preview page has a back arrow and the solution's name in the top-left corner
   * **Rules**, with the sentence that each rule describes.
   * **Alarms**, each with a severity label such as Low or Critical.
   * An **Emulator** card explaining that you can swap the practice sensors for real connectors later, with the reassurance that devices, mappings, rules, and widgets stay intact.
+
+
+<figure><img src="../.gitbook/assets/chirp-solutions-preview-dashboard.jpg" alt="The solution preview page with the solution name, a Use this solution button, the Dashboard and Content tabs, and a live widget showing a practice sensor reading"><figcaption><p>The Dashboard tab of a preview.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/chirp-solutions-preview-content.jpg" alt="The Content tab of a solution preview with the About card, Virtual devices with an Emulator badge, Rules, Alarms and the Emulator explanation"><figcaption><p>The Content tab of a preview.</p></figcaption></figure>
 
 ## What if the preview shows a message?
 

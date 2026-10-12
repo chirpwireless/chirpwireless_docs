@@ -18,7 +18,7 @@ Go to **Devices → Metrics**.
 
 The list shows every metric available in your current organization, including its normalized key, unit, value type, and data type.
 
-<figure><img src="../.gitbook/assets/device-metrics.jpg" alt="The Devices Metrics list with search, unit, type and data type filters and a sort control"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/chirp-metrics.jpg" alt="The Devices / Metrics page with a search box, All units, All types and All data type filters, a sort list, the Add metric button, and a pencil icon on every row"><figcaption><p>The Metrics list.</p></figcaption></figure>
 
 Use the controls above the list to find a metric:
 
@@ -91,10 +91,12 @@ Units are created, renamed, and deleted from this field. Units supplied by Chirp
 Metrics apply across the current organization, not to one sensor only. Editing a metric changes the definition for every sensor mapped to it.
 
 1. Find the metric under **Devices → Metrics**.
-2. Click **Edit**.
+2. Select the pencil icon at the end of the row.
 3. Update the required fields.
 4. Click **Save**.
 5. Review the confirmation describing which sensors are affected and confirm the change.
+
+<figure><img src="../.gitbook/assets/chirp-edit-metric.jpg" alt="The Edit Metric dialog with Data type, Type, Normalized key and Unit of measurement (optional) fields and the Cancel and Save buttons"><figcaption><p>The Edit Metric dialog. The unit is optional.</p></figcaption></figure>
 
 The one thing you can't switch while a sensor uses the metric is its **Data type**. If you try, the window stays open and tells you: *This metric is attached to devices. Detach it from all of them to change its data type.* Take the metric off those sensors first, or make a new metric for the new type. Editing never wipes the description you wrote.
 

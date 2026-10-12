@@ -18,6 +18,9 @@ Open a solution's preview and select **Use this solution** in the top-right corn
 * **Backfill 24h of history, so charts aren't empty on first open** is a switch labeled **On** or **Off**. It starts **On**. Leave it on to receive a day of earlier readings so charts already have a shape. Switch it off to start with an empty history.
 * **Cancel** and **Install solution** sit at the bottom, with a note underneath saying that installing creates an application based on this solution.
 
+
+<figure><img src="../.gitbook/assets/chirp-solutions-install.jpg" alt="The Install screen with the What will be created card, the Devices card, the Data source Emulator connector card with the Backfill 24h switch, and the Cancel and Install solution buttons"><figcaption><p>The install screen before you press Install solution.</p></figcaption></figure>
+
 ## What happens when I press Install solution?
 
 The button changes to **Installing...** and the work runs in the background. Chirp builds, in this order, inside your organization:
@@ -31,6 +34,9 @@ The button changes to **Installing...** and the work runs in the background. Chi
 You can leave the page. The install keeps running, and when you return in the same browser the page picks up where it left off. After about a minute and a half you may see **Still installing, this can take a while — you can leave this page and check later.**
 
 When it finishes, a message announces that the solution is installed ("Virtual devices, rules, alarms and the dashboard are ready"), and **Go to application** drops you into the application page.
+
+
+<figure><img src="../.gitbook/assets/chirp-solutions-installed.jpg" alt="The success dialog reading that the solution is installed, with a Go to application button"><figcaption><p>The message you see when the install finishes.</p></figcaption></figure>
 
 ## Who receives the alerts?
 

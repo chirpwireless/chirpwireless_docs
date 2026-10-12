@@ -37,6 +37,8 @@ This tells Chirp how to reach the device. What you see depends on how the device
 
 There is no topic or fPort. With **Support commands** on, send an object using the pretend sensor's data keys, for example `{"light_on": true}`. For **Process with encoder**, supply a custom encoder that returns the same kind of object.
 
+<figure><img src="../../.gitbook/assets/chirp-command-editor.jpg" alt="The command editor of a pretend sensor with 1. Identity, 2. Payload with Send as-is and Process with encoder, and 3. Verification, where only No verification is offered"><figcaption><p>The command editor for a pretend sensor has three steps.</p></figcaption></figure>
+
 ### Devices that can't be controlled
 
 Some devices only ever report in — there's no way to send anything back to them, so they don't offer commands at all.

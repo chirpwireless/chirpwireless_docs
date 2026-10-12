@@ -38,7 +38,11 @@ Reading the page from top to bottom:
 * The list has two columns, **DevEUI / EP EUI** and **AppKey / Network Key**. The second column always displays a string of dots instead of the real code.
 * At the end of each row sit three buttons: **Show key** (the eye icon), **Edit**, and **Delete**. **Show key** uncovers that one row's code, and the same button then reads **Hide key**. Reveal one row at a time and cover it again when you are done; the other rows stay masked. Members with view-only access can use **Show key** too, since they may need to read a code out loud.
 
+<figure><img src="../.gitbook/assets/chirp-key-vault.jpg" alt="The Key Vault page with a search box, the DevEUI / EP EUI and AppKey / Network Key columns with the key hidden as dots, and the Show key, Edit and Delete buttons on the row"><figcaption><p>The Key Vault list. The key stays hidden until you show it.</p></figcaption></figure>
+
 Inside the **Add Key Pair** and **Edit** dialogs the AppKey field also starts hidden. It shows what you type while you are typing, covers itself again when you click away or press Enter, and has its own eye button for a closer look at a stored value.
+
+<figure><img src="../.gitbook/assets/chirp-key-vault-edit.jpg" alt="The Edit Key Pair dialog with the EUI field, the AppKey / Network Key field hidden as dots with an eye button, and the Cancel and Save buttons"><figcaption><p>The Edit Key Pair dialog and its eye button.</p></figcaption></figure>
 
 ## A note on the field labels
 

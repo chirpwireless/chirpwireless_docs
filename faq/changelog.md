@@ -35,6 +35,8 @@ Open **Applications**, stay on the **Solutions** tab, and preview a solution's d
 
 The solution is the recipe; your application is the finished dish, and you can change it freely. Installs are measured against your plan's limits, and Chirp says so clearly when a solution is too big.
 
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Solutions tab in Chirp with one ready-made solution card and its Preview button"><figcaption><p>Ready-made solutions from your provider, one press from a live preview.</p></figcaption></figure>
+
 [→ What is a ready-made home solution?](../applications/solutions-explained.md)
 
 [→ Installing a ready-made solution](../applications/installing-a-ready-made-solution.md)
@@ -66,6 +68,8 @@ A recording used to exist only on the computer that runs Twin. Now an extra copy
 
 Twin encrypts each recording before sending it to your account, and you can play it, jump through it, and download it from Chirp. The storage holds the files, while Chirp holds the keys and previews and is able to read the archive. Your cloud provider bills you directly. Backup needs Twin 1.1.0 or later, and Google Cloud Storage support is brand new.
 
+<figure><img src="../.gitbook/assets/chirp-lens-camera-cloud-backup.jpg" alt="The Cloud backup card on a camera's Storage tab with the Backup to list"><figcaption><p>Choose where a camera backs up on its Storage tab.</p></figcaption></figure>
+
 [→ Back up recordings to the cloud](../lens/cloud-archive.md)
 
 [→ Storage connectors](../lens/storage-connectors.md)
@@ -86,6 +90,8 @@ You are miles away and cannot remember switching off the iron. If it sits on a c
 
 The form for another MQTT broker now has a **Transport** section. Switch on **Encrypt the connection (TLS)** alongside a username and password, fill in the server name, choose the MQTT version, and list only the topics you want instead of the entire broker. Topics no longer have to contain `{{value}}`; when it is absent, Chirp takes the value from the message itself. A brief outage on the broker's side heals without your help.
 
+<figure><img src="../.gitbook/assets/chirp-mqtt-external-form-tls.jpg" alt="The Add external MQTT connector form with encryption switched on"><figcaption><p>The Transport controls of the connector form.</p></figcaption></figure>
+
 [→ External MQTT](../connectors/mqtt/external-mqtt.md)
 
 ***
@@ -94,13 +100,17 @@ The form for another MQTT broker now has a **Transport** section. Switch on **En
 
 The 2D view lets you **Move**, **Duplicate**, and **Delete** a selection, and a door or window you move snaps onto the wall you pick. DXF floor plans (beta) can be imported, with a warning when a drawing carries no dimensions. Labels on pins stop at two decimals, and your dashboard opens at the camera angle you saved.
 
+<figure><img src="../.gitbook/assets/chirp-dbt-2d-move-duplicate.jpg" alt="The Digital Building Twin editor in 2D with a selected object and its Move, Duplicate and Delete badge"><figcaption><p>Move, duplicate or delete from the 2D view.</p></figcaption></figure>
+
 [→ Digital Building Twin](../dashboards/adding-widgets/digital-building-twin/README.md)
 
 ***
 
 **Key Vault eye toggle**
 
-Saved keys stay hidden in the Key Vault. Select the eye on a row to look at that one key, then hide it again.
+Saved keys stay hidden in the Key Vault. Select **Show key** on a row to look at that one key, then hide it again; the edit window has its own eye button.
+
+<figure><img src="../.gitbook/assets/chirp-key-vault-edit.jpg" alt="The Edit Key Pair dialog with an eye button beside the hidden key"><figcaption><p>The eye button in the Edit Key Pair window.</p></figcaption></figure>
 
 [→ Key Vault](../reports/key-vault.md)
 
@@ -115,6 +125,8 @@ Saved keys stay hidden in the Key Vault. Select the eye on a row to look at that
 * The command builder will not save an expected-state row you left half done.
 * Dashboard widgets resize their text and controls more gracefully.
 * Camera previews, live-view connections, and status reports behave more reliably.
+
+<figure><img src="../.gitbook/assets/chirp-edit-metric.jpg" alt="The Edit Metric dialog with an optional unit of measurement"><figcaption><p>Editing a metric, with the unit now optional.</p></figcaption></figure>
 
 [→ Explore Chirp](https://docs.chirpwireless.io)
 

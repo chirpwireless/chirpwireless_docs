@@ -8,6 +8,9 @@ The Digital Building Twin editor is a full-screen workspace where everything hap
 
 When you add a **Digital building twin** widget, the editor opens with a small starter model already there — a building with one floor. You grow it from there.
 
+
+<figure><img src="../../../.gitbook/assets/chirp-dbt-editor.jpg" alt="The Digital Building Twin editor in 3D with the Scene panel on the left, the floor selector with the 3D and 2D switch, the Pan, Rotate and Zoom hints, the bottom toolbar with Select, Build, Furnish and Sensors, and the Preview, Cancel and Save buttons"><figcaption><p>A new Digital Building Twin editor with its starter building.</p></figcaption></figure>
+
 ## The bottom toolbar
 
 The toolbar in the middle of the bottom edge is your main control. It has four modes:

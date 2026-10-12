@@ -140,6 +140,9 @@ Think of two separate questions. Is the road to your broker private? And who is 
 
 Under **Broker URL**, a line starting **Supported ports** lists the ports Chirp can reach. An address on any other port is flagged and cannot be saved, so settle the port before you configure your router. If you edit an existing connector's address, server name, CA file, or encryption while it holds a saved password or token, Chirp asks you to type that secret again.
 
+
+<figure><img src="../../.gitbook/assets/chirp-mqtt-external-form-tls.jpg" alt="The Add external MQTT connector form with the Encrypt the connection (TLS) switch on, showing CA Certificate, Server name (SNI), MQTT version, Topics to read and the Anonymous, Basic, Certification and JWT Token tabs"><figcaption><p>The connector form with encryption switched on.</p></figcaption></figure>
+
 ## Creating the External MQTT connector in Chirp
 
 1. Open **Connectors** in the main menu and select **Add connector** at the top right.

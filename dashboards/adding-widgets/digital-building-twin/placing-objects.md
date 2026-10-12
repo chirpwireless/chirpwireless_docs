@@ -44,6 +44,8 @@ Switch to **Select** and click an object to open its settings:
 
 The selected object also gets a little badge above it with quick **Move**, **Duplicate**, and **Delete** buttons. **Duplicate** is the fast way to fill a room — place one dining chair exactly right, then duplicate it around the table. Copies keep the original's name, so you won't end up with a pile of "copy" labels to rename; give a name only to the pieces you'll connect a sensor to. In the flat **2D view** the same badge works, and **Move** lets you click the new spot on the plan. Furniture goes to the new floor position; a door or window attaches to whichever wall you click.
 
+<figure><img src="../../../.gitbook/assets/chirp-dbt-2d-move-duplicate.jpg" alt="The editor in 2D view with a sofa selected: the badge above it offers Move, Duplicate and Delete, and the properties panel shows Name, Position, Rotation, Scale, Dimensions and the Duplicate and Delete buttons"><figcaption><p>A selected object in the 2D view.</p></figcaption></figure>
+
 ## Parking spots
 
 The **Parking Spot** object (in the **Outdoor** tab) has one bonus setting: a **Spot #** field. If you've got assigned parking, give the spot its number and it shows right on the spot in the model. When you duplicate a numbered spot, the number ticks up automatically — handy if you're laying out a whole row. A parking spot is the perfect partner for an occupancy sensor — see [Connecting sensors and colors](binding-sensors-and-colors.md).

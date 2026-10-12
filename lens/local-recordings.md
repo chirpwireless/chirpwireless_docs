@@ -31,6 +31,17 @@ Twin's supplied configuration starts with **UTC** as its timezone. Before enabli
 
 In **Recording schedule**, select **Timezone**, enable **Use schedule**, and configure the active intervals for each relevant day. Each day supports two intervals, useful for times when you are away from home. Save the schedule and test both an active and an inactive period. Schedules also restrict motion processing, so use unrestricted operation for the initial motion-rule test.
 
+## Change the settings from Chirp
+
+You can also reach the recording and storage controls from the platform. Open **Cameras**, select a camera, and use these tabs on its detail page:
+
+* **Recording** has **Enable recording**, **When to record** (**Motion** or continuous), **Maximum clip length (seconds)**, **Record before movement (seconds)**, **Keep recording after movement (seconds)**, **Motion sensitivity**, the **Fragmented recordings** switch, and a **Recording schedule** with **Timezone** and **Use schedule**.
+* **Storage** shows **Local disk usage**, where clips are saved, an optional **Recording folder override** with a **Test on Twin** button, and the **Automatic cleanup** limits. Select **Save**, then **Send to camera**, so Twin receives the new settings.
+
+<figure><img src="../.gitbook/assets/chirp-lens-camera-recording.jpg" alt="The Recording tab of a camera with Enable recording, When to record, clip length, pre and post movement seconds, motion sensitivity, Fragmented recordings and Recording schedule"><figcaption><p>The Recording tab.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/chirp-lens-camera-storage.jpg" alt="The Storage tab of a camera with Local storage, Local disk usage, Recording folder override, Test on Twin and Automatic cleanup"><figcaption><p>The Storage tab.</p></figcaption></figure>
+
 ## Leave space for the rest of the computer
 
 In **Settings → Storage → Automatic cleanup**, enable one or both limits:

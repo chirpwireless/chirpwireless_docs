@@ -34,6 +34,8 @@ Choose the wall in the Lens sidebar to open your saved camera arrangement. **Pre
 
 Online-panel and stream counts help you see which views are available. When a panel reports its camera as offline, the preview replaces the earlier snapshot with **Camera is offline**. If you see **No preview available**, check the camera's state before assuming it is disconnected; see [Watching Live Video](watching-live-video.md#when-a-picture-is-missing). The **HD streams** and **SD streams** counters reflect viewing modes; they do not increase the resolution supplied by the camera.
 
+<figure><img src="../.gitbook/assets/chirp-lens-videowall.jpg" alt="The Home Office videowall with Viewers, Panels online, HD streams and SD streams counters above two camera panels that read Camera is offline, and a Return All to Home button"><figcaption><p>The Home Office videowall, with both cameras offline.</p></figcaption></figure>
+
 To listen or speak through a supported camera, open that camera's individual view. Use the wall to watch several views together and return supported cameras to their home positions. See [Watching Live Video](watching-live-video.md) for camera controls.
 
 ## Put cameras back where they normally look

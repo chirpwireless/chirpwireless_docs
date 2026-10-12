@@ -8,7 +8,7 @@ Your application's **Content** tab brings its working parts together. For Home W
 
 An application installed from a [solution](solutions-explained.md) already lists everything it created here, and you can add to it. Use each resource's **Application** field to choose where it belongs. The resource must already exist or be created through its usual setup screen.
 
-<figure><img src="../.gitbook/assets/chirp-applications-content.jpg" alt="Chirp Applications: The Content tab groups the application’s devices, dashboards, rules, and alarms."><figcaption><p>The Content tab groups the application’s devices, dashboards, rules, and alarms.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/chirp-application-content.jpg" alt="The Content tab of an application with Devices, Dashboards and Emulator cards on the left and Rules and Alarms cards on the right"><figcaption><p>The Content tab groups devices, dashboards, rules and alarms.</p></figcaption></figure>
 
 ## Add the parts of Home Watch
 
