@@ -41,16 +41,16 @@ This is rare — if the Z2M side is publishing successfully on a topic that star
 This is a device-routing problem inside Chirp. The connector is receiving messages but they're not matching the device record.
 
 - **Device ID Topic pattern doesn't match the published topic.** Z2M publishes to `zigbee2mqtt/{friendlyName}` (after Chirp strips the prefix). The Device ID Topic field must be `zigbee2mqtt/{{deviceId}}` — exactly. Common mistakes: leading slash, missing the `zigbee2mqtt/` prefix, an extra path segment that the published topic doesn't have.
-- **Device ID differs from the publisher’s identifier.** Compare the configured ID with the actual topic segment or payload field, including case and spaces. MQTT IDs preserve both. Keep the existing twin when replacing a bound identity: see [MQTT Devices](../../devices/mqtt-devices.md).
+- **Device ID differs from the publisher’s identifier.** Line the configured ID up against the real topic segment or payload field, looking closely at capital letters and spaces, because MQTT IDs keep both. If you are swapping the hardware behind an identity that is already bound, keep the existing twin; [MQTT Devices](../../devices/mqtt-devices.md) explains how.
 
 Verify what Z2M is publishing right now:
 ```bash
-docker compose logs zigbee2mqtt | grep "MQTT publish" | grep -v bridge | tail -5
+docker compose logs --tail 200 zigbee2mqtt | grep "MQTT publish" | grep -v bridge | tail -5
 ```
 
 The topic in those lines is what your Device ID Topic and Device ID need to match against.
 
-## Phase 4 — Mapping tab Value column updates but Logs tab is empty
+## Phase 4 — The Mapping tab shows values, but the Logs tab stays empty
 
 **Symptoms:** Open a registered device, the Mapping tab shows live values and Last update timestamps, but the Logs tab stays empty even after toggling the device. The most common cause of "is this thing broken?"
 

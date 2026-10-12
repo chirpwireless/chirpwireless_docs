@@ -157,11 +157,11 @@ Below the table, a legend titled **What these statuses mean** spells out every t
 
 | Term | Meaning |
 |---|---|
-| **Routed** | the message reached the platform and was matched to this device. |
+| **Routed** | Chirp received the message and recognized this device as its owner. |
 | **Mapped** | incoming keys were matched to your configured sensors. |
 | **Stored** | sensor values were saved to history. |
 | **OK** | this step completed successfully. |
-| **Skipped** | intentionally not processed (for example, no matching mapping or an unexpected topic). Not necessarily an error. |
+| **Skipped** | left alone on purpose, for example because nothing was mapped for that key or the topic was not one Chirp expected. This is often fine and is not necessarily an error. |
 | **Error** | this step failed and needs attention. |
 
 That **Skipped** row deserves a moment. Seeing it doesn't mean anything is broken — it usually just means a reading arrived that you haven't asked Chirp to keep. If you'd like to keep it, map it (see below). If you don't care about it, leave it alone; Skipped is a perfectly healthy thing to see.

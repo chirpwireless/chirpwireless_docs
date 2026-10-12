@@ -18,7 +18,7 @@ A data source is one of your devices.
 
 1. Click **Add datasource**. A new card appears.
 2. Click **Choose device** and pick the device you want to use.
-3. The card now shows the device's name. Add as many data sources as you need — one per device.
+3. The card now shows the device's name. For more devices, add another data source for each one.
 
 ## Step 2 — Add a metric
 
@@ -33,7 +33,7 @@ Each metric is one connection. A sensor that reports both temperature and humidi
 ## Step 3 — Connect the metric to objects
 
 1. On the metric, click **Configure**. The metric switches into connect mode and its editor opens up.
-2. The editor shows the prompt **Click objects on the scene to bind them**.
+2. A hint appears in the editor: **Click objects on the scene to bind them**.
 3. Click any object in your 3D model — the garage door, a room's wall, a bed, the fridge. Each one you click is linked to this metric and shows up in the editor's **Bound** list.
 4. Link as many objects as the reading should control. To unlink one, remove it from the Bound list.
 5. When you're done, click **Done**.

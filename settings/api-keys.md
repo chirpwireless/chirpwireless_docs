@@ -81,7 +81,7 @@ Rotation swaps the key for a fresh one. The old key stops working the moment you
 
 1. Click the rotation icon on the key row.
 2. A dialog asks you to confirm:
-   > **"Rotate API Key — This will generate a new key and mark the current key '[name]' as rotated. The old key will stop working."**
+   > The rotate dialog warns: **"Rotate API Key — This will generate a new key and mark the current key '[name]' as rotated. The old key will stop working."**
 3. Confirm.
 4. The new key is shown once — copy it immediately.
 5. Update any scripts or integrations using the old key before they try to connect again.
@@ -96,7 +96,7 @@ Revoking cuts off access permanently. You'd do this when you no longer need the 
 
 1. Click the trash icon on the key row.
 2. A dialog confirms what's about to happen:
-   > **"Revoke API Key — This will permanently revoke the API key '[name]'. This action cannot be undone."**
+   > The revoke dialog warns: **"Revoke API Key — This will permanently revoke the API key '[name]'. This action cannot be undone."**
 3. Confirm.
 
 The key shows as **Revoked** in the table. It stays visible for your records, but it will never work again.

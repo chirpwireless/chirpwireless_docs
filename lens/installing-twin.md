@@ -76,7 +76,7 @@ Your camera's password and your Chirp account password are separate from these T
 
 If another person installed Twin, ask them for its initial login. There is no universal factory password; use the one supplied when your Twin was installed.
 
-Choose at least eight non-space characters, including uppercase and lowercase letters, a number, and a symbol. You can change your local login later by opening your user menu and choosing **Change password**. After you change the password, use the new one for future visits. The initial environment variables do not replace credentials already saved in the configuration volume.
+Choose at least eight non-space characters, including uppercase and lowercase letters, a number, and a symbol. To change the local login later, open your user menu and choose **Change password**. After you change the password, use the new one for future visits. The initial environment variables do not replace credentials already saved in the configuration volume.
 
 ## Keep each Twin separate
 
@@ -108,10 +108,10 @@ Visit the local Twin address and follow [Which password do I use?](#which-passwo
 
 For a normal restart, run `docker restart front-door-twin`. For an image upgrade:
 
-1. Back up the Twin's persistent configuration and any recordings you need to keep.
-2. Select the intended image version from the official Docker Hub repository and pull it with `docker pull chirpiot/lens-twin:<version>`.
+1. Before you start, copy the Twin's persistent configuration, along with any recordings you want to keep.
+2. Find the version you want in the official Docker Hub repository and pull it: `docker pull chirpiot/lens-twin:<version>`.
 3. Stop and remove only the old container with `docker stop front-door-twin` and `docker rm front-door-twin`.
-4. Run the installation command again with the new image tag and the **same** configuration and recording volume names, port, and other installation options.
-5. Sign in with the saved local credentials and verify local video and the Lens connection.
+4. Repeat the installation command, changing only the image tag; keep the **same** volume names for configuration and recordings, the same port and every other option.
+5. Log in with the local credentials you saved, then check that local video plays and the Lens connection is up.
 
-Do not remove the volumes during an upgrade. Replacing the container briefly interrupts its camera feed; the retained configuration keeps the camera's identity and pairing.
+Do not remove the volumes during an upgrade. The camera feed drops for a moment while the container is replaced, but the kept configuration preserves the camera's identity and pairing.

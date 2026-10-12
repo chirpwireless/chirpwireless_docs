@@ -24,7 +24,7 @@ Open dashboard edit mode and tap **Map** in the widget picker. (See [Adding Widg
 
 ### Step 2 — Datasource tab: select a tracker and a metric
 
-The Datasource tab is titled **"Map configuration"** with the subtitle **"Configure last data and data sources."**
+The Datasource tab opens with the title **"Map configuration"** and the subtitle **"Configure last data and data sources."**
 
 1. Tap the device selector to choose a tracker device. The selector does not pre-filter by location capability — you can pick any device.
 2. After selecting a device, the widget automatically looks for sensors named `lat` or `latitude` for latitude, and `lon`, `longitude`, or `lng` for longitude. If it finds them, the marker appears on the map. If no matching sensor names are found, no marker is shown.

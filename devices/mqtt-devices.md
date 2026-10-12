@@ -4,28 +4,28 @@ description: Connect MQTT equipment to Chirp digital twins, configure device rou
 
 # MQTT Devices
 
-An **MQTT device** supplies readings to Chirp by publishing messages to an MQTT broker. It can be equipment with its own MQTT client or a sensor connected through a bridge. The broker connection carries messages; the device's routing settings associate them with a **digital twin**, and its mapping turns message fields into stored measurements.
+An **MQTT device** gets its readings into Chirp by publishing messages to an MQTT broker. The publisher may be equipment with a built-in MQTT client, or a sensor that reaches the broker through a bridge. Three things work together: the broker connection moves the messages, the device's routing settings tie each message to a **digital twin**, and the mapping converts message fields into stored measurements.
 
-For example, a Zigbee temperature sensor can send readings through Zigbee2MQTT to **Living Room Climate**. Chirp keeps the room's measurements together if you later replace the sensor.
+A Zigbee temperature sensor is a good example: it can report through Zigbee2MQTT to a twin called **Living Room Climate**. If you swap the sensor later, the room's measurements stay together in Chirp.
 
 ## Before you start
 
-- Set up a [Cloud MQTT](../connectors/mqtt/cloud-mqtt.md) connection when Chirp provides the broker, or [External MQTT](../connectors/mqtt/external-mqtt.md) when your equipment already publishes to another broker. Those guides cover broker addresses, credentials and connectivity.
-- Have the publisher's exact topic and a sample payload available. Configure the hardware or bridge to publish before completing measurement mapping.
-- You need device-create/edit permission and available subscription capacity for a new twin. Read-only access lets you inspect settings without changing them.
+- Set up a [Cloud MQTT](../connectors/mqtt/cloud-mqtt.md) connection if Chirp supplies the broker, or [External MQTT](../connectors/mqtt/external-mqtt.md) if your equipment already publishes to a broker elsewhere. Broker addresses, credentials and connectivity are covered in those guides.
+- Keep the publisher's exact topic and a sample payload at hand, and make the hardware or bridge publish before you finish measurement mapping.
+- Your account needs permission to create and edit devices, and your plan must have room for one more twin. With read-only access you can view the settings but not change them.
 
-For Zigbee hardware, first follow [Setting up Zigbee2MQTT](../connectors/mqtt/zigbee2mqtt.md). Chirp receives the bridge's MQTT messages; the sensor itself still uses Zigbee. Pairing and bridge installation stay in that guide.
+If the hardware is Zigbee, begin with [Setting up Zigbee2MQTT](../connectors/mqtt/zigbee2mqtt.md). Chirp only sees the MQTT messages from the bridge; the sensor itself keeps speaking Zigbee. Pairing and installing the bridge are handled in that guide.
 
 ## Connect one device
 
-1. Open **Devices → Add device**, or choose **Add device** from your MQTT connector row.
-2. Enter **Device name**, such as **Living Room Climate**, optionally add photos, and click **Save**. See [shared registration steps](adding-sensors.md) for profile and Application settings.
-3. On **Connection**, select your MQTT connection under **Connector type**. Enter **Device ID** as `LivingRoomSensor` for this example.
-4. In **MQTT Topic for device ID**, add a **Text segment** containing `zigbee2mqtt` and a **Device ID** segment. Keep **Where to get the device ID** set to **Topic**. The device-level pattern is `zigbee2mqtt/{{deviceId}}`.
-5. Compare **Resolved preview** with the publisher's actual topic. For Cloud MQTT, the preview includes the locked connector prefix, and the publisher must include that prefix too. For External MQTT, use the publisher's full topic without adding a Cloud prefix.
-6. Leave **Topic Telemetry** empty for the JSON example below. Set **Data sending interval** to the expected reporting cadence, then click **Save**.
-7. Let the publisher send a fresh message. Open **Mapping** and select templates and received keys for the measurements you need. Save, then allow another message to arrive.
-8. Open **Logs** and select a date range containing that message. Confirm the mapped measurements have recorded values.
+1. Go to **Devices → Add device**, or press **Add device** on your MQTT connector's row.
+2. Type a **Device name** such as **Living Room Climate**, add photos if you want, and click **Save**. The [shared registration steps](adding-sensors.md) explain profile and Application settings.
+3. On **Connection**, choose your MQTT connection in **Connector type**. For this example, set **Device ID** to `LivingRoomSensor`.
+4. Under **MQTT Topic for device ID**, add a **Text segment** with the text `zigbee2mqtt`, followed by a **Device ID** segment. **Where to get the device ID** stays on **Topic**. The resulting device-level pattern is `zigbee2mqtt/{{deviceId}}`.
+5. Check **Resolved preview** against the topic the publisher really uses. With Cloud MQTT the preview shows the connector's locked prefix, and the publisher has to publish with that same prefix. With External MQTT, take the publisher's complete topic as it is and leave out any Cloud prefix.
+6. For the JSON example below, **Topic Telemetry** stays empty. Enter the cadence you expect in **Data sending interval** and click **Save**.
+7. Have the publisher send a new message, then open **Mapping** and choose the templates and received keys for the measurements you want. Save, and let one more message come in.
+8. Open **Logs**, pick a date range that includes that message, and check that the mapped measurements have recorded values.
 
 ### Example topic and payload
 
@@ -41,39 +41,39 @@ For Zigbee hardware, first follow [Setting up Zigbee2MQTT](../connectors/mqtt/zi
 {"temperature": 21.4, "humidity": 58, "battery": 92}
 ```
 
-Map `temperature` to a Float template in °C, `humidity` to a numeric humidity template in %, and `battery` to a numeric battery template in %, when those match the sensor's actual output. Check the device's exposed fields rather than assuming every sensor publishes the same keys.
+Assign `temperature` to a Float template in °C, `humidity` to a numeric humidity template in %, and `battery` to a numeric battery template in %, provided that is what the sensor actually outputs. Look at the fields your device exposes instead of assuming every sensor publishes these keys.
 
 ## Connection fields and actions
 
 | Control | How to configure it |
 | --- | --- |
-| **Connector type** | Select the Cloud or External MQTT connection receiving this publisher's messages. **Connector section** opens connection setup if the required connection is missing. |
-| **Device ID** | Required, 1–64 characters: ASCII letters, digits, spaces, `.`, `_` or `-`. MQTT identifiers preserve case and spaces. Match the extracted topic segment or payload identifier exactly; `Sensor1` and `sensor1` differ. The identity is locked after binding. A simple whitespace-free name is convenient, but spaces are not automatically removed. |
-| **MQTT Topic for device ID** | Build the topic pattern matching the messages you want this device to receive. The Cloud prefix is read-only; do not enter it again as a text segment. |
-| **Where to get the device ID** | **Topic** reads the Device ID segment. **Payload** reads a field inside the message; configure its **Payload template** and remove the Device ID segment from the device topic pattern. |
-| **Payload template / Payload preview** | In Payload mode, enter a dot-separated path such as `deviceInfo.deviceId`. The preview illustrates the expected JSON shape; it does not publish or validate a message. |
-| **Topic Telemetry** | Optional rows for values carried in topic segments. Leave empty for ordinary JSON payloads. See the [routing reference](../connectors/mqtt/topics-and-device-routing.md#topic-telemetry) for every row control, including **Apply all**. |
-| **Data sending interval** | Positive whole number and **minute**, **hour**, **day**, **week**, or **month**. Starts at **1 hour**. Match your publisher's expected cadence; this setting does not change the publisher's schedule. For event-driven sensors, consider their heartbeat/reporting behavior when interpreting missing-data diagnostics. |
-| **Detach physical device** | Removes the saved binding immediately. Use it to replace a publisher on the same twin, then restore routing and map its incoming fields to the existing measurements. |
-| **Save** | Saves the device connection, routing and key assignments. Review any error before assuming new messages follow the edited configuration. **Apply all** and topic previews do not save. |
+| **Connector type** | Choose the Cloud or External MQTT connection that receives this publisher's messages. If the connection you need is missing, **Connector section** takes you to its setup. |
+| **Device ID** | Required. Anything from 1 to 64 characters is fine, as long as each one is an ASCII letter, a digit, a space, a period, an underscore or a hyphen. MQTT identifiers keep their case and spaces, so the value must be identical to the topic segment or payload identifier it is compared with; `Sensor1` and `sensor1` are two different IDs. After binding, the identity is locked. A name without spaces is easier to work with, but Chirp never strips spaces for you. |
+| **MQTT Topic for device ID** | Compose the topic pattern for the messages this device should receive. The Cloud prefix is shown read-only and is already included, so do not type it again as a text segment. |
+| **Where to get the device ID** | **Topic** takes the ID from the Device ID segment. **Payload** takes it from a field in the message body; in that case fill in the **Payload template** and drop the Device ID segment from the device topic pattern. |
+| **Payload template / Payload preview** | In Payload mode, write a dot-separated path such as `deviceInfo.deviceId`. The preview only sketches the JSON shape you expect; nothing is published and no message is validated. |
+| **Topic Telemetry** | Optional rows for values that travel inside topic segments. Ordinary JSON payloads need none. The [routing reference](../connectors/mqtt/topics-and-device-routing.md#topic-telemetry) describes every row control, including **Apply all**. |
+| **Data sending interval** | A positive whole number plus **minute**, **hour**, **day**, **week** or **month**, starting at **1 hour**. Enter the cadence your publisher is expected to follow; the publisher's own schedule is not touched. Sensors that only report on events may have a heartbeat, which is worth remembering when you read missing-data diagnostics. |
+| **Detach physical device** | Drops the saved binding right away. Use it to swap a publisher on the same twin, then set the routing up again and connect the new incoming fields to the existing measurements. |
+| **Save** | Stores the device connection, the routing and the key assignments. If an error appears, read it before assuming new messages already follow the edited setup. **Apply all** and topic previews do not save anything. |
 
-The [Topics and Device Routing](../connectors/mqtt/topics-and-device-routing.md) reference explains segment editing, validation, nested payloads, topic-value extraction and arrival timestamps.
+The [Topics and Device Routing](../connectors/mqtt/topics-and-device-routing.md) reference covers editing segments, validation, nested payloads, values pulled from topics and arrival timestamps.
 
 ## Map messages to retained measurements
 
-**Mapping** lists available incoming keys alongside the templates you assign. Click **Add key**, select the **Normalized key**, and choose a **Device data key**. The key dropdown is populated from received messages, so it may be empty until the device publishes after its connection is saved.
+**Mapping** pairs the keys that have arrived with the templates you assign. Click **Add key**, pick the **Normalized key**, then pick a **Device data key**. The dropdown of keys is filled from messages Chirp has received, so it can be empty until the device publishes after its connection was saved.
 
-You can save the connection first and return to mapping once keys arrive. If you already added template rows, keep them and complete their key assignments. The **Value** and **Last update** columns show received field snapshots; they do not prove that history has been recorded. A blank data-key selection records nothing for that measurement. Save mappings and wait for a fresh publish: earlier messages are not backfilled.
+Feel free to save the connection first and come back to mapping when keys have arrived. Template rows you already added can stay; finish assigning their keys. The **Value** and **Last update** columns display snapshots of received fields, which is not proof that history is being stored. If a row's data key is left blank, that measurement records nothing. Save the mappings, then wait for a new message to be published, because messages from before are not backfilled.
 
-The mapping **Data type** is **Telemetry**, including reported switch states you want to record. The template's **Type** determines how a value is interpreted. For example, `"ON"`/`"OFF"` need String; actual `true`/`false` can use Boolean. An incompatible value is rejected for that measurement rather than saved as a null reading.
+The mapping's **Data type** is **Telemetry**, which also covers reported switch states you want recorded. How a value is interpreted depends on the template's **Type**: `"ON"` and `"OFF"` need String, whereas real `true` and `false` can use Boolean. A value that does not fit the type is rejected for that measurement; it is not stored as an empty reading.
 
-See [mapping controls](sensor-details.md#metrics) for Unit, Type, inline metric creation, removal and the effect of replacing a template. Revisit mapping when firmware begins publishing useful additional fields.
+[Mapping controls](sensor-details.md#metrics) explain Unit, Type, creating a metric inline, removing a row and what changes when you replace a template. Come back to mapping whenever the firmware starts publishing additional fields worth keeping.
 
 ## Commands and replacing hardware
 
-A saved MQTT binding can expose **Commands & States**. A receiving device must subscribe to the configured command topic and understand the command payload; receiving telemetry alone does not establish that capability. Use [Creating Commands](commands/creating-commands.md) for topic addressing, JSON parameters, encoders and feedback verification.
+Once an MQTT binding is saved, the device can offer **Commands & States**. The hardware has to subscribe to the command topic you configure and understand the command payload; the fact that it sends telemetry says nothing about that. [Creating Commands](commands/creating-commands.md) covers topic addressing, JSON parameters, encoders and feedback verification.
 
-When hardware changes, keep **Living Room Climate** and its existing measurements. Follow [device replacement](sensor-details.md), update the physical Device ID and routing, and reconnect the new keys. Review command topics and expected feedback too. History already retained under those measurement identities stays associated with the twin, subject to the retention period.
+When the hardware changes, **Living Room Climate** and its measurements stay. Follow [device replacement](sensor-details.md): update the physical Device ID and the routing, then reconnect the new keys, and review command topics and expected feedback as well. Whatever was already retained under those measurement identities remains attached to the twin for as long as the retention period allows.
 
 <figure><img src="../.gitbook/assets/device-command-editor.jpg" alt="Chirp MQTT command editor showing required command name and topic, Cloud prefix, and payload mode"><figcaption><p>For hardware that accepts commands, configure the outbound topic separately from incoming telemetry routing.</p></figcaption></figure>
 
@@ -81,10 +81,10 @@ When hardware changes, keep **Living Room Climate** and its existing measurement
 
 | Symptom | Next check |
 | --- | --- |
-| Connection cannot be saved | Non-empty topic, matching identifier mode/path, valid Device ID, required telemetry row fields, permissions and duplicate identifiers. |
-| Broker receives messages but no device keys appear | Compare the resolved topic, Cloud prefix, identifier spelling and payload path with a real message. |
-| Keys appear but Logs is empty | Check saved mapping, compatible types, a fresh message and the selected history range. |
-| Only some readings are missing | Inspect actual payload fields and normalization errors; nested JSON fields use dot-separated names. |
-| Old buffered readings appear with a recent time | MQTT measurements use arrival time. A `timestamp` payload field is ordinary data, not an instruction to backdate history. |
+| The connection will not save | A non-empty topic, a matching identifier mode and path, a valid Device ID, the required fields of telemetry rows, your permissions, and identifiers that may already be taken. |
+| The broker gets messages, but no device keys show up | Compare the resolved topic, Cloud prefix, spelling of the identifier and payload path against a real message. |
+| Keys show up, yet Logs is empty | Look at the saved mapping, whether types fit, whether a new message came in, and which history range is selected. |
+| Only part of the readings are missing | Read the real payload fields and any normalization errors; fields inside nested JSON use dot-separated names. |
+| Old buffered readings appear with a recent time | MQTT measurements are stamped on arrival. A `timestamp` field in the payload is just data and cannot move history to an earlier date. |
 
 See [MQTT Troubleshooting](../connectors/mqtt/troubleshooting.md) and [device diagnostics](connection-diagnostics.md).

@@ -88,7 +88,7 @@ Chirp provisions a broker endpoint and displays the credentials:
 
 Copy the credentials above into your Zigbee2MQTT configuration or device MQTT settings. A few things to know before you connect:
 
-- **The Broker URL is the complete endpoint** — copy it exactly as shown. It uses TLS on port 1884 (not the standard 1883). In Zigbee2MQTT, set `server` to this value and enable TLS.
+- **Copy the Broker URL exactly as shown** — it is the whole endpoint, nothing needs to be added to it. It uses TLS on port 1884 (not the standard 1883). In Zigbee2MQTT, set `server` to this value and enable TLS.
 - **Every topic must start with the Topic prefix.** The full topic you publish to is: `{Topic prefix}/{device topic}`. For Zigbee2MQTT, set `base_topic` in its configuration to `{Topic prefix}/zigbee2mqtt` — for example `iot/abc123/xyz789/zigbee2mqtt`. Zigbee2MQTT then publishes each device under that path automatically.
 - **Device routing templates don't include the prefix.** When you configure the Device ID Topic in the Topic tab (Step 2), enter only the device-level portion — for example `zigbee2mqtt/{{deviceId}}`. Chirp strips the prefix automatically before matching.
 
@@ -173,7 +173,7 @@ This is the default path for most Zigbee sensors, ESP32 projects publishing flat
 
 **Add new topic** — adds a telemetry topic row.
 
-**Apply all** — uses the device ID topic pattern as a prefix to generate telemetry topic templates for rows that already have a Connector Key filled in. Useful when you have multiple per-topic rows that follow a predictable naming pattern.
+**Apply all** — builds the telemetry topic templates for you, starting from the device ID topic pattern, and does so only for rows whose Connector Key is already filled in. It saves time when several rows follow a regular per-topic naming scheme.
 
 #### Placeholder reference
 
@@ -194,7 +194,7 @@ The table has 8 columns:
 
 | Column | Type | Details |
 |--------|------|---------|
-| **Normalized key** | Dropdown | Select from sensor templates; includes a "+ Add new metric" option |
+| **Normalized key** | Dropdown | Lists your sensor templates, with a "+ Add new metric" entry at the bottom for creating one |
 | **Unit** | Read-only | Derived from the selected template |
 | **Type** | Read-only | Integer, Float, String, or Boolean — derived from template |
 | **Data type** | Dropdown | Reported State, Telemetry, or Device Metadata |
@@ -328,4 +328,4 @@ If saving a device on a Cloud MQTT connector fails, contact support for help com
 - [Adding Widgets](../dashboards/adding-widgets/README.md) — Display your new sensor readings on a dashboard.
 - [Set Up a Home Alert](../alarm/set-up-a-home-alert.md) — Get notified when readings go outside normal ranges.
 
-For the device-level setup, follow [MQTT Devices](../devices/mqtt-devices.md). It covers the physical identifier, connection fields, measurement mapping and checking retained history.
+Each device is configured separately. [MQTT Devices](../devices/mqtt-devices.md) shows how: pick its identifier, complete the connection fields, map the incoming readings to measurements, and then verify the retained history.

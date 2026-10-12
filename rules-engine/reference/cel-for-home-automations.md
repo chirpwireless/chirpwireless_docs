@@ -31,9 +31,9 @@ Every expression has access to a `vars` object that holds the current automation
 | `vars.device_name` | The name of the watched device that met the condition |
 | `vars.subject_kind` | The watched resource type; currently `device` |
 | `vars.subject_id` | The identifier of the watched device |
-| `vars.sensor_id` | The sensor identifier used to associate the run and any alarm with the watched device |
+| `vars.sensor_id` | Which sensor of the watched device triggered the run; it also ties any alarm to that device |
 | `vars.detector_id` | The identifier of the trigger |
-| `vars.timestamp` | The original activation time in whole Unix seconds; repeated signals for the same occurrence retain it |
+| `vars.timestamp` | When the activation first happened, in whole Unix seconds. A repeated signal for the same occurrence keeps this original time. |
 
 A trigger-started automation does not receive `vars.value`, because it reports a trigger signal rather than one normalized sensor event. This applies to immediate and delayed triggers. Replace expressions that use `vars.value` before switching an existing automation to **Trigger condition**.
 
@@ -182,7 +182,7 @@ has(vars.garden_moisture) ? vars.garden_moisture.value : -1
 | `list.exists(x, expr)` | True if any element matches | `["door", "window"].exists(s, vars.sensor_id.contains(s))` |
 | `list.all(x, expr)` | True if all elements match | `[20.0, 22.0, 25.0].all(t, t > 15.0)` |
 | `list.filter(x, expr)` | Returns matching elements | `[10, 25, 40].filter(t, t > 20)` → `[25, 40]` |
-| `list.map(x, expr)` | Transforms each element | `[1, 2, 3].map(x, x * 10)` → `[10, 20, 30]` |
+| `list.map(x, expr)` | Applies the expression to every element and returns the results | `[1, 2, 3].map(x, x * 10)` → `[10, 20, 30]` |
 
 ---
 

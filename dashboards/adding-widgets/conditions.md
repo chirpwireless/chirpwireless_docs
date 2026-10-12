@@ -25,7 +25,7 @@ The **Chart** widget uses a different approach — per-metric color picker and t
 
 ## What the Conditions modal contains
 
-**Title:** "Conditions" / **Subtitle:** "The conditions set first will be considered as a priority"
+The modal is titled **"Conditions"**, and underneath it a subtitle says: "The conditions set first will be considered as a priority"
 
 **Header (applies to the whole metric):**
 - **Device metric** — Read-only. Shows which sensor this modal is for.
@@ -49,7 +49,7 @@ There's no limit on the number of conditions you can add.
 
 ## Priority: first match wins
 
-Conditions are evaluated top to bottom. The **first condition in the list that matches the current reading** determines the color. Order matters.
+Chirp checks the conditions from the top of the list downward and stops at the **first one that fits the current reading**; that condition picks the color, so order matters.
 
 If your sensor reads 7°C and you have:
 1. "Normal" — Number, From 2, To 8 — green
@@ -90,11 +90,11 @@ The same Number condition type handles all of these. The difference is only in t
 
 ### String
 
-A single **Value** text field. Matches the reading exactly, case-sensitive. Available in the conditions modal but requires a widget that surfaces a String-type sensor — Last Data and Image widget selectors do not surface String sensors.
+A single **Value** text field. Matches the reading exactly, case-sensitive. The conditions modal offers it only for widgets that can show a String sensor, which the Last Data and Image widget selectors cannot.
 
 ### Boolean
 
-A **True / False** dropdown. Matches the reading exactly. Available in the conditions modal but requires a widget that surfaces a Boolean-type sensor — Last Data and Image widget selectors do not surface Boolean sensors.
+A **True / False** dropdown. Matches the reading exactly. The conditions modal offers it only for widgets that can show a Boolean sensor, which the Last Data and Image widget selectors cannot.
 
 ## Color fallback hierarchy
 

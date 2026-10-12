@@ -4,7 +4,7 @@ description: Find the right LoRaWAN frequency band for your country before regis
 
 # LoRaWAN Frequencies
 
-> **Reference only.** This page is a general guide. The frequency data may not be 100% accurate or up to date. Always check with your local regulations before deploying devices. Use at your own risk.
+> **Reference only.** This page is a general guide. Treat the frequency data below as a starting point: it can be out of date or contain mistakes. Before you put devices into service, confirm the rules that apply where you live. You use this information at your own risk.
 
 LoRaWAN sensors use unlicensed radio frequencies that vary by country. When you set up a sensor in Chirp, you select the correct frequency band for your region. This page helps you find out which band to use.
 

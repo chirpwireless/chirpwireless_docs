@@ -57,4 +57,4 @@ On a dashboard you keep on a wall tablet or a TV, a solid Pie reads more clearly
 
 - [Last Data Widget](../last-data-widget.md) — The full widget setup and the other display types
 - [Conditions](../conditions.md) — Setting the From/To color rules
-- Other display types: [Value](number.md) · [Doughnut](doughnut.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)
+- More ways to show the same data: [Value](number.md) · [Doughnut](doughnut.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)

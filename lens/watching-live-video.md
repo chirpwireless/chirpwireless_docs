@@ -46,7 +46,7 @@ To listen to a supported camera, start its live stream and unmute the audio cont
 
 ## Move a camera and save useful positions
 
-**PTZ** means pan, tilt, and zoom. Open a supported camera's controls and use the directional and zoom controls to adjust the view. Save positions you will revisit:
+**PTZ** means pan, tilt, and zoom. On a camera that supports it, open the controls and nudge the view with the arrows and zoom buttons. Save positions you will revisit:
 
 1. Point the camera at a view you want to revisit, such as the garden gate.
 2. Give that position a **Preset name** under **Presets**, then choose **Create preset**.
@@ -56,4 +56,4 @@ To listen to a supported camera, start its live stream and unmute the audio cont
 
 The panel is titled **Camera controls**. Until you save a position it says **No presets saved**. **Return Home** sends the camera to its default position; it stays disabled with the hint **Set a default preset to enable Return Home** until you have chosen one. Remove an unwanted position with its **Delete** action and confirm (the dialog asks "Are you sure you want to delete ... preset?" and warns that it cannot be undone). When removing the default, select a replacement so return-home still has a destination. Check your motion zones whenever the camera starts watching a different area.
 
-The [videowall return-home workflow](videowalls.md#put-cameras-back-where-they-normally-look) restores normal coverage after an operator follows activity with one or several cameras.
+After you have followed some activity with one or several cameras, the [videowall return-home workflow](videowalls.md#put-cameras-back-where-they-normally-look) puts everything back to normal coverage.

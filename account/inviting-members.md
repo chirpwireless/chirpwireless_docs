@@ -47,4 +47,4 @@ Click your name or avatar in the bottom-left corner to open the user menu, then 
 
 ## What Happens Next
 
-Once the invitation is sent, the person receives an email with a one-click link. See [Accepting Invitations](accepting-invitations.md) for what happens on their end. To revoke a pending invitation or manage members after they join, see [Managing Access](managing-access.md).
+Once the invitation is sent, the person receives an email with a one-click link. See [Accepting Invitations](accepting-invitations.md) for what happens on their end. Need to withdraw an invitation that has not been accepted yet, or look after members once they have joined? [Managing Access](managing-access.md) covers both.

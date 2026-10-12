@@ -8,7 +8,7 @@ Chirp uses five severity levels to classify alarms by urgency. Each level carrie
 
 ## Opening the severity settings
 
-Click the **Notification Severity** button in the Alarm page header. This button is visible on all tabs (Inbox, Alarm definitions, and Settings). It opens a modal titled **Notification severity** with the subtitle: *"Choose how often notifications should be sent. You can enable a one-time notification or set a repeat interval."*
+Click the **Notification Severity** button in the Alarm page header. You can reach it from any of the three tabs: Inbox, Alarm definitions and Settings. It opens a modal titled **Notification severity** with the subtitle: *"Choose how often notifications should be sent. You can enable a one-time notification or set a repeat interval."*
 
 ## The five severity levels
 

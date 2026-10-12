@@ -44,8 +44,8 @@ Keeping the same twin preserves the link to its stored readings; your subscripti
 
 | Source | Start here |
 | --- | --- |
-| LoRaWAN sensor | [LoRaWAN Devices](lorawan-devices.md) — profiles, radio identity, decoding and first readings |
-| MQTT publisher or bridged sensor | [MQTT Devices](mqtt-devices.md) — connect messages to a twin and its measurements |
+| LoRaWAN sensor | [LoRaWAN Devices](lorawan-devices.md) covers the profile, the radio identity, decoding, and getting your first readings |
+| Sensor that publishes over MQTT, directly or through a bridge | [MQTT Devices](mqtt-devices.md) shows how to tie the messages to a digital device and its measurements |
 | GPS tracker | [Tracker Connector](../connectors/tracker-connector.md) — tracker identity, model and reporting endpoint |
 | Generated readings | [Pretend Sensors](pretend-sensors.md) — prepare dashboards before the sensor arrives |
 

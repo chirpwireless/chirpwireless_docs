@@ -16,9 +16,9 @@ If you built the shell of your model by [tracing it from the satellite map](trac
 
 ### Anchored by hand
 
-You can also place anchors yourself, on any model — including one you drew from scratch or imported from a plan file. This is done in the **GPS Anchors** section at the bottom of the Sensors panel.
+You can also place anchors yourself, on any model — including one you drew from scratch or imported from a plan file. Use the **GPS Anchors** section, which sits at the bottom of the Sensors panel.
 
-1. On the bottom toolbar, click **Sensors**, and find the **GPS Anchors** section.
+1. Open **Sensors** from the bottom toolbar and scroll to **GPS Anchors**.
 2. Click **Add by click**. The editor switches into pick mode with the prompt **Click on the scene to pick a point**.
 3. Click a point in your model — a corner of the house, a spot you know the coordinates of.
 4. A small form appears showing the point you picked. Type in its real **Latitude** and **Longitude**.

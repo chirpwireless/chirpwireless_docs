@@ -18,7 +18,7 @@ curl -sS https://api.chirpwireless.io/api/v2/devices \
   -H "X-Organization-Id: $CHIRP_HOME_ID"
 ```
 
-`GET /api/v2/devices` lists the sensors the key can see (it needs a Devices **Read** scope). Use the same two headers for other calls; check the API reference for the path and the scope each one needs.
+`GET /api/v2/devices` lists the sensors the key can see (it needs a Devices **Read** scope). Other calls work the same way with the same two headers. Look each endpoint up in the API reference to see its path and the scope it requires.
 
 ## gRPC
 

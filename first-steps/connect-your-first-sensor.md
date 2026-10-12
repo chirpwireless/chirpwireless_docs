@@ -31,7 +31,7 @@ Your gateway needs to support the **Basics Station** protocol — this is how it
 3. Click **Add gateway** in the top-right corner.
 4. Give it a **name** — like "Living Room Gateway" or "Home Hub."
 5. Choose the right **region** for your gateway hardware and location:
-   - Usually this matches the band your gateway was sold or configured for
+   - Normally it is the frequency band printed on the gateway's box, or the one it was set up for
    - **EU868** for most deployments in Europe
    - **US915-0 / US915-1** in the United States, depending on the network setup
    - **EU433** only if your gateway is specifically built or configured for 433 MHz

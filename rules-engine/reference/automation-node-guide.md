@@ -50,9 +50,9 @@ What you get depends on the **Start source**.
 | `vars.device_name` | The name of the watched device that met the condition |
 | `vars.subject_kind` | The watched resource type; currently `device` |
 | `vars.subject_id` | The identifier of the watched device |
-| `vars.sensor_id` | The sensor identifier used to associate the run and any alarm with the watched device |
+| `vars.sensor_id` | Which sensor of the watched device triggered the run; it also ties any alarm to that device |
 | `vars.detector_id` | The identifier of the trigger |
-| `vars.timestamp` | The original activation time in whole Unix seconds; repeated signals for the same occurrence retain it |
+| `vars.timestamp` | When the activation first happened, in whole Unix seconds. A repeated signal for the same occurrence keeps this original time. |
 
 There is **no `vars.value`** on a trigger-started automation. The automation receives a trigger signal rather than one normalized sensor event, whether that trigger is immediate or delayed. An expression using `vars.value` will fail every time it runs.
 

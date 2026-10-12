@@ -25,4 +25,4 @@ Once your LNS connector is set up, click it in the connectors list to see two ta
 - **LoRaWAN Gateways** — Your gateway list. See [Gateways](../../gateways/) for setup.
 - **Connected Devices** — Your sensors. See [Adding Sensors](../../devices/adding-sensors.md) for the full walkthrough.
 
-For the device-level setup, follow [LoRaWAN Devices](../../devices/lorawan-devices.md). It covers the physical identifier, connection fields, measurement mapping and checking retained history.
+To add a sensor to this connector, continue with [LoRaWAN Devices](../../devices/lorawan-devices.md). That page covers the identifier printed on the device, the connection fields, how readings become measurements, and how to see the history Chirp keeps.

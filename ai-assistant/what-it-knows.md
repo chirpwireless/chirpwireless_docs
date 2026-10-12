@@ -14,7 +14,7 @@ Your selected home and your permissions determine what the assistant can inspect
 
 ## Live sensor data
 
-Check the reading time when interpreting a result: a quiet device may only have an older value, and stored history depends on your retention window.
+When you read an answer, look at the timestamp too. A device that has gone quiet may only have an older value to give, and how far back history goes depends on your retention window.
 
 Current readings from every sensor you have access to: temperature, humidity, motion, door states, air quality, and anything else your devices measure. It also knows which sensors are online, which are offline, battery levels, and when each one last reported in.
 

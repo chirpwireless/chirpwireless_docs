@@ -29,7 +29,7 @@ If someone has not accepted their invitation yet:
 
 1. Find the pending invitation in the members list — it shows the invited email with an **"Awaiting invitation confirmation"** tooltip.
 2. Click the **Remove** button.
-3. A confirmation dialog asks: *"Are you sure you want to delete the invitation for {email}?"*
+3. A confirmation dialog appears, and its question names the invitation's email address: *"Are you sure you want to delete the invitation for {email}?"*
 4. Confirm the action.
 
 The invitation link is immediately invalidated and the row disappears from the list. Invitation revocations are not recorded in the Activity Log.

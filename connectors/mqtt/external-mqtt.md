@@ -184,4 +184,4 @@ After Z2M restarts and the bulb publishes, you'll see the device-level topic in 
 
 External MQTT connectors are limited to 10 per home. If you have several brokers — a Mosquitto on the home server, a HiveMQ for outdoor sensors, a third for a hobby project — each gets its own connector and the 10 covers all of them combined.
 
-For the device-level setup, follow [MQTT Devices](../../devices/mqtt-devices.md). It covers the physical identifier, connection fields, measurement mapping and checking retained history.
+Once the broker side is working, set up each device by following [MQTT Devices](../../devices/mqtt-devices.md): it takes you from the identifier through the connection fields and measurement mapping to confirming that history is being kept.

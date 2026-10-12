@@ -36,7 +36,7 @@ If adding fails, the dialog tells you why:
 
 | Message | What to do |
 |---|---|
-| This Twin Key is already registered. If this is a cloned image, generate a new key in the Twin. | The key belongs to a camera already in Chirp. A cloned Twin image needs a fresh key first. |
+| "This Twin Key is already registered", plus a hint to generate a new key in the Twin when the image was cloned. | The key belongs to a camera already in Chirp. A cloned Twin image needs a fresh key first. |
 | You do not have permission to add cameras in this organization. | Ask an organization admin for **Edit** access to Cameras. |
 | Your subscription plan has no room for another device. Remove one or upgrade the plan. | Remove a device you no longer use, or change the plan. |
 | The video service is unavailable, so the camera was not created. Try again in a moment. | Wait a minute and add the camera again. |

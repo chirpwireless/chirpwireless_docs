@@ -12,7 +12,7 @@ Every object is a real, properly-sized 3D model — a bed is bed-sized, a parkin
 
 Everyday things for living spaces and bedrooms:
 
-Sofa, Armchair, Dining Chair, Office Chair, Stool, Coffee Table, Dining Table, Office Table, Pool Table, Double Bed, Single Bed, Bunk Bed, Bookshelf, Dresser, Closet, Shelf, Trash Bin, Column, Round Carpet, Large Plant, Small Plant, Office Trash Bin, Office Wastebasket.
+Armchair, Bookshelf, Bunk Bed, Closet, Coffee Table, Column, Dining Chair, Dining Table, Double Bed, Dresser, Large Plant, Office Chair, Office Table, Office Trash Bin, Office Wastebasket, Pool Table, Round Carpet, Shelf, Single Bed, Small Plant, Sofa, Stool, Trash Bin.
 
 This is the tab you'll reach for most when furnishing the living room, the bedrooms, and a home office.
 
@@ -36,7 +36,7 @@ A bathroom is one good place for a leak sensor — place the sink or bath, then 
 
 Devices and home equipment — often the things you most want to keep an eye on:
 
-Ceiling Lamp, Floor Lamp, Table Lamp, TV, Computer, Washer, AC Unit, Smoke Detector, Water Boiler, Gas Water Heater, Water Pump, Water Pump (Heavy Duty), Water Pump Station, Water Softener Cylinder, Water Softener Tank.
+AC Unit, Ceiling Lamp, Computer, Floor Lamp, Gas Water Heater, Smoke Detector, Table Lamp, TV, Washer, Water Boiler, Water Pump, Water Pump (Heavy Duty), Water Pump Station, Water Softener Cylinder, Water Softener Tank.
 
 Plenty here to connect sensors to: a **Smoke Detector** for fire safety, an **AC Unit** for comfort, a **Washer** for a laundry-done alert, a **Water Boiler** or **Water Pump** for the utility room. Connect a sensor and the appliance itself shows its status in the model.
 
@@ -44,7 +44,7 @@ Plenty here to connect sensors to: a **Smoke Detector** for fire safety, an **AC
 
 Everything beyond the front door — gardens, driveways, and the edges of your property:
 
-Fir Tree, Bush, Patio Umbrella, Parking Spot, Car, AC Condenser, Rooftop AC Unit, Outdoor AC Unit, Traffic Barrier, Gate, Public Trash Bin, Public Trash Bin (Round), Wheelie Bin, Wheeled Trash Container, Waste Dumpster, Large Waste Dumpster.
+AC Condenser, Bush, Car, Fir Tree, Gate, Large Waste Dumpster, Outdoor AC Unit, Parking Spot, Patio Umbrella, Public Trash Bin, Public Trash Bin (Round), Rooftop AC Unit, Traffic Barrier, Waste Dumpster, Wheeled Trash Container, Wheelie Bin.
 
 **Parking Spot** and **Car** are great for the driveway — connect an occupancy sensor and your model shows whether the car is home. **Gate** works for a driveway gate you'd like to monitor, and the trees and bushes help the garden look like your garden.
 

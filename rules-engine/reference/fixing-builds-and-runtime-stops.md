@@ -116,13 +116,13 @@ The **Trigger condition** selector appears only when the Start source is set to 
 
 When you click **Deploy** on an artifact in the Artifacts tab, that build becomes the live version of your automation. It begins waiting for the sensor reading or saved trigger selected in its Start Event.
 
-Only one build per automation can be running at a time. If you deploy a new build while another one is already running, the platform automatically stops the old one and starts the new one in a single operation. There is no need to stop the running artifact first — the transition is handled for you.
+Only one build per automation can be running at a time. If you deploy a new build while another one is already running, the platform automatically stops the old one and starts the new one in a single operation. You do not have to stop the running artifact yourself; the platform takes care of the switch.
 
 ### Stopping an automation
 
 Click **Stop** on a running artifact to pause it. Sensors continue reporting and triggers continue monitoring, but the automation no longer starts from either source.
 
-Stopping is for deliberate pauses — when you want to temporarily disable an automation without deleting it. A stopped artifact can be restarted at any time by clicking **Deploy** again.
+Stopping is for deliberate pauses — when you want to temporarily disable an automation without deleting it. To bring it back later, click **Deploy** again.
 
 ### Redeploying after changes
 

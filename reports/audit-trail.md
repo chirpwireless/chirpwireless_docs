@@ -31,7 +31,7 @@ Events are displayed in a table with three columns:
 | **Actor** | The email address of the person who performed the action. |
 | **Event** | A plain-language summary of what occurred. |
 
-Entries are grouped by date. The table shows 50 events per page, with pagination controls at the bottom.
+Entries are grouped by date. Fifty events fit on each page, and you move between pages with the controls under the table.
 
 ## Narrowing Down Events
 

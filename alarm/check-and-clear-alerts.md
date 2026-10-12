@@ -6,7 +6,7 @@ description: Review what fired in your Inbox, filter by severity or status, and 
 
 When an alarm fires, Chirp records it in your Inbox. This is where you see what happened, when it happened, and whether it still needs your attention. Resolving an alarm stops its [escalation chain](escalation-chains.md) — no further steps fire once the event is marked as resolved.
 
-The Inbox is the default tab when you open the **Alarm** page from the sidebar.
+Choosing **Alarm** in the sidebar takes you to the Inbox tab first.
 
 ## Filtering
 

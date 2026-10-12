@@ -78,7 +78,7 @@ Chirp then invents the readings for you, and an extra **Emulator** tab appears s
 
 ### Mapping {#metrics}
 
-See [mapping controls](sensor-details.md#metrics) for every column, inline metric creation, and immediate template-change/removal behavior.
+Every column of the mapping table, creating a metric on the spot, and what happens right away when you change or remove a template are explained under [mapping controls](sensor-details.md#metrics).
 
 Click the **Mapping** tab to map your sensor's raw data to measurement definitions. A profile supplies the network configuration and codec. Assign measurement templates and connector keys here after the source has reported, or return later to finish mapping.
 
@@ -104,7 +104,7 @@ Add as many metrics as your sensor reports — you can map them all in one go.
 
 #### Works with any sensor — even prototypes
 
-A device does not need a library preset to supply measurements. It does need a compatible connector and decoding path: a LoRaWAN codec, a supported MQTT message shape, or the appropriate adapter. Once named fields arrive, map the readings you need. See [LoRaWAN Devices](lorawan-devices.md) and [MQTT Devices](mqtt-devices.md).
+A library preset is optional for getting measurements flowing. What the device cannot do without is a compatible connector and a way to decode its data, meaning a LoRaWAN codec, an MQTT message in a supported shape, or the matching adapter. Once named fields arrive, map the readings you need. See [LoRaWAN Devices](lorawan-devices.md) and [MQTT Devices](mqtt-devices.md).
 
 #### A note for MQTT sensors
 

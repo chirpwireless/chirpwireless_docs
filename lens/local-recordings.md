@@ -22,14 +22,14 @@ Continuous mode saves video without waiting for movement and skips motion proces
 |---|---|
 | Maximum clip length (seconds) | Caps the length of a saved clip. Continued movement can result in further clips. |
 | Record before movement (seconds) | Includes buffered video from before the trigger. The amount available depends on the camera's keyframes and buffer. |
-| Keep recording after movement (seconds) | Adds context after the trigger; further movement can extend the clip up to its maximum length. |
-| Motion sensitivity | Threshold measured in changed pixels. Lower values detect smaller changes; a value around 150 is the balanced default. |
+| Keep recording after movement (seconds) | Records a little longer once movement stops; new movement can stretch the clip until it reaches the maximum length. |
+| Motion sensitivity | Threshold measured in changed pixels. Smaller numbers pick up smaller changes, and 150 or so is a sensible middle setting. |
 
 ### Set a recording schedule
 
 Twin's supplied configuration starts with **UTC** as its timezone. Before enabling a schedule, check **Timezone** and choose the zone for your home. Leaving an unintended zone selected can shift both recording and motion-processing periods away from the hours you expect. An upgrade that keeps the existing configuration volume preserves your saved setting.
 
-In **Recording schedule**, select **Timezone**, enable **Use schedule**, and configure the active intervals for each relevant day. Each day supports two intervals, useful for times when you are away from home. Save the schedule and test both an active and an inactive period. Schedules also restrict motion processing, so use unrestricted operation for the initial motion-rule test.
+In **Recording schedule**, pick a **Timezone**, switch on **Use schedule**, then set the active intervals for each day you care about. Each day supports two intervals, useful for times when you are away from home. After saving, test one active and one inactive period. Because schedules also limit motion processing, run your first motion-rule test with no schedule.
 
 ## Change the settings from Chirp
 
@@ -48,12 +48,12 @@ Two more items on the Recording tab: **Fragment duration (seconds)** appears onc
 
 ## Leave space for the rest of the computer
 
-In **Settings → Storage → Automatic cleanup**, enable one or both limits:
+Under **Settings → Storage → Automatic cleanup**, turn on either limit or both:
 
 - Choose **Limit by total size** and enter **Maximum recordings folder size (MB)** to keep the recording folder within a storage budget. Cleanup removes the oldest clips first when the limit is exceeded.
 - Choose **Limit by age**, then set **Delete clips older than (days)** when you want clips removed after a chosen number of days.
 
-Select **Save**. When both limits are enabled, reaching either limit can remove a recording. Download clips you must retain separately before cleanup removes them.
+Select **Save**. With both limits on, a recording can be removed as soon as either one is reached. Download clips you must retain separately before cleanup removes them.
 
 The recording path is inside the container. The Docker volume mounted during [Twin installation](installing-twin.md) is what keeps the files when the container is restarted or replaced.
 

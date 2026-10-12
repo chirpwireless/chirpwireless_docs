@@ -14,7 +14,7 @@ Reach for gRPC only if you specifically want a typed, generated client and a fix
 
 ## How it works
 
-gRPC uses the same key-based sign-in as REST — `X-API-Key` plus your home context (see [Authentication & API keys](authentication-and-api-keys.md)). The [API reference](https://api.chirpwireless.io/) lists the available gRPC services and methods. For native gRPC client definitions, use the materials provided with your on-premise or integration package.
+gRPC uses the same key-based sign-in as REST — `X-API-Key` plus your home context (see [Authentication & API keys](authentication-and-api-keys.md)). The [API reference](https://api.chirpwireless.io/) lists the available gRPC services and methods. If you build a native gRPC client, take the definitions from the materials that come with your on-premise or integration package.
 
 ## See also
 

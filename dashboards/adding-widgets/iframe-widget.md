@@ -38,7 +38,7 @@ The services you can use are sorted into groups in the picker, so it's easy to f
 - **Shipping & parcel tracking** — 17TRACK, AfterShip, TrackingMore. Follow that parcel you're waiting on.
 - **Finance & markets** — TradingView, Investing.com, Trading Economics. Keep an eye on a price or a market you follow.
 - **Status & docs** — Statuspage, Instatus, Google Docs. Check whether a service you rely on is up, or pin a shared note.
-- **Calendars & forms** — Google Calendar, Google Forms, Microsoft Forms, Calendly. Put the family calendar front and center.
+- **Calendars & forms** — the family calendar can sit front and center, whether it lives in Google Calendar, Google Forms, Microsoft Forms or Calendly.
 
 The list you see in the widget is always up to date. If the service you want isn't there, tap the **please submit a request to add the desired resource** link under the Data source box and ask us to add it — we'll take a look and see if it can join the list.
 

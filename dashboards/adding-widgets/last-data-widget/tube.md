@@ -42,7 +42,7 @@ Let's build a real one — a tube that watches the salt level in a water softene
 6. Tap **Conditions: N** to open the Conditions window. Choose a **Default color** — the color the reading uses whenever none of your bands match the current value — then for each band tap **Add condition** and fill in the row — type a **Condition name**, set **Data type** to **Number** (this is the condition's own Data type, not the metric's), because the salt tank is 100 cm tall, enter **From** 0 cm (the empty bottom) and **To** 100 cm (the full top), and pick a **Color**. Then you set the color levels — for example:
 
    Starting at the bottom:
-   - "Critical" — **From** 0, **To** 10 — burgundy (a deep red, darker than the next band)
+   - "Critical": **From** 0, **To** 10, burgundy — a deep red that is darker than the band after it
    - "Refill now" — **From** 10, **To** 30 — red
    - "Refill soon" — **From** 30, **To** 60 — yellow
    - "Healthy" — **From** 60, **To** 100 — green
@@ -68,4 +68,4 @@ The same idea for collected rainwater — a level sensor in a 200-liter barrel �
 
 - [Last Data Widget](../last-data-widget.md) — The full widget setup and the other display types
 - [Conditions](../conditions.md) — Setting the From/To color rules for the fill
-- Other display types: [Value](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Gauge](gauge.md) · [Radial gauge](radial-gauge.md)
+- More ways to show the same data: [Value](number.md) · [Doughnut](doughnut.md) · [Pie](pie.md) · [Gauge](gauge.md) · [Radial gauge](radial-gauge.md)

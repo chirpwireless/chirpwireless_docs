@@ -31,7 +31,7 @@ Every Control widget is added the same way; only the look-and-feel options diffe
 | [Vertical Slider](control-widget/slider-vertical.md) | An upright slider you raise and lower | A command value as you slide |
 | [Input](control-widget/input.md) | Typing an exact number | A command value when you tap **Apply** |
 
-The three sliders are the **Slider type** options — **Simple**, **Circular**, and **Vertical** — that you pick after choosing **Slider** as the widget type.
+Choose **Slider** as the widget type first, then pick one of three **Slider type** options: **Simple**, **Circular** or **Vertical**.
 
 ## How it behaves
 
@@ -43,4 +43,4 @@ The three sliders are the **Slider type** options — **Simple**, **Circular**, 
 
 * [Controlling Your Devices](../../devices/commands/) — set up the commands a Control widget uses
 * [Setting up a command](../../devices/commands/creating-commands.md)
-* Control types: [Switch](control-widget/switch.md) · [Button](control-widget/button.md) · [Simple Slider](control-widget/slider-simple.md) · [Circular Slider](control-widget/slider-circular.md) · [Vertical Slider](control-widget/slider-vertical.md) · [Input](control-widget/input.md)
+* The six control types: [Switch](control-widget/switch.md) · [Button](control-widget/button.md) · [Simple Slider](control-widget/slider-simple.md) · [Circular Slider](control-widget/slider-circular.md) · [Vertical Slider](control-widget/slider-vertical.md) · [Input](control-widget/input.md)

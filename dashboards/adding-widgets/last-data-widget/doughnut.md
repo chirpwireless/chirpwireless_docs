@@ -50,7 +50,7 @@ The ring shows the temperature as a spot in the range and goes green only while 
 ## Worked examples
 
 **The same sensor, set up completely differently — the fridge**
-Your fridge uses the very same kind of temperature sensor as the living room above — but a comfortable fridge and a comfortable room are nothing alike. A fridge stays cold, so its safe range is only about 0–5 °C — set the scale a little wider than that band so a fridge that fails and warms up still shows on the ring: **Min value** **-5**, **Max value** **15**. Then build three conditions: "Too cold" — From -5, To 0 — blue; "Safe" — From 0, To 5 — green; "Too warm" — From 5, To 15 — red. Same sensor, same steps — only the numbers move, because you decide what "good" means for each spot in your home. That's the whole idea behind conditions.
+Your fridge uses the very same kind of temperature sensor as the living room above — but a comfortable fridge and a comfortable room are nothing alike. A fridge stays cold, so its safe range is only about 0–5 °C — set the scale a little wider than that band so a fridge that fails and warms up still shows on the ring: **Min value** **-5**, **Max value** **15**. Add three conditions to match: "Too cold" covers From -5 to To 0 and is blue; "Safe" covers From 0 to To 5 in green; "Too warm" covers From 5 to To 15 in red. Same sensor, same steps — only the numbers move, because you decide what "good" means for each spot in your home. That's the whole idea behind conditions.
 
 **How full is the water tank?**
 A Doughnut is a natural fit for a tank. A level sensor in a 500-liter tank reports the contents in liters, so 0 is empty and 500 is full — **Min value** 0, **Max value** 500 — with conditions green From 300 To 500, yellow From 100 To 300, red From 0 To 100. The ring empties before your eyes as the tank is used.
@@ -59,4 +59,4 @@ A Doughnut is a natural fit for a tank. A level sensor in a 500-liter tank repor
 
 - [Last Data Widget](../last-data-widget.md) — The full widget setup and the other display types
 - [Conditions](../conditions.md) — Setting the From/To color rules
-- Other display types: [Value](number.md) · [Pie](pie.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)
+- More ways to show the same data: [Value](number.md) · [Pie](pie.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)

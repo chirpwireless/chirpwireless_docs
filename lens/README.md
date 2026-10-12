@@ -103,4 +103,4 @@ Start with [Installing Twin](installing-twin.md), using the official [Twin Docke
 
 Once the view works, set up [Motion Zones](motion-zones.md), [Camera Rules and Alerts](camera-rules-and-alerts.md), optional [Local Recordings](local-recordings.md), or a [Cloud Archive](cloud-archive.md).
 
-For ongoing administration, see [Managing Cameras](managing-cameras.md). To connect an account-backed camera or HomeKit accessory, see [Provider Camera Sources](connecting-cloud-camera-sources.md).
+For ongoing administration, see [Managing Cameras](managing-cameras.md). Cameras that live behind a provider account, and HomeKit accessories, are covered in [Provider Camera Sources](connecting-cloud-camera-sources.md).

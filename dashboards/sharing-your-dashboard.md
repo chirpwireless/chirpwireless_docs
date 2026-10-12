@@ -121,7 +121,7 @@ That expiry message is the one to remember for a wall tablet: a shared session d
 
 ## Share to TV — the other option
 
-The same actions menu also offers **Share to TV**, and it solves a different problem. Its helper text explains it: **"Open this dashboard on a TV or tablet with a non-expiring key. Create an API key in Settings → API Keys (with device control scope to operate devices), then paste it here."**
+The same actions menu also offers **Share to TV**, and it solves a different problem. Its helper text explains it: **"Open this dashboard on a TV or tablet with a non-expiring key."** The text goes on to say that you create an API key under **Settings → API Keys**, with device control scope if the TV should operate devices, and paste it into the dialog.
 
 The difference is what's behind the link. A share link is protected by a password, hands out **View** or **Control**, and you can revoke it the day someone stops needing it. **Share to TV** is built from an [API key](../settings/api-keys.md) instead — no password screen, and no expiry — which suits a screen that stays put and never gets handed to anyone. Reach for a share link when you're sharing with a *person*; reach for Share to TV when you're setting up a *screen* that lives in your home permanently.
 

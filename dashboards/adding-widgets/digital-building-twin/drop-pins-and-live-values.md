@@ -12,7 +12,7 @@ A pin is a marker placed at a particular point in your model. It shows the readi
 
 Pins are added from the Sensors panel, on a metric you've already set up (see [Connecting sensors and colors](binding-sensors-and-colors.md)).
 
-1. On the bottom toolbar, click **Sensors** and find the metric you want to pin.
+1. Open **Sensors** on the bottom toolbar and look for the metric you want to pin.
 2. On that metric, click **Pin to scene**.
 3. The editor switches into pick mode with the prompt **Click on the scene to pin this metric**.
 4. Click the spot in your model where the pin should sit — over the nursery, by the back door, on the driveway.

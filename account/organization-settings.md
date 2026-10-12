@@ -53,5 +53,5 @@ The previous owner remains a member of the home and is not removed.
 - **Only the current owner can initiate a transfer.** No one else sees the settings dialog.
 - **The target must already be a member of your home.** You cannot transfer ownership to someone who has not joined yet.
 - **One active transfer at a time.** If a transfer invitation is already pending, you cannot start another until it expires or is accepted.
-- **24-hour expiration.** If the new owner does not accept within 24 hours, the invitation expires and you remain the owner.
+- **24-hour expiration.** The invitation lapses after 24 hours without an answer, and ownership stays with you.
 - **Always exactly one owner.** There is no co-ownership.

@@ -50,7 +50,7 @@ By default, versions have auto-generated names. Renaming them makes it much easi
 
 To rename a version:
 
-1. Click the **pencil icon** next to the version name in the history table.
+1. In the history table, use the **pencil icon** beside the version's name.
 2. Type a new name (up to 100 characters).
 3. Press Enter or click away to confirm.
 
