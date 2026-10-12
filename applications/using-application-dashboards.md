@@ -14,19 +14,22 @@ An installed [solution](installing-a-ready-made-solution.md) arrives with its da
 
 1. Select **Applications**, then open the application from **My applications**.
 2. Choose **Dashboard**.
-3. Select the dashboard you want if more than one is associated.
+3. Select the dashboard you want. Each dashboard in the application has its own button above the preview, named after the dashboard.
 4. Read the widgets or use the controls available to your account.
 
 Use **Content** when you want to find the sensors or automations behind the view.
-
-
-<figure><img src="../.gitbook/assets/chirp-application-dashboard.jpg" alt="An application page with the Dashboard tab selected, a dashboard button named Leak Watch, a Go to the dashboard link and a widget carrying an Emulator badge"><figcaption><p>The Dashboard tab of an application.</p></figcaption></figure>
 
 ## Adjust what the dashboard shows
 
 Select **Go to the dashboard** to open the original dashboard. Make layout or widget changes there and save them. When you return to the application, it uses the updated dashboard rather than a separate copy.
 
 For detailed instructions, see [Building a Dashboard](../dashboards/building-a-dashboard.md).
+
+## What do the empty messages mean?
+
+* **This application has no dashboards yet** means no dashboard is assigned to the application.
+* **This dashboard has no widgets yet** means the dashboard exists but nothing has been added to it.
+* **Dashboard is unavailable** means Chirp could not load that dashboard; reload the page, then check your access.
 
 ## An empty Dashboard tab
 

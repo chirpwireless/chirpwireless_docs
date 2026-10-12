@@ -21,6 +21,10 @@ You draw the area in the camera's local Twin. The camera itself does not need a 
 
 The editor's shortcuts are **R** for rectangle, **O** for polygon, and **M** for moving or deleting an area. Keep the pavement outside the selected shape if you only want to detect activity at the door.
 
+## Can I draw the area in Chirp instead?
+
+Yes. Open **Cameras**, select the camera, and choose the **Recording Area** tab (it appears when the feature is switched on for your account). The card says: "Select the area where movement should start a recording. Movement outside the selected areas is ignored. Saved clips still show the full camera view." The camera's current snapshot appears with the same drawing tools: **Rectangular box (R)**, **Polygon-selection (O)**, and **Regions Manipulation (M)** to move, resize, or delete a shape. Select **Save**; the message "Zones saved." and then "Saved — pending sync to camera." means Lens has the areas and Twin will pick them up. If the camera is offline you see "No snapshot available. Camera must be online to edit zones." and cannot draw; if saving fails the card says "Failed to save zones. Please try again." Some places open the same editor as a **Region Of Interest** dialog with the hint "By defining one or more regions, motion will be tracked only in the regions you have defined." and **Save** and **Cancel** buttons.
+
 ## Try it from both sides of the boundary
 
 Walk inside the area and check the motion reading. Then walk outside it and check again. Adjust the global pixel-change threshold if necessary: a lower threshold makes detection more sensitive.

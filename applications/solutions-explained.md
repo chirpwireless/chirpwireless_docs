@@ -31,14 +31,12 @@ Choose **Applications** in the left sidebar. The page is called **Applications a
 * **Solutions** is the first tab. It is the catalog of setups your provider has published.
 * **My applications** lists every application in your organization, both ones you built and ones you installed.
 
-Some providers also have a **Use cases** tab. It is a management screen for the people who publish solutions, and you can ignore it as a household member.
-
 ## Who prepares solutions?
 
 Providers are the businesses that supply and set up equipment, such as home-security or leak-protection specialists. They build a setup once and share it, so households never begin from a blank screen. You see the solutions that your own provider has published, and the collection keeps growing.
 
 ## What is a use case?
 
-A **use case** is a short description of the problem a solution is meant to solve, such as watching a holiday home or catching a leak early. Providers use use cases to arrange their catalog by need instead of by product. You never have to manage them to benefit from them.
+A **use case** is a short description of the problem a solution is meant to solve, such as watching a holiday home or catching a leak early. Providers think in use cases when they decide what to build next. You never have to manage them to benefit from them, and there is no screen for them in your account.
 
 Next, [explore the solutions on offer](exploring-ready-made-solutions.md).

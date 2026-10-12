@@ -22,7 +22,7 @@ For example, if you no longer want Home Watch but still use its temperature dash
 
 ## Remove the application
 
-Use the application's delete action. Read the confirmation and confirm only after checking the remaining contents. The application should disappear from **My applications** once deletion succeeds.
+Open the application and select the trash can icon at the top right. A dialog asks **Are you sure you want to delete the application?** and warns that the devices, rules, alarms, and dashboard linked to the application will be removed from the platform. Choose **Cancel** to back out, or **Yes, delete** once you have checked the remaining contents. A toast reads **Application deleted successfully**, and the application disappears from **My applications**. If it fails you see **Failed to delete application**.
 
 If Chirp reports an error, reopen the application and inspect what remains before trying again. Some resources may already have been removed. If a rule is being edited, finish and close that editing session before retrying.
 

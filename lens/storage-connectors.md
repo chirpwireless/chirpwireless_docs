@@ -17,14 +17,27 @@ A **storage connector** is the saved connection between Chirp Lens and the cloud
 
 <figure><img src="../.gitbook/assets/chirp-lens-storage-connectors.jpg" alt="The Storage connectors page listing one Amazon S3 connector with Active status, usage, creation date and the row buttons Verify, Edit, Mark key as compromised, Disconnect storage, Uploaded but not registered and Delete"><figcaption><p>The Storage connectors page with one connector.</p></figcaption></figure>
 
-The table has the columns **Name**, **Type**, **Status**, **Usage**, **Details**, and **Created**. A connector that works shows **Active** in **Status**, and **Usage** adds up what Chirp has stored there. A problem with uploads is explained in **Details**. **Add storage connector** sits at the top right. Each row ends with these buttons:
+The table has the columns **Name**, **Type**, **Status**, **Usage**, **Details**, and **Created**. **Status** is one of **Active** (green), **Inactive**, **Error**, or **Disconnected**, and hovering it shows when Chirp last verified the connector. **Usage** adds up what Chirp has stored there. **Details** explains anything that needs your attention, for example:
 
-* **Verify** checks the connector again. Use it after you correct a setting or a credential.
+* the provider's error message, or "Check the connector settings and verify it again." for a connector in **Error**;
+* "The storage did not accept uploads on {date} (HTTP {status}). Check the settings and credentials of this storage." or "The storage could not be reached for uploads for 24 hours (marked on {date}). Check the address of this storage and its network access.";
+* "Key compromised {date} by {user}" and "Disconnected {date} by {user}";
+* for Walrus, "Walrus keeps files for the paid period. They can't be deleted earlier.";
+* "Seeking support will be checked with the first recording." until the first clip arrives, and "Seeking is not available: this storage doesn't serve file parts. Use an aggregator that supports byte ranges." when playback cannot skip ahead;
+* "The signing secret will be confirmed by the first uploaded recording." for a new connector.
+
+A dash means there is nothing to report. **Add storage connector** sits at the top right. A connector that has not been disconnected ends each row with these buttons:
+
+* **Verify** checks the connector again and shows "Connector reachable" or "Connector unreachable" (or the provider's message). Use it after you correct a setting or a credential.
 * **Edit** opens the form again. Leave a secret blank to keep the stored one.
-* **Mark key as compromised** issues a fresh key for new clips and sends it to your cameras. Clips recorded earlier stay readable.
-* **Disconnect storage** erases Chirp's keys for this connector after you type its name. Cameras that still write to it must be moved first. [Back Up Home Camera Recordings to the Cloud](cloud-archive.md#how-do-i-stop-using-a-storage-account) has the details.
-* **Uploaded but not registered** lists files that reached your storage during the last 30 days but whose upload never finished. Chirp does not track them, so remove them in your own storage.
-* **Delete** removes the connector.
+* **Mark key as compromised** asks you to type the storage name, then issues a fresh key for new clips and sends it to your cameras. Clips recorded earlier stay readable; cameras that have not received the key keep recording locally. If some cameras did not get the key, a dialog says "New key issued, but N cameras did not receive it." with a **Resend** button, or "N cameras will receive the new key when they next connect."
+* **Disconnect storage** erases Chirp's keys for this connector after you type its name. Cameras that still write to it must be moved first, and the dialog names them. [Back Up Home Camera Recordings to the Cloud](cloud-archive.md#how-do-i-stop-using-a-storage-account) has the details.
+* **Uploaded but not registered** lists files that reached your storage during the last 30 days but whose upload never finished (with **Load more** for long lists, and "No orphaned uploads in the last 30 days." when it is clean). Chirp does not track them, so remove them in your own storage.
+* **Delete** asks "Are you sure you want to remove connector ...?"; select **Yes, remove** to confirm.
+
+A **Disconnected** connector shows **Reconnect** instead of **Verify**, **Edit**, **Mark key as compromised**, and **Disconnect storage**. It opens the form again, and because disconnecting erased the stored secrets you enter the credentials like a new connector. Reconnecting does not make older clips readable again. **Uploaded but not registered** and **Delete** stay available.
+
+If the dialog for adding a connector shows "Connector catalog unavailable. Lens Bridge service is offline.", the list of connector types could not be loaded; try again in a few minutes. If another person deletes a connector while you have it open, a dialog says "This storage connector no longer exists."
 
 ## What do I enter for Amazon S3 or a compatible service?
 

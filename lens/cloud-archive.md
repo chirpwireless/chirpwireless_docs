@@ -46,7 +46,7 @@ Your camera's Twin must run version **1.1.0** or later; an older Twin keeps reco
    - **Upload queue folder**: an advanced path for clips waiting to upload; leave it empty for the default.
    - **Delete local clips after upload**: removes the home copy after Lens confirms the upload. Leave it off to keep a permanent local backup too.
    - **Limit cloud storage**: when on, a **Maximum cloud storage (MB)** field appears, and the oldest cloud backups are deleted once the camera passes that size. Local clips are unaffected.
-6. Select **Save** at the bottom, then **Send to camera** so Twin receives the new settings.
+6. Select **Save** at the bottom. Saving stores the settings in Lens and sends them to the camera's Twin, and a message confirms "Storage settings saved and sent to the camera." If Twin is offline the message says the settings were saved in Lens but sending failed; select **Send to camera** next to **Save** to push them again once Twin is back. The **Send to camera** button is greyed out while Twin's settings are still loading or cannot be checked.
 7. Trigger some motion and watch for the new clip in **Recordings**.
 
 Higher up the same tab, **Automatic cleanup** has **Limit by total size** and **Limit by age**. The age limit, **Maximum recording age (days)**, applies to cloud backups as well as local clips, and the card shows "Kept for at least N days", so a short limit will also remove cloud copies.
@@ -56,16 +56,19 @@ Higher up the same tab, **Automatic cleanup** has **Limit by total size** and **
 
 ## How do I find, save, or delete a clip?
 
-Choose **Recordings** in the Lens sidebar. The toolbar has an **All devices** drop-down, a **Date range** button, a sort drop-down (**Newest first** or **Oldest first**), and the buttons **Export**, **Clear filters**, and **Refresh**. Use **Refresh** to pull in new clips.
+Choose **Recordings** in the Lens sidebar. The toolbar has an **All devices** drop-down, a **Date range** button, an **Alerts only** switch that hides clips without alerts, a sort drop-down (**Newest first** or **Oldest first**), and the buttons **Export**, **Clear filters**, and **Refresh**. Use **Refresh** to pull in new clips. Each clip card has a checkbox; tick several and select **Export** to prepare them together.
 
 <figure><img src="../.gitbook/assets/chirp-lens-recordings.jpg" alt="The Recordings page with the All devices filter, Date range, sort list and the Export, Clear filters and Refresh buttons above a grid of clips grouped by date"><figcaption><p>The Recordings page.</p></figcaption></figure>
 
+- **Open** a clip to reach its detail page: a breadcrumb back to **Recordings**, the player with **Play** and **Pause**, and a **Media info** panel with **Camera**, **Duration**, **Format**, **Resolution**, and **Size**. **Show live** switches the player to the camera's current picture so you can compare, and **Show playback** switches back.
 - **Play** a clip in Chirp's player. If your storage cannot serve partial reads, a notice says seeking is unavailable; with Walrus, pick an aggregator that supports range requests.
-- **Download** it to your phone or computer, or use **Export** to prepare a ZIP package of selected clips.
+- **Download** it to your phone or computer; the button shows "Downloading the recording…" with **Cancel download**, and a file larger than 1 GiB asks you to select **Download** again to choose where to save it. **Export** asks "Export this recording as a ZIP package?" (or "Export N recordings as a ZIP package?"), shows "Preparing your download package…", and then "Your export package is ready." with a **Download package** button.
 - **Delete recording** appears for Amazon S3 and Google Cloud Storage and removes the file from your bucket permanently.
 - **Remove from archive** appears for Walrus clips, for clips whose storage period has ended, and for clips whose key was erased. The clip leaves your list, but the file remains in your storage until its paid period ends or you delete it there yourself.
 
 ## What do the clip states mean?
+
+A clip that is still only on the camera shows **Kept on the camera**; hover it for the reason, for example the camera needs an update to use cloud backup, it used a key the storage does not recognize or a compromised key, the storage was disconnected, or the storage did not accept the upload. If the player says "Playback unavailable. Storage connector could not provide a stream reference.", the connector cannot be reached; check it on the **Storage** page.
 
 - **Unreadable:** the clip was damaged during upload and cannot be played. It still takes up space in your storage.
 - **Storage period ended:** Walrus kept the clip for the period you paid for, and it is no longer available.

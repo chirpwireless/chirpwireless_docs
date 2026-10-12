@@ -25,12 +25,22 @@ Copy the **Twin Key** from Twin. This identifies this camera's local installatio
 
 ## Add it to Chirp
 
-1. Select **Cameras** in the Chirp sidebar.
-2. Choose **Add camera** and enter the camera name and **Twin Key**.
-3. Create the camera and copy the connection token that Lens provides.
-4. Return to Twin and open **Settings → Lens Connector**.
-5. Copy **Lens API URL** from the **Pairing token** dialog into Twin and paste the **Connection token** from that same dialog.
-6. Save the settings.
+1. Select **Cameras** in the Chirp sidebar, then **Cameras** in the Lens sidebar.
+2. Choose **Add camera**. The dialog reminds you to set up the Twin first, because it generates the key and a camera cannot be added ahead of its Twin.
+3. Enter the **Camera name** and paste the key into **Twin Key** (placeholder "Paste the key from the Twin"). Extra spaces around the key are trimmed. **Add camera** stays disabled until both fields are filled.
+4. Select **Add camera**. The dialog changes to **Pairing token** and says the camera is registered. It shows the **Lens API URL** and the **Connection token**, each with a copy button; the token has a reveal/hide eye icon and an expiry time ("Expires ..."). The token is shown only once and cannot be retrieved later.
+5. Copy the token (the **Done** button stays disabled until you have tried copying it; if copying is unavailable in your browser, select the token and copy it by hand), then select **Done**. If the dialog says the Lens API URL is not configured, select **Retry**; the button reads **Close** instead of **Done** in that case.
+6. Return to Twin and open **Settings → Lens Connector**. Paste the **Lens API URL** and the **Connection token** and save. Twin pulls the rest of its configuration from Lens.
+
+If adding fails, the dialog tells you why:
+
+| Message | What to do |
+|---|---|
+| This Twin Key is already registered. If this is a cloned image, generate a new key in the Twin. | The key belongs to a camera already in Chirp. A cloned Twin image needs a fresh key first. |
+| You do not have permission to add cameras in this organization. | Ask an organization admin for **Edit** access to Cameras. |
+| Your subscription plan has no room for another device. Remove one or upgrade the plan. | Remove a device you no longer use, or change the plan. |
+| The video service is unavailable, so the camera was not created. Try again in a moment. | Wait a minute and add the camera again. |
+| The camera could not be added. Try again. | Retry; if it repeats, check the Twin Key for typos. |
 
 The token is a private pairing credential. It is different from your camera password and from the password you use to sign in to Twin. Use the Lens API endpoint for the same environment that issued the token.
 

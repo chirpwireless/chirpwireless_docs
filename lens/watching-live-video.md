@@ -12,8 +12,8 @@ Use Lens **Live view** for a quick look at what is happening at home. You can wa
 
 1. Choose **Cameras** in the Chirp sidebar.
 2. Select **Live view** inside Lens.
-3. Search for the cameras you need, or filter by their connection state.
-4. Select a two-, three-, or four-column view.
+3. Search for the cameras you need in **Search cameras...**, or use the status drop-down (**All statuses** by default) to filter by connection state.
+4. Pick the layout with the toggle next to the search: **List view**, or a grid of 2, 3, or 4 columns (the buttons read "2 columns", "3 columns", and so on).
 5. Start live video separately on each camera you want to watch.
 
 The picture shown as a preview is not the same as an active live stream. Start live viewing when you want continuous video. Use fullscreen to focus on one camera and return to the grid to check the others.
@@ -25,6 +25,10 @@ More simultaneous streams use more bandwidth and browser resources. A smaller la
 If the camera supplies audio, you can listen or mute it. Two-way talkback is available only when the connected camera and its configuration support it.
 
 A compatible motorized camera can offer pan, tilt, zoom, and preset positions. A fixed camera cannot be moved through software. The controls and capability states help show whether a function is available, needs setup, or is not supported.
+
+## What do the tile controls and the dot in the corner show?
+
+Each tile has a **Preview**/**Live** switch, a **Toggle fullscreen** control, and, when the camera supports them, the sound and talkback buttons. In **Live** mode the small status dot in the tile's corner shows connection details when you hover it: **Resolution**, **FPS**, **Codec**, **Bitrate**, and **Total Data**, and on a camera's own page also **Connection**, **RTT**, **Jitter**, **Packets Lost**, **Frames Dropped**, and **Key Frames**. They are handy when a picture stutters: a rising **Packets Lost** or **Jitter** points to the network between you and the home rather than to the camera.
 
 ## When a picture is missing
 
@@ -50,6 +54,6 @@ To listen to a supported camera, start its live stream and unmute the audio cont
 4. Select **Go to** next to the saved position whenever you want to use it again.
 5. For the view the camera should normally watch, choose the star action **Set as default**. The **Default** label identifies it; **Clear default** removes this choice.
 
-Remove an unwanted position with its **Delete** action and confirm. When removing the default, select a replacement so return-home still has a destination. Check your motion zones whenever the camera starts watching a different area.
+The panel is titled **Camera controls**. Until you save a position it says **No presets saved**. **Return Home** sends the camera to its default position; it stays disabled with the hint **Set a default preset to enable Return Home** until you have chosen one. Remove an unwanted position with its **Delete** action and confirm (the dialog asks "Are you sure you want to delete ... preset?" and warns that it cannot be undone). When removing the default, select a replacement so return-home still has a destination. Check your motion zones whenever the camera starts watching a different area.
 
 The [videowall return-home workflow](videowalls.md#put-cameras-back-where-they-normally-look) restores normal coverage after an operator follows activity with one or several cameras.

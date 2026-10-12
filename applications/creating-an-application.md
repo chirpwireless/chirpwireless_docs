@@ -12,17 +12,14 @@ Before starting, check the organization shown in the sidebar. You need to belong
 
 ## What is on the My applications screen?
 
-Choose **Applications**, then the **My applications** tab. Under the heading **Applications** a line explains that the list holds solutions you installed and ones you built yourself.
+Choose **Applications** in the left sidebar, then the **My applications** tab. The heading **Applications** has a line beneath it explaining that the list holds both the setups you installed and the ones you built yourself.
 
-* **Create an application** is the button at the top right.
-* **Search** narrows the list by name.
-* **Status: All** is a filter. Accounts that publish setups can narrow by **Published** or **Not published**; for a household it can stay on All.
-* The table has columns **Photo**, **Name**, **Description**, **Status**, **Dashboards**, **Devices**, **Rules**, and **Alarms**. **Status** reads **Not published** for a setup of your own. The last four columns count what the application holds. At the end of each row, the arrow opens the application and the gear icon opens its settings.
+* **Create an application** is the orange button at the top right.
+* **Search** narrows the list as you type. It matches words in the application's name and in its description.
+* The table has the columns **Name**, **Description**, **Dashboards**, **Devices**, **Rules**, and **Alarms**. The last four are counts of what the application holds. A dash instead of a number means Chirp could not read that count, which is not the same as zero.
+* Each row ends with an arrow icon. Select it to open the application.
 
-An empty organization shows **Create your first application** with the same button.
-
-
-<figure><img src="../.gitbook/assets/chirp-my-applications.jpg" alt="The My applications tab listing two applications with Photo, Name, Description, Status, Dashboards, Devices, Rules and Alarms columns, a Search box, a Status filter and a Create an application button"><figcaption><p>The My applications tab.</p></figcaption></figure>
+An organization with no applications shows **Create your first application** and the same button. If the list cannot load you see **Could not load applications**, and a search with no hits reads **No applications found**.
 
 ## Make Home Watch
 
@@ -32,14 +29,18 @@ An empty organization shows **Create your first application** with the same butt
 4. Optionally enter a **Description**, such as `Home conditions and alerts while we are away.`
 5. Select **Create application** and open the application.
 
+If you leave **Application name** empty, the field turns red and reads **Application name is required**. A toast confirms **Application created successfully**; if something goes wrong you see **Failed to create application**.
+
 The description is a note for the people using the setup. It does not instruct Chirp to create sensors or automations. Open **Content** to begin checking which resources you have assigned.
 
 ## Change the name later
 
-Open the application and select the pencil icon at the top right. An **Edit application** dialog opens with **Application name** and **Description**; change either one and choose **Save** (or **Cancel** to leave things as they were). Give each application a recognizable name so that you can tell them apart when assigning a sensor or dashboard.
+Open the application. At the top right, beside the trash can, is a pencil icon. It opens the **Edit application** dialog with **Application name** and **Description**; change either one and choose **Save** (or **Cancel** to leave things as they were). A toast reads **Application updated successfully**. Give each application a recognizable name so that you can tell them apart when assigning a sensor or dashboard.
 
 <figure><img src="../.gitbook/assets/chirp-edit-application.jpg" alt="The Edit application dialog with the Application name and Description fields and the Cancel and Save buttons"><figcaption><p>The Edit application dialog.</p></figcaption></figure>
 
-An **Application** field elsewhere in Chirp can also offer **Add new application**. This lets you create the grouping while working on a resource. Select the new application and finish saving that resource.
+## Can I create an application while adding a device or dashboard?
+
+Yes. Every form that has an **Application** field, such as **Add device**, **Add dashboard**, a rule, or an alarm, offers **Default**, each of your applications, and **Add new application** at the end of the list. Choose **Add new application** and a text box labeled **Application name** appears with a **Create** button. Type a name and press **Create** (or Enter). Chirp makes the application and selects it for you, so there is nothing to pick again. Under the field, a hint says your applications list can be found on the **Applications page**, and that is a link to it. Finish and save the device or dashboard as usual. If you leave the form without saving, the new application still exists.
 
 Continue with [Organizing Content](organizing-content.md) to bring your household setup together.

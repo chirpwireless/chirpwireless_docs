@@ -47,8 +47,10 @@ You do. Whoever the provider named while preparing the setup, the alerts in your
 * **Not enough room on your plan.** A solution counts against your devices, dashboards, and rules, the same as things you create yourself, and practice sensors count as devices. If the total would exceed a limit, Chirp refuses before creating anything and names the limit. Free up room or change plans, then try again.
 * **Missing permissions.** You need permission to create each kind of item. The message names the one that is missing.
 * **An install is already running.** The message reads "Another installation of this solution is already running in your organisation, or a failed one needs an operator to clean it up before you can retry." (spelled as the product shows it). Choose **Go to my applications** to check.
-* **The catalog is being updated.** Wait a minute and try again.
-* **Installation failed** or **Installation cancelled** shows the reason and lets you try again.
+* **Installation failed: ...** with the reason spelled out appears as a red banner when Chirp refuses the request, for example because of a limit or a missing permission.
+* **Installation cancelled: ...** is a red banner with a **Retry** button. Chirp started building, hit a problem, and removed everything it had made; **Retry** starts again.
+* **The catalog is being updated — please retry in a minute.** has a **Retry** button too.
+* **Still installing, this can take a while — you can leave this page and check later.** and **The installation status is temporarily unavailable.** are yellow notices with a **Retry** button that checks the progress again. Neither means the install failed.
 
 If something goes wrong halfway, Chirp removes whatever it had already built so nothing half-finished is left. In the rare case it cannot, the message says **Installation failed and needs manual cleanup — contact support.**
 

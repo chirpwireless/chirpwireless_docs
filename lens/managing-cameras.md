@@ -12,7 +12,16 @@ Open **Cameras** from Chirp's main menu, then select **Cameras** in the Lens sid
 
 Look at **Status** and **Last Twin activity** before opening a view. A camera may be registered while its Twin is still disconnected. The activity time tells you when Twin contacted the platform; it does not tell you when someone last moved in front of the camera.
 
-Select a camera to open **Camera detail**. Its **Lens connection** panel contains the device identity, camera name, Twin key, and pairing information. If the camera is online but video does not play, check the stream in the local Twin and follow [Access and Troubleshooting](access-and-troubleshooting.md).
+Each row shows the camera **Name**, **Status**, **Capabilities** (small badges for the features its Twin reports, such as audio or movement controls; a dash when none are reported), and **Last Twin activity** as a relative time. Every row has **Edit** and **Delete** buttons, and the top of the page has **Setup guide** (a checklist of the steps from installing Twin to seeing video) and **Add camera**. Longer lists are paged. Grid view shows the same information on cards.
+
+Select a camera to open **Camera detail**. A breadcrumb leads back to **Cameras**, the pencil next to the title renames the camera, and tabs sit under the title. **Details** is always there. **Recording**, **Recording Area**, and **Storage** appear only when those features are switched on for your account; if you do not see them, the feature is not available to you yet.
+
+The **Details** tab has two columns:
+
+* **Left:** the camera's live picture with its controls (see [Watching Live Video](watching-live-video.md)), then **Media capabilities** with **Live audio** and **Talkback**. Each shows **Available**, **Not available**, **Not supported**, or **Needs setup**, with a reason such as "No audio track detected", "Audio codec not supported in the browser", "Camera cloud password required", "No two-way audio detected on this camera", "Not supported by this camera type", or "Audio transport failed". A camera that speaks ONVIF also gets an **ONVIF details** card with **PTZ support**, **Zoom**, **Pan/Tilt**, **Presets**, and **Default preset**.
+* **Right:** **Lens connection** with **Device ID**, **Name**, **Twin key**, **Pairing** (Paired, Waiting for the Twin, or Pairing window expired, the last two in red) and the **Reconnect Twin** button; **Device details** with **Status** (Online or Offline), **Uptime**, **Last Twin activity**, **Stream type**, **SD available**, and **HD available**; **Device specs** with **Version**, **Hostname**, **Architecture**, **Memory**, **Camera type**, **IP addresses**, and **MAC addresses**; and, when Storage is on, a **Storage policy** card. Its chip reads **Local only** or **Local + Cloud**, and **Twin sync status** says whether the Twin follows the settings saved in Lens: **In sync**, **Local override** (the Twin uses a local configuration; save the Lens settings again to bring it back), or **Unknown** (the Twin has not reported yet).
+
+If the camera is online but video does not play, check the stream in the local Twin and follow [Access and Troubleshooting](access-and-troubleshooting.md). Before the Twin has connected for the first time, the Details tab says it has not connected yet and there is nothing to show.
 
 <figure><img src="../.gitbook/assets/chirp-lens-camera-management.jpg" alt="Chirp inventory retaining two home cameras while their Twins are offline"><figcaption><p>A disconnected camera stays in the list so you can check its details and recover its connection.</p></figcaption></figure>
 
@@ -35,6 +44,6 @@ After saving, check that pairing succeeds and video returns. Preserve the Twin's
 
 ## Retire a camera
 
-Before removing a camera, review the home rules, dashboard references, and videowalls that depend on it. Choose **Delete**, then review the **Delete camera** confirmation. This removes its connection to the platform.
+Before removing a camera, review the home rules, dashboard references, and videowalls that depend on it. Choose **Delete**, then review the **Delete camera** confirmation, which asks "Delete {camera name}?". This removes its connection to the platform.
 
 Removing a panel from a videowall is a smaller change: the camera remains available elsewhere. Deleting the platform camera also leaves its Docker container and any locally stored clips on the host computer. Remove those separately if you are retiring the installation altogether.
