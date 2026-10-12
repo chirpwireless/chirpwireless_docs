@@ -5,7 +5,7 @@
   * [Finding Your Way Around](first-steps/finding-your-way-around.md)
   * [Connect Your First Sensor](first-steps/connect-your-first-sensor.md)
 * [Applications](applications/README.md)
-  * [What Is a Ready-Made Home Solution?](applications/solutions-explained.md)
+  * [What Are Solutions and Applications in Chirp?](applications/solutions-explained.md)
   * [Exploring Ready-Made Solutions](applications/exploring-ready-made-solutions.md)
   * [Installing a Ready-Made Solution](applications/installing-a-ready-made-solution.md)
   * [From Practice Sensors to Real Ones](applications/from-practice-sensors-to-real-ones.md)
