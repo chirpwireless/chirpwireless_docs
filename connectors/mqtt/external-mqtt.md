@@ -1,5 +1,5 @@
 ---
-description: Point Chirp at a broker you already run at home — set up Mosquitto, expose it safely, and verify it.
+description: Point Chirp at a broker you already run at home — expose it, encrypt it, choose topics and MQTT version, and verify it works.
 ---
 
 # External MQTT
@@ -126,23 +126,40 @@ Now your broker requires `myuser` + the password you set. Update Zigbee2MQTT (`c
 
 For TLS — encrypted broker traffic — Mosquitto supports it via certificates. The Mosquitto documentation has the full setup; not strictly required for testing but recommended for any permanent public deployment.
 
+## What does the Transport section of the form control?
+
+Think of two separate questions. Is the road to your broker private? And who is allowed in? Chirp now answers them independently. The **Transport** block of the connector form handles the first one, so a username and password can travel through an encrypted link instead of crossing the internet in plain text.
+
+| Control | What it does | When to touch it |
+|---|---|---|
+| **Encrypt the connection (TLS)** | A switch that turns encryption on for the whole link. | Turn it on whenever your broker offers an encrypted port. Typing an address beginning with `mqtts://` flips it on for you, and Chirp refuses to save an encrypted address while the switch is off. It cannot be turned off while the **Certification** tab is selected, because a client certificate is verified during the encrypted handshake. |
+| **CA Certificate** | An upload button that appears once encryption is on. After you save, the label reads **CA Certificate — saved** so you know a file is stored. | Upload it if you created the broker's certificate yourself. Public certificates need nothing. |
+| **Server name (SNI)** | A text field next to the upload button, with `broker.example.com` as its hint. | Fill it in when the name on the certificate differs from the address you typed. |
+| **MQTT version** | A drop-down: **Default (5.0)**, **3.1**, **3.1.1**, or **5.0**. | Choose **3.1.1** if an older home broker or gateway rejects the connection immediately. |
+| **Topics to read** | A text field with `device/#` as its hint and the caption **Leave empty to read the whole broker**. | List only the branches your sensors use. It keeps unrelated traffic out of Chirp and goes easier on a busy broker. |
+
+Under **Broker URL**, a line starting **Supported ports** lists the ports Chirp can reach. An address on any other port is flagged and cannot be saved, so settle the port before you configure your router. If you edit an existing connector's address, server name, CA file, or encryption while it holds a saved password or token, Chirp asks you to type that secret again.
+
 ## Creating the External MQTT connector in Chirp
 
-1. **Connectors → Add connector**.
-2. Pick **External MQTT**.
-3. Fill in:
-   - **Name**: any label, e.g. `Home Mosquitto`.
-   - **Broker URL**: the public address. For ngrok, `mqtt://0.tcp.ngrok.io:14217`. For router forwarding, `mqtt://yourhome.duckdns.org:8883`. Use `mqtts://` if your broker is configured for TLS.
-4. Pick the **authentication method**:
-   - **Anonymous** if your broker still allows anonymous (for testing only).
-   - **Basic** with the username and password you set.
-   - **Certification** for TLS with client certs (uploads three files — CA Certificate, Client Certificate, Private Key).
-   - **JWT Token** for token-based auth.
-5. Tap **Save**.
+1. Open **Connectors** in the main menu and select **Add connector** at the top right.
+2. In the **Add connector** dialog, **Connector type** offers **External MQTT**. Select **Add**.
+3. The **Add external MQTT connector** form opens. Fill in the first row:
+   - **Name**: any label, for example `Home Mosquitto`.
+   - **Broker URL**: the public address of your broker. With ngrok that might be `mqtt://0.tcp.ngrok.io:14217`; with router forwarding, `mqtt://yourhome.duckdns.org:8883`. Use `mqtts://` if the broker is set up for TLS.
+4. Work through the **Transport** block described above: encryption, **MQTT version**, and **Topics to read**.
+5. Choose how Chirp signs in using the tabs underneath:
+   - **Anonymous** says no authentication is required and the broker must accept anonymous connections. Fine for testing only.
+   - **Basic** asks for the username and password you set.
+   - **Certification** takes three files: CA Certificate, Client Certificate, and Private Key.
+   - **JWT Token** is for brokers that hand out tokens.
+6. Select **Test connection** to check the settings, then **Add connector**. **Cancel** closes the form without saving.
 
-Chirp creates an outbound bridge from its managed broker to your broker, subscribes to all topics on your broker, and forwards them into the same internal pipeline as Cloud MQTT data.
+Chirp creates an outbound bridge from its managed broker to your broker, subscribes to the topics you chose (the whole broker if you left **Topics to read** empty), and forwards them into the same internal pipeline as Cloud MQTT data.
 
 ## Verifying the connection works end to end
+
+If your broker restarts or your home internet blips, you don't have to touch Chirp: it reconnects and subscribes again by itself. Just check **Last data received** once things are back.
 
 After saving the connector, **publish a test message and confirm Chirp's Last data received updates** — this is the only way to confirm the platform can actually reach your broker. Just having ngrok or a port-forward "running" doesn't prove the path is open.
 

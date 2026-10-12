@@ -47,6 +47,10 @@ Apply your choices and save the device. For a leak sensor, use false as the usua
 
 One pretend sensor can contain up to **50 readings** and **20 preset commands**. Use nonempty data keys no longer than **256 characters**; a manually pinned text value has the same length limit.
 
+## What the Mapping tab does for a pretend sensor
+
+Because a pretend sensor's readings are defined in its own settings, the **Mapping** tab simply mirrors them, and it keeps things tidy for you. If you delete a row there, that reading is removed from the sensor and stays gone after you save; it doesn't pop back as a stray duplicate. The data-key columns are view-only, and you won't find **Add new metric** buttons, because a brand-new reading needs its behavior settings, which live on **Connection**. To add one, use **Add device data key** there and come back to **Mapping** afterward. Switching a row to a different metric replaces the old one rather than leaving a second copy behind.
+
 ## Making it send something
 
 Open the sensor's **Emulator** tab and you will see each reading with a box next to it:

@@ -6,7 +6,7 @@ description: "Open your home application’s dashboards and make changes in the 
 
 An application's **Dashboard** tab is a convenient way to check the views that belong to a household setup. For example, Home Watch might offer a general home view and a separate view of the garden's sensors.
 
-These are your existing dashboards, grouped with the application. Their widgets continue to use the devices and settings you configured.
+An installed [solution](installing-a-ready-made-solution.md) arrives with its dashboard connected to its sensors. These are your existing dashboards, grouped with the application. Their widgets continue to use the devices and settings you configured.
 
 <figure><img src="../.gitbook/assets/chirp-applications-dashboard-assignment.jpg" alt="Chirp Applications: Choose the application in the dashboard editor."><figcaption><p>Choose the application in the dashboard editor.</p></figcaption></figure>
 

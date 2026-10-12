@@ -6,6 +6,122 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <details>
 
+<summary>Flight Log. Release 3.11.0</summary>
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.11.0.jpg" alt="Chirp 3.11.0 release banner"><figcaption></figcaption></figure>
+
+This is our largest release so far, and it changes how a smart home gets started. **Ready-made solutions** hand you a finished setup with practice sensors, working automations, an alert, and a live dashboard, so you see it run before you spend anything on hardware. **Lens** adds the cameras you already own to Chirp and can now store a backup of their recordings in your own cloud account. Grok in your Tesla can now answer questions about your home, and external MQTT, the Digital Building Twin, and the Key Vault all gained new abilities.
+
+***
+
+#### What's in This Release
+
+* **Ready-made solutions: a finished home setup, one press away** — Browse the solutions your provider has published, preview one, press **Install solution**, and a working copy appears in your account with practice sensors, automations, an alert, and a dashboard. Swap in real sensors whenever they arrive.
+* **Lens: your cameras join your smart home** — Connect compatible RTSP cameras of any brand, view them side by side, mark the areas where motion matters, and let that motion start automations and alerts.
+* **Cloud backup for camera recordings** — Keep an extra, encrypted copy of your recordings in your own Amazon S3, Google Cloud, or Walrus account and play it back from Chirp.
+* **Talk to your home from your Tesla** — Ask Grok whether the iron is on, switch its smart plug off, or hear a room's temperature and your open alerts.
+* **External MQTT gets encryption and topic selection** — Secure the link to another MQTT broker and still sign in with a password, pick the protocol version, and subscribe only to the topics you care about.
+* **Digital Building Twin: move, duplicate, import** — Rearrange a floor plan in 2D, bring in a DXF drawing (beta), and open your dashboard at the camera angle you saved.
+* **Key Vault eye toggle** — Peek at one saved key at a time instead of keeping them all visible.
+* **Smaller improvements** — Edit existing metrics, find any device in long lists, watch sensor status refresh on its own, and read plain error messages in the automation debugger and command builder.
+
+***
+
+**Ready-made solutions: a finished home setup, one press away**
+
+Most smart homes start with a blank page: which sensors to buy, what to call their readings, which automation to write, who should receive the alert. A **solution** is a home setup somebody has already thought through. Your provider assembles it once as an **application** (devices, dashboards, automations, and alerts for one purpose) and publishes it for you.
+
+Open **Applications**, stay on the **Solutions** tab, and preview a solution's dashboard and contents. When it looks right, press **Use this solution**, then **Install solution**. Chirp builds your own copy: practice sensors that send believable readings, automations that are already running, an alert that will notify you, and a live dashboard. Nothing to buy first. When real sensors arrive, replace each practice sensor and keep everything built around it.
+
+The solution is the recipe; your application is the finished dish, and you can change it freely. Installs are measured against your plan's limits, and Chirp says so clearly when a solution is too big.
+
+[→ What is a ready-made home solution?](../applications/solutions-explained.md)
+
+[→ Installing a ready-made solution](../applications/installing-a-ready-made-solution.md)
+
+[→ From practice sensors to real ones](../applications/from-practice-sensors-to-real-ones.md)
+
+***
+
+**Lens: your cameras join your smart home**
+
+Each home camera usually ships with its own app, so the front door, the garage, and the rental unit are three separate places to look. **Lens** pulls them into Chirp beside your sensors. A small program named **Twin** sits next to each camera and talks RTSP and ONVIF, which means the cameras you own keep working.
+
+* **One screen.** Put the cameras you care about on a **videowall**.
+* **Motion where it matters.** Outline an area, for example the door, and use movement there in an automation that sends you an alert. Even an older camera can do this because Chirp analyzes the video itself.
+* **Cameras beside sensors.** A camera is a device with motion and status readings, so a door sensor and the entry camera can trigger the same automation.
+* **Who can look.** Give each household member Edit, View, or No access to cameras.
+
+<figure><img src="../.gitbook/assets/chirp-lens-live-view.jpg" alt="Two home cameras shown together in Chirp Lens"><figcaption><p>Cameras from different brands in one Chirp Lens workspace.</p></figcaption></figure>
+
+[→ Explore Chirp Lens](../lens/README.md)
+
+[→ Motion zones](../lens/motion-zones.md)
+
+***
+
+**Cloud backup for camera recordings**
+
+A recording used to exist only on the computer that runs Twin. Now an extra copy can go to a cloud account you own. In Lens choose **Storage**, then **Add storage connector**, and select **Amazon S3**, **Google Cloud Storage**, or **Walrus**. Afterward, open a camera's **Storage** tab, pick the connector under **Backup to**, and optionally cap the cloud space so the oldest backups are removed first.
+
+Twin encrypts each recording before sending it to your account, and you can play it, jump through it, and download it from Chirp. The storage holds the files, while Chirp holds the keys and previews and is able to read the archive. Your cloud provider bills you directly. Backup needs Twin 1.1.0 or later, and Google Cloud Storage support is brand new.
+
+[→ Back up recordings to the cloud](../lens/cloud-archive.md)
+
+[→ Storage connectors](../lens/storage-connectors.md)
+
+***
+
+**Talk to your home from your Tesla**
+
+You are miles away and cannot remember switching off the iron. If it sits on a connected smart plug, ask Grok in your Tesla and have the plug turned off by voice. After you connect Chirp to Grok through MCP, the same conversation can report a room's temperature or tell you which home alerts are still open.
+
+<figure><img src="../.gitbook/assets/tesla-grok-hands-free-hero.avif" alt="Grok voice interface open on the touchscreen inside a Tesla"><figcaption><p>Asking about a Chirp home through Grok in a car.</p></figcaption></figure>
+
+[→ Use Chirp from your Tesla](../ai-assistant/tesla-grok.md)
+
+***
+
+**External MQTT gets encryption and topic selection**
+
+The form for another MQTT broker now has a **Transport** section. Switch on **Encrypt the connection (TLS)** alongside a username and password, fill in the server name, choose the MQTT version, and list only the topics you want instead of the entire broker. Topics no longer have to contain `{{value}}`; when it is absent, Chirp takes the value from the message itself. A brief outage on the broker's side heals without your help.
+
+[→ External MQTT](../connectors/mqtt/external-mqtt.md)
+
+***
+
+**Digital Building Twin: move, duplicate, import**
+
+The 2D view lets you **Move**, **Duplicate**, and **Delete** a selection, and a door or window you move snaps onto the wall you pick. DXF floor plans (beta) can be imported, with a warning when a drawing carries no dimensions. Labels on pins stop at two decimals, and your dashboard opens at the camera angle you saved.
+
+[→ Digital Building Twin](../dashboards/adding-widgets/digital-building-twin/README.md)
+
+***
+
+**Key Vault eye toggle**
+
+Saved keys stay hidden in the Key Vault. Select the eye on a row to look at that one key, then hide it again.
+
+[→ Key Vault](../reports/key-vault.md)
+
+***
+
+**Smaller improvements**
+
+* Metrics you created earlier can be edited, and a unit is optional for every data type.
+* Device pickers list every device you own.
+* A sensor's status refreshes by itself on the Devices page.
+* The automation debugger prints the reason when a step fails.
+* The command builder will not save an expected-state row you left half done.
+* Dashboard widgets resize their text and controls more gracefully.
+* Camera previews, live-view connections, and status reports behave more reliably.
+
+[→ Explore Chirp](https://docs.chirpwireless.io)
+
+</details>
+
+<details>
+
 <summary>Flight Log. Release 3.9.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 release banner"><figcaption></figcaption></figure>

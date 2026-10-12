@@ -22,7 +22,7 @@ Once a metric is pinned, you get two more buttons: **Re-pin** to move the marker
 
 ## What a pin shows
 
-Each pin is a little teardrop marker with a label hovering above it. The label has the reading's name and its current value with units — `Nursery / Temperature  26.3 °C`. The marker and label are colored by your rules, the same way your objects are: a reading in the "warm" band makes the pin amber, one in the "just right" band makes it green.
+Each pin is a little teardrop marker with a label hovering above it. The label has the reading's name and its current value with units — `Nursery / Temperature  26.3 °C`. Numbers are tidied for the screen: a thermometer that reports `22.381920174` shows as `22.38 °C`, so pins never look like a spreadsheet accident, and words or states are shown untouched. The marker and label are colored by your rules, the same way your objects are: a reading in the "warm" band makes the pin amber, one in the "just right" band makes it green.
 
 So a pin does two things at once — it shows you the exact number, and its color tells you the status without you even having to read it.
 

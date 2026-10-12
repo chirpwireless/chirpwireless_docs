@@ -42,7 +42,7 @@ Switch to **Select** and click an object to open its settings:
 * **Scale** — make an object a bit bigger or smaller than its standard size.
 * **Dimensions** — the object's size, shown for reference.
 
-The selected object also gets a little badge above it with quick **Move**, **Duplicate**, and **Delete** buttons. **Duplicate** is the fast way to fill a room — place one dining chair exactly right, then duplicate it around the table.
+The selected object also gets a little badge above it with quick **Move**, **Duplicate**, and **Delete** buttons. **Duplicate** is the fast way to fill a room — place one dining chair exactly right, then duplicate it around the table. Copies keep the original's name, so you won't end up with a pile of "copy" labels to rename; give a name only to the pieces you'll connect a sensor to. In the flat **2D view** the same badge works, and **Move** lets you click the new spot on the plan. Furniture goes to the new floor position; a door or window attaches to whichever wall you click.
 
 ## Parking spots
 

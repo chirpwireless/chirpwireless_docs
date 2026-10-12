@@ -82,7 +82,7 @@ Normalized keys are created, renamed, and deleted from this field. Keys supplied
 
 Select the unit displayed beside the value, such as °C, %, lx, or mV. Choose an existing unit or select **Create a new unit** and enter the symbol exactly as it should appear.
 
-A unit is required for Telemetry. It is optional for Device metadata and Custom attributes, where information such as a firmware version or room name may not have a unit.
+You never have to give a unit. A door is open or closed and a mode is just a word, so leave the field empty for those; add a unit like °C or % when it makes the number easier to read.
 
 Units are created, renamed, and deleted from this field. Units supplied by Chirp cannot be renamed or removed.
 
@@ -95,6 +95,8 @@ Metrics apply across the current organization, not to one sensor only. Editing a
 3. Update the required fields.
 4. Click **Save**.
 5. Review the confirmation describing which sensors are affected and confirm the change.
+
+The one thing you can't switch while a sensor uses the metric is its **Data type**. If you try, the window stays open and tells you: *This metric is attached to devices. Detach it from all of them to change its data type.* Take the metric off those sensors first, or make a new metric for the new type. Editing never wipes the description you wrote.
 
 If only one sensor needs a different definition, create a separate metric. Changing a row to that template replaces its measurement assignment, so use this for a new kind of reading rather than a hardware replacement that should keep the old history.
 
@@ -125,6 +127,7 @@ Check the units too. Giving a speed value a km/h label does not convert a value 
 | A metric is missing from a chart or gauge-style Last Data display | Confirm its **Type** is Integer or Float and the sensor sends a numeric value. |
 | A metric is missing from a sensor mapping | Confirm its **Data type** is Telemetry. |
 | A normalized key cannot be selected | Another metric may already use it. Search the list for that key. |
+| The data type won't change | A sensor still uses the metric. Detach it from every sensor, or create a new metric. |
 | Edit and Delete are unavailable | The metric, key, or unit was supplied by Chirp and cannot be changed. |
 | Delete is refused | Remove the metric from every sensor mapping before deleting it. |
 

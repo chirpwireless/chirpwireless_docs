@@ -31,7 +31,7 @@ Click any object and a panel opens with that object's settings:
 * **Walls** — Length, Height, Thickness, and a **Material** you can pick: white, brick, concrete, wood, glass, metal, plaster, tile, marble, or your own color.
 * **Doors and windows** — Width, Height, where they sit along the wall, which side a door is hinged, which way it swings.
 
-Whatever you've selected also gets a little badge floating above it with quick **Move**, **Duplicate**, and **Delete** buttons.
+Whatever you've selected also gets a little badge with quick **Move**, **Duplicate**, and **Delete** buttons. It shows up in the flat **2D view** too, so you can rearrange a whole room from the plan without tilting back to 3D, and the settings panel offers **Duplicate** for doors, windows, and furniture alike.
 
 ## Moving around the model
 
@@ -40,7 +40,7 @@ There are two ways to look at your model:
 * **3D view** — spin around it freely. Drag with the left mouse button to rotate, the right button to slide the view across, and the scroll wheel to zoom in and out. Hold the **Space** bar to make left-drag slide instead of rotate.
 * **2D view** — a straight-down, flat floor-plan view. You can't rotate it — just slide and zoom. It's the easier view for laying rooms out neatly.
 
-Whatever angle and zoom you leave the editor at is what the dashboard tile shows, so set the view the way you want it before saving.
+The view you leave the editor in is saved with the widget and is what the dashboard tile shows, so set it the way you like before saving. Flipping between **Edit** and **Preview**, or from 3D to 2D and back, keeps the angle you had, and the little nudge you gave the view with the arrow buttons is remembered as well. Save while you're in 2D and the tile still keeps your 3D angle for the next time. The dashboard shows the view exactly as you framed it, not re-centered on the house.
 
 ## The floor buttons
 

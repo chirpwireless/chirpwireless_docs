@@ -18,7 +18,7 @@ Check `docker compose logs zigbee2mqtt` for one of these:
 |----------|-------|-----|
 | `Error: Failed to find adapter` | Wrong `adapter:` value in `configuration.yaml`, or wrong `serial.port` | For Sonoff ZBDongle-E (EFR32MG24): `adapter: ezsp`. For ZBDongle-P (CC2652P): `adapter: zstack`. Check the dongle packaging or label — the USB ID is the same for both. Verify `serial.port` matches the actual `/dev/ttyUSB*` device (`ls /dev/tty* | grep USB`). |
 | `Error: Failed to connect to MQTT broker` | Wrong server URL, port, or credentials | Re-copy all four credentials from Chirp's connector page. Check for trailing whitespace — `\n` at the end of a copied password is a common cause. Verify the port is **1884** for Cloud MQTT (not the default 1883). |
-| `SSL handshake failed` | TLS negotiation issue | Add `ssl: true` under the `mqtt:` section of `configuration.yaml` and restart Z2M. |
+| `SSL handshake failed` | TLS negotiation issue | Add `ssl: true` under the `mqtt:` section of `configuration.yaml` and restart Z2M. For an External MQTT connector, check **Encrypt the connection (TLS)**, add your **CA Certificate** if the broker's certificate is self-made, and set **Server name (SNI)** to the name on that certificate. |
 | `Authentication failed` | Wrong username or password | If the password was lost, rotate the credentials from Chirp's connector settings, then update `configuration.yaml` with the new password. |
 | (no MQTT lines, but connection looks fine) | `log_level: info` is hiding publish events | Change to `log_level: debug` in `configuration.yaml` and restart Z2M. The `MQTT publish` lines are only logged at debug. |
 

@@ -50,6 +50,10 @@ Check a test clip to make sure the picture, time, and event context are useful. 
 
 <figure><img src="../.gitbook/assets/chirp-lens-local-recordings.jpg" alt="A saved camera clip open for playback in Chirp Twin"><figcaption><p>Open a local clip to review what happened, or use Download to keep a copy.</p></figcaption></figure>
 
+## Can I keep a second copy somewhere else?
+
+Yes, and it is worth doing for anything you cannot afford to lose. Clips that live only on the Twin computer disappear if that computer is stolen or breaks. Camera **Storage** settings include a **Cloud backup** section where, with Twin 1.1.0 or newer, you choose a connector under **Backup to** and Twin uploads an encrypted copy of every clip. The age and size limits in **Automatic cleanup** apply to those copies too. See [Back Up Home Camera Recordings to the Cloud](cloud-archive.md).
+
 ## Use an external recording condition
 
 **External recording check** lets an existing system permit or prevent processing—for example, an occupancy system can enable monitoring while a home is unattended. Enter its endpoint in **External check URL** and save. This is an advanced integration; test ordinary recording before enabling it.

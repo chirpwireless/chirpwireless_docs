@@ -180,7 +180,7 @@ This is the default path for most Zigbee sensors, ESP32 projects publishing flat
 | Placeholder | What it does |
 |-------------|-------------|
 | `{{deviceId}}` | Marks the topic segment that contains the device identifier |
-| `{{value}}` | Marks a topic segment whose content is the measurement value itself — for example, `sensors/dev01/22.5` where `22.5` is the reading. Do not use `{{value}}` for topic segments that name the metric (like `temperature`) — if the segment is a label rather than a value, use the payload-style approach instead |
+| `{{value}}` | Marks a topic segment whose content is the measurement value itself — for example, `sensors/dev01/22.5` where `22.5` is the reading. Do not use `{{value}}` for topic segments that name the metric (like `temperature`) — if the segment is a label rather than a value, leave `{{value}}` out. You can also drop the token altogether. A topic with no `{{value}}` segment tells Chirp to find the number inside the message itself and store it under the row's data key, and every telemetry row must have one. |
 
 ---
 

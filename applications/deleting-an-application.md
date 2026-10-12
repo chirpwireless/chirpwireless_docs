@@ -10,6 +10,8 @@ You might stop using an application after changing a household setup. Before del
 Deleting an application also removes its associated devices, dashboards, and alarm definitions. Associated rules are stopped and moved to Trash. To keep a resource, assign it to another application or **Default** first.
 {% endhint %}
 
+An application you installed from a solution is a normal application. Deleting it removes only your copy, never the provider's solution.
+
 <figure><img src="../.gitbook/assets/chirp-applications-delete-confirmation.jpg" alt="Chirp Applications: Review the consequences before confirming application deletion."><figcaption><p>Review the consequences before confirming application deletion.</p></figcaption></figure>
 
 ## Keep the useful parts

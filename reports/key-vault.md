@@ -19,6 +19,8 @@ Sensor codes have a habit of being needed at exactly the wrong moment:
 
 The codes are stored encrypted, and they belong to your home — not to your personal account — so the right household members can reach them and nobody else can.
 
+Codes don't sit open on the screen either. Each one shows as a row of dots until you tap **Show key** beside it; tap **Hide key** and it's covered again. That makes it safe to open the list with a guest on the sofa or to share your screen with a support person. Every household member who can open Key Vault gets the **Show key** button, even if they can't change anything. While you type or paste a code into the add and edit windows, the characters stay visible so you can check them against the sticker, then hide again when you move on.
+
 > **Key Vault is not the same thing as [API Keys](../settings/api-keys.md).** API keys let *other apps and scripts* talk to Chirp on your behalf; Key Vault stores the codes *your sensors themselves* use to join your network.
 
 ## Finding Key Vault
@@ -26,6 +28,17 @@ The codes are stored encrypted, and they belong to your home — not to your per
 In the sidebar, look under **Records & Reports** and pick **Key Vault**.
 
 You'll see the key pairs saved for the home you're currently viewing. If nothing has been saved yet, Chirp asks the obvious question — *"Still keeping your Device keys on paper?"* — with an **Add your first key pair** button to get going.
+
+## What is on the Key Vault screen?
+
+Reading the page from top to bottom:
+
+* **Add Key Pair** is the button at the top right.
+* A **search box** above the list finds a pair by sensor code, so a long vault stays easy to scan.
+* The list has two columns, **DevEUI / EP EUI** and **AppKey / Network Key**. The second column always displays a string of dots instead of the real code.
+* At the end of each row sit three buttons: **Show key** (the eye icon), **Edit**, and **Delete**. **Show key** uncovers that one row's code, and the same button then reads **Hide key**. Reveal one row at a time and cover it again when you are done; the other rows stay masked. Members with view-only access can use **Show key** too, since they may need to read a code out loud.
+
+Inside the **Add Key Pair** and **Edit** dialogs the AppKey field also starts hidden. It shows what you type while you are typing, covers itself again when you click away or press Enter, and has its own eye button for a closer look at a stored value.
 
 ## A note on the field labels
 

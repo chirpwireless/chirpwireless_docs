@@ -6,11 +6,14 @@ description: Turn a DXF floor plan into walls for your 3D home — set the sourc
 
 If you already have a floor plan of your home — from when you bought the place, from a renovation, from an estate-agent listing — you don't have to draw your home from scratch. The editor can read a **DXF** file, the standard format that design and drawing programs export, and turn it straight into walls.
 
+Heads up: this import is still in **beta**, and the window says so — *DXF import is in beta and may not work perfectly. Check the result after import.* The preview is your safety net, and a plan exported straight from a design app usually reads better than one that was scanned or converted.
+
 It's the quickest route to an accurate model: the layout comes in already shaped and to scale, and you get to spend your time on the fun part — furnishing rooms and connecting sensors.
 
 ## What you need
 
 * A `.dxf` file of your floor plan. Architects, builders, and home-design apps can all export DXF.
+* A plain-text DXF. Binary DXF and DWG files can't be read, so if your plan is a DWG, save a copy as DXF in the program you opened it with.
 * The file is read right in your browser. Nothing is sent anywhere until you save the widget.
 
 ## Bringing in a file
@@ -34,7 +37,7 @@ The preview updates every time you change a setting, so you can get the size rig
 
 ## What was found
 
-The window shows a count of what the import did — how many **Walls** it created, how many curved shapes it approximated, and how many **Skipped entities** it left out. **Warnings** explain anything that was dropped. A few skipped items is completely normal: a plan file carries lots of things that aren't walls — text, dimension lines, furniture symbols — and only the walls belong in your model.
+The window shows a count of what the import did — how many **Walls** it created, how many curved shapes it approximated, and how many **Skipped entities** it left out. **Warnings** explain anything that was dropped. You may see *the file does not declare a unit, using your selection*, which is a nudge to check **Source unit**, or *the drawing has no dimensions or blocks (converted from PDF or exploded) — walls may be recognised inaccurately*, which means the plan was flattened on its way to you. If you can get the original drawing, use that. A few skipped items is completely normal: a plan file carries lots of things that aren't walls — text, dimension lines, furniture symbols — and only the walls belong in your model.
 
 ## After importing
 

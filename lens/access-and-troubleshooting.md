@@ -36,6 +36,9 @@ Keep the same Twin configuration volume so the installation retains its identity
 | An online camera will not play | Check stream settings and the connection between your browser, Lens, and Twin. |
 | Movement does not reach the rule | Check Motion mode, the drawn areas, sensitivity, and any timetable or external condition. |
 | Older clips are missing | Review both the size limit and age limit under Storage. |
+| The camera asks you to update before it can back up | Cloud backup requires version 1.1.0 or later of the Twin program. Pull the newer container image, restart it, and revisit the camera's **Storage** tab. Meanwhile it keeps recording on its own computer. |
+| A cloud clip plays from the start only and cannot be scrubbed | The storage service is not answering partial-read requests. If you use Walrus, switch the connector to an aggregator address that does. More in [Back Up Home Camera Recordings to the Cloud](cloud-archive.md). |
+| A clip is labeled **Unreadable** or **Storage period ended** | **Unreadable** means the upload was damaged and cannot be played; record again. **Storage period ended** means the paid Walrus period for that clip is over. |
 
 If video cannot start through WebRTC in **Twin's local viewer**, Twin tries SD viewing when that camera source provides it. Without an SD option, it marks the stream unavailable. This describes the local Twin viewer, not the cloud Lens viewing controls. A change of viewing mode cannot reconnect a powered-off camera or guarantee a picture; check the camera and network if video is still missing.
 

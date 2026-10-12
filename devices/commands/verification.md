@@ -44,7 +44,16 @@ Use this for devices that don't mention their status on their own but will tell 
 
 ## What "worked" looks like
 
-For both checking options, you tell Chirp what a successful result looks like by adding one or more expected readings. Add at least one — the command won't save without it.
+For both checking options, you tell Chirp what a successful result looks like by adding one or more expected readings. Add at least one — the command won't save without it. Each reading needs both its **Metric** and its **Expected value**; if one is missing, the field is marked right there (*Select a metric* or *Expected value is required*) and **Save** stays off. A half-finished row can't quietly vanish anymore and leave you thinking a check is in place when it isn't.
+
+### What does the expected-readings area look like?
+
+In the command editor the block is headed **Expected sensor states** (starred, because it is required). Beneath it a hint explains that you can type a literal value or refer to one of the command's parameters with `{{ paramName }}`. Each reading you add is one row with two fields:
+
+* **Metric** (placeholder **Select or type a metric**) is the measurement you expect to change. If the device has no mapped readings yet, the list says **No sensors mapped on this device yet** and links to the **Mapping section** so you can fix that first. A row whose reading was later unmapped warns **This sensor is no longer mapped on the device. Pick another metric.**
+* **Expected value** (placeholder **Literal or {{ paramName }}**) is the result that counts as success. A parameter name that does not exist shows a message saying the placeholder matches none of the parameters defined above.
+
+Choose **Add State** to add another row. Until at least one row is complete, a line reminds you to add an expected state to verify the result, and **Save** stays disabled.
 
 ### Which reading to pick
 

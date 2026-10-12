@@ -56,6 +56,10 @@ A camera might have a preset aimed towards the ceiling and another aimed at the 
 
 Read the result notifications and check the pictures. Fixed cameras cannot turn, cameras without a usable preset are skipped, and an offline camera cannot respond. Only the cameras included in the open wall are targeted. If movement controls are unavailable on a compatible camera, check its ONVIF setup in [Connecting a Camera](connecting-a-camera.md).
 
+## Where do my videowalls live?
+
+Choose **Cameras** in the main menu and the sidebar changes to Lens. **Videowalls** is the second entry there, with each saved wall listed beneath it. After the walls come **Add videowall** (with a gear icon for managing folders), then **Recordings** and **Cameras**, and **Storage** is pinned near the bottom. A wall whose cameras are all offline shows **Camera is offline** on each panel, and the header counters (viewers, panels online, HD and SD streams) show how many need attention.
+
 ## Keep useful views together
 
 You might create one wall for outside cameras and another for indoor areas. Folders, created through the Lens sidebar's videowall management control, help organize those views. Select a folder when you create a wall. Only an empty folder can be deleted.

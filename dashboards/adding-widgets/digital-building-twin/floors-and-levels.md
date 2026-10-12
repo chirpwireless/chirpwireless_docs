@@ -48,7 +48,7 @@ Most people work in **Solo** so each floor is clear while they build it, then fl
 
 ## What the dashboard shows
 
-The dashboard tile shows your home from the angle and view you leave the editor in. For a multi-floor house, framing it in **Stack** with a gentle 3D tilt gives a nice whole-house view on the dashboard. If one floor matters most — the floor with the nursery, the basement with the leak sensor — you can frame that one instead and save.
+The dashboard tile shows your home from the angle, view, and floor you leave the editor in, nudged position included, exactly as you saved it. For a multi-floor house, framing it in **Stack** with a gentle 3D tilt gives a nice whole-house view on the dashboard. If one floor matters most — the floor with the nursery, the basement with the leak sensor — you can frame that one instead and save.
 
 ## Tips
 

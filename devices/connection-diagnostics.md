@@ -41,6 +41,8 @@ You'll see one of these headlines:
 | **Waiting for first data** | Nothing has come in yet. You may also see **Waiting for the first uplink** or **No uplinks received yet** — same meaning. If it never moves off this state, the sensor may still be joined to a network it used before Chirp — see [First things first: joining the network](#first-things-first-joining-the-network). |
 | **Reached network — waiting for data** | "Joined the network · no uplinks yet" — a LoRaWAN sensor that has successfully introduced itself to your gateway but hasn't sent an actual reading yet. Genuinely good news. |
 
+Leave the page open and the "last seen" line looks after itself. Chirp checks again roughly every half minute, and the little dot and the "x minutes ago" label count up on their own, so a sensor that goes quiet turns grey while you watch rather than waiting for you to reload. A sensor that reports every minute won't flicker grey in between. You'll see the same up-to-date status in your sensor list, on text widgets, and on info cards.
+
 Around the headline you'll also spot a few supporting details:
 
 - **Expected every {{interval}} {{unit}} · last seen {{last}}** — the schedule you told Chirp this sensor is on, next to when it actually last showed up. If those two disagree badly, the schedule in your settings is probably wrong, not the sensor.

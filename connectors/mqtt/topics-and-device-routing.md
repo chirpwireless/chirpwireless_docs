@@ -69,10 +69,12 @@ Use the topic telemetry editor when the **value itself appears in a topic segmen
 | --- | --- |
 | **Add new topic** | Adds a row with a pinned **value** segment. Add text/Device ID segments to match the publisher. |
 | **MQTT Topic for telemetry** | For this example, build `meters/{{deviceId}}/voltage/{{value}}`. The value segment identifies the reading `230.5`; it is not the word `voltage`. |
-| **value** segment | Always present in this editor and cannot be removed. It can be repositioned with the segment controls to match the publisher's topic. |
-| **Device data key** | Required for a value-extraction row. Enter the name under which the extracted reading should appear, such as `voltage`. Map this key to a measurement on **Mapping**. |
+| **value** segment | Not mandatory. A caption under the row spells out the mode in use: **The value is read from the value segment of the topic** or **No value segment: the value is read from the message payload**. Drag the segment to the position that matches your publisher, remove it when the number is carried in the message body, or add it back later. |
+| **Device data key** | Needed on every telemetry row, whether or not it has a value segment; a row without one shows **Device data key is required** and won't save. Type the label the reading should carry from now on, for instance `voltage`, then link that label to a measurement on the **Mapping** tab. |
 | Row remove control | Removes that telemetry rule from the edited configuration. Save to apply the removal. |
 | **Apply all** | Replaces every existing row's topic pattern with the device-ID topic plus a value segment, unless that pattern already contains one. It preserves the rows' data-key names. Review each row afterward and restore different literal segments such as `voltage` or `current` where needed. It does not create rows or save the device. |
+
+Plenty of gadgets publish one reading per topic and keep the number in the message body, such as a smart plug that sends `0` or `1` to `device/260/ap/5/upload`. Build that topic without a value segment and name the row with a data key like `outlet_state`; Chirp files the message body under that name. This used to be impossible from the web page, and re-saving a device that had been set up another way could quietly break it. Saved patterns now appear exactly as stored.
 
 In Payload identifier mode, telemetry rows omit Device ID and the message must still contain the identifier at the configured JSON path. A matching topic value takes precedence over a payload field with the same key.
 

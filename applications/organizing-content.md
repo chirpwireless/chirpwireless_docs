@@ -6,7 +6,7 @@ description: "Put household devices, views, rules, and alarm definitions into th
 
 Your application's **Content** tab brings its working parts together. For Home Watch, that could mean a door sensor, a home dashboard, a rule that checks the door reading, and an alarm definition for the notification.
 
-Use each resource's **Application** field to choose where it belongs. The resource must already exist or be created through its usual setup screen.
+An application installed from a [solution](solutions-explained.md) already lists everything it created here, and you can add to it. Use each resource's **Application** field to choose where it belongs. The resource must already exist or be created through its usual setup screen.
 
 <figure><img src="../.gitbook/assets/chirp-applications-content.jpg" alt="Chirp Applications: The Content tab groups the application’s devices, dashboards, rules, and alarms."><figcaption><p>The Content tab groups the application’s devices, dashboards, rules, and alarms.</p></figcaption></figure>
 

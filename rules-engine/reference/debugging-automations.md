@@ -112,7 +112,7 @@ Two things happen after you answer:
 
 ## When a node fails
 
-If a node hits an error while running, it gets a red ring on the canvas — so you can see exactly where the problem is without hunting through a big automation. If the error is one you can recover from, the debug session stays paused and loaded so you can take a look, adjust, and carry on; if it's not recoverable, the session ends.
+If a node hits an error while running, you don't just get a red ring. A small badge under the ring says **Execution failed at "{step}"**, a banner above the debug panel tabs shows **Execution error** with the reason the debugger reported, and the same reason pops up as a notification — so you usually know what to fix without digging. A step that merely gets refused, like a watch expression with a typo or an unknown breakpoint, only shows a notification and leaves your session untouched, so a slip in the **Evaluate** box never makes it look like the automation broke. If the error is one you can recover from, the debug session stays paused and loaded so you can take a look, adjust, and carry on; if it's not recoverable, the session ends.
 
 Nearly always it's the expression on that node. Open it and check three things:
 

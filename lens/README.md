@@ -1,5 +1,5 @@
 ---
-description: "Bring compatible home cameras into Chirp and use selected-area motion with your household automations."
+description: "Keep the home cameras you own, see them together in Chirp, use motion in your automations, and store recordings in your own cloud."
 ---
 
 # Cameras
@@ -8,9 +8,40 @@ Open **Cameras** in the main navigation to use **Lens**, the camera product with
 
 **Lens** is Chirp's cloud camera feature. It lets you check compatible IP cameras and use their motion readings alongside the sensors and automations that help you look after your home.
 
+Here is what Lens gives a household:
+
+- **Every camera in one app.** Front door, garage, garden, and holiday home appear together instead of in a separate app each.
+- **No camera shopping.** If a camera can send an RTSP stream, it can usually join.
+- **Alerts from old cameras.** Draw the area that matters and a camera with no smart features can still start an automation.
+- **Your recordings, your storage.** Keep clips on your own computer, or send a copy to a cloud account you control.
+
 You may already have a camera at the front door and a different brand in the garage. If they provide supported RTSP streams, you can keep those cameras and connect them to Chirp. Your residential setup can span several properties: a main house, a holiday home by the coast, and an apartment. Connect compatible cameras at each property without replacing them all with one manufacturer’s equipment.
 
 <figure><img src="../.gitbook/assets/chirp-lens-live-view.jpg" alt="Chirp Lens showing two connected home-camera feeds"><figcaption><p>Two camera brands together in Chirp Lens, shown in Preview mode.</p></figcaption></figure>
+
+## Why use Chirp Lens at home?
+
+### What if each camera has its own app?
+
+Most households end up with a doorbell from one brand, a garden camera from another, and a cheap indoor camera someone gave you. Each one wants its own app and its own login, and a family member who needs access gets a shared password. Lens gathers them in Chirp. You open one **Live view**, and each person signs in with their own account and gets **Edit**, **View**, or **No access** to Cameras. Access is set per feature, so someone can see Cameras without being able to change your sensors. A housemate who moves out loses access in one step.
+
+### Do I have to buy new cameras?
+
+No. Lens works from the RTSP video stream, which most IP cameras on the market can send. Look up your model in [RTSP Camera URLs](rtsp-camera-urls.md); if it lists a stream address, you are most of the way there. You can add one camera today and another next month.
+
+### How can a cheap camera trigger an automation?
+
+Draw a rectangle around the garage door on the camera's picture, and Twin watches only that rectangle for movement. A camera bought years ago can then start an automation when something moves by the door, and cars passing on the street do not. See [Motion Zones](motion-zones.md). Lens detects movement, not people or pets, and understanding what a camera sees is something we are working toward, not something available now.
+
+### Where can I keep my recordings?
+
+On the computer running Twin, and if you want a second copy, in a cloud account you own (Amazon S3, Google Cloud Storage, or Walrus). Details are in [Back Up Home Camera Recordings to the Cloud](cloud-archive.md).
+
+### What can a camera do with my other devices?
+
+Lens turns every camera into a device in your home, reporting two readings: **Camera motion** and **Camera status**. Use those readings in an automation or alert exactly as you would a door contact or a thermostat. Today you can combine a camera's motion with a door sensor and get an alert only when the door is open too.
+
+Here is a scenario to show where this leads, not something Chirp does today. You are away, and the front-door sensor reports the door opened at 3 a.m. Because the camera, the sensor, and your lights all live in one platform, one automation could turn on the hallway light and send you the camera view at the same time. The more of your home shares one platform, the more situations like that you can set up.
 
 ## Meet your camera's Twin
 
@@ -70,6 +101,6 @@ A [videowall](videowalls.md) puts selected home cameras in a layout you can save
 
 Start with [Installing Twin](installing-twin.md), using the official [Twin Docker image](https://hub.docker.com/r/chirpiot/lens-twin). Then [connect a camera](connecting-a-camera.md) and [watch live video](watching-live-video.md).
 
-Once the view works, set up [Motion Zones](motion-zones.md), [Camera Rules and Alerts](camera-rules-and-alerts.md), or optional [Local Recordings](local-recordings.md).
+Once the view works, set up [Motion Zones](motion-zones.md), [Camera Rules and Alerts](camera-rules-and-alerts.md), optional [Local Recordings](local-recordings.md), or a [Cloud Archive](cloud-archive.md).
 
 For ongoing administration, see [Managing Cameras](managing-cameras.md). To connect an account-backed camera or HomeKit accessory, see [Provider Camera Sources](connecting-cloud-camera-sources.md).

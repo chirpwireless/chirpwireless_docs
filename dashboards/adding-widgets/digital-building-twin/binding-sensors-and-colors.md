@@ -58,7 +58,7 @@ The rules are checked in order, and **the first one that matches wins**. If none
 
 ## Step 5 — Try it out
 
-The metric's editor has a **Value** slider. If the sensor isn't sending live data yet, drag the slider and watch your objects change color in real time — it's the quickest way to check your rules before the model goes on a dashboard. Once the device is reporting, the editor shows the real **Current value** and the model follows your live readings.
+The metric's editor has a **Value** slider. If the sensor isn't sending live data yet, drag the slider and watch your objects change color in real time — it's the quickest way to check your rules before the model goes on a dashboard. Once the device is reporting, the editor shows the real **Current value** (neatly rounded to two decimals) and the model follows your live readings.
 
 ## A few examples
 
