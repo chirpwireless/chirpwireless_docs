@@ -4,21 +4,21 @@ description: "Learn what a solution, an application, and a use case are in Chirp
 
 # What Are Solutions and Applications in Chirp?
 
-Chirp uses three words that sound alike: solution, application, and use case. Here is what each one means.
+A few words in Chirp sound alike. Here is what each one means.
 
 ## What is a solution?
 
-A **solution** is a ready-made setup that we prepared for one problem at home or in a rental, such as keeping an eye on a holiday home or catching a leak early. It comes with the sensors, dashboard, automations, and alerts you would otherwise have to create yourself. You find solutions on the **Solutions** tab, preview them, and install the ones that fit.
+A **solution** is a ready-made setup we prepared for one job at home or in a rental, such as watching a holiday home or catching a leak early. It comes with the sensors, dashboard, automations, and alerts you would otherwise build yourself. You find solutions on the **Solutions** tab.
 
 ## What is an application?
 
-An **application** is what you have in your account after you install a solution: its sensors, dashboard, automations, and alerts together, already working. You can also create an application yourself and fill it with your own devices. It is yours to change either way.
+An **application** is what you have in your account after you install a solution, with its sensors, dashboard, automations, and alerts together. You can also create one yourself and fill it with your own devices. Either way, it is yours to edit.
 
 ## How is a solution different from an application?
 
-Think of a family recipe and the dinner you cook from it. The solution is the recipe card, and your application is the dinner on your table. You pick a recipe, press **Install solution**, and cook a dinner of your own.
+Think of a family recipe and the dinner you cook from it. The solution is the recipe card, and your application is the dinner on your table.
 
-When the install finishes, nothing in the list marks the application as installed from a solution, and your changes never touch the solution in the catalog. Rename it, rearrange it, or delete it as you like; the solution stays available for you to install again. If a solution is later withdrawn from the catalog, the application you already created keeps running.
+Changes to your application never touch the solution in the catalog, so you can install it again whenever you like. If a solution is later withdrawn from the catalog, the applications you already installed keep running.
 
 ## What comes with a solution?
 
@@ -31,19 +31,19 @@ When the install finishes, nothing in the list marks the application as installe
 
 ## Where do I find solutions in Chirp?
 
-Choose **Applications** in the left sidebar. The page is called **Applications and solutions** and has tabs across the top:
+Choose **Applications** in the left sidebar. The page is called **Applications and solutions** and has two tabs:
 
-* **Solutions** is the first tab. It is the catalog of ready-made solutions you can install.
-* **My applications** lists every application in your organization, both ones you built and ones you installed. (Your organization is your Chirp account space. For a single household, it is simply your home.)
+* **Solutions** is the catalog of ready-made solutions you can install.
+* **My applications** lists every application in your organization, both the ones you built and the ones you installed. Your organization is your Chirp account space; for a single household, it is simply your home.
 
 To install one, press **Preview**, then **Use this solution**, then **Install solution** on the next screen.
 
-## Where do ready-made solutions come from?
+## Where do the solutions come from?
 
-Chirp prepares them and controls the catalog. Each solution is made for one job at home and comes with practice sensors, a dashboard, automations, and alerts that already work together. The install page also lists the real devices to buy, so you never start from a blank screen. We add new solutions with new releases.
+Chirp prepares them and keeps the catalog. The install page also lists the real devices to buy. New solutions arrive with updates.
 
 ## What is a use case?
 
-A **use case** is the job a solution does, such as leak protection. It matters to you because it is how solutions are labeled, so you can find the one that fits your problem. There is no screen for use cases in your account, and you never have to manage them.
+A **use case** is the job a solution does, such as leak protection. It is how solutions are labeled, so you can find the one that fits your problem. There is no screen for use cases in your account, and you never have to manage them.
 
-Next, [explore the solutions on offer](exploring-ready-made-solutions.md).
+Next, [look through the solutions on offer](exploring-ready-made-solutions.md).
