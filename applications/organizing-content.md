@@ -1,77 +1,71 @@
 ---
-description: "Put your devices, dashboards, automations, and alerts into the right Chirp application and read the Content tab, its counts, and its search box."
+description: "Choose the Application field for devices, dashboards, automations, and alerts so the Content tab lists them together. Learn what Default and the counts mean."
 ---
 
 # How do I organize an application's content?
 
-This page helps you put your devices, dashboards, automations, and alerts into the right application. The application's **Content** tab then shows all of it in one place.
+An application's **Content** tab shows everything that belongs to it in one spot. Picture an application called `Home Watch` (just an example name). It could gather a door sensor, a home dashboard, an automation that checks the door reading, and an alert that tells you when the door opens.
 
-Say you made an application called `Home Watch` (just an example name). It could hold a door sensor, a home dashboard, an automation that checks the door reading, and an alert that notifies you.
+If you installed the application from a [solution](solutions-explained.md), its parts are already listed, and you can add more whenever you like. Each device, dashboard, automation, and alert has an **Application** field, and that field decides where it lives. The item has to exist first, so create it on its usual screen.
 
-An application installed from a [solution](solutions-explained.md) already lists everything it created, and you can add more. Each device, dashboard, automation, and alert has an **Application** field. That field decides where it belongs. The item has to exist first, so create it on its usual screen.
+## How do I add things to an application?
 
-## How do I add devices, dashboards, rules and alarms to an application?
+| What | Where to choose the application |
+|---|---|
+| Device | Click **Devices** in the sidebar and open the device. On **Device Info**, pick the application in **Application**, then select **Next** to apply the change. |
+| Dashboard | Open **Dashboards** in the sidebar, then create or edit the dashboard. Pick the application in its **Application** field and select **Next**. |
+| Automation | Click **Rules engine** in the sidebar. In the list, set the **Application** selector on the automation. |
+| Alert | Click **Alarm** in the sidebar and open the **Alarm definitions** tab. Create or edit the alert, pick the application, and save. |
 
-1. Click **Devices** in the sidebar and open a device. On **Device Info**, choose `Home Watch` in **Application** and select **Next** to apply the change.
-2. Open **Dashboards** in the sidebar, then create or edit the dashboard you want. Choose `Home Watch` in its **Application** field and select **Next** to apply the change.
-3. Click **Rules engine** in the sidebar. In the list, set the automation's **Application** selector to `Home Watch`.
-4. Click **Alarm** in the sidebar, open the **Alarm definitions** tab, then create or edit the alert. Choose the same application and save it.
-5. Return to **Applications → My applications → Home Watch → Content**.
+Choose `Home Watch` in each field. Then go to **Applications → My applications → Home Watch → Content** and check that every item appears under the right heading. You need permission to edit an item to change its application.
 
-An automation is a rule that reacts to a reading. On some screens it is called a rule chain.
+An automation is a rule that reacts to a reading. Some screens call it a rule chain.
 
-Each item appears under its own heading: **Devices**, **Dashboards**, **Rules**, or **Alarms**. You need permission to edit an item to change which application it belongs to.
+## What is included in an application?
 
-## Does grouping items in an application create an automation?
+The **Content** tab has one card each for **Devices**, **Dashboards**, **Rules**, and **Alarms**. Open any row to keep working on that item.
 
-No. The pieces still need to be connected in their own settings. For a door alert, the automation has to watch the right sensor and use the right alert.
+Does grouping create an automation? No. Putting the door sensor, the automation, and the alert into `Home Watch` does not send you a single notification. The automation still has to watch the right sensor and use the right alert. [Set Up a Home Alert](../alarm/set-up-a-home-alert.md) walks you through it.
 
-Putting both in `Home Watch` does not send any notifications. Follow [Set Up a Home Alert](../alarm/set-up-a-home-alert.md) to set that up.
+## How do I move something to another application?
 
-## How do I move an item to another application?
+An item belongs to one application at a time. Change its **Application** field and it moves.
 
-An item belongs to one application at a time. Change its **Application** field to move it.
+**Default** is the application with no name of its own. Choose it when you want to keep an item without placing it in a named application.
 
-**Default** is the application with no name of its own. Pick it when you want to keep an item without putting it in a named application.
+## How do I keep things when reorganizing?
 
-Tidying up an old application? Move the parts you still need first. [Deleting an application](deleting-an-application.md) also deletes the devices and their stored readings that belong to it.
-
-## What do the counts mean?
-
-The counts next to each card title and in the **My applications** table show how many items of that kind the application holds. **0** means none have been added.
-
-A dash means Chirp could not read the number, for example because you lack access. It does not mean the category is empty.
+Moving an item only changes where it is listed. Deleting an application is different, because it also deletes the devices in it and their stored readings. Before you tidy up an old application, move out whatever you still want. [Deleting an application](deleting-an-application.md) has the details.
 
 ## What does each card on the Content tab show?
 
-Open **Applications → My applications**, select the application, and choose **Content**. The page has two columns of cards.
+Open **Applications → My applications**, select the application, and choose **Content**. Two columns of cards appear.
 
-* **Devices** lists every device in the application. Each row has a badge: **Emulator** for a practice sensor, or **live** / **offline** plus its technology, such as **live · LoRaWAN**, for a real one. A real device that has stopped reporting is drawn in muted text. Select a row to open the device.
-* **Dashboards** lists the dashboards. Select a row to open the dashboard.
-* **Rules** opens with a short note about what a rule chain (an automation) does, then lists the rules with their descriptions. Select a row to open the rule.
-* **Alarms** explains that an alarm here is a notification recipe, not a trigger. It sets the message, who gets it and how, how it escalates (if nobody reacts, it can repeat or go to someone else), and the schedule. An automation decides when it fires. Each row shows the alarm's message and, on the right, its severity. A gray **Disabled** label appears beside the severity when the definition is switched off, because a disabled alarm stays silent whatever a rule raises.
-* **Emulator** appears at the bottom of the left column only while the application still has a practice sensor. Select **Go to connectors** to add the real connector.
+* **Devices** lists every device. Each row carries a badge: **Emulator** for a practice sensor, or **live** / **offline** plus its technology, such as **live · LoRaWAN**, for a real one. A real device that stopped reporting appears in muted text.
+* **Dashboards** lists your dashboards.
+* **Rules** starts with a short note about what a rule chain (an automation) does, then lists the rules with their descriptions.
+* **Alarms** explains that an alarm here is a notification recipe, not a trigger. It holds the message, who gets it and how, how it escalates (if nobody reacts, it can repeat or go to someone else), and the schedule. An automation decides when it fires. Each row shows the message and, on the right, the severity. A gray **Disabled** label means the definition is off, and a disabled alarm stays silent whatever a rule raises.
+* **Emulator** sits at the bottom of the left column while the application still has a practice sensor. Select **Go to connectors** to add the real connector.
 
-Every card shows its count next to the title. Opening a row takes you to that item, and the back navigation returns you to the same tab.
+Select any row to open the item. The back navigation brings you to the same tab again.
 
-An empty card says **Nothing here yet**. A card that cannot be read says **Couldn't load this list — it may require a permission you don't have**. That is a missing permission, not an empty list.
+## What do the counts mean?
+
+The number beside each card title, and in the **My applications** table, tells you how many items of that kind the application holds. **0** means you have not added any yet.
+
+A dash means Chirp could not read the number, for example because you lack access. It does not mean the category is empty.
+
+An empty card says **Nothing here yet**. A card that cannot be read says **Couldn't load this list — it may require a permission you don't have**. That points to a missing permission, not an empty list.
 
 ## How do I find an item in a larger application?
 
-Once a card holds more than ten rows, a small search box appears in its header. It looks through the name and the second line of text, such as a description. If nothing matches, you see **No matches for this search**.
+When a card has more than ten rows, a small search box appears in its header. It looks through the name and the second line of text, such as a description. No hits? You see **No matches for this search**.
 
-Good to know: the Rules and Alarms cards show up to 200 entries each. For more, use the full **Rules engine** and **Alarm** pages.
+## Good to know
 
-## Which application will a new device or dashboard use?
-
-New forms start with **Default**. Once you save something with another application, Chirp remembers that choice for next time, separately for each organization. Check the selection before you save a device, dashboard, or alert.
-
-If you use **Add new application** (type a name, press **Create**, and Chirp selects it for you) and then cancel the form, the new application still exists.
-
-## What is the Emulator badge on a device?
-
-Devices marked **Emulator** are practice sensors. They send sample readings so you can learn the setup before your real sensors arrive. While an application has one, its **Content** tab shows the **Emulator** card with the **Go to connectors** shortcut. The [Emulator Connector](../connectors/emulator-connector.md) guide explains how practice sensors work.
-
-A real device's status depends on its connection and recent readings, not on which application it belongs to.
-
-Good to know: you can change an automation's application while someone has it open in the editor. Deleting the application is different, and an open editor can stop it.
+* New forms start with **Default**. After you save something with another application, Chirp remembers that choice for next time, separately for each organization. Check the selection before saving a device, dashboard, or alert.
+* **Add new application** creates the application as soon as you press **Create**, and Chirp selects it for you. If you then cancel the form, the new application still exists.
+* An **Emulator** badge marks a practice sensor that sends sample readings so you can learn the setup before your real sensors arrive. The [Emulator Connector](../connectors/emulator-connector.md) guide explains them.
+* A real device's status depends on its connection and recent readings, not on which application it belongs to.
+* The Rules and Alarms cards show up to 200 entries each. For more, use the full **Rules engine** and **Alarm** pages.
+* You can change an automation's application while someone has it open in the editor. Deleting the application is different, and an open editor can stop it.

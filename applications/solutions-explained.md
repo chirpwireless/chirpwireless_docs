@@ -4,46 +4,60 @@ description: "Learn what a solution, an application, and a use case are in Chirp
 
 # What Are Solutions and Applications in Chirp?
 
-A few words in Chirp sound alike. Here is what each one means.
+A solution is a ready-made starting point, and an application is the setup that ends up in your account.
 
 ## What is a solution?
 
-A **solution** is a ready-made setup we prepared for one job at home or in a rental, such as watching a holiday home or catching a leak early. It comes with the sensors, dashboard, automations, and alerts you would otherwise build yourself. You find solutions on the **Solutions** tab.
+A **solution** is a ready-made setup we prepared for one specific job at home, like watching a holiday home or catching a leak early. It comes with the sensors, dashboard, automations, and alerts you would otherwise set up by hand. You find solutions on the **Solutions** tab, look them over, and install the ones you want.
 
 ## What is an application?
 
-An **application** is what you have in your account after you install a solution, with its sensors, dashboard, automations, and alerts together. You can also create one yourself and fill it with your own devices. Either way, it is yours to edit.
+An **application** is what you have in your account after installing a solution: its sensors, dashboard, automations, and alerts, all in one place and already working. You can also create an application yourself and fill it with your own sensors and dashboards. Either way, you can edit it.
 
-## How is a solution different from an application?
+## What is the difference between a solution and an application?
 
-Think of a family recipe and the dinner you cook from it. The solution is the recipe card, and your application is the dinner on your table.
+Picture a family recipe and the dinner you cook from it. The solution is the recipe card, and the application is the dinner on your table. You pick a recipe, press **Install solution**, and end up with a dinner of your own.
 
-Changes to your application never touch the solution in the catalog, so you can install it again whenever you like. If a solution is later withdrawn from the catalog, the applications you already installed keep running.
+* **After the install, there is no difference.** An application you built yourself and one that came from a solution behave identically. The installed one was simply set up for you, and it keeps its practice sensors until you swap them for real ones.
 
-## What comes with a solution?
+## Where do I find solutions and applications in Chirp?
 
-| Piece | What you will see in your home |
+Both live on one page. Choose **Applications** in the left sidebar. The page is called **Applications and solutions**, and two tabs sit under the title.
+
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Applications and solutions page in Chirp opened on the Solutions tab with one solution card and its Preview button"><figcaption><p>The Solutions tab, with the Applications item selected in the left sidebar.</p></figcaption></figure>
+
+| Tab | What it is for |
 |---|---|
-| Practice sensors | Sample sensors that send realistic readings. Each one has an **Emulator** badge. |
-| Automations | Rules that react to those readings, for example by sending an alert. They are already running. |
-| Alerts | Notifications that tell you something needs attention. They go to you, the person who installed the solution. |
-| Dashboard | A finished view. Every widget already shows a practice sensor. |
+| **Solutions** | The catalog of ready-made solutions from Chirp. You preview and install them here. |
+| **My applications** | All the applications in your organization: the ones you made yourself and the ones you installed. |
 
-## Where do I find solutions in Chirp?
+Guides for each tab:
 
-Choose **Applications** in the left sidebar. The page is called **Applications and solutions** and has two tabs:
+* [How do I explore ready-made solutions?](exploring-ready-made-solutions.md)
+* [How do I install a ready-made solution?](installing-a-ready-made-solution.md)
+* [How do I create an application in Chirp?](creating-an-application.md)
 
-* **Solutions** is the catalog of ready-made solutions you can install.
-* **My applications** lists every application in your organization, both the ones you built and the ones you installed. Your organization is your Chirp account space; for a single household, it is simply your home.
+## Who prepares the solutions?
 
-To install one, press **Preview**, then **Use this solution**, then **Install solution** on the next screen.
-
-## Where do the solutions come from?
-
-Chirp prepares them and keeps the catalog. The install page also lists the real devices to buy. New solutions arrive with updates.
+Chirp prepares the solutions and keeps the catalog up to date, so you install solutions rather than publish them. Each one is a complete, ready-made setup for one job at home, such as leak protection or keeping an eye on a rental. New solutions arrive with every update.
 
 ## What is a use case?
 
-A **use case** is the job a solution does, such as leak protection. It is how solutions are labeled, so you can find the one that fits your problem. There is no screen for use cases in your account, and you never have to manage them.
+A **use case** is the label for the problem a solution solves, such as leak protection or energy saving. One solution can cover several use cases, and the same use case can show up in more than one solution. You never need to manage use cases yourself.
 
-Next, [look through the solutions on offer](exploring-ready-made-solutions.md).
+## What is inside a solution?
+
+| Part | What you get when you install it |
+|---|---|
+| Practice sensors | Sample sensors that send made-up readings, so the dashboard has something to show right away. Each carries an **Emulator** badge. |
+| Automations | Rules that react to the readings, for example by sending an alert. They are already running. |
+| Alerts | Notifications that tell you something needs attention, set up so that you are the one who gets them. |
+| Dashboard | A ready-made view whose charts are already connected to the practice sensors. |
+
+## What happens when a solution disappears or I delete an application?
+
+* **A solution that leaves the catalog changes nothing for you.** If we take one out, it vanishes from the list. Applications that were already installed from it carry on working.
+* **Deleting your application leaves the catalog alone.** It removes only your copy, and everything inside it. See [What happens when I delete an application?](deleting-an-application.md)
+
+Can't find **Applications** in the sidebar? The feature may not be switched on for your account yet. See [Get Help](../help/get-help.md) to reach support.
+

@@ -1,46 +1,46 @@
 ---
-description: "Before you delete a Chirp application, keep the devices, dashboards, and alerts you still need. Then remove it and fix any permission errors."
+description: "Remove a Chirp application you no longer need, and save the sensors, dashboards, and alerts you want to keep before you confirm."
 ---
 
-# How do I delete an application in Chirp?
+# What happens when I delete an application?
 
-This page helps you remove an application you no longer use, without losing the parts you still want. Deleting takes a few clicks, so look at what is inside first.
+Retiring an application takes a few clicks. First, take a minute to see what is inside it, because most of it goes away with it.
 
 {% hint style="warning" %}
-Deleting an application also deletes its devices and their stored readings, its dashboards, and its alerts. Its automations are stopped and moved to the Trash (the place where deleted automations wait before they are removed for good). To keep something, move it to another application or to **Default** first.
+Deleting an application also deletes its devices together with their stored readings, its dashboards, and its alerts. Its automations stop and land in the Trash, the holding place for deleted automations before they are gone for good. Anything you want to keep must move to another application or to **Default** first.
 {% endhint %}
 
-Did you install the application from a solution? It is a normal application. Deleting it removes only your copy, never the catalog's solution.
+Did the application come from a solution? Then it is a regular application like any other. Deleting it affects your copy only. The solution in the catalog stays, and so do other people's copies.
 
 <figure><img src="../.gitbook/assets/chirp-applications-delete-confirmation.jpg" alt="The delete confirmation dialog in Chirp Applications, with a warning about what will be removed"><figcaption><p>Read the warning in the confirmation dialog before you delete.</p></figcaption></figure>
 
-## How do I keep the devices and dashboards I still need?
+## How do I save the things I still need?
 
-1. Open the application and choose **Content**.
-2. Look at all four cards.
-3. For each item you want to keep, open it and change its **Application** field.
-4. Save, then check that the item has left the old application's list.
+1. Open the application and select **Content**.
+2. Go through all four cards: devices, dashboards, rules, and alarms.
+3. Open each item worth keeping and switch its **Application** field to another application or to **Default**.
+4. Save, then check that the item no longer shows up in the old application.
 
-Say you no longer want `Home Watch` but still use its temperature dashboard. Move the dashboard and the devices it shows before you delete the application.
+Picture it: you are done with `Home Watch`, but you like its temperature dashboard. Move that dashboard first. Move the sensors it shows as well.
 
-## How do I remove the application itself?
+## How do I delete the application?
 
 1. Open the application and select the trash can icon at the top right.
-2. A dialog asks **Are you sure you want to delete the application?** It warns that the devices, rules, alarms, and dashboard linked to the application will be removed from the platform. The devices go with their stored readings.
-3. Choose **Cancel** to back out, or **Yes, delete** once you have checked the remaining contents.
+2. Read the question **Are you sure you want to delete the application?** The dialog warns that the devices, rules, alarms, and dashboard linked to the application will be removed from the platform. Devices leave with their stored readings.
+3. Select **Yes, delete** if you have checked what is left, or **Cancel** to stop.
 
-A toast reads **Application deleted successfully**, and the application disappears from **My applications**. If it fails, you see **Failed to delete application**.
+Once it works, a message says **Application deleted successfully** and the application is gone from **My applications**. If something goes wrong, you see **Failed to delete application**.
 
 ## What if deleting shows an error?
 
-Reopen the application and check what is left before you try again. Some items may already be gone. If someone has an automation open in the editor, close it first, then retry.
+Open the application again and look at what remains before you retry. Part of the cleanup may already have happened. An automation that someone has open in the editor can also get in the way. Close the editor, then try again.
 
-Bringing an automation back from the Trash does not bring back deleted sensors, dashboards, or alerts. [Trash and Restore](../rules-engine/managing-automations/trash-and-restore.md) explains how to recover a rule.
+The Trash gives back automations only. Sensors, dashboards, and alerts that were deleted stay deleted. To bring an automation back, follow [Trash and Restore](../rules-engine/managing-automations/trash-and-restore.md).
 
 ## Why can't I delete an application?
 
-To delete an application you need **Read** and **Write** access. That depends on your role in the home, and the person who owns the account can do it. Otherwise, ask them. If you see a message about a missing permission, nothing was deleted.
+Deleting asks for two kinds of access. **Read** means you can see an item. **Write** means you can change it. You need both for the things inside. Your role in the home decides this, and the person who owns the account has it. Otherwise, ask them. If a message names a missing permission, nothing was deleted.
 
 ## What happens to dashboard folders?
 
-If all the deleted dashboards came from one folder and nothing else is in it, Chirp removes that empty folder. Folders that still hold other dashboards stay.
+Say every dashboard you delete sat in one folder, and nothing else lives there. Chirp then removes that empty folder too. A folder that still holds other dashboards stays where it is.
