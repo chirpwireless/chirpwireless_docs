@@ -2,100 +2,90 @@
 description: Configure Chirp MQTT topic segments, payload identifiers, topic-value extraction and measurement mapping, with examples and validation.
 ---
 
-# Topics and device routing
+# How do MQTT topics route messages to devices?
+When an MQTT message arrives, Chirp has to answer two questions: which digital device sent it, and which readings are inside it. A **topic** is the named channel the message travels on, and the **payload** is the content it carries. You answer both questions on the device's **Connection** tab, and then you link the fields you receive to measurement templates on **Mapping**.
 
-MQTT routing identifies which digital device a message belongs to and which readings it contains. A **topic** is the message's named channel; the **payload** is its content. Configure routing on the device's **Connection** tab, then connect received fields to measurement templates on **Mapping**.
+If this is your first MQTT device, begin with [MQTT Devices](../../devices/mqtt-devices.md). Come back here for the routing controls in detail, including identifiers that travel in the payload and readings that sit inside the topic name itself. Setting up the broker is covered in [Cloud MQTT](cloud-mqtt.md).
 
-For a complete first-device walkthrough, start with [MQTT Devices](../../devices/mqtt-devices.md). This reference covers the routing controls, including payload-based identifiers and readings carried inside topic names. Broker setup remains in [Cloud MQTT](cloud-mqtt.md) and [External MQTT](external-mqtt.md).
+## What does an incoming MQTT topic look like? {#the-shape-of-an-incoming-mqtt-topic}
+With Cloud MQTT, every topic a publisher uses starts with the connection's **Topic prefix**, for example `iot/{org}/{connection}`. The editor shows that prefix as a locked first segment, so your device-level pattern starts right after it. Typing the prefix a second time would break the match.
 
-## Topic shape after broker-side processing {#the-shape-of-an-incoming-mqtt-topic}
+Under the pattern, a read-only **Resolved preview** shows the finished topic: the Cloud prefix (when there is one) followed by your pattern with the Device ID filled in. Treat it as a spelling check for the pattern; it does not tell you that a message has actually been received.
 
-For Cloud MQTT, the publisher's full topic begins with the connection's **Topic prefix**, such as `iot/{org}/{connection}`. The editor displays that prefix as a locked leading segment; configure the device-level pattern after it. Do not type the prefix twice.
-
-For External MQTT, there is no Cloud prefix to add. Build a pattern matching the topic the equipment publishes to your own broker. For example, `meters/EM-4492/data` matches `meters/{{deviceId}}/data` with Device ID `EM-4492`.
-
-The read-only **Resolved preview** includes the Cloud prefix when applicable and substitutes the entered Device ID. It is a preview of the pattern, not evidence that a message arrived.
-
-## Building the Device ID Topic {#the-device-id-topic-field-is-a-pattern-not-a-value}
-
-**MQTT Topic for device ID** is a segment builder on **Connection**. A slash separates each segment.
+## How do I build the Device ID topic? {#the-device-id-topic-field-is-a-pattern-not-a-value}
+On **Connection**, the **MQTT Topic for device ID** field is a builder made of segments, and a slash separates one segment from the next.
 
 | Control | Behavior |
 | --- | --- |
-| **+ → Text segment** | Add a literal topic component, such as `meters`, `zigbee2mqtt`, or `data`. Type it exactly as the publisher sends it. |
-| **+ → Device ID** | Add the identifier position. The builder permits one Device ID segment; the add option is unavailable when one is already present. |
-| Drag handle | Reorder segments to match the topic. For example, move Device ID between `meters` and `data`. |
-| Segment remove control | Remove editable text segments. The Device ID segment is locked in Topic mode; switch to Payload mode to remove it when changing the identifier source. |
-| Locked prefix | Cloud MQTT's connection prefix; it cannot be edited or removed here. |
-| **Resolved preview** | Shows the resulting topic using the entered identifier. A value placeholder in telemetry patterns is displayed as `value`, not as a real reading. |
+| **+ → Text segment** | Adds a fixed piece of the topic, such as `meters`, `zigbee2mqtt`, or `data`. Spell it exactly as the publisher does. |
+| **+ → Device ID** | Marks where the identifier sits in the topic. Only one Device ID segment is allowed, so this choice is greyed out once it exists. |
+| Drag handle | Moves a segment so the order matches your topic, for instance placing Device ID between `meters` and `data`. |
+| Segment remove control | Deletes a text segment you added. In Topic mode the Device ID segment cannot be removed; change to Payload mode first if the identifier will come from somewhere else. |
+| Locked prefix | The connection prefix of Cloud MQTT. It is fixed and cannot be edited or deleted from this field. |
+| **Resolved preview** | Displays the topic that results from the Device ID you entered. In telemetry patterns, a value placeholder shows as `value` rather than as a real number. |
 
 ### Available placeholders
 
-Use `{{deviceId}}` as the identifier placeholder when reading a serialized pattern in these examples. It is not a literal device name. Topic templates are case-sensitive; matching requires the expected segments and positions. Telemetry templates reject `#`, unknown placeholders and unclosed placeholders. The two recognized placeholders are `{{deviceId}}` and `{{value}}`.
+Two placeholders exist: `{{deviceId}}` and `{{value}}`. In the examples on this page, `{{deviceId}}` stands for the identifier position and is never a literal device name. Topic templates are case-sensitive, so the segments and their positions have to match what the publisher sends. Telemetry templates are refused if they contain `#`, a placeholder Chirp does not know, or a placeholder that is missing its closing braces.
 
-## Read the identifier from a payload
-
-**Where to get the device ID** offers **Topic** and **Payload**. Topic is the initial choice and extracts the Device ID segment. Payload mode reads the identifier from JSON instead:
+## Can I read the device identifier from the payload?
+The **Where to get the device ID** setting has two options, **Topic** and **Payload**. New devices start on Topic, which pulls the identifier out of the Device ID segment. To take it from the JSON body instead:
 
 1. Choose **Payload**.
-2. Build the message topic without a Device ID segment, for example `building/readings`.
-3. In **Payload template**, enter a dot-separated path, such as `deviceInfo.deviceId`.
-4. Check **Payload preview**, which illustrates the JSON object around that path.
-5. Set the device's **Device ID** to the value carried at that path and save.
+2. Build the message topic with no Device ID segment in it, such as `building/readings`.
+3. In **Payload template**, type a dot-separated path to the identifier, for example `deviceInfo.deviceId`.
+4. Look at **Payload preview**, which draws the JSON object around that path so you can confirm it.
+5. Enter the value found at that path as the device's **Device ID**, then save.
 
-For example, this message on `building/readings` identifies device `room-1`:
+A message on `building/readings` like the one below identifies the device `room-1`:
 
 ```json
 {"deviceInfo": {"deviceId": "room-1"}, "temperature": 21.4}
 ```
 
-The topic must be non-empty in either mode. Payload mode needs the payload path; its topic patterns must omit the Device ID placeholder. When changing modes, update both the selector and the segments so they agree. Topic mode instead needs the Device ID placeholder in the device pattern and every configured telemetry row.
+Whichever mode you pick, the topic cannot be empty. The two modes ask for different things: Payload mode requires the JSON path and keeps the Device ID placeholder out of every topic pattern, while Topic mode requires that placeholder in the device pattern and in every telemetry row you configure. After switching, check that the selector and the segments tell the same story.
 
-## Device ID input must match the extracted segment byte-for-byte {#the-device-id-field-must-match-the-device-level-segment-exactly}
+## Why must the Device ID match the topic segment exactly? {#the-device-id-field-must-match-the-device-level-segment-exactly}
+A **Device ID** can be 1–64 characters long and may use ASCII letters, digits, spaces, periods, underscores and hyphens. For MQTT devices, capitals and spaces are kept as typed. The publisher and Chirp must therefore spell the identifier identically: `room-1` and `Room-1` are two different devices.
 
-**Device ID** accepts 1–64 characters: ASCII letters, digits, spaces, periods, underscores and hyphens. MQTT IDs preserve their case and spaces. Use the same identifier on the publishing side and in the platform. `room-1` and `Room-1` do not match.
+With Zigbee2MQTT, the identifier is the device's friendly name, and a short one such as `LivingRoomSensor` keeps things easy. Should the physical hardware change after binding, follow [device replacement](../../devices/sensor-details.md) on the existing twin. That keeps the twin and its measurement associations intact, which deleting it would not.
 
-For Zigbee2MQTT, use the device's friendly name. A simple name such as `LivingRoomSensor` is convenient. If the physical identity needs changing after binding, follow [device replacement](../../devices/sensor-details.md) on the same twin rather than deleting the twin and its measurement associations.
-
-## Topic Telemetry {#topic-telemetry}
-
+## How does topic telemetry work? {#topic-telemetry}
 ### When to use telemetry topics {#telemetry-topics-when-to-use-them-when-to-skip-them}
 
-Leave **Topic Telemetry** empty when a message carries its measurements in JSON. For example, `{"temperature":21.4,"battery":92}` provides the data keys `temperature` and `battery`. Nested objects produce dot-separated paths: `{"vibration":{"rms":0.42}}` provides `vibration.rms`.
+If the message body already holds your measurements as JSON, leave **Topic Telemetry** empty. The body `{"temperature":21.4,"battery":92}` supplies two data keys, `temperature` and `battery`, and nested objects turn into dot-separated paths, so `{"vibration":{"rms":0.42}}` supplies `vibration.rms`.
 
-Use the topic telemetry editor when the **value itself appears in a topic segment**. For example, the publisher sends on `meters/EM-4492/voltage/230.5`:
+Reach for the topic telemetry editor when the **number itself is written inside the topic**. Take a publisher that sends on `meters/EM-4492/voltage/230.5`:
 
 | Row field or action | How it works |
 | --- | --- |
-| **Add new topic** | Adds a row with a pinned **value** segment. Add text/Device ID segments to match the publisher. |
-| **MQTT Topic for telemetry** | For this example, build `meters/{{deviceId}}/voltage/{{value}}`. The value segment identifies the reading `230.5`; it is not the word `voltage`. |
-| **value** segment | Always present in this editor and cannot be removed. It can be repositioned with the segment controls to match the publisher's topic. |
-| **Device data key** | Required for a value-extraction row. Enter the name under which the extracted reading should appear, such as `voltage`. Map this key to a measurement on **Mapping**. |
-| Row remove control | Removes that telemetry rule from the edited configuration. Save to apply the removal. |
-| **Apply all** | Replaces every existing row's topic pattern with the device-ID topic plus a value segment, unless that pattern already contains one. It preserves the rows' data-key names. Review each row afterward and restore different literal segments such as `voltage` or `current` where needed. It does not create rows or save the device. |
+| **Add new topic** | Creates a row with a pinned **value** segment. Add text and Device ID segments until the row mirrors the publisher's topic. |
+| **MQTT Topic for telemetry** | For this example, build `meters/{{deviceId}}/voltage/{{value}}`. The last segment stands for the reading `230.5`, not for the word `voltage`. |
+| **value** segment | Optional. A caption beneath the row states which mode is active: **The value is read from the value segment of the topic** or **No value segment: the value is read from the message payload**. Drag the segment into place, delete it when the number travels in the message body, or put it back later. |
+| **Device data key** | Required on every row, with or without a value segment; without one the row says **Device data key is required** and cannot be saved. Type the name the reading should carry from now on, such as `voltage`, and then connect that name to a measurement on **Mapping**. |
+| Row remove control | Takes the telemetry rule out of the configuration you are editing. Save to make the removal final. |
+| **Apply all** | Rewrites every row's topic pattern to the device-ID topic followed by a value segment, skipping any pattern that already has one, and keeps each row's data key. Afterwards, go through the rows and put back literal segments such as `voltage` or `current` where they belong. It adds no rows and does not save the device. |
 
-In Payload identifier mode, telemetry rows omit Device ID and the message must still contain the identifier at the configured JSON path. A matching topic value takes precedence over a payload field with the same key.
+Many gadgets publish a single reading per topic and put the number in the body. A smart plug that sends `0` or `1` to `device/260/ap/5/upload` is typical. For that case, build the topic without a value segment and give the row a data key like `outlet_state`; Chirp stores the body under that name. The web page used to make this impossible, and re-saving a device configured another way could quietly break it. Patterns now display exactly as they are stored.
 
-The incoming parser can also accept JSON fields or raw payload data; that does not mean the topic editor exposes every possible protocol format. For plain non-JSON messages without a telemetry extraction row, inspect the incoming `raw` key and map it only when it represents the value you need. Binary vendor formats need an appropriate upstream conversion; recognizing a topic hierarchy alone does not decode Sparkplug or other binary payloads.
+With Payload as the identifier source, telemetry rows leave out the Device ID, yet each message must still carry the identifier at the JSON path you set. If a value from the topic and a payload field share a key, the topic's value wins.
 
-## Connection and Mapping have different jobs {#the-mapping-tab-has-two-sub-tabs-and-they-have-the-same-name}
+The parser behind the scenes can also take JSON fields or raw payload data, but the topic editor does not expose every protocol format that implies. When a plain, non-JSON message has no telemetry extraction row, look at the incoming `raw` key and map it only if it really holds the value you want. Binary vendor formats must be converted before they reach Chirp, because recognizing a topic hierarchy does not decode Sparkplug or any other binary payload.
 
-**Connection** contains topic routing and identity. **Mapping** contains measurement rows. These are separate device tabs. Saving a matching topic pattern does not automatically create every measurement in the received message.
+## What is the difference between the Connection and Mapping tabs? {#the-mapping-tab-has-two-sub-tabs-and-they-have-the-same-name}
+**Connection** holds routing and identity. **Mapping** holds the measurement rows. They are separate tabs, and a saved topic pattern does not by itself create a measurement for every field in the message.
 
-After changing routing, click the device's **Save** button. Segment previews and **Apply all** only update the form. Empty telemetry rows are not a substitute for a complete value-extraction rule: fill its pattern and data key or remove the row. Read-only users cannot change routing.
+Press the device's **Save** button once the routing is right: segment previews and **Apply all** only change the form on screen. A telemetry row that is left blank is not a finished extraction rule, so either complete its pattern and data key or remove it. Members with read-only access cannot change routing.
 
-## Connector key dropdown: the two-pass save flow {#connector-key-dropdown-is-empty-until-your-device-publishes-once}
+## Why is the Device data key dropdown empty? {#connector-key-dropdown-is-empty-until-your-device-publishes-once}
+The **Device data key** dropdown fills with the fields Chirp has actually received from the bound source, so it starts empty. Save the connection, wait for one message, then finish the mappings and save a second time. Template rows you created before that first message can stay; just fill in their data keys when the options appear.
 
-The **Device data key** dropdown lists incoming fields received for the bound source. Save the connection, let a message arrive, then complete the mappings and save again. If you created template rows before the first message, retain those rows and fill their data keys once available.
+The [MQTT Devices](../../devices/mqtt-devices.md#how-do-i-map-mqtt-messages-to-measurements) page walks through this, and [mapping controls](../../devices/sensor-details.md#metrics) explains every column and action.
 
-See [MQTT Devices](../../devices/mqtt-devices.md#map-messages-to-retained-measurements) for the walkthrough and [mapping controls](../../devices/sensor-details.md#metrics) for every column and action.
+## Which data type should I choose when mapping? {#reported-state-vs-telemetry-vs-device-metadata}
+The device-mapping form offers one data type, **Telemetry**, for the measurements and device states you want to keep. The **Data type** setting is separate from the template's value **Type**.
 
-## Mapping data type {#reported-state-vs-telemetry-vs-device-metadata}
-
-The device-mapping form offers **Telemetry**. Use it for measurements and reported states that you want to record. The broader metric catalog's metadata/attribute categories are not additional choices in this mapping form. **Data type** is separate from the template's value **Type**.
-
-## Match the metric type to the actual value {#a-note-on-state-its-a-string-not-a-boolean}
-
+## How do I match the metric type to the actual value? {#a-note-on-state-its-a-string-not-a-boolean}
 | Incoming value | Appropriate template Type |
 | --- | --- |
 | Decimal reading such as `21.4` | Float |
@@ -103,17 +93,16 @@ The device-mapping form offers **Telemetry**. Use it for measurements and report
 | `"ON"`, `"OFF"`, an enum or free text | String |
 | JSON `true` or `false` | Boolean |
 
-A Zigbee2MQTT feature described as binary can publish either booleans or configured string values. Inspect the actual payload rather than assigning a type from the feature category alone. Numeric strings can be converted to numeric templates; integer conversion truncates decimal values toward zero. Boolean conversion accepts true/false and 0/1 forms, but not `"ON"`/`"OFF"`. Incompatible readings are rejected individually, not stored as nulls. See [metric conversion rules](../../devices/data-templates.md).
+Zigbee2MQTT may describe a feature as binary and still publish true/false or configured text values, so read the real payload before picking a type. Strings that hold numbers convert to numeric templates; for integers, any decimals are cut off toward zero. Booleans accept true/false and 0/1, but `"ON"` and `"OFF"` are not accepted. A reading that cannot be converted is rejected on its own rather than saved as an empty value. The [metric conversion rules](../../devices/data-templates.md) have the details.
 
-## Mapping tab Value column vs Logs tab history {#why-the-mapping-tab-value-column-updates-but-the-logs-tab-is-empty}
+## Why does the Mapping tab Value differ from the Logs tab? {#why-the-mapping-tab-value-column-updates-but-the-logs-tab-is-empty}
+On **Mapping**, **Value** and **Last update** reflect the newest snapshot of each received field. **Logs** only lists measurements recorded after valid mappings were saved, so wait for a new message once the mapping is in place; older messages are not re-processed.
 
-**Value** and **Last update** show the latest received field snapshot. **Logs** shows recorded measurements after valid mappings are saved. Allow a fresh message after mapping; earlier messages are not retroactively normalized.
-
-MQTT history uses the time the platform receives the message. Fields named `timestamp`, `ts`, or `time` remain ordinary payload fields; they do not backdate the stored measurement. Buffered messages received after a disconnection therefore are not automatically placed at their original device time.
+MQTT history is stamped with the moment Chirp receives the message. Fields called `timestamp`, `ts`, or `time` stay ordinary payload fields and do not move the stored measurement back in time, which also means messages a device buffered during an outage are not placed at their original device time.
 
 ### Iterative mapping refinement {#mapping-is-iterative-return-after-data-arrives}
 
-Return to **Mapping** when firmware or requirements change. Inspect new keys, add the needed templates, select compatible types, save and allow a fresh publish. Keep existing measurement rows when replacing hardware so the twin retains their history.
+Mapping is not a one-off job. When firmware changes or you need new readings, open **Mapping** again, look at the new keys, add templates for them with compatible types, save, and let a fresh message arrive. If you swap out the hardware, leave the existing measurement rows alone so the twin keeps its history.
 
 ## Where to go next
 

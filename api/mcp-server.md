@@ -2,8 +2,7 @@
 description: Connect your favorite AI app straight to your Chirp home with MCP — sign in, no API key needed.
 ---
 
-# MCP Server
-
+# How do I connect an AI app to Chirp with the MCP server?
 You can ask the AI app you already use to help set up your Chirp home. Connect it through **MCP**, then ask it to add a sensor, create an alert, or build an automation. It can make those changes in your home rather than just describe the steps.
 
 **MCP (Model Context Protocol)** is the connection that lets an AI client find and call Chirp's operations. Sign in with your Chirp account and work within the home and permissions you already have. Reading sensor history is available alongside the setup work.
@@ -14,16 +13,14 @@ Because MCP is a shared standard rather than a deal with one company, that list 
 
 The best part: there's no key to generate, copy, or paste. You sign in with your usual Chirp account in your browser, and the connection carries exactly your own permissions — nothing more. If you can't see something in the Chirp app, your AI app can't see it either.
 
-## The address to connect to
-
+## What address do I connect to?
 ```
 https://mcp-auth.chirpwireless.io/mcp
 ```
 
 The connection uses Streamable HTTP, which the clients below handle for you — you just paste the address.
 
-## Connecting Claude Code
-
+## How do I connect Claude Code to Chirp?
 1. Add Chirp as a connection:
 
    ```
@@ -34,23 +31,29 @@ The connection uses Streamable HTTP, which the clients below handle for you — 
 3. Sign in with your usual Chirp account and approve the connection.
 4. Back in Claude Code, `/mcp` now shows Chirp as connected — and the tools are there. Try asking it which of your sensors went quiet this week.
 
-## Connecting Claude Desktop
+## How do I connect Claude Desktop to Chirp?
+Add Chirp as a custom connector in Claude Desktop, using `https://mcp-auth.chirpwireless.io/mcp` as the server address, then sign in with your usual Chirp account when your browser opens. Menu names change between releases, so follow [Anthropic's guide to custom connectors](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp) for the current steps.
 
-1. Open **Settings** → **Connectors**.
-2. Click **Add custom connector**.
-3. Paste `https://mcp-auth.chirpwireless.io/mcp` as the address.
-4. Click **Connect**. Your browser opens for sign-in.
-5. Sign in with your usual Chirp account.
-6. Check the connector shows as active in the Connectors list. You're done — start a chat and ask it about your home.
+## How do I connect Grok to Chirp? {#connect-grok}
+Use Grok to ask about your Chirp home and switch a connected plug or light on or off. Connect it from your phone or computer using your usual Chirp sign-in.
 
-## Connecting a different AI app
+1. Open [Grok Connectors](https://grok.com/connectors) and sign in to your Grok account.
+2. Choose **New Connector**, then **Custom**.
+3. Paste `https://mcp-auth.chirpwireless.io/mcp` into the server URL field.
+4. Follow the sign-in prompt, use your usual Chirp account, and approve the connection. There is no Chirp or xAI API key to enter.
+5. In a Grok conversation, ask *“Use Chirp to tell me which home is selected and list my devices.”* Make sure it sees the home you intended.
+6. Ask about a reading, such as *“What is the living room temperature, and how recent is it?”* To try control, ask which commands are saved for a named plug or lamp, then ask Grok to run one.
 
-ChatGPT, Codex, Cursor and the rest work the same way — they just put the setting in a different place. Look for **Connectors**, **Integrations**, or **MCP servers** in your app's settings, choose whatever it calls "add a custom server", and paste the same address. If your app is configured from a file or a terminal instead, add the address as a **Streamable HTTP** server.
+[Grok's connector guide](https://docs.x.ai/grok/connectors) describes the custom connection flow. If you use a Grok Business or Enterprise account, your team administrator must add the connector first; see [the administrator instructions](https://docs.x.ai/grok/connector-management).
+
+To use the connection by voice in the car, see [Use Chirp from Your Tesla](../ai-assistant/tesla-grok.md).
+
+## How do I connect a different AI app to Chirp?
+Other apps that support remote MCP servers, such as ChatGPT, Codex and Cursor, can use the same address. Each one puts the setting in a different place and changes it from time to time, so follow that app's own guide to adding a remote MCP server. If it asks for a transport, choose **Streamable HTTP**.
 
 Whichever app you use, the rest is identical: your browser opens, you sign in as yourself, and it sees exactly what you see. Your app's own documentation will tell you where its MCP setting lives.
 
-## Choosing which home it sees
-
+## How do I choose which home my AI app sees?
 If you're only in one home, skip this — everything just works.
 
 The plain `/mcp` address follows whichever home is currently selected in the Chirp app. Switch homes in the app and reconnect, and your AI client sees the new one.
@@ -63,8 +66,7 @@ https://mcp-auth.chirpwireless.io/o/{organizationId}/mcp
 
 You'll find the ID for a home in the Chirp web app. You can only connect to a home you're a member of; anything else is refused.
 
-## What your AI app can do
-
+## What can my AI app do with Chirp?
 Once connected, your AI client can work across your home on your behalf. Here's what it can reach:
 
 | Area | What your AI app can do |
@@ -81,8 +83,7 @@ Once connected, your AI client can work across your home on your behalf. Here's 
 
 Everything it does runs with your permissions. For destructive or important actions, Chirp supplies safety information that a compatible AI app can use to ask before it continues.
 
-## How your AI app knows what an action does
-
+## How does my AI app know what an action does?
 Chirp publishes a readable name, description, and safety notes with each action. AI apps that support these notes can use them to decide whether to run an action immediately or ask you to confirm.
 
 | Safety note | Examples | What it tells the app |
@@ -95,14 +96,12 @@ Creating a sensor or dashboard changes your home, but it does not overwrite or s
 
 These notes help the AI app explain an action; they are not permission checks. Each app decides how to present confirmations. Chirp still enforces your account permissions, so the app cannot do anything that your account is not allowed to do.
 
-## How this differs from the AI Assistant in the app {#how-this-differs-from-the-ai-helper-in-the-app}
-
+## How is the MCP server different from the AI assistant in Chirp? {#how-this-differs-from-the-ai-helper-in-the-app}
 Chirp’s built-in [AI Assistant](../ai-assistant/README.md) works like an experienced integrator by your side. It can add sensors, build automations, and configure alerts from the home project you describe. Open it using **AI Chat** in the sidebar; you can start without connecting an external AI client.
 
 MCP is for when you'd rather bring your own AI app to the same home — because you live in your desktop client all day, because you want your home's data in the same conversation as everything else you're working on, or simply because you prefer that assistant. Both talk to the same home and respect the same permissions.
 
-## How this differs from the API
-
+## How is the MCP server different from the API?
 The [REST API](public-rest-api.md) is for code *you* write — a script that exports readings into a spreadsheet every Sunday, or a bridge to another home platform. It runs on a key you create in [Settings → API Keys](../settings/api-keys.md), with exactly the scopes you give it.
 
 MCP is for an AI client acting **as you**, in a conversation, with your own sign-in and your own permissions. No key to manage, and nothing to write. If you want something to run unattended on a schedule, use the API. If you want to ask questions and get things done in the moment, use MCP.

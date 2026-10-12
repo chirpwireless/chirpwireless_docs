@@ -8,8 +8,7 @@ To show your camera in Lens, Twin needs the address of its video feed. This **RT
 
 This camera-brand directory collects common addresses and the settings needed to adapt them. Available streams depend on your particular model and firmware. A camera that works only through its manufacturer's cloud app may not provide a local RTSP feed.
 
-## What to replace
-
+## What do I replace in an RTSP URL?
 A typical address looks like this:
 
 ```text
@@ -20,12 +19,10 @@ Use your camera's local username and password in place of the first two placehol
 
 Your camera password, Twin sign-in password, and Lens connection token have different jobs. Only the camera's credentials belong in its RTSP address.
 
-## Look up a brand
+## How do I look up my camera brand?
+Start with [Tapo](#what-is-the-tapo-rtsp-url), [HiLook / Hikvision](#what-is-the-hilook-and-hikvision-rtsp-url), or [Dahua, Reolink, and Axis](#what-are-other-common-rtsp-url-patterns). The extended directory includes [Amcrest](#amcrest), [Avigilon](#avigilon), [Bosch](#bosch), [EZVIZ](#ezviz), [Foscam](#foscam), [Hanwha / Wisenet](#hanwha-vision-and-wisenet), [i-PRO](#i-pro), [VIGI](#tp-link-vigi), [Uniview](#uniview-and-unv), and [VIVOTEK](#vivotek).
 
-Start with [Tapo](#tapo-stream1-and-stream2), [HiLook / Hikvision](#hilook-and-hikvision-numbered-channels), or [Dahua, Reolink, and Axis](#other-common-patterns). The extended directory includes [Amcrest](#amcrest), [Avigilon](#avigilon), [Bosch](#bosch), [EZVIZ](#ezviz), [Foscam](#foscam), [Hanwha / Wisenet](#hanwha-vision-and-wisenet), [i-PRO](#i-pro), [VIGI](#tp-link-vigi), [Uniview](#uniview-and-unv), and [VIVOTEK](#vivotek).
-
-## Tapo: stream1 and stream2
-
+## What is the Tapo RTSP URL?
 These are the addresses for the main picture and the lower-quality alternative on compatible Tapo models:
 
 ```text
@@ -37,8 +34,7 @@ The Tapo camera in our Lens example uses `/stream1`. Before connecting yours, op
 
 Check RTSP support before choosing a battery camera, because many battery-powered models do not offer it. Certain dual-lens models also have `/stream6` and `/stream7` for their other lens. [TP-Link's setup instructions](https://www.tp-link.com/us/support/faq/2680/) explain the model differences.
 
-## HiLook and Hikvision: numbered channels
-
+## What is the HiLook and Hikvision RTSP URL?
 Our connected HiLook camera uses this substream address pattern:
 
 ```text
@@ -53,8 +49,7 @@ rtsp://username:password@cameraip:554/Streaming/Channels/101
 
 Here, `1` identifies the camera channel, while `01` and `02` select main and substream. A standalone camera generally uses channel 1. With a recorder, channel 2 becomes `201` for main or `202` for substream. This matches [Hikvision's published stream examples](https://supportusa.hikvision.com/support/solutions/articles/17000129022-do-you-have-an-example-showing-the-format-for-getting-a-rtsp-stream-from-a-camera-). Keep the path's capitalization and use the RTSP port configured on your device.
 
-## Other common patterns
-
+## What are other common RTSP URL patterns?
 Use these when your camera supports the corresponding manufacturer's RTSP interface. Replace the placeholders before entering the address in Twin.
 
 | Camera family | Main or default feed | Lower-bandwidth feed |
@@ -69,8 +64,7 @@ Reolink uses `01` for a standalone camera; an NVR can use another channel, such 
 
 Axis can select another video channel with a parameter such as `?camera=2`. Its [streaming instructions](https://developer.axis.com/video-streaming-and-recording/video-streaming/getting-started/) explain that endpoint.
 
-## More brands and installed camera systems
-
+## What are RTSP URLs for more camera brands?
 If you already have one of these cameras at home, check its RTSP settings before replacing it. The links explain the manufacturer’s stream format; the entry does not mean that every model in the range has been tested with Lens.
 
 ### Amcrest
@@ -183,8 +177,7 @@ rtsp://username:password@cameraip:554/media2/stream.sdp?profile=profileToken
 
 Get `profileToken` from the camera’s video profile settings. It is a camera profile identifier, not your private Lens connection token. Firmware can also expose names of the form `/live1sN.sdp`; copy the actual access name for your chosen stream. [VIVOTEK’s newer-firmware guide](https://vivotek.zendesk.com/hc/en-001/articles/4952515434649--All-cameras-2-2002-x-x-and-later-version-How-to-get-RTSP-streaming-with-camera-firmware-version-2-2002-x-x-and-later-version) covers these differences.
 
-## Add the address and check the picture
-
+## How do I add the RTSP address and check the picture?
 In Twin, open **Settings → Camera Connector** and enter the complete address in the stream URL field. If your camera supplies a substream, enter that in the separate substream field. Save the settings, then confirm that video arrives before continuing with [camera pairing](connecting-a-camera.md).
 
 The main stream usually gives you more detail; the substream uses fewer resources. Actual resolution comes from the camera's video settings. Start with a working feed, then choose the quality that suits your home connection and Twin host.

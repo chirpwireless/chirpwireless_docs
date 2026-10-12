@@ -2,26 +2,23 @@
 description: Create scoped API keys to connect Chirp to your scripts and tools, and revoke or rotate them anytime.
 ---
 
-# API Keys
-
+# How do I create and manage API keys in Chirp?
 An API key is a secret credential for a script or application you want to connect to Chirp. It allows that tool to request supported operations without using your account password—for example, reading temperatures for a personal report.
 
 Each key belongs to the selected home's workspace. You choose its **scopes**, the permissions that say what the tool may read or change. Give each tool its own key so you can revoke its access without changing the others.
 
 Create and manage keys here. The [API guide](../api/README.md) explains how to send authenticated requests using a key and the matching home identifier.
 
-## Getting there
-
+## Where do I find API keys?
 Navigate to **Settings → API Keys** in the sidebar.
 
 ---
 
-## Creating a key
-
+## How do I create an API key?
 1. Click **Create API Key**.
 2. Fill in a **Name** for the key. This is required. Use something that reminds you what the key is for — for example, "Temperature Export Script" or "Home Platform Bridge". You'll see this name in the table later.
 3. Optionally pick an **Expires** date. The calendar won't let you choose a date in the past. If you leave this blank, the key stays active until you revoke it. For experiments or short-term setups, setting an expiry date is a good reminder to clean up access you no longer need — check the **Status** column to confirm a key's current state.
-4. Choose **Scopes** — you must select at least one. Scopes control what the key is allowed to do. See [What the scopes mean](#what-the-scopes-mean) below.
+4. Choose **Scopes** — you must select at least one. Scopes control what the key is allowed to do. See [What the scopes mean](#what-do-the-api-key-scopes-mean) below.
 5. Confirm to create the key.
 
 ### Save the key right away
@@ -34,8 +31,7 @@ Copy it and keep it somewhere safe — in a password manager, a secure notes app
 
 ---
 
-## What the scopes mean
-
+## What do the API key scopes mean?
 Scopes are the permissions you assign to a key. Pick only what the integration actually needs.
 
 Available scopes may depend on your home's plan. Pulling **history** or **latest readings** uses a separate telemetry scope, not *Devices: Read* — check the [API reference](../api/README.md) for the scope each call needs.
@@ -57,8 +53,7 @@ Grant only what the tool uses — a script that just reads your sensor list need
 
 ---
 
-## Your keys table
-
+## What does the keys table show?
 The API Keys page shows all the keys you've created. Each row tells you:
 
 | Column | What it shows |
@@ -75,13 +70,12 @@ Keys are sorted newest first. A rotation icon and a trash icon appear only on Ac
 
 ---
 
-## Rotating a key
-
+## How do I rotate an API key?
 Rotation swaps the key for a fresh one. The old key stops working the moment you confirm. Use this if a key has been accidentally shared, exposed, or you just want to refresh credentials periodically.
 
 1. Click the rotation icon on the key row.
 2. A dialog asks you to confirm:
-   > **"Rotate API Key — This will generate a new key and mark the current key '[name]' as rotated. The old key will stop working."**
+   > The rotate dialog warns: **"Rotate API Key — This will generate a new key and mark the current key '[name]' as rotated. The old key will stop working."**
 3. Confirm.
 4. The new key is shown once — copy it immediately.
 5. Update any scripts or integrations using the old key before they try to connect again.
@@ -90,27 +84,24 @@ The old key stays in the table with **Rotated** status so you have a record of i
 
 ---
 
-## Revoking a key
-
+## How do I revoke an API key?
 Revoking cuts off access permanently. You'd do this when you no longer need the key at all — for example, when a project is finished or you're removing a tool from your setup.
 
 1. Click the trash icon on the key row.
 2. A dialog confirms what's about to happen:
-   > **"Revoke API Key — This will permanently revoke the API key '[name]'. This action cannot be undone."**
+   > The revoke dialog warns: **"Revoke API Key — This will permanently revoke the API key '[name]'. This action cannot be undone."**
 3. Confirm.
 
 The key shows as **Revoked** in the table. It stays visible for your records, but it will never work again.
 
 ---
 
-## If you lose a key
-
+## What if I lose an API key?
 There's no way to recover a key once the dialog is closed. The only option is to rotate it — use the rotation icon on the key row, copy the new key, and update your scripts with the new value.
 
 ---
 
-## A few good habits
-
+## What are good habits for API keys?
 - **One key per integration.** If one tool needs to be disconnected, you revoke just that key. Other integrations keep working without any changes.
 - **Set expiry dates for experiments.** If you're testing something or sharing temporary access, put an end date on the key. You won't need to remember to clean it up later.
 - **Never paste a key into a chat, email, or code commit.** Store credentials in a password manager or secure notes, and inject them into scripts at runtime rather than hardcoding them.

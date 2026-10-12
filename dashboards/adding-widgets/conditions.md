@@ -2,30 +2,26 @@
 description: Set per-metric color rules so a reading turns green, yellow, or red — green for comfortable, red for check it now.
 ---
 
-# Conditions
-
+# How do conditions work in dashboard widgets?
 Conditions are per-metric color rules that turn a raw sensor reading into visible meaning. Instead of looking at a number and deciding whether it's good or bad, the widget does that for you — a green pin means comfortable, a red pin means check it now, a yellow marker means getting close to the limit. You define what those colors mean for each sensor in each place it's used.
 
 A temperature sensor in the living room should be green at 18–24°C. The same type of sensor watching a fridge should be green at 2–5°C. Different place, different meaning, completely different conditions — even though the data looks the same.
 
-## Which widgets use conditions
-
+## Which widgets use conditions?
 Conditions are available for **Last Data** and **Image** widgets. Each metric in these widgets has its own set of conditions, configured independently.
 
 The **Chart** widget uses a different approach — per-metric color picker and threshold bands on the graph. See [Chart Widget](chart-widget.md) if you're working with a Chart.
 
 **Note on metric types:** Both the Image and Last Data metric selectors surface numeric sensors only (INTEGER and FLOAT types). Number conditions are the practical path for both widgets. The conditions modal also exposes String and Boolean data type options — these are described below — but they require a widget that can select a sensor of those types, which is not currently the case for Last Data or the Image widget.
 
-## How to open the Conditions modal
-
+## How do I open the Conditions modal?
 1. Open the widget's settings and go to the **Datasource** tab.
 2. Find the metric row for the sensor you want to configure.
 3. Tap the **Conditions button** — it's labeled **"Conditions: N"** where N is the number of conditions currently set.
 4. The Conditions modal opens.
 
-## What the Conditions modal contains
-
-**Title:** "Conditions" / **Subtitle:** "The conditions set first will be considered as a priority"
+## What does the Conditions modal contain?
+The modal is titled **"Conditions"**, and underneath it a subtitle says: "The conditions set first will be considered as a priority"
 
 **Header (applies to the whole metric):**
 - **Device metric** — Read-only. Shows which sensor this modal is for.
@@ -47,9 +43,8 @@ There's no limit on the number of conditions you can add.
 
 **Save** (disabled while any validation error exists) / **Cancel**
 
-## Priority: first match wins
-
-Conditions are evaluated top to bottom. The **first condition in the list that matches the current reading** determines the color. Order matters.
+## Which condition wins when several match?
+Chirp checks the conditions from the top of the list downward and stops at the **first one that fits the current reading**; that condition picks the color, so order matters.
 
 If your sensor reads 7°C and you have:
 1. "Normal" — Number, From 2, To 8 — green
@@ -59,8 +54,7 @@ The reading 7°C matches condition 1, so green is shown. Condition 2 is not eval
 
 To change priority, reorder the conditions in the list.
 
-## Value fields by data type
-
+## Which value fields appear for each data type?
 ### Number
 
 **From** and **To** fields — both are optional. Either can be left empty to create an open-ended range:
@@ -79,10 +73,10 @@ Examples:
 Many sensors report binary state as a number: 1 when something is active or open, 0 when it is off or closed. Number conditions map these values to meaningful labels and colors:
 
 - Condition "On" — Number, From 1, To 1 — yellow (or your chosen color)
-- Condition "Off" — Number, From 0, To 0 — grey
+- Condition "Off" — Number, From 0, To 0 — gray
 
 Examples using this pattern:
-- Light sensor: 1 = "On" (yellow), 0 = "Off" (grey)
+- Light sensor: 1 = "On" (yellow), 0 = "Off" (gray)
 - Contact sensor (door): 1 = "Open" (red), 0 = "Closed" (green)
 - Leak sensor: 1 = "Leak detected" (red), 0 = "Clear" (green)
 
@@ -90,20 +84,18 @@ The same Number condition type handles all of these. The difference is only in t
 
 ### String
 
-A single **Value** text field. Matches the reading exactly, case-sensitive. Available in the conditions modal but requires a widget that surfaces a String-type sensor — Last Data and Image widget selectors do not surface String sensors.
+A single **Value** text field. Matches the reading exactly, case-sensitive. The conditions modal offers it only for widgets that can show a String sensor, which the Last Data and Image widget selectors cannot.
 
 ### Boolean
 
-A **True / False** dropdown. Matches the reading exactly. Available in the conditions modal but requires a widget that surfaces a Boolean-type sensor — Last Data and Image widget selectors do not surface Boolean sensors.
+A **True / False** dropdown. Matches the reading exactly. The conditions modal offers it only for widgets that can show a Boolean sensor, which the Last Data and Image widget selectors cannot.
 
-## Color fallback hierarchy
-
+## Which color is used when no condition matches?
 1. **Matched condition color** — The color of the first matching condition
 2. **Default color** — The color set in the modal header (applies when no condition matches)
 3. **Platform default** — Applied when no default color is set in the modal
 
-## Examples
-
+## What are some examples of conditions?
 ### Keeping something topped up
 
 Say you've got a sensor on something you want to keep full — a rainwater tank, the salt in a water softener, a heating-oil tank — reading how full it is in whatever unit suits you. Set that in the **Unit** box (it takes anything — `cm`, `m`, inches, liters…); here we'll use **centimeters** of depth. Three rules then turn that into a clear "do I need to refill?" status, and since the **first matching rule wins**, list the most urgent one first:
@@ -170,7 +162,7 @@ No math involved. The widget reads the string, matches it exactly, and shows the
 
 **Pump running:**
 - "Running" — Boolean, True — blue
-- "Idle" — Boolean, False — grey
+- "Idle" — Boolean, False — gray
 
 Any binary sensor works the same way: pick a color for each state and a label that makes sense in context.
 

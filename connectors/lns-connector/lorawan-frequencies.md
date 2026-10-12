@@ -2,18 +2,15 @@
 description: Find the right LoRaWAN frequency band for your country before registering a sensor in Chirp.
 ---
 
-# LoRaWAN Frequencies
-
-> **Reference only.** This page is a general guide. The frequency data may not be 100% accurate or up to date. Always check with your local regulations before deploying devices. Use at your own risk.
+# Which LoRaWAN frequencies does Chirp support?
+> **Reference only.** This page is a general guide. Treat the frequency data below as a starting point: it can be out of date or contain mistakes. Before you put devices into service, confirm the rules that apply where you live. You use this information at your own risk.
 
 LoRaWAN sensors use unlicensed radio frequencies that vary by country. When you set up a sensor in Chirp, you select the correct frequency band for your region. This page helps you find out which band to use.
 
-## The Short Version
-
+## What is the short version of LoRaWAN frequencies?
 **If you bought your sensor locally, you almost certainly have the right frequency already.** LoRaWAN sensors sold in your country are configured for the regional band by default. A sensor purchased from a store in Australia will use AU915, a sensor from Germany will use EU868, and so on. You typically only need to worry about frequency selection if you purchased a sensor from another country or are setting up a device from an international supplier.
 
-## Common Frequency Bands
-
+## What are the common LoRaWAN frequency bands?
 | Region | Band | Frequency Range |
 |---|---|---|
 | Europe | EU868 | 863–870 MHz |
@@ -29,16 +26,13 @@ LoRaWAN sensors use unlicensed radio frequencies that vary by country. When you 
 
 When registering a sensor in Chirp, you'll see these options in the **Band** dropdown on the Connection tab.
 
-## License-Free and No Extra Cost
-
+## Is LoRaWAN spectrum free to use?
 LoRaWAN uses license-free radio bands — you don't need any permits or licenses to use your sensors. The frequencies are regulated by your country's communications authority, but they are free for anyone to use as long as the devices comply with local rules (which off-the-shelf sensors already do).
 
-## Frequency Plan Disclaimer
-
+## Does my frequency plan need checking?
 This frequency information is provided for reference. While we aim for accuracy, Chirp does not guarantee the precision of this data. If you are unsure about which band to use in your area, check your sensor's documentation or contact the manufacturer.
 
-## Frequencies by Country
-
+## Which LoRaWAN frequency is used in my country?
 ### A
 
 | Country | Frequency Plan |

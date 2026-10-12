@@ -10,7 +10,7 @@ Your subscription controls how many devices you can connect, how many dashboards
 
 ## Choosing a plan
 
-Chirp offers three paid plans alongside a free starter tier, plus a Business option for larger setups. Each card carries a full feature comparison so you know exactly what you're getting before you commit. The paid home plans show their monthly price; Business is not priced here, because it takes you to Kilo IoT Server instead.
+Chirp offers three paid plans alongside a free starter tier, plus a Business option for larger setups. Each card carries a full feature comparison so you know exactly what you're getting before you commit. The paid home plans show their monthly price; Business is not priced here, because it takes you to a separate business platform instead.
 
 | Plan | Price |
 |---|---|
@@ -18,7 +18,7 @@ Chirp offers three paid plans alongside a free starter tier, plus a Business opt
 | **Light** | €7.99 / month |
 | **Pro** | €12.99 / month |
 | **Max** | €19.99 / month |
-| **Business** | Not priced here — the card's **Switch to Kilo** button takes you to Kilo IoT Server |
+| **Business** | Not priced here — the card's **Switch to Kilo** button takes you to a separate business platform |
 
 **If you're just getting started:** The Chirp-tenant Free plan includes **2 devices, 1 rule, 1 dashboard, unlimited gateways, push and email notifications, and 1 day of device-log retention** without entering payment details. A gateway does not consume either device slot. When you're ready for more, pick a plan and tap **Upgrade Plan** — you go straight to a secure checkout page to finish, with no extra confirmation step in between. Your new plan's limits apply as soon as it's active.
 
@@ -39,7 +39,7 @@ The plan comparison shows the limits for each tier across:
 
 Your plan's retention period controls how far back you can access device readings. Check the current plan comparison for the period included in your tier.
 
-Replacing your car's tracker or a sensor at home does not start a new retention period. Keep the existing digital device and reconnect the replacement to its measurements, and the readings already stored remain available within that period. See [Sensor Details](../devices/sensor-details.md#replace-your-cars-tracker).
+Replacing your car's tracker or a sensor at home does not start a new retention period. Keep the existing digital device and reconnect the replacement to its measurements, and the readings already stored remain available within that period. See [Sensor Details](../devices/sensor-details.md#how-do-i-replace-my-cars-tracker).
 
 If you need to keep readings for longer, use **Contact support** to discuss extended retention and suitable terms. Agree the period you need before relying on it; a longer arrangement does not by itself restore readings that have already expired. Commercial operations with compliance requirements can discuss their needs with the Kilo team through the [Kilo retention guide](https://docs.kiloiot.io/kilo-iot-server/settings/subscription#data-retention).
 
@@ -49,11 +49,9 @@ Your plan sets how many of certain things you can have at once — and dashboard
 
 ## Growing beyond the home plans
 
-Multiple personally operated homes and rentals can remain in Chirp. The route to Kilo is based on the operating model rather than an arbitrary property count. If you are a brokerage or property-management company, manage commercial client portfolios, require staff roles and collaboration, or run a commercial installation, the next step is **Kilo IoT Server** — a platform built for operational teams, commercial deployments, and multi-organisation requirements.
+Multiple personally operated homes and rentals can remain in Chirp. The route to the business platform is based on the operating model rather than an arbitrary property count. If you are a brokerage or property-management company, manage commercial client portfolios, require staff roles and collaboration, or run a commercial installation, the next step is a separate business platform built for operational teams, commercial deployments, and multi-organization requirements.
 
-The **Business** plan card in Chirp includes a **Switch to Kilo** option. Tapping it takes you to Kilo IoT Server, where you can start a deployment at a scale suited to your needs. There is no automatic migration of your existing data — Kilo is a separate platform with its own account.
-
-To explore Kilo IoT Server directly, visit [app.kiloiot.io](https://app.kiloiot.io).
+The **Business** plan card in Chirp includes a **Switch to Kilo** option. Tapping it takes you to that platform, where you can start a deployment at a scale suited to your needs. There is no automatic migration of your existing data, because it is a separate platform with its own account.
 
 ## SMS top-up
 

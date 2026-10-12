@@ -2,8 +2,7 @@
 description: Show a GPS device's live position on an outdoor map with one reading on the marker and route history by date.
 ---
 
-# Map Widget
-
+# How do I add a Map widget to a dashboard?
 The Map widget shows where a GPS-reporting device is on a real outdoor interactive map — the same kind of map you use for navigation. The device's current location appears as a marker, and the marker shows one selected sensor reading at a time: current speed, battery level, engine on/off status, or any other value the device transmits.
 
 Any device that reports GPS coordinates works — a family GPS tracker, a pet collar, a cellular vehicle tracker connected via the [Tracker Connector](../../connectors/tracker-connector.md), or a LoRaWAN GPS tag connected via the [LNS Connector](../../connectors/lns-connector/README.md). The widget looks for sensor fields named `lat`/`latitude` and `lon`/`longitude`/`lng`. If those fields exist on the device, it appears on the map automatically.
@@ -16,15 +15,14 @@ For placing stationary sensors on a map so you can see where each one is install
 
 <figure><img src="../../.gitbook/assets/map-widget.jpg" alt="Add Map widget — appearance settings with a live map preview of a tracker"><figcaption></figcaption></figure>
 
-## Setting up a Map widget
-
+## How do I set up a Map widget?
 ### Step 1 — Choose Map from the widget picker
 
 Open dashboard edit mode and tap **Map** in the widget picker. (See [Adding Widgets](README.md) for how to open edit mode.) The settings panel opens with two tabs: **Datasource** and **Appearance**.
 
 ### Step 2 — Datasource tab: select a tracker and a metric
 
-The Datasource tab is titled **"Map configuration"** with the subtitle **"Configure last data and data sources."**
+The Datasource tab opens with the title **"Map configuration"** and the subtitle **"Configure last data and data sources."**
 
 1. Tap the device selector to choose a tracker device. The selector does not pre-filter by location capability — you can pick any device.
 2. After selecting a device, the widget automatically looks for sensors named `lat` or `latitude` for latitude, and `lon`, `longitude`, or `lng` for longitude. If it finds them, the marker appears on the map. If no matching sensor names are found, no marker is shown.
@@ -47,12 +45,10 @@ The marker color reflects any conditions set for the additional metric — the s
 
 Tap **Save** to add the widget to the dashboard.
 
-## What to expect after adding the widget
-
+## What should I see after adding the Map widget?
 The map renders with the tracker's last known position. The marker shows the metric value you selected and uses the condition-based color if conditions are configured. As the tracker reports new positions, the map updates automatically.
 
-## Browsing route history
-
+## How do I browse route history on the map?
 The Map widget has three controls for reviewing past location data:
 
 - **History** — Tap to switch to a date range view.
@@ -61,8 +57,7 @@ The Map widget has three controls for reviewing past location data:
 
 When a date range is active, the widget draws the tracker's recorded positions as a dashed line connecting all the logged locations during that period. The widget loads a limited batch of coordinate readings per date range. Choose a shorter range when reviewing a busy tracker so the period you need fits in the view.
 
-## Troubleshooting
-
+## Why isn't my Map widget showing anything?
 **No marker appears after selecting a device:**
 The widget looks for sensors named `lat`/`latitude` and `lon`/`longitude`/`lng` exactly. If your tracker uses different names for its location data, the widget can't find them. Open the device detail page and check the sensor names — they need to match one of those patterns.
 
@@ -72,8 +67,7 @@ The tracker either wasn't transmitting during that period or didn't have a GPS s
 **Metric value not showing on the marker:**
 The tracker hasn't transmitted that specific field yet after the widget was configured. Open the device page and check recent readings to confirm the tracker is sending that value.
 
-## Home examples
-
+## What are some home examples for the Map widget?
 **Family GPS tracker:**
 Keep a Map widget on your home dashboard to see where a family member is on the way home. Add speed as the marker metric — the marker shows the current speed and turns yellow if it exceeds a threshold you set. Tap History to see the route taken.
 

@@ -2,27 +2,24 @@
 description: See how connections link your home sensors to Chirp over LoRaWAN, MQTT or a vehicle tracker — or use pretend sensors before any hardware arrives.
 ---
 
-# How Sensors Connect to Chirp
-
+# How do sensors connect to Chirp?
 Chirp connections let sensors with different communication methods become part of the same home. A garden sensor and an indoor smart plug can appear on your dashboards and participate in the same automation setup, even when their messages take different routes to Chirp.
 
 A **connection** is the software link that brings those messages into your home's workspace. A gateway or hub is the physical equipment some sensors need: LoRaWAN uses a radio gateway; Zigbee reaches an MQTT connection through a bridge such as Zigbee2MQTT. Choose the connection first, then add the sensors that use it.
 
 Choose the route that matches your equipment. You can also use the Emulator to try Chirp with simulated readings before buying hardware; see [Setting Up a Connection](setting-up-a-connection.md).
 
-## Connection types
-
+## What connection types does Chirp support?
 | Type | What it's for | Status |
 |------|--------------|--------|
 | **LNS** | LoRaWAN sensors — temperature, humidity, door/window, motion, soil moisture, and thousands more | Available |
 | **Tracker** | Vehicle trackers — OBD2, CAN bus, and standalone GPS vehicle tracking devices (2,000+ preconfigured models) | Available |
-| **MQTT** | Direct MQTT sensor connections — including Zigbee devices via Zigbee2MQTT, DIY sensors, and other MQTT-capable hardware. Two options: **External MQTT** (your own broker, up to 10 per home) and **Cloud MQTT** (Chirp-hosted broker, unlimited) | Available |
+| **MQTT** | Direct MQTT sensor connections — including Zigbee devices via Zigbee2MQTT, DIY sensors, and other MQTT-capable hardware. Chirp hosts the broker for you with **Cloud MQTT**, and you can add as many as you need | Available |
 | **Emulator** | Pretend sensors that make up their own readings, so you can set up and try your whole home before the real ones arrive — then switch the device over to the real sensor when it does | Available |
 
-Your home can have **one LNS connection**, **one Tracker connection** and **one Emulator connection**. MQTT connections can be External (up to 10 per home) or Cloud MQTT (unlimited — each gets its own hosted broker credentials).
+Your home can have **one LNS connection**, **one Tracker connection** and **one Emulator connection**. You can add as many Cloud MQTT connections as you like, and each one gets its own hosted broker credentials.
 
-## Where to find connections
-
+## Where do I find my connections?
 Click **Connectors** in the sidebar to see your connections. If you haven't set any up yet, you'll see an empty page inviting you to create your first one.
 
 Once you have connections, the page shows a table with:

@@ -1,53 +1,43 @@
 ---
-description: "Bring a complete home setup together in Chirp Applications, and see how planned templates will let dealers prepare solutions for your household."
+description: "Pick a ready-made home setup in Chirp, press install, and get sensors, automations, alerts, and a dashboard already set up, plus the list of devices to buy."
 ---
 
-# Applications
+# What are applications and solutions in Chirp?
 
-An **application** is a complete setup for a household need, with its devices, dashboards, rules, and alarms brought together in Chirp. A **Home Leak Monitoring** application, for example, could include water sensors under the sinks, a dashboard showing their readings, and a rule that sends an alert when a sensor detects a leak.
+Picture a leak-protection setup for your home that is already built: practice sensors reporting under a kitchen sink, a dashboard that shows them, an automation that notices water, and an alert that is addressed to you. You did not draw a single widget or configure anything. You pressed one button, and the setup shows you which use case Chirp can solve for you.
 
-A dealer is a business that supplies and sets up equipment for customers, such as home security or leak-monitoring systems. The dealer knows which devices are needed and can configure the dashboards, widgets, rules, and alerts that make them useful. Applications brings those parts together as a complete household solution.
+That is the idea behind **Solutions** in Chirp. A **solution** is a ready-made application from the Chirp catalog: pre-configured for one home use case, with a list of the real devices to buy. When your devices arrive, you can ask the AI chat to connect them to the application. When you install it, Chirp creates your own **application**, a working bundle of devices, dashboards, automations, and alerts for one household job. Read [What is a ready-made home solution?](solutions-explained.md) for the whole picture.
 
-**The planned next step is for the dealer to save that prepared solution as a reusable template.** You would choose the solution you need and apply it to create your own digital devices, dashboards, widgets, rules, and alarms, already configured to work together. Then you would connect your real sensors or other equipment to the prepared setup, replacing simulated inputs where needed. The views and automation would use your devices' readings without you having to build every dashboard and rule yourself. The dealer does the configuration work once, making it easier for each household to get started.
+```mermaid
+flowchart LR
+    P[Chirp prepares an application] --> C[Solutions catalog]
+    C -->|Install solution| H[Your Home application]
+    H -->|Swap practice sensors| R[Your real sensors]
+```
 
-You can create an application and assemble its contents yourself today. Dealer-provided templates and the ability to apply them are planned capabilities.
+## Why start from a ready-made setup?
 
-<figure><img src="../.gitbook/assets/chirp-applications-dashboard.jpg" alt="Chirp application showing its assigned home dashboard"><figcaption><p>Open an application's Dashboard tab to see the views associated with that household setup.</p></figcaption></figure>
+* **You see the result first.** The practice sensors in a solution report from the first second, so the dashboard is never empty.
+* **Nothing to assemble.** Sensors, dashboard, automation, and alert already work together.
+* **You keep the real thing in mind.** An application's checklist can tell you where to mount each sensor and how to connect it.
+* **Your own pace.** Replace the practice sensors with real ones one at a time. The views and automations stay as they are.
 
-## What is inside a home application?
+## Where should you go next?
 
-A sensor is one part of a working home setup. The other parts make its readings useful:
-
-| Part | Example in Home Leak Monitoring |
+| You want to | Read |
 |---|---|
-| Devices | The digital devices receiving readings from your water sensors. |
-| Dashboards | A view of the sensors and whether they report a leak. |
-| Rules | The conditions that recognize a leak and start the response you configure. |
-| Alarms | The message and notification settings used to tell you about it. |
+| Understand the terms | [What is a ready-made home solution?](solutions-explained.md) |
+| See what is on offer | [How do I explore ready-made solutions?](exploring-ready-made-solutions.md) |
+| Set one up | [How do I install a ready-made solution?](installing-a-ready-made-solution.md) |
+| Connect your real sensors | [How do I move from practice sensors to real ones?](from-practice-sensors-to-real-ones.md) |
 
-The application keeps those parts associated with the same household task. Another application might bring together the door sensors, views, and notifications you use while away from a holiday home.
+## What if you would rather build it yourself?
 
-You can also name an application **Home Watch** and build it up around the readings and automations you want to check together. Its **Dashboard** tab is the place to use its views. **Content** shows the devices, dashboards, rules, and alarm definitions that make the setup work.
-
-## How a prepared template would help
-
-An **application** is your own household setup inside Chirp. A **template** is the planned reusable setup that a dealer would prepare for households with a similar need.
-
-For example, a leak-monitoring dealer could prepare the sensor configurations, a dashboard with useful widgets, a rule that responds to water detection, and the alarm definition it uses. After applying the template, you would connect the prepared digital devices to the real sensors in your home and set installation-specific details such as notification recipients. The dashboard and rules would already be connected to those digital devices, so you could use the setup without rebuilding them.
-
-This is the direction for Applications. Template publishing and installation are planned; selecting a ready-made template is not part of the current creation process.
-
-## Build and use an application today
-
-Applications lets you assemble your own solution and keep its parts together. Creating an application starts an empty setup: it does not automatically add sensors, build dashboards, or configure notifications.
+An application you build by hand is exactly the same kind of thing as one you install, so you can always start from nothing.
 
 1. [Create an application](creating-an-application.md), such as Home Watch, and describe what you use it for.
 2. Set up the devices, dashboard, rules, and alarm definitions you need.
-3. [Assign the resources](organizing-content.md) through their **Application** fields. Configure the rule to use the intended device and alarm definition; assigning them to the same application does not create that behavior automatically.
+3. [Assign the resources](organizing-content.md) through their **Application** fields. Configure the rule to use the intended device and alarm definition; putting them in the same application does not create that behavior automatically.
 4. Choose **Applications → My applications**, open the application, and use **Dashboard** to view its dashboards or **Content** to find its resources.
 
-You can start with one device and a useful view, then add automations and notifications as you configure them. See [Using Application Dashboards](using-application-dashboards.md) when you want to open or change the associated views.
-
-Your application belongs to the selected organization. Family members need the relevant permissions to see or change its devices, dashboards, rules, and alarms; the application does not grant extra access.
-
-If you later retire the setup, [check what deletion removes](deleting-an-application.md). Deleting an application also removes associated resources, so move the pieces you still use to another application or **Default** first.
+Your application belongs to the selected organization. Family members need the relevant permissions to see or change its devices, dashboards, rules, and alarms; the application does not grant extra access. If you later retire a setup, [check what deletion removes](deleting-an-application.md) first.

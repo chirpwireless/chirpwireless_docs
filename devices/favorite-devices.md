@@ -19,7 +19,7 @@ Click the star to favorite it; click it again to remove. Your choice is saved, a
 
 There isn't a separate "Favorites" page that lists everything you've starred — the star marks the item in place. On the Home Overview you'll see summary cards for devices and gateways rather than a dedicated favorites panel.
 
-Use recognizable names such as **Family Car** when choosing which digital devices to star. If its tracker needs replacing, open that existing device and follow [the replacement steps](sensor-details.md#replace-your-cars-tracker).
+Use recognizable names such as **Family Car** when choosing which digital devices to star. If its tracker needs replacing, open that existing device and follow [the replacement steps](sensor-details.md#how-do-i-replace-my-cars-tracker).
 
 ## Tips
 

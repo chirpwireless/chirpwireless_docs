@@ -2,24 +2,21 @@
 description: Show a reading as a bold filled circle that fills as the value rises — a chunkier take on the ring gauge.
 ---
 
-# Pie Display
-
+# How do I show a reading as a pie chart?
 The Pie display is a solid filled circle rather than a ring — it fills in like a slice of pie and becomes whole when the reading reaches its maximum, with the value shown beside it. It works on exactly the same idea as the Doughnut; it just looks bolder and more solid.
 
 Reach for Pie when you'd like a stronger splash of color on the dashboard instead of a thin ring.
 
 <figure><img src="../../../.gitbook/assets/last-data-pie.jpg" alt="Last Data widget using the Pie display type"><figcaption></figcaption></figure>
 
-## When to choose it
-
+## When should I choose the pie display?
 - The same range-based readings the Doughnut handles — tank level, battery, humidity — when you prefer a chunkier look.
 - A tile you want to stand out on a busy dashboard.
 - A board you glance at from across the room, where a solid shape reads more easily.
 
 Doughnut and Pie do the same job — choose whichever simply looks better to you on the dashboard.
 
-## Configure a Pie display
-
+## How do I configure a pie display?
 Let's build a real one — a bold tile showing how much water is in the garden rain barrel. A level sensor reports the barrel contents in liters, and the barrel holds 200 liters — so the reading is 0 when the barrel is empty and 200 when it's full. That 0–200 is the scale, and each color band is a slice of it. This is just an example: a Pie works for any reading shown as a share of a range, so only the sensor and the numbers change.
 
 1. Open your dashboard in edit mode and tap **Last data** in the widget picker. The **Datasource** tab opens with nothing added yet.
@@ -45,8 +42,7 @@ Let's build a real one — a bold tile showing how much water is in the garden r
 
 Now a solid disc shows the barrel at a glance — full and green after rain, shrinking through yellow to red as you water the garden. The same steps fit any "how full" reading at home; change the sensor, the **Min value**/**Max value**, and the bands to suit.
 
-## Worked examples
-
+## What are some pie display examples?
 **Do the houseplants need water?**
 A soil-moisture sensor reports a percentage, so the scale is simply **Min value** 0 (bone dry) and **Max value** 100 (soaked), with conditions green From 40 To 80, yellow From 20 To 40, red From 0 To 20. The filled disc makes a thirsty plant impossible to miss.
 
@@ -57,4 +53,4 @@ On a dashboard you keep on a wall tablet or a TV, a solid Pie reads more clearly
 
 - [Last Data Widget](../last-data-widget.md) — The full widget setup and the other display types
 - [Conditions](../conditions.md) — Setting the From/To color rules
-- Other display types: [Value](number.md) · [Doughnut](doughnut.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)
+- More ways to show the same data: [Value](number.md) · [Doughnut](doughnut.md) · [Gauge](gauge.md) · [Tube](tube.md) · [Radial gauge](radial-gauge.md)

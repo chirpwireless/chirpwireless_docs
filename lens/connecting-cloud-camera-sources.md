@@ -2,16 +2,14 @@
 description: "Bring a supported account-based home camera into Chirp Lens through Twin, including Wyze, Ring, Roborock, and HomeKit setup."
 ---
 
-# Provider Camera Sources
-
+# How to Connect Wyze, Ring, and HomeKit Cameras
 A **provider camera source** lets Twin obtain video through a supported camera account or accessory connection. Use it when a home camera uses its manufacturer's account instead of giving you a local RTSP stream. For example, you can keep a supported account-based camera at a holiday home and bring its view into Lens alongside cameras at your main house.
 
 Start with [Twin installed](installing-twin.md) at the camera's property. You will need the camera account's login details, access to any verification messages, and the credentials listed below. One Twin connects one camera. The provider selection does not guarantee that every camera model supplies video, movement controls, or audio; those capabilities depend on the source.
 
 <figure><img src="../.gitbook/assets/chirp-twin-provider-setup.jpg" alt="Chirp Twin Camera Connector with Wyze selected and empty email, password, API Key, and API ID fields"><figcaption><p>Choosing Wyze reveals the account and API fields needed before connecting. No provider account has been connected in this setup example.</p></figcaption></figure>
 
-## Choose the camera account
-
+## Which camera account do I use?
 Open **Settings → Camera Connector** in the local Twin. In **Cloud camera**, choose the appropriate **Cloud provider**:
 
 | Camera account | Details needed |
@@ -27,8 +25,7 @@ When the account connection succeeds, **Available cameras** lists its camera sou
 
 If a verification code has expired, begin the account connection again to obtain a new one. Keep account passwords and API credentials out of screenshots and shared messages.
 
-## Add a HomeKit camera
-
+## How do I add a HomeKit camera?
 HomeKit uses local accessory pairing rather than the email-and-password form:
 
 1. Set **Cloud provider** to **HomeKit**, then select **Discover accessories**.
@@ -39,8 +36,7 @@ HomeKit uses local accessory pairing rather than the email-and-password form:
 
 Discovery requires a network path between Twin and the accessory. If the camera is missing, check its manufacturer's pairing instructions and local-network requirements.
 
-## Enter an advanced stream source
-
+## How do I enter an advanced stream source?
 The **Advanced go2rtc source** panel is intended for people who already have a supported source URI. For a typical home IP camera, start instead with [Connecting a Camera](connecting-a-camera.md) and the [RTSP URL reference](rtsp-camera-urls.md).
 
 To use the advanced panel, paste the URI into **go2rtc source** and set **Target stream** to **Main stream** or **Low-resolution stream**. Select **Validate**. Twin must read a video frame successfully before **Use source** becomes available. Choose **Use source**, then save the camera configuration.

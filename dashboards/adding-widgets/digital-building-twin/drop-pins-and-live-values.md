@@ -2,17 +2,15 @@
 description: Pin a sensor's exact value into your 3D home, colored by its status, and show or hide every pin at once.
 ---
 
-# Pins and Live Readings
-
+# How do I show live readings with pins?
 Color tells you *that* something is up — the nursery's gone amber, the basement's gone blue. Sometimes you also want the actual **number**: not just "the nursery is warm" but "the nursery is 26.3 °C." A pin puts that exact reading right into the model, at the spot it belongs to.
 
 A pin is a marker placed at a particular point in your model. It shows the reading's name and current value with its units, and the pin itself takes the same color as the reading — so it's a label and a status light at the same time.
 
-## Pinning a reading
-
+## How do I pin a reading?
 Pins are added from the Sensors panel, on a metric you've already set up (see [Connecting sensors and colors](binding-sensors-and-colors.md)).
 
-1. On the bottom toolbar, click **Sensors** and find the metric you want to pin.
+1. Open **Sensors** on the bottom toolbar and look for the metric you want to pin.
 2. On that metric, click **Pin to scene**.
 3. The editor switches into pick mode with the prompt **Click on the scene to pin this metric**.
 4. Click the spot in your model where the pin should sit — over the nursery, by the back door, on the driveway.
@@ -20,24 +18,20 @@ Pins are added from the Sensors panel, on a metric you've already set up (see [C
 
 Once a metric is pinned, you get two more buttons: **Re-pin** to move the marker somewhere else, and **Unpin** to take it off.
 
-## What a pin shows
-
-Each pin is a little teardrop marker with a label hovering above it. The label has the reading's name and its current value with units — `Nursery / Temperature  26.3 °C`. The marker and label are colored by your rules, the same way your objects are: a reading in the "warm" band makes the pin amber, one in the "just right" band makes it green.
+## What does a pin show?
+Each pin is a little teardrop marker with a label hovering above it. The label has the reading's name and its current value with units — `Nursery / Temperature  26.3 °C`. Numbers are tidied for the screen: a thermometer that reports `22.381920174` shows as `22.38 °C`, so pins never look like a spreadsheet accident, and words or states are shown untouched. The marker and label are colored by your rules, the same way your objects are: a reading in the "warm" band makes the pin amber, one in the "just right" band makes it green.
 
 So a pin does two things at once — it shows you the exact number, and its color tells you the status without you even having to read it.
 
-## Pins and floors
-
+## How do pins work across floors?
 A pin belongs to the floor it was placed on. In a multi-floor home, a pin you put upstairs shows when you're viewing upstairs and stays out of the way when you're looking at the ground floor — so a tall house doesn't end up with every floor's pins piled on top of each other. See [Floors and levels](floors-and-levels.md).
 
-## Showing and hiding pins
-
+## How do I show or hide pins?
 The Sensors panel has a **Show sensor pins** switch. It appears once you've pinned at least one reading, and turns every pin in the model on or off together.
 
 Turn pins **off** for a clean, color-only look — nice for a dashboard you glance at from across the room. Turn them **on** when you want the exact numbers. However the switch is set when you save the widget is how the dashboard tile shows it.
 
-## When to use a pin
-
+## When should I use a pin?
 For a lot of things, color alone is enough — the garage door doesn't need a number, "open" or "closed" is the whole story. Reach for a pin when the number itself matters:
 
 * The nursery or bedroom, where the exact temperature is what you care about.

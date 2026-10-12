@@ -2,14 +2,12 @@
 description: Create an LNS connection for LoRaWAN sensors, a Tracker connection for your vehicle, or an Emulator connection to start with no hardware.
 ---
 
-# Setting Up a Connection
-
+# How do I set up a connection in Chirp?
 A connection tells Chirp how to receive a particular kind of device message in your home's workspace. Creating one prepares the software path; you add the individual sensors afterward so Chirp can associate their messages with readings.
 
 This guide covers the built-in LoRaWAN network server (**LNS**), vehicle trackers, and the Emulator for simulated sensors. Choose LNS if your sensors use LoRaWAN and you have a compatible gateway. For MQTT devices or Zigbee sensors connected through Zigbee2MQTT, use the separate [MQTT setup guides](mqtt-connector.md).
 
-## Adding an LNS connection
-
+## How do I add an LNS connection?
 This is the most common connection for a smart home — it links Chirp's built-in LoRaWAN network to your sensor management.
 
 1. Click **Connectors** in the sidebar.
@@ -26,8 +24,7 @@ Click the LNS connection row in the table to open it. You'll see two tabs:
 - **LoRaWAN Gateways** — Your gateway list. See [Setting Up Your Gateway](../gateways/lorawan-gateways/setting-up-a-lorawan-gateway.md).
 - **Connected Devices** — Your sensor list. See [Adding Sensors](../devices/adding-sensors.md) and [Sensor Details](../devices/sensor-details.md).
 
-## Adding a Tracker connection
-
+## How do I add a Tracker connection?
 If you want to track a vehicle, add a Tracker connection alongside your LNS connection. Chirp supports over 2,000 vehicle tracker models including OBD2 and CAN bus devices.
 
 1. Click **Connectors** in the sidebar.
@@ -37,8 +34,7 @@ If you want to track a vehicle, add a Tracker connection alongside your LNS conn
 
 The Tracker connection is created instantly. Click its row to see the shared sensor list. For registration and management, see [Adding Sensors](../devices/adding-sensors.md) and [Sensor Details](../devices/sensor-details.md). For what this connector is (and isn't) for — cellular/GSM vehicle trackers, not LoRaWAN ones — see the [Tracker Connector](tracker-connector.md) page.
 
-## Adding an Emulator connection
-
+## How do I add an Emulator connection?
 No sensors yet? Add an **Emulator** connection and Chirp will make up the readings for you, so you can build your dashboards and alerts before anything arrives in the post.
 
 1. Click **Connectors** in the sidebar.
@@ -48,9 +44,8 @@ No sensors yet? Add an **Emulator** connection and Chirp will make up the readin
 
 There is nothing to fill in — no account to link, no keys to copy. See [Emulator Connector](emulator-connector.md) for what it's for, and [Pretend Sensors](../devices/pretend-sensors.md) for making one.
 
-## How many of each
-
-Each home can have **one LNS connection**, **one Tracker connection** and **one Emulator connection**. MQTT is the exception: up to 10 External MQTT connections, and as many Cloud MQTT connections as you like.
+## How many connections of each type can I have?
+Each home can have **one LNS connection**, **one Tracker connection** and **one Emulator connection**. MQTT is the exception: you can add as many Cloud MQTT connections as you like.
 
 Once you already have every kind you can add, the **Add connector** button stops offering new ones. If you need to start fresh, remove a connection by clicking the red trash icon on its row in the connection table (a confirmation dialog appears before anything is deleted).
 

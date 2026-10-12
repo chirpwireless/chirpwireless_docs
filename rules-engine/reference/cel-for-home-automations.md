@@ -2,8 +2,7 @@
 description: A friendly CEL guide for home rules — sensor variables, comparisons, math, text, and building clear alarm messages.
 ---
 
-# CEL for Home Automations
-
+# How do I write CEL expressions for home automations?
 An **expression** is a small formula that uses your automation's data to produce an answer. It might compare humidity with a limit, calculate a temperature difference, or put a reading into an alert message. Chirp writes these formulas in **CEL**, short for Common Expression Language.
 
 You still connect the automation's steps visually. Use CEL only in fields that need a precise calculation or condition. A Script Task can calculate a value; a gateway uses a condition to select a path. To fetch a reading from another sensor first, use [Enrichment](../going-deeper/data-enrichment-and-expressions.md).
@@ -12,8 +11,7 @@ This guide explains the variables and formulas you can use in those fields. Star
 
 ---
 
-## Your automation data
-
+## What data can my automation use?
 Every expression has access to a `vars` object that holds the current automation data. The variables available at the start depend on the **Start source**.
 
 **Sensor reading** provides:
@@ -31,9 +29,9 @@ Every expression has access to a `vars` object that holds the current automation
 | `vars.device_name` | The name of the watched device that met the condition |
 | `vars.subject_kind` | The watched resource type; currently `device` |
 | `vars.subject_id` | The identifier of the watched device |
-| `vars.sensor_id` | The sensor identifier used to associate the run and any alarm with the watched device |
+| `vars.sensor_id` | Which sensor of the watched device triggered the run; it also ties any alarm to that device |
 | `vars.detector_id` | The identifier of the trigger |
-| `vars.timestamp` | The original activation time in whole Unix seconds; repeated signals for the same occurrence retain it |
+| `vars.timestamp` | When the activation first happened, in whole Unix seconds. A repeated signal for the same occurrence keeps this original time. |
 
 A trigger-started automation does not receive `vars.value`, because it reports a trigger signal rather than one normalized sensor event. This applies to immediate and delayed triggers. Replace expressions that use `vars.value` before switching an existing automation to **Trigger condition**.
 
@@ -57,8 +55,7 @@ As your automation runs, more data becomes available:
 
 ---
 
-## Types
-
+## Which data types does CEL support?
 Every value in CEL has a type. Here are the ones you will encounter:
 
 | Type | What it is | Example |
@@ -85,8 +82,7 @@ Type conversion is important when building alarm messages — CEL does not autom
 
 ---
 
-## Comparing values
-
+## How do I compare values in CEL?
 | Operator | Meaning | Example |
 |---|---|---|
 | `==` | Equal to | `vars.value == "open"` (door sensor) |
@@ -98,8 +94,7 @@ Type conversion is important when building alarm messages — CEL does not autom
 
 ---
 
-## Combining conditions
-
+## How do I combine conditions in CEL?
 | Operator | Meaning | Example |
 |---|---|---|
 | `&&` | Both must be true | `vars.value > 20.0 && vars.value < 26.0` (comfort zone) |
@@ -108,8 +103,7 @@ Type conversion is important when building alarm messages — CEL does not autom
 
 ---
 
-## Doing math
-
+## How do I do math in CEL?
 | Operator | Meaning | Example |
 |---|---|---|
 | `+` | Addition | `vars.value + 5` |
@@ -120,8 +114,7 @@ Type conversion is important when building alarm messages — CEL does not autom
 
 ---
 
-## Choosing between values
-
+## How do I choose between values in CEL?
 The ternary operator picks one of two values based on a condition:
 
 ```cel
@@ -142,8 +135,7 @@ This is useful in Script Tasks for classifying readings:
 
 ---
 
-## Working with text
-
+## How do I work with text in CEL?
 | Operation | Syntax | Example |
 |---|---|---|
 | Join text | `+` | `"Moisture is " + string(vars.value) + "%"` |
@@ -157,8 +149,7 @@ Remember: use `string()` to convert numbers before joining them with text. `"Val
 
 ---
 
-## Checking if data exists
-
+## How do I check if data exists in CEL?
 The `has()` function checks whether a field is present before you try to use it:
 
 ```cel
@@ -173,8 +164,7 @@ has(vars.garden_moisture) ? vars.garden_moisture.value : -1
 
 ---
 
-## Collections
-
+## How do I work with collections in CEL?
 | Function | What it does | Example |
 |---|---|---|
 | `x in list` | Checks if a value is in a list | `vars.zone in ["kitchen", "bathroom", "laundry"]` |
@@ -182,12 +172,11 @@ has(vars.garden_moisture) ? vars.garden_moisture.value : -1
 | `list.exists(x, expr)` | True if any element matches | `["door", "window"].exists(s, vars.sensor_id.contains(s))` |
 | `list.all(x, expr)` | True if all elements match | `[20.0, 22.0, 25.0].all(t, t > 15.0)` |
 | `list.filter(x, expr)` | Returns matching elements | `[10, 25, 40].filter(t, t > 20)` → `[25, 40]` |
-| `list.map(x, expr)` | Transforms each element | `[1, 2, 3].map(x, x * 10)` → `[10, 20, 30]` |
+| `list.map(x, expr)` | Applies the expression to every element and returns the results | `[1, 2, 3].map(x, x * 10)` → `[10, 20, 30]` |
 
 ---
 
-## Inputs and Outputs scope
-
+## What are the Inputs and Outputs scopes?
 When you add Inputs and Outputs to a node in the properties sidebar, they behave differently:
 
 - **Inputs** are **local** to that node. They create helper variables that only exist during that node's execution. Downstream nodes cannot see them.
@@ -197,8 +186,7 @@ If you compute a value in an Input and want to use it later, move it to an Outpu
 
 ---
 
-## Platform functions
-
+## Which platform functions can I use in CEL?
 Chirp adds two functions on top of standard CEL:
 
 ### error(message)
@@ -221,8 +209,7 @@ random() < 0.05 ? "spot-check" : "skip"
 
 ---
 
-## Building alarm messages
-
+## How do I build alarm messages in CEL?
 The Motivation Message field in a Set Alarm node must produce a text string. Use `string()` to convert numbers:
 
 ```cel
@@ -241,8 +228,7 @@ Include context so the notification makes sense on its own:
 
 ---
 
-## Tips
-
+## What are good habits for writing CEL?
 - **Keep expressions short.** If you need to do several things — classify, compute, and format — spread the work across multiple Script Task nodes. Simpler expressions are easier to debug.
 - **Use `has()` before optional data.** Any variable from an Enrichment node might not exist if the sensor was offline.
 - **Convert types explicitly.** CEL will not turn a number into text for you. Use `string()` for alarm messages and `double()` or `int()` when mixing numeric types in arithmetic.

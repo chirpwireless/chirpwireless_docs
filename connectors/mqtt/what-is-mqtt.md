@@ -2,16 +2,14 @@
 description: A friendly intro to MQTT brokers, topics, and JSON payloads — the messaging behind the smart home.
 ---
 
-# What MQTT is
-
+# What is MQTT?
 MQTT is a way for devices and software to exchange messages. Think of a temperature sensor sending a reading to a named channel, such as `home/bedroom/temperature`. That channel is a **topic**. A server called a **broker** receives the message and passes it to software listening to that topic.
 
 Sending a message is called **publishing**; asking to receive messages is **subscribing**. Chirp uses an MQTT connection to receive readings and associate them with your registered sensors. Zigbee sensors need a bridge such as Zigbee2MQTT to translate their messages first.
 
-You can let Chirp supply the broker connection with [Cloud MQTT](cloud-mqtt.md), or connect a broker you already run with [External MQTT](external-mqtt.md).
+Chirp supplies the broker connection with [Cloud MQTT](cloud-mqtt.md).
 
-## The mental model
-
+## How does MQTT work in simple terms?
 Three things are involved in any MQTT setup:
 
 - A **broker** — the central post office that everything connects to. Devices don't talk to each other directly; they all talk to the broker, and the broker forwards messages to whoever asked for them.
@@ -28,8 +26,7 @@ Kitchen sensor      →  publish  →
 
 Chirp's MQTT connector subscribes to messages the broker is forwarding. When you register a device, you're telling Chirp which messages from the broker belong to which device record.
 
-## Topics: the address of every message
-
+## What is an MQTT topic?
 Every MQTT message has a **topic** — a slash-separated path that identifies what the message is about. The broker uses topics to route messages: subscribers say "I'm interested in topics that look like `home/+/temperature`," and the broker delivers anything matching that pattern.
 
 Topics are not predefined. Whoever publishes a message decides the topic — there's no central registry. Conventions vary by software:
@@ -40,8 +37,7 @@ Topics are not predefined. Whoever publishes a message decides the topic — the
 
 When you register a device in Chirp, the **Device ID Topic** field is where you tell the connector what the topic *shape* looks like. You write the pattern with `{{deviceId}}` standing in for the part of the topic that names the device — for Zigbee2MQTT, that's `zigbee2mqtt/{{deviceId}}`. Chirp matches incoming topics against the pattern and pulls the device identifier out of the placeholder position.
 
-## Payloads: usually JSON, sometimes not
-
+## What is an MQTT payload?
 The body of an MQTT message is the **payload**. MQTT itself doesn't care what's in there — bytes are bytes — but in practice almost every modern device publishes JSON.
 
 A typical Zigbee temperature/humidity sensor publishes something like:
@@ -66,18 +62,16 @@ home/garden/soil-01/temperature  →  payload: 18.2
 
 For that style, you add per-topic rows on the **Telemetry topics** section so Chirp knows which topic carries which metric. The flat-JSON case (one topic, all metrics in the payload) is more common and is the default path.
 
-## QoS, retained messages, and other details that usually don't matter for setup
-
+## What are QoS and retained messages in MQTT?
 MQTT has features beyond the basics: three quality-of-service levels (QoS 0/1/2), retained messages that the broker keeps and replays to new subscribers, last-will messages that the broker publishes when a device disconnects unexpectedly. For a home setup with Chirp, you almost never need to think about these. Zigbee2MQTT picks reasonable defaults; Tasmota does too; Chirp's broker accepts what it's given.
 
 The one detail that comes up: when Zigbee2MQTT first connects, it publishes a "bridge online" retained message. Chirp's connector will see that as the first incoming traffic — that's a signal the connection is healthy, even before any device has reported.
 
-## Why MQTT and not something else
-
+## Why use MQTT instead of something else?
 MQTT is the lingua franca of the smart home for three reasons:
 
 - **Tiny overhead.** A temperature reading is a few bytes of header plus the JSON. This matters on battery-powered sensors that wake up every few minutes.
 - **Loose coupling.** Devices don't need to know about each other. Add a new sensor and the broker just routes its messages — no other device has to be reconfigured.
 - **It already works.** Zigbee2MQTT, Tasmota, ESPHome, Theengs, OpenMQTTGateway, and dozens of other projects all speak MQTT. Most off-the-shelf "smart home compatible" hardware can be made to publish MQTT with a small bridge.
 
-When you're ready, continue to [Cloud MQTT](cloud-mqtt.md) for the simpler setup, or [External MQTT](external-mqtt.md) if you already run your own broker.
+When you're ready, continue to [Cloud MQTT](cloud-mqtt.md) to set up your broker connection.
