@@ -2,8 +2,7 @@
 description: Drop a live web page — a weather map, live traffic, or your calendar — onto a Chirp dashboard with the iFrame Widget.
 ---
 
-# iFrame Widget
-
+# How do I add an iFrame widget to a dashboard?
 An iFrame Widget shows a live web page inside a tile on your dashboard. The page keeps doing its thing — updating, animating, refreshing — just as it would in its own window, only now it sits next to your temperature, humidity, and door sensors. You give the widget a web address (an **embed link**) from a supported service, name it, and it appears.
 
 Your home dashboard is where you glance to see how things are. Some of what you want there isn't a sensor reading at all: the local weather map, the traffic before the school run, the family calendar, a published camera or video feed. The iFrame Widget lets you pin those web pages right onto your dashboard, so the things you check every morning live in one place instead of a pile of open tabs.
@@ -12,8 +11,7 @@ Because the tile loads a real page from the web, Chirp only lets you embed sites
 
 <figure><img src="../../.gitbook/assets/iframe-widget.jpg" alt="Setting up the iFrame Widget — an embed link in the Data source box, the list of supported services below, and a live preview"><figcaption></figcaption></figure>
 
-## Add an iFrame Widget
-
+## How do I add an iFrame widget?
 Here's how to add a live local weather map to a dashboard so you can see the forecast next to your sensors. It's the same for anything else you embed — only the link changes.
 
 1. Open your dashboard and tap the **actions menu** (three dots), then **Edit dashboard**. Tap the **plus (+) button** and pick **iFrame** from the widget picker — its tile says *iFrame*, "Connect a weather service or something else."
@@ -26,8 +24,7 @@ Here's how to add a live local weather map to a dashboard so you can see the for
 
 > **Nothing showing in the preview?** Usually the link isn't quite right. Double-check you copied only the `https://` address from inside `src="…"` (not the whole `<iframe …>` chunk), that it starts with `https://`, and that the service is in the supported list under the box. A regular link, an `http://` one, or a site that isn't on the list won't load.
 
-## What you can embed
-
+## What can I embed in an iFrame widget?
 The services you can use are sorted into groups in the picker, so it's easy to find what you're after. A few from each:
 
 - **Dashboards & BI** — Power BI, Looker Studio, Tableau, Grafana. Handy if you already keep a chart of your energy use or solar output somewhere.
@@ -49,8 +46,7 @@ It's easy to mix these up, so here's the difference:
 - The **iFrame Widget** shows an external *web page* — including a web map like a Waze traffic view or an embedded Google Map. It shows whatever that website shows; it doesn't know anything about your own sensors.
 - The **[Map Widget](map-widget.md)** puts one of *your own* GPS devices on a map and follows where it is right now. If you want to see where a car tracker or a moving sensor is, that's the Map Widget — not the iFrame Widget.
 
-## Home examples
-
+## What are some home examples for the iFrame widget?
 **Morning weather, right where you look**
 Add a Windy or Meteoblue map to your main dashboard and it sits next to the indoor temperature and humidity. One glance tells you both what it's like outside and whether you left a window open.
 
@@ -60,8 +56,7 @@ Embed a Waze map of your usual route and check it with your morning coffee. See 
 **The family calendar on the wall tablet**
 If you keep a dashboard on a hallway tablet, embed your shared Google Calendar. Everyone sees the week's plans beside the home's sensors — school runs, bin day, and whether the garage door got left up.
 
-## What the widget shows
-
+## What does the iFrame widget show?
 <figure><img src="../../.gitbook/assets/iframe-widget-dashboard.jpg" alt="A home dashboard with a live weather map embedded in an iFrame Widget, next to a 3D home model and a tank-level gauge"><figcaption></figcaption></figure>
 
 On your dashboard, the iFrame Widget shows the web page live inside its tile, right beside your other panels — above, a weather map sits next to a 3D home model and a tank-level gauge. The page updates on its own, just like it would in a browser, so there's no separate refresh setting on the widget. In edit mode you can drag the tile around and resize it, so a busy page like a map gets the space it needs.

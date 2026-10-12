@@ -2,8 +2,7 @@
 description: Bring Zigbee sensors, smart plugs, and DIY hardware into your home with the MQTT connector.
 ---
 
-# MQTT Connector
-
+# How do I connect Zigbee devices to Chirp over MQTT?
 Chirp's MQTT connector lets MQTT devices and bridged Zigbee sensors join the same dashboards and automations as the rest of your home. It is a way to bring a smart plug, temperature sensor, or DIY device into a shared setup instead of leaving its readings in a separate application.
 
 **MQTT** is a messaging protocol: devices send messages to a server called a **broker**, and Chirp receives the messages it subscribes to.
@@ -20,7 +19,6 @@ You can also connect non-Zigbee devices: an ESP32 you built yourself, a Tasmota-
 
 - [What MQTT is](mqtt/what-is-mqtt.md) — A short primer on brokers, topics, and JSON payloads.
 - [Cloud MQTT](mqtt/cloud-mqtt.md) — Use Chirp's hosted broker. The simpler path for most homes.
-- [External MQTT](mqtt/external-mqtt.md) — Use your own broker. Chirp connects out to it.
 - [Topics and device routing](mqtt/topics-and-device-routing.md) — How Chirp matches incoming MQTT messages to the right device. Read this before registering devices.
 - [Setting up Zigbee2MQTT](mqtt/zigbee2mqtt.md) — The generic Z2M install path that produces the telemetry you'll register here.
 - [Troubleshooting](mqtt/troubleshooting.md) — When data isn't appearing, or the Logs tab stays empty.
@@ -28,8 +26,7 @@ You can also connect non-Zigbee devices: an ESP32 you built yourself, a Tasmota-
 
 ---
 
-## How Zigbee-over-MQTT works
-
+## How does Zigbee over MQTT work?
 Zigbee devices don't connect to Chirp directly. They connect through a coordinator — a small USB or network-attached adapter — and software called Zigbee2MQTT that translates Zigbee signals into MQTT messages. The MQTT connector then picks up those messages and routes the data into Chirp.
 
 ```
@@ -55,20 +52,13 @@ For the current recommended options, see the [Zigbee2MQTT adapter guide](https:/
 
 ---
 
-## Two ways to connect: Cloud MQTT vs External MQTT
+## How do I connect MQTT devices to Chirp?
 
-When you add an MQTT connector, you choose one of two options:
-
-**Chirp Cloud MQTT** — Chirp provides the MQTT broker. You get a ready-to-use endpoint, username, password, and topic prefix. Paste them into Zigbee2MQTT or your device settings and you're done. Nothing to install or maintain. This is the simpler choice for most home setups — especially if you don't already run a local broker.
-
-**External MQTT** — You use an MQTT broker you already operate. Chirp connects to it using the broker URL and credentials you supply. Use External MQTT if your broker is reachable from the internet — for example, a broker you host on a VPS or in a cloud account. For local home setups where Zigbee2MQTT runs on a Raspberry Pi or home server, Cloud MQTT is usually the simpler choice: configure Zigbee2MQTT to publish outward to the Chirp-hosted endpoint rather than the other way around.
-
-You can create multiple connectors of either type — External MQTT up to 10 per home, Cloud MQTT as many as you need.
+Chirp supplies the broker. When you add an MQTT connector, Chirp hosts a broker for you and gives you an endpoint, a username, a password and a topic prefix. Paste those into Zigbee2MQTT or your device settings and the connection is ready. There is nothing to install or keep running, and you can add as many Cloud MQTT connectors as you need.
 
 ---
 
-## Step 1: Add a Chirp Cloud MQTT connector
-
+## How do I add a Chirp Cloud MQTT connector?
 1. Tap **Connectors** in the sidebar.
 2. Tap **Add connector**.
 3. Select **Cloud MQTT** from the connector type list.
@@ -90,46 +80,24 @@ Copy the credentials above into your Zigbee2MQTT configuration or device MQTT se
 
 - **Copy the Broker URL exactly as shown** — it is the whole endpoint, nothing needs to be added to it. It uses TLS on port 1884 (not the standard 1883). In Zigbee2MQTT, set `server` to this value and enable TLS.
 - **Every topic must start with the Topic prefix.** The full topic you publish to is: `{Topic prefix}/{device topic}`. For Zigbee2MQTT, set `base_topic` in its configuration to `{Topic prefix}/zigbee2mqtt` — for example `iot/abc123/xyz789/zigbee2mqtt`. Zigbee2MQTT then publishes each device under that path automatically.
-- **Device routing templates don't include the prefix.** When you configure the Device ID Topic in the Topic tab (Step 2), enter only the device-level portion — for example `zigbee2mqtt/{{deviceId}}`. Chirp strips the prefix automatically before matching.
+- **Device routing templates don't include the prefix.** When you build the **MQTT Topic for device ID** on the **Connection** tab (Step 2), enter only the device-level portion — for example `zigbee2mqtt/{{deviceId}}`. Chirp strips the prefix automatically before matching.
 
 ---
 
-## Step 1 (alternative): Add an External MQTT connector
+## How do I register a Zigbee sensor in Chirp?
+Every sensor that sends data through this connector gets its own device in Chirp. Registering it tells Chirp which topic carries the device's messages and which payload fields are readings.
 
-1. Tap **Connectors** in the sidebar.
-2. Tap **Add connector**.
-3. Select **External MQTT** from the connector type list.
-4. Fill in the form:
+1. Open **Devices** and select **Add device**, or open **Connectors** and use **Add device** on this connector's row.
+2. Type a **Device name** and, if you use applications, pick one under **Application**. Select **Save**.
+3. The device opens on its **Connection** tab. Under **Connector type**, choose this MQTT connector. The topic settings appear below it.
+4. Build the topic on the **Connection** tab, as described next, and select **Save**.
+5. Open the **Mapping** tab to link the payload fields to readings.
 
-   | Field | What to enter |
-   |-------|--------------|
-   | **Name** | A label for this connector (required) |
-   | **Broker URL** | The full address including scheme and port. The broker must be reachable from the internet — a private home network address will not work. Examples: `mqtts://mqtt.yourdomain.com:8883` (TLS), `mqtt://mqtt.yourdomain.com:1883` (plain). Accepted schemes: `mqtt://`, `mqtts://`, `tcp://`, `ssl://` |
-
-5. Choose an **authentication method**:
-   - **Anonymous** — no credentials
-   - **Basic** — Username and Password (password has a show/hide toggle)
-   - **Certification** — three file upload buttons: **CA Certificate**, **Client Certificate**, **Private Key** (upload files — do not paste text)
-   - **JWT Token** — Token field (show/hide + copy); a Certificate upload field also appears in the form as an optional attachment
-
-6. Tap **Save**.
+> **The Device ID must match the topic segment your hardware publishes, character for character.** For Zigbee2MQTT that segment is the friendly name. A Device ID can be 1 to 64 characters of ASCII letters, digits, spaces, periods, underscores and hyphens, and Chirp keeps capitals and spaces exactly as typed. Because Zigbee2MQTT topics are easiest without spaces, a name like `LivingRoomSensor` is the safer choice in both Zigbee2MQTT and Chirp.
 
 ---
 
-## Step 2: Register a sensor
-
-Each sensor that sends data through this connector needs to be registered in Chirp. Registration maps MQTT topics and payload structure to a sensor profile.
-
-1. On the connector detail page, tap **Add device** — or go to **Devices** and start registration from there, selecting this connector.
-2. Fill in the sensor name and pick a template if one fits.
-
-> **Sensor name = device topic identifier, byte for byte.** Whatever you enter as the **Device ID** must match the device-level topic segment your hardware publishes — exactly. For Zigbee2MQTT, that's the friendly name. The Device ID input strips whitespace, so a Z2M friendly name like `Living Room Sensor` won't match a Device ID typed with spaces — use a whitespace-free name like `LivingRoomSensor` or `living_room_sensor` in **both** Z2M and Chirp. Capitalisation is preserved and significant.
-
-3. The sensor opens with a **Mapping** tab. Inside Mapping there are two sub-tabs: **Topic** (where Chirp learns how to find the device in the topic stream) and **Mapping** (where you map payload keys to sensor metrics). Tapping **Mapping** opens the **Topic** sub-tab first — tap **Next** or the inner **Mapping** label to reach the per-key rows.
-
----
-
-### Topic tab — how Chirp finds the device
+### How does Chirp find the device in the MQTT topic stream?
 
 #### The common case: Zigbee2MQTT with a flat JSON payload
 
@@ -137,105 +105,86 @@ Zigbee2MQTT publishes each device's data to a topic named after the device:
 ```
 zigbee2mqtt/0x00158d0001234567
 ```
-or with a friendly name (no spaces — see the byte-for-byte note above):
+or with a friendly name:
 ```
 zigbee2mqtt/LivingRoomSensor
 ```
 
-For **Device ID Topic**, enter:
+In **MQTT Topic for device ID**, add the text segment `zigbee2mqtt`, then a **Device ID** segment, so the resolved preview reads:
 ```
 zigbee2mqtt/{{deviceId}}
 ```
 
-Leave **Telemetry topics** empty. Zigbee2MQTT sends a flat JSON payload like:
+Leave **Topic Telemetry** empty. Zigbee2MQTT sends a flat JSON payload like:
 ```json
 {"temperature": 21.4, "humidity": 58, "battery": 92, "linkquality": 115}
 ```
 
-Chirp reads all keys from this payload automatically — no Telemetry topics configuration needed. However, the Mapping tab is still required: each key you want as a sensor metric needs a row in the Mapping tab with the Connector Key set to match the payload key name. Without a Mapping row for a key, that data is silently ignored.
+Chirp reads every key in that payload by itself, so no telemetry topic rows are needed. The **Mapping** tab is still required: each key you want as a reading needs a row there with its **Device data key** set to the payload key name. A key without a row is ignored.
 
-This is the default path for most Zigbee sensors, ESP32 projects publishing flat JSON, and Tasmota devices.
+This is the default path for most Zigbee sensors, ESP32 projects that publish flat JSON, and Tasmota devices.
 
-#### Topic tab fields explained
+#### What the topic settings on the Connection tab do
 
-**Device ID Topic** — The MQTT topic pattern for this device. Use `{{deviceId}}` to mark the part of the topic that contains the device identifier. Required.
+- **Topic for defining Device ID, MQTT Topic for device ID** is the topic pattern for this device, built from text segments and one **Device ID** segment. A Cloud MQTT prefix appears first and is locked.
+- **Where to get the device ID** chooses **Topic** (the default, taken from the Device ID segment) or **Payload** (taken from a field inside the JSON message). With **Payload**, **Payload template** holds a dot path such as `device.id`, and **Payload preview** shows the JSON around it.
+- **Topic Telemetry** is optional. Add rows with **Add new topic** when each measurement arrives on its own topic or when the value sits inside the topic itself. A row has **MQTT Topic for telemetry** and a **Device data key**, which must be filled in. The key does not create a reading on its own; link it to a metric on the **Mapping** tab.
+- **Apply all** builds the telemetry topics from the device ID topic, and only for rows whose **Device data key** is already filled in. It saves time when several rows follow one naming pattern.
 
-**Where to get the device ID** — Dropdown:
-- **Topic** (default) — extracted from the `{{deviceId}}` segment.
-- **Payload** — taken from a field inside the JSON message body.
-
-**Device ID Payload Path** — Required when source is **Payload**. A dot-notation path to the ID field. Example: `device.id` for a payload like `{"device": {"id": "sensor-01"}, "temp": 22.1}`.
-
-**Telemetry topics** — Optional. Add rows here when you need per-topic control: for example, when a sensor publishes each measurement to a separate topic, or when the measurement value is in the topic segment rather than the payload body. Each row has:
-
-- **MQTT Topic for telemetry** — topic pattern with `{{deviceId}}` placeholder
-- **Connector Key** — names the source key arriving from MQTT. The Connector Key does not create a platform metric on its own — it must be linked to a normalized metric in the Mapping tab.
-
-**Add new topic** — adds a telemetry topic row.
-
-**Apply all** — builds the telemetry topic templates for you, starting from the device ID topic pattern, and does so only for rows whose Connector Key is already filled in. It saves time when several rows follow a regular per-topic naming scheme.
+For the segment builder, the placeholders and the payload mode in full, see [Topics and device routing](mqtt/topics-and-device-routing.md).
 
 #### Placeholder reference
 
 | Placeholder | What it does |
 |-------------|-------------|
 | `{{deviceId}}` | Marks the topic segment that contains the device identifier |
-| `{{value}}` | Marks a topic segment whose content is the measurement value itself — for example, `sensors/dev01/22.5` where `22.5` is the reading. Do not use `{{value}}` for topic segments that name the metric (like `temperature`) — if the segment is a label rather than a value, leave `{{value}}` out. You can also drop the token altogether. A topic with no `{{value}}` segment tells Chirp to find the number inside the message itself and store it under the row's data key, and every telemetry row must have one. |
+| `{{value}}` | Marks a topic segment whose content is the measurement value itself, such as `22.5` in `sensors/dev01/22.5`. Leave it out when the segment names the metric (for example `temperature`). A telemetry topic without `{{value}}` tells Chirp to find the number inside the message and store it under the row's Device data key. |
 
 ---
 
-### Mapping tab — what the data means
+### How do I map MQTT payload fields to readings?
 
-The Mapping tab links incoming MQTT keys to normalized Chirp sensor metrics. This is where incoming fields become readings you can put on dashboards and use in automations. The AI Assistant can help map them and build the response around them.
+The **Mapping** tab links incoming MQTT keys to Chirp metrics. This is where incoming fields become readings you can put on dashboards and use in automations. The AI Assistant can help map them and build the response around them.
 
-The Connector Key in the Mapping tab must match the key published in the MQTT payload (or the Connector Key defined in the Topic tab). If they don't match, data is ignored — the helper text above the table says: **"If the Connector key is not filled in, the data will be ignored."**
+A row only receives data when its **Device data key** matches a key the device actually sends. The helper text above the table says: **"If the Device data key is not filled in, the data will be ignored."**
 
-The table has 8 columns:
+The table has these columns, from left to right:
 
 | Column | Type | Details |
 |--------|------|---------|
-| **Normalized key** | Dropdown | Lists your sensor templates, with a "+ Add new metric" entry at the bottom for creating one |
-| **Unit** | Read-only | Derived from the selected template |
-| **Type** | Read-only | Integer, Float, String, or Boolean — derived from template |
-| **Data type** | Dropdown | Reported State, Telemetry, or Device Metadata |
-| **Connector key** | Dropdown | Lists keys received from this device's payload. Empty until at least one publish has arrived |
+| **Device data key** | Dropdown | Lists the keys this device has actually sent. Empty until at least one message has arrived. |
 | **Value** | Read-only | Current live value received from the broker |
 | **Last update** | Read-only | Timestamp of the most recently received value |
-| **Actions** | Icon | Trash icon removes the row |
+| **Normalized key** | Dropdown | Lists your metric templates, with **+ Add new metric** at the bottom for creating one |
+| **Unit** | Read-only | Taken from the selected template |
+| **Type** | Read-only | Integer, Float, String or Boolean, taken from the template |
+| **Data type** | Dropdown | **Telemetry** |
+| (remove) | Icon | Removes the row |
 
-**Add key** — adds a new empty mapping row.
+**Add key** adds a new empty mapping row.
 
-#### Reported State vs Telemetry
+#### Why is the Device data key dropdown empty?
 
-The **Data type** dropdown distinguishes two kinds of values:
-
-- **Reported State** — controllable device properties. The current state of something the device can also be told to change: a bulb's `state` (ON/OFF), `brightness`, `color_temp`, a smart plug's `power_state`. These are facts about what the device *is*.
-- **Telemetry** — read-only measurements. Sensor readings that the device only reports: `temperature`, `humidity`, `linkquality`, `battery`, `pressure`. These are facts the device *observes*.
-
-Pick the type that fits the value, not the metric template. Use Reported State when the field describes the device's controllable state; use Telemetry for everything else.
-
-#### Connector Key dropdown is empty until your device publishes once
-
-The **Connector key** column is a dropdown, not a text input. It lists the payload keys that have actually arrived from your device. Before the first publish, the dropdown shows nothing and the rows can't be filled.
+The **Device data key** column is a dropdown, not a text input. It lists the payload keys that have actually arrived from your device. Before the first publish, the dropdown shows nothing and the rows can't be filled.
 
 The setup flow is two-pass:
 
-1. Add a row per metric you want, pick the **Normalized key** from the templates dropdown (or use **+ Add new metric**), set the **Data type**, and leave the **Connector key** empty.
+1. Add a row per metric you want, pick the **Normalized key** from the templates dropdown (or use **+ Add new metric**), set the **Data type**, and leave the **Device data key** empty.
 2. Tap **Save**. The device record is stored.
 3. Make sure your hardware is publishing — for Zigbee2MQTT, the Z2M container is running and the device has reported at least once. (See [Discovering payload keys](mqtt/troubleshooting.md) if you're unsure how to force a publish.)
-4. Reopen the device. The **Connector key** dropdown now lists the keys received from your device.
+4. Reopen the device. The **Device data key** dropdown now lists the keys received from your device.
 5. Match the right key to each row.
 6. Tap **Save** again.
 
 #### What the value column shows vs what the Logs tab shows
 
-The Mapping tab's **Value** column updates from the most recent payload. It's a live snapshot — you'll see values as soon as the topic match works, even before you've finished filling in Connector keys.
+The Mapping tab's **Value** column updates from the most recent payload. It's a live snapshot — you'll see values as soon as the topic match works, even before you've finished filling in Device data keys.
 
-The **Logs** tab is different: it's per-sensor history, and it only fills with publishes that arrive *after* you've saved Connector keys. If you fill in Connector keys, save, and then the lamp's wall switch is toggled but no MQTT publish is generated, the Logs tab will stay empty even though the Mapping tab shows the right value. To populate Logs, you need a fresh publish — drag a control in the Z2M web UI, send a `/get` poll, or wait for the device's next scheduled report. See [Troubleshooting](mqtt/troubleshooting.md) for the full list.
+The **Logs** tab is different: it's per-sensor history, and it only fills with publishes that arrive *after* you've saved Device data keys. If you fill in Device data keys, save, and then the lamp's wall switch is toggled but no MQTT publish is generated, the Logs tab will stay empty even though the Mapping tab shows the right value. To populate Logs, you need a fresh publish — drag a control in the Z2M web UI, send a `/get` poll, or wait for the device's next scheduled report. See [Troubleshooting](mqtt/troubleshooting.md) for the full list.
 
 #### Mapping is iterative
 
-MQTT mapping is rarely a one-shot operation. The first publish often reveals payload keys you didn't know to map during initial registration. After data starts arriving, return to the device's Mapping tab, look at the **Connector key** dropdown and **Value** column to see what the device is actually publishing, add rows for any useful fields you missed, set the right Data type for each, and save again. Generate another publish afterwards if you want the Logs tab to populate the new mappings.
+MQTT mapping is rarely a one-shot operation. The first publish often reveals payload keys you didn't know to map during initial registration. After data starts arriving, return to the device's Mapping tab, look at the **Device data key** dropdown and **Value** column to see what the device is actually publishing, add rows for any useful fields you missed, set the right Data type for each, and save again. Generate another publish afterwards if you want the Logs tab to populate the new mappings.
 
 #### Z2M feature type → Chirp data type
 
@@ -254,7 +203,7 @@ Selecting Boolean for a `state`-style binary field will leave the value empty �
 
 The Mapping tab doesn't auto-detect keys. Three ways to discover them:
 
-1. **Z2M web UI** — open the Zigbee2MQTT frontend (default `http://localhost:8080`), click your device, look at the state panel. Every property name shown is a Connector Key candidate.
+1. **Z2M web UI** — open the Zigbee2MQTT frontend (default `http://localhost:8080`), click your device, look at the state panel. Every property name shown is a Device data key candidate.
 2. **The device's Z2M page** — `https://www.zigbee2mqtt.io/devices/{modelId}.html` lists the device's Exposes. Note that actual payloads can include keys that aren't on the Z2M page (`color_mode` is one example) — trust the live payload over the device page.
 3. **Z2M logs** — after the first publish, `docker compose logs zigbee2mqtt | grep "MQTT publish"` shows the full JSON. Every top-level key is valid.
 
@@ -262,8 +211,7 @@ The Mapping tab doesn't auto-detect keys. Three ways to discover them:
 
 ---
 
-## What to expect after setup
-
+## What should I see after setting up MQTT?
 Once a sensor is registered and data is flowing:
 
 - The connector's **Last data received** timestamp updates each time a message arrives.
@@ -274,36 +222,33 @@ For Zigbee2MQTT sensors, data typically appears within a few seconds of the sens
 
 ---
 
-## More MQTT examples
-
+## Where can I find more MQTT examples?
 **ESP32 DIY temperature sensor:**
-Publishes to `home/sensors/esp-kitchen/data` with a flat JSON payload. Device ID Topic: `home/sensors/{{deviceId}}/data`. Leave telemetry topics empty — the payload is parsed automatically. Mapping tab maps `temperature` and `humidity` keys to the corresponding normalized metrics.
+Publishes to `home/sensors/esp-kitchen/data` with a flat JSON payload. MQTT Topic for device ID: `home/sensors/{{deviceId}}/data`. Leave Topic Telemetry empty — the payload is parsed automatically. Mapping tab maps `temperature` and `humidity` keys to the corresponding normalized metrics.
 
 **Tasmota smart plug:**
-Tasmota publishes to `tele/plug-01/SENSOR`. Device ID Topic: `tele/{{deviceId}}/SENSOR`. The payload is flat JSON with energy readings (Power, Voltage, Current, Today). Leave telemetry topics empty; then add Mapping tab rows for the Tasmota keys you want to track.
+Tasmota publishes to `tele/plug-01/SENSOR`. MQTT Topic for device ID: `tele/{{deviceId}}/SENSOR`. The payload is flat JSON with energy readings (Power, Voltage, Current, Today). Leave Topic Telemetry empty; then add Mapping tab rows for the Tasmota keys you want to track.
 
 **Garden soil sensor — single metric on a dedicated topic:**
-A custom sensor publishes soil moisture to `garden/{{deviceId}}/moisture` with a plain number payload. Add a telemetry topic row: topic `garden/{{deviceId}}/moisture`, Connector Key `soil_moisture`. Then in the Mapping tab, link `soil_moisture` to the normalized soil moisture metric.
+A custom sensor publishes soil moisture to `garden/{{deviceId}}/moisture` with a plain number payload. Add a telemetry topic row: topic `garden/{{deviceId}}/moisture`, Device data key `soil_moisture`. Then in the Mapping tab, link `soil_moisture` to the normalized soil moisture metric.
 
 ---
 
-## Troubleshooting
-
+## How do I troubleshoot the MQTT connector?
 A short list — the [full troubleshooting page](mqtt/troubleshooting.md) covers Z2M startup logs, the empty-Logs-tab pattern, and how to force a publish for setup-time verification.
 
 **No data appears after setup:**
 - For Cloud MQTT: make sure you copied the password correctly at creation time. If unsure, rotate the credentials and update Zigbee2MQTT with the new password. Confirm the Topic prefix is being used correctly — all published topics must start with it.
-- For External MQTT: double-check the broker URL and credentials. A small typo in the address is the most common cause of connection failures. For Zigbee2MQTT setups, confirm that Zigbee2MQTT is running and connected to the broker by checking the Zigbee2MQTT web interface.
 
 **Sensor appears but readings are missing or wrong:**
 - Open the sensor detail page and check the **Logs** tab for incoming message content.
-- Verify the Device ID Topic matches the exact topic path the sensor is publishing to. Topics are case-sensitive.
+- Verify the MQTT Topic for device ID matches the exact topic path the sensor is publishing to. Topics are case-sensitive.
 - Verify the **Device ID** is byte-for-byte identical to the device-level segment (for Zigbee2MQTT, the friendly name) — no spaces, same case.
-- If you added telemetry topic rows: check that the Connector Key spellings match the payload keys exactly.
-- In the Mapping tab: confirm that the Connector Key column values match what the sensor is actually publishing.
+- If you added telemetry topic rows: check that the Device data key spellings match the payload keys exactly.
+- In the Mapping tab: confirm that the Device data key column values match what the sensor is actually publishing.
 
 **Mapping tab Value column populates but Logs tab is empty:**
-This usually means Connector keys were saved after the most recent publish arrived. The Logs tab only fills with publishes that arrive *after* the keys are saved. Generate a fresh publish — drag a control in the Z2M web UI, or send a `/get` poll for setup-time verification — and the Logs tab will populate.
+This usually means Device data keys were saved after the most recent publish arrived. The Logs tab only fills with publishes that arrive *after* the keys are saved. Generate a fresh publish — drag a control in the Z2M web UI, or send a `/get` poll for setup-time verification — and the Logs tab will populate.
 
 **"Toggle the device" doesn't produce data — what counts as a publish:**
 Many Zigbee bulbs (including the Paulmann 50064) do not send an MQTT publish on a physical wall-switch toggle. Actions that *do* generate a publish during setup:

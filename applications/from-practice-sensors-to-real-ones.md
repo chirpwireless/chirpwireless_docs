@@ -2,7 +2,7 @@
 description: "Replace a solution's practice sensors with your real Chirp devices by swapping the Emulator connector, keeping dashboards, automations, and alerts in place."
 ---
 
-# From Practice Sensors to Real Ones
+# How do I swap practice sensors for real ones?
 
 The practice sensors in a solution exist so you can watch the whole setup work first. When your real sensors arrive, you point the same setup at them. This page shows the installed application and the exact screens involved.
 

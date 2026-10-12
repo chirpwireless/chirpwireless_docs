@@ -2,22 +2,19 @@
 description: Turn a DXF floor plan into walls for your 3D home — set the source unit and preview before importing.
 ---
 
-# Importing a Floor Plan
-
+# How do I import a floor plan into the building model?
 If you already have a floor plan of your home — from when you bought the place, from a renovation, from an estate-agent listing — you don't have to draw your home from scratch. The editor can read a **DXF** file, the standard format that design and drawing programs export, and turn it straight into walls.
 
 Heads up: this import is still in **beta**, and the window says so — *DXF import is in beta and may not work perfectly. Check the result after import.* The preview is your safety net, and a plan exported straight from a design app usually reads better than one that was scanned or converted.
 
 It's the quickest route to an accurate model: the layout comes in already shaped and to scale, and you get to spend your time on the fun part — furnishing rooms and connecting sensors.
 
-## What you need
-
+## What do I need to import a floor plan?
 * A `.dxf` file of your floor plan. Architects, builders, and home-design apps can all export DXF.
 * A plain-text (ASCII) DXF. Binary DXF and DWG files can't be read, so if your plan is a DWG, save a copy as DXF in the program you opened it with.
 * The file is read right in your browser and is not uploaded. Nothing leaves your computer until you save the widget.
 
-## Bringing in a file
-
+## How do I bring in a floor plan file?
 1. On the bottom toolbar, click **Build**. In the row of building tools, click **Import from file** (it sits beside **Trace from map**).
 2. A full-screen window titled **Import from file**, with a **Beta** badge, opens on an **Import a floor plan** screen. Click **Choose file**, or drag a `.dxf` file anywhere onto the window.
 3. The window reads the file ("Reading file…") and draws it. A sidebar on the right gives you the controls below, and the **Import** button at the top is enabled once there is something to import. **Cancel** closes the window without changing your model.
@@ -52,14 +49,12 @@ The preview legend explains the colors: **Walls**, **Doors**, **Windows**, **Pas
 
 Warnings can include "the drawing has no dimensions or blocks (converted from PDF or exploded) — walls may be recognised inaccurately", which means the plan was flattened on its way to you. If you can get the original drawing, use that. A few skipped items is completely normal: a plan file carries lots of things that aren't walls.
 
-## After importing
-
+## What should I do after importing a floor plan?
 The imported walls work exactly like walls you draw yourself. Click any of them to set the height, thickness, and material, add doors and windows, and keep building. If something's not right, **Undo** (Ctrl+Z) takes the import back out so you can change the settings and try again.
 
 A nice workflow: import the shell from the plan file, switch to the flat **2D view** to check the rooms, then draw any inside walls the plan didn't have, and you're ready to furnish.
 
-## Tips
-
+## What are good habits for importing floor plans?
 * If your home imports at the wrong size, fix **Drawing units** and import again.
 * Importing a multi-floor home? Pick a level for each floor plan in the import window (see [Floors and levels](floors-and-levels.md) for how levels work) and import them together.
 * The tidier the plan file, the cleaner the import. If a plan is crowded with extra layers, exporting just the walls from the design app gives the best result.

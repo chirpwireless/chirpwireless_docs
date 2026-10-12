@@ -2,20 +2,17 @@
 description: Added a sensor but no readings appear? Read the Connection tab and get your data flowing.
 ---
 
-# Connection Diagnostics
-
+# How do I use connection diagnostics for a sensor?
 You unboxed the sensor, stuck it on the wall, typed in its numbers, hit **Save** — and the readings are still blank. It's the moment every home setup runs into at least once, and it used to leave you guessing whether the problem was the battery, the gateway, the keys, or Chirp itself.
 
 Connection diagnostics answers that question for you. Open any sensor, go to its **Connection** tab, and Chirp tells you in plain words where your sensor's data is right now: whether anything has arrived at all, whether Chirp understood it, and whether it's being saved to your history. Every state comes with a short list of things to try — so you always know what to do next, not just what went wrong.
 
-## Why this is worth two minutes of your time
-
+## Why is connection diagnostics worth two minutes?
 Without it, a silent sensor is a mystery with a dozen possible causes. Is the wine cellar monitor out of range? Did you mistype one character of a 16-character code? Is it sending fine and just not being recorded? Those are wildly different problems with wildly different fixes, and hunting through them one at a time is how a fifteen-minute setup turns into a lost evening.
 
 The Connection tab collapses all of that into one screen. It tells you which of those three things is actually happening, and then it tells you which one to fix. Most of the time you'll be done before you've finished your coffee.
 
-## Where to find it
-
+## Where do I find connection diagnostics?
 1. Click **Devices** in the sidebar.
 2. Click the sensor you're worried about to open its detail page.
 3. Click the **Connection** tab.
@@ -26,8 +23,7 @@ Diagnostics appear right there alongside the sensor's connection settings. Three
 - **Pipeline** — the counts, showing how many messages made it through each stage recently.
 - **Event feed** — the message-by-message diary, newest first.
 
-## Block 1 — Reception status
-
+## What does the Reception status block show?
 This is the one to read first. It's a single sentence that names your situation, with a supporting line underneath and a couple of numbers for context.
 
 You'll see one of these headlines:
@@ -38,10 +34,10 @@ You'll see one of these headlines:
 | **Sending data — set up mapping to keep it** | Your sensor is alive and talking — Chirp just doesn't know what its readings mean yet, so nothing is being saved. Shown as `{{count}} keys decoded · none mapped yet`. |
 | **Data arrives but nothing is stored** | "Data is arriving but nothing is stored yet." Messages are landing, but none of them are turning into readings you can chart. |
 | **Hasn't reported — device looks offline** | "Device was reporting but has gone quiet." It used to work. Something changed. |
-| **Waiting for first data** | Nothing has come in yet. You may also see **Waiting for the first uplink** or **No uplinks received yet** — same meaning. If it never moves off this state, the sensor may still be joined to a network it used before Chirp — see [First things first: joining the network](#first-things-first-joining-the-network). |
+| **Waiting for first data** | Nothing has come in yet. You may also see **Waiting for the first uplink** or **No uplinks received yet** — same meaning. If it never moves off this state, the sensor may still be joined to a network it used before Chirp — see [First things first: joining the network](#how-do-i-check-that-my-sensor-joined-the-network). |
 | **Reached network — waiting for data** | "Joined the network · no uplinks yet" — a LoRaWAN sensor that has successfully introduced itself to your gateway but hasn't sent an actual reading yet. Genuinely good news. |
 
-Leave the page open and the "last seen" line looks after itself. Chirp checks again roughly every half minute, and the little dot and the "x minutes ago" label count up on their own, so a sensor that goes quiet turns grey while you watch rather than waiting for you to reload. A sensor that reports every minute won't flicker grey in between. You'll see the same up-to-date status in your sensor list, on text widgets, and on info cards.
+Leave the page open and the "last seen" line looks after itself. Chirp checks again roughly every half minute, and the little dot and the "x minutes ago" label count up on their own, so a sensor that goes quiet turns gray while you watch rather than waiting for you to reload. A sensor that reports every minute won't flicker gray in between. You'll see the same up-to-date status in your sensor list, on text widgets, and on info cards.
 
 Around the headline you'll also spot a few supporting details:
 
@@ -83,17 +79,13 @@ MQTT sensors have their own set of messages, because there's a broker in the mid
 
 | Message | What it means and what to do |
 |---|---|
-| **Broker connected** — "Your broker is reachable and Chirp is subscribed" | All good on the broker side. |
-| **Connecting to your broker…** | Chirp is dialing in. Wait a moment. |
-| **Chirp can't reach your broker** | "Check the broker URL and credentials in the connector settings." Open the connector and re-copy the address, username, and password — a stray space at the end of a pasted password is the classic culprit. |
 | **Waiting for the device to publish to the Chirp broker…** | Connection's fine, the device just hasn't said anything yet. It is connected with its generated MQTT credentials. |
 | **A message arrived on a topic this device isn't set up for** | "Update the topic above, or change where the device publishes." Compare the **Expected topic** field with **Published to** — they need to line up. |
 | **No publish topic is configured yet — set one above.** | Fill in the topic field on this tab, save, and the messages will start matching. |
 
 When things are working, MQTT diagnostics confirm all three of these: the device publishes to the expected topic, the payload is valid JSON, and the device ID resolves as configured.
 
-## First things first: joining the network
-
+## How do I check that my sensor joined the network?
 There's a step people miss because nothing in the setup form hints at it. A LoRaWAN sensor doesn't simply start broadcasting readings the moment it has power. It has to **join** a network first.
 
 Here's how that goes. When the sensor wakes up, it sends out a **join request** — a little "hello, may I?" message carrying its identity. Your gateway passes it along, Chirp checks it against the Device EUI and AppKey you typed into the sensor form, and if those match, Chirp sends back a join accept. Only *after* that handshake does the sensor start sending actual readings.
@@ -134,16 +126,14 @@ Once it's done, watch the Connection tab. You should see the status move to **Re
 - **A sensor that worked for a while and then went quiet** is a different problem. Sensors don't quietly un-join a network on their own, so this isn't it. That case shows up as **Hasn't reported — device looks offline**, and it's almost always the battery, something new blocking the signal, or a schedule that's changed. Don't reset it — you'll just make more work for yourself.
 - **A sensor that joins, then drops back to "Waiting for first data" again and again** usually has a typo in its identifiers. One wrong character in the Device EUI or AppKey and the handshake can't complete. Re-enter both with **Scan QR code** on the sensor form rather than retyping — then reset the sensor once more so it tries again with the corrected values.
 
-## Block 2 — Pipeline
-
+## What does the Pipeline block show?
 The Pipeline block counts how many messages made it through each stage: **Routed**, **Mapped**, and **Stored**. Reading it left to right shows you exactly where things stop.
 
 If Routed is climbing but Stored is stuck at zero, your sensor is talking and Chirp is listening — the readings just aren't being recorded, which almost always means mapping. If Routed itself is zero, nothing is reaching Chirp at all, and the problem is out at the sensor, the battery, or the gateway.
 
 One thing worth knowing: these counts are labeled **Stats over the last {{days}} days**. They cover a recent rolling window — the number of days shown in that label — not everything the sensor has ever sent. A brand-new zero doesn't mean the sensor never worked; it means it hasn't done anything within that window.
 
-## Block 3 — Event feed
-
+## What does the Event feed show?
 Where the Pipeline gives you totals, the event feed gives you the individual messages. It's a table:
 
 | Column | What it shows |
@@ -170,18 +160,16 @@ If the sensor is brand new you'll see **No events yet** with "Events will appear
 
 The feed loads a chunk at a time. Click **Load more** to fetch older entries; you'll see **Loading…** briefly and **All records loaded** once you've reached the end. **No pipeline data** means there's nothing recorded for this sensor in the window at all.
 
-## What "mapping" actually means
-
+## What does mapping mean?
 Half the messages on this page mention mapping, so it's worth a plain-language explanation.
 
 Your sensor doesn't send tidy labels. A garden soil probe might send something like `sm` and `bat` — not "Soil Moisture" and "Battery." Mapping is you telling Chirp: *that `sm` number is the soil moisture reading, in percent.* Once you've done that, Chirp knows what the number is, stores it in your history, draws it on your dashboard, and lets your automations react to it.
 
 Until you map at least one reading, Chirp receives your sensor's messages and politely sets them aside, because it has no idea what they represent. That's exactly the **Sending data — set up mapping to keep it** state — and it's the single most common reason a healthy sensor shows no readings.
 
-Good news: **Connector keys appear here automatically once the device transmits.** You don't have to know your sensor's field names in advance. Let it send once, and the list fills itself in.
+Good news: **Device data keys appear here automatically once the device transmits.** You don't have to know your sensor's field names in advance. Let it send once, and the list fills itself in.
 
-## Fixing things without leaving the tab
-
+## How can I fix things without leaving the tab?
 Diagnostics don't just describe problems — they hand you the button. Depending on the situation you'll see:
 
 - **Fix** / **Fix mapping** / **Set up mapping** / **Map a key** — jump straight to where you match your sensor's readings to what you want to see. This is the fix for anything mapping-related.
@@ -189,9 +177,8 @@ Diagnostics don't just describe problems — they hand you the button. Depending
 - **Hide** — collapse a block once you've read it, to get the Connection tab back to a working size.
 - **See reception status** — jump back up to the headline from further down the tab.
 
-## What to do when it says…
-
-**"Waiting for first data" / "No uplinks received yet"** — Give it one full reporting interval before doing anything; a sensor set to report once an hour will look silent for an hour, and that's correct. If it stays silent past that, check the battery is in the right way round, confirm the sensor is within range of your gateway, and double-check the Device EUI and AppKey character by character against the sensor's label. If typing them was the risky part, re-enter them with **Scan QR code** on the sensor form — see [Adding Sensors](adding-sensors.md). And if all of that checks out and it's *still* silent, stop checking and reset the sensor so it sends a fresh join request — this is the usual ending for any sensor that had an owner before you. See [First things first: joining the network](#first-things-first-joining-the-network).
+## What should I do when diagnostics reports a problem?
+**"Waiting for first data" / "No uplinks received yet"** — Give it one full reporting interval before doing anything; a sensor set to report once an hour will look silent for an hour, and that's correct. If it stays silent past that, check the battery is in the right way round, confirm the sensor is within range of your gateway, and double-check the Device EUI and AppKey character by character against the sensor's label. If typing them was the risky part, re-enter them with **Scan QR code** on the sensor form — see [Adding Sensors](adding-sensors.md). And if all of that checks out and it's *still* silent, stop checking and reset the sensor so it sends a fresh join request — this is the usual ending for any sensor that had an owner before you. See [First things first: joining the network](#how-do-i-check-that-my-sensor-joined-the-network).
 
 **"Reached network — waiting for data"** — Relax. Your LoRaWAN sensor found the gateway and joined successfully, which is the hard part. It's simply waiting for its next scheduled report. Come back after one interval.
 
@@ -207,20 +194,17 @@ Diagnostics don't just describe problems — they hand you the button. Depending
 
 **"Diagnostics unavailable"** — The check couldn't complete. Reopen the sensor and try again. Your data isn't affected either way — this only concerns the diagnostic view.
 
-## Checking the connector, not just the sensor
-
+## How do I check the connector, not just the sensor?
 Sometimes the sensor is fine and the connection itself is the issue. MQTT connectors have their own **Connector diagnostics** area with **Source health**, **Incoming**, and **Activity** tabs, showing whether the connector is receiving anything at all ("{{count}} seen", or **No activity yet** when it isn't), a **Connect device** shortcut, and its own **Diagnostics unavailable** state when the check can't run. Other connection types simply show their settings.
 
 If every one of your MQTT sensors looks silent, start at the connector rather than the sensors. See [MQTT Troubleshooting](../connectors/mqtt/troubleshooting.md).
 
-## A replacement is connected, but the values look old
-
+## Why do values look old after I connect a replacement?
 Your digital device keeps earlier readings when you disconnect its hardware. An old value does not mean the new tracker or sensor is working. Check the time of the last update, then follow the reception and mapping statuses.
 
-If messages arrive but measurements do not update, open **Mapping** and reconnect the new source fields to the existing rows. For Family Car, check both latitude and longitude. Keep the car's digital device while fixing the connection; [Sensor Details](sensor-details.md#replace-your-cars-tracker) explains the replacement steps.
+If messages arrive but measurements do not update, open **Mapping** and reconnect the new source fields to the existing rows. For Family Car, check both latitude and longitude. Keep the car's digital device while fixing the connection; [Sensor Details](sensor-details.md#how-do-i-replace-my-cars-tracker) explains the replacement steps.
 
-## Tips
-
+## What are good habits for using diagnostics?
 - **Read top to bottom, fix bottom to top.** The reception status names the problem, the pipeline shows where it stops, the event feed proves it. But the fix almost always sits at the earliest stage that isn't OK.
 - **Get the reporting interval right first.** More "offline" sensors are misconfigured schedules than dead batteries. A monthly water meter set to an hourly interval will look broken 720 times a month.
 - **Don't panic at Skipped.** It's informational. Errors are the ones that want attention.
@@ -233,8 +217,7 @@ If messages arrive but measurements do not update, open **Mapping** and reconnec
 - [Sensor Details](sensor-details.md) — the rest of the sensor dialog, including Logs.
 - [MQTT Troubleshooting](../connectors/mqtt/troubleshooting.md) — broker-side problems in depth.
 
-## A field arrives but its reading is missing
-
-Check the data template's **Type** as well as the connector key. Text such as `ON` cannot be saved as a Boolean, and an Integer measurement drops decimal places with a diagnostic warning. [What Your Device Is Sending](what-your-device-is-sending.md#readings-keep-the-shape-they-arrived-in) explains the accepted values.
+## Why does a field arrive without a reading?
+Check the data template's **Type** as well as the device data key. Text such as `ON` cannot be saved as a Boolean, and an Integer measurement drops decimal places with a diagnostic warning. [What Your Device Is Sending](what-your-device-is-sending.md#readings-keep-the-shape-they-arrived-in) explains the accepted values.
 
 These reception checks use your reporting interval, with a one-hour fallback when no valid interval is configured. The command screen uses its own 30-minute last-seen check. With no last-seen time, diagnostics waits for data instead of treating a new sensor as proven offline.

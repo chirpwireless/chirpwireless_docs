@@ -2,8 +2,7 @@
 description: Ask Grok about your Chirp home from your Tesla. Check whether the iron is on, turn its smart plug off, and ask about room readings or home alerts.
 ---
 
-# Use Chirp from Your Tesla
-
+# How do I use Chirp from my Tesla with Grok?
 You have left the house and cannot remember whether you turned off the iron. If it is plugged into a connected smart plug, you can ask Grok from your Tesla and switch it off by voice. Chirp's **MCP connection** lets Grok read your home's devices and run the actions you have set up for them.
 
 <figure><img src="../.gitbook/assets/tesla-grok-hands-free-hero.avif" alt="Grok voice interface open on the touchscreen inside a Tesla"><figcaption><p>Ask about your Chirp home through Grok in the car, using the same Grok account you connected on your phone or computer.</p></figcaption></figure>
@@ -30,8 +29,7 @@ flowchart TD
     Plug --> Iron[Power to the iron]
 ```
 
-## Get your home ready
-
+## How do I get my home ready for Grok?
 1. Add the plug by following [LoRaWAN Devices](../devices/lorawan-devices.md). It needs gateway coverage, the correct device profile, and a working connection.
 2. Give the plug an easy name, such as **Iron**, and check that its on/off state appears in Chirp.
 3. Under **Commands & States**, create a **Turn off** command using the instructions for your exact plug model. [Creating Commands](../devices/commands/creating-commands.md) explains the settings; Milesight publishes the [WS52x command format](https://www.milesight.com/products/docs/en/ws52x/protocol/ws5xx/ws52x-downlink.html). Grok runs commands you save here.
@@ -39,24 +37,21 @@ flowchart TD
 
 You can use this Grok connection on your phone or computer too. The car gives you another place to have the conversation.
 
-## Bring the connection into your Tesla
-
-The car needs an **AMD processor**, software **2026.26 or later**, and **Premium Connectivity or Wi-Fi**. [Tesla's Grok guide](https://www.tesla.com/support/grok) covers availability and account requirements.
+## How do I bring the Chirp connection into my Tesla?
+Grok in the car depends on your vehicle model, software and connectivity. [Tesla's Grok guide](https://www.tesla.com/support/grok) lists the current requirements and availability.
 
 1. Open **App Launcher → Grok** on the touchscreen and tap **Sign In**. Complete sign-in on your phone with the Grok account you connected to Chirp.
-2. Hold the steering-wheel microphone button to start talking, or enable **“Hey Grok”** in **Controls → Audio → Grok Settings**.
-3. Ask: *“Use Chirp to check whether my iron is on.”* Your account's connectors are available in the car. See [Tesla's setup instructions](https://www.tesla.com/support/grok).
+2. Start a voice conversation the way Tesla's guide describes, for example with the steering-wheel microphone button, or turn on the “Hey Grok” wake phrase if your car offers it.
+3. Ask: *“Use Chirp to check whether my iron is on.”* If Grok does not find Chirp in the car, see [Tesla's setup instructions](https://www.tesla.com/support/grok).
 
-## Other things to ask on your way out
-
+## What else can I ask Grok about my home?
 - *“What is the temperature in the living room?”* Grok uses the temperature reading reported by your room sensor.
 - *“Are the hallway lights on? Please switch them off.”* The connected lights need a reported state and a saved command.
 - *“Are there any active leak or smoke alerts at home?”* Grok checks the [alerts](../alarm/README.md) recorded by the sensors and automations you have configured.
 
-If you manage more than one home, ask Grok which home it is using. The normal connection follows your selected home in Chirp; you can also [fix it to one home](../api/mcp-server.md#choosing-which-home-it-sees).
+If you manage more than one home, ask Grok which home it is using. The normal connection follows your selected home in Chirp; you can also [fix it to one home](../api/mcp-server.md#how-do-i-choose-which-home-my-ai-app-sees).
 
-## When something does not respond
-
-If Grok cannot see Chirp in the car, check the car's software, connectivity, and Grok account. If it sees your home but cannot find the plug or its state, check the device name and whether its latest on/off state appears in Chirp.
+## What if Grok does not respond in my Tesla?
+If Grok cannot see Chirp in the car, check the requirements in Tesla's guide (software, connectivity) and your Grok account. If it sees your home but cannot find the plug or its state, check the device name and whether its latest on/off state appears in Chirp.
 
 If the action is missing, check the saved command and your permission to run it. If it is accepted or queued, ask Grok for the execution status and the plug's latest reported state. [Command Verification](../devices/commands/verification.md) explains how Chirp checks device feedback.

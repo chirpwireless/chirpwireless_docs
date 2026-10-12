@@ -2,7 +2,7 @@
 description: "Install a ready-made Chirp solution to get practice sensors, working automations, alerts, and a live dashboard, and learn what to do if the install stops."
 ---
 
-# Installing a Ready-Made Solution
+# How do I install a ready-made solution?
 
 You do not configure anything in advance. This page walks through the install screen element by element, then follows the install until you land inside your new application.
 
@@ -23,7 +23,7 @@ Open a solution's preview and select **Use this solution** in the top-right corn
 
 ## What happens when I press Install solution?
 
-The button changes to **Installing...** and the work runs in the background. Chirp builds, in this order, inside your organization:
+The button changes to **Installing…** and the work runs in the background. Chirp builds, in this order, inside your organization:
 
 1. An application named after the solution.
 2. The practice sensors on the Emulator connector.

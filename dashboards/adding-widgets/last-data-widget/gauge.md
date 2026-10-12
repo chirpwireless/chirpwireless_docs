@@ -2,22 +2,19 @@
 description: Put a reading on a horizontal track with a sliding marker and colored bands, so you spot the moment it crosses a limit.
 ---
 
-# Gauge Display
-
+# How do I show a reading as a gauge?
 The Gauge display puts a reading on a horizontal track with a marker that slides along it, and the color rules you set show up as bands across that track. The number sits above. So you see two things at once — the value, and whether it's sitting in a good stretch or a worrying one.
 
 <figure><img src="../../../.gitbook/assets/last-data-gauge.jpg" alt="Last Data widget using the Gauge display type"><figcaption></figcaption></figure>
 
-## When to choose it
-
+## When should I choose the gauge display?
 - A reading where it matters *where* it sits — a comfortable room temperature, a healthy battery level — and the colored bands tell you instantly.
 - A "running low" warning — set the low end red so the marker sliding down toward it catches your eye.
 - A "too high" warning — set the high end red, so a level creeping up (a basement sump filling, say) shows as the marker climbs.
 
 A Gauge has no built-in good or bad end — the bands you choose decide that. Wherever a reading has a "fine" zone and a "not fine" zone, the Gauge makes the line easy to see.
 
-## Configure a Gauge display
-
+## How do I configure a gauge display?
 Let's build a real one — a gauge that warns you if a basement sump pump fails before the floor floods. The pump's job is to keep the water in its pit low; the pit is about 100 cm deep, and a level sensor reports the water level in centimeters — so the reading runs from 0 (a dry pit floor) up to 100 (water at the overflow). That 0–100 is the gauge's track, and each color band is one stretch of it. This is just an example — a Gauge works for any reading you measure against limits, so only the sensor and the band numbers change.
 
 1. Open your dashboard in edit mode and tap **Last data** in the widget picker. The **Datasource** tab opens with nothing added yet.
@@ -43,8 +40,7 @@ Let's build a real one — a gauge that warns you if a basement sump pump fails 
 
 Now the marker sits low in the green while the pump is doing its job. If the pump ever fails, the water rises and the marker slides along the track and crosses into the red — that crossing is your warning that something is wrong downstairs. One thing to get right: a level sensor reads higher as the water rises, but a sensor fixed above the water reads lower — so put the red band on whichever value means "high water" for your sensor. The Gauge makes the problem visible on your dashboard; to get a notification on your phone, pair it with an [alarm](../../../alarm/README.md). The same banded track suits anything with limits — just change the sensor and the numbers.
 
-## Worked examples
-
+## What are some gauge display examples?
 **Don't let something run out**
 When the worry is at the *low* end, flip the colors around. To watch a water softener's salt on a Gauge, use a sensor that reports it as a percentage — 0 % is an empty tank, 100 % is full — so set **Min value** 0 and **Max value** 100, with three conditions: "Top up now" — From 0, To 15 — red; "Getting low" — From 15, To 40 — yellow; "Plenty" — From 40, To 100 — green. The marker rides high and green when the tank is full and slides down toward the red as the salt is used — your cue to buy another bag.
 

@@ -2,22 +2,18 @@
 description: The simplest MQTT path — Chirp hosts the broker, you paste the credentials into Zigbee2MQTT and go.
 ---
 
-# Cloud MQTT
-
+# What is Cloud MQTT in Chirp?
 Cloud MQTT gives your home an MQTT connection using a broker managed by Chirp. The **broker** is the server that receives messages from your devices or bridge and passes them on. Chirp gives you its address and login details, so you do not need to run that server yourself.
 
 For Zigbee sensors, you still need Zigbee2MQTT and a compatible coordinator in your home. Point the bridge at the supplied broker, then register and [map the devices](topics-and-device-routing.md) in Chirp. Creating the connection alone does not create sensor readings.
 
-## When to choose Cloud MQTT
-
+## When should I choose Cloud MQTT?
 - You don't already have an MQTT broker.
 - Your devices live on a home network behind NAT, and you'd rather not poke a hole through your router or rent a VPS.
 - You want the simplest possible setup that works.
 
-If you already operate your own broker — Mosquitto on a home server, a HiveMQ Cloud account, an MQTT broker on a Raspberry Pi sitting alongside Home Assistant — see [External MQTT](external-mqtt.md). Both paths produce the same end result inside Chirp; the difference is who owns the broker.
 
-## Creating the connector
-
+## How do I create a Cloud MQTT connector?
 1. Open **Connectors** in Chirp's sidebar.
 2. Tap **Add connector**.
 3. Pick **Cloud MQTT** from the connector type list.
@@ -35,8 +31,7 @@ Chirp provisions a broker endpoint and shows four values:
 
 There's no recovering the original password later — Chirp doesn't keep it readable. Rotation is the only path back if you've lost it.
 
-## Connecting Zigbee2MQTT to a Cloud MQTT connector
-
+## How do I connect Zigbee2MQTT to a Cloud MQTT connector?
 In Zigbee2MQTT's `configuration.yaml`, the four credentials map to:
 
 ```yaml
@@ -55,8 +50,7 @@ A few things to notice:
 
 For the full Zigbee2MQTT setup including the Docker Compose template and `configuration.yaml` example, see [Setting up Zigbee2MQTT](zigbee2mqtt.md).
 
-## Connecting other MQTT devices
-
+## How do I connect other MQTT devices to Cloud MQTT?
 Anything that publishes MQTT can use the same credentials — an ESP32 you wrote firmware for, a Tasmota smart plug, an MQTT-publishing weather station. Configure the device's MQTT settings:
 
 - **Broker / server URL:** the Broker URL value from Chirp, including the `mqtts://` scheme and port 1884.
@@ -65,8 +59,7 @@ Anything that publishes MQTT can use the same credentials — an ESP32 you wrote
 
 When you register the device in Chirp, the Device ID Topic field uses the device-level portion only — Chirp strips the prefix automatically.
 
-## Verifying the connection
-
+## How do I verify the Cloud MQTT connection?
 After Z2M (or your device) starts up:
 
 1. Open the connector's detail page in Chirp.
@@ -74,8 +67,7 @@ After Z2M (or your device) starts up:
 
 The first message Z2M publishes is its own bridge status (`{base_topic}/bridge/state`) — it's how you know the broker accepted the connection, even before any sensor has reported. If **Last data received** stays empty for more than a minute, see [Troubleshooting](troubleshooting.md).
 
-## Rotating credentials
-
+## How do I rotate Cloud MQTT credentials?
 If the password is compromised or you've lost it:
 
 1. Open the connector in Chirp.
@@ -85,8 +77,7 @@ If the password is compromised or you've lost it:
 
 The username and Topic prefix don't change on rotation — only the password.
 
-## Limits
-
+## Are there limits on Cloud MQTT?
 Cloud MQTT connectors are unlimited per home. If you want separate connectors for different device groups (one for the indoor Zigbee mesh, one for the garden sensors, one for the workshop), create as many as you need — each gets its own credentials and topic prefix.
 
 Setting up the individual devices is the next stage, and [MQTT Devices](../../devices/mqtt-devices.md) guides you through it: choosing the identifier, filling in the connection fields, mapping readings to measurements, and checking that the history is retained.

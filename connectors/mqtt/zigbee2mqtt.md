@@ -2,14 +2,12 @@
 description: Install Zigbee2MQTT to bridge your Zigbee bulbs and sensors into Chirp through the MQTT connector.
 ---
 
-# Setting up Zigbee2MQTT
-
+# How do I set up Zigbee2MQTT with Chirp?
 Zigbee2MQTT (Z2M) is the bridge between your Zigbee devices and your MQTT broker. Devices speak Zigbee — a low-power radio protocol — to a USB or network-attached coordinator. Z2M is the software, running on the same machine as the coordinator, that turns each Zigbee message into an MQTT publish. Once Z2M is running, every Zigbee sensor and bulb in your home becomes an MQTT publisher, and Chirp's MQTT connector picks it up like any other MQTT device.
 
 This page is the generic Zigbee2MQTT setup. We worked through it with a Sonoff ZBDongle-E coordinator and a Paulmann 50064 bulb, but Z2M supports thousands of coordinators and devices — anything in the [supported devices list](https://www.zigbee2mqtt.io/supported-devices/) follows the same flow. If you have the exact hardware we tested, the [Sonoff ZBDongle-E walkthrough](../../gateways/zigbee2mqtt-hubs/sonoff-zbdongle-e-coordinator.md) and the [Paulmann 50064 walkthrough](../../devices/tested-device-guides/zigbee/paulmann-50064-light-bulb.md) drop you into the specifics. Otherwise, follow this generic setup and consult your hardware's manufacturer for pairing details — the rest is identical.
 
-## What runs where
-
+## What runs where in a Zigbee2MQTT setup?
 A small mental-model warning, because this confuses a lot of people first time around: **the coordinator is the radio bridge, not the brain.**
 
 - **USB coordinators** (Sonoff ZBDongle-E, ZBDongle-P, SkyConnect, ConBee II, etc.) — radio chip plus firmware, communicating with your machine over USB serial using a binary protocol like EZSP or Z-Stack. They have no IP stack, no Wi-Fi, no Ethernet, no operating system.
@@ -33,15 +31,13 @@ Zigbee device → [Zigbee radio]
 
 Practical implication: stop the Z2M container or unplug the host machine and your Zigbee devices stop reaching MQTT, even though their LEDs may still be on and the radios are still healthy. Z2M is the active link.
 
-## What you need
-
+## What do I need for Zigbee2MQTT?
 - A **machine that's always on** with a USB port (or a network-attached coordinator on your LAN). A Raspberry Pi, a small home server, an old laptop, an Intel NUC — anything Linux-based works fine. Z2M can also run on macOS or Windows but Docker on Linux is the most common deployment.
 - **A Zigbee coordinator.** Any [supported coordinator](https://www.zigbee2mqtt.io/guide/adapters/) — Sonoff ZBDongle-P or ZBDongle-E, SMLIGHT SLZB-06, ConBee II, SkyConnect, etc.
 - **Docker and Docker Compose** installed on the host machine. (Z2M has other deployment options, but Docker is the simplest and what we'll use here.)
-- **An MQTT broker** to publish to — either a [Cloud MQTT connector](cloud-mqtt.md) from Chirp, or your own broker via [External MQTT](external-mqtt.md).
+- **An MQTT broker** to publish to — a [Cloud MQTT connector](cloud-mqtt.md) from Chirp.
 
-## Step 1 — set up the working directory
-
+## How do I set up the Zigbee2MQTT working directory?
 On the host machine:
 
 ```bash
@@ -51,8 +47,7 @@ cd ~/zigbee2mqtt
 
 You'll create two files in here: a `docker-compose.yml` and the Z2M `configuration.yaml`.
 
-## Step 2 — confirm the coordinator is detected (USB coordinators)
-
+## How do I confirm my USB coordinator is detected?
 For USB-attached coordinators, plug the dongle in (use the included extension cable if there is one — the metal of your computer chassis attenuates 2.4 GHz signal, and the cable physically moves the antenna away from interference) and check that Linux sees it:
 
 ```bash
@@ -69,8 +64,7 @@ This shows the chip — useful when you're not sure which dongle variant you hav
 
 For network-attached coordinators (SLZB-06, etc.), there's no `/dev/tty*` device — instead you'll use a `tcp://` URL in `configuration.yaml`.
 
-## Step 3 — `docker-compose.yml`
-
+## What goes in the Zigbee2MQTT docker-compose.yml?
 `~/zigbee2mqtt/docker-compose.yml`:
 
 ```yaml
@@ -99,8 +93,7 @@ A few details that aren't obvious:
 
 If your coordinator is at a different path (e.g. `/dev/ttyACM0`), update both sides of the `devices:` mapping.
 
-## Step 4 — `configuration.yaml`
-
+## What goes in the Zigbee2MQTT configuration.yaml?
 `~/zigbee2mqtt/data/configuration.yaml`:
 
 ```yaml
@@ -132,10 +125,7 @@ Three settings deserve attention:
 - **`log_level: debug`** — leave this on while you're setting things up. At `info` level, Z2M doesn't log MQTT publish lines, which makes it impossible to tell whether the broker connection is working. Switch back to `info` once everything is verified.
 - **`channel: 11`** — Zigbee shares the 2.4 GHz band with Wi-Fi. Channels 11, 15, 20, and 25 are commonly chosen because they reduce overlap with the most-used Wi-Fi channels (1, 6, 11). They are not perfectly non-overlapping, but they're the safer starting points if your Wi-Fi uses default channels. **You can't change the Zigbee channel later without re-pairing every device**, so pick once and don't change it.
 
-For External MQTT, the `mqtt:` section is simpler — see [External MQTT](external-mqtt.md) for the configuration. The rest of `configuration.yaml` is identical.
-
-## Step 5 — start Z2M
-
+## How do I start Zigbee2MQTT?
 ```bash
 cd ~/zigbee2mqtt
 docker compose up -d
@@ -173,8 +163,7 @@ Z2M does two things the first time it boots that can look like errors but aren't
 
 If you see your `configuration.yaml` looking different after first boot, that's why. The migration logs can be safely ignored.
 
-## Step 6 — open the Z2M web UI
-
+## How do I open the Zigbee2MQTT web interface?
 Z2M ships with a small web interface. Open `http://localhost:8080` (or the IP of your host machine + port 8080 if you're remote). No login by default.
 
 Key things you'll use it for:
@@ -184,8 +173,7 @@ Key things you'll use it for:
 - **Logs** — the same output as `docker compose logs -f` but in the browser.
 - **Per-device controls** — clicking a device opens a panel where you can rename it, see its current state, and (for actuators like bulbs and plugs) toggle / dim / change settings. These controls publish MQTT `/set` commands, which is also how you can generate a fresh publish during setup-time verification — drag a slider, the bulb confirms the new state, and Z2M re-publishes the payload that Chirp consumes.
 
-## Step 7 — pair your first device
-
+## How do I pair my first Zigbee device?
 Pairing is device-specific. Generic pattern:
 
 1. In the Z2M web UI, click **Permit join (All)** — the green shield. The Zigbee network is open for 180 seconds.
@@ -198,8 +186,7 @@ Pairing is device-specific. Generic pattern:
 
 If pairing fails: the 180-second window may have closed (click Permit join again), or the device may already be paired to a previous network and need a factory reset first. Some bulbs need a full reset before they'll accept a new network — see the manufacturer's instructions, or the [Paulmann 50064 walkthrough](../../devices/tested-device-guides/zigbee/paulmann-50064-light-bulb.md) if that's what you're pairing.
 
-## Step 8 — give the device a friendly name
-
+## How do I give a Zigbee device a friendly name?
 When a device pairs, its initial friendly name is its IEEE address (something like `0x00158d0001abc123`). Rename it to something readable — that name becomes both the device-level MQTT topic Z2M publishes to AND the Device ID you'll enter in Chirp.
 
 In the Z2M web UI:
@@ -210,9 +197,8 @@ In the Z2M web UI:
 
 After renaming, Z2M publishes to `{base_topic}/{newName}` immediately. The IEEE-address topic stops receiving data.
 
-## Step 9 — register the device in Chirp
-
-The device is now publishing JSON payloads on a topic like `iot/{org}/{conn}/zigbee2mqtt/LivingRoomSensor` (Cloud MQTT) or `zigbee2mqtt/LivingRoomSensor` (External MQTT). Now register it in Chirp.
+## How do I register the Zigbee device in Chirp?
+The device is now publishing JSON payloads on a topic like `iot/{org}/{conn}/zigbee2mqtt/LivingRoomSensor`. Now register it in Chirp.
 
 Continue with [MQTT Devices](../../devices/mqtt-devices.md) to register the sensor, configure routing on Connection, select its received data keys on Mapping and check recorded readings. The [routing reference](topics-and-device-routing.md) explains every topic control.
 

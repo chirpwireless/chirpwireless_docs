@@ -2,8 +2,7 @@
 description: "Send a copy of your home camera recordings to your own Amazon S3, Google Cloud, or Walrus account and watch them again from Chirp."
 ---
 
-# Back Up Home Camera Recordings to the Cloud
-
+# How to Back Up Home Camera Recordings to the Cloud
 Imagine the computer running Twin sits in a hallway cupboard, and someone walks off with it, or its disk simply gives up. The clip you wanted goes with it. Cloud backup puts a second copy of each recording in an account you own, so the evidence survives the hardware.
 
 It adds to local recording and never replaces it unless you choose to. Twin saves each clip at home first, then uploads a copy to the cloud account you pick.
@@ -46,7 +45,7 @@ Your camera's Twin must run version **1.1.0** or later; an older Twin keeps reco
    - **Upload queue folder**: an advanced path for clips waiting to upload; leave it empty for the default.
    - **Delete local clips after upload**: removes the home copy after Lens confirms the upload. Leave it off to keep a permanent local backup too.
    - **Limit cloud storage**: when on, a **Maximum cloud storage (MB)** field appears, and the oldest cloud backups are deleted once the camera passes that size. Local clips are unaffected.
-6. Select **Save** at the bottom. Saving stores the settings in Lens and sends them to the camera's Twin, and a message confirms "Storage settings saved and sent to the camera." If Twin is offline the message says the settings were saved in Lens but sending failed; select **Send to camera** next to **Save** to push them again once Twin is back. The **Send to camera** button is greyed out while Twin's settings are still loading or cannot be checked.
+6. Select **Save** at the bottom. Saving stores the settings in Lens and sends them to the camera's Twin, and a message confirms "Storage settings saved and sent to the camera." If Twin is offline the message says the settings were saved in Lens but sending failed; select **Send to camera** next to **Save** to push them again once Twin is back. The **Send to camera** button is grayed out while Twin's settings are still loading or cannot be checked.
 7. Trigger some motion and watch for the new clip in **Recordings**.
 
 Higher up the same tab, **Automatic cleanup** has **Limit by total size** and **Limit by age**. The age limit, **Maximum recording age (days)**, applies to cloud backups as well as local clips, and the card shows "Kept for at least N days", so a short limit will also remove cloud copies.
@@ -60,9 +59,9 @@ Choose **Recordings** in the Lens sidebar. The toolbar has an **All devices** dr
 
 <figure><img src="../.gitbook/assets/chirp-lens-recordings.jpg" alt="The Recordings page with the All devices filter, Date range, sort list and the Export, Clear filters and Refresh buttons above a grid of clips grouped by date"><figcaption><p>The Recordings page.</p></figcaption></figure>
 
-- **Open** a clip to reach its detail page: a breadcrumb back to **Recordings**, the player with **Play** and **Pause**, and a **Media info** panel with **Camera**, **Duration**, **Format**, **Resolution**, and **Size**. **Show live** switches the player to the camera's current picture so you can compare, and **Show playback** switches back.
+- **Open** a clip to reach its detail page: a breadcrumb back to **Recordings**, the player with **Play** and **Pause**, and a **Media info** panel with **Camera**, **Duration**, **Format**, and **Size**. **Show live** switches the player to the camera's current picture so you can compare, and **Show playback** switches back. Below the player, a **Screenshots** card holds stills taken from the clip: select **Capture** to save the current frame, and until you do it says "No screenshots captured yet." On the Recordings grid, a clip that has alerts carries an **Alerts** badge, which is what the **Alerts only** switch filters on.
 - **Play** a clip in Chirp's player. If your storage cannot serve partial reads, a notice says seeking is unavailable; with Walrus, pick an aggregator that supports range requests.
-- **Download** it to your phone or computer; the button shows "Downloading the recording…" with **Cancel download**, and a file larger than 1 GiB asks you to select **Download** again to choose where to save it. **Export** asks "Export this recording as a ZIP package?" (or "Export N recordings as a ZIP package?"), shows "Preparing your download package…", and then "Your export package is ready." with a **Download package** button.
+- **Download** it to your phone or computer; the button shows "Downloading the recording…" with **Cancel download**, and if the browser asks you to choose where to save the file, an expired prompt says to select **Download** again. Browsers without the File System Access API, such as Firefox and Safari, cap downloads at 1 GiB and show "This file is larger than 1 GiB. Download it in Chrome or Edge." for bigger files. **Export** asks "Export this recording as a ZIP package?" (or "Export N recordings as a ZIP package?"), shows "Preparing your download package…", and then "Your export package is ready." with a **Download package** button.
 - **Delete recording** appears for Amazon S3 and Google Cloud Storage and removes the file from your bucket permanently.
 - **Remove from archive** appears for Walrus clips, for clips whose storage period has ended, and for clips whose key was erased. The clip leaves your list, but the file remains in your storage until its paid period ends or you delete it there yourself.
 

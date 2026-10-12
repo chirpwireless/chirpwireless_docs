@@ -2,14 +2,12 @@
 description: Decode build errors, understand deploy and stop, and recover an automation that the system force-stopped.
 ---
 
-# Fixing Builds and Runtime Stops
-
+# How do I fix build errors and runtime stops?
 When you click **Build**, Chirp validates your entire automation before creating a deployable artifact. If something is wrong, the build fails and shows error messages. This page explains what those errors mean and how to fix them, along with how deployment works and what to do when the system force-stops an automation.
 
 ---
 
-## Common build errors
-
+## What are common build errors?
 Build errors appear after you click Build. Each error describes the problem the validator found. Fix the issues and build again.
 
 ### Missing Start Event
@@ -86,8 +84,7 @@ Build errors appear after you click Build. Each error describes the problem the 
 
 ---
 
-## Trigger setup
-
+## How do I fix trigger setup problems?
 ### "I created a trigger, but nothing happens"
 
 A saved trigger only monitors its condition. It does not contain an alert, command, or other response, and Chirp does not attach it to an automation automatically.
@@ -110,8 +107,7 @@ The **Trigger condition** selector appears only when the Start source is set to 
 
 ---
 
-## Deploy and redeploy
-
+## How do I deploy and redeploy an automation?
 ### How deployment works
 
 When you click **Deploy** on an artifact in the Artifacts tab, that build becomes the live version of your automation. It begins waiting for the sensor reading or saved trigger selected in its Start Event.
@@ -134,8 +130,7 @@ When you edit an automation that already has a running artifact:
 
 ---
 
-## Force Stop and recovery
-
+## How do Force Stop and recovery work?
 ### What Force Stop means
 
 Chirp monitors the health of every running automation. If an automation encounters repeated errors over a sustained period, the system automatically stops it to prevent cascading problems in your home setup. The artifact status changes to **Force Stopped** (red).
@@ -160,8 +155,7 @@ This is a safety measure — it protects your home from an automation that might
 
 ---
 
-## Debug sessions
-
+## What if a debug session is stuck?
 ### "I started debugging and nothing is happening"
 
 That's how it's meant to work. A debug session opens your automation, puts the marker on the Start node and waits for you — it doesn't run anything on its own.
@@ -170,7 +164,7 @@ That's how it's meant to work. A debug session opens your automation, puts the m
 2. Press **Run (F10)** to go to the first breakpoint or the end, or **Step over (F9)** to move one node.
 3. Check it's actually going: the Start node has a blue ring and your values are listed in the panel on the right.
 
-See [Debugging Automations](debugging-automations.md#nothing-happens-until-you-press-a-button).
+See [Debugging Automations](debugging-automations.md#why-does-nothing-happen-until-i-press-a-button).
 
 ### "A node has a red ring around it"
 
@@ -190,7 +184,7 @@ Two possibilities.
 
 **Nothing matched and there's no default.** Every condition came out false and no branch is set as the fallback, so there's nowhere to go. Open the gateway, pick the branch that should catch everything else, and click **Set as default**.
 
-### "The buttons have gone grey"
+### "The buttons have gone gray"
 
 The Step buttons only work while things are paused — not while the automation is running, not while a Side Effect box is open, and not after an automation failed to load. Stop always works. If the automation didn't load, start a fresh session.
 
@@ -204,8 +198,7 @@ Sessions last 30 minutes from when they start, and stepping through doesn't exte
 
 ---
 
-## Build-time CEL validation
-
+## How does build-time CEL validation work?
 CEL expressions are validated at build time — not just checked for syntax, but also analyzed for type correctness:
 
 - **Gateway conditions** must compile to a boolean type. An expression that returns a number or string will fail the build.

@@ -2,22 +2,19 @@
 description: Add upstairs, downstairs, and basement levels to your 3D home and switch between stacked and solo floor views.
 ---
 
-# Floors and Levels
-
+# How do I add floors and levels to my building model?
 Most homes have more than one level — an upstairs and a downstairs, maybe a basement, maybe a loft. A Digital Building Twin handles all of them in a single widget. Each floor is its own layer of the same model, with its own rooms, its own furniture, and its own sensors.
 
 This page covers adding floors, moving between them, and the two ways to look at a multi-floor home.
 
-## The floor buttons
-
+## What do the floor buttons show?
 A small floating stack of buttons sits to one side of the editor. It's mission control for floors:
 
 * Each floor is a button — **L0**, **L1**, **L2**, and so on. The top floor sits at the top of the stack, the bottom floor at the bottom, just like the real house.
 * The floor you're currently working on is highlighted.
 * Click any floor button to switch to that floor. Whatever you draw, place, or connect goes onto the floor you're on.
 
-## Adding a floor
-
+## How do I add a floor?
 * Click the **+** at the **top** of the stack to add a floor **above** the highest one — an attic or loft.
 * Click the **+** at the **bottom** of the stack to add a floor **below** the lowest one — a basement or cellar.
 
@@ -25,12 +22,10 @@ When you add a floor, the editor gives it a floor plate shaped like the floor ne
 
 A tidy way to do a whole house: add all the floors first, then work through them one at a time.
 
-## Removing a floor
-
+## How do I remove a floor?
 Select the floor on the stack, then click the **delete** icon on its button. A model always keeps at least one floor, so the delete button only shows up when there's more than one.
 
-## Two ways to view a multi-floor home
-
+## How can I view a multi-floor home?
 Below the floor buttons are two view switches.
 
 ### 3D / 2D
@@ -46,12 +41,10 @@ This switch decides how the floors are shown, and only appears once your home ha
 
 Most people work in **Solo** so each floor is clear while they build it, then flip to **Stack** to see the whole house before saving.
 
-## What the dashboard shows
-
+## What does the dashboard show for a multi-floor home?
 The dashboard tile shows your home from the angle, view, and floor you leave the editor in, nudged position included, exactly as you saved it. For a multi-floor house, framing it in **Stack** with a gentle 3D tilt gives a nice whole-house view on the dashboard. If one floor matters most — the floor with the nursery, the basement with the leak sensor — you can frame that one instead and save.
 
-## Tips
-
+## What are good habits for working with floors?
 * Give your floors real names in the **Scene** panel — "Upstairs," "Ground Floor," "Basement" — rather than leaving them as L0, L1, L2.
 * Build one floor at a time. Switching to **Solo** keeps the floor you're on free of clutter.
 * Sensors stay attached to their objects, so a sensor upstairs and a sensor downstairs both stay in the right place no matter which floor you're viewing.

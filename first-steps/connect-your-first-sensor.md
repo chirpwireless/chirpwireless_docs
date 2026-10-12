@@ -2,8 +2,7 @@
 description: Hands-on guide to pair a gateway, register a LoRaWAN sensor, build a room dashboard, and set your first home alarm.
 ---
 
-# Connect Your First Sensor
-
+# How do I connect my first sensor to Chirp?
 Let's get something working. This guide walks you through the simplest LoRaWAN path to live data on your screen and an alarm watching over it. Not every Chirp setup starts with a gateway, but this one does because it covers the LNS / LoRaWAN route. Every feature has its own section later — here we're just getting you up and running.
 
 **You'll need:**
@@ -20,8 +19,7 @@ Let's get something working. This guide walks you through the simplest LoRaWAN p
 
 ---
 
-## Step 1: Set up your gateway
-
+## How do I set up my gateway?
 The gateway is the bridge between your wireless sensors and Chirp. It plugs into your home network and listens for sensor signals within range.
 
 Your gateway needs to support the **Basics Station** protocol — this is how it connects securely to Chirp using encrypted TLS certificates (which is why you'll download a certificate bundle during setup). Most modern LoRaWAN gateways support this; check the specifications when choosing one.
@@ -57,8 +55,7 @@ The exact steps depend on your gateway model — check the guide that came with 
 
 ---
 
-## Step 2: Create a connection
-
+## How do I create a connection?
 Before adding sensors, you need a connection. A connection tells Chirp which protocol to listen on — in this case, LoRaWAN.
 
 1. Click **Connectors** in the left menu.
@@ -70,8 +67,7 @@ Done — the connection is created. No extra setup needed. Chirp handles the LoR
 
 ---
 
-## Step 3: Add your sensor
-
+## How do I add my sensor?
 With the gateway online and the connection in place, you can register your first sensor — giving it a profile in Chirp that tracks its state, readings, and history.
 
 1. In the **Connectors** page, click on your **LNS** connection to open it.
@@ -107,8 +103,7 @@ The sensor appears in the Connected Devices list. It needs a moment to join the 
 
 ---
 
-## Step 4: See your live data
-
+## How do I see my live data?
 Once your sensor has reported in, you can view its data in two ways:
 
 - Click a **sensor row** in the Connected Devices list — the sensor's detail page opens. Click the **Metrics** tab to see readings.
@@ -118,8 +113,7 @@ The best way to keep an eye on your data is through a dashboard — which we'll 
 
 ---
 
-## Step 5: Create a room dashboard
-
+## How do I create a room dashboard?
 Dashboards let you see data from one or many sensors at a glance.
 
 1. Click **Dashboards** in the left menu.
@@ -143,8 +137,7 @@ Repeat to add more widgets. **Drag** them to rearrange and **resize** by pulling
 
 ---
 
-## Step 6: Get alerted when something happens
-
+## How do I get alerted when something happens?
 Let's set up an alarm so Chirp tells you when the door opens.
 
 1. Click **Alarm** in the left menu.
@@ -167,8 +160,7 @@ The alarm rule is now watching. When triggered, an alarm appears in **Alarm → 
 
 ---
 
-## You're up and running
-
+## What do I do once my sensor is running?
 That's it — you have a working LoRaWAN smart home setup:
 
 - A **gateway** receiving signals from your sensors

@@ -2,14 +2,12 @@
 description: Fix MQTT data that isn't reaching Chirp — empty Logs, topic mismatches, and devices that won't publish.
 ---
 
-# MQTT Troubleshooting
-
+# How do I troubleshoot MQTT and Zigbee2MQTT?
 When MQTT data isn't reaching Chirp, the failure is almost always at one of three places: Z2M-to-broker, broker-to-Chirp, or Chirp's device routing. This page walks through each in order — the same order to use when diagnosing — plus the two patterns that catch out almost every first-time MQTT user (empty Logs tab, no publish from a wall-switch toggle).
 
 **Start by letting Chirp narrow it down for you.** Open the device's **Connection** tab and read its diagnostics — they say whether messages are arriving, whether Chirp understood them, and whether they're being saved, which usually points straight at the right phase below. See [Connection Diagnostics](../../devices/connection-diagnostics.md). For the connector itself, its **Connector diagnostics** area has **Source health**, **Incoming**, and **Activity** tabs — the fastest way to tell a broker problem from a single misbehaving device.
 
-## Phase 1 — Z2M is not connecting to the broker
-
+## Why is Zigbee2MQTT not connecting to the broker?
 **Symptoms:** Z2M container is running, but the connector's **Last data received** in Chirp never updates. No `MQTT publish` log lines from Z2M.
 
 Check `docker compose logs zigbee2mqtt` for one of these:
@@ -24,18 +22,15 @@ Check `docker compose logs zigbee2mqtt` for one of these:
 
 The first MQTT message Z2M sends is its bridge state announcement (`{base_topic}/bridge/state`, payload `{"state":"online"}`). If you see that line in the logs, Z2M is connected and the broker accepted the connection. From there, problems are downstream.
 
-## Phase 2 — Z2M is publishing but the connector's Last data received doesn't update
-
+## Why doesn't Last data received update when Zigbee2MQTT publishes?
 **Symptoms:** Z2M log shows `MQTT publish: topic '...' payload '...'` lines, but Chirp's connector page shows **Last data received** is still empty.
 
 This is rare — if the Z2M side is publishing successfully on a topic that starts with the right Topic prefix, the broker accepts it. Things to verify:
 
 - **Topic prefix matches.** Z2M's `base_topic` must start with the exact Topic prefix Chirp gave you. For Cloud MQTT, that's `iot/{org}/{conn}/zigbee2mqtt` — the first three segments must match exactly what Chirp's connector page shows.
 - **The connector is the right one.** If you have multiple Cloud MQTT connectors, double-check which one Z2M is configured against. The Topic prefix is unique per connector.
-- **External MQTT only — Chirp can reach your broker.** External MQTT is the case where this can genuinely fail for network reasons. Even after publishing locally to your Mosquitto broker, the message reaches Chirp only if Chirp can dial out to your broker's public address. Run a one-shot test publish from `mosquitto_pub` against the public address (your ngrok TCP endpoint or DDNS hostname) — see [External MQTT](external-mqtt.md) for the test command. If the local broker accepts it but Chirp's **Last data received** stays empty, the public reachability is the problem (firewall, expired ngrok session, wrong port forward).
 
-## Phase 3 — Last data received updates but the device's Mapping tab is empty
-
+## Why is the device's Mapping tab empty?
 **Symptoms:** The connector shows recent Last data received timestamps, but when you open a registered device, the Mapping tab's Value column is empty and nothing's coming in.
 
 This is a device-routing problem inside Chirp. The connector is receiving messages but they're not matching the device record.
@@ -50,8 +45,7 @@ docker compose logs --tail 200 zigbee2mqtt | grep "MQTT publish" | grep -v bridg
 
 The topic in those lines is what your Device ID Topic and Device ID need to match against.
 
-## Phase 4 — The Mapping tab shows values, but the Logs tab stays empty
-
+## Why does the Logs tab stay empty?
 **Symptoms:** Open a registered device, the Mapping tab shows live values and Last update timestamps, but the Logs tab stays empty even after toggling the device. The most common cause of "is this thing broken?"
 
 The two tabs show different information:
@@ -71,8 +65,7 @@ Z2M sends a `/set` command, the device confirms the new state, and Z2M publishes
 
 Alternatively, you can poll the device with a `/get` request via `mosquitto_pub` — useful when the device doesn't have a controllable state (a temperature sensor, for example).
 
-## Phase 5 — physical wall-switch toggles don't generate publishes
-
+## Why don't wall-switch toggles publish messages?
 **Symptoms:** You toggle the wall switch for a Zigbee bulb. The light comes on. The Logs tab still shows nothing.
 
 Many Zigbee CCT bulbs (the Paulmann 50064 confirmed; many other brands behave the same) **don't send an MQTT publish on a physical power-cycle**. The bulb's firmware only reports state changes that came in over Zigbee — not changes caused by the wall switch.
@@ -85,8 +78,7 @@ Actions that **do** generate a publish:
 | `mosquitto_pub` to `{base_topic}/{friendlyName}/get` with `{"state":""}` payload | Forces Z2M to poll the bulb for current state and publish what it reads back. Useful for non-controllable devices and for forcing a publish on demand. Local Z2M-side verification, not a Chirp control path. |
 | Wait for the device's next scheduled report | Battery sensors typically wake on a schedule (every 5 minutes, every hour, etc.). Mains-powered bulbs without state-change reporting won't publish unless commanded. |
 
-## Forcing Z2M to publish: the `/get` command
-
+## How do I force Zigbee2MQTT to publish?
 The `/get` request is the tool of last resort when you need a current-state publish from a device that won't generate one on its own. Send a JSON payload with empty strings as values for the keys you want the bulb to report:
 
 ```bash
@@ -100,14 +92,13 @@ docker run --rm eclipse-mosquitto:2 mosquitto_pub \
   -m '{"state":"","brightness":"","color_temp":""}'
 ```
 
-(Use your actual Cloud MQTT credentials and connection prefix. For External MQTT, replace the broker host/port/auth with your local broker's settings, and use `zigbee2mqtt/{friendlyName}/get` as the topic with no prefix.)
+(Use your actual Cloud MQTT credentials and connection prefix.)
 
 Z2M sends ZCL read requests to the bulb and publishes one or more responses with the current state. One `/get` can produce 2–4 publishes back as Z2M polls different attribute clusters in sequence — that's normal.
 
 This is local Z2M-side verification — it generates a publish that Chirp consumes. It's not a Chirp API control surface.
 
-## When a Zigbee device won't pair at all
-
+## What if a Zigbee device won't pair?
 Pairing failures are entirely a Z2M / coordinator / device problem — Chirp isn't involved. The usual culprits:
 
 - **Permit join is closed.** The 180-second window has expired. Click Permit join again in the Z2M web UI.
@@ -117,8 +108,7 @@ Pairing failures are entirely a Z2M / coordinator / device problem — Chirp isn
 
 For the Paulmann 50064 specifically, see the [tested device guide](../../devices/tested-device-guides/zigbee/paulmann-50064-light-bulb.md) — the 5×-cycle-then-stop procedure is documented there with the timing details.
 
-## Resetting Cloud MQTT credentials
-
+## How do I reset Cloud MQTT credentials?
 If the Cloud MQTT password is lost or compromised:
 
 1. Open the connector in Chirp.
@@ -132,9 +122,7 @@ The username and Topic prefix don't change on rotation.
 ## Where to go next
 
 - Back to [Topics and device routing](topics-and-device-routing.md) — to confirm the Device ID Topic pattern and friendly-name rules.
-- [External MQTT](external-mqtt.md) — for broker-side issues with self-hosted brokers.
 - [Setting up Zigbee2MQTT](zigbee2mqtt.md) — to recheck the Z2M install.
 
-## Rejected measurement values
-
+## Why are some measurement values rejected?
 If incoming fields update but one measurement has no fresh history, compare its template Type with the actual payload. `"ON"`/`"OFF"` need String; Boolean accepts actual booleans and supported true/false or 0/1 forms. Incompatible values are rejected individually, not stored as nulls. See [Connection Diagnostics](../../devices/connection-diagnostics.md).

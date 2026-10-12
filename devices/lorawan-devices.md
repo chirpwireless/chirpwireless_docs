@@ -2,20 +2,17 @@
 description: "Connect LoRaWAN sensors to Chirp digital twins: device profiles, keys, decoding, measurement mapping, commands and replacement."
 ---
 
-# LoRaWAN Devices
-
+# How do I connect a LoRaWAN device to Chirp?
 LoRaWAN sensors talk by radio: they transmit tiny readings, a nearby gateway picks them up, and Chirp's LNS connector, with its built-in LoRaWAN Network Server, takes it from there. The sensor is only the source of the numbers. Everything you actually look at in dashboards and automations lives on its **digital twin**: the name, the measurement channels and the retained history.
 
 Picture a **Garden Soil** device. Swap the soil-moisture probe next spring and the readings you rely on for watering decisions stay put. Pick this connection when your hardware speaks LoRaWAN; sensors that use Wi-Fi or Zigbee go through a different route.
 
-## Before you start
-
+## What do I need before I connect a LoRaWAN device?
 - Set up the [LNS connector](../connectors/lns-connector/README.md) and make sure a connected [LoRaWAN gateway](../gateways/lorawan-gateways/README.md) covers the spot where the sensor will sit. Installing the gateway and activating the network are separate jobs from registering the sensor.
 - Collect these from the manufacturer: the sensor's **Device EUI**, its **AppKey**, the model, the frequency band, the class, and a payload codec that fits the model. The band has to suit both the hardware and your gateway; [LoRaWAN Frequencies](../connectors/lns-connector/lorawan-frequencies.md) lists the options.
 - Your account needs permission to create and edit devices, and your plan needs room for one more twin. Users with read-only access can look at the configuration but cannot save.
 
-## Connect the sensor to its digital twin
-
+## How do I connect the sensor to its digital twin?
 1. Go to **Devices → Add device**, or press **Add device** on the LNS connector's row.
 2. Type a **Device name** such as **Garden Soil**, add photos if you like, and click **Save**. That creates the digital record before any hardware is attached. [Shared registration steps](adding-sensors.md) cover profile and Application settings.
 3. Switch to **Connection** and pick your LNS connection under **Connector type**.
@@ -53,20 +50,17 @@ A **device profile** carries the radio settings plus a **codec**, a piece of Jav
 
 Always take the codec made for the exact model and payload format. The **Code functions** editor may also hold the codec's downlink encoder; the [custom encoder](commands/creating-commands.md) section of the command guide explains when a command relies on it and when it brings its own.
 
-## Map the readings you need
-
+## How do I map the readings I need?
 Say a probe decodes into `temperature` and `battery`. Go to **Mapping**, click **Add key**, pick a **Normalized key** template, then choose the matching **Device data key**. For decimal temperatures, take a template with the right unit and the Float type. Save your assignments and wait for a fresh uplink.
 
 A template fixes the meaning, the unit and the value type; choosing °C does not convert a reading that is in Fahrenheit. The **Value** and **Last update** columns help you recognize an incoming field, and **Logs** shows the retained measurements once mapping is done. [Mapping controls](sensor-details.md#metrics), [metric templates](data-templates.md) and [payload interpretation](what-your-device-is-sending.md) cover every field and the conversion rules.
 
-## Commands and ongoing operation
-
+## How do commands and ongoing operation work for LoRaWAN devices?
 Once the physical binding is saved, devices that support it get a **Commands & States** area. Press **Add new command** to define an action the hardware can carry out. On LoRaWAN, a command needs an **fPort** and an encoded payload; the **Confirmed downlink** switch decides whether the radio acknowledges it, and the verification settings then check what the device reports back. Details are in [Creating Commands](commands/creating-commands.md) and [verification](commands/verification.md).
 
 With **Garden Soil**, the readings you mapped can drive a chart and an alarm at the same time. When the probe has to be replaced, keep the twin and its measurement rows and connect the new probe's decoded fields to them. Retained history stays available for as long as your plan's retention period allows.
 
-## If readings do not arrive
-
+## Why don't readings arrive from my LoRaWAN device?
 | What you see | What to check |
 | --- | --- |
 | Save fails | Whether every required identity and profile field is filled, whether you may edit devices, whether your plan allows it, and whether another device already uses the identifier. |

@@ -2,30 +2,26 @@
 description: Register a LoRaWAN, tracker, MQTT or pretend sensor in Chirp and map its readings, step by step.
 ---
 
-# Adding Sensors
-
+# How do I add a sensor in Chirp?
 Adding a device creates its **digital twin**—the record Chirp uses to keep its name, settings, and readings together. Give it a name for what you want to follow, such as **Family Car** or **Living Room Temperature**, then connect the tracker or sensor that supplies its data.
 
 You can save this record before the hardware is connected. The [Emulator](pretend-sensors.md) can supply generated readings while you prepare your dashboard and automations.
 
-Replacing a broken tracker or sensor is a different task: open its existing digital device so you keep its recorded measurements. See [Sensor Details](sensor-details.md#replace-your-cars-tracker).
+Replacing a broken tracker or sensor is a different task: open its existing digital device so you keep its recorded measurements. See [Sensor Details](sensor-details.md#how-do-i-replace-my-cars-tracker).
 
-## Before you start
-
+## What do I need before I add a sensor?
 You'll need:
-- **A connection** set up — an LNS connection for LoRaWAN sensors, a Tracker connection for vehicle trackers, an MQTT connector (Cloud or External) for Zigbee2MQTT and other MQTT-publishing hardware, or an Emulator connection if your sensor hasn't arrived yet. See [Setting Up a Connection](../connectors/setting-up-a-connection.md) and the [MQTT Connector](../connectors/mqtt-connector.md) docs.
+- **A connection** set up — an LNS connection for LoRaWAN sensors, a Tracker connection for vehicle trackers, a Cloud MQTT connector for Zigbee2MQTT and other MQTT-publishing hardware, or an Emulator connection if your sensor hasn't arrived yet. See [Setting Up a Connection](../connectors/setting-up-a-connection.md) and the [MQTT Connector](../connectors/mqtt-connector.md) docs.
 - **Your sensor's identifiers** — for LoRaWAN sensors: the **Device EUI** and **AppKey**, usually printed on the sensor or its packaging. For trackers: the **Unique ID** from the manufacturer. For MQTT sensors: the **device-level topic identifier** that the device publishes under — for Zigbee2MQTT this is the friendly name. The Device ID field in Chirp must match it exactly, including case and spaces. A [pretend sensor](pretend-sensors.md) needs none of this — you choose its Device ID yourself, within the naming rules on that page.
 - **For MQTT sensors only — the device must be publishing before you can finish mapping.** The Device data key dropdown in the Mapping tab is populated from payload keys actually received from the device. See the [MQTT-specific note](#a-note-for-mqtt-sensors) further down for the two-pass save flow.
 
-## Where to add a sensor
-
+## Where do I add a sensor?
 There are several ways to start — they all open the same registration page:
 
 - **Devices in the sidebar** — Click **Devices**, then click **Add device** in the top-right corner.
 - **From a connection** — Open your LNS or Tracker connection, then click the **+** (Add device) button on the connection row, or open the connection and click **Add device** in the Connected Devices tab.
 
-## Step 1 — Create the sensor profile
-
+## How do I create the sensor profile?
 The page opens in Add mode, showing only the basic sensor info. No tabs or navigation are visible yet.
 
 - **Device photos** — Snap a picture of the sensor so you can easily identify it later. Helpful when you have several similar-looking sensors.
@@ -35,8 +31,7 @@ Enter a name for your sensor and click **Save**. The profile is created and the 
 
 For a car, use **Family Car** as the name and enter the tracker's hardware identifier in **Connection**. That way you can recognize the same car in Chirp after fitting another tracker.
 
-## Step 2 — Configure the connection and details
-
+## How do I configure the connection and details?
 After the first save, the page shows with **Device info**, **Connection**, **Mapping** and **Logs** tabs, and a **Next** button for navigating between them. Two more appear when they apply: **Commands & States** on a device you can switch on and off, and **Emulator** on a pretend sensor.
 
 ### Connection
@@ -65,7 +60,7 @@ Enter the physical sensor's reporting schedule: a positive whole number and minu
 3. Select a **Device model** by searching the tracker library.
 4. A **Url for GPS tracker** panel appears — copy this URL and configure your tracker to send data to it.
 
-**For MQTT sensors (Cloud or External MQTT):** Follow [MQTT Devices](mqtt-devices.md) to save the connection and topic routing, receive a message, then map its readings. Device ID must match the publisher's identifier, including case and spaces.
+**For MQTT sensors (Cloud MQTT):** Follow [MQTT Devices](mqtt-devices.md) to save the connection and topic routing, receive a message, then map its readings. Device ID must match the publisher's identifier, including case and spaces.
 
 
 **For pretend sensors (Emulator connection):**
@@ -80,7 +75,7 @@ Chirp then invents the readings for you, and an extra **Emulator** tab appears s
 
 Every column of the mapping table, creating a metric on the spot, and what happens right away when you change or remove a template are explained under [mapping controls](sensor-details.md#metrics).
 
-Click the **Mapping** tab to map your sensor's raw data to measurement definitions. A profile supplies the network configuration and codec. Assign measurement templates and connector keys here after the source has reported, or return later to finish mapping.
+Click the **Mapping** tab to map your sensor's raw data to measurement definitions. A profile supplies the network configuration and codec. Assign measurement templates and device data keys here after the source has reported, or return later to finish mapping.
 
 #### See what your sensor is sending
 
@@ -108,7 +103,7 @@ A library preset is optional for getting measurements flowing. What the device c
 
 #### A note for MQTT sensors
 
-The **Device data key** dropdown fills after messages arrive. Save the connection first, let the sensor publish, then select the received keys for your measurements and save. Wait for another message to see stored history. See [MQTT Devices](mqtt-devices.md#map-messages-to-retained-measurements).
+The **Device data key** dropdown fills after messages arrive. Save the connection first, let the sensor publish, then select the received keys for your measurements and save. Wait for another message to see stored history. See [MQTT Devices](mqtt-devices.md#how-do-i-map-mqtt-messages-to-measurements).
 
 ### Logs
 
@@ -118,13 +113,12 @@ Click **Save** again to persist the connection and metrics configuration.
 
 A disabled **Save** can mean a missing name, no permission to edit devices, or a subscription restriction. Adding another device also needs an available device slot.
 
-## After saving
-
+## What happens after I save a sensor?
 Your sensor's profile appears in the sensor lists throughout Chirp.
 
 For LoRaWAN sensors, data starts flowing once the sensor powers on and connects to your gateway. For trackers, data flows once the physical device starts reporting to the URL you configured.
 
-Worth knowing about that LoRaWAN connection: registering the sensor here sets Chirp up to recognize it, but the sensor still has to *join* the network itself before it sends anything. A sensor straight out of the box does that on its own the moment you power it up. A sensor with a past life — second-hand, inherited with the house, or previously set up on something else — is still joined to that old network and needs a reset before it will join yours. See [First things first: joining the network](connection-diagnostics.md#first-things-first-joining-the-network).
+Worth knowing about that LoRaWAN connection: registering the sensor here sets Chirp up to recognize it, but the sensor still has to *join* the network itself before it sends anything. A sensor straight out of the box does that on its own the moment you power it up. A sensor with a past life — second-hand, inherited with the house, or previously set up on something else — is still joined to that old network and needs a reset before it will join yours. See [First things first: joining the network](connection-diagnostics.md#how-do-i-check-that-my-sensor-joined-the-network).
 
 **Saved everything and still seeing no readings?** Don't start pulling batteries out. Open the sensor's **Connection** tab — Chirp will tell you exactly where the data has stopped and what to do about it. See [Connection Diagnostics](connection-diagnostics.md).
 
@@ -136,6 +130,5 @@ The device page adapts to a phone screen, so you can enter its details while ins
 - **View and edit your sensor** anytime. See [Sensor Details](sensor-details.md).
 - **Nothing showing up?** See [Connection Diagnostics](connection-diagnostics.md).
 
-## Check a key without leaving it exposed
-
+## How do I check a key without exposing it?
 While entering an **AppKey**, you can see what you type. Click outside the field or press Enter to hide it again. The eye button lets you reveal it when needed; a key filled from a QR code stays hidden. Close the visible-key state before sharing a screenshot.

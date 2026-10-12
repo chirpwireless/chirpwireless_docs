@@ -2,8 +2,7 @@
 description: Every automation node — Gateway, Script Task, Set Alarm, Execute Command, Enrichment — its fields and runtime behavior.
 ---
 
-# Automation Node Guide
-
+# What does each automation node do?
 A **node** is a step on Chirp's automation canvas, such as checking a value or raising an alert. The arrows between nodes are **flows**: follow them to see the order of steps and which branch a decision can take.
 
 Use this guide while [editing an automation](visual-editor.md) to choose the right step and fill in its settings. An alarm step needs a saved alarm definition, and a command step needs a command already configured on the device. Calculating a value, fetching a reading, and choosing a path are separate jobs with separate node types.
@@ -12,8 +11,7 @@ Each properties panel has **Save** and **Cancel** buttons. Click **Save** to app
 
 ---
 
-## Start Event
-
+## What is the Start Event node?
 The entry point of your automation. Every automation has exactly one Start Event, placed automatically when you create it. It can start from one sensor's readings or from a trigger that watches a condition across one or more sensors.
 
 ### Properties panel
@@ -64,8 +62,7 @@ A soil moisture sensor in your garden triggers the automation. `vars.value` cont
 
 ---
 
-## End Event
-
+## What is the End Event node?
 Marks the end of an automation path. Every branch of your automation must eventually reach an End Event — if a path has no End Event, the build will fail.
 
 ### Properties panel
@@ -82,8 +79,7 @@ The automation run finishes for this path.
 
 ---
 
-## Script Task
-
+## What is the Script Task node?
 Runs a [CEL expression](cel-for-home-automations.md) to compute new values. Use Script Tasks when you need to classify a reading, calculate a derived value, or prepare data for downstream nodes.
 
 ### Properties panel
@@ -116,8 +112,7 @@ Downstream, a gateway checks `vars.comfort` to decide whether to send an alert.
 
 ---
 
-## Exclusive Gateway
-
+## What is the Exclusive Gateway node?
 A decision point that checks conditions and picks exactly one path to follow. Think of it as a fork in the road — the automation reads the conditions from top to bottom and takes the first path that matches.
 
 ### Properties panel
@@ -154,7 +149,7 @@ Flows can be **reordered by dragging** — this changes the evaluation order. If
 
 Always include a default flow so your automation has somewhere to go even when readings are normal.
 
-The default flow covers "none of these matched". It does not cover a condition that can't be worked out at all — if one mentions a variable the automation hasn't got, or comes back as something other than true or false, the gateway stops there and nothing further along that path runs. In a debug session you'll see a red ring on the gateway; see [Debugging Automations](debugging-automations.md#what-the-rings-and-dots-mean).
+The default flow covers "none of these matched". It does not cover a condition that can't be worked out at all — if one mentions a variable the automation hasn't got, or comes back as something other than true or false, the gateway stops there and nothing further along that path runs. In a debug session you'll see a red ring on the gateway; see [Debugging Automations](debugging-automations.md#what-do-the-rings-and-dots-mean).
 
 A gateway also has to do one job or the other: two or more paths leading out of it (a decision), or two or more coming in (paths joining back up). One in and one out doesn't decide anything, and the build turns it down — join those two nodes directly instead.
 
@@ -176,8 +171,7 @@ A temperature sensor reports 28 degrees. The gateway has three flows:
 
 ---
 
-## Set Alarm
-
+## What is the Set Alarm node?
 Triggers an alarm notification when the automation reaches this node. The alarm itself is defined on the [Alarm page](../../alarm/README.md) — this node selects which alarm to fire and provides the notification message.
 
 ### Properties panel
@@ -209,8 +203,7 @@ Everyone in the household who subscribed to that alarm receives a notification.
 
 ---
 
-## Execute Command
-
+## What is the Execute Command node?
 Sends a command to a device when the automation reaches this node — the step that lets an automation *act* on your home, not just warn you. It runs one of a device's existing [commands](../../devices/commands/) (turn on, set brightness, change temperature) all by itself.
 
 For the full walkthrough and examples, see [When an Automation Runs a Command](automation-runs-a-command.md). This entry covers the fields.
@@ -242,8 +235,7 @@ Your basement humidity sensor triggers the automation. A gateway routes any read
 
 ---
 
-## Enrichment
-
+## What is the Enrichment node?
 Fetches the latest reading from a **different** sensor and stores it as a variable. This lets your automation compare data from multiple sensors — for example, checking indoor temperature against an outdoor sensor.
 
 ### Properties panel
@@ -283,8 +275,7 @@ Your living room temperature sensor triggers the automation. An Enrichment node 
 
 ---
 
-## Boundary Error Event
-
+## What is the Boundary Error Event node?
 An error handler that attaches to a task node (Script Task, Set Alarm, or Enrichment). If the parent node fails for any reason, the automation routes through the Boundary Error Event's outgoing flow instead of stopping silently.
 
 ### How to add one
@@ -327,6 +318,5 @@ Your automation enriches living room data with a reading from the garden sensor.
 
 Without the Boundary Error Event, the automation would quietly stop and you would never know the garden sensor went dark.
 
-## Camera motion as a starting reading
-
+## Can camera motion start an automation?
 A connected Lens camera can start a rule with its motion reading. Select its motion sensor under **Sensor readings** and route true readings to the action you want. See [Camera Rules and Alerts](../../lens/camera-rules-and-alerts.md).

@@ -39,7 +39,7 @@ The plan comparison shows the limits for each tier across:
 
 Your plan's retention period controls how far back you can access device readings. Check the current plan comparison for the period included in your tier.
 
-Replacing your car's tracker or a sensor at home does not start a new retention period. Keep the existing digital device and reconnect the replacement to its measurements, and the readings already stored remain available within that period. See [Sensor Details](../devices/sensor-details.md#replace-your-cars-tracker).
+Replacing your car's tracker or a sensor at home does not start a new retention period. Keep the existing digital device and reconnect the replacement to its measurements, and the readings already stored remain available within that period. See [Sensor Details](../devices/sensor-details.md#how-do-i-replace-my-cars-tracker).
 
 If you need to keep readings for longer, use **Contact support** to discuss extended retention and suitable terms. Agree the period you need before relying on it; a longer arrangement does not by itself restore readings that have already expired. Commercial operations with compliance requirements can discuss their needs with the Kilo team through the [Kilo retention guide](https://docs.kiloiot.io/kilo-iot-server/settings/subscription#data-retention).
 

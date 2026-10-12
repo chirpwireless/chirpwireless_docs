@@ -2,20 +2,17 @@
 description: Drop furniture and objects into your 3D home, turn them as you place, and adjust position, scale, and rotation.
 ---
 
-# Placing Objects
-
+# How do I place objects in the building model?
 Walls give you rooms; objects make those rooms feel like *your* home. The sofa in the living room, the bed in the bedroom, the car on the driveway. And objects are more than decoration — they're what most of your sensors connect to. A sensor reads "the door is open," and the garage door you placed swings into red.
 
 The editor comes with a library of more than 60 ready-made 3D objects. This page is about placing them; the full list is in the [Object library](object-catalog.md).
 
-## Opening the library
-
+## How do I open the object library?
 1. On the bottom toolbar, click **Furnish**.
 2. A row of five tabs appears — **Furniture**, **Appliance**, **Kitchen**, **Bathroom**, **Outdoor** — above a scrollable strip of object pictures.
 3. Click a tab to load that category, and scroll the strip to see what's there.
 
-## Placing an object
-
+## How do I place an object?
 1. With **Furnish** open, click an object's picture in the strip to pick it up.
 2. Move your cursor into the model — an outline of the object follows it around.
 3. Click where you want it. The object drops into place.
@@ -32,8 +29,7 @@ For objects that sit on the floor, press **R** or **T** while you're placing to 
 
 Some objects belong on a wall, not the floor — a wall-mounted TV, a wall AC unit, a shelf, a wall sink. When you place one of these, it sticks to whatever wall your cursor is over and turns to face into the room. Slide your cursor up or down the wall to set how high it sits.
 
-## Adjusting an object afterwards
-
+## How do I adjust an object after placing it?
 Switch to **Select** and click an object to open its settings:
 
 * **Name** — rename it so it's easy to spot in the Scene panel and when you connect sensors.
@@ -46,12 +42,10 @@ The selected object also gets a little badge above it with quick **Move**, **Dup
 
 <figure><img src="../../../.gitbook/assets/chirp-dbt-2d-move-duplicate.jpg" alt="The editor in 2D view with a sofa selected: the badge above it offers Move, Duplicate and Delete, and the properties panel shows Name, Position, Rotation, Scale, Dimensions and the Duplicate and Delete buttons"><figcaption><p>A selected object in the 2D view.</p></figcaption></figure>
 
-## Parking spots
-
+## How do I add parking spots?
 The **Parking Spot** object (in the **Outdoor** tab) has one bonus setting: a **Spot #** field. If you've got assigned parking, give the spot its number and it shows right on the spot in the model. When you duplicate a numbered spot, the number ticks up automatically — handy if you're laying out a whole row. A parking spot is the perfect partner for an occupancy sensor — see [Connecting sensors and colors](binding-sensors-and-colors.md).
 
-## Tips
-
+## What are good habits for placing objects?
 * Place the objects that will have sensors first — the doors, the garage, the parking spot, the appliances you watch — then add other furniture if you'd like the model to feel more complete.
 * Use **Duplicate** with the grid snap to fill a room quickly.
 * Rename objects as you place them. "Garage door" is much easier to connect a sensor to than "Gate 2."

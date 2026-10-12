@@ -10,7 +10,7 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.11.0.jpg" alt="Chirp 3.11.0 release banner"><figcaption></figcaption></figure>
 
-This is our largest release so far, and it changes how a smart home gets started. **Ready-made solutions** hand you a finished setup with practice sensors, working automations, an alert, and a live dashboard, so you see it run before you spend anything on hardware. **Lens** adds the cameras you already own to Chirp and can now store a backup of their recordings in your own cloud account. Grok in your Tesla can now answer questions about your home, and external MQTT, the Digital Building Twin, and the Key Vault all gained new abilities.
+This is our largest release so far, and it changes how a smart home gets started. **Ready-made solutions** hand you a finished setup with practice sensors, working automations, an alert, and a live dashboard, so you see it run before you spend anything on hardware. **Lens** adds the cameras you already own to Chirp and can now store a backup of their recordings in your own cloud account. Grok in your Tesla can now answer questions about your home, and the Digital Building Twin and the Key Vault gained new abilities.
 
 ***
 
@@ -20,7 +20,6 @@ This is our largest release so far, and it changes how a smart home gets started
 * **Lens: your cameras join your smart home** — Connect compatible RTSP cameras of any brand, view them side by side, mark the areas where motion matters, and let that motion start automations and alerts.
 * **Cloud backup for camera recordings** — Keep an extra, encrypted copy of your recordings in your own Amazon S3, Google Cloud, or Walrus account and play it back from Chirp.
 * **Talk to your home from your Tesla** — Ask Grok whether the iron is on, switch its smart plug off, or hear a room's temperature and your open alerts.
-* **External MQTT gets encryption and topic selection** — Secure the link to another MQTT broker and still sign in with a password, pick the protocol version, and subscribe only to the topics you care about.
 * **Digital Building Twin: move, duplicate, import** — Rearrange a floor plan in 2D, bring in a DXF drawing (beta), and open your dashboard at the camera angle you saved.
 * **Key Vault eye toggle** — Peek at one saved key at a time instead of keeping them all visible.
 * **Smaller improvements** — Edit existing metrics, find any device in long lists, watch sensor status refresh on its own, and read plain error messages in the automation debugger and command builder.
@@ -83,16 +82,6 @@ You are miles away and cannot remember switching off the iron. If it sits on a c
 <figure><img src="../.gitbook/assets/tesla-grok-hands-free-hero.avif" alt="Grok voice interface open on the touchscreen inside a Tesla"><figcaption><p>Asking about a Chirp home through Grok in a car.</p></figcaption></figure>
 
 [→ Use Chirp from your Tesla](../ai-assistant/tesla-grok.md)
-
-***
-
-**External MQTT gets encryption and topic selection**
-
-The form for another MQTT broker now has a **Transport** section. Switch on **Encrypt the connection (TLS)** alongside a username and password, fill in the server name, choose the MQTT version, and list only the topics you want instead of the entire broker. Topics no longer have to contain `{{value}}`; when it is absent, Chirp takes the value from the message itself. A brief outage on the broker's side heals without your help.
-
-<figure><img src="../.gitbook/assets/chirp-mqtt-external-form-tls.jpg" alt="The Add external MQTT connector form with encryption switched on"><figcaption><p>The Transport controls of the connector form.</p></figcaption></figure>
-
-[→ External MQTT](../connectors/mqtt/external-mqtt.md)
 
 ***
 

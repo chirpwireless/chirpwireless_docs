@@ -2,8 +2,7 @@
 description: "Set up an Amazon S3, Google Cloud Storage, or Walrus storage connector for Chirp Lens recordings, with every form field explained."
 ---
 
-# Set Up a Lens Storage Connector
-
+# How to Set Up a Lens Storage Connector
 A **storage connector** is the saved connection between Chirp Lens and the cloud account that holds your backed-up clips. If you want the overview first, read [Back Up Home Camera Recordings to the Cloud](cloud-archive.md).
 
 ## Where do I add a connector?

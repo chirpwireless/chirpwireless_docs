@@ -65,7 +65,6 @@
   * [MQTT Connector](connectors/mqtt-connector.md)
     * [What MQTT is](connectors/mqtt/what-is-mqtt.md)
     * [Cloud MQTT](connectors/mqtt/cloud-mqtt.md)
-    * [External MQTT](connectors/mqtt/external-mqtt.md)
     * [Topics and Device Routing](connectors/mqtt/topics-and-device-routing.md)
     * [Setting up Zigbee2MQTT](connectors/mqtt/zigbee2mqtt.md)
     * [Troubleshooting](connectors/mqtt/troubleshooting.md)

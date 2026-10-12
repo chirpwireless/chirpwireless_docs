@@ -2,24 +2,21 @@
 description: Show a reading as a filling ring with the number in the middle — perfect for a tank, battery, or humidity level.
 ---
 
-# Doughnut Display
-
+# How do I show a reading as a doughnut chart?
 The Doughnut display shows a reading as a ring that fills up between a low and a high value you choose, with the number in the middle. One look tells you how full something is — you don't have to read the figure to know it's nearly empty or almost maxed out.
 
 It's a great fit for anything with a sensible range — a water tank, a battery, a humidity level. As the reading climbs, more of the ring fills in.
 
 <figure><img src="../../../.gitbook/assets/last-data-doughnut.jpg" alt="Last Data widget using the Doughnut display type"><figcaption></figcaption></figure>
 
-## When to choose it
-
+## When should I choose the doughnut display?
 - A reading with a clear low and high — water-tank level, battery percentage, room humidity.
 - A tile where you just want to sense "getting full" or "getting low" at a glance.
 - A value that feels like a proportion of something rather than a bare number.
 
 Anything in your home that has a meaningful "empty" and "full" can become a Doughnut — your own sensors will suggest plenty of uses.
 
-## Configure a Doughnut display
-
+## How do I configure a doughnut display?
 Let's build a real one — a ring that shows the living-room temperature and whether it's comfortable. A temperature sensor reports the room in °C. A temperature isn't like a tank — it has no real "empty" or "full", so there's no obvious 0 and 100. The ring still needs a bottom and a top, so you pick a window wide enough to cover any temperature the room could realistically reach: for a house, about -5 °C to +40 °C. This is just an example: a Doughnut suits any reading you'd like to see as a share of a range, so only the sensor and the numbers change.
 
 1. Open your dashboard in edit mode and tap **Last data** in the widget picker. The **Datasource** tab opens with nothing added yet.
@@ -47,8 +44,7 @@ Let's build a real one — a ring that shows the living-room temperature and whe
 
 The ring shows the temperature as a spot in the range and goes green only while the room is comfortable. The same steps fit anything with a sensible low and high — just change the sensor, the **Min value**/**Max value**, and the conditions. One honest note: a temperature is often easier to read on a Number tile or a Gauge — the Doughnut is shown here because it makes the next example easy to see.
 
-## Worked examples
-
+## What are some doughnut display examples?
 **The same sensor, set up completely differently — the fridge**
 Your fridge uses the very same kind of temperature sensor as the living room above — but a comfortable fridge and a comfortable room are nothing alike. A fridge stays cold, so its safe range is only about 0–5 °C — set the scale a little wider than that band so a fridge that fails and warms up still shows on the ring: **Min value** **-5**, **Max value** **15**. Add three conditions to match: "Too cold" covers From -5 to To 0 and is blue; "Safe" covers From 0 to To 5 in green; "Too warm" covers From 5 to To 15 in red. Same sensor, same steps — only the numbers move, because you decide what "good" means for each spot in your home. That's the whole idea behind conditions.
 

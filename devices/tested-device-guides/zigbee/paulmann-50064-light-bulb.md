@@ -2,16 +2,14 @@
 description: Pair, register, and map the Paulmann 50064 tunable-white Zigbee bulb in Chirp, with all the quirks.
 ---
 
-# Paulmann 50064 light bulb
-
+# How do I connect a Paulmann 50064 light bulb to Chirp?
 This is a hardware-specific walkthrough for the **Paulmann SmartHome LED spot, model 50064** — a Zigbee 3.0 CCT (tunable-white) bulb we tested end-to-end with Zigbee2MQTT and Chirp's MQTT connector. If you have this exact bulb, follow these steps to pair it, register it in Chirp, and map its readings.
 
 If you have a **different Zigbee bulb or device**, you don't need this page — the generic flow applies. Pair the device through Z2M following your manufacturer's instructions, then [register it in Chirp](../../../connectors/mqtt/topics-and-device-routing.md) the same way as any other Z2M-bridged device. The Paulmann 50064 happens to be the bulb we had in hand for the testing — the procedure transfers cleanly to other Zigbee devices.
 
 The [Zigbee2MQTT model reference](https://www.zigbee2mqtt.io/devices/50064.html) documents its supported controls and payload ranges. The pairing notes below describe the setup used for this guide.
 
-## What this bulb is
-
+## What is the Paulmann 50064 light bulb?
 - **Type:** CCT (correlated color temperature) tunable-white LED. Adjusts brightness and color temperature, but not color (no RGB).
 - **Color temperature range:** 150–500 mired (about 6667K daylight to 2000K candle-warm).
 - **Power:** mains-powered; confirm the fitting and electrical rating on your unit before installation.
@@ -24,14 +22,12 @@ What works:
 
 Behavioral quirk to know up front: **physical wall-switch toggles do not generate MQTT publishes** on this bulb. The bulb's firmware only reports state changes that arrived over Zigbee, not changes caused by mains power-cycling. If you flip a wall switch and then check the Logs tab, expect to see nothing new — that's the bulb's design, not a Chirp or Z2M bug. To verify state in Chirp during setup, drag the brightness slider in the Z2M web UI or send a `/get` poll. See [Troubleshooting](../../../connectors/mqtt/troubleshooting.md) for the full list of "what counts as a publish."
 
-## Prerequisites
-
+## What do I need for the Paulmann 50064?
 - Z2M is installed and running. If not, follow [Setting up Zigbee2MQTT](../../../connectors/mqtt/zigbee2mqtt.md) and the [Sonoff ZBDongle-E coordinator walkthrough](../../../gateways/zigbee2mqtt-hubs/sonoff-zbdongle-e-coordinator.md) (or the equivalent for your coordinator) before continuing here.
 - The bulb is screwed in and the wall switch is in the **on** position. It's powered, even if it's currently lit on factory-default settings.
 - The bulb is within ~2 meters of the coordinator for initial pairing. After joining, you can move it anywhere — Zigbee mesh routing handles range.
 
-## Pairing
-
+## How do I pair the Paulmann 50064 bulb?
 The Paulmann 50064 uses a 5-cycle reset pattern.
 
 1. **Open Permit join in Z2M first.** In the Z2M web UI at `http://localhost:8080`, click the green shield icon at the top labeled **Permit join (All)**. The Zigbee network is now open for 180 seconds.
@@ -50,8 +46,7 @@ If pairing doesn't happen within ~60 seconds:
 - Some Paulmann firmware revisions require 10 cycles instead of 5. Try 10 if 5 doesn't trigger the blink.
 - Move the bulb closer to the coordinator. 1–2 meters is the safest range for first pairing.
 
-## Renaming the device
-
+## How do I rename the Paulmann 50064 in Zigbee2MQTT?
 When the bulb pairs, its initial friendly name is its IEEE address. Rename it to something readable — that name will become the device-level MQTT topic Z2M publishes to AND the Device ID you'll use in Chirp.
 
 In the Z2M web UI:
@@ -62,14 +57,12 @@ In the Z2M web UI:
 
 The example friendly name we'll use in this page: **`TableLampLivingRoom`**.
 
-After renaming, Z2M publishes to:
+After renaming, Z2M publishes to a topic that starts with your Cloud MQTT connector's prefix:
 ```
-zigbee2mqtt/TableLampLivingRoom        (External MQTT)
-{Topic prefix}/zigbee2mqtt/TableLampLivingRoom   (Cloud MQTT)
+{Topic prefix}/zigbee2mqtt/TableLampLivingRoom
 ```
 
-## What the bulb publishes
-
+## What does the Paulmann 50064 publish?
 When the Paulmann 50064 sends a state update, the payload looks like this:
 
 ```json
@@ -114,8 +107,7 @@ When you map `color_temp` in Chirp, choose a numeric metric. The unit is mired (
 
 If this bulb replaces one already represented in Chirp, keep that digital device and reconnect its MQTT source and measurement mappings. Review any saved commands for the replacement model. The steps below describe a new registration; [Sensor Details](../../sensor-details.md#replacing-a-sensor-at-home) covers the replacement approach.
 
-## Registering the bulb in Chirp
-
+## How do I register the bulb in Chirp?
 Once Z2M is publishing to a topic Chirp can see (verify via the connector's **Last data received**), register the device:
 
 1. **Connectors → your MQTT connector → Add device.**
@@ -174,8 +166,7 @@ This three-pass progression — register the obvious fields first, fill in Devic
 
 After the three passes, the **Value** column on the Mapping tab populates with the bulb's current state across all six metrics. Generate one more publish (drag the Z2M slider) to confirm records arrive in the **Logs** tab — that's your end-to-end verification.
 
-## Things that look like problems but aren't
-
+## Which behaviors look like problems but aren't?
 - **Mapping tab Value column updates but Logs tab is empty.** Normal after Pass 2 if you saved Device data keys after the most recent publish. Generate a fresh publish from the Z2M web UI.
 - **`color_mode` always shows `"color_temp"`.** This bulb has no RGB capability. The field is always `color_temp` for CCT bulbs.
 - **`color_temp_startup` shows `65535` or `null`.** `65535` is the sentinel for "restore previous color temperature on power-on." `null` means it hasn't been configured and the bulb uses its firmware default. Set a specific number (150–500 mired) via `/set` if you want a fixed color on every cold power-on.

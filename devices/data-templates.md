@@ -2,18 +2,16 @@
 description: Create and manage the metrics that give readings from different home sensors consistent names, units, and data types in Chirp.
 ---
 
-# Data Templates
-
+# How do data templates work in Chirp?
 A data template tells Chirp what a sensor reading means and how to display it. In the interface, these definitions are called **metrics**.
 
-A metric carries two type settings, and they are not the same thing. **Data type** is about the kind of information (telemetry, device metadata or a custom attribute), while **Type** is about the shape of the stored value: Float, Integer, String or Boolean.
+A metric carries two type settings, and they are not the same thing. **Data type** is about the kind of information (telemetry or device metadata), while **Type** is about the shape of the stored value: Float, Integer, String or Boolean.
 
 For example, one temperature sensor may send `temp_c` while another sends `t`. Mapping both raw names to a metric called `temperature` lets your dashboards and automations use them in the same way.
 
 Most common sensors already have the metrics they need. Use this page when adding an unusual sensor, correcting a reading, or creating a measurement that does not exist yet.
 
-## Open your metrics
-
+## How do I open my metrics?
 Go to **Devices → Metrics**.
 
 The list shows every metric available in your current organization, including its normalized key, unit, value type, and data type.
@@ -25,15 +23,14 @@ Use the controls above the list to find a metric:
 - **Search** matches the normalized key, which is the standard name of the reading.
 - **All units** filters by unit and includes readings without a unit. Select the units and click **Apply**.
 - **All types** narrows the list to String, Integer, Float or Boolean metrics, and the list updates as soon as you choose.
-- **All data type** narrows the list to Telemetry, Device metadata or Custom attributes, again updating at once.
+- **All data type** narrows the list to Telemetry or Device metadata, again updating at once.
 - **Sort by** orders metrics by **Newest** or **Oldest**.
 
 The unit, type, and data-type filters accept several values at once.
 
 Metrics you created provide **Edit** and **Delete** actions. Metrics supplied by Chirp do not, because they are shared definitions used by standard sensor setups.
 
-## Add a metric
-
+## How do I add a metric?
 1. Go to **Devices → Metrics**.
 2. Click **Add metric**.
 3. Complete the four fields in the **Add Metric** dialog.
@@ -49,9 +46,8 @@ Choose what kind of information the metric represents:
 |---|---|---|
 | **Telemetry** | Readings that change over time | Temperature, humidity, battery level |
 | **Device metadata** | Information the sensor reports about itself | Firmware version, hardware revision |
-| **Custom attributes** | Information you add | Room name, installation date, next battery change |
 
-Use **Telemetry** for the readings you want in history, dashboards, and automations. The catalog also lists Device metadata and Custom attributes, but these categories cannot be selected for incoming telemetry. Creating such a template does not provide a working screen for storing your own notes or room assignments.
+Use **Telemetry** for the readings you want in history, dashboards, and automations. The catalog also lists Device metadata, but that category cannot be selected for incoming telemetry.
 
 ### Type
 
@@ -86,8 +82,7 @@ You never have to give a unit. A door is open or closed and a mode is just a wor
 
 Units are created, renamed, and deleted from this field. Units supplied by Chirp cannot be renamed or removed.
 
-## Edit a metric
-
+## How do I edit a metric?
 Metrics apply across the current organization, not to one sensor only. Editing a metric changes the definition for every sensor mapped to it.
 
 1. Find the metric under **Devices → Metrics**.
@@ -102,28 +97,24 @@ The one thing you can't switch while a sensor uses the metric is its **Data type
 
 If only one sensor needs a different definition, create a separate metric. Changing a row to that template replaces its measurement assignment, so use this for a new kind of reading rather than a hardware replacement that should keep the old history.
 
-## Delete a metric
-
+## How do I delete a metric?
 Click **Delete** on a metric you created and confirm the action.
 
 Chirp refuses to delete a metric that is still mapped to a sensor. Remove the mapping from every sensor that uses it, then try again.
 
-## Connect a sensor reading to the metric
-
+## How do I connect a sensor reading to a metric?
 Creating a metric does not connect it to a sensor automatically. Open the sensor's **Mapping** tab and map the raw key sent by the sensor to the normalized metric.
 
 Once different sensors map their temperature readings to `temperature`, the same chart or automation can work with all of them.
 
-## Keep familiar readings when hardware changes
-
+## How do I keep my readings when hardware changes?
 A data template gives a reading its meaning. The measurement attached to **Family Car** is the car's own record of that kind of reading. Another car can use the same template without sharing its history.
 
 After replacing a tracker, keep the existing latitude, longitude, and speed rows. In **Mapping**, connect the new tracker's fields to those rows instead of removing and recreating them. Their saved readings then remain attached to the same car.
 
-Check the units too. Giving a speed value a km/h label does not convert a value reported in another unit. The source or decoding step must provide the expected value. Follow [Replace your car's tracker](sensor-details.md#replace-your-cars-tracker) for the complete sequence.
+Check the units too. Giving a speed value a km/h label does not convert a value reported in another unit. The source or decoding step must provide the expected value. Follow [Replace your car's tracker](sensor-details.md#how-do-i-replace-my-cars-tracker) for the complete sequence.
 
-## Troubleshooting
-
+## Why isn't my metric receiving data?
 | Problem | What to check |
 |---|---|
 | A metric is missing from a chart or gauge-style Last Data display | Confirm its **Type** is Integer or Float and the sensor sends a numeric value. |

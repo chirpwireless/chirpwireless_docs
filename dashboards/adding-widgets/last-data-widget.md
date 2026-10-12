@@ -2,16 +2,14 @@
 description: Show the latest value from one or more sensors as a number, gauge, or ring — is the door open, how warm is the room?
 ---
 
-# Last Data Widget
-
+# How do I add a Last Data widget to a dashboard?
 Whatever a sensor reported most recently is what the Last Data widget displays: the **last value received**. When the device is actively reporting, that is also the current value. When the device goes offline after its last transmission, the widget continues showing that last value — it does not clear the display or flag that the device is silent. You see what the sensor last said, which is current if the device is still transmitting and may be stale if it is not.
 
 Is the bedroom light on or off? Is the front door open or closed? What is the living room temperature? These are Last Data questions. The widget shows the last transmitted value for each — no chart, no history, no trend. If you want to see how a value changed over time, that is the [Chart widget](chart-widget.md).
 
 You can display the latest value as-is — a number, text, or an on/off (`true`/`false`) reading — or as a ring gauge (Doughnut), a filled gauge (Pie), a Tube that fills up like a tank, a Gauge that slides a marker along a colored track, or a Radial Gauge that shows the reading on a round dial. One widget can hold multiple sensors — bedroom temperature, humidity, and CO2 level side by side, each styled independently. Conditions turn the raw number into visible meaning: green means everything is fine, red means look at this now.
 
-## Setting up a Last Data widget
-
+## How do I set up a Last Data widget?
 ### Step 1 — Choose Last Data from the widget picker
 
 Open dashboard edit mode and tap **Last data** in the widget picker. (See [Adding Widgets](README.md) for how to open edit mode.) The settings panel opens with two tabs: **Datasource** and **Appearance**.
@@ -78,16 +76,14 @@ Validation: Min must be strictly less than Max. If they are equal or reversed, t
 
 Tap **Save** to add the widget to the dashboard.
 
-## What to expect
-
+## What should I expect from a Last Data widget?
 Once placed, the widget immediately shows the last known value from each sensor. As sensors report new data, the display updates live.
 
 The value shown is the last one received. If a device has been offline or silent, the widget continues showing the last reading it got — it does not clear the display. Check the sensor's last-reported time on the device page before acting on a reading if the device might be offline.
 
 If a sensor hasn't reported yet, the widget shows **"Waiting for live data"** in the reading area. If no metrics have been configured, it shows **"Add a metric to start visualizing data"** or **"Choose data source and add metric"**.
 
-## Common patterns
-
+## What are common Last Data widget patterns?
 Almost every Last Data tile is one of a few simple ideas. Each display type has its own page with the full step-by-step and home examples — here is where to start.
 
 - **Is it on or off?** — a door, a light, a leak sensor. A plain [Value display](last-data-widget/number.md) with one color per state is all you need.

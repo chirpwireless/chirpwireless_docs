@@ -70,7 +70,7 @@ Acting doesn't mean you stop getting told. An automation can request that a valv
 | Act | Execute Command | Send "turn off" to the water shutoff |
 | Tell | Set Alarm | Raise a Critical alert explaining why the shutoff command was requested |
 
-A [Boundary Error Event](automation-node-guide.md#boundary-error-event) can route errors returned by the command step to an alert. Check the command's execution record for later delivery or verification results; moving to the next automation step does not prove the device changed state.
+A [Boundary Error Event](automation-node-guide.md#what-is-the-boundary-error-event-node) can route errors returned by the command step to an alert. Check the command's execution record for later delivery or verification results; moving to the next automation step does not prove the device changed state.
 
 ## A home example
 

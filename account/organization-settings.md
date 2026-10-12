@@ -2,24 +2,20 @@
 description: Rename your Chirp home or hand ownership to someone else, available only to the home owner.
 ---
 
-# Home Settings
-
+# How do I change my home settings in Chirp?
 Home Settings is where you rename your Chirp home and, if needed, hand ownership to someone else. Only the home owner sees this option.
 
-## Getting There
-
+## Where do I find home settings?
 Click your avatar or name in the bottom-left corner to open the user menu. If you are the owner, **Organization settings** appears in the menu. Click it to open the settings dialog.
 
 If you do not see this option, you are not the current owner.
 
 The dialog contains two fields — your home's name and the current owner — along with **Save changes** and **Close** buttons.
 
-## Renaming Your Home
-
+## How do I rename my home?
 Edit the **Organizations name** field in the dialog and click **Save changes**. The new name appears everywhere — in the user menu, member lists, and the Activity Log (under **Reports** > **Audit Trail**).
 
-## Transferring Ownership
-
+## How do I transfer ownership of my home?
 Ownership transfer is a two-step process: you initiate it, and the new owner must accept.
 
 ### Starting the Transfer

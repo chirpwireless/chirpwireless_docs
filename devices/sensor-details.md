@@ -2,32 +2,29 @@
 description: Replace a car tracker or home sensor while keeping its digital device, reconnect measurements, and review retained readings.
 ---
 
-# Sensor Details
-
+# What do I see on a sensor's details page?
 The detail view belongs to your device's digital twin: the lasting record of your car, home sensor, or controllable device. It brings together its name, connection, measurements, and retained readings. You can change the hardware supplying those readings without creating another digital device. See [Sensors](README.md) for an introduction to the digital twin concept.
 
-## Opening sensor details
-
+## How do I open a sensor's details?
 There are several ways to open a sensor's details:
 
 - **From Devices** — Click **Devices** in the sidebar, then click any sensor row to open its detail page.
 - **From a connection** — Open your LNS connection's **Connected Devices** tab, or open your Tracker connection's sensor list, and click a sensor row.
 - **Edit button** — Click the pencil icon on any sensor row to jump straight into editing.
 
-## Replace your car's tracker
-
+## How do I replace my car's tracker?
 Keep **Family Car** when a faulty GPS tracker is replaced. The car's record stays in Chirp; only the hardware sending its readings changes.
 
 Before starting, have the new tracker's identifier and model ready, and make sure you can edit devices. Note which measurements are already attached, especially latitude and longitude. Their existing rows are what connect the car to its stored readings.
 
 1. In **Devices**, open **Family Car** rather than adding a new device.
-2. Open **Connection** and click the X control labelled **Detach physical device** in the Tracker settings. This disconnects the old tracker immediately. It keeps Family Car and its measurements, but clears the old source mappings.
+2. Open **Connection** and click the X control labeled **Detach physical device** in the Tracker settings. This disconnects the old tracker immediately. It keeps Family Car and its measurements, but clears the old source mappings.
 3. Enter the replacement's **Unique ID** and select its **Device model**. Configure the physical tracker to send to **Url for GPS tracker**, using the manufacturer's setup instructions, then save the connection.
 4. Open **Mapping** and reconnect the incoming fields to the existing measurements. Tracker location fields arrive as `position.latitude` and `position.longitude`; map them to the car's existing latitude and longitude rows. Reconnect speed or other readings you use, checking their units.
 5. Click **Save** and wait for the tracker to send a fresh position. Check **Value** and **Last update**. [Connection Diagnostics](connection-diagnostics.md) helps if readings do not arrive.
 6. Open the dashboard **Map** widget for Family Car, select **History**, and choose dates spanning the replacement. The route uses the same retained coordinate measurements from both trackers. Open the device's **Logs** tab to inspect the individual readings and timestamps. See [Tracking What Matters](../dashboards/tracking-what-matters.md).
 
-Keep the measurement rows and change their **Connector key**. Removing a row and adding another with the same name does not reconnect the original history. Copying the digital device also creates a different record, so it is not the way to replace a tracker.
+Keep the measurement rows and change their **Device data key**. Removing a row and adding another with the same name does not reconnect the original history. Copying the digital device also creates a different record, so it is not the way to replace a tracker.
 
 Any gap while the tracker was broken or disconnected remains a gap: Chirp can only store positions that were reported. How far back you can look depends on [your subscription's retention period](../account/subscription.md#keeping-your-data-history).
 
@@ -35,8 +32,7 @@ Any gap while the tracker was broken or disconnected remains a gap: Chirp can on
 
 The same principle applies to **Living Room Temperature**. Open that existing device, detach the old source, and supply the replacement sensor's connection details. For LoRaWAN, the detach control is beside **Device EUI**; enter the new EUI, key, and matching profile. Reconnect the new temperature field to the existing temperature measurement and check fresh readings before relying on its automations.
 
-## Swap between an emulator and hardware
-
+## How do I swap between an emulator and hardware?
 **Swap connection** exists for one job: moving a device between a practice sensor (the emulator) and real hardware, in either direction. It does not handle swapping one physical sensor for another.
 
 1. Open **Connection** and click **Swap connection**. A picker lists the destinations you can move to, and the identity fields for the new source become editable.
@@ -46,8 +42,7 @@ The same principle applies to **Living Room Temperature**. Open that existing de
 
 Replacing one physical sensor with another is a different job: click **Detach physical device**, attach the new sensor, and restore its key mappings. Detaching happens the moment you click it, without waiting for **Save**. The physical binding and the source mappings go, while the digital device and its measurement channels stay.
 
-## The tabs
-
+## What do the sensor detail tabs show?
 ### Device info
 
 This is where you manage the sensor's identity:
@@ -71,10 +66,10 @@ The **Mapping** tab connects incoming data keys to retained measurement channels
 
 | Column or control | Purpose and configuration |
 | --- | --- |
-| **Device data key** | Pick the incoming field this row listens to, for example `temperature` or `vibration.rms`. This is the connector key. The choices fill in once messages have arrived, and leaving it blank means this measurement records nothing. Click **Save** to keep a changed key. |
+| **Device data key** | Pick the incoming field this row listens to, for example `temperature` or `vibration.rms`. The choices fill in once messages have arrived, and leaving it blank means this measurement records nothing. Click **Save** to keep a changed key. |
 | **Value** | Latest received value for the selected source key. This snapshot is not the historical record. |
 | **Last update** | When that source key was last received. An empty value means no corresponding received value is available. |
-| **Normalized key** | Choose the metric template that defines the measurement. Only Telemetry templates are listed, and any template this device already uses appears greyed out. |
+| **Normalized key** | Choose the metric template that defines the measurement. Only Telemetry templates are listed, and any template this device already uses appears grayed out. |
 | **Unit** | The template's unit, displayed for reference only. Edit it in [metric templates](data-templates.md); mapping never converts units for you. |
 | **Type** | Read-only template value type: Integer, Float, String or Boolean. It controls conversion of incoming readings. |
 | **Data type** | Telemetry in this mapping form. Reported switch states can be recorded as telemetry too. |
@@ -112,8 +107,7 @@ If the Logs tab is empty and you're not sure why, the Connection tab's diagnosti
 
 The date button shows whichever preset or range is active. Pick a quick range, or enter your own start and end, then click **Apply changes**; **Clear filter** resets it. Your plan's retention sets how far back the dates and presets go. Each reading carries a **Timestamp**, then the normalized measurement name as **Key**, then **Type** and **Value**, and the minute groups open and close so you can inspect single readings. If you see **No logs found**, nothing retained matches that range, so check the mapping and wait for a fresh message before you widen the dates. When loading fails, reload the page.
 
-## Quick actions from sensor lists
-
+## Which quick actions are in the sensor lists?
 You don't always need to open the full detail view. From any sensor list, the row action buttons let you:
 
 - **Edit** (pencil icon) — Open the full detail page
@@ -122,14 +116,12 @@ You don't always need to open the full detail view. From any sensor list, the ro
 
 For more about what your sensors measure and how to customize it, see [Data Templates](data-templates.md). For room-based naming and dashboard organization, see [Rooms](rooms.md).
 
-A physical-device copy starts new measurement rows: open it after saving and reconnect its **Connector keys**. An emulator copy carries its generated readings and reporting settings; give it a new Device ID.
+A physical-device copy starts new measurement rows: open it after saving and reconnect its **Device data keys**. An emulator copy carries its generated readings and reporting settings; give it a new Device ID.
 
 For a replacement, use the existing device instead of **Copy**. Copy is for adding a separate device; its similar name and settings do not make it the same digital twin.
 
-## Keep a home setup together
-
+## How do I keep a home setup together?
 The **Application** field on **Device Info** lets you put this sensor into a setup such as Home Watch. Select the application and save, or choose **Default** to keep the sensor ungrouped. [Organizing Content](../applications/organizing-content.md) explains how the dashboard, rule, and alarm definition join it.
 
-## Protocol setup references
-
+## Where can I find protocol setup guides?
 The full list of connection fields lives in [LoRaWAN Devices](lorawan-devices.md) and [MQTT Devices](mqtt-devices.md). Come back to this page for the profile, mapping and history controls that every sensor shares.

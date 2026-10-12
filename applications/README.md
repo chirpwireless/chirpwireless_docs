@@ -2,7 +2,7 @@
 description: "Pick a ready-made home setup in Chirp, press install, and watch sensors, automations, alerts, and a dashboard come alive before you buy a single device."
 ---
 
-# Applications and Solutions
+# What are applications and solutions in Chirp?
 
 Picture a leak-protection setup for your home that is already built: practice sensors reporting under a kitchen sink, a dashboard that shows them, an automation that notices water, and an alert that is addressed to you. You did not draw a single widget. You pressed one button.
 

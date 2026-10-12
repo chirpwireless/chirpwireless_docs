@@ -2,7 +2,7 @@
 description: "Make a named home setup in Chirp and give it a description that your household can recognize."
 ---
 
-# Creating an Application
+# How do I create an application in Chirp?
 
 Use this guide when you are assembling your own household solution in Chirp. First create the application, then set up and assign the devices, dashboards, rules, and alarms it needs. If you prefer a head start, [install a ready-made solution](installing-a-ready-made-solution.md), which gives you an application like this one. A name such as **Home Watch** identifies the purpose of the setup.
 
@@ -21,7 +21,7 @@ Choose **Applications** in the left sidebar, then the **My applications** tab. T
 
 An organization with no applications shows **Create your first application** and the same button. If the list cannot load you see **Could not load applications**, and a search with no hits reads **No applications found**.
 
-## Make Home Watch
+## How do I make my first application?
 
 1. Choose **Applications** from the sidebar.
 2. In **My applications**, select **Create an application**. A dialog opens, titled **Create an application**, with the line "Organize everything for one use case in one place" under it.
@@ -33,7 +33,7 @@ If you leave **Application name** empty, the field turns red and reads **Applica
 
 The description is a note for the people using the setup. It does not instruct Chirp to create sensors or automations. Open **Content** to begin checking which resources you have assigned.
 
-## Change the name later
+## How do I change an application's name?
 
 Open the application. At the top right, beside the trash can, is a pencil icon. It opens the **Edit application** dialog with **Application name** and **Description**; change either one and choose **Save** (or **Cancel** to leave things as they were). A toast reads **Application updated successfully**. Give each application a recognizable name so that you can tell them apart when assigning a sensor or dashboard.
 

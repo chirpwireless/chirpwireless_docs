@@ -2,22 +2,19 @@
 description: Make a pretend sensor in Chirp that invents its own readings, so your dashboards and alerts are ready before the real one arrives.
 ---
 
-# Pretend Sensors
-
+# How do I create a pretend sensor in Chirp?
 You have ordered a leak sensor. It arrives on Thursday. A pretend sensor lets you get everything ready in the meantime — lay out your dashboard, write your alerts, and watch them actually go off — days before anything turns up in the post.
 
 A pretend sensor behaves like a real one in every way that matters. It appears in your sensor list, it reports on a schedule, its readings land on your dashboards, and your alerts fire off them. The only difference is where the numbers come from: Chirp makes them up instead of a device sending them.
 
 <figure><img src="../.gitbook/assets/emulator-device-metrics.jpg" alt="A pretend sensor set up from a real model, listing its readings and their value types"><figcaption></figcaption></figure>
 
-## Before you start
-
+## What do I need before I create a pretend sensor?
 You need an **Emulator** connection. It takes two clicks and there is nothing to fill in — no account to link, no keys to copy. See [Emulator Connector](../connectors/emulator-connector.md).
 
 You also need permission to edit devices and room in your subscription for another digital device. No physical sensor or gateway is needed.
 
-## Making one
-
+## How do I make a pretend sensor?
 Add a sensor as usual, then on its **Connection** tab choose **Emulator**. You will be asked for:
 
 * **Device ID** — a name of your own, so you can tell your pretend sensors apart. Up to 64 characters, using letters, numbers, spaces, dots, underscores and dashes. It has to be unique across all of Chirp — not just your home — so something like `garage-temp-01` will be accepted where `sensor1` may already be taken.
@@ -38,8 +35,7 @@ Use **Add device data key** and give each reading a name — `temperature`, `hum
 
 <figure><img src="../.gitbook/assets/chirp-device-add-emulator-connection.jpg" alt="The Connection tab with the Emulator connector selected, the Support commands switch, Device ID, data sending interval, Use device preset and Add device data key"><figcaption><p>Setting up a pretend sensor on the Emulator connector.</p></figcaption></figure>
 
-## Choose how the pretend readings behave
-
+## How do I choose how pretend readings behave?
 Beside each key on **Connection**, click **Emulator**. The controls depend on the kind of reading:
 
 - For a number, set **From** and **To**, the value it **Holds around**, and **Variability**. The lower limit must be below the upper limit, and the usual value must sit between them.
@@ -50,12 +46,10 @@ Apply your choices and save the device. For a leak sensor, use false as the usua
 
 One pretend sensor can contain up to **50 readings** and **20 preset commands**. Use nonempty data keys no longer than **256 characters**; a manually pinned text value has the same length limit.
 
-## What the Mapping tab does for a pretend sensor
-
+## What does the Mapping tab do for a pretend sensor?
 Because a pretend sensor's readings are defined in its own settings, the **Mapping** tab simply mirrors them, and it keeps things tidy for you. If you delete a row there, that reading is removed from the sensor and stays gone after you save; it doesn't pop back as a stray duplicate. The data-key columns are view-only, and you won't find **Add new metric** buttons, because a brand-new reading needs its behavior settings, which live on **Connection**. To add one, use **Add device data key** there and come back to **Mapping** afterward. Switching a row to a different metric replaces the old one rather than leaving a second copy behind.
 
-## Making it send something
-
+## How do I make a pretend sensor send something?
 Open the sensor's **Emulator** tab and you will see each reading with a box next to it:
 
 * **Save** parks a value there. The sensor keeps reporting it, which is how you hold the basement at 85% humidity while you check your damp alert behaves.
@@ -69,8 +63,7 @@ Sending a value counts as changing something, so a household member with view-on
 
 A pretend sensor offers **No verification** for commands. It can exercise your setup, but it does not confirm delivery to real hardware. Automations triggered by its readings can still operate other connected devices, so check their actions before sending generated values.
 
-## When the real sensor arrives
-
+## What do I do when the real sensor arrives?
 Open the sensor, go to its **Connection** tab, and change it from **Emulator** to the real connection — then enter the details that came with it.
 
 The same digital device and measurement identities remain available to your dashboards and automations. Check that the new hardware fields feed those measurements and review any commands before using them with the replacement.
@@ -81,18 +74,16 @@ You can go the other way too, putting a real sensor back on the emulator for a m
 
 Switching to real hardware keeps the digital device and its existing measurements. Earlier generated readings remain part of their history, so note when the actual sensor or tracker starts reporting. Use a separate pretend device if you want the real device's history to contain observations only.
 
-After the change, check the source fields and the time of the latest reading. For a broken tracker that you are replacing with another tracker, follow [Sensor Details](sensor-details.md#replace-your-cars-tracker).
+After the change, check the source fields and the time of the latest reading. For a broken tracker that you are replacing with another tracker, follow [Sensor Details](sensor-details.md#how-do-i-replace-my-cars-tracker).
 
-## Copying one
-
+## How do I copy a pretend sensor?
 The copy brings its pretend readings, generator settings, reporting interval, command-support setting, and preset commands with it. Enter a new **Device ID** and check its name before saving.
 
 It is a new digital device with a fresh history. Use it to create another example, not to replace hardware on the original device. If saving the emulator setup fails after the device was created, reopen its **Connection** tab and save the corrected setup again.
 
 See [Sensor Details](sensor-details.md).
 
-## Just ask the assistant {#just-ask-the-helper}
-
+## Can the assistant create a pretend sensor for me? {#just-ask-the-helper}
 You do not have to do any of this by hand. Ask your [AI Assistant](../ai-assistant/README.md) to set up a pretend sensor and it will — choosing a model, creating the sensor, sending a reading to test an alert, and later taking it live onto your LoRaWAN connection. Asking the assistant to switch a pretend sensor to a tracker or an MQTT sensor is the one part it cannot do for you; do that yourself on the Connection tab.
 
 > *"Make a pretend temperature sensor for the garage and send a reading of 2 degrees."*

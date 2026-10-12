@@ -2,8 +2,7 @@
 description: Show a sensor's latest reading as a number, text, or on/off with the Value display in the Chirp Last Data widget.
 ---
 
-# Value Display
-
+# How do I show a reading as a plain value?
 The Value display shows a reading's latest value just as it comes in — no dial, no bar, just the value. It works for **any** kind of reading: a number with its unit, a bit of **text** shown as-is, or an on/off (**Boolean**) value shown as `true` or `false`. As the screenshot shows, several readings can share one tile, sitting side by side, each in its own color — handy for showing a room's temperature and humidity together.
 
 Pick Value when the reading itself is what you want to see, and there's nothing to "fill up" — the actual temperature, the actual battery percentage, a text status, an open/closed state. It's also the neatest way to fit two or three related readings into one small tile.
@@ -12,16 +11,14 @@ Value is the only display type with no value range, because there's no scale to 
 
 <figure><img src="../../../.gitbook/assets/last-data-number.jpg" alt="Last Data widget using the Value display"><figcaption></figcaption></figure>
 
-## When to choose it
-
+## When should I choose the value display?
 - The exact reading is the point — "the bedroom is 21°C," "the battery is at 64%."
 - A compact tile carrying two or three readings for one room or device.
 - A simple on/off or open/closed value where the plain number says it all.
 
 Those are just ideas — any reading that's clearest as a plain figure is a good fit for the Value display.
 
-## Configure a Value display
-
+## How do I configure a value display?
 Let's build a real one — a tile that tells you at a glance whether the front door is open. The door's contact sensor reports just two values — `1` when it's open and `0` when it's shut. Because the reading is only ever 0 or 1, there's nothing to fill or scale, so a Value tile is the right pick and each condition only needs to match one of those two numbers. This is just an example: a Value tile suits any reading where the figure itself is what you want — only the sensor and the conditions change.
 
 1. Open your dashboard in edit mode and tap **Last data** in the widget picker. The **Datasource** tab opens with nothing added yet.
@@ -43,8 +40,7 @@ Let's build a real one — a tile that tells you at a glance whether the front d
 
 The tile still shows the number — `1` or `0` — but the condition color turns it red when the door is open and green when it's shut, so you read the state in an instant without thinking about the digit. The same trick works for any on/off sensor — a window contact, a leak detector, a light — just swap the sensor and the two conditions.
 
-## Worked examples
-
+## What are some value display examples?
 **The exact reading, with a verdict**
 When you want the actual figure, the Value tile shows it in full. A Value tile has no scale, so the bedroom temperature just needs conditions — the °C thresholds that matter to you. Add three: "Comfortable" — From 18, To 24 — green; "Cool" — From 15, To 18 — yellow; "Chilly" — From -5, To 15 — blue. You see the real number — `21.4 °C` — and its color tells you how it feels, both at once. The number is never hidden; the color is just extra meaning laid on top. To see how the temperature changed through the day, use the [Chart widget](../chart-widget.md) instead.
 

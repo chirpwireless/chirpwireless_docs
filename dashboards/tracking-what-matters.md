@@ -31,7 +31,7 @@ Choose a shorter date range for a busy tracker if the route appears incomplete. 
 
 Open the existing **Family Car** digital device and replace its physical connection. Keep its latitude and longitude measurement rows, then map the replacement tracker's fields onto those same rows. The Map widget continues using those measurements, so its history can include positions recorded before and after the change.
 
-Follow [Replace your car's tracker](../devices/sensor-details.md#replace-your-cars-tracker) for the connection and mapping steps. Creating another digital device with the same name does not join the histories.
+Follow [Replace your car's tracker](../devices/sensor-details.md#how-do-i-replace-my-cars-tracker) for the connection and mapping steps. Creating another digital device with the same name does not join the histories.
 
 ## Checking an unexpected route or missing position
 

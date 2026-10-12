@@ -2,16 +2,14 @@
 description: "Link your home camera to Twin, then pair that Twin with the correct Chirp organization."
 ---
 
-# Connecting a Camera
-
+# How to Connect a Camera to Chirp Lens
 Before a camera appears in Chirp, its Twin needs to reach the camera and pair with Lens. Work through the local connection first so that you can distinguish a camera problem from a cloud connection problem.
 
 Have [Twin running](installing-twin.md), your camera's connection details ready, and permission to manage cameras in the selected Chirp organization.
 
 Need the video address? [RTSP Camera URLs](rtsp-camera-urls.md) gives common patterns, including the Tapo and HiLook cameras used in our examples.
 
-## Let Twin reach the camera
-
+## How does Twin reach my camera?
 1. Sign in to Twin and open **Settings → Camera Connector**.
 2. Put your camera's RTSP address in **Main stream URL**, with the camera's local login included. Use **Test main stream** to check the connection.
 3. For a lighter preview and motion-detection feed, put the camera's substream address in **Low-resolution stream URL**. You can leave it empty to use the main picture for both.
@@ -23,8 +21,7 @@ Give the camera a recognizable name such as `Front door`.
 
 Copy the **Twin Key** from Twin. This identifies this camera's local installation; each of your other cameras must have its own Twin and key.
 
-## Add it to Chirp
-
+## How do I add a camera to Chirp?
 1. Select **Cameras** in the Chirp sidebar, then **Cameras** in the Lens sidebar.
 2. Choose **Add camera**. The dialog reminds you to set up the Twin first, because it generates the key and a camera cannot be added ahead of its Twin.
 3. Enter the **Camera name** and paste the key into **Twin Key** (placeholder "Paste the key from the Twin"). Extra spaces around the key are trimmed. **Add camera** stays disabled until both fields are filled.
@@ -46,8 +43,7 @@ The token is a private pairing credential. It is different from your camera pass
 
 <figure><img src="../.gitbook/assets/chirp-twin-hilook-live.jpg" alt="The second Chirp Twin connected to a HiLook camera and Lens"><figcaption><p>Each camera has its own Twin dashboard and connection state.</p></figcaption></figure>
 
-## Check both connection and video
-
+## How do I check the connection and video?
 Back in Chirp, wait for the camera's state to become online, then start its live video. Seeing the picture confirms that the camera, Twin, Lens, and browser can complete the viewing path.
 
 For a second camera, repeat the process with its separate Twin. If you need to pair an existing camera again, open its details and choose **Reconnect Twin** rather than adding a duplicate. [Access and Troubleshooting](access-and-troubleshooting.md) covers that recovery.

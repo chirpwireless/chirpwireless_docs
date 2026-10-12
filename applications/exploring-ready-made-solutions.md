@@ -2,7 +2,7 @@
 description: "Browse your provider's ready-made home solutions in Chirp and open a live preview of the dashboard, sensors, automations, and alerts before installing."
 ---
 
-# Exploring Ready-Made Solutions
+# How do I explore ready-made solutions?
 
 A solution preview lets you walk through a finished home setup before you commit to anything. This guide takes you through every part of the catalog and the preview, one screen at a time.
 

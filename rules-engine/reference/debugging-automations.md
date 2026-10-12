@@ -2,14 +2,12 @@
 description: Step through an automation with debug mode — feed it a test reading, set breakpoints, and watch the values change.
 ---
 
-# Debugging Automations
-
+# How do I debug an automation?
 You built an automation, turned it on, and it didn't do what you expected — it fired when it shouldn't have, or stayed quiet when it should have alerted. Debug mode helps you figure out *why*. Instead of guessing, you run the automation step by step and watch exactly what it does at each point.
 
 Debug mode is a step-through tester built right into the visual editor. You give the automation a pretend sensor reading, then walk through it one node at a time — pausing where you like, watching the values change, and checking your logic. It's the best way to be sure an automation works before you rely on it.
 
-## Starting a debug session
-
+## How do I start a debug session?
 1. Open the automation in the [visual editor](visual-editor.md).
 2. In the editor's top bar, click **Set context** to open the **Start Debug Session** panel. (The top bar also has a **Start Debug** button, shortcut **F12**.)
 3. The panel asks you for some **initial context** — the pretend reading the automation will run against. It starts with one value row, and each row has a **Name** and a **Value**:
@@ -31,16 +29,14 @@ You don't have to fill in everything yourself:
 * The panel starts you off with a row called `value`, which suits automations started by **Sensor reading**. A live automation started by **Trigger condition** does not receive `vars.value`, so remove or rename this test value to match the trigger context.
 * The debugger provides `sensor_id` automatically. In a live automation it comes from the selected sensor or trigger signal, depending on the Start source.
 
-## Nothing happens until you press a button
-
+## Why does nothing happen until I press a button?
 Loading a session doesn't run your automation. It opens it up, puts the marker on the Start node, and waits for you — **nothing moves until you press Run or one of the Step buttons**.
 
 You'll see the canvas go read-only, a toolbar appear at the bottom, the debug panel open on the right with your values in it, and a blue ring around the Start node. That blue ring means the session is ready and waiting for you.
 
 So if the diagram just sits there, that's why. Press **Run (F10)** to go until the first breakpoint or the end, or **Step over (F9)** to move one node at a time.
 
-## The debug controls
-
+## What do the debug controls do?
 Once a session is loaded, a small toolbar appears over the bottom of the canvas with five buttons. It sits on the diagram itself, not up in the top bar with Save and Build.
 
 * **Run (F10)** — run the automation until it hits a breakpoint or finishes.
@@ -51,10 +47,9 @@ Once a session is loaded, a small toolbar appears over the bottom of the canvas 
 
 **F12 is the same button at both ends:** press it while you're editing to start debugging, and again while you're debugging to stop.
 
-The Step buttons only work while things are paused. They go grey while the automation is running, while a Side Effect box is waiting for your answer, and if an automation failed to load. Stop always works.
+The Step buttons only work while things are paused. They go gray while the automation is running, while a Side Effect box is waiting for your answer, and if an automation failed to load. Stop always works.
 
-## What the rings and dots mean
-
+## What do the rings and dots mean?
 Nodes can pick up three different marks while you're debugging:
 
 | Mark | What it means |
@@ -63,10 +58,9 @@ Nodes can pick up three different marks while you're debugging:
 | **Small red dot** on top | A breakpoint. Solid means it's on, a hollow ring means you've switched it off. |
 | **Red ring** | The node that just hit an error. It clears as soon as a step works. |
 
-A red ring isn't a breakpoint and isn't where you are — it's the node that went wrong, and the expression on it is the place to look. See [When a node fails](#when-a-node-fails).
+A red ring isn't a breakpoint and isn't where you are — it's the node that went wrong, and the expression on it is the place to look. See [When a node fails](#what-happens-when-a-node-fails).
 
-## Breakpoints
-
+## How do I use breakpoints?
 A breakpoint is a "pause here" marker. It stops the automation at one node so you can see what's going on at exactly that point.
 
 * **Add a breakpoint** — click a node on the canvas. The **Breakpoints** tab in the debug panel lists them all, with a count in the tab. Any click on the canvas during a session adds or removes one, so if you spot a breakpoint you didn't mean to set, click that node again to clear it.
@@ -75,8 +69,7 @@ A breakpoint is a "pause here" marker. It stops the automation at one node so yo
 
 Conditional breakpoints are great for a problem that only happens sometimes — let the automation run normally and have it stop only on the reading that causes the trouble.
 
-## Watching the values
-
+## How do I watch the values?
 The **Variable** tab of the debug panel shows the automation's state at the current step, in two parts:
 
 * **Changes** — the variables that were just added or changed, highlighted so you can instantly see what the last node did. Anything that was removed shows with a line through it.
@@ -86,8 +79,7 @@ While the automation is paused, you can also **change** the state yourself — e
 
 When you use **Step into** on a node, the Variable tab also shows a detail card with that node's **Inputs**, **Scripts**, and **Outputs** — what's happening inside the step.
 
-## Watch expressions and Evaluate
-
+## How do I use watch expressions and Evaluate?
 The **Watch** tab keeps an eye on expressions while the automation runs:
 
 * **Add watch** — type a CEL expression and it's re-checked at every step, so you can follow a value (like `vars.value - 20`) without scanning the whole variable list.
@@ -95,8 +87,7 @@ The **Watch** tab keeps an eye on expressions while the automation runs:
 
 Both reach your values through `vars`, so a watch on a variable called `temperature` is written `vars.temperature`. If an expression won't work, it's turned away as you type it in — which makes this a quick way to try a condition out before putting it on a branch.
 
-## Side effects
-
+## Does debugging cause side effects?
 Some nodes don't just shuffle data around — they actually *do* something, like sending you a notification or raising an alarm. When debug reaches a node like that, a **Side Effect** dialog pops up and asks how to handle it. You get three choices:
 
 * **Execute — run the real handler.** The action really happens, just like it would in a live automation: the alarm goes off, everyone on the list is notified, and a command really reaches the device.
@@ -110,8 +101,7 @@ Two things happen after you answer:
 * **The same answer gets used again.** If the automation comes back round to that node later in the session, the box doesn't reappear — your first answer is used. So an **Execute** keeps really sending every time after that. Start a fresh session if you want to be asked again.
 * **Closing the box steps back.** If you close it without picking anything, you end up just before that node with it not done. Step again and the box comes back.
 
-## When a node fails
-
+## What happens when a node fails?
 If a node hits an error while running, it gets a red ring on the canvas, and the debug panel shows a warning banner. Its title reads **Execution failed at "{step}"** (just **Execution error** when the step can't be named), the line under it gives the reason the debugger reported, and an **Expression:** line repeats the exact expression that failed, so you can copy it into the **Evaluate** box and experiment. The same reason also pops up as a notification. A step that is merely refused, like a watch expression with a typo or an unknown breakpoint, only shows a notification and leaves your session untouched, so a slip in the **Evaluate** box never makes it look like the automation broke. If the error is one you can recover from, the debug session stays paused and loaded so you can take a look, adjust, and carry on; if it's not recoverable, the session ends.
 
 Nearly always it's the expression on that node. Open it and check three things:
@@ -122,16 +112,14 @@ Nearly always it's the expression on that node. Open it and check three things:
 
 Drop the expression into **Evaluate** on the Watch tab to try it against what you've got right now.
 
-## When a session ends
-
+## What happens when a debug session ends?
 A debug session lasts **30 minutes** from the moment it starts, and stepping through doesn't buy you more time. You'll get a heads-up just before it expires, and a message if it times out, closes (with the reason), or loses its connection — just start a fresh session to keep going.
 
 Breakpoints belong to the diagram you loaded, so reloading the editor can clear them. A note tells you how many went, so you can set them again.
 
 If a session won't start at all, the platform is running as many debug sessions as it can at that moment. Give it a minute and try again.
 
-## Tips
-
+## What are good habits for debugging?
 * Test the tricky cases, not the easy one — set the initial context to the exact temperature, the missing value, the odd reading.
 * Copy variable names out of your conditions instead of typing them from memory.
 * Use a conditional breakpoint to catch a problem that only happens now and then.

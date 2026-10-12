@@ -45,4 +45,4 @@ Configure the tracker to send its data to that URL; once it starts reporting, it
 
 Name the digital device for the car, such as **Family Car**, and map its location readings. Add a dashboard Map widget to see its last known position and select a history range. See [Tracking What Matters](../dashboards/tracking-what-matters.md).
 
-If the tracker fails, replace its connection on the same digital device and reconnect its existing measurements. Keeping those measurements lets the car retain its earlier location history. Follow [Replace your car's tracker](../devices/sensor-details.md#replace-your-cars-tracker).
+If the tracker fails, replace its connection on the same digital device and reconnect its existing measurements. Keeping those measurements lets the car retain its earlier location history. Follow [Replace your car's tracker](../devices/sensor-details.md#how-do-i-replace-my-cars-tracker).
