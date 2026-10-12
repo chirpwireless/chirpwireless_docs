@@ -1,48 +1,48 @@
 ---
-description: "Open the dashboards that belong to your Chirp application, change them on the dashboard page, and find out what the empty messages mean."
+description: "See all the dashboards of a Chirp application in one spot, change them on the dashboard page, and learn what the empty and error messages mean."
 ---
 
 # How do I use an application's dashboards?
 
-This page helps you look at an application's dashboards from one place. For example, `Home Watch` might have one dashboard for the whole home and another for the garden's sensors.
+Open an application and its **Dashboard** tab shows your home at a glance, with live numbers and charts. **Content** is next door, and it lists the sensors, automations, and alerts that feed those screens.
 
-An installed [solution](installing-a-ready-made-solution.md) comes with a dashboard that already shows its sensors. You can add dashboards you built yourself too. Pick the application in the dashboard's **Application** field when you add or edit it.
-
-## How do I check my home from an application?
-
-1. Select **Applications**, then open the application from **My applications**.
-2. Choose **Dashboard**.
-3. Select the dashboard you want. Each dashboard in the application has its own button above the preview, named after the dashboard.
-4. Read the widgets, or use the controls available to your account.
-
-Use **Content** when you want to find the sensors or automations behind the view.
-
-## How do I change what a dashboard shows?
-
-Select **Go to the dashboard** to open the dashboard itself. Change the layout or widgets there and save. There is only one copy, so the application shows your update when you return.
-
-For detailed steps, see [Building a Dashboard](../dashboards/building-a-dashboard.md).
-
-## What do the empty messages mean?
-
-* **This application has no dashboards yet** means no dashboard is assigned to the application.
-* **This dashboard has no widgets yet** means the dashboard exists but nothing has been added to it.
-* **Dashboard is unavailable** means Chirp could not load that dashboard. Reload the page, then check your access.
-
-## Why is the Dashboard tab empty?
-
-Open **Content** and look under **Dashboards**. If it is empty, edit the dashboard you want and choose this application in its **Application** field.
+Install a [solution](installing-a-ready-made-solution.md) and the dashboard comes along, already wired to the practice sensors. One application can hold more than one. A `Home Watch` application might have a dashboard for the whole house and a second one for the garden. To bring in a dashboard you built yourself, pick the application in the dashboard's **Application** field.
 
 <figure><img src="../.gitbook/assets/chirp-add-dashboard-dialog.jpg" alt="The Add dashboard dialog with Icon, Name, Folder, Application and Description fields, where the Application field names the current application"><figcaption><p>Pick the application in the Add dashboard dialog.</p></figcaption></figure>
 
-You can also make a new dashboard and pick the application in the **Add dashboard** dialog. If a dashboard exists but you cannot see it, ask the person who owns the account to check your access.
+## How do I check my home from an application?
+
+1. Select **Applications**, then open your application from **My applications**.
+2. Choose the **Dashboard** tab.
+3. If there is more than one dashboard, select the one you want. Each has a button above the preview with its name on it.
+4. Look over the widgets. Use any controls your account allows.
+
+Want to see which sensors or automations sit behind a number? Switch to **Content**.
+
+## How do I change what a dashboard shows?
+
+Select **Go to the dashboard**. That opens the dashboard itself, where you can rearrange the layout or add and remove widgets. Save when you are done.
+
+You never work on a spare copy. The application and the dashboard page show the same thing, so your edit is there when you go back. The full walkthrough is in [Building a Dashboard](../dashboards/building-a-dashboard.md).
+
+## Why is the Dashboard tab empty?
+
+Open **Content** and look at the **Dashboards** card. Nothing in it? Then no dashboard has been linked to this application yet. Edit the dashboard you want and choose the application in its **Application** field. Or add a new dashboard and pick the application right there in the **Add dashboard** dialog.
+
+A dashboard exists but you cannot open it? Ask the person who owns the account to check what you are allowed to see.
+
+## What do the empty messages mean?
+
+* **This application has no dashboards yet:** nothing has been linked to the application.
+* **This dashboard has no widgets yet:** the dashboard is there, but it is still blank.
+* **Dashboard is unavailable:** Chirp could not load it. Reload the page, then check your access.
 
 ## Why does the application page say Application not found?
 
-The page shows **Application not found** alone in the middle of the screen, with no tabs and no buttons. That means Chirp cannot load the application. These are the likely causes:
+You see **Application not found** alone in the middle of the screen, with no tabs and no buttons. Chirp cannot load that application. Common reasons:
 
-* The application was deleted.
-* The link points to an application in another organization.
+* Someone deleted it.
+* The link belongs to an application in a different organization.
 * The page could not be read.
 
-Choose **Applications** in the sidebar and open **My applications** to see what you can open. Check which organization is selected in the sidebar too. An application belongs to one organization, which is your Chirp account space.
+Choose **Applications** in the sidebar and open **My applications** to see what is available to you. Look at the organization selected in the sidebar too. An application lives in one organization only, and that is your Chirp account space.

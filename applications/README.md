@@ -1,59 +1,62 @@
 ---
-description: "Not sure what you can automate at home? Open Solutions, install a ready-made setup in a few clicks, then buy the devices and swap them in."
+description: "Not sure what you can automate at home? Open Solutions, install a ready-made setup in a few clicks, then order the devices it lists and switch to real sensors."
 ---
 
 # What are applications and solutions in Chirp?
 
-Not sure what your home can do for you, or where to even begin? That is what solutions are for.
+Not sure what your home can do for you, or where to begin? Solutions are made for exactly that.
 
-Open **Applications** in the left sidebar, then the **Solutions** tab. You see what we have lined up, such as watching a rental while you are away, getting an alert the moment a pipe leaks, switching the lights off from anywhere, or keeping an ear on noise levels at parties without spying on anyone. We add more with every update.
+Go to **Applications** in the left sidebar and open the **Solutions** tab. You see the setups we have prepared: keeping an eye on a rental while you are away, a heads-up the second a pipe leaks, lights you can switch off from anywhere, noise monitoring for parties without spying on anyone, and more. New ones arrive with every update.
 
-Doing any of that yourself means picking sensors, building a dashboard, writing automations, and setting up alerts. If you have never done it, that is a lot.
+Doing any of these yourself takes work. You pick sensors, build a dashboard, write automations, and set up alerts. If you have never done any of that, it can feel like a lot.
 
-So we did it for you. Press **Preview** on a solution, then **Use this solution**, then **Install solution** on the next screen.
+So we did the work for you. Choose **Preview** on a solution, then **Use this solution**, then **Install solution** on the next screen. The solution appears in your account with practice sensors, which are sample sensors that send made-up readings. You can see how the dashboard looks, how the automations are built, and how the alerts reach you. It all works right away, and you can change any part of it. Alerts come to you by default; add family members or other ways to be notified, such as email, SMS, or push, before you count on them. Because you begin with a setup that already works, you pick up how it all fits together and where everything lives.
 
-Chirp puts a working setup in your account. It uses practice sensors, which are sample sensors that send made-up readings so the dashboard has something to show. Look around: how the dashboard is laid out, how the automations run, how the alerts reach you. Everything is ready, and you can still change all of it.
+And if it is just what you were after, the solution lists the devices you need to buy. Order them, and once they arrive, swap the practice sensors for the real ones. You can make the swap yourself, or Chirp's [AI chat](../ai-assistant/README.md) can connect them for you. All you need is each device's ID, which is usually printed on its label or in its manual. After that, your setup runs on real readings. [How do I move from practice sensors to real ones?](from-practice-sensors-to-real-ones.md)
 
-If it is exactly your problem, the install screen lists the devices to buy. Order them, and when they arrive, swap the practice sensors for the real ones, yourself or by asking Chirp's [AI chat](../ai-assistant/README.md) to connect them. Then your setup runs on real readings.
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Solutions tab in Chirp with one ready-made solution card and its Preview button"><figcaption><p>Each card previews what you get when you install.</p></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Solutions tab in Chirp with one ready-made solution card and its Preview button"><figcaption><p>A solution card shows what an install will create. Press Preview to look inside.</p></figcaption></figure>
+## How is a solution different from an application?
 
-## What is the difference between a solution and an application?
+A **solution** is the finished template we prepared for you. An **application** is what sits in your account once you install one, with its sensors, dashboard, automations, and alerts in one place. You can also build an application yourself, from nothing. After the install it is a normal application, and you can edit all of it. [Solutions and applications in more detail.](solutions-explained.md)
 
-A **solution** is the ready-made template we prepared. An **application** is what you have in your account after you install one, and you can also build one from scratch. Once installed, it is a normal application you can change freely. [More about the two terms.](solutions-explained.md)
+## What do the words in Chirp mean?
 
-## What do the words mean?
+* **Dashboard:** a screen with live charts and numbers.
+* **Sensor:** a small device that measures something at home, such as temperature, water, or motion, and sends readings to Chirp.
+* **Practice sensor:** a sample sensor that sends made-up readings. Some screens call it an emulated device or the Emulator. It counts toward your plan's device limit.
+* **Automation:** a rule that reacts to a reading, such as "if the basement gets wet, send me an alert".
+* **Alert:** the notification that tells you something needs attention. Some screens call it an alarm. An automation decides when it goes off.
+* **Connector:** the link that brings a real sensor's readings into Chirp, for example LoRaWAN or MQTT.
+* **Organization:** your Chirp account space. At home, that is you and the people who share your setup.
 
-* **Practice sensors:** sample sensors that send made-up readings. Some screens call them emulated devices or the Emulator. They count toward your plan's device limit.
-* **Dashboard:** a screen of live charts and numbers.
-* **Automation:** a rule that reacts to a reading, for example by turning something off or sending an alert.
-* **Alert** (also shown as **alarm**): a notification that tells you something needs attention.
-* **Connector:** the link that brings a sensor's readings into Chirp. LoRaWAN and MQTT are two common ways sensors connect, and the sensor's manual says which one it uses.
-* **Organization:** your Chirp account space. For a single household, it is simply your home.
+## How do I get started with solutions?
 
-## How do I get started?
+1. In the left sidebar, choose **Applications**. The **Solutions** tab is the one to start on.
+2. [Look through the solutions](exploring-ready-made-solutions.md) until one fits your situation.
+3. [Install it](installing-a-ready-made-solution.md): **Preview**, then **Use this solution**, then **Install solution**. The next screen lists what gets created and the devices you will need.
+4. Order those devices. Once they arrive, [replace the practice sensors with real ones](from-practice-sensors-to-real-ones.md).
 
-1. Choose **Applications** in the left sidebar and keep the **Solutions** tab selected.
-2. [Look through the solutions](exploring-ready-made-solutions.md) and press **Preview** on one that matches your situation.
-3. [Press **Use this solution**, then **Install solution**](installing-a-ready-made-solution.md) on the next screen, and read what it created and which devices it needs.
-4. Buy those devices and [swap the practice sensors for the real ones](from-practice-sensors-to-real-ones.md).
+## Where do I find what?
 
-## Where do I find each part?
-
-| You want to | Read |
+| You want to | Go to |
 |---|---|
-| Understand the terms | [What is a ready-made home solution?](solutions-explained.md) |
-| See what is on offer | [How do I explore ready-made solutions?](exploring-ready-made-solutions.md) |
-| Set one up | [How do I install a ready-made solution?](installing-a-ready-made-solution.md) |
+| Get the terms straight: solution and application | [What are solutions and applications in Chirp?](solutions-explained.md) |
+| Look through the ready-made solutions | [How do I explore ready-made solutions?](exploring-ready-made-solutions.md) |
+| Put a solution to work | [How do I install a ready-made solution?](installing-a-ready-made-solution.md) |
 | Connect your real sensors | [How do I move from practice sensors to real ones?](from-practice-sensors-to-real-ones.md) |
+| Create an application of your own | [How do I create an application in Chirp?](creating-an-application.md) |
+| Sort devices, rules, and alerts into an application | [How do I organize content in an application?](organizing-content.md) |
+| Open an application's dashboards | [How do I use application dashboards?](using-application-dashboards.md) |
+| Remove an application | [What happens when I delete an application?](deleting-an-application.md) |
 
-## Can I build my own application?
+## Can I create an application myself?
 
-Yes. An application you build by hand is the same kind of thing as one you install, so you can always start from nothing. This route takes more work than installing a solution. If you are new, install a solution first and look at how it is set up.
+Yes. Maybe no solution matches your home, or you already own sensors and want everything for one job together. It takes more work than installing a solution, so if you are new, install one first and study how it is put together.
 
-1. [Create an application](creating-an-application.md), for example one called Home Watch, and describe what you use it for.
-2. Set up what you need: [devices](../devices/adding-sensors.md), a [dashboard](../dashboards/building-a-dashboard.md), [automations](../rules-engine/your-first-automation/README.md), and [alerts](../alarm/set-up-a-home-alert.md).
-3. [Add each one to your application](organizing-content.md): open the item and choose your application in its **Application** field. Then check that the automation points to the right device and alert, because being in the same application does not connect them.
-4. Choose **Applications → My applications**, open the application, and use **Dashboard** to see its dashboards or **Content** to see everything in it.
+1. [Create an application](creating-an-application.md) and name it, for example Home Watch.
+2. Set up its [sensors](../devices/adding-sensors.md), a [dashboard](../dashboards/building-a-dashboard.md), [automations](../rules-engine/your-first-automation/README.md), and [alerts](../alarm/set-up-a-home-alert.md) the way you normally would.
+3. [Add each one to the application](organizing-content.md): open the item and choose your application in its **Application** field. Then check that the automation points to the right sensor and alert, because sharing an application does not connect them.
+4. Go to **Applications → My applications**, open your application, and use **Dashboard** to see its views or **Content** to see the sensors, automations, and alerts inside. A new application is empty until you add things.
 
-Your application belongs to the selected organization. Family members need the right permissions to see or change its devices, dashboards, automations, and alerts. The application does not give anyone extra access. If you later retire a setup, [check what deletion removes](deleting-an-application.md) first.
+An application can hold several dashboards; see [Using application dashboards](using-application-dashboards.md). It belongs to your current organization. Seeing or changing what is inside still depends on your permissions, and filing something under an application does not open it up to anyone. Deleting an application also deletes what is inside it, so [see what deletion removes](deleting-an-application.md) first. Can't find **Applications** in the sidebar? The feature may not be switched on for your account yet; see [Get Help](../help/get-help.md).
