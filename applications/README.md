@@ -1,12 +1,12 @@
 ---
-description: "Pick a ready-made home setup in Chirp, press install, and watch sensors, automations, alerts, and a dashboard come alive before you buy a single device."
+description: "Pick a ready-made home setup in Chirp, press install, and get sensors, automations, alerts, and a dashboard already set up, plus the list of devices to buy."
 ---
 
 # What are applications and solutions in Chirp?
 
-Picture a leak-protection setup for your home that is already built: practice sensors reporting under a kitchen sink, a dashboard that shows them, an automation that notices water, and an alert that is addressed to you. You did not draw a single widget. You pressed one button.
+Picture a leak-protection setup for your home that is already built: practice sensors reporting under a kitchen sink, a dashboard that shows them, an automation that notices water, and an alert that is addressed to you. You did not draw a single widget or configure anything. You pressed one button, and the setup shows you which use case Chirp can solve for you.
 
-That is the idea behind **Solutions** in Chirp. A **solution** is a ready-made application from the Chirp catalog: pre-configured for one home use case, with a list of the real devices to buy. When you install it, Chirp creates your own **application**, a working bundle of devices, dashboards, automations, and alerts for one household job. Read [What is a ready-made home solution?](solutions-explained.md) for the whole picture.
+That is the idea behind **Solutions** in Chirp. A **solution** is a ready-made application from the Chirp catalog: pre-configured for one home use case, with a list of the real devices to buy. When your devices arrive, you can ask the AI chat to connect them to the application. When you install it, Chirp creates your own **application**, a working bundle of devices, dashboards, automations, and alerts for one household job. Read [What is a ready-made home solution?](solutions-explained.md) for the whole picture.
 
 ```mermaid
 flowchart LR
