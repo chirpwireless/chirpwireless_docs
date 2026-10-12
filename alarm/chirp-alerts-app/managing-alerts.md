@@ -37,7 +37,7 @@ This is the quick fix for an alarm that won't stop pinging you — switch it off
 ## Switching homes (and platforms)
 
 - **Home** — if you're part of more than one home, switch between them from the menu; the Inbox and Alert Definitions follow along.
-- **Platform** — under **Settings → Platform** you could switch to Business (Kilo) mode, but that signs you out and is meant for the Kilo platform, not your home.
+- **Platform** — under **Settings → Platform** you could switch to Business mode, but that signs you out and is meant for the business platform, not your home.
 
 <figure><img src="../../.gitbook/assets/chirp-alerts-settings.jpg" alt="Chirp Alerts Settings screen showing the Platform section, Change mode, app version, and account options" width="300"><figcaption></figcaption></figure>
 

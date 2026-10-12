@@ -12,7 +12,7 @@ How an alert sounds depends on its severity, your phone, and its permissions. Fo
 
 ## One app for home and business
 
-The app you install is called **IoT Alerts**, and the first time you open it, it asks how you'll use it. For your Chirp smart home, choose **Home Use**. That tells the app to sign you in to your Chirp account and show your home's alerts. (The other option, Business Use, is for the Kilo platform — you won't need it for your home.)
+The app you install is called **IoT Alerts**, and the first time you open it, it asks how you'll use it. For your Chirp smart home, choose **Home Use**. That tells the app to sign you in to your Chirp account and show your home's alerts. (The other option, Business Use, is for the business platform — you won't need it for your home.)
 
 ## Get the app
 
