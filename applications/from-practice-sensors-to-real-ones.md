@@ -30,7 +30,7 @@ flowchart LR
 5. Keep the **Device data key** rows as they are: each row is one reading, shown with its **Data type**, an **Emulator** button, and a trash can. They carry your mappings across, so the dashboard keeps working.
 6. Select **Save**. The **Reception** strip at the bottom reports **Receiving & storing** with a **LIVE** marker once real readings arrive.
 
-Read the solution's **Content** text before you begin. Providers usually write down the identifiers each device needs.
+Read the solution's **Content** text before you begin. Applications usually write down the identifiers each device needs.
 
 ## How do I tell a practice sensor from a real one?
 

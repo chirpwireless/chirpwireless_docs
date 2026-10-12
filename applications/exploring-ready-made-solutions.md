@@ -1,5 +1,5 @@
 ---
-description: "Browse your provider's ready-made home solutions in Chirp and open a live preview of the dashboard, sensors, automations, and alerts before installing."
+description: "Browse the ready-made home applications in Chirp and open a live preview of the dashboard, sensors, automations, and alerts before installing."
 ---
 
 # How do I explore ready-made solutions?
@@ -13,17 +13,17 @@ A solution preview lets you walk through a finished home setup before you commit
 
 Under the **Solutions** heading you will read a short paragraph describing what a solution contains. In plain terms: it is a bundle of practice devices, automations, alert rules, and a prepared dashboard. The practice devices stream through the Emulator connector, so the dashboard comes alive the instant you install, and no hardware is needed.
 
-<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Applications and solutions page with the Solutions tab selected, showing the introduction text and one solution card with a name, description, four counters and a Preview button"><figcaption><p>The Solutions tab with one published solution.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Applications and solutions page with the Solutions tab selected, showing the introduction text and one solution card with a name, description, four counters and a Preview button"><figcaption><p>The Solutions tab with one ready-made application.</p></figcaption></figure>
 
-If the grid is empty, your provider has not published anything yet and the page says **Your provider has not published any solutions yet**. If the list cannot be fetched, you will see **Couldn't load the solution catalog**; reload the page after a moment.
+If the grid is empty, nothing has been added to the catalog yet and the page says **Your provider has not published any solutions yet** (the text is shown exactly like this). If the list cannot be fetched, you will see **Couldn't load the solution catalog**; reload the page after a moment.
 
-<figure><img src="../.gitbook/assets/chirp-solutions-catalog-empty.jpg" alt="The Solutions tab before anything is published, with the message that your provider has not published any solutions yet"><figcaption><p>The Solutions tab before your provider publishes anything.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog-empty.jpg" alt="The Solutions tab before anything is published, with the message that your provider has not published any solutions yet"><figcaption><p>The Solutions tab before any application is added to the catalog.</p></figcaption></figure>
 
 ## What is on a solution card?
 
 Each solution is one card in the grid. From top to bottom a card holds:
 
-1. **A photo** chosen by the provider (some cards have none).
+1. **A photo** chosen for the application (some cards have none).
 2. **The name** of the setup.
 3. **A short description.**
 4. **Four small counters:** virtual devices, rules, widgets, and alarms. They tell you at a glance whether a card is a small helper or a whole-house package.
@@ -37,7 +37,7 @@ The preview page has a back arrow and the solution's name in the top-left corner
 
 * **Dashboard** shows the finished dashboard with moving readings from the practice sensors. Explore it like any dashboard; it is read-only here.
 * **Content** explains the setup in words, in these blocks:
-  * **About** the setup, with two columns beside it: **Who it's for** and **How it works right now**. Providers often put an installation checklist in the second column, naming where each real sensor goes.
+  * **About** the setup, with two columns beside it: **Who it's for** and **How it works right now**. Many applications put an installation checklist in the second column, naming where each real sensor goes.
   * **Virtual devices**, each row carrying an **Emulator** badge.
   * **Rules**, with the sentence that each rule describes.
   * **Alarms**, each with a severity label such as Low or Critical.
@@ -52,6 +52,6 @@ The preview page has a back arrow and the solution's name in the top-left corner
 
 * **Preview is unavailable right now:** try again shortly.
 * **This solution has no dashboards to preview:** the setup has no dashboard, but **Content** still works.
-* **Solution not found:** the provider may have withdrawn it since you opened the catalog.
+* **Solution not found:** it may have been withdrawn from the catalog since you opened the catalog.
 
 When you like what you see, select **Use this solution** to open the install screen. Continue with [Installing a Ready-Made Solution](installing-a-ready-made-solution.md).

@@ -40,7 +40,7 @@ When it finishes, a message announces that the solution is installed ("Virtual d
 
 ## Who receives the alerts?
 
-You do. Whoever the provider named while preparing the setup, the alerts in your copy are addressed to the person who installed it. Add household members or other channels later in [Alarm](../alarm/README.md).
+You do. Whoever was named while the application was prepared, the alerts in your copy are addressed to the person who installed it. Add household members or other channels later in [Alarm](../alarm/README.md).
 
 ## What if the install does not complete?
 

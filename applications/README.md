@@ -6,11 +6,11 @@ description: "Pick a ready-made home setup in Chirp, press install, and watch se
 
 Picture a leak-protection setup for your home that is already built: practice sensors reporting under a kitchen sink, a dashboard that shows them, an automation that notices water, and an alert that is addressed to you. You did not draw a single widget. You pressed one button.
 
-That is the idea behind **Solutions** in Chirp. A **solution** is a home setup that a provider has prepared and shared. When you install it, Chirp creates your own **application**, a working bundle of devices, dashboards, automations, and alerts for one household job. Read [What is a ready-made home solution?](solutions-explained.md) for the whole picture.
+That is the idea behind **Solutions** in Chirp. A **solution** is a ready-made application from the Chirp catalog: pre-configured for one home use case, with a list of the real devices to buy. When you install it, Chirp creates your own **application**, a working bundle of devices, dashboards, automations, and alerts for one household job. Read [What is a ready-made home solution?](solutions-explained.md) for the whole picture.
 
 ```mermaid
 flowchart LR
-    P[Provider prepares a setup] --> C[Solutions catalog]
+    P[Chirp prepares an application] --> C[Solutions catalog]
     C -->|Install solution| H[Your Home application]
     H -->|Swap practice sensors| R[Your real sensors]
 ```
@@ -19,7 +19,7 @@ flowchart LR
 
 * **You see the result first.** The practice sensors in a solution report from the first second, so the dashboard is never empty.
 * **Nothing to assemble.** Sensors, dashboard, automation, and alert already work together.
-* **You keep the real thing in mind.** A provider's checklist can tell you where to mount each sensor and how to connect it.
+* **You keep the real thing in mind.** An application's checklist can tell you where to mount each sensor and how to connect it.
 * **Your own pace.** Replace the practice sensors with real ones one at a time. The views and automations stay as they are.
 
 ## Where should you go next?
