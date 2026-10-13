@@ -11,3 +11,5 @@ This email was sent automatically when a file was merged into the docs repositor
 ![Chirp release banner](https://raw.githubusercontent.com/chirpwireless/chirpwireless_docs/synchronize/.gitbook/assets/Flight_Release_3.11.0.jpg)
 
 [Open the changelog](https://docs.chirpwireless.io/changelog)
+
+(edited after sending)
