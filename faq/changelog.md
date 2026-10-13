@@ -6,6 +6,131 @@ description: Chirp changelog — Flight Log entries for every release, with feat
 
 <details>
 
+<summary>Flight Log. Release 3.11.0</summary>
+
+<figure><img src="../.gitbook/assets/Flight_Release_3.11.0.jpg" alt="Chirp 3.11.0 release banner"><figcaption></figcaption></figure>
+
+This is our largest release so far, and we are thrilled to share it! Months of work are shipping together, and it changes how a smart home gets started. **Solutions** show you what Chirp can do around the house and arrive ready to run, with practice sensors, a dashboard, automations (rules that react to readings), and alerts (notifications that reach you) already set up. Anyone can install one in a few clicks, see which devices to buy, and have the [AI chat](../ai-assistant/README.md) connect them when they arrive. And the headline: **Lens** brings your cameras into Chirp. Video feeds and your smart home finally live together, with recordings you can back up to your own cloud account. This is only the start; we are heading toward connecting more video with more of your home devices. On top of that, you can now control your home straight from your Tesla. The Digital Building Twin and the Key Vault leveled up too!
+
+***
+
+#### What's in This Release
+
+* **Solutions: a ready-made setup for your home or rental, installed in a few clicks** — Guests leave the lights on while you are far away? Worried about parties but you don't want to spy? Open **Applications → Solutions** and install a setup we prepared, such as noise monitoring, leak watch, or remote lights. It arrives with practice sensors, a dashboard, automations, and alerts already working, and you can change all of it. Once installed it becomes your own application. The install screen lists the devices to buy; when they arrive, swap the practice sensors for real ones, or ask the AI chat to do it. New solutions arrive with every release.
+* **Lens: your cameras join your smart home** — This one is huge: video feeds now live inside Chirp. Connect compatible RTSP cameras of any brand, view them side by side, mark the areas where motion matters, and let that motion start automations and alerts.
+* **Cloud backup for camera recordings** — Never lose the clip you need. Keep an extra, encrypted copy of your recordings in your own Amazon S3, Google Cloud, or Walrus account and play it back from Chirp.
+* **Control your home from your Tesla** — Your house, from the driver's seat. Ask Grok whether the iron is on, what the living room temperature is, or which alerts are open. And it is not only information: you can control your home by voice too. Say "Grok, turn off the lights," or switch off a plug, hands-free!
+* **Digital Building Twin: move, duplicate, import** — Rearrange a floor plan in 2D, bring in a DXF drawing (beta), and open your dashboard at the camera angle you saved.
+* **Key Vault eye toggle** — Peek at one saved key at a time instead of keeping them all visible.
+* **Smaller improvements** — Edit existing metrics, find any device in long lists, watch sensor status refresh on its own, and read plain error messages in the automation debugger and command builder.
+
+***
+
+**Solutions: a ready-made setup for your home or rental, installed in a few clicks**
+
+We are excited about this one, because it makes Chirp easy for everyone. Say you rent out a property on Airbnb. Your guests keep leaving the lights on, and you are far away. Or you worry about parties, but you do not want to spy on the people staying there. Or you just want to know the moment a pipe starts leaking. Not sure how to automate any of that? Open **Applications → Solutions** and you see what we have prepared, such as noise monitoring that measures how loud it is without watching anyone, a leak watch, or lights you can switch off from anywhere. The catalog is just getting started, so you will see a first selection today and more with every release.
+
+Each of these usually means a lot of work: sensors to pick, a dashboard to draw, automations to write, alerts to set up. So we did it for you. Press **Preview**, then **Use this solution**, then **Install solution**, and the solution appears in your account with practice sensors, which are sample sensors that send believable readings. Some screens call them emulated devices.
+
+<figure><img src="../.gitbook/assets/chirp-solutions-catalog.jpg" alt="The Solutions tab in Chirp with one ready-made solution card and its Preview button"><figcaption><p>Solutions, one click from a live preview.</p></figcaption></figure>
+
+You see how the dashboard looks, how the automations run, and how the alerts reach you. It is all set up, and you can still change any of it. Because you start from something that works, you learn quickly how everything fits together and where to find it.
+
+Then you think, "This is exactly my problem." The install screen lists the real devices you need. Buy those, and when they arrive, swap the practice sensors for the real ones yourself or tell the [AI chat](../ai-assistant/README.md): "I got these devices, can you connect them to the application I installed?" If the real sensors report the same readings as the practice ones, your dashboard, automations, and alerts keep working without changes.
+
+So what is the difference between a solution and an application? A **solution** is the ready-made template we prepared. An **application** is what you have in your account after you install it, with its sensors, dashboard, automations, and alerts together. You can also build one from scratch. More solutions are on the way: new ones arrive with every release, beginning with the next. Installing counts against your plan's limits, and Chirp tells you when a solution does not fit.
+
+[→ What are applications and solutions in Chirp?](../applications/solutions-explained.md)
+
+[→ How do I install a ready-made solution?](../applications/installing-a-ready-made-solution.md)
+
+[→ From practice sensors to real ones](../applications/from-practice-sensors-to-real-ones.md)
+
+***
+
+**Lens: your cameras join your smart home**
+
+This is a huge step: we are bringing video feeds into Chirp. Each home camera usually ships with its own app, so the front door, the garage, and the rental unit are three separate places to look. **Lens** pulls them into Chirp beside your sensors, and it is only the beginning, because we are moving toward connecting more video with your home devices. A small program named **Twin** sits next to each camera and talks RTSP and ONVIF, which means the cameras you own keep working.
+
+* **One screen.** Put the cameras you care about on a **videowall**.
+* **Motion where it matters.** Outline an area, for example the door, and use movement there in an automation that sends you an alert. Even an older camera can do this because Chirp analyzes the video itself.
+* **Cameras beside sensors.** A camera is a device with motion and status readings, so a door sensor and the entry camera can trigger the same automation.
+* **Who can look.** Give each household member Edit, View, or No access to cameras.
+
+<figure><img src="../.gitbook/assets/chirp-lens-live-view.jpg" alt="Two home cameras shown together in Chirp Lens"><figcaption><p>Cameras from different brands in one Chirp Lens workspace.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/chirp-lens-videowall-edit.jpg" alt="Editing a Chirp Lens videowall with camera tiles on the grid"><figcaption><p>Put the cameras you care about on one videowall.</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/chirp-lens-motion-zone.jpg" alt="A motion zone drawn over a camera view in Chirp Lens"><figcaption><p>Outline the area where motion matters.</p></figcaption></figure>
+
+[→ Explore Chirp Lens](../lens/README.md)
+
+[→ Motion zones](../lens/motion-zones.md)
+
+***
+
+**Cloud backup for camera recordings**
+
+A recording used to exist only on the computer that runs Twin. Now an extra copy can go to a cloud account you own. In Lens choose **Storage**, then **Add storage connector**, and select **Amazon S3**, **Google Cloud Storage**, or **Walrus**. Afterward, open a camera's **Storage** tab, pick the connector under **Backup to**, and optionally cap the cloud space so the oldest backups are removed first.
+
+Twin encrypts each recording before sending it to your account, and you can play it, jump through it, and download it from Chirp. The storage holds the files, while Chirp holds the keys and previews and is able to read the archive. Your cloud provider bills you directly. Backup needs Twin 1.1.0 or later, and Google Cloud Storage support is brand new.
+
+<figure><img src="../.gitbook/assets/chirp-lens-camera-cloud-backup.jpg" alt="The Cloud backup card on a camera's Storage tab with the Backup to list"><figcaption><p>Choose where a camera backs up on its Storage tab.</p></figcaption></figure>
+
+[→ Back up recordings to the cloud](../lens/cloud-archive.md)
+
+[→ Storage connectors](../lens/storage-connectors.md)
+
+***
+
+**Control your home from your Tesla**
+
+Your smart home, now in the car. Say "turn off the lights," and with a saved Turn off command for your light or plug, it happens. You are miles away and cannot remember switching off the iron. If it sits on a connected smart plug, ask Grok in your Tesla and have the plug turned off by voice. After you connect Chirp to Grok through MCP, the same conversation can report a room's temperature or tell you which home alerts are still open.
+
+<figure><img src="../.gitbook/assets/tesla-grok-hands-free-hero.jpg" alt="Grok voice interface open on the touchscreen inside a Tesla"><figcaption><p>Asking about a Chirp home through Grok in a car.</p></figcaption></figure>
+
+[→ Use Chirp from your Tesla](../ai-assistant/tesla-grok.md)
+
+***
+
+**Digital Building Twin: move, duplicate, import**
+
+The 2D view lets you **Move**, **Duplicate**, and **Delete** a selection, and a door or window you move snaps onto the wall you pick. DXF floor plans (beta) can be imported, with a warning when a drawing carries no dimensions. Labels on pins stop at two decimals, and your dashboard opens at the camera angle you saved.
+
+<figure><img src="../.gitbook/assets/chirp-dbt-2d-move-duplicate.jpg" alt="The Digital Building Twin editor in 2D with a selected object and its Move, Duplicate and Delete badge"><figcaption><p>Move, duplicate or delete from the 2D view.</p></figcaption></figure>
+
+[→ Digital Building Twin](../dashboards/adding-widgets/digital-building-twin/README.md)
+
+***
+
+**Key Vault eye toggle**
+
+Saved keys stay hidden in the Key Vault. Select **Show key** on a row to look at that one key, then hide it again; the edit window has its own eye button.
+
+<figure><img src="../.gitbook/assets/chirp-key-vault-edit.jpg" alt="The Edit Key Pair dialog with an eye button beside the hidden key"><figcaption><p>The eye button in the Edit Key Pair window.</p></figcaption></figure>
+
+[→ Key Vault](../reports/key-vault.md)
+
+***
+
+**Smaller improvements**
+
+* Metrics you created earlier can be edited, and a unit is optional for every data type.
+* Device pickers list every device you own.
+* A sensor's status refreshes by itself on the Devices page.
+* The automation debugger prints the reason when a step fails.
+* The command builder will not save an expected-state row you left half done.
+* Dashboard widgets resize their text and controls more gracefully.
+* Camera previews, live-view connections, and status reports behave more reliably.
+
+<figure><img src="../.gitbook/assets/chirp-edit-metric.jpg" alt="The Edit Metric dialog with an optional unit of measurement"><figcaption><p>Editing a metric, with the unit now optional.</p></figcaption></figure>
+
+[→ Explore Chirp](https://docs.chirpwireless.io)
+
+</details>
+
+<details>
+
 <summary>Flight Log. Release 3.9.0</summary>
 
 <figure><img src="../.gitbook/assets/Flight_Release_3.9.0.jpg" alt="Chirp 3.9.0 release banner"><figcaption></figcaption></figure>
