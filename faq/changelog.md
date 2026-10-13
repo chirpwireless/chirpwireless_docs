@@ -38,6 +38,8 @@ You see how the dashboard looks, how the automations run, and how the alerts rea
 
 Then you think, "This is exactly my problem." The install screen lists the real devices you need. Buy those, and when they arrive, swap the practice sensors for the real ones yourself or tell the [AI chat](../ai-assistant/README.md): "I got these devices, can you connect them to the application I installed?" If the real sensors report the same readings as the practice ones, your dashboard, automations, and alerts keep working without changes.
 
+<figure><img src="../.gitbook/assets/chirp-solutions-install.jpg" alt="The Install Home Water Leak Watch screen listing what will be created, the Backfill 24h switch, and the real device you need"><figcaption><p>The install screen shows what you get and which device to buy.</p></figcaption></figure>
+
 So what is the difference between a solution and an application? A **solution** is the ready-made template we prepared. An **application** is what you have in your account after you install it, with its sensors, dashboard, automations, and alerts together. You can also build one from scratch. More solutions are on the way: new ones arrive with every release, beginning with the next. Installing counts against your plan's limits, and Chirp tells you when a solution does not fit.
 
 [→ What are applications and solutions in Chirp?](../applications/solutions-explained.md)
