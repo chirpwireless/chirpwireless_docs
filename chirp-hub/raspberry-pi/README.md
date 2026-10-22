@@ -1,10 +1,10 @@
 ---
-description: Turn a Raspberry Pi into an affordable smart home hub with a LoRaWAN gateway, camera recorder, Zigbee and Thread.
+description: Turn a Raspberry Pi into an affordable smart home hub for cameras, Zigbee and Thread, plus LoRaWAN if you like.
 ---
 
 # How Do I Turn a Raspberry Pi into a Smart Home Hub?
 
-Put Chirp Hub on a Raspberry Pi and you get a small, low-cost hub that lives in your home and covers jobs that normally take three or four boxes. Fit a LoRaWAN card and an antenna, plug in a Zigbee dongle, let it find your IP cameras, and one Pi becomes your LoRaWAN gateway, camera recorder and smart home radio. You set all of it up from one app, with no terminal session for each device.
+Put Chirp Hub on a Raspberry Pi and you get a small, low-cost hub that lives in your home and covers jobs that normally take three or four boxes. Plug in a Zigbee dongle and let it find your IP cameras, and one Pi becomes your camera recorder and smart home radio. Want it to be your LoRaWAN gateway too? Fit a LoRaWAN card and an antenna. You set all of it up from one app, with no terminal session for each device.
 
 ## What problem does a Raspberry Pi hub solve at home?
 
@@ -22,18 +22,18 @@ A Raspberry Pi hub swaps them for one device that uses a few watts, fits on a bo
 
 | Capability | What it does | Hardware it needs |
 |---|---|---|
-| **LoRaWAN gateway** | Receives your LoRaWAN sensors' readings and passes them, over an encrypted Basics Station connection, to the LoRaWAN Network Server built into Chirp | RAKwireless Pi HAT, RAK5146 concentrator card, LoRa antenna |
+| **LoRaWAN gateway** | Receives your LoRaWAN sensors' readings and passes them, over an encrypted Basics Station connection, to the LoRaWAN Network Server built into Chirp | Only if you want it: RAKwireless Pi HAT, RAK5146 concentrator card, LoRa antenna |
 | **Cameras** | Finds the IP cameras in your home and runs a recorder for each, so video is saved in the house and ready to link with Chirp Lens | IP cameras on your home network |
 | **Zigbee** | Runs a Zigbee network for sensors, plugs and bulbs, which you pair from the app | USB Zigbee coordinator |
 | **Thread** | Runs a Thread border router for Matter devices | A second USB radio flashed with Thread firmware |
 
-A Raspberry Pi 4 records about **six or seven cameras** while it also runs the gateway and Zigbee, and a Raspberry Pi 5 copes with more. As you add cameras, Chirp Hub shows how much room is left.
+A Raspberry Pi 4 records about **six or seven cameras**, even with Zigbee and a gateway running too, and a Raspberry Pi 5 copes with more. As you add cameras, Chirp Hub shows how much room is left.
 
-You don't have to use every capability. A Pi with only the LoRaWAN card is simply a gateway, and you can add a Zigbee dongle or cameras later, whenever your home needs them.
+Choose just what your home needs: only cameras, only Zigbee, a LoRaWAN gateway, or a mix. Anything else can come later.
 
 ## When is a computer the better choice?
 
-Got more cameras than one Pi can record? Let a computer running Chirp Hub take care of them, as described in [Windows, Mac and Linux](../computer.md). There, the number of cameras depends only on the computer's processor, memory and network. Keep the Pi as your LoRaWAN gateway, because a computer has no slot for a LoRaWAN card.
+Got more cameras than one Pi can record? Let a computer running Chirp Hub take care of them, as described in [Windows, Mac and Linux](../computer.md). There, the number of cameras depends only on the computer's processor, memory and network. Want a LoRaWAN gateway as well? That job stays with the Pi, since computers don't take a LoRaWAN card.
 
 ## How do I build a Raspberry Pi hub, step by step?
 
@@ -41,7 +41,7 @@ Got more cameras than one Pi can record? Let a computer running Chirp Hub take c
 2. **Put it together** — [How Do I Assemble a Raspberry Pi Smart Home Hub?](hardware.md)
 3. **Prepare the Pi and install Chirp Hub** — [How Do I Set Up a Raspberry Pi for Chirp Hub?](setup.md)
 4. **Turn on each capability:**
-   * the gateway — [How Do I Use a Raspberry Pi as a LoRaWAN Gateway?](lorawan-gateway.md)
+   * the LoRaWAN gateway, if you fitted the card — [How Do I Use a Raspberry Pi as a LoRaWAN Gateway?](lorawan-gateway.md)
    * cameras — [How Do I Connect Home IP Cameras to Chirp Hub?](../cameras.md)
    * Zigbee — [How Do I Pair Zigbee Devices with Chirp Hub?](../zigbee.md)
    * Thread — [How Do I Add Thread to Chirp Hub?](../thread.md)
