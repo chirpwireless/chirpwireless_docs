@@ -14,7 +14,7 @@ Getting your gateway connected to Chirp takes just a few minutes. You'll registe
 ## Register your gateway in Chirp
 
 1. Click **Gateways** in the sidebar.
-2. Click **Add gateway**.
+2. Click **Add gateway**, then pick **3rd Party Gateway** when Chirp asks what you are connecting.
 3. Enter a **Name** for your gateway — something that helps you remember where it is. For example, "Living Room Gateway" or "Garage Hub."
 4. Select your **Region** from the dropdown. This needs to match the frequency your gateway was built for. If you bought it for use in your country, the right option is usually clear:
 

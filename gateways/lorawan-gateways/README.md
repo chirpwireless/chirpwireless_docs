@@ -11,6 +11,7 @@ This sub-section covers everything specific to LoRaWAN gateways:
 - **[Setting up a LoRaWAN gateway](setting-up-a-lorawan-gateway.md)** — Register your gateway with Chirp, download the certificate, and get it connected.
 - **[Checking LoRaWAN gateway health](checking-lorawan-gateway-health.md)** — Confirm it's online, see how long it's been running, and check how much data it's handling.
 - **[Compatible LoRaWAN gateways](compatible-lorawan-gateways.md)** — What to look for when choosing one.
+- **[Raspberry Pi smart home hub](../../chirp-hub/raspberry-pi/README.md)** — Make your own gateway from a Raspberry Pi, a Pi HAT and a RAK5146 card, and set it up with Chirp Hub.
 
 ## How LoRaWAN coverage works
 

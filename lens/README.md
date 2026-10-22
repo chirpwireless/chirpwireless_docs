@@ -93,7 +93,7 @@ Use Lens to check the entrance or garden, then combine camera motion with the pl
 A [videowall](videowalls.md) puts selected home cameras in a layout you can save. Give each property its own wall, then create more focused views for outdoor areas, a floor, or the garage. Within one organization, this lets you move between properties and the smaller areas you want to check.
 
 ## How do I get connected?
-Start with [Installing Twin](installing-twin.md), using the official [Twin Docker image](https://hub.docker.com/r/chirpiot/lens-twin). Then [connect a camera](connecting-a-camera.md) and [watch live video](watching-live-video.md).
+Start with [Installing Twin](installing-twin.md), using the official [Twin Docker image](https://hub.docker.com/r/chirpiot/lens-twin), or let [Chirp Hub](../chirp-hub/README.md) handle that step: it finds your cameras and starts a Twin for each one on a Raspberry Pi (about six or seven cameras) or a computer (as many as it can handle). Then [connect a camera](connecting-a-camera.md) and [watch live video](watching-live-video.md).
 
 Once the view works, set up [Motion Zones](motion-zones.md), [Camera Rules and Alerts](camera-rules-and-alerts.md), optional [Local Recordings](local-recordings.md), or a [Cloud Archive](cloud-archive.md).
 
