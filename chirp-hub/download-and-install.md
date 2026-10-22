@@ -1,18 +1,20 @@
 ---
-description: Download Chirp Hub for Windows, macOS, Linux or a Raspberry Pi, install it, and get past the first-launch warning.
+description: Download Chirp Hub for Windows, Mac, Linux or a Raspberry Pi, install it, and get past the warning on first launch.
 ---
 
 # How Do I Download and Install Chirp Hub?
 
-Chirp Hub costs nothing. Each release lives on a single page with one installer per operating system:
+**Setting up a Raspberry Pi?** Skip this page and go to the [Raspberry Pi guide](raspberry-pi/README.md). The Pi needs some preparation first, and the guide includes the download.
+
+On a Windows, Mac or Linux computer, start here. Chirp Hub is free. Every release has one download page with an installer for each operating system:
 
 **[Download Chirp Hub 0.1.1](https://github.com/chirpdepin/raspberry-pi-iot-hub/releases/tag/chirp-v0.1.1)**
 
-Put it on the computer that stays in your home, not on a laptop that comes and goes with you. Your cameras, your Zigbee network and your gateway all run on whichever computer has Chirp Hub installed.
+Install it on the computer that stays at home, not on a laptop you carry around. Your cameras record, your Zigbee network runs and your gateway listens only on the computer where Chirp Hub is installed, and only while that computer is on.
 
 ## Which Chirp Hub installer do I download?
 
-On the release page, scroll down to **Assets** and choose the file that matches your computer. Each file name includes the version number.
+On the release page, scroll down to **Assets** and pick the file for your computer. The version number is part of each file name.
 
 | Your computer | File to download |
 |---|---|
@@ -20,54 +22,59 @@ On the release page, scroll down to **Assets** and choose the file that matches 
 | Mac with Apple silicon (M1 or newer) | `Chirp-Hub-<version>-arm64.dmg` |
 | Mac with an Intel processor | `Chirp-Hub-<version>.dmg` |
 | Ubuntu or Debian computer | `chirp-hub_<version>_amd64.deb` |
-| Raspberry Pi (64-bit Ubuntu, prepared as in [How Do I Set Up a Raspberry Pi for Chirp Hub?](raspberry-pi/setup.md)) | `chirp-hub_<version>_arm64.deb` |
+| Raspberry Pi with 64-bit Ubuntu (see the [Raspberry Pi setup](raspberry-pi/setup.md)) | `chirp-hub_<version>_arm64.deb` |
 | Any other Linux | `Chirp-Hub-<version>.AppImage` for a regular 64-bit PC, `Chirp-Hub-<version>-arm64.AppImage` for an ARM board |
 
-The `.yml` and `.blockmap` files on that page are not installers, so you can skip them.
+You can ignore the `.yml` and `.blockmap` files on that page. They aren't installers.
+
+## What is Docker, and do I need it?
+
+Docker is a free program that runs other programs in their own sealed-off boxes, called containers. Chirp Hub uses it to run the recorder for each of your cameras. You only need Docker for cameras, and you don't have to install it in advance: when you add your first camera, Chirp Hub offers to install or start it for you.
 
 ## How do I install Chirp Hub on Windows?
 
 1. Download `Chirp-Hub-Setup-<version>.exe` and run it.
-2. If **Windows protected your PC** appears, choose **More info** and then **Run anyway**. SmartScreen asks this one time because the installer has no code signature yet.
-3. Click through the installer. Chirp Hub starts when it's done and shows up in the Start menu.
+2. If Windows shows **Windows protected your PC**, choose **More info** and then **Run anyway**. That's because Windows doesn't know who publishes Chirp Hub yet and wants your OK. You only see it once.
+3. Go through the installer. When it finishes, Chirp Hub opens, and you'll find it in the Start menu from then on.
 
-Cameras need Docker Desktop. No Docker Desktop on your PC yet? When you add your first camera, Chirp Hub offers to fetch and set it up for you; just accept the administrator prompt.
+When you add your first camera and Docker Desktop isn't on your PC yet, Chirp Hub downloads and installs it for you. You only need to approve the administrator prompt.
 
 ## How do I install Chirp Hub on a Mac?
 
-1. Download the `.dmg` for your Mac's processor and open it.
-2. Drag **Chirp Hub** to **Applications**, and launch it from Applications rather than from the disk image.
-3. macOS blocks that first launch, since Apple has not notarized this build yet. On macOS 15 or newer, go to **System Settings → Privacy & Security** and click **Open Anyway** beside Chirp Hub. On older versions, right-click Chirp Hub in Applications and pick **Open**.
-4. When macOS asks if Chirp Hub may find devices on your local network, click **Allow**. If you don't, Chirp Hub can't see or reach your cameras.
+1. Download the `.dmg` that matches your Mac's processor and open it.
+2. Drag **Chirp Hub** into **Applications**. Always start it from Applications, not from the disk image.
+3. The first time you open it, macOS stops it, because it doesn't know who publishes Chirp Hub yet and wants your OK. On macOS 15 or newer, open **System Settings → Privacy & Security** and choose **Open Anyway** next to Chirp Hub. On an older macOS, find Chirp Hub in Applications, right-click it and pick **Open**.
+4. macOS then asks whether Chirp Hub may find devices on your local network. Choose **Allow**. If you don't, Chirp Hub can't see your cameras.
 
-From macOS 13 on, Chirp Hub brings a Docker engine of its own: roughly a 400 MB download, no password needed and nothing new in Applications. Any Docker you already use stays exactly as it was.
+On macOS 13 and newer, Chirp Hub sets up a Docker of its own when you add your first camera. It's about a 400 MB download, it doesn't ask for a password, and nothing new shows up in Applications. If you already use Docker for something else, it's left alone.
 
 ## How do I install Chirp Hub on Linux or a Raspberry Pi?
 
-On Ubuntu or Debian, install the `.deb` package. It pulls in everything Chirp Hub needs:
+On Ubuntu or Debian, install the `.deb` package. It brings everything Chirp Hub needs along with it:
 
 ```sh
 sudo apt install ./chirp-hub_<version>_amd64.deb
 ```
 
-A Raspberry Pi needs the [setup script](raspberry-pi/setup.md#how-do-i-get-the-pi-ready-for-the-lorawan-card-and-radios) before anything else. After that, install the `arm64` package and open **Chirp Hub** from the applications menu.
+On a Raspberry Pi, follow the [setup page](raspberry-pi/setup.md) instead. It runs the [setup script](raspberry-pi/setup.md#how-do-i-get-the-pi-ready-for-the-lorawan-card-and-radios) first and then installs the `arm64` package, and after a restart the Pi opens Chirp Hub by itself.
 
-On any other distribution, use the AppImage:
+On any other Linux, use the AppImage:
 
 ```sh
 chmod +x Chirp-Hub-<version>.AppImage
 ./Chirp-Hub-<version>.AppImage
 ```
 
-If the AppImage won't start, add `libfuse2` with your package manager (on Ubuntu 24.04 the package is called `libfuse2t64`).
+If the AppImage doesn't start, install `libfuse2` with your package manager. On Ubuntu 24.04 the package is called `libfuse2t64`.
 
-If Docker is missing when you add your first camera, Chirp Hub installs Docker Engine by itself and asks for your password in the system's password window.
+If Docker isn't installed when you add your first camera, Chirp Hub installs Docker Engine for you and asks for your password in the system's password window.
 
 ## How do I update Chirp Hub?
 
-Grab the newer Chirp Hub installer from the project's [releases page](https://github.com/chirpdepin/raspberry-pi-iot-hub/releases), where the Chirp Hub files start with `Chirp-Hub` or `chirp-hub`, and install it on top of the old one, just like the first time. Your cameras, Zigbee network and paired devices stay put, because they are saved in Chirp Hub's data folder rather than inside the program.
+Download the newer installer from the project's [releases page](https://github.com/chirpdepin/raspberry-pi-iot-hub/releases). The Chirp Hub files are the ones whose names start with `Chirp-Hub` or `chirp-hub`. Install it over the old version, the same way you did the first time.
 
-## How do I check which Chirp Hub version is running?
+Updating doesn't touch your cameras, your Zigbee network or your paired devices. They're saved in Chirp Hub's data folder, not inside the program itself.
 
-* Look at the version on the **Settings** page before and after updating, to be sure the new one is the one running.
-* What's next: [Raspberry Pi](raspberry-pi/README.md) or [Windows, Mac and Linux](computer.md).
+To be sure the update worked, check the version on the **Settings** page before and after.
+
+Next: building on a Raspberry Pi? Read [How Do I Turn a Raspberry Pi into a Smart Home Hub?](raspberry-pi/README.md) Using a PC or Mac? Read [How Do I Run Chirp Hub on Windows, Mac or Linux?](computer.md)
