@@ -36,6 +36,10 @@ Look for settings labels like:
 
 If your gateway only mentions "Packet Forwarder" or "Semtech UDP" without a Basics Station option, it may need a firmware update or may not be compatible.
 
+## Can I build my own LoRaWAN gateway?
+
+Yes. A Raspberry Pi fitted with a RAKwireless Pi HAT and a RAK5146 concentrator card works with Chirp as a Basics Station gateway, and the same Pi can record your cameras and run your Zigbee network too. [How Do I Turn a Raspberry Pi into a Smart Home Hub?](../../chirp-hub/raspberry-pi/README.md) covers the parts and the build. If you want a gateway that stays outdoors in all weather or connects over cellular, a ready-made gateway is the better pick.
+
 ## One gateway is enough for most homes
 
 LoRaWAN has impressive range — a single indoor gateway typically covers:

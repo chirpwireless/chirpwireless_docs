@@ -7,6 +7,10 @@ Twin is the part of your camera setup that runs at home. It connects one camera 
 
 Use one Docker container per camera. For a front-door and garden camera, make two Twins with separate names, ports, and saved settings.
 
+{% hint style="info" %}
+**Rather skip the terminal?** [Chirp Hub](../chirp-hub/README.md) sets up Docker, spots the cameras on your home network and starts one Twin for each camera, all from a window. A [Raspberry Pi](../chirp-hub/raspberry-pi/README.md) handles about six or seven cameras, and a [computer](../chirp-hub/computer.md) as many as it can handle. The steps on this page are the do-it-yourself route.
+{% endhint %}
+
 <figure><img src="../.gitbook/assets/chirp-lens-camera-setup.jpg" alt="Chirp Lens explains installing Twin, connecting a camera, and completing pairing"><figcaption><p>Lens guides you from a local Twin installation to a connected camera.</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/chirp-twin-tapo-live.jpg" alt="Chirp Twin dashboard with the Tapo picture and connected camera and Lens indicators"><figcaption><p>After setup, Twin shows its local camera picture and connection to Lens.</p></figcaption></figure>
