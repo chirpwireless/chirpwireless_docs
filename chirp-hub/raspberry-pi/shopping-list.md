@@ -28,11 +28,11 @@ A Raspberry Pi hub is made entirely of standard parts you can buy online. The Lo
 
 Look out for the **RAK5146 Pi HAT kit**, which bundles the HAT and the card so you don't have to match them yourself. RAKwireless and electronics retailers carry all of these parts.
 
-<figure><img src="../../.gitbook/assets/chirp-hub-rak-pi-hat.jpg" alt="RAKwireless RAK2287/RAK5146 Pi HAT, an adapter board with a 40-pin header and an mPCIe slot"><figcaption><p>The Pi HAT sits on top of the Raspberry Pi and carries the concentrator card.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chirp-hub-rak-pi-hat.png" alt="RAKwireless RAK2287/RAK5146 Pi HAT, an adapter board with a 40-pin header and an mPCIe slot"><figcaption><p>The Pi HAT sits on top of the Raspberry Pi and carries the concentrator card.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/chirp-hub-rak5146-card.jpg" alt="RAKwireless RAK5146 SPI concentrator card in mPCIe format with one LoRa and one GPS antenna connector"><figcaption><p>The RAK5146 card. One connector takes the LoRa antenna, and the other, labeled GPS, takes the optional GPS antenna.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chirp-hub-rak5146-card.png" alt="RAKwireless RAK5146 SPI concentrator card in mPCIe format with one LoRa and one GPS antenna connector"><figcaption><p>The RAK5146 card. One connector takes the LoRa antenna, and the other, labeled GPS, takes the optional GPS antenna.</p></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/chirp-hub-rak5146-pi-hat-kit.jpg" alt="RAK5146 Pi HAT kit with the concentrator card lying next to the HAT"><figcaption><p>The RAK5146 Pi HAT kit comes with the card and the HAT in one box.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chirp-hub-rak5146-pi-hat-kit.png" alt="RAK5146 Pi HAT kit with the concentrator card lying next to the HAT"><figcaption><p>The RAK5146 Pi HAT kit comes with the card and the HAT in one box.</p></figcaption></figure>
 
 {% hint style="warning" %}
 Match the card and the antenna to the radio band of the country your home is in. You can't change the band afterwards; the rest of the region settings are chosen in Chirp when you register the gateway.

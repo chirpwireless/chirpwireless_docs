@@ -13,7 +13,7 @@ Putting the hub together takes around fifteen minutes and a small screwdriver. K
 3. Clip the antenna cable onto the card's **LoRa** antenna connector. It's one of the two small round connectors: use the one *without* the GPS label, and press straight down until it clicks.
 4. If you bought a GPS antenna, attach it to the connector labeled **GPS**. GPS gives the gateway precise time and location, but the gateway runs fine without it.
 
-<figure><img src="../../.gitbook/assets/chirp-hub-rak5146-pi-hat-kit.jpg" alt="RAK5146 concentrator card beside the Pi HAT, with the mPCIe slot the card slides into"><figcaption><p>The card slides into the HAT's mPCIe slot and is fixed with a single screw.</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/chirp-hub-rak5146-pi-hat-kit.png" alt="RAK5146 concentrator card beside the Pi HAT, with the mPCIe slot the card slides into"><figcaption><p>The card slides into the HAT's mPCIe slot and is fixed with a single screw.</p></figcaption></figure>
 
 {% hint style="warning" %}
 Don't ever power the Pi while the concentrator card is fitted and the antenna is disconnected. A LoRa radio that transmits with no antenna attached can damage itself.
