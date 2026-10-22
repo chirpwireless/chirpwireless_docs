@@ -1,56 +1,76 @@
 ---
-description: Chirp Hub is free software for your home that sets up IP cameras, Zigbee, Thread and a LoRaWAN gateway for Chirp.
+description: "Chirp Hub is a free app for a computer at home that sets up your cameras, Zigbee, Thread and a LoRaWAN gateway."
 ---
 
 # What Is Chirp Hub?
 
-Chirp Hub is the part of Chirp that lives in your house. You install it on a computer that stays at home, such as a Raspberry Pi on a shelf in the hallway closet or the desktop PC in the study. From there it sets up and looks after everything your home devices need locally. That means one recorder per IP camera, your Zigbee network and your Thread radio, plus a LoRaWAN gateway when the Raspberry Pi has a concentrator card fitted.
+Chirp is the app and website where you see and look after the devices in your home. You sign in to it with your Chirp account at [app.chirpwireless.io](https://app.chirpwireless.io). Chirp Hub is the part of Chirp that runs inside your house.
 
-<figure><img src="../.gitbook/assets/chirp-hub-dashboard.jpg" alt="Chirp Hub Dashboard with this device's details and the status of cameras, LoRaWAN, Zigbee and Thread"><figcaption><p>One look at the Dashboard tells you how busy the computer is and where each capability stands.</p></figcaption></figure>
+Why does it need a part in your house? Because the things Chirp looks after are there: the camera over the garage door, the leak sensor in the basement, the smart plug behind the TV. Many of them can't reach Chirp, or even each other, on their own. Something at home has to talk to them.
 
-## Why does Chirp need software in my home?
+Chirp Hub is a free app you install on a computer that stays at home and is always on, like a Raspberry Pi on an open shelf in the hallway or the desktop PC in the study. It sets up the software your home devices need on that computer, and then keeps it running.
 
-Some of your devices can only be reached from inside your home network. The camera above the garage door streams video over your home Wi-Fi or cable, a Zigbee door sensor talks to a USB stick, and a LoRaWAN radio card is wired straight into the board it sits on. A program in the house has to keep those connections open: it passes the camera and gateway traffic on to Chirp and keeps your Zigbee and Thread networks running.
+<figure><img src="../.gitbook/assets/chirp-hub-dashboard.jpg" alt="Chirp Hub Dashboard with this device's details and the status of cameras, LoRaWAN, Zigbee and Thread"><figcaption><p>The Dashboard shows how busy the computer is and how far each part of your setup has got.</p></figcaption></figure>
 
-Without Chirp Hub you would install every piece by hand: Docker, a separate container for each camera, a Zigbee2MQTT settings file that names the right serial port and radio driver, a local MQTT broker, and certificates for the gateway. Chirp Hub turns all of that into buttons. It spots your hardware, chooses the settings, runs everything in Docker and shows how it's going in a single window, so you can finish the whole setup without typing a command.
+## What problem does Chirp Hub solve at home?
+
+Each kind of device in your home needs its own piece of software running close to it:
+
+* An IP camera (a camera that connects to your home network by cable or Wi-Fi) needs a recorder that saves its video and connects it to Chirp Lens, the part of Chirp where you watch your cameras.
+* Zigbee devices need a Zigbee network. Zigbee is a short-range radio that many smart plugs, bulbs and door sensors use. It needs a radio stick plugged into the computer and a program that runs the network.
+* LoRaWAN sensors need a gateway. LoRaWAN is a long-range radio for small battery sensors, like a soil sensor at the end of the garden, and the gateway is the receiver that picks up their signals and sends them to Chirp.
+
+Setting these up by hand means installing the recording software for every camera, working out which port your Zigbee stick is on and writing its settings file, and copying the gateway's security certificates into the right folders, all by typing commands.
+
+With Chirp Hub, most of that goes away. On a Windows, Mac or Linux computer, you install the app and that's it. A Raspberry Pi takes a little more: during its first setup you copy a handful of commands from the [Raspberry Pi guide](raspberry-pi/setup.md), one time only. After that, you work in the app. You plug in the hardware, Chirp Hub spots the camera, the Zigbee stick or the LoRaWAN card, and each one gets a page in the app where you finish the setup. On the **Cameras** page that starts with **Scan for cameras**. On the **Zigbee** page it starts with **Start Zigbee**.
 
 ## What can Chirp Hub set up?
 
-| Capability | What Chirp Hub does | Where it runs |
-|---|---|---|
-| **Cameras** | Spots the cameras on your home network and starts a separate recorder ([Twin](../lens/installing-twin.md)) for each one, ready to pair with Chirp Lens | Raspberry Pi and computers |
-| **Zigbee** | Detects your USB coordinator, creates a Zigbee network with a security key of its own and opens a window for pairing new devices | Raspberry Pi and Linux computers |
-| **Thread** | Runs a Thread border router for Matter devices on a dedicated radio, beside the Zigbee one | Raspberry Pi |
-| **LoRaWAN gateway** | Reads the gateway ID off the concentrator card, installs the certificates Chirp issues for it and connects the gateway to Chirp's built-in LoRaWAN Network Server | Raspberry Pi with a concentrator HAT |
+| What | What Chirp Hub does for you | What you get | Where it works |
+|---|---|---|---|
+| **Cameras** | Finds the IP cameras on your home network and starts a recorder for each one. The recorder is called a [Twin](../lens/installing-twin.md) | Your cameras in Chirp Lens, signed in with your Chirp account | Raspberry Pi and computers |
+| **Zigbee** | Finds your Zigbee USB stick, starts a Zigbee network with its own security key, and lets you pair new devices | Your Zigbee devices paired, controlled and showing their readings right on the hub: on the **Zigbee** page and in the Zigbee2MQTT dashboard | Raspberry Pi or a Linux PC, not Windows or Mac |
+| **Thread** | Runs a Thread border router. Thread is a low-power radio used by many Matter devices. Matter is a shared standard that lets smart home devices from different brands work together | A Thread network in your home for your Matter devices | Raspberry Pi |
+| **LoRaWAN gateway** | Turns a Raspberry Pi with a LoRaWAN card into a gateway and installs the certificates Chirp gives you for it | Your LoRaWAN sensors in Chirp | Raspberry Pi with a LoRaWAN card |
 
-Every capability gets its own page in the left menu. When the hardware for one is missing, its page stays in the menu and tells you what to plug in, so an absent radio never looks like something broken.
+The gateway row is only for building your own. Most people buy a ready-made LoRaWAN gateway instead, which doesn't need Chirp Hub. [Should I make my Raspberry Pi a LoRaWAN gateway too?](raspberry-pi/README.md#should-i-make-my-raspberry-pi-a-lorawan-gateway-too) compares the two.
 
-## Should I run Chirp Hub on a Raspberry Pi or a computer?
+You only set up the parts you need. Each one has its own page in the app's left menu. When something isn't connected yet, its page is still there and says which hardware it's waiting for.
 
-Both work. What decides it is which radios you want and how many cameras you have.
+## Should I run Chirp Hub on a Raspberry Pi or a PC?
 
-* **Raspberry Pi** — a single small box for cameras, Zigbee and Thread, which can also be your LoRaWAN gateway if you fit the card. A Raspberry Pi 4 can record about six or seven cameras. See [Raspberry Pi](raspberry-pi/README.md).
-* **Windows, macOS or Linux computer** — more horsepower and therefore many more cameras, which suits a big house with a camera on every side or a holiday rental you keep watch over from afar. A computer has nowhere to plug in a LoRaWAN concentrator card. See [Windows, Mac and Linux](computer.md).
+Both work. The choice comes down to how many cameras you have and which radios you want.
+
+A Raspberry Pi is an inexpensive computer not much bigger than a deck of cards. It uses very little power, so leaving it on day and night is no problem. It's the only option that can run Thread, and the only one you can build your own LoRaWAN gateway on. A Raspberry Pi 4 can record about six or seven cameras. Read [Raspberry Pi](raspberry-pi/README.md) to build one.
+
+A Windows, Mac or Linux computer has more power, so it can record many more cameras. How many depends on its processor, memory and network. That suits a big house with a camera on every side, or a holiday rental you keep an eye on from home. Zigbee works on a Pi or a Linux PC, not on Windows or Mac. A computer has nowhere to fit a LoRaWAN card, so with LoRaWAN sensors you'd use a [ready-made gateway](../gateways/lorawan-gateways/compatible-lorawan-gateways.md) alongside it. Read [Windows, Mac and Linux](computer.md) for the details.
 
 ## How do I get started with Chirp Hub?
 
-1. [Download and install Chirp Hub](download-and-install.md) on the computer that will stay at home.
-2. Open Chirp Hub. Its **Dashboard** shows the computer (system, memory, processors, Docker version) and where each capability stands.
-3. Choose what you want to set up in the left menu, then follow the matching guide: [Cameras](cameras.md), [Zigbee](zigbee.md), [Thread](thread.md) or the [LoRaWAN gateway on a Raspberry Pi](raspberry-pi/lorawan-gateway.md).
+1. Make sure you can sign in to Chirp at [app.chirpwireless.io](https://app.chirpwireless.io). You need your account to watch your cameras in Lens and to register a gateway.
+2. Decide which computer will stay at home and run Chirp Hub: a Raspberry Pi or a computer you already have.
+3. [Download and install Chirp Hub](download-and-install.md). A Raspberry Pi needs a little preparation first, which the [Raspberry Pi guide](raspberry-pi/README.md) walks you through.
+4. Open Chirp Hub. The **Dashboard** shows the computer it's running on and a card for each thing it can set up.
+5. In the left menu, pick what you want to set up first and follow its guide: [Cameras](cameras.md), [Zigbee](zigbee.md), [Thread](thread.md) or the [LoRaWAN gateway on a Raspberry Pi](raspberry-pi/lorawan-gateway.md).
 
-Before adding one more camera, glance at the **Processor load** and **Memory used** bars on the Dashboard. They turn orange when the computer is getting full.
+Before you add another camera, look at the **Processor load** and **Memory used** bars on the Dashboard. They turn orange when the computer is getting full.
 
-## Where do I find Chirp Hub logs?
+## Where do I find my Chirp Hub version and logs?
 
-**Settings**, at the bottom of the left menu, shows which Chirp Hub version you have, the operating system and the kind of device it runs on.
+Open **Settings** at the bottom of the left menu. It shows which version of Chirp Hub you have, the operating system, and the kind of device it's running on.
 
-<figure><img src="../.gitbook/assets/chirp-hub-settings.jpg" alt="Chirp Hub Settings page showing the app version, the system and two diagnostics buttons"><figcaption><p>Settings has the version number and the two diagnostics buttons our support team will ask about.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/chirp-hub-settings.jpg" alt="Chirp Hub Settings page showing the app version, the system and the two diagnostics options"><figcaption><p>Settings shows the version number, and the diagnostics section is where support will send you.</p></figcaption></figure>
 
-* **Open log folder** opens the folder where Chirp Hub keeps its log files.
-* **Copy system details** puts the version, the operating system and the hardware details on your clipboard, so you can paste them straight into a message to support.
+If something goes wrong and you contact support, they'll usually ask for two things from this page:
 
-## How do I keep Chirp Hub running well at home?
+* **Open log folder** opens the folder where Chirp Hub writes its log files.
+* **Copy system details** copies the version, the operating system and the hardware details, so you can paste them into your message.
 
-* Choose a computer that never gets switched off. Cameras only record, and Zigbee devices only report to the hub, while it is running.
-* Connect it to your router with a network cable if you can. Cameras send video around the clock, and a cable keeps the recordings free of gaps.
-* Use the language selector at the bottom of the menu to switch between English, German, French, Spanish and Portuguese, and the **Dark** switch to change the theme.
+## How do I keep Chirp Hub running at home?
+
+* Use a computer that never gets switched off. Cameras only record, and Zigbee devices only report to the hub, while Chirp Hub's computer is on.
+* Give it a spot with some air around it, not a closed cupboard. A computer that runs hot slows down when the cameras are busy.
+* Plug it into your router with a network cable if you can. Cameras send video all day and night, and a cable keeps the recordings free of gaps.
+* To change the language, use the language selector at the bottom of the menu. Chirp Hub speaks English, German, French, Spanish and Portuguese. The **Dark** switch changes the theme.
+
+Next: [How Do I Download and Install Chirp Hub?](download-and-install.md)
