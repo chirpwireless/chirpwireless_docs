@@ -24,7 +24,7 @@ With the card fitted and the setup script run, your Pi already has everything it
 3. In Chirp, go to **Gateways**, select **Add gateway**, and choose **3rd Party Gateway**.
 4. Enter a name such as "Basement Gateway", choose the region you live in, and paste the Gateway ID into **Gateway EUI**. Select **Next**.
 5. Copy the **LNS Address**. That's the internet address of Chirp's LoRaWAN server, the one your gateway connects to. Then download **certs.zip**.
-6. Unpack **certs.zip**. On the Pi, click it in Firefox's list of downloads. It opens in the archive tool, where you choose **Extract**. On a Windows or Mac computer, unzip it the way you normally would. Either way, you get three files: `tc.trust` (the trust certificate), `tc.crt` (the gateway certificate) and `tc.key` (the private key).
+6. Unpack **certs.zip**: click it in Firefox's list of downloads. It opens in the archive tool, where you choose **Extract**. You get three files: `tc.trust` (the trust certificate), `tc.crt` (the gateway certificate) and `tc.key` (the private key).
 7. Back in Chirp Hub, under **Add the files Chirp gave you**, use **Choose file** to pick each file for **Trust certificate**, **Gateway certificate** and **Private key**. Then paste the address into **LNS address**.
 8. Select **Save** and enter your Pi password when asked. Chirp Hub checks that the three files belong together, installs them, and starts the gateway.
 9. When you see **This gateway is set up and running.**, select **Open Chirp** and watch the gateway come online under **Gateways**.
