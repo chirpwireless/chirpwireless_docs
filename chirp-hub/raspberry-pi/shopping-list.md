@@ -1,23 +1,25 @@
 ---
-description: What to buy for a Raspberry Pi smart home hub, from the Pi and power supply to the RAK5146 card, antenna and dongles.
+description: "Shopping list for a Raspberry Pi smart home hub: the Pi, then only the extras you want, from cameras to LoRaWAN."
 ---
 
 # What Parts Do I Need for a Raspberry Pi Hub?
 
-A Raspberry Pi hub is made entirely of standard parts you can buy online. The LoRaWAN parts are made by RAKwireless and are sold by RAKwireless and by electronics retailers. The Pi itself, its power supply and a case come from any Raspberry Pi reseller.
+Start with the Raspberry Pi and its basics, then buy only the extras for what you want your hub to do at home. Maybe that's just cameras, or just Zigbee; turning the Pi into a LoRaWAN gateway is another extra you can pick. Everything is a standard part you can buy online.
 
-## What does every Raspberry Pi hub need?
+## What do I need for the Raspberry Pi itself?
 
 | Part | What to buy | Why |
 |---|---|---|
 | Raspberry Pi | A Raspberry Pi 5 with 4 GB of memory or more, or a Raspberry Pi 4 Model B with 4 GB or 8 GB | Runs Chirp Hub; a Pi 5 handles more cameras than a Pi 4 |
 | Power supply | The official Raspberry Pi USB-C power supply that matches your board: 27 W (5 V / 5 A) for a Pi 5, 15 W (5 V / 3 A) for a Pi 4 | An underpowered phone charger makes the Pi restart when it gets busy, and that looks like random problems |
 | microSD card | 32 GB or more, A2 rated, from a well-known brand | Stores the operating system and the camera recordings; a card made for constant writing lasts longer |
-| Case | One tall enough for a Pi HAT on top, with an opening for the antenna connector and some airflow, ideally with a fan | Regular Raspberry Pi cases are too short once a HAT is fitted |
-| Network cable | Cat 5e or better | A cable to your router keeps the gateway and the cameras online when Wi-Fi isn't |
+| Case | One with some airflow, ideally with a fan. Building a LoRaWAN gateway? Then pick one tall enough to fit a Pi HAT, with a hole for the antenna connector | Regular Raspberry Pi cases are too short once a HAT is fitted |
+| Network cable | Cat 5e or better | A cable to your router keeps the hub and the cameras online when Wi-Fi isn't |
 | For setup | A microSD card reader on your computer; then, for the Pi, a screen and HDMI cable (the Pi itself has micro-HDMI ports), a USB keyboard and a mouse | For writing the operating system to the card and for using Chirp Hub on the Pi |
 
-## What do I need for the LoRaWAN gateway?
+## What do I need to turn my Raspberry Pi into a LoRaWAN gateway?
+
+Only buy these if you want your Pi to pick up LoRaWAN sensors, such as battery sensors in the basement or the garden. Using the hub just for cameras, Zigbee or Thread? Skip this part.
 
 | Part | What to buy |
 |---|---|
@@ -38,7 +40,9 @@ Look out for the **RAK5146 Pi HAT kit**, which bundles the HAT and the card so y
 Match the card and the antenna to the radio band of the country your home is in. You can't change the band afterwards; the rest of the region settings are chosen in Chirp when you register the gateway.
 {% endhint %}
 
-## What do I need for Zigbee and Thread?
+## What do I need to connect Zigbee and Thread devices?
+
+Get these if you want smart plugs, bulbs and door sensors on Zigbee, or Matter devices on Thread.
 
 | Part | What to buy | Why |
 |---|---|---|
@@ -46,7 +50,9 @@ Match the card and the antenna to the radio band of the country your home is in.
 | Thread radio | A second USB radio with OpenThread RCP firmware, such as a Nordic nRF52840 dongle | Thread needs a radio of its own, because one dongle can't run Zigbee and Thread together |
 | USB extension cables | Two short ones | Keep each radio clear of the Pi and its USB 3 ports, whose noise disturbs 2.4 GHz signals |
 
-## What do I need for cameras?
+## What do I need to record my IP cameras?
+
+Get these if you want the hub to record your home cameras.
 
 | Part | What to buy |
 |---|---|
@@ -57,6 +63,6 @@ Electronics retailers stock both.
 
 ## How do I start small and add more later?
 
-* Just starting out? Get the core parts, the LoRaWAN parts and one Zigbee dongle. You can add cameras and Thread later without taking anything apart.
-* Hang on to the antenna's box: it shows the band, and you'll need that when you register the gateway in Chirp.
+* Just starting out? Get the Pi basics plus the one thing you want first. Cameras, Zigbee, Thread or the LoRaWAN parts can follow whenever you like.
+* Bought the LoRaWAN parts? Hang on to the antenna's box: it shows the band, and you'll need that when you register the gateway in Chirp.
 * Next: [How Do I Assemble a Raspberry Pi Smart Home Hub?](hardware.md)

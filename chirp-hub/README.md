@@ -29,7 +29,7 @@ Every capability gets its own page in the left menu. When the hardware for one i
 
 Both work. What decides it is which radios you want and how many cameras you have.
 
-* **Raspberry Pi** — a single small box that handles everything at once: LoRaWAN gateway, cameras, Zigbee and Thread. A Raspberry Pi 4 can record about six or seven cameras. See [Raspberry Pi](raspberry-pi/README.md).
+* **Raspberry Pi** — a single small box for cameras, Zigbee and Thread, which can also be your LoRaWAN gateway if you fit the card. A Raspberry Pi 4 can record about six or seven cameras. See [Raspberry Pi](raspberry-pi/README.md).
 * **Windows, macOS or Linux computer** — more horsepower and therefore many more cameras, which suits a big house with a camera on every side or a holiday rental you keep watch over from afar. A computer has nowhere to plug in a LoRaWAN concentrator card. See [Windows, Mac and Linux](computer.md).
 
 ## How do I get started with Chirp Hub?
