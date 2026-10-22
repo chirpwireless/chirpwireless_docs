@@ -1,5 +1,5 @@
 ---
-description: "Chirp Hub is a free app for a computer at home that sets up your cameras, Zigbee, Thread and a LoRaWAN gateway."
+description: "Chirp Hub is a free app that runs your home cameras, Zigbee and LoRaWAN, on a Raspberry Pi or on your regular PC."
 ---
 
 # What Is Chirp Hub?
@@ -8,7 +8,10 @@ Chirp is the app and website where you see and look after the devices in your ho
 
 Why does it need a part in your house? Because the things Chirp looks after are there: the camera over the garage door, the leak sensor in the basement, the smart plug behind the TV. Many of them can't reach Chirp, or even each other, on their own. Something at home has to talk to them.
 
-Chirp Hub is a free app you install on a computer that stays at home and is always on, like a Raspberry Pi on an open shelf in the hallway or the desktop PC in the study. It sets up the software your home devices need on that computer, and then keeps it running.
+Chirp Hub is a free app that sets up the software your home devices need and then keeps it running. It runs on one of two machines that stay at home and are always on:
+
+* **A Raspberry Pi.** A small box on an open shelf that looks after the whole house. It handles about six or seven cameras, and it is the only choice that can also act as your LoRaWAN gateway.
+* **Your regular PC** with Windows, Mac or Linux, like the desktop in the study. It has a lot more power, so there's practically no limit on how many cameras it can handle.
 
 <figure><img src="../.gitbook/assets/chirp-hub-dashboard.jpg" alt="Chirp Hub Dashboard with this device's details and the status of cameras, LoRaWAN, Zigbee and Thread"><figcaption><p>The Dashboard shows how busy the computer is and how far each part of your setup has got.</p></figcaption></figure>
 
@@ -28,7 +31,7 @@ With Chirp Hub, most of that goes away. On a Windows, Mac or Linux computer, you
 
 | What | What Chirp Hub does for you | What you get | Where it works |
 |---|---|---|---|
-| **Cameras** | Finds the IP cameras on your home network and starts a recorder for each one. The recorder is called a [Twin](../lens/installing-twin.md) | Your cameras in Chirp Lens, signed in with your Chirp account | Raspberry Pi and computers |
+| **Cameras** | Spots the IP cameras on your home network and gives each one its own recorder, called a [Twin](../lens/installing-twin.md) | Your cameras in Chirp Lens, signed in with your Chirp account | Raspberry Pi and computers |
 | **Zigbee** | Finds your Zigbee USB stick, starts a Zigbee network with its own security key, and lets you pair new devices | Your Zigbee devices paired, controlled and showing their readings right on the hub: on the **Zigbee** page and in the Zigbee2MQTT dashboard | Raspberry Pi or a Linux PC, not Windows or Mac |
 | **Thread** | Runs a Thread border router. Thread is a low-power radio used by many Matter devices. Matter is a shared standard that lets smart home devices from different brands work together | A Thread network in your home for your Matter devices | Raspberry Pi |
 | **LoRaWAN gateway** | Turns a Raspberry Pi with a LoRaWAN card into a gateway and installs the certificates Chirp gives you for it | Your LoRaWAN sensors in Chirp | Raspberry Pi with a LoRaWAN card |
@@ -61,7 +64,7 @@ Open **Settings** at the bottom of the left menu. It shows which version of Chir
 
 <figure><img src="../.gitbook/assets/chirp-hub-settings.jpg" alt="Chirp Hub Settings page showing the app version, the system and the two diagnostics options"><figcaption><p>Settings shows the version number, and the diagnostics section is where support will send you.</p></figcaption></figure>
 
-If something goes wrong and you contact support, they'll usually ask for two things from this page:
+If something goes wrong and you contact support, these are the two things from this page they usually want:
 
 * **Open log folder** opens the folder where Chirp Hub writes its log files.
 * **Copy system details** copies the version, the operating system and the hardware details, so you can paste them into your message.

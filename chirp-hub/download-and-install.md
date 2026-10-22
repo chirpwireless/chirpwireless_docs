@@ -10,7 +10,7 @@ On a Windows, Mac or Linux computer, start here. Chirp Hub is free. Every releas
 
 **[Download Chirp Hub 0.1.1](https://github.com/chirpdepin/raspberry-pi-iot-hub/releases/tag/chirp-v0.1.1)**
 
-Install it on the computer that stays at home, not on a laptop you carry around. Your cameras record, your Zigbee network runs and your gateway listens only on the computer where Chirp Hub is installed, and only while that computer is on.
+Install it on the Raspberry Pi or PC that stays at home, not on a laptop you carry around. Your cameras record, your Zigbee network runs and your gateway listens only on the computer where Chirp Hub is installed, and only while that computer is on.
 
 ## Which Chirp Hub installer do I download?
 
